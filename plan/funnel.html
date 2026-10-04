@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funnel Map | ClearCareer 2026</title>
+<meta name="description" content="Every step from an Instagram reel to a signed client, with the tool, the owner, and the metric at each step.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css"><link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+  <a class="nav__logo" href="../index.html"><img src="../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer <span class="small muted" style="font-family:var(--font-sans);font-size:.8rem;margin-left:.25rem">2026</span></a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  <ul class="nav__links" id="nav-links"><li><a href="../index.html">Hub</a></li><li><a href="marketing-plan.html">Plan</a></li><li><a href="funnel.html" aria-current="page">Funnel</a></li><li><a href="../emails/index.html">Emails</a></li><li><a href="../ads/index.html">Ads</a></li><li><a href="../site/index.html">Site</a></li></ul>
+</div></header>
+<main id="main"><div class="container docs-shell">
+<aside class="docs-side">
+  <h4>Documents</h4><ul><li><a href="marketing-plan.html">Marketing Plan</a></li><li><a href="funnel.html" aria-current="page">Funnel Map</a></li><li><a href="offers.html">Offers and Pricing</a></li><li><a href="tools-and-costs.html">Tools and Costs</a></li><li><a href="strategy-session.html">Strategy Session Playbook</a></li><li><a href="manychat-flows.html">ManyChat Flows</a></li><li><a href="content-calendar.html">Content Calendar</a></li><li><a href="kpis.html">KPIs and Tracking</a></li><li><a href="launch-checklist.html">Launch Checklist</a></li><li><a href="site-build-guide.html">Site Build Guide</a></li><li><a href="../ads/index.html">Ads Plan</a></li><li><a href="../emails/index.html">Email Sequences</a></li></ul>
+  <div class="toc"><h4>On this page</h4><ul><li><a href="#1-the-whole-thing-on-one-screen">1. The whole thing on one screen</a></li><li><a href="#2-stage-by-stage">2. Stage by stage</a></li><li><a href="#3-short-links">3. Short links</a></li><li><a href="#4-the-data-model-brevo-contact-attributes">4. The data model (Brevo contact attributes)</a></li><li><a href="#5-automations-brevo">5. Automations (Brevo)</a></li><li><a href="#6-make-scenarios-the-glue">6. Make scenarios (the glue)</a></li><li><a href="#7-utm-conventions">7. UTM conventions</a></li><li><a href="#8-what-can-break-and-the-check">8. What can break, and the check</a></li></ul></div>
+</aside>
+<article class="doc">
+  <div class="doc-header">
+    <div class="crumbs"><a href="../index.html">Hub</a> / Plan</div>
+    <h1>Funnel Map</h1>
+    <div class="meta"><span>Every step from an Instagram reel to a signed client, with the tool, the owner, and the metric at each step.</span><span>Source: <code>docs/FUNNEL.md</code></span></div>
+  </div>
+  <p>Every step from a stranger watching a reel to a client paying $2,497, with the tool that runs it, who owns it, and the number that tells you it is working. A visual version is at <code>plan/funnel-map.html</code>.</p>
+<h2 id="1-the-whole-thing-on-one-screen">1. The whole thing on one screen</h2>
+<pre><code>TRAFFIC               CAPTURE                 CONVERT ($9)                NURTURE                 CONVERT ($497+)           RETAIN
+───────────────       ─────────────────────   ─────────────────────────   ─────────────────────   ───────────────────────   ─────────────────
+Instagram reel        ManyChat comment →      /go/salary landing page     Buyer Welcome (7)       Strategy Session (25m)    Accelerator group
+ &quot;Comment SALARY&quot;     DM opener → link        Stripe Payment Link         Lead Welcome (5)        Pre-Call (3 + SMS)        Sprint negotiation
+LinkedIn repost       Story reply trigger     Order bump $19              Saturday newsletter     No-Close (5)              Clarity 30-day plan
+YouTube Shorts        Link-in-bio page        Thank-you page + upsell     Behaviour triggers      Decision tree → offer     Community weekly rhythm
+Meta ads (phase B/C)  Free guide opt-in       Stripe → Make → Brevo       Re-permission           Payment link on the call  Wins → testimonial → referral
+Blog / SEO            Brevo form              Access email in 60s                                                           Saturday email forever
+</code></pre>
+<p>Rule for every step: one problem, one product, one bump, one upsell, one next step.</p>
+<h2 id="2-stage-by-stage">2. Stage by stage</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage</th>
+<th>What happens</th>
+<th>Tool</th>
+<th>Owner</th>
+<th>Metric</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Reel published</td>
+<td>Hook, one teach, keyword CTA on screen and spoken</td>
+<td>Phone, CapCut, Instagram</td>
+<td>Izzy</td>
+<td>Reels per week; keyword comments per reel</td>
+<td>3/week; 50+ comments by week 6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Comment trigger</td>
+<td>Keyword comment fires the automation; public reply posts</td>
+<td>ManyChat</td>
+<td>Automation</td>
+<td>Comments to DM-opened</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>DM opener</td>
+<td>One-tap question qualifies and tags (SALARY: offer in hand / prepping / curious)</td>
+<td>ManyChat</td>
+<td>Automation</td>
+<td>Opener completion</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Link delivered</td>
+<td>Link to <code>/go/&lt;keyword&gt;</code> with UTM; hot branch gets the Strategy Session link too</td>
+<td>ManyChat</td>
+<td>Automation</td>
+<td>Link clicks</td>
+<td>35% of openers</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Landing page</td>
+<td>One product, one price, buy button above the fold on mobile</td>
+<td>Static page on GitHub Pages / domain</td>
+<td>Site</td>
+<td>Page to checkout</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Checkout</td>
+<td>Stripe Payment Link with the $19 optional item, email collected</td>
+<td>Stripe</td>
+<td>Stripe</td>
+<td>Checkout to paid; bump take</td>
+<td>50%; 25 to 35%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Thank-you</td>
+<td>Access links plus ONE upsell (Strategy Session for SALARY, Community for the rest)</td>
+<td>Static page</td>
+<td>Site</td>
+<td>Upsell clicks</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Data sync</td>
+<td>Stripe event → Make scenario → Brevo contact with SOURCE, BUYER, BUMP, PRODUCTS, TOPIC</td>
+<td>Make (free) + Brevo</td>
+<td>Automation</td>
+<td>Sync failures</td>
+<td>0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Access email</td>
+<td>Buyer Welcome step 1 sends the access link within 60 seconds</td>
+<td>Brevo automation</td>
+<td>Automation</td>
+<td>Delivery rate</td>
+<td>99%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Non-buyer follow-up</td>
+<td>ManyChat +20h message offers the free guide; opt-in creates a Brevo lead</td>
+<td>ManyChat → Brevo form</td>
+<td>Automation</td>
+<td>Non-buyers to leads</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Nurture</td>
+<td>Buyer Welcome (14 days) or Lead Welcome (10 days), then Saturday newsletter</td>
+<td>Brevo</td>
+<td>Automation + Izzy (Saturday)</td>
+<td>Session bookings from email</td>
+<td>2+ per Saturday send when the CTA is the Session</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Booking</td>
+<td>Calendly event with 7 qualifying questions; routing screens out "not right now"</td>
+<td>Calendly (free)</td>
+<td>Automation</td>
+<td>Bookings per month; qualified rate</td>
+<td>8 to 12; 80%</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Pre-call</td>
+<td>Instant "how this works" email with video and prices; 24h case study and prep form; 2h reminder</td>
+<td>Brevo + Tally + Calendly</td>
+<td>Automation</td>
+<td>Show rate</td>
+<td>70%+</td>
+</tr>
+<tr>
+<td>14</td>
+<td>The call</td>
+<td>25 minutes: 15 diagnose, 5 prescribe, 5 decide. Offer made on the call</td>
+<td>Zoom or Google Meet, timer</td>
+<td>Izzy</td>
+<td>Offer-made rate; close rate</td>
+<td>90%; 30 to 40%</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Close</td>
+<td>Payment link sent live; kickoff booked before hanging up</td>
+<td>Stripe + Calendly</td>
+<td>Izzy</td>
+<td>Core sales per month</td>
+<td>2 to 3 by week 12</td>
+</tr>
+<tr>
+<td>16</td>
+<td>No-close</td>
+<td>Personalised email same day, then 4 more over 14 days, Community downsell on day 9</td>
+<td>Brevo</td>
+<td>Izzy (step 1) + automation</td>
+<td>Late closes; community catch</td>
+<td>10%; 20%</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Onboarding</td>
+<td>Accelerator / Sprint / Clarity sequences; intake within 48h</td>
+<td>Brevo + AI Intake tool</td>
+<td>Automation</td>
+<td>Intake completion in 48h</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Delivery</td>
+<td>Weekly rhythm, assets, negotiation</td>
+<td>Google Meet, WhatsApp, Skool</td>
+<td>Izzy</td>
+<td>Landed; negotiated gain</td>
+<td>Track every one</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Win</td>
+<td>Testimonial ask day 2, referral ask day 9, $200 thank-you</td>
+<td>Brevo + Tally</td>
+<td>Automation</td>
+<td>Testimonials per win; referrals</td>
+<td>60%; 0.3 per win</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Retention</td>
+<td>Saturday email forever; Community weekly rhythm; pause instead of cancel</td>
+<td>Brevo + Skool</td>
+<td>Izzy</td>
+<td>Monthly churn</td>
+<td>under 8%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-short-links">3. Short links</h2>
+<p>Short links are a redirect layer you control, so every email, DM, and video can say one URL and you can change the destination later. Set them up once at the host (Cloudflare redirect rules on the free plan, or the host's redirect config). Until the new site is on the domain, use the full URLs.</p>
+<table>
+<thead>
+<tr>
+<th>Short link</th>
+<th>Destination</th>
+<th>Used in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/go/call</code></td>
+<td><code>site/strategy-session.html</code></td>
+<td>Every email, DM hot branch, bio, newsletter</td>
+</tr>
+<tr>
+<td><code>/go/salary</code></td>
+<td><code>site/go/salary.html?utm_source=instagram&amp;utm_medium=manychat&amp;utm_campaign=salary</code></td>
+<td>SALARY DM, Lead Welcome 3, shop</td>
+</tr>
+<tr>
+<td><code>/go/prompts</code></td>
+<td><code>site/go/prompts.html?utm_source=instagram&amp;utm_medium=manychat&amp;utm_campaign=prompts</code></td>
+<td>PROMPTS DM, Lead Welcome 3</td>
+</tr>
+<tr>
+<td><code>/go/outreach</code></td>
+<td><code>site/go/outreach.html?utm_source=instagram&amp;utm_medium=manychat&amp;utm_campaign=outreach</code></td>
+<td>OUTREACH DM, Lead Welcome 3</td>
+</tr>
+<tr>
+<td><code>/go/community</code></td>
+<td><code>site/community.html</code></td>
+<td>Thank-you pages, No-Close 4, newsletter week 2</td>
+</tr>
+<tr>
+<td><code>/go/accelerator</code></td>
+<td><code>site/accelerator.html</code></td>
+<td>Buyer Welcome 4</td>
+</tr>
+<tr>
+<td><code>/go/services</code></td>
+<td><code>site/services.html</code></td>
+<td>Pre-Call 1 (the one-pager)</td>
+</tr>
+<tr>
+<td><code>/go/results</code></td>
+<td><code>site/results.html</code></td>
+<td>Buyer Welcome 2, Lead Welcome 4</td>
+</tr>
+<tr>
+<td><code>/go/free</code></td>
+<td><code>site/free.html</code></td>
+<td>Buyer Welcome 3, newsletter week 4, footer of every newsletter</td>
+</tr>
+<tr>
+<td><code>/go/free-salary</code></td>
+<td>2026 Canadian Salary Guide (live on the old site)</td>
+<td>SALARY non-buyer follow-up</td>
+</tr>
+<tr>
+<td><code>/go/free-prompts</code></td>
+<td>Make It Count gated playbook (live on the old site)</td>
+<td>PROMPTS non-buyer follow-up</td>
+</tr>
+<tr>
+<td><code>/go/free-outreach</code></td>
+<td>7 Email Templates (live on the old site)</td>
+<td>OUTREACH non-buyer follow-up</td>
+</tr>
+<tr>
+<td><code>/go/links</code></td>
+<td><code>site/links.html</code></td>
+<td>Instagram bio</td>
+</tr>
+</tbody>
+</table>
+<p>When the ManyChat link carries UTM parameters, <code>site.js</code> forwards them to the Stripe and Calendly links on the page, so the Stripe session metadata and the Calendly UTM fields show where the buyer came from.</p>
+<h2 id="4-the-data-model-brevo-contact-attributes">4. The data model (Brevo contact attributes)</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Values</th>
+<th>Set by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FIRSTNAME</code></td>
+<td>text</td>
+<td></td>
+<td>Stripe checkout name, Brevo form, Calendly</td>
+</tr>
+<tr>
+<td><code>SOURCE</code></td>
+<td>text</td>
+<td><code>ig_salary</code>, <code>ig_prompts</code>, <code>ig_outreach</code>, <code>ig_adhd</code>, <code>ig_layoff</code>, <code>web_&lt;lead-magnet&gt;</code>, <code>ad_&lt;campaign&gt;</code>, <code>referral</code></td>
+<td>Make (from UTM in Stripe metadata) or the Brevo form hidden field</td>
+</tr>
+<tr>
+<td><code>TOPIC</code></td>
+<td>text</td>
+<td><code>salary</code>, <code>outreach</code>, <code>prompts</code>, <code>layoff</code>, <code>adhd</code>, <code>interview</code>, <code>career-change</code>, <code>general</code></td>
+<td>Derived from product or lead magnet; also set by trigger 1</td>
+</tr>
+<tr>
+<td><code>BUYER</code></td>
+<td>yes/no</td>
+<td></td>
+<td>Make on first purchase</td>
+</tr>
+<tr>
+<td><code>BUMP</code></td>
+<td>yes/no</td>
+<td></td>
+<td>Make, from the Stripe line items</td>
+</tr>
+<tr>
+<td><code>PRODUCTS</code></td>
+<td>text</td>
+<td>comma list of slugs</td>
+<td>Make, appended</td>
+</tr>
+<tr>
+<td><code>GUIDE_NAME</code>, <code>GUIDE_URL</code></td>
+<td>text</td>
+<td></td>
+<td>Brevo form hidden fields per lead magnet</td>
+</tr>
+<tr>
+<td><code>SUBSCRIBED</code></td>
+<td>yes/no</td>
+<td></td>
+<td>Form or checkout consent; trigger 3 clears it</td>
+</tr>
+<tr>
+<td><code>SESSION_BOOKED</code></td>
+<td>date</td>
+<td></td>
+<td>Calendly webhook via Make</td>
+</tr>
+<tr>
+<td><code>SESSION_OUTCOME</code></td>
+<td>text</td>
+<td><code>closed</code>, <code>no_close</code>, <code>no_show</code>, <code>cold</code></td>
+<td>Izzy, after each call</td>
+</tr>
+<tr>
+<td><code>PROGRAM_NAME</code>, <code>PROGRAM_PRICE</code>, <code>PAYMENT_LINK</code>, <code>NEXT_START</code>, <code>TARGET_SALARY</code>, <code>MONTHLY_BURN</code></td>
+<td>text</td>
+<td></td>
+<td>Izzy, before releasing No-Close step 1</td>
+</tr>
+<tr>
+<td><code>CLIENT</code></td>
+<td>text</td>
+<td><code>accelerator</code>, <code>private</code>, <code>sprint</code>, <code>clarity</code></td>
+<td>Make on program payment</td>
+</tr>
+<tr>
+<td><code>INTAKE_DONE</code></td>
+<td>yes/no</td>
+<td></td>
+<td>AI Intake tool webhook or Izzy</td>
+</tr>
+<tr>
+<td><code>MEMBER</code></td>
+<td>text</td>
+<td><code>yes</code>, <code>cancelled</code>, <code>paused</code></td>
+<td>Zapier from Skool, or weekly CSV</td>
+</tr>
+<tr>
+<td><code>WIN</code>, <code>WIN_DETAIL</code>, <code>GAIN</code></td>
+<td>text</td>
+<td></td>
+<td>Izzy</td>
+</tr>
+</tbody>
+</table>
+<p>Lists: one list, "ClearCareer". Segment on attributes. Today's <code>api/subscribe.ts</code> sends 11 lead magnets to one list with no tags; the attributes above fix that.</p>
+<h2 id="5-automations-brevo">5. Automations (Brevo)</h2>
+<table>
+<thead>
+<tr>
+<th>Automation</th>
+<th>Entry</th>
+<th>Exit</th>
+<th>Messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buyer Welcome</td>
+<td><code>BUYER</code> changes to <code>yes</code></td>
+<td>Day 14, or <code>SESSION_BOOKED</code> set, or <code>CLIENT</code> set</td>
+<td><code>buyer-01-*</code> (by product), <code>buyer-02</code> to <code>buyer-07</code></td>
+</tr>
+<tr>
+<td>Lead Welcome</td>
+<td>New contact with <code>BUYER</code> = <code>no</code></td>
+<td>Day 10, or <code>SESSION_BOOKED</code>, or <code>BUYER</code> = <code>yes</code> (moves to Buyer Welcome)</td>
+<td><code>lead-01</code> to <code>lead-05</code></td>
+</tr>
+<tr>
+<td>Pre-Call</td>
+<td><code>SESSION_BOOKED</code> set</td>
+<td>Call time</td>
+<td><code>precall-01</code>, <code>precall-02</code>, <code>precall-03-sms</code>, <code>precall-04</code>; no-show branch <code>precall-05</code>, <code>precall-06-sms</code></td>
+</tr>
+<tr>
+<td>No-Close</td>
+<td><code>SESSION_OUTCOME</code> = <code>no_close</code></td>
+<td>Day 14 or <code>CLIENT</code> set</td>
+<td><code>noclose-01</code> (held for personalisation) to <code>noclose-05</code></td>
+</tr>
+<tr>
+<td>Accelerator Onboarding</td>
+<td><code>CLIENT</code> = <code>accelerator</code> or <code>private</code></td>
+<td>Week 1</td>
+<td><code>accel-01</code> to <code>accel-03</code></td>
+</tr>
+<tr>
+<td>Salary Sprint Kickoff</td>
+<td><code>CLIENT</code> = <code>sprint</code></td>
+<td>Result</td>
+<td><code>sprint-01</code>, <code>sprint-02</code></td>
+</tr>
+<tr>
+<td>Clarity Intensive</td>
+<td><code>CLIENT</code> = <code>clarity</code></td>
+<td>Day 30</td>
+<td><code>clarity-01</code>, <code>clarity-02</code></td>
+</tr>
+<tr>
+<td>Community Onboarding</td>
+<td><code>MEMBER</code> = <code>yes</code></td>
+<td>Day 14</td>
+<td><code>comm-01</code> to <code>comm-03</code>; <code>comm-04-cancel</code> on <code>MEMBER</code> = <code>cancelled</code></td>
+</tr>
+<tr>
+<td>Client Wins</td>
+<td><code>WIN</code> = <code>yes</code></td>
+<td>Day 9</td>
+<td><code>win-01-testimonial</code>, <code>win-02-referral</code></td>
+</tr>
+<tr>
+<td>Behaviour triggers</td>
+<td>Click, open, and inactivity conditions</td>
+<td>One message each</td>
+<td><code>trig-01</code>, <code>trig-02</code>, <code>trig-03</code></td>
+</tr>
+<tr>
+<td>Saturday Newsletter</td>
+<td>Campaign every Saturday 7:30 ET to <code>SUBSCRIBED</code> = <code>yes</code> and not in Buyer Welcome, Lead Welcome, Pre-Call, or No-Close</td>
+<td></td>
+<td><code>news-template</code>, <code>news-sample-01</code></td>
+</tr>
+</tbody>
+</table>
+<p>Full text of every message: <code>emails/index.html</code> and <code>emails/ALL-EMAILS.txt</code>.</p>
+<h2 id="6-make-scenarios-the-glue">6. Make scenarios (the glue)</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Trigger</th>
+<th>Steps</th>
+<th>Ops per run</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stripe → Brevo (purchase)</td>
+<td>Stripe webhook <code>checkout.session.completed</code></td>
+<td>Read line items and metadata → upsert Brevo contact (email, FIRSTNAME, BUYER=yes, BUMP, PRODUCTS, SOURCE from UTM, TOPIC) → done</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Stripe → Brevo (program)</td>
+<td>Same webhook, price matches a program</td>
+<td>Set <code>CLIENT</code>; for Sprint deposit set <code>CLIENT=sprint</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td>Calendly → Brevo</td>
+<td>Calendly <code>invitee.created</code></td>
+<td>Upsert contact, set <code>SESSION_BOOKED</code>, copy UTM fields to <code>SOURCE</code>, store answers to the 7 questions in a Google Sheet row</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Calendly → Brevo (cancel)</td>
+<td><code>invitee.canceled</code></td>
+<td>Clear <code>SESSION_BOOKED</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td>Tally → Sheet</td>
+<td>Prep form submitted</td>
+<td>Append to the Sessions sheet</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Skool → Brevo</td>
+<td>Zapier (Skool integrates with Zapier) new member</td>
+<td>Set <code>MEMBER=yes</code></td>
+<td>Zapier free covers this</td>
+</tr>
+</tbody>
+</table>
+<p>At 100 purchases and 30 bookings a month this is under 600 Make operations. The free plan allows 1,000.</p>
+<h2 id="7-utm-conventions">7. UTM conventions</h2>
+<p><code>utm_source</code> = instagram, linkedin, youtube, meta_ads, email, referral. <code>utm_medium</code> = manychat, bio, post, ad, newsletter, dm. <code>utm_campaign</code> = the keyword or the sequence id (salary, prompts, outreach, buyer-05, news-2026-10-11). <code>utm_content</code> = the reel or ad id when known.</p>
+<h2 id="8-what-can-break-and-the-check">8. What can break, and the check</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stripe optional item not showing</td>
+<td>Open each Payment Link in an incognito window before launch; the bump toggle must be visible</td>
+</tr>
+<tr>
+<td>Make scenario off or over quota</td>
+<td>Make sends an email on failure; check the dashboard every Monday</td>
+</tr>
+<tr>
+<td>Brevo automation not firing</td>
+<td>Buy each $9 product yourself in test mode (Stripe test links go to a test Make scenario)</td>
+</tr>
+<tr>
+<td>Instagram DM opener not sending links</td>
+<td>Instagram requires the user to interact before links land cleanly; keep the one-tap opener</td>
+</tr>
+<tr>
+<td>Calendly questions not reaching Brevo</td>
+<td>Calendly free passes answers in the webhook payload; map each in Make</td>
+</tr>
+<tr>
+<td>People booking who should not</td>
+<td>Question 5 routing. Review the Sessions sheet weekly; tighten the copy, not the call</td>
+</tr>
+</tbody>
+</table>
+</article>
+</div></main>
+<footer class="site-footer" style="padding:2rem 0"><div class="container footer__bottom" style="margin-top:0;padding-top:0;border:0">
+  <span>ClearCareer 2026 plan. Internal working documents. © <span data-year>2026</span> Izzy Piyale-Sheard.</span>
+  <span><a href="../index.html">Artifact hub</a> · <a href="https://github.com/izzydoesizzy/clearcareer-website-2026">Repository</a></span>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>

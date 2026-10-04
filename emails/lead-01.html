@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Here&#x27;s your guide (open it on your phone) | ClearCareer 2026</title>
+<meta name="description" content="Lead Welcome step 1: Here&#x27;s your {{ contact.GUIDE_NAME | default: &quot;guide&quot; }} (open it on your phone)">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css"><link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+  <a class="nav__logo" href="../index.html"><img src="../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer <span class="small muted" style="font-family:var(--font-sans);font-size:.8rem;margin-left:.25rem">2026</span></a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  <ul class="nav__links" id="nav-links"><li><a href="../index.html">Hub</a></li><li><a href="../plan/marketing-plan.html">Plan</a></li><li><a href="../plan/funnel.html">Funnel</a></li><li><a href="index.html" aria-current="page">Emails</a></li><li><a href="../ads/index.html">Ads</a></li><li><a href="../site/index.html">Site</a></li></ul>
+</div></header>
+<main id="main"><div class="container" style="padding:2.5rem 0 5rem">
+  <div class="doc-header" style="padding-top:0">
+    <div class="crumbs"><a href="../index.html">Hub</a> / <a href="index.html">Emails</a> / Lead Welcome</div>
+    <h1>Here&#x27;s your guide (open it on your phone)</h1>
+    <div class="meta"><span class="badge">Lead Welcome · step 1</span><span>Immediately after opt-in</span></div>
+  </div>
+  <div class="email-page">
+    <div>
+      <div class="email-frame"><div class="email"><div class="email__bar"><span>From: Izzy Piyale-Sheard &lt;izzy@joinclearcareer.com&gt;</span><strong>Here&#x27;s your {{ contact.GUIDE_NAME | default: &quot;guide&quot; }} (open it on your phone)</strong><span class="preview">Plus the one thing to do with it today.</span></div><div class="email__body" id="email-body"><p>Hey {{ contact.FIRSTNAME | default: "friend" }},</p>
+<p>Here's what you asked for:</p>
+<p><a class="btn btn--primary" href="{{ contact.GUIDE_URL }}">Open your {{ contact.GUIDE_NAME | default: &quot;guide&quot; }}</a></p>
+<p _="%" endif="endif">{% if contact.TOPIC == "salary" %}
+<strong>One thing to do with it today:</strong> find your target role and city in the guide and write down the top of the range. Not the middle. The top. That's your anchor, and most people walk in anchored at the bottom without realising it.
+{% elsif contact.TOPIC == "outreach" %}
+<strong>One thing to do with it today:</strong> pick template number 1, the informational interview ask. Find one person on LinkedIn who does the job you want. Change the two personal lines. Send it. One message. Today.
+{% else %}
+<strong>One thing to do with it today:</strong> skim it once, then pick the single page that made you think "oh, I should do that." Do that one thing before you close the tab. Everything else can wait.</p>
+<p>Tomorrow I'll tell you why I was unemployed for most of a year. Twice. It's relevant, I promise.</p>
+<p>Izzy</p>
+<p>P.S. Hit reply and tell me what you're stuck on right now. One line is enough. I read every reply.</p></div><div class="email__footer">ClearCareer · Toronto, Canada · You're getting this because you signed up at joinclearcareer.com · Unsubscribe</div></div></div>
+      <div class="email-nav"><a class="btn btn--secondary btn--sm" href="buyer-07.html">Previous: Last one from me about this (then back t</a><a class="btn btn--secondary btn--sm" href="lead-02.html">Next: The year I didn&#x27;t get a single offe</a></div>
+    </div>
+    <aside class="email-meta"><dl><dt>Sequence</dt><dd>Lead Welcome</dd><dt>Step</dt><dd>1</dd><dt>Send</dt><dd>Immediately after opt-in</dd><dt>Trigger</dt><dd>/api/subscribe or Brevo form: BUYER=no, TOPIC set, GUIDE_NAME and GUIDE_URL set. Starts automation &quot;Lead Welcome&quot;.</dd><dt>Goal</dt><dd>Deliver the free thing, tell Izzy&#x27;s story once, recommend the matching $9 product on day 3, show two speed stories, and make the honest Strategy Session invite on day 10. Then the Saturday newsletter.</dd><dt>Primary CTA</dt><dd>Open the guide | {{ contact.GUIDE_URL }}</dd><dt>Notes</dt><dd>One email, three conditional tip blocks keyed on TOPIC (salary, outreach, everything else).</dd></dl><button class="btn btn--secondary btn--sm btn--block mt-3 copy-btn" data-copy="#email-body">Copy body text</button><p class="small muted mt-2 mb-0">Paste into Brevo's editor. Replace [[Label|URL]] buttons with Brevo buttons.</p></aside>
+  </div>
+</div></main>
+<footer class="site-footer" style="padding:2rem 0"><div class="container footer__bottom" style="margin-top:0;padding-top:0;border:0">
+  <span>ClearCareer 2026 plan. Internal working documents. © <span data-year>2026</span> Izzy Piyale-Sheard.</span>
+  <span><a href="../index.html">Artifact hub</a> · <a href="https://github.com/izzydoesizzy/clearcareer-website-2026">Repository</a></span>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>

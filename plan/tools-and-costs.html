@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tools and Costs | ClearCareer 2026</title>
+<meta name="description" content="The cheapest stack that runs the whole funnel, what to cancel, and the monthly bill before and after revenue.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css"><link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+  <a class="nav__logo" href="../index.html"><img src="../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer <span class="small muted" style="font-family:var(--font-sans);font-size:.8rem;margin-left:.25rem">2026</span></a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  <ul class="nav__links" id="nav-links"><li><a href="../index.html">Hub</a></li><li><a href="marketing-plan.html">Plan</a></li><li><a href="funnel.html">Funnel</a></li><li><a href="../emails/index.html">Emails</a></li><li><a href="../ads/index.html">Ads</a></li><li><a href="../site/index.html">Site</a></li></ul>
+</div></header>
+<main id="main"><div class="container docs-shell">
+<aside class="docs-side">
+  <h4>Documents</h4><ul><li><a href="marketing-plan.html">Marketing Plan</a></li><li><a href="funnel.html">Funnel Map</a></li><li><a href="offers.html">Offers and Pricing</a></li><li><a href="tools-and-costs.html" aria-current="page">Tools and Costs</a></li><li><a href="strategy-session.html">Strategy Session Playbook</a></li><li><a href="manychat-flows.html">ManyChat Flows</a></li><li><a href="content-calendar.html">Content Calendar</a></li><li><a href="kpis.html">KPIs and Tracking</a></li><li><a href="launch-checklist.html">Launch Checklist</a></li><li><a href="site-build-guide.html">Site Build Guide</a></li><li><a href="../ads/index.html">Ads Plan</a></li><li><a href="../emails/index.html">Email Sequences</a></li></ul>
+  <div class="toc"><h4>On this page</h4><ul><li><a href="#1-the-stack">1. The stack</a></li><li><a href="#2-cancel-or-avoid">2. Cancel or avoid</a></li><li><a href="#3-the-monthly-bill">3. The monthly bill</a></li><li><a href="#phase-0-before-revenue-weeks-1-to-4" class="lvl-3">Phase 0: before revenue (weeks 1 to 4)</a></li><li><a href="#phase-1-first-revenue-weeks-5-to-12" class="lvl-3">Phase 1: first revenue (weeks 5 to 12)</a></li><li><a href="#phase-2-scaling-month-4-onward" class="lvl-3">Phase 2: scaling (month 4 onward)</a></li><li><a href="#4-setup-notes-per-tool">4. Setup notes per tool</a></li></ul></div>
+</aside>
+<article class="doc">
+  <div class="doc-header">
+    <div class="crumbs"><a href="../index.html">Hub</a> / Plan</div>
+    <h1>Tools and Costs</h1>
+    <div class="meta"><span>The cheapest stack that runs the whole funnel, what to cancel, and the monthly bill before and after revenue.</span><span>Source: <code>docs/TOOLS-AND-COSTS.md</code></span></div>
+  </div>
+  <p>The cheapest stack that runs the entire funnel, built from tools you already have where possible. Three rules:</p>
+<ol>
+<li><strong>Pay for a tool only once it is making money or saving hours you would otherwise bill.</strong> Free tiers run this whole system until revenue arrives.</li>
+<li><strong>No duplicates.</strong> One tool per job. GroupFuel (GoHighLevel) duplicates Brevo, Calendly, and ManyChat and is the first thing to cancel.</li>
+<li><strong>Own the data.</strong> Brevo is the system of record for every person. Everything else writes into it.</li>
+</ol>
+<p>Prices are approximate as of October 2026 and in USD unless noted. Check current pricing before committing.</p>
+<h2 id="1-the-stack">1. The stack</h2>
+<table>
+<thead>
+<tr>
+<th>Job</th>
+<th>Tool</th>
+<th>Plan now</th>
+<th>Cost now</th>
+<th>When to upgrade</th>
+<th>Why this one</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New website hosting</td>
+<td>GitHub Pages</td>
+<td>Free</td>
+<td>$0</td>
+<td>Never for the static site</td>
+<td>Plain HTML, custom domain supported, no build step, this repo deploys itself</td>
+</tr>
+<tr>
+<td>DNS and redirects</td>
+<td>Cloudflare</td>
+<td>Free</td>
+<td>$0</td>
+<td>If more than 10 redirect rules are needed, use Bulk Redirects (still free)</td>
+<td>Free <code>/go/*</code> redirects, free SSL, proxies the old app on a subdomain</td>
+</tr>
+<tr>
+<td>Old Astro app (free tools, product access, APIs)</td>
+<td>Vercel</td>
+<td>Current plan</td>
+<td>$0 to $20</td>
+<td>Retire the app once Payment Links and Brevo deliver the products; move the free tools to Cloudflare Pages (free, commercial use allowed)</td>
+<td>It works today. Don't rebuild what sells. Check your plan: Vercel Hobby is for non-commercial use</td>
+</tr>
+<tr>
+<td>Email marketing and automation</td>
+<td>Brevo</td>
+<td>Free (300 emails/day, automation on up to 2,000 contacts)</td>
+<td>$0</td>
+<td>Starter when daily volume passes 300 or contacts pass 2,000 (from about $9/mo); Business for advanced automation and A/B tests (from about $18/mo)</td>
+<td>Already in use, API already wired, SMS available pay-as-you-go</td>
+</tr>
+<tr>
+<td>Payments</td>
+<td>Stripe Payment Links</td>
+<td>Pay per transaction</td>
+<td>2.9% + $0.30 CAD per charge</td>
+<td>Never</td>
+<td>No code. Optional items give you the order bump. Abandoned-checkout recovery is built in</td>
+</tr>
+<tr>
+<td>Automation glue</td>
+<td>Make</td>
+<td>Free (1,000 ops/mo)</td>
+<td>$0</td>
+<td>Core plan (about $9/mo) past 1,000 ops, around 150 purchases plus 40 bookings a month</td>
+<td>Stripe → Brevo, Calendly → Brevo, Tally → Sheet. Cheaper than Zapier for the same volume</td>
+</tr>
+<tr>
+<td>Skool → Brevo sync</td>
+<td>Zapier</td>
+<td>Free (100 tasks/mo)</td>
+<td>$0</td>
+<td>Not needed; member joins stay under 100 a month for a long time</td>
+<td>Skool's native integration is Zapier</td>
+</tr>
+<tr>
+<td>Instagram DMs</td>
+<td>ManyChat</td>
+<td>Pro</td>
+<td>about $15/mo (scales with contacts)</td>
+<td>Automatically as contacts grow</td>
+<td>Comment-to-DM triggers, conditions, tags, follow-ups. The free plan lacks the branching this flow needs</td>
+</tr>
+<tr>
+<td>Booking</td>
+<td>Calendly</td>
+<td>Free</td>
+<td>$0</td>
+<td>Standard (about $12/mo) if you want SMS reminders or more than one event type</td>
+<td>One event type is all this needs: the Strategy Session with 7 questions</td>
+</tr>
+<tr>
+<td>Prep form and testimonial form</td>
+<td>Tally</td>
+<td>Free</td>
+<td>$0</td>
+<td>Never</td>
+<td>Unlimited forms, Google Sheets sync on free</td>
+</tr>
+<tr>
+<td>Tracking sheet</td>
+<td>Google Sheets</td>
+<td>Included in Workspace</td>
+<td>$0</td>
+<td>Never</td>
+<td>Sessions, weekly scorecard, ad log</td>
+</tr>
+<tr>
+<td>Video calls</td>
+<td>Google Meet</td>
+<td>Included in Workspace</td>
+<td>$0</td>
+<td>Zoom Pro (about $16/mo) only if you prefer Zoom; the free Zoom tier caps group calls at 40 minutes, which breaks the Wednesday hot seat</td>
+<td>You already pay for Workspace</td>
+</tr>
+<tr>
+<td>Call recording and notes</td>
+<td>Fathom</td>
+<td>Free</td>
+<td>$0</td>
+<td>Never for this</td>
+<td>Already in use</td>
+</tr>
+<tr>
+<td>Community</td>
+<td>Skool</td>
+<td>Paid</td>
+<td>$99/mo plus 2.9% on payments through Skool</td>
+<td>Start when 4 members are committed (break-even at $29). Pre-sell 10 founding members first</td>
+<td>Members expect it, you know it, payments and access are built in</td>
+</tr>
+<tr>
+<td>Short-form editing</td>
+<td>CapCut</td>
+<td>Free</td>
+<td>$0</td>
+<td>Never</td>
+<td>Captions, cuts, cover frames</td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td>Canva</td>
+<td>Current plan</td>
+<td>$0 extra</td>
+<td></td>
+<td>Already in use</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Google Analytics 4 + Meta Pixel</td>
+<td>Free</td>
+<td>$0</td>
+<td>Never</td>
+<td>GA4 for the site, Pixel for ads, Stripe dashboard for money</td>
+</tr>
+<tr>
+<td>Link in bio</td>
+<td><code>site/links.html</code></td>
+<td>Self-hosted</td>
+<td>$0</td>
+<td>Never</td>
+<td>Replaces Linktree</td>
+</tr>
+<tr>
+<td>AI Intake Interview</td>
+<td>Existing tool on the Anthropic API</td>
+<td>Usage</td>
+<td>about $1 to $3 per intake</td>
+<td>Scales with clients</td>
+<td>Already built; this is the differentiator</td>
+</tr>
+<tr>
+<td>Notion</td>
+<td>Free or current</td>
+<td>$0</td>
+<td></td>
+<td>Call notes, SOPs</td>
+<td></td>
+</tr>
+<tr>
+<td>WhatsApp</td>
+<td>Free</td>
+<td>$0</td>
+<td></td>
+<td>Client support channel</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-cancel-or-avoid">2. Cancel or avoid</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Why</th>
+<th>Saves</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GroupFuel / GoHighLevel</td>
+<td>Duplicates Brevo, Calendly, ManyChat. The A2P SMS registration was never finished.</td>
+<td>$97 to $297/mo</td>
+</tr>
+<tr>
+<td>Linktree Pro</td>
+<td><code>links.html</code> does the job</td>
+<td>$5 to $9/mo</td>
+</tr>
+<tr>
+<td>Zapier paid</td>
+<td>Make free covers the volume</td>
+<td>$20 to $70/mo</td>
+</tr>
+<tr>
+<td>Calendly Teams or Pro</td>
+<td>One event type on the free plan is enough</td>
+<td>$12 to $20/mo</td>
+</tr>
+<tr>
+<td>Second community platform (Circle, Mighty Networks)</td>
+<td>One room</td>
+<td>$89+/mo</td>
+</tr>
+<tr>
+<td>New Notion or Slack seats</td>
+<td>No team yet</td>
+<td></td>
+</tr>
+<tr>
+<td>Vercel Pro once the old app retires</td>
+<td>Static tools on Cloudflare Pages are free</td>
+<td>$20/mo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-the-monthly-bill">3. The monthly bill</h2>
+<h3 id="phase-0-before-revenue-weeks-1-to-4">Phase 0: before revenue (weeks 1 to 4)</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Cost (USD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ManyChat Pro</td>
+<td>$15</td>
+</tr>
+<tr>
+<td>Brevo Free</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Stripe fixed</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Make Free</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Calendly Free</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Tally, Sheets, Meet, Fathom, CapCut, GA4</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>GitHub Pages, Cloudflare</td>
+<td>$0</td>
+</tr>
+<tr>
+<td>Vercel (old app, current plan)</td>
+<td>$0 to $20</td>
+</tr>
+<tr>
+<td>Skool</td>
+<td>$0 (not opened yet)</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>about $2</td>
+</tr>
+<tr>
+<td><strong>Total fixed</strong></td>
+<td><strong>$17 to $37</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-1-first-revenue-weeks-5-to-12">Phase 1: first revenue (weeks 5 to 12)</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Cost (USD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 0 stack</td>
+<td>$17 to $37</td>
+</tr>
+<tr>
+<td>Skool (opened at 4+ committed members)</td>
+<td>$99</td>
+</tr>
+<tr>
+<td>Brevo Starter if the list passes 2,000 or 300/day</td>
+<td>$0 to $25</td>
+</tr>
+<tr>
+<td>Meta ads, Phase B (see <code>ADS.md</code>)</td>
+<td>$300</td>
+</tr>
+<tr>
+<td>AI intakes (10 at $2)</td>
+<td>$20</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>about $440 to $480</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Covered by 16 community members, or one Clarity Intensive, or one fifth of one Accelerator.</p>
+<h3 id="phase-2-scaling-month-4-onward">Phase 2: scaling (month 4 onward)</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Cost (USD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1 stack without ads</td>
+<td>$140 to $180</td>
+</tr>
+<tr>
+<td>Meta ads, Phase C</td>
+<td>$600 to $900</td>
+</tr>
+<tr>
+<td>Make Core, Brevo Business, Zoom Pro as needed</td>
+<td>$0 to $60</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>about $750 to $1,150</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Rule: ad spend in a month never exceeds the previous month's revenue minus fixed costs. Before the first core sale, ads are capped at $300 a month.</p>
+<h2 id="4-setup-notes-per-tool">4. Setup notes per tool</h2>
+<p><strong>GitHub Pages.</strong> Settings → Pages → Source: GitHub Actions. The workflow in <code>.github/workflows/pages.yml</code> deploys on every push to <code>main</code>. Custom domain: add <code>joinclearcareer.com</code> (or <code>new.joinclearcareer.com</code> during review) in Pages settings and a CNAME record in Cloudflare. The site uses relative links so it works at both the <code>github.io</code> address and the domain.</p>
+<p><strong>Cloudflare.</strong> Move DNS to Cloudflare (free). Add Redirect Rules for the <code>/go/*</code> table in <code>FUNNEL.md</code>. Point <code>app.joinclearcareer.com</code> at the Vercel app so the free tools, product access pages, and APIs keep working while the marketing site moves.</p>
+<p><strong>Brevo.</strong> Create the attributes in <code>FUNNEL.md</code> section 4. Build the automations in section 5 by pasting from <code>emails/ALL-EMAILS.txt</code>. Set the Saturday campaign exclusion (contacts in an active automation). Turn on click tracking so the behaviour triggers work. Add the signup form for the Saturday email and paste its URL where the pages say <code>REPLACE_brevo-signup-form</code>.</p>
+<p><strong>Stripe.</strong> Create the products and prices in <code>OFFERS.md</code> section 4. On each $9 Payment Link, add the Script Vault $19 price as an optional item, set the after-payment redirect to the matching thank-you page, collect name and email, allow promotion codes, enable abandoned-checkout recovery. Copy each link into the matching <code>REPLACE_</code> placeholder (list in the README).</p>
+<p><strong>Make.</strong> Three scenarios from <code>FUNNEL.md</code> section 6. Use Stripe's webhook (not polling) to stay under the free op limit. Test with Stripe test mode first.</p>
+<p><strong>ManyChat.</strong> Connect the Instagram professional account (needs a Facebook Page). Build the flows in <code>MANYCHAT-FLOWS.md</code>. Turn on the Comments trigger per post or for all posts with the keyword condition. Test with a second account.</p>
+<p><strong>Calendly.</strong> One event type: "Job Search Strategy Session", 25 minutes, 10-minute buffer after, max 3 per day, the 7 questions from <code>STRATEGY-SESSION.md</code>. Confirmation email body: one line pointing to the Brevo email ("Izzy's note with the video and prices is on its way"). Reminder emails: Calendly free sends them; keep them short.</p>
+<p><strong>Tally.</strong> Two forms: the 3-question prep form and the 2-question testimonial form. Connect both to Google Sheets.</p>
+<p><strong>Skool.</strong> Open the community when 4 members are committed. Set the pinned "Start Here" post, the weekly calendar, the template vault as a course, and the Zapier trigger to Brevo. Turn on the 7-day free trial only when running Phase C ads (see <code>ADS.md</code>); organic joins pay from day one.</p>
+<p><strong>Google Meet.</strong> One recurring Monday link, one recurring Wednesday link, one monthly workshop link. Record to Drive. Post recordings in Skool the same day.</p>
+<p><strong>Meta.</strong> Install the Pixel on every page of the new site (one snippet in the shared head; add it when ads start, not before). Create the Conversions API connection from Skool's settings when Phase C begins.</p>
+</article>
+</div></main>
+<footer class="site-footer" style="padding:2rem 0"><div class="container footer__bottom" style="margin-top:0;padding-top:0;border:0">
+  <span>ClearCareer 2026 plan. Internal working documents. © <span data-year>2026</span> Izzy Piyale-Sheard.</span>
+  <span><a href="../index.html">Artifact hub</a> · <a href="https://github.com/izzydoesizzy/clearcareer-website-2026">Repository</a></span>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>

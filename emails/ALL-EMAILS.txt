@@ -1,0 +1,1152 @@
+========================================================================
+Buyer Welcome · step 1 · SALARY buyers
+SEND: Immediately after purchase
+TRIGGER: Stripe checkout.session.completed → Make → Brevo: BUYER=yes, PRODUCTS contains salary-generator. Starts automation "Buyer Welcome". Steps 2 to 7 are shared across all three products.
+SUBJECT: Your Salary Number Generator is inside (plus the one mistake to avoid)
+PREVIEW: Open it on your phone. Then do the walk-away number first.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+You're in. Here's your Salary Number Generator:
+
+[[Open the Salary Number Generator|https://REPLACE_access-link-salary]]
+
+{% if contact.BUMP == "yes" %}
+You also grabbed the Script Vault. Smart. All 100+ scripts are here:
+
+[[Open the Script Vault|https://REPLACE_access-link-script-vault]]
+{% endif %}
+
+**Do this in the next 10 minutes.** Open the generator. Fill in your target role and your city. Then go straight to the walk-away number.
+
+That's the one almost everyone leaves blank. It's also the one that saves you in the room. When you know the number you'd turn down, every other number gets easier to say out loud.
+
+Then come back and read the "what are you looking for?" script. Read it twice. Out loud once. I know. Do it anyway.
+
+Izzy
+
+P.S. Reply with the walk-away number you landed on. I read every one of these, and I'll tell you if it's too low. It's usually too low.
+
+========================================================================
+Buyer Welcome · step 1 · PROMPTS buyers
+SEND: Immediately after purchase
+TRIGGER: BUYER=yes, PRODUCTS contains prompt-vault
+SUBJECT: Your 50 prompts are inside (start with number 7)
+PREVIEW: One prompt. One weak bullet. Watch what happens.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+You're in. Here are your 50 prompts:
+
+[[Open the Career Prompt Vault|https://REPLACE_access-link-prompts]]
+
+{% if contact.BUMP == "yes" %}
+You also grabbed the Script Vault. All 100+ scripts are here:
+
+[[Open the Script Vault|https://REPLACE_access-link-script-vault]]
+{% endif %}
+
+**Don't read all 50.** Seriously. Go to the Resume section and find the Achievement Mining prompt. Take your weakest resume bullet, the one that says something like "managed a team and completed projects on time," and paste it in.
+
+Then answer the questions the prompt asks you. How many people? How much money? How much faster? You'll be surprised what you remember when something asks.
+
+Ten minutes from now you'll have a bullet with real numbers in it. That's the first of 15 to 20. Lather, rinse, repeat.
+
+Izzy
+
+P.S. Paste your before and after into a reply. I love these. And if the "after" still sounds like a robot wrote it, I'll tell you why.
+
+========================================================================
+Buyer Welcome · step 1 · OUTREACH buyers
+SEND: Immediately after purchase
+TRIGGER: BUYER=yes, PRODUCTS contains cold-outreach-pack
+SUBJECT: Your 30 scripts are inside (send one today)
+PREVIEW: Not tomorrow. Today. Here's which one.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+You're in. Here are your 30 scripts:
+
+[[Open the Cold Outreach Script Pack|https://REPLACE_access-link-outreach]]
+
+{% if contact.BUMP == "yes" %}
+You also grabbed the Script Vault, which means you've got the follow-ups, the interview scripts, and the negotiation emails too:
+
+[[Open the Script Vault|https://REPLACE_access-link-script-vault]]
+{% endif %}
+
+**Here's what I want you to do today.** Not this week. Today.
+
+Pick ONE company you'd like to work for. Go to LinkedIn, find one person who does the job you want or manages that team. Open script number 3, the informational interview ask. Change the two lines marked "personalise." Send it.
+
+That's it. One message. Blake sent 27 of these after 200 applications went nowhere. 13 people replied. One of them hired him.
+
+You don't need 27 today. You need one.
+
+Izzy
+
+P.S. When you get a reply (and you'd be surprised how often you do), hit reply here and tell me. I keep a running list of first replies and it's my favourite thing in my inbox.
+
+========================================================================
+Buyer Welcome · step 2
+SEND: Day 1
+TRIGGER: 24 hours after step 1
+SUBJECT: Blake sent 200 applications. Then 27 emails.
+PREVIEW: Same guy. Same resume. Completely different result.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Quick story.
+
+Blake writes for a living. Sharp guy. He applied to 200+ roles over months. Tailored resumes, the works. He got a handful of interviews and no offers. Silence, mostly.
+
+Then he stopped applying.
+
+Instead, he picked the companies he actually wanted to work for and sent 27 emails. Not applications. Emails. To real people, about real things, asking for a conversation.
+
+13 replied. Three of those turned into calls about roles. One of them hired him, $5K above what he was hoping for.
+
+Same guy. Same experience. Same resume, more or less. The only thing that changed was where the effort went.
+
+Here's the thing most people miss: your effort was never the problem. 200 applications is a LOT of effort. It just went into the part of the funnel with the worst odds.
+
+Tomorrow I'll show you what that costs, in actual dollars. It's a bigger number than you think.
+
+Izzy
+
+P.S. Blake's full story, and 57 other people's numbers, are in the outcomes report. No spin, just the survey data.
+
+[[Read the outcomes report|https://joinclearcareer.com/go/results]]
+
+========================================================================
+Buyer Welcome · step 3
+SEND: Day 3
+TRIGGER: 72 hours after step 1
+SUBJECT: The $8,300 a month nobody puts on the spreadsheet
+PREVIEW: Your burn rate. Let's do the math together.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Let's do some math. I'll use $100K because it keeps the numbers clean. Swap in your own.
+
+$100,000 a year is about $8,300 a month.
+
+The average job search right now runs 5.5 months. For senior roles, 6 to 9.
+
+So the "average" search costs somewhere between $45,000 and $75,000 in income you didn't earn. That's not a metaphor. That's a car. That's a down payment. That's a year of daycare.
+
+And here's the part that stings: most of that time is spent doing the thing with the worst odds. Applying. Refreshing. Applying again.
+
+I'm not telling you this to scare you. I'm telling you because when I show people this number, something shifts. They stop asking "how do I apply to more jobs?" and start asking "how do I cut two months off this?"
+
+That second question has an answer. It's a system, not more effort. I'll show you the whole thing in a couple of days.
+
+Izzy
+
+P.S. Want your real number? The runway calculator is free and takes 3 minutes: https://joinclearcareer.com/go/free. Severance, savings, side income, the date you need to be working by. It's sobering. It's also clarifying.
+
+========================================================================
+Buyer Welcome · step 4
+SEND: Day 5
+TRIGGER: 5 days after step 1
+SUBJECT: What I actually build with people (the list)
+PREVIEW: 20+ assets. None of them are homework.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+People ask me what "done with you" actually means. Fair. Every coach says something like it.
+
+So here's the literal list. These are the things we build together in the 8-week Accelerator. Every one starts from a 30-minute voice interview you do with my AI intake, and every one gets finished with me, not assigned to you.
+
+**Weeks 1 to 2, Foundation**
+- Resume with 15 to 20 quantified achievements
+- Professional summary
+- LinkedIn headline (3 versions), About section, custom banner, headshot
+
+**Weeks 3 to 4, Targeting**
+- 50+ target companies and 5 to 8 alternative job titles
+- Salary ranges by role and city
+- Tracking system, Boolean search strings, Google Alerts
+
+**Weeks 5 to 6, Outreach**
+- Cover letter template, 3 cold email templates
+- LinkedIn connection scripts, decision-maker search strings
+- The full email and DM set: intro, follow-up, thank-you
+
+**Weeks 7 to 8, Interviews and offers**
+- STAR story bank, 10 to 12 stories
+- 15 to 20 custom interview questions with answer strategy
+- The "silver bullet" thank-you email
+- Your salary negotiation plan and scripts
+
+Plus three private sessions with me, a Monday call, a Wednesday call, and WhatsApp in between. A group of 10, max.
+
+You don't go home with a to-do list. You go home with the thing.
+
+[[See the whole program|https://joinclearcareer.com/go/accelerator]]
+
+Izzy
+
+P.S. The next group starts the first Monday of next month. Week 1 is individual (your intake and kickoff), which is why a new group can start every month.
+
+========================================================================
+Buyer Welcome · step 5
+SEND: Day 7
+TRIGGER: 7 days after step 1. Skip if SESSION_BOOKED is set.
+SUBJECT: Can I be upfront about something?
+PREVIEW: I'm going to invite you to a call. Here's what it is and isn't.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+I'm going to invite you to a 25-minute call. Before I do, I want to tell you exactly what it is.
+
+It IS a real strategy session. I'll ask you about your last 90 days, your numbers (applications, conversations, interviews, offers), and your target. I'll find the one stage of your search that's broken. Then I'll tell you what I'd build to fix it. You'll leave with that even if we never talk again.
+
+It's ALSO a sales call. If it's a fit, I'll tell you which program I'd put you in, what it costs ($497 to $4,997, payment plans exist), and I'll ask you if you want to do it. On the call. Not "think about it and email me."
+
+I say this up front because pretending otherwise wastes your time and mine. You deserve to know what you're walking into.
+
+So here's the deal. Book this if you're targeting $100K+, you've been at this 3+ months (or you have an offer in hand), and you're open to investing in your search in the next 30 days if the plan makes sense.
+
+Don't book it if you're not in a position to invest right now. Keep the free tools, stay on this list, and come back when you are. No hard feelings. Truly.
+
+[[Book a Strategy Session|https://joinclearcareer.com/go/call]]
+
+Izzy
+
+P.S. After you book you'll get a 3-minute video and a one-pager with every price on it. Nobody gets surprised on my calls.
+
+========================================================================
+Buyer Welcome · step 6
+SEND: Day 10
+TRIGGER: 10 days after step 1. Skip if SESSION_BOOKED is set.
+SUBJECT: Tamara had zero interviews. Then this.
+PREVIEW: She was skeptical. She was right to be. Here's what happened anyway.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Tamara didn't want to work with a coach.
+
+Her words: "I was skeptical about working with a career coach. I was hesitant to spend the money since I wasn't sure if he could help me."
+
+She'd been applying for months. Zero interviews. An acquaintance mentioned me and said it had helped, so she figured I was probably okay.
+
+We rebuilt her resume around what she'd actually done, with numbers. We built a target list. We rewrote how she reached out.
+
+Multiple interviews. Then an offer. Then, because we'd prepped the negotiation, a $20K+ raise plus a $5K to $10K annual bonus. A 25% pay raise, after months of zero.
+
+I'm not sharing this because skepticism is wrong. Skepticism is smart. Most coaching IS advice you could have Googled.
+
+I'm sharing it because "zero interviews for another three months" is also a choice, and it's the expensive one.
+
+25 minutes. We find what's broken. I tell you what I'd build. You decide.
+
+[[Book a Strategy Session|https://joinclearcareer.com/go/call]]
+
+Izzy
+
+P.S. Tamara's full testimonial is on the results page, next to 79 others. I didn't write any of them.
+
+========================================================================
+Buyer Welcome · step 7
+SEND: Day 14
+TRIGGER: 14 days after step 1. Skip if SESSION_BOOKED is set. After send, remove from automation; contact joins the Saturday newsletter.
+SUBJECT: Last one from me about this (then back to the good stuff)
+PREVIEW: Two options. Both are fine. Pick one on purpose.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+This is the last email where I'll nudge you about the call. After this, you'll just get the Saturday email: one story, one tactic, one thing to do that week. No pitch.
+
+So let's make this one count. You've got two options, and both of them are fine.
+
+**Option 1: keep doing what you're doing.** You've got the generator, the scripts, or the prompts. Use them. Some people do great with just that. If that's you, awesome. I'll see you Saturday.
+
+**Option 2: 25 minutes with me this week.** We figure out the one thing that's broken, I tell you what I'd build with you, and you decide on the call. Yes or no. Either answer is a good answer.
+
+What I'd ask is that you pick one on purpose. The expensive option is the third one: not deciding, and running the same search for another three months.
+
+[[Book a Strategy Session|https://joinclearcareer.com/go/call]]
+
+Not ready for a call, but you'd like me in your corner every week? The Community is $29 a month: Monday priorities, Wednesday hot seats, every template I use. https://joinclearcareer.com/go/community
+
+Izzy
+
+P.S. Keep showing up. Whatever you pick.
+
+========================================================================
+Lead Welcome · step 1
+SEND: Immediately after opt-in
+TRIGGER: /api/subscribe or Brevo form: BUYER=no, TOPIC set, GUIDE_NAME and GUIDE_URL set. Starts automation "Lead Welcome".
+SUBJECT: Here's your {{ contact.GUIDE_NAME | default: "guide" }} (open it on your phone)
+PREVIEW: Plus the one thing to do with it today.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Here's what you asked for:
+
+[[Open your {{ contact.GUIDE_NAME | default: "guide" }}|{{ contact.GUIDE_URL }}]]
+
+{% if contact.TOPIC == "salary" %}
+**One thing to do with it today:** find your target role and city in the guide and write down the top of the range. Not the middle. The top. That's your anchor, and most people walk in anchored at the bottom without realising it.
+{% elsif contact.TOPIC == "outreach" %}
+**One thing to do with it today:** pick template number 1, the informational interview ask. Find one person on LinkedIn who does the job you want. Change the two personal lines. Send it. One message. Today.
+{% else %}
+**One thing to do with it today:** skim it once, then pick the single page that made you think "oh, I should do that." Do that one thing before you close the tab. Everything else can wait.
+{% endif %}
+
+Tomorrow I'll tell you why I was unemployed for most of a year. Twice. It's relevant, I promise.
+
+Izzy
+
+P.S. Hit reply and tell me what you're stuck on right now. One line is enough. I read every reply.
+
+========================================================================
+Lead Welcome · step 2
+SEND: Day 1
+TRIGGER: 24 hours after step 1
+SUBJECT: The year I didn't get a single offer
+PREVIEW: Career zig-zagger. Jack of all trades. Here's how that became the point.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+I've never had a straight-line career. Events, partnerships, community, teaching, a bit of everything. For years I thought that was the problem.
+
+It made my resume read like a buffet. Nobody could tell what I was for. And I spent long stretches unemployed, confused, and quietly convinced something was wrong with me. A full year without a single offer, at one point. Stuck in loops I couldn't break.
+
+When I moved into tech I did what I always do: I devoured everything and showed up everywhere. And I noticed something. At every event, people responded to the exact things I'd been embarrassed about. The energy. The habit of connecting people. The "I'll figure it out" muscle.
+
+That was the unlock for me. The mix I thought made me unfocused WAS the value. I just hadn't learned to say it.
+
+Once I could, opportunities started bubbling up. Not from job boards. From people.
+
+I've spent every year since 2016 building the support I wished I'd had back then. 200+ people coached. A 900+ member community. And a very specific belief: you are almost certainly more hireable than your resume says you are.
+
+Tomorrow: the one small thing I'd buy if I were you (it's $9, and you can skip it).
+
+Izzy
+
+P.S. The longer version, with the CBC Radio bit, is here: https://joinclearcareer.com/about
+
+========================================================================
+Lead Welcome · step 3
+SEND: Day 3
+TRIGGER: 72 hours after step 1. Skip if BUYER=yes.
+SUBJECT: The $9 thing I'd start with if I were you
+PREVIEW: One product. One problem. Skip it if $9 is a stretch right now.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+I make a handful of small, cheap tools. Each one solves one specific problem. Here's the one I'd put in your hands first, based on what you grabbed.
+
+{% if contact.TOPIC == "salary" %}
+**The Salary Number Generator, $9.** You walk away with your anchor, target, and walk-away numbers for your role and city, plus the word-for-word script for "what are you looking for?", the counteroffer email, and the response to "we can't go higher." Jorge used that last one after 12 months of searching and got $6K more than the "final" offer.
+
+[[Get the Salary Number Generator, $9|https://joinclearcareer.com/go/salary]]
+{% elsif contact.TOPIC == "outreach" %}
+**The Cold Outreach Script Pack, $9.** 30 copy-paste scripts: cold email to a hiring manager, LinkedIn connection request, informational interview ask, the follow-up that doesn't feel needy, the referral request, the thank-you. Each one has the subject line, the body, and the one line to personalise. Leanne sent ONE of these. The person opened it four times and forwarded it to the hiring manager.
+
+[[Get the Cold Outreach Script Pack, $9|https://joinclearcareer.com/go/outreach]]
+{% else %}
+**The Career Prompt Vault, $9.** 50 prompts that turn ChatGPT or Claude into your career strategist: achievement mining for your resume, LinkedIn headline and About, company research, interview questions, negotiation. 98% of members who compared say these beat anything else they've tried. 43% had never used AI before they started.
+
+[[Get the Career Prompt Vault, $9|https://joinclearcareer.com/go/prompts]]
+{% endif %}
+
+If $9 is a stretch right now, skip this one. I mean it. The free stuff is enough to start, and I'll keep sending it.
+
+Izzy
+
+P.S. At checkout you'll see one optional add-on, the Script Vault (100+ scripts) for $19 instead of $29. It's unchecked. Take it or leave it.
+
+========================================================================
+Lead Welcome · step 4
+SEND: Day 6
+TRIGGER: 6 days after step 1
+SUBJECT: 1 year unemployed. Hired in 3 weeks.
+PREVIEW: Kristin and Sparsh. Experience was never the problem.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Two quick ones.
+
+**Kristin** had plenty of experience. She'd been looking for full-time work for an entire year. Her words: "even though I had a lot of experience, I was still stuck." We rebuilt her resume around results, changed how she approached companies, and she was employed in three weeks.
+
+**Sparsh** had been searching for over a year. Hired in 30 days.
+
+I share these two together because they have the same lesson, and it's not "Izzy is magic." It's this: a year of searching is not evidence that you're unhireable. It's evidence that the method isn't working. Those are very different problems, and the second one is fixable.
+
+In the December 2024 survey of 58 members, 43% had been searching 7+ months before joining. Of the people who landed, 46% did it within one month. Not because they suddenly got more experience. Because the effort finally went to the right place.
+
+[[See the outcomes report|https://joinclearcareer.com/go/results]]
+
+Izzy
+
+P.S. If you're past the 6-month mark right now, reply and tell me. I want to know what you've tried. Sometimes one line back from me is enough to change the next week.
+
+========================================================================
+Lead Welcome · step 5
+SEND: Day 10
+TRIGGER: 10 days after step 1. Skip if SESSION_BOOKED is set. After send, contact joins the Saturday newsletter.
+SUBJECT: Want 25 minutes with me? Read this first.
+PREVIEW: It's free. It's also a sales call. Here's exactly what happens.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+I run a free 25-minute call called the Strategy Session. Before you book one, I want you to know exactly what it is.
+
+For about 15 minutes I ask you questions and find where your search is breaking: targeting, outreach, interviews, or the offer. Then I tell you what I'd build with you to fix it.
+
+And then I'll make you an offer. If it's a fit, I'll tell you which program ($497 to $4,997), what it costs, and ask if you want to do it. You can say no. People do, and we stay friends.
+
+Book it if you're targeting $100K+, you've been searching 3+ months or have an offer in hand, and you're open to investing in your search in the next 30 days.
+
+Don't book it if you want free coaching, or you're not in a position to invest right now. That's okay. The Saturday email keeps coming either way.
+
+[[Book a Strategy Session|https://joinclearcareer.com/go/call]]
+
+Izzy
+
+P.S. From here on you'll hear from me on Saturdays. One story, one tactic, one thing to do that week. If you ever want the call, the link lives at the bottom of every one.
+
+========================================================================
+Pre-Call · step 1
+SEND: Immediately after booking
+TRIGGER: Calendly booking webhook → Brevo SESSION_BOOKED=date. Starts automation "Pre-Call". Pauses Buyer Welcome and Lead Welcome for this contact.
+SUBJECT: You're booked. Here's how the call works (3 min read)
+PREVIEW: What happens, what it costs, and how to cancel if it's not for you.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Thanks for booking. I'm looking forward to this.
+
+Here's the short version of how the call works, so there are zero surprises:
+
+1. **About 15 minutes:** I ask questions. Some of them blunt. I'm looking for the one stage of your search that's broken.
+2. **About 5 minutes:** I tell you exactly what I'd build with you to fix it.
+3. **About 5 minutes:** I make you an offer and you decide. Yes or no. On the call.
+
+Yes, this is a sales call. I'd rather say that now than have you find out at minute 20. If it's a fit, I'll recommend one of these:
+
+- Career Clarity Intensive: $497
+- Job Search Accelerator (8-week group): $2,497 or 3 x $899
+- Salary Negotiation Sprint: $2,497 ($497 to start, the rest when you accept the better offer)
+- Private Accelerator (1:1): $4,997 or 3 x $1,749
+
+The full breakdown is here: https://joinclearcareer.com/go/services
+
+If none of that is in the cards for you right now, that's completely fine. Cancel using the link in your calendar invite, keep the free tools, and come back when the timing's right. No hard feelings. I mean that.
+
+If you're in, watch this. Three minutes. It'll make the call twice as useful:
+
+[[Watch the 3-minute video|https://REPLACE_precall-video]]
+
+Izzy
+
+P.S. Two quick results so you know who you're talking to: Kristin, 1 year unemployed, hired in 3 weeks. Tamara, zero interviews, then a $20K+ raise. 78 more are here: https://joinclearcareer.com/go/results
+
+========================================================================
+Pre-Call · step 2
+SEND: 24 hours before the call
+TRIGGER: Calendly event start minus 24h
+SUBJECT: Watch this before we talk (and 3 quick questions)
+PREVIEW: An 8-minute case study and a 4-minute form. Then we're ready.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+We're on tomorrow. Two things to do before then, and both are short.
+
+**First, watch this.** It's 8 minutes. It's how one client went from 200+ applications to 27 emails, 13 replies, and an offer. It'll show you how I think about a search, so we can skip the explaining tomorrow and get straight to yours.
+
+https://REPLACE_case-study-video
+
+**Second, answer three questions.** Four minutes, tops.
+
+1. Where are you right now, in one paragraph?
+2. What have you tried, and what happened?
+3. What's your number: target salary, and the date you need to be working by?
+
+[[Fill in the prep form|https://REPLACE_prep-form]]
+
+I read these right before we talk. People who fill it in get about twice as much out of the 25 minutes, because we start at the real problem instead of the backstory.
+
+See you tomorrow.
+
+Izzy
+
+P.S. If something's come up and you need to move the call, the reschedule link is in your calendar invite. Better to move it than to no-show.
+
+========================================================================
+Pre-Call · step 3
+SEND: 2 hours before the call
+TRIGGER: Calendly event start minus 2h. Brevo SMS or Calendly workflow SMS (paid).
+CHANNEL: SMS
+------------------------------------------------------------------------
+Izzy here. We're on at {{ time }} today. Bring your resume link and your target number. Zoom: {{ zoom_link }}. See you soon.
+
+========================================================================
+Pre-Call · step 4
+SEND: 2 hours before the call
+TRIGGER: Calendly event start minus 2h
+SUBJECT: See you in 2 hours
+PREVIEW: Zoom link, what to bring, and the one rule.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+We're on at {{ time }}. Here's your link:
+
+[[Join the Zoom|{{ zoom_link }}]]
+
+Bring two things: a link to your resume, and your target number.
+
+And one rule: be honest with me about where you are. The blunter you are, the more useful I can be. I've heard it all and none of it is embarrassing.
+
+Izzy
+
+========================================================================
+Pre-Call · step 5
+SEND: 15 minutes after a no-show
+TRIGGER: Izzy marks SESSION_OUTCOME=no_show in Brevo (or Calendly no-show). One send only.
+SUBJECT: Life happens. One click to rebook.
+PREVIEW: No guilt. Just the link.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+We missed each other today. It happens. Kids, work, a meeting that ran long, or honestly just a day where a sales call was the last thing you had energy for. All valid.
+
+If you still want the 25 minutes, grab another slot here:
+
+[[Rebook the Strategy Session|https://joinclearcareer.com/go/call]]
+
+If the timing's just not right, no need to reply. You'll keep getting the Saturday email, and the door stays open.
+
+Izzy
+
+========================================================================
+Pre-Call · step 6
+SEND: 15 minutes after a no-show
+TRIGGER: Same as step 5
+CHANNEL: SMS
+------------------------------------------------------------------------
+Hey, Izzy here. Looks like we missed each other. No stress. If you still want the 25 min, rebook here: joinclearcareer.com/go/call
+
+========================================================================
+No-Close · step 1
+SEND: Same day as the call, within 2 hours
+TRIGGER: SESSION_OUTCOME=no_close. Starts automation "No-Close". Step 1 is held for Izzy to personalise the two bracketed lines before it sends.
+SUBJECT: Thanks for today, {{ contact.FIRSTNAME | default: "friend" }}. Here's what I heard.
+PREVIEW: Your situation in your words, the first fix, and the link.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Good to meet you today. Here's what I heard, so you can check I got it right:
+
+[SITUATION: two sentences, in their words. Example: "You've been searching since June, 140 applications, 6 conversations, 2 interviews, no offers. You're targeting $120K in product and the money gets tight in February."]
+
+Here's the one thing I'd fix first, whether or not we work together:
+
+[FIRST FIX: one specific, free action. Example: "Stop applying for two weeks. Build a list of 25 companies and message one person at each. The script is in the outreach pack you already have."]
+
+And here's what I recommended: [PROGRAM], {{ contact.PROGRAM_PRICE }}. The next start is {{ contact.NEXT_START }}. The link below holds that price for 7 days:
+
+[[Enrol in the {{ contact.PROGRAM_NAME }}|{{ contact.PAYMENT_LINK }}]]
+
+No pressure. You know where I am.
+
+Izzy
+
+P.S. If the thing holding you back is something we didn't talk about, reply and tell me. I'd rather hear it than guess.
+
+========================================================================
+No-Close · step 2
+SEND: Day 2 after the call
+TRIGGER: 48 hours after step 1. Skip if SESSION_OUTCOME changes to closed.
+SUBJECT: The thing you said that stuck with me
+PREVIEW: Jorge said the same thing. 12 months in. Here's what happened.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Something you said on the call stuck with me: [OBJECTION. Default: "I've tried so much already, I'm not sure anything will be different."]
+
+Jorge said almost exactly that. He'd been searching for 12 months. 160+ applications. 16 interviews. Zero offers. He was convinced the problem was him.
+
+It wasn't. The interviews were happening, which meant the resume worked. The offers weren't, which meant the interview prep and the follow-up were where the search was leaking. So that's what we fixed. Not everything. The one leak.
+
+Three weeks later he had an offer. Then the employer said they "couldn't go higher," and he got $6K more anyway, because we'd written the response before he needed it.
+
+The lesson isn't "Jorge got lucky." It's that "I've tried everything" usually means "I've tried everything at the top of the funnel." The fix is almost always one stage, and you already know which one yours is. We found it on Tuesday.
+
+[[Enrol in the {{ contact.PROGRAM_NAME }}|{{ contact.PAYMENT_LINK }}]]
+
+Izzy
+
+P.S. The 3-payment option is on the same link.
+
+========================================================================
+No-Close · step 3
+SEND: Day 5 after the call
+TRIGGER: 5 days after step 1. Skip if closed.
+SUBJECT: Your burn rate, by my math
+PREVIEW: {{ contact.TARGET_SALARY }} divided by 12. Then divided by the program.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+You told me your target is {{ contact.TARGET_SALARY | default: "$100,000" }}. Let's do the math I do with everyone.
+
+That's about {{ contact.MONTHLY_BURN | default: "$8,300" }} a month you're not earning while this drags.
+
+The {{ contact.PROGRAM_NAME }} is {{ contact.PROGRAM_PRICE }}.
+
+So if we cut even two weeks off your search, it's paid for itself. Cut a month, it's paid for itself twice. In the December survey, of the members who landed, 46% did it within a month, and most of them had been stuck for over half a year before that.
+
+I'm not saying this to pressure you. I'm saying it because the question isn't "can I afford $2,497?" It's "can I afford another five months of this?" Only you know that answer. But do the math with your own numbers, honestly, before you decide.
+
+[[Enrol in the {{ contact.PROGRAM_NAME }}|{{ contact.PAYMENT_LINK }}]]
+
+Izzy
+
+P.S. Still sitting on the fence? Reply with one line about what's holding you back. I'll give you a straight answer, even if the straight answer is "don't buy this."
+
+========================================================================
+No-Close · step 4
+SEND: Day 9 after the call
+TRIGGER: 9 days after step 1. Skip if closed.
+SUBJECT: If it's not the right time, do this instead
+PREVIEW: You don't have to buy the program to have me in your corner.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+If the program isn't right for you right now, I get it. Timing, money, a partner who's not convinced, a search you want to give one more honest month. All real.
+
+Here's the thing though: you don't have to buy the program to have me in your corner.
+
+The ClearCareer Community is $29 a month. Every Monday, a 30-minute call to set your priorities for the week. Every Wednesday, a 60-minute hot seat where you bring the resume, the job post, or the message you're stuck on and we fix it live. Monthly workshops. Every template I use with private clients. Recordings of everything.
+
+It's less than a dollar a day, there's a 30-day refund, and you can cancel anytime. Several people in there are doing exactly what you're doing: running their own search with a weekly check-in so it doesn't drift.
+
+[[Join the Community, $29/mo|https://joinclearcareer.com/go/community]]
+
+Izzy
+
+P.S. If you join and later decide you want the full program, the Community month comes off the price.
+
+========================================================================
+No-Close · step 5
+SEND: Day 14 after the call
+TRIGGER: 14 days after step 1. Skip if closed. After send: SESSION_OUTCOME=cold, contact returns to the Saturday newsletter.
+SUBJECT: Closing the loop
+PREVIEW: I'm going to stop nudging. Two things stay true.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+I'm going to stop nudging you about the program. You've got the information, you know your situation better than I do, and you're a grown-up.
+
+Two things stay true:
+
+The Saturday email keeps coming. One story, one tactic, one thing to do that week. No pitch.
+
+And the door's open. If the timing changes, reply to any email and say "let's talk." We'll pick up where we left off. The first fix I gave you on the call still applies, by the way. Go do that one.
+
+Keep showing up for yourself.
+
+Izzy
+
+========================================================================
+Accelerator Onboarding · step 1
+SEND: Immediately after payment
+TRIGGER: Stripe payment for Accelerator or Private Accelerator → Brevo CLIENT=accelerator. Starts "Accelerator Onboarding". Ends all sales sequences.
+SUBJECT: You're in. Here's what happens in the next 48 hours.
+PREVIEW: Your intake link, your kickoff booking, and one thing to stop doing.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Welcome to the Accelerator. I'm genuinely excited to build this with you.
+
+Here's exactly what happens next, in order:
+
+**1. Do your AI Intake Interview (today or tomorrow, 30 minutes).** It's a voice conversation. Find a quiet spot, talk about your work the way you'd tell a friend, and let it ask the follow-ups. This is where your 20-page report comes from: quantified achievements, target companies, salary data. The more you say, the better the report.
+
+[[Start your AI Intake Interview|https://REPLACE_ai-intake-link]]
+
+**2. Book your 60-minute kickoff with me.** Pick a slot in the next 5 days: https://REPLACE_kickoff-booking. Your report will be ready before we meet.
+
+**3. Join the group.** Your Skool invite and the WhatsApp link are coming in a separate email within the hour. Say hi. Everyone in there is doing exactly what you're doing.
+
+And one thing to stop doing, starting now: stop applying to things for the next two weeks. I know. Trust me. We're about to rebuild the thing you'd be sending, and every application you send with the old resume is a company you can't re-approach with the new one.
+
+Izzy
+
+P.S. Monday 30-minute priorities call and Wednesday 60-minute group call. Times and Zoom links are pinned in Skool. Recordings go up the same day if you can't make one.
+
+========================================================================
+Accelerator Onboarding · step 2
+SEND: Day 2
+TRIGGER: 48 hours after step 1. Skip if INTAKE_DONE=yes.
+SUBJECT: Did you do the intake yet? (30 minutes, then I take over)
+PREVIEW: The report is only as good as what you say. Here's how to say more.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Quick nudge. If you've already done the intake, ignore this and go enjoy your evening.
+
+If you haven't, here's why it matters: everything we build in the next 8 weeks starts from that conversation. Resume, LinkedIn, target list, interview stories. All of it. The 30 minutes you spend talking is the 30 minutes that saves you 20 hours of homework.
+
+Three tips for a better report:
+
+1. **Say numbers, even rough ones.** "A team of about 8," "roughly $2M budget," "maybe 40% faster." The report will ask you to confirm later. Rough beats blank.
+2. **Tell stories, not duties.** Not "I managed vendor relationships." Instead: "There was a vendor who kept missing deadlines, so I..." The achievements hide in the stories.
+3. **Don't filter.** If you think something isn't impressive, say it anyway. Clients are wrong about what's impressive about them roughly 100% of the time.
+
+[[Start your AI Intake Interview|https://REPLACE_ai-intake-link]]
+
+Izzy
+
+P.S. ADHD brain? Same. Put your phone in another room, open the link, and just start talking. Starting is the whole battle.
+
+========================================================================
+Accelerator Onboarding · step 3
+SEND: The Friday before the group start (first Monday of the month)
+TRIGGER: Scheduled by Izzy per cohort, or Brevo automation on START_DATE minus 3 days.
+SUBJECT: Week 1: your schedule, your group, your one assignment
+PREVIEW: Monday 30 min. Wednesday 60 min. One thing to do before Wednesday.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Your group starts Monday. Here's the week.
+
+**Monday, 30 minutes, priorities call.** We each name the three things we're doing this week. That's it. Short on purpose.
+
+**Wednesday, 60 minutes, group call.** This is where the work happens. Resume drafts, LinkedIn headlines, the first version of your target list. Bring whatever you've got. Rough is fine. Rough is expected.
+
+**Between calls: WhatsApp.** Weekday business hours, lighter evenings and weekends. Ask a question, share a draft, get unstuck. Don't sit on something for three days. Send it.
+
+**Your one assignment before Wednesday:** read your 20-page report once, start to finish, with a pen. Circle anything that made you go "huh, I did do that." Bring the circles.
+
+Everything is pinned in Skool: Zoom links, the week-by-week map, the template vault, the prompt library.
+
+[[Open Skool|https://www.skool.com/clearcareer]]
+
+This is the part where it starts to feel less like a grind and more like a team sport. See you Monday.
+
+Izzy
+
+P.S. You'll get a short voice note from me every week. Some weeks it's a tip. Some weeks it's just "keep going." Both count.
+
+========================================================================
+Salary Sprint Kickoff · step 1
+SEND: Immediately after the $497 deposit
+TRIGGER: Stripe payment for Sprint deposit → Brevo CLIENT=sprint. Starts "Salary Sprint Kickoff".
+SUBJECT: Deposit received. Do NOT reply to them yet.
+PREVIEW: Three things to send me, one call to book, one thing to not do.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Deposit received. Let's get you paid.
+
+First, the most important line in this email: **do not reply to the employer yet.** Not "thanks, I'll think about it," not a question about benefits, nothing. If they've asked for an answer, the only thing you send is: "Thank you, I'm excited about this. I'd like to take a couple of days to review everything properly. Can I come back to you by [day]?" That's it. We'll write everything else together.
+
+Second, send me three things by reply or WhatsApp:
+
+1. The offer letter or email, exactly as they sent it.
+2. The job description and anything you know about the team, the manager, and how the interviews went.
+3. Your three numbers from the generator, if you've done it: anchor, target, walk-away. If you haven't, we'll do it on the call.
+
+Third, book our 60-minute strategy call. The sooner the better; most negotiations have a 2 to 5 day window.
+
+[[Book your 60-minute strategy call|https://REPLACE_sprint-booking]]
+
+On the call we'll clarify the role, position your value, set the numbers, and I'll draft the counteroffer email with you before we hang up. WhatsApp is open the whole time the negotiation is live.
+
+Reminder of the deal: we add at least $5,000 to your offer or you pay nothing. The $2,000 balance is only due when you accept the better offer.
+
+Izzy
+
+P.S. Breathe. You have more room than you think. 94% of negotiated offers stay on the table, and the ones that get pulled were never real offers.
+
+========================================================================
+Salary Sprint Kickoff · step 2
+SEND: Day after the client accepts the improved offer
+TRIGGER: Izzy sets SPRINT_RESULT=won and sets GAIN amount. Manual send or automation.
+SUBJECT: You did it. Three small things now.
+PREVIEW: The balance, a sentence from you, and one person you know.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+{{ contact.GAIN | default: "$5,000+" }} more than the first offer. For a few emails and one hard conversation you were dreading. That's the whole game, and you played it.
+
+Three small things now that the hard part's done:
+
+**1. The balance.** $2,000, due now that you've accepted. Here's the link:
+
+[[Pay the $2,000 balance|https://REPLACE_sprint-balance]]
+
+**2. One or two sentences from you.** What was it like? What were you worried about? What happened? Reply with it in your words. It doesn't need to be polished. The messy ones are the best ones. I'll ask before I use it anywhere.
+
+**3. One person.** You probably know someone who's about to get an offer, or who's been stuck for months. Forward them this email or send them https://joinclearcareer.com/go/call. If they book, I'll send you a $200 thank-you after their first session. Not because you need the incentive. Because it's the right thing to do for both of you.
+
+Now go enjoy the new number. You earned every dollar of it.
+
+Izzy
+
+P.S. Don't forget: your first week on the new job sets the tone for your first raise there. Reply "first 90" and I'll send you the 30-60-90 plan I give clients. Free. You've paid enough.
+
+========================================================================
+Clarity Intensive · step 1
+SEND: Immediately after the $497 payment
+TRIGGER: Stripe payment for Clarity → Brevo CLIENT=clarity. Starts "Clarity Intensive".
+SUBJECT: You're in. Start talking (30 minutes, whenever you like)
+PREVIEW: Your intake link, your booking link, and what the report will tell you.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Welcome in. Here's how the next two weeks go.
+
+**Step 1: the AI Intake Interview.** 30 minutes, voice, whenever you like. It'll ask you about your work the way a good friend who happens to be a career strategist would. Talk about the real stuff: the projects, the messes you fixed, the things you're proud of and the things you're sick of. Rough numbers are fine.
+
+[[Start your AI Intake Interview|https://REPLACE_ai-intake-link]]
+
+**Step 2: your 20-page report, within 3 business days.** Quantified achievements. 5 to 8 job titles you could target that you probably haven't considered. 15 to 20 companies. Salary ranges. A positioning statement that explains what you're for in two sentences.
+
+**Step 3: 90 minutes with me.** Book it here: https://REPLACE_clarity-booking. Pick a slot at least 4 days out so the report is ready. We turn the report into a 30-day plan: what to do, in what order, and what to stop doing.
+
+**Step 4: two weeks of WhatsApp.** Questions, drafts, "is this normal?" All welcome.
+
+One more thing. If, at the end of this, you decide you want the whole system built with you, the full $497 comes off the Accelerator or the Private Accelerator for 30 days after your session. No pressure to. Most people just use the plan.
+
+Izzy
+
+P.S. People tell me the intake conversation is weirdly therapeutic. Something about being asked good questions about your own work for 30 minutes. Enjoy it.
+
+========================================================================
+Clarity Intensive · step 2
+SEND: Day 20 after the 90-minute session
+TRIGGER: SESSION_DATE plus 20 days. Skip if CLIENT=accelerator.
+SUBJECT: 10 days left on your $497 credit (no pressure, just the date)
+PREVIEW: Your plan is working or it isn't. Here's how to tell, and what the credit covers.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Three weeks since we built your 30-day plan. How's it going? Honestly.
+
+Here's how to tell if it's working: are you having conversations with humans at companies on your list? Not applications. Conversations. If yes, you're on track, keep going, and ignore the rest of this email.
+
+If not, that's useful information too. Usually it means one of three things: the list is right but the outreach isn't landing, the outreach is fine but the resume behind it isn't, or the plan is right and life got in the way. All three are fixable. The first two are what the Accelerator is for.
+
+Your $497 credit toward the Accelerator (or the Private Accelerator) is good for 10 more days. The next group starts the first Monday of the month. I'm not going to chase you on this. I just don't want you to miss the date because nobody mentioned it.
+
+Want 15 minutes to talk through where you are? Free, no agenda:
+
+[[Book a 15-minute check-in|https://REPLACE_checkin-booking]]
+
+Izzy
+
+P.S. Whatever you decide, send me one win from the last three weeks. One. I'll take "I sent an email I was scared to send."
+
+========================================================================
+Community Onboarding · step 1
+SEND: Immediately after joining
+TRIGGER: Skool membership approved (Skool → Zapier or Make → Brevo MEMBER=yes). Starts "Community Onboarding".
+SUBJECT: Welcome in. Here's where everything is.
+PREVIEW: Call times, the vault, and one thing to do in the next 10 minutes.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Welcome to the ClearCareer Community. Less than a dollar a day, and I intend to make you feel slightly guilty about how good a deal that is.
+
+Here's where everything is:
+
+**The weekly rhythm (all times Eastern, recordings posted same day):**
+- Monday, 30 minutes: priorities call. Name your three things for the week.
+- Wednesday, 60 minutes: hot seat. Bring a resume, a job post, a stuck message. We fix it live.
+- First Thursday of the month, 60 minutes: workshop. Rotates through LinkedIn, interviews, negotiation, AI.
+
+**Always on, pinned in Skool:** the template vault (every email, DM, and follow-up I use), the 30+ prompt library, call recordings, and the "Start Here" post.
+
+**One thing to do in the next 10 minutes:** post an intro in Skool. Your target role, your city, how long you've been searching, and one thing you're stuck on. That last part matters. It's how I know what to bring to Wednesday.
+
+[[Introduce yourself in Skool|https://www.skool.com/clearcareer]]
+
+Izzy
+
+P.S. The 30-day refund is real. If this isn't making your search better after a month, email me and I'll refund you. I'd rather you leave happy than stay annoyed.
+
+========================================================================
+Community Onboarding · step 2
+SEND: Day 3
+TRIGGER: 72 hours after step 1
+SUBJECT: Bring one thing to Wednesday (here's how to prep it in 10 minutes)
+PREVIEW: Hot seats work when you bring something real. Here's what counts.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Wednesday is the heart of this whole thing. Here's how to get the most out of your first one.
+
+**Bring ONE thing.** Not your whole search. One of these:
+
+- A resume bullet you suspect is weak
+- A job posting you want and don't know how to approach
+- A LinkedIn message you drafted and didn't send
+- An interview question that keeps tripping you
+- An offer, a counter, or a conversation you need to have with a manager
+
+**Prep it in 10 minutes:** paste it into a doc, add two lines of context (what it's for, what you've tried), and have it ready to screen-share. That's it.
+
+Then raise your hand. The first hot seat is the scariest and the most useful. After that it's just Wednesday.
+
+[[Add Wednesday to your calendar|https://REPLACE_wednesday-calendar-link]]
+
+Izzy
+
+P.S. Can't make it live? Post your one thing in Skool with the tag "hot seat" and I'll cover it on the call. You get the recording the same day.
+
+========================================================================
+Community Onboarding · step 3
+SEND: Day 14
+TRIGGER: 14 days after step 1. After send, member joins the Saturday newsletter (members get a short "community corner" block).
+SUBJECT: Two weeks in. What's working?
+PREVIEW: Reply with one line. I read all of them.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Two weeks in. Quick check.
+
+Reply with one line: what's working, and what isn't?
+
+That's it. No form, no survey. I read every reply and I use them to decide what Wednesday's hot seats and next month's workshop should cover.
+
+If the honest answer is "I haven't shown up yet," that's okay, and that's also useful. Tell me what got in the way. Half the time the fix is just picking a different call to make your anchor.
+
+And if the honest answer is "this is great," I'd love to hear that too. I run this thing mostly on coffee and replies.
+
+Izzy
+
+P.S. Someone in the group got a reply from a hiring manager this week using the informational interview template, after three months of silence. One email. Go send yours.
+
+========================================================================
+Community Onboarding · step 4
+SEND: When a member cancels
+TRIGGER: Skool cancellation → Brevo MEMBER=cancelled
+SUBJECT: Before you go
+PREVIEW: No guilt trip. One question and one option.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Saw you cancelled. No guilt trip, I promise. People cancel for good reasons, and the best one is "I got the job." If that's you: congratulations. Seriously. Reply and tell me, I want to celebrate it.
+
+If it's something else, one question: what would have made this worth $29 to you? One line. I'm not going to argue, I'm going to listen. It's how the community gets better for the next person.
+
+And one option you might not know about: you can pause instead of cancel. Reply "pause" and I'll freeze your membership for up to 3 months at no charge, so you keep your rate and your access to the recordings when you come back.
+
+Either way, the Saturday email keeps coming, and the door's open.
+
+Izzy
+
+========================================================================
+Saturday Newsletter · step 0
+SEND: Every Saturday, 7:30am Eastern
+TRIGGER: Brevo campaign to everyone with SUBSCRIBED=yes who is NOT in an active automation (Buyer Welcome, Lead Welcome, Pre-Call, No-Close).
+SUBJECT: [Hook, under 50 characters, no clickbait]
+PREVIEW: [One line that extends the hook]
+------------------------------------------------------------------------
+Happy Saturday friends!
+
+[PERSONAL OPENER, 2 to 4 sentences. Something from Izzy's actual week: Reyhan, cycling, an ADHD moment, a client call that stuck, a thing he got wrong. Specific. One detail nobody else would have.]
+
+[THE STORY OR METAPHOR, 2 to 4 short paragraphs. Either a named client story with before and after numbers, or an extended metaphor from life that lands a career lesson. The voice guide has the bank: the grocery store, quicksand, farming vs hunting, the anaconda, Tony Starking.]
+
+**Here's the tactic.**
+
+[ONE TACTIC, with exact steps. Name the tool, the button, the words. 3 to 5 numbered steps. Pair with one concrete example.]
+
+**Do this ONE thing this week:** [a single micro-action that takes under 20 minutes]
+
+[CTA BLOCK, one of four, rotating:]
+
+[Week 1] Want 25 minutes with me on your search? It's free, it's also a sales call, and I say so up front. [[Book a Strategy Session|https://joinclearcareer.com/go/call]]
+
+[Week 2] Want me in your corner every week for less than a dollar a day? [[Join the Community, $29/mo|https://joinclearcareer.com/go/community]]
+
+[Week 3] This month's $9 tool: [name and one line]. [[Get it for $9|https://joinclearcareer.com/go/PRODUCT]]
+
+[Week 4] Free this week: [tool name and one line]. [[Try it|https://joinclearcareer.com/go/free]]
+
+{% if contact.MEMBER == "yes" %}
+**In the Community this week:** [Wednesday's hot seat topic, this week's win from a member (first name only), the next workshop date.]
+{% endif %}
+
+Have a great weekend,
+
+Izzy
+
+P.S. [A teaser for next week, a human detail, or a one-line reframe. Never a second CTA.]
+
+---
+
+If we haven't met yet, I'm Izzy 👋 Career coach, founder of ClearCareer, 200+ professionals coached, $1.2M+ in negotiated raises. Did a friend forward you this? Sign up here: https://joinclearcareer.com/go/free
+
+========================================================================
+Saturday Newsletter · step 1
+SEND: Sample, week 1 of the rotation (Strategy Session CTA)
+TRIGGER: Campaign
+SUBJECT: I spent 50 minutes in a grocery store and bought nothing
+PREVIEW: My ADHD brain, a shopping cart, and your job search.
+------------------------------------------------------------------------
+Happy Saturday friends!
+
+Confession. On Tuesday I went into the grocery store for three things. Milk, eggs, the specific bread Reyhan will actually eat. I walked out 50 minutes later with a plant, two kinds of hummus, and no bread. No eggs either.
+
+I had no list. I had a vague sense of "we need stuff." So I zig-zagged every aisle, picked up things that looked useful, put some back, got tired, and left. Then we ordered dinner and I felt vaguely guilty about it. Classic ADHD grocery run.
+
+Here's why I'm telling you this.
+
+That is EXACTLY what most job searches look like. No list. A vague sense of "I need a job." So you zig-zag every job board, pick up roles that look sort of useful, apply to some, abandon others, get tired, and close the laptop. Then you doom scroll LinkedIn and feel vaguely guilty about it.
+
+The problem isn't effort. 50 minutes in a grocery store is a LOT of effort. The problem is that effort with no list is just wandering. And wandering is exhausting in a way that walking to three specific shelves never is.
+
+**Here's the tactic.**
+
+Make the list. Not a list of jobs. A list of companies. Here's how, in about an hour:
+
+1. Open a blank sheet. Write down 5 companies you'd be genuinely happy to work for. Don't check if they're hiring. Doesn't matter yet.
+2. Go to LinkedIn, search "people who work at [company]," and for each one find one person who does the job you want or manages that team. Name, title, link. Five rows.
+3. Add 20 more companies by looking at who those five compete with, partner with, and get compared to. "Companies like X" into Google works great.
+4. For each company, one line: why you. Not why them. Why YOU would be good there. If you can't write the line, cross the company off.
+5. Sort by "want" not by "hiring." Then start at the top.
+
+That's your list. Twenty-five shelves instead of the whole store. Every hour you spend on your search now goes to one of those 25 rows, and you can see progress because the rows fill in.
+
+**Do this ONE thing this week:** write the first five companies. Just five. Fifteen minutes. Reply with them and I'll tell you if I know anyone there. You'd be surprised.
+
+Want 25 minutes with me on your search? It's free, it's also a sales call, and I say so up front. We find the one thing that's broken and I tell you what I'd build.
+
+[[Book a Strategy Session|https://joinclearcareer.com/go/call]]
+
+Have a great weekend,
+
+Izzy
+
+P.S. I went back Wednesday with a list. Eleven minutes. Milk, eggs, the bread. Boom.
+
+---
+
+If we haven't met yet, I'm Izzy 👋 Career coach, founder of ClearCareer, 200+ professionals coached, $1.2M+ in negotiated raises. Did a friend forward you this? Sign up here: https://joinclearcareer.com/go/free
+
+========================================================================
+Behaviour Triggers · step 1
+SEND: When triggered
+TRIGGER: Brevo: contact clicked 2+ links tagged "salary" in 30 days AND TOPIC is not "salary" AND CLIENT is empty. Sets TOPIC=salary. Max once per 90 days.
+SUBJECT: Offer coming?
+PREVIEW: You clicked two salary links this month. Here's the fast version.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Noticed you've been reading the negotiation stuff. Two clicks in a month usually means one of two things: an offer is coming, or you're kicking yourself about the last one.
+
+If an offer is coming, here's the fast version of everything I know:
+
+1. Never give the first number if you can help it. "I'd love to hear what range you've budgeted for the role" buys you time and information.
+2. If you must give a number, give your anchor, which is the top of the researched range, not the middle.
+3. Negotiate in writing when you can. Nerves don't show in an email.
+4. Everything is negotiable, not just base. Signing bonus, PTO, start date, remote days, a 6-month review.
+5. The first offer is never the final offer. 94% of negotiated offers stay on the table.
+
+And if the offer is a $100K+ one, this is the exact situation the Salary Negotiation Sprint exists for: we add at least $5,000 or you pay nothing. The first step is a free 25-minute call, ideally this week, because these windows are short.
+
+[[Book a Strategy Session|https://joinclearcareer.com/go/call]]
+
+Izzy
+
+P.S. If I misread the clicks and there's no offer, ignore all of this and have a great week. The 5 points still hold for next time.
+
+========================================================================
+Behaviour Triggers · step 2
+SEND: When triggered
+TRIGGER: Brevo: opened 4 of the last 6 Saturday emails, zero clicks in 60 days, CLIENT empty. Max once per 120 days.
+SUBJECT: One line?
+PREVIEW: You open these. You never click. I want to know why.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+You've opened the last few Saturday emails. Thank you, honestly. You've never clicked anything, which is also fine, and also makes me curious.
+
+One question, one line: what are you stuck on right now?
+
+Not "what do you want from me." Just the thing that's in the way this week. A resume that isn't landing. An interview you're dreading. A boss conversation you keep postponing. A search you haven't started.
+
+Reply with the one line. I read them all on Monday mornings with a coffee, and sometimes the next Saturday email is the answer.
+
+Izzy
+
+========================================================================
+Behaviour Triggers · step 3
+SEND: When triggered
+TRIGGER: Brevo: zero opens in 90 days. If no click within 7 days, set SUBSCRIBED=no and suppress. Keeps deliverability high.
+SUBJECT: Still want these?
+PREVIEW: No opens in 90 days. One click to stay, or I'll stop.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+It's been about three months since you opened one of these. No judgment. Inboxes are brutal.
+
+If you still want the Saturday email (one story, one tactic, one thing to do that week), click below and I'll keep them coming:
+
+[[Yes, keep sending them|https://REPLACE_resubscribe-link]]
+
+If you don't click, I'll stop in a week. You can always come back at joinclearcareer.com.
+
+Either way, I hope the search went well, or goes well. Keep showing up.
+
+Izzy
+
+========================================================================
+Client Wins · step 1
+SEND: 2 days after a client reports a signed offer
+TRIGGER: Izzy sets WIN=yes and WIN_DETAIL. Starts "Client Wins".
+SUBJECT: Can I ask you for two sentences?
+PREVIEW: You landed it. Before the new job eats your calendar, one favour.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+{{ contact.WIN_DETAIL | default: "You landed it." }} I'm still grinning about this.
+
+Before the new job eats your calendar, one favour. Two sentences, in your words:
+
+1. Where were you before we started? (The honest version: how long, how many applications, how you felt.)
+2. What happened?
+
+That's it. You can reply right here, or use the 2-minute form if you'd rather:
+
+[[Share two sentences|https://REPLACE_testimonial-form]]
+
+Messy is good. The ones people write in 90 seconds on their phone are always better than the polished ones. I'll ask before I use it anywhere, and I'll use your first name and last initial unless you tell me otherwise.
+
+And if you'd rather not, that's completely fine too. You've already given me the best part, which is the result.
+
+Izzy
+
+P.S. Reply "first 90" and I'll send you the 30-60-90 day plan I give new hires. Your first 90 days set up your first raise.
+
+========================================================================
+Client Wins · step 2
+SEND: 7 days after step 1
+TRIGGER: 7 days after step 1
+SUBJECT: One person
+PREVIEW: You know someone who's where you were. Here's how to help them.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Last one from me for a while. Then I'll leave you alone to be great at the new job.
+
+You probably know one person who's exactly where you were a few months ago. Stuck, applying into the void, quietly wondering if it's them. Or someone who just got an offer and is about to say yes to the first number.
+
+If you do, send them this link. It's the same free 25-minute call you had:
+
+https://joinclearcareer.com/go/call
+
+Or forward them this email. Either works. Tell them to mention you, and after their first session I'll send you a $200 thank-you. Not because you need the incentive, but because you'll have done both of us a real favour.
+
+Henrique recommended the program to three people after his two offers. Two of them found jobs. That's the kind of thing that makes this work worth doing.
+
+Thank you for trusting me with your search. Go be excellent.
+
+Izzy

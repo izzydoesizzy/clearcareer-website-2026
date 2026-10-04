@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Saturday email template | ClearCareer 2026</title>
+<meta name="description" content="Saturday Newsletter step 0: [Hook, under 50 characters, no clickbait]">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css"><link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+  <a class="nav__logo" href="../index.html"><img src="../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer <span class="small muted" style="font-family:var(--font-sans);font-size:.8rem;margin-left:.25rem">2026</span></a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  <ul class="nav__links" id="nav-links"><li><a href="../index.html">Hub</a></li><li><a href="../plan/marketing-plan.html">Plan</a></li><li><a href="../plan/funnel.html">Funnel</a></li><li><a href="index.html" aria-current="page">Emails</a></li><li><a href="../ads/index.html">Ads</a></li><li><a href="../site/index.html">Site</a></li></ul>
+</div></header>
+<main id="main"><div class="container" style="padding:2.5rem 0 5rem">
+  <div class="doc-header" style="padding-top:0">
+    <div class="crumbs"><a href="../index.html">Hub</a> / <a href="index.html">Emails</a> / Saturday Newsletter</div>
+    <h1>The Saturday email template</h1>
+    <div class="meta"><span class="badge">Saturday Newsletter · step 0</span><span>Every Saturday, 7:30am Eastern</span></div>
+  </div>
+  <div class="email-page">
+    <div>
+      <div class="email-frame"><div class="email"><div class="email__bar"><span>From: Izzy Piyale-Sheard &lt;izzy@joinclearcareer.com&gt;</span><strong>[Hook, under 50 characters, no clickbait]</strong><span class="preview">[One line that extends the hook]</span></div><div class="email__body" id="email-body"><p>Happy Saturday friends!</p>
+<p>[PERSONAL OPENER, 2 to 4 sentences. Something from Izzy's actual week: Reyhan, cycling, an ADHD moment, a client call that stuck, a thing he got wrong. Specific. One detail nobody else would have.]</p>
+<p>[THE STORY OR METAPHOR, 2 to 4 short paragraphs. Either a named client story with before and after numbers, or an extended metaphor from life that lands a career lesson. The voice guide has the bank: the grocery store, quicksand, farming vs hunting, the anaconda, Tony Starking.]</p>
+<p><strong>Here's the tactic.</strong></p>
+<p>[ONE TACTIC, with exact steps. Name the tool, the button, the words. 3 to 5 numbered steps. Pair with one concrete example.]</p>
+<p><strong>Do this ONE thing this week:</strong> [a single micro-action that takes under 20 minutes]</p>
+<p>[CTA BLOCK, one of four, rotating:]</p>
+<p>[Week 1] Want 25 minutes with me on your search? It's free, it's also a sales call, and I say so up front. <a class="btn btn--primary" href="https://joinclearcareer.com/go/call">Book a Strategy Session</a></p>
+<p>[Week 2] Want me in your corner every week for less than a dollar a day? <a class="btn btn--primary" href="https://joinclearcareer.com/go/community">Join the Community, $29/mo</a></p>
+<p>[Week 3] This month's $9 tool: [name and one line]. <a class="btn btn--primary" href="https://joinclearcareer.com/go/PRODUCT">Get it for $9</a></p>
+<p>[Week 4] Free this week: [tool name and one line]. <a class="btn btn--primary" href="https://joinclearcareer.com/go/free">Try it</a></p>
+<p _="%" endif="endif">{% if contact.MEMBER == "yes" %}
+<strong>In the Community this week:</strong> [Wednesday's hot seat topic, this week's win from a member (first name only), the next workshop date.]</p>
+<p>Have a great weekend,</p>
+<p>Izzy</p>
+<p>P.S. [A teaser for next week, a human detail, or a one-line reframe. Never a second CTA.]</p>
+<hr />
+<p>If we haven't met yet, I'm Izzy 👋 Career coach, founder of ClearCareer, 200+ professionals coached, $1.2M+ in negotiated raises. Did a friend forward you this? Sign up here: https://joinclearcareer.com/go/free</p></div><div class="email__footer">ClearCareer · Toronto, Canada · You're getting this because you signed up at joinclearcareer.com · Unsubscribe</div></div></div>
+      <div class="email-nav"><a class="btn btn--secondary btn--sm" href="comm-04-cancel.html">Previous: Before you go</a><a class="btn btn--secondary btn--sm" href="news-sample-01.html">Next: Sample issue: The grocery store problem</a></div>
+    </div>
+    <aside class="email-meta"><dl><dt>Sequence</dt><dd>Saturday Newsletter</dd><dt>Step</dt><dd>0</dd><dt>Send</dt><dd>Every Saturday, 7:30am Eastern</dd><dt>Trigger</dt><dd>Brevo campaign to everyone with SUBSCRIBED=yes who is NOT in an active automation (Buyer Welcome, Lead Welcome, Pre-Call, No-Close).</dd><dt>Goal</dt><dd>One story, one tactic, one thing to do this week, one CTA that rotates on a 4-week cycle. Takes Izzy 45 minutes to write. Measured on one number: clicks on the CTA.</dd><dt>Primary CTA</dt><dd>Rotates weekly: week 1 Strategy Session, week 2 Community, week 3 the $9 product of the month, week 4 a free tool</dd><dt>Notes</dt><dd>Members (MEMBER=yes) get an extra short block at the bottom: &quot;In the Community this week&quot;. Keep the structure identical every week so writing is fast.</dd></dl><button class="btn btn--secondary btn--sm btn--block mt-3 copy-btn" data-copy="#email-body">Copy body text</button><p class="small muted mt-2 mb-0">Paste into Brevo's editor. Replace [[Label|URL]] buttons with Brevo buttons.</p></aside>
+  </div>
+</div></main>
+<footer class="site-footer" style="padding:2rem 0"><div class="container footer__bottom" style="margin-top:0;padding-top:0;border:0">
+  <span>ClearCareer 2026 plan. Internal working documents. © <span data-year>2026</span> Izzy Piyale-Sheard.</span>
+  <span><a href="../index.html">Artifact hub</a> · <a href="https://github.com/izzydoesizzy/clearcareer-website-2026">Repository</a></span>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>

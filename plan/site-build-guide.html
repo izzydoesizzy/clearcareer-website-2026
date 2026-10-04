@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Build Guide | ClearCareer 2026</title>
+<meta name="description" content="How the static site is built: rules, components, facts, placeholders.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css"><link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+  <a class="nav__logo" href="../index.html"><img src="../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer <span class="small muted" style="font-family:var(--font-sans);font-size:.8rem;margin-left:.25rem">2026</span></a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  <ul class="nav__links" id="nav-links"><li><a href="../index.html">Hub</a></li><li><a href="marketing-plan.html">Plan</a></li><li><a href="funnel.html">Funnel</a></li><li><a href="../emails/index.html">Emails</a></li><li><a href="../ads/index.html">Ads</a></li><li><a href="../site/index.html">Site</a></li></ul>
+</div></header>
+<main id="main"><div class="container docs-shell">
+<aside class="docs-side">
+  <h4>Documents</h4><ul><li><a href="marketing-plan.html">Marketing Plan</a></li><li><a href="funnel.html">Funnel Map</a></li><li><a href="offers.html">Offers and Pricing</a></li><li><a href="tools-and-costs.html">Tools and Costs</a></li><li><a href="strategy-session.html">Strategy Session Playbook</a></li><li><a href="manychat-flows.html">ManyChat Flows</a></li><li><a href="content-calendar.html">Content Calendar</a></li><li><a href="kpis.html">KPIs and Tracking</a></li><li><a href="launch-checklist.html">Launch Checklist</a></li><li><a href="site-build-guide.html" aria-current="page">Site Build Guide</a></li><li><a href="../ads/index.html">Ads Plan</a></li><li><a href="../emails/index.html">Email Sequences</a></li></ul>
+  <div class="toc"><h4>On this page</h4><ul><li><a href="#1-rules">1. Rules</a></li><li><a href="#2-shared-markup">2. Shared markup</a></li><li><a href="#head-from-site" class="lvl-3">Head (from site/)</a></li><li><a href="#header-and-footer" class="lvl-3">Header and footer</a></li><li><a href="#3-components-class-names">3. Components (class names)</a></li><li><a href="#4-facts-to-use-do-not-invent-new-numbers">4. Facts to use (do not invent new numbers)</a></li><li><a href="#5-external-links-and-placeholders">5. External links and placeholders</a></li><li><a href="#6-page-checklist">6. Page checklist</a></li></ul></div>
+</aside>
+<article class="doc">
+  <div class="doc-header">
+    <div class="crumbs"><a href="../index.html">Hub</a> / Plan</div>
+    <h1>Site Build Guide</h1>
+    <div class="meta"><span>How the static site is built: rules, components, facts, placeholders.</span><span>Source: <code>docs/SITE-BUILD-GUIDE.md</code></span></div>
+  </div>
+  <p>How every page in <code>site/</code> is built. Plain HTML and CSS, no framework, no build step for the site itself. This file is the contract: anyone (or any agent) adding a page follows it.</p>
+<h2 id="1-rules">1. Rules</h2>
+<ol>
+<li><strong>Relative links only.</strong> The site is served from <code>https://izzydoesizzy.github.io/clearcareer-website-2026/</code>, a sub-path. A leading slash breaks every link. From <code>site/*.html</code> use <code>../assets/...</code> and <code>services.html</code>. From <code>site/go/*.html</code> and <code>site/thanks/*.html</code> use <code>../../assets/...</code> and <code>../services.html</code>.</li>
+<li><strong>One stylesheet.</strong> <code>assets/css/site.css</code> holds every component. A page may add a <code>&lt;style&gt;</code> block of at most 30 lines for something truly page-specific. If a component is needed twice, it goes into <code>site.css</code>.</li>
+<li><strong>Copy passes the voice gate.</strong> No em dashes (U+2014) or en dashes (U+2013) anywhere, including <code>alt</code> text and <code>title</code> tags. No five-dollar words (leverage, unlock, empower, optimize, comprehensive, journey, navigate, landscape, elevate, transformative, game-changing, holistic, seamless, robust). No "In today's", "It's important to note", "At the end of the day". Short sentences. "We" and "let's". Specific numbers. Client quotes are the client's words and are exempt.</li>
+<li><strong>One primary CTA per page.</strong> Marketing pages: "Book a Strategy Session". Funnel pages (<code>go/*</code>): "Get it for $9". Community: "Join for $29/mo". Secondary CTAs are text links or <code>btn--secondary</code>.</li>
+<li><strong>Prices in CAD.</strong> Write "$2,497" the first time with "CAD" nearby once per page, then plain.</li>
+<li><strong>Every page has:</strong> the shared <code>&lt;head&gt;</code>, the shared header, <code>&lt;main id="main"&gt;</code>, the shared footer, and <code>site.js</code>. Copy them from <code>site/index.html</code> verbatim and change only the <code>aria-current</code> link.</li>
+<li><strong>Images</strong> live in <code>assets/img/</code>. Testimonial headshots exist for: blake-mcdermott, darin-mellor, kira-howe, kristin-davis, laura-salamanca, raunika-lamge, sparsh-kalia, tamara-gordon (all <code>.png</code>). Everyone else gets an initials avatar: <code>&lt;div class="avatar avatar--initials"&gt;JG&lt;/div&gt;</code>.</li>
+<li><strong>Accessibility:</strong> one <code>h1</code> per page, headings in order, <code>alt</code> on every image (empty <code>alt=""</code> for decorative), buttons are <code>&lt;a&gt;</code> when they go somewhere and <code>&lt;button&gt;</code> when they do something, colour contrast as in the tokens.</li>
+<li><strong>Tracking:</strong> every link that leaves the site to Stripe, Calendly, or Skool carries <code>data-track</code> so <code>site.js</code> forwards UTM parameters.</li>
+</ol>
+<h2 id="2-shared-markup">2. Shared markup</h2>
+<h3 id="head-from-site">Head (from <code>site/</code>)</h3>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; class=&quot;no-js&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;Page Title | ClearCareer&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;One sentence, under 160 characters.&quot;&gt;
+  &lt;link rel=&quot;icon&quot; href=&quot;../assets/img/favicon.svg&quot; type=&quot;image/svg+xml&quot;&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@400;500;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../assets/css/site.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<h3 id="header-and-footer">Header and footer</h3>
+<p>Copy from <code>site/index.html</code>. The header has five items: Work With Me, Shop, Free Tools, About, and the button "Book a Strategy Session". The footer has four columns: brand, Work with me, Free, Company.</p>
+<h2 id="3-components-class-names">3. Components (class names)</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Markup</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Section</td>
+<td><code>&lt;section class="section [section--alt|section--soft|section--navy|section--tight]"&gt;&lt;div class="container"&gt;</code></td>
+<td><code>section-head</code> centres a heading block; add <code>section-head--left</code> to left-align</td>
+</tr>
+<tr>
+<td>Eyebrow</td>
+<td><code>&lt;p class="eyebrow"&gt;Text&lt;/p&gt;</code></td>
+<td>Small caps blue label above headings</td>
+</tr>
+<tr>
+<td>Hero</td>
+<td><code>&lt;section class="hero hero--pattern"&gt;&lt;div class="container grid grid--split"&gt;</code></td>
+<td>Variants: <code>hero--center</code>, <code>hero--navy</code>. Photo: <code>&lt;img class="hero__photo"&gt;</code>, floating stat: <code>&lt;div class="hero__float"&gt;</code></td>
+</tr>
+<tr>
+<td>Buttons</td>
+<td><code>btn btn--primary</code>, <code>btn--secondary</code>, <code>btn--white</code>, <code>btn--outline-white</code>, <code>btn--ghost</code>, sizes <code>btn--lg</code>, <code>btn--sm</code>, <code>btn--block</code></td>
+<td>Wrap groups in <code>&lt;div class="btn-row [btn-row--center]"&gt;</code>; follow with <code>&lt;p class="trust-line"&gt;</code></td>
+</tr>
+<tr>
+<td>Stats</td>
+<td><code>&lt;div class="stats"&gt;&lt;div class="stat"&gt;&lt;div class="stat__num"&gt;200+&lt;/div&gt;&lt;div class="stat__label"&gt;Coached&lt;/div&gt;&lt;div class="stat__note"&gt;optional&lt;/div&gt;&lt;/div&gt;…</code></td>
+<td>Four tiles</td>
+</tr>
+<tr>
+<td>Logos</td>
+<td><code>&lt;div class="logos"&gt;&lt;span class="logos__label"&gt;Featured in&lt;/span&gt;&lt;span class="logos__item"&gt;CBC Radio&lt;/span&gt;…&lt;/div&gt;</code></td>
+<td>Text pills, no image logos</td>
+</tr>
+<tr>
+<td>Grid</td>
+<td><code>grid grid--2</code>, <code>grid--3</code>, <code>grid--4</code>, <code>grid--split</code></td>
+<td>Collapses on mobile</td>
+</tr>
+<tr>
+<td>Card</td>
+<td><code>&lt;div class="card [card--featured|card--navy|card--blue|card--flat]"&gt;</code></td>
+<td>Children: <code>card__badge</code>, <code>card__icon</code>, <code>h3</code>, <code>p</code>, <code>card__meta</code>, <code>card__price</code>, <code>card__footer</code></td>
+</tr>
+<tr>
+<td>Offer card</td>
+<td><code>&lt;div class="card offer [card--featured]"&gt;&lt;p class="offer__tier"&gt;…&lt;/p&gt;&lt;p class="offer__price"&gt;$2,497 &lt;small&gt;CAD&lt;/small&gt;&lt;/p&gt;&lt;p class="offer__plan"&gt;or 3 x $899&lt;/p&gt;&lt;p class="offer__for"&gt;Best for…&lt;/p&gt;&lt;ul class="check-list"&gt;…&lt;/ul&gt;&lt;a class="btn …"&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Compare table</td>
+<td><code>&lt;div class="table-wrap"&gt;&lt;table class="compare"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th class="is-featured"&gt;…</code></td>
+<td>Add <code>is-featured</code> to the same column in every row</td>
+</tr>
+<tr>
+<td>Steps</td>
+<td><code>&lt;div class="steps"&gt;&lt;div class="step"&gt;&lt;div class="step__num"&gt;1&lt;/div&gt;&lt;h3&gt;…&lt;/h3&gt;&lt;p&gt;…&lt;/p&gt;&lt;/div&gt;…</code></td>
+<td>Four by default</td>
+</tr>
+<tr>
+<td>Lists</td>
+<td><code>check-list</code> (green ✓), <code>x-list</code> (red ✕), <code>num-list</code> (blue numbers)</td>
+<td></td>
+</tr>
+<tr>
+<td>Quote</td>
+<td><code>&lt;figure class="quote"&gt;&lt;div class="quote__mark"&gt;“&lt;/div&gt;&lt;blockquote class="quote__text"&gt;…&lt;/blockquote&gt;&lt;figcaption class="quote__who"&gt;&lt;img class="avatar" …&gt;&lt;div&gt;&lt;div class="quote__name"&gt;…&lt;/div&gt;&lt;div class="quote__role"&gt;…&lt;/div&gt;&lt;/div&gt;&lt;/figcaption&gt;&lt;span class="badge badge--success quote__outcome"&gt;$20K raise&lt;/span&gt;&lt;/figure&gt;</code></td>
+<td><code>quote--big</code> for one large pull quote</td>
+</tr>
+<tr>
+<td>Result card</td>
+<td><code>&lt;div class="result-card"&gt;&lt;div class="result-card__top"&gt;&lt;div class="result-card__num"&gt;3 weeks&lt;/div&gt;&lt;div class="result-card__label"&gt;after 1 year unemployed&lt;/div&gt;&lt;/div&gt;&lt;div class="result-card__body"&gt;&lt;p&gt;…&lt;/p&gt;&lt;p class="card__meta"&gt;Kristin D.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</code></td>
+<td>Before/after numbers</td>
+</tr>
+<tr>
+<td>Guarantee</td>
+<td><code>&lt;div class="guarantee"&gt;&lt;div class="guarantee__icon"&gt;✓&lt;/div&gt;&lt;div&gt;&lt;h3&gt;…&lt;/h3&gt;&lt;p&gt;…&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Math box</td>
+<td><code>&lt;div class="math"&gt;&lt;div class="math__row"&gt;&lt;span&gt;Target salary&lt;/span&gt;&lt;strong&gt;$110,000&lt;/strong&gt;&lt;/div&gt;…</code></td>
+<td>Burn-rate maths, navy</td>
+</tr>
+<tr>
+<td>Notice</td>
+<td><code>notice</code>, <code>notice--info</code>, <code>notice--success</code></td>
+<td></td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td><code>&lt;div class="faq"&gt;&lt;details class="faq__item"&gt;&lt;summary&gt;Q&lt;/summary&gt;&lt;p&gt;A&lt;/p&gt;&lt;/details&gt;…</code></td>
+<td>Native, no JS</td>
+</tr>
+<tr>
+<td>CTA band</td>
+<td><code>&lt;div class="cta-band [cta-band--blue]"&gt;&lt;h2&gt;…&lt;/h2&gt;&lt;p&gt;…&lt;/p&gt;&lt;div class="btn-row"&gt;…&lt;/div&gt;&lt;/div&gt;</code></td>
+<td>Inside a <code>container</code></td>
+</tr>
+<tr>
+<td>Timeline</td>
+<td><code>&lt;ul class="timeline"&gt;&lt;li&gt;&lt;strong&gt;Week 1&lt;/strong&gt; text&lt;/li&gt;…</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Before/after</td>
+<td><code>&lt;div class="before-after"&gt;&lt;figure&gt;&lt;img…&gt;&lt;figcaption&gt;Before&lt;/figcaption&gt;&lt;/figure&gt;&lt;figure&gt;…</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Sticky CTA</td>
+<td><code>&lt;div class="sticky-cta"&gt;&lt;div&gt;&lt;strong&gt;$2,497&lt;/strong&gt; &lt;span class="small muted"&gt;or 3 x $899&lt;/span&gt;&lt;/div&gt;&lt;a class="btn btn--primary btn--sm" href="…"&gt;Book a Strategy Session&lt;/a&gt;&lt;/div&gt;</code></td>
+<td>Sales pages only, mobile only</td>
+</tr>
+<tr>
+<td>Video placeholder</td>
+<td><code>&lt;div class="video-placeholder"&gt;&lt;div&gt;&lt;div class="video-placeholder__play"&gt;▶&lt;/div&gt;Title&lt;small&gt;3 min&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;</code></td>
+<td>Replace with an embed later</td>
+</tr>
+<tr>
+<td>Embed</td>
+<td><code>&lt;div class="embed"&gt;&lt;iframe src="…" title="…"&gt;&lt;/iframe&gt;&lt;/div&gt;</code></td>
+<td>Calendly</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>add <code>data-animate</code> (and optional <code>data-delay="80"</code>) to any block</td>
+<td>Fades up on scroll</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-facts-to-use-do-not-invent-new-numbers">4. Facts to use (do not invent new numbers)</h2>
+<p><strong>Proof</strong></p>
+<ul>
+<li>200+ professionals coached. $1.2M+ in negotiated raises.</li>
+<li>December 2024 survey of 58 program members: NPS 84, average rating 4.84/5, 84% gave 5 stars, 84% of members who landed increased their compensation, average raise $21,742, 64% landed during the program, 46% of those who landed did so within one month, 68% within two months, 43% had been searching 7+ months before joining, confidence 2.45 to 4.50 out of 5.</li>
+<li>98% of surveyed members who compared say ClearCareer's AI prompts beat anything else they tried. 43% had rarely or never used AI before.</li>
+<li>900+ member peer community founded 2016. 3,500+ event attendees.</li>
+<li>Featured in: CBC Radio, Global News, Newsweek, Inc. Magazine, Notable Life. Workshops for: University of Toronto, Toronto Metropolitan University, Humber College, CivicAction YouthConnect, Lighthouse Labs, United Nations Association in Canada, FlexJobs.</li>
+</ul>
+<p><strong>Market numbers (cite source in small text where used)</strong></p>
+<ul>
+<li>Average job search 5.5 months (BLS, 2025). Senior roles 6 to 9 months (LinkedIn, 2024).</li>
+<li>About 8.5% of applications get a callback (Indeed, 2024).</li>
+<li>Up to 85% of jobs are filled through networking (LinkedIn); referrals hired at 10x the rate (Jobvite).</li>
+<li>55% of workers never negotiate (Pew, 2023). Negotiators average 18% more.</li>
+<li>At $100K, every month without a job costs about $8,300.</li>
+</ul>
+<p><strong>Client results (name, outcome, the line to quote)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Outcome</th>
+<th>Quote (verbatim, trim with care)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kristin Davis</td>
+<td>1 year unemployed, hired in 3 weeks</td>
+<td>"I was looking for full-time work for an entire year and even though I had a lot of experience, I was still stuck. After working with Izzy, I was employed in just three weeks."</td>
+</tr>
+<tr>
+<td>Sparsh Kalia</td>
+<td>1+ year searching, hired in 30 days</td>
+<td>"Izzy is a great person and an excellent mentor when it comes down to searching for a new job."</td>
+</tr>
+<tr>
+<td>Blake McDermott</td>
+<td>200+ applications, then 27 emails, 13 replies, 1 offer, $5K more</td>
+<td>"Considering I write for a living, I am very rarely at a loss for words... this is one of the rare times I can't fully express how appreciative I am."</td>
+</tr>
+<tr>
+<td>Tamara Gordon</td>
+<td>Zero interviews, then $20K+ raise plus $5K to $10K bonus</td>
+<td>"I was skeptical about working with a career coach... I was hesitant to spend the money since I wasn't sure if he could help me."</td>
+</tr>
+<tr>
+<td>Laura Salamanca</td>
+<td>$22,000 raise, 30%+, dream role</td>
+<td>"Izzy's strategies for job search success are the real deal."</td>
+</tr>
+<tr>
+<td>Chris Chipman</td>
+<td>$25K raise, Associate Director</td>
+<td>"His guidance in narrowing my personal narrative from experience toward tangible quantified metrics and accomplishments gave me a significant edge in my interview... and salary negotiation."</td>
+</tr>
+<tr>
+<td>Henrique Perez</td>
+<td>2 offers in 1 week, 30% raise, referred 3 people (2 hired)</td>
+<td>"I received two job offers in a week and negotiated a 30% higher salary."</td>
+</tr>
+<tr>
+<td>Annie Bell</td>
+<td>2 offers in weeks, 200% salary increase</td>
+<td>"If you're on the fence, go for it."</td>
+</tr>
+<tr>
+<td>Septembre Anderson</td>
+<td>$10K above the offer, overcame impostor syndrome</td>
+<td>"I woke up to interviews after applying with my new resume, and I negotiated $10K above the offer."</td>
+</tr>
+<tr>
+<td>Marsha Druker</td>
+<td>$10K above the offer after a 3-year break</td>
+<td>"Izzy helped me evaluate two exciting opportunities, determine a realistic salary range, and prepare for negotiations."</td>
+</tr>
+<tr>
+<td>Wil Gerard</td>
+<td>3 offers, $10K raise</td>
+<td>"He helped me hone in on my strengths and communicate them effectively."</td>
+</tr>
+<tr>
+<td>Jorge Garboza</td>
+<td>12 months and 160 applications, then an offer plus $6K after "we can't go higher"</td>
+<td>"I spent 12 months applying to 160+ jobs and with Izzy's help, in 3 weeks, I managed to land a job."</td>
+</tr>
+<tr>
+<td>Kira Howe</td>
+<td>$127K plus $5K negotiated plus 30 PTO days, freelancer to full-time</td>
+<td>"Izzy helped me polish my public-facing profiles and put together a real resume for the first time in my life."</td>
+</tr>
+<tr>
+<td>Alison Gibbins</td>
+<td>Top of range plus 5 extra vacation days, corporate to nonprofit</td>
+<td>"I negotiated top pay, extra vacation, and found a role where I make a real difference every day."</td>
+</tr>
+<tr>
+<td>Victor Perez</td>
+<td>500+ applications and 10 interviews in 11 months, then 3 interviews in 2 weeks</td>
+<td>"After some intense and riveting work with Izzy..."</td>
+</tr>
+<tr>
+<td>Darin Mellor</td>
+<td>600+ applications and 3 interviews, then a signed offer</td>
+<td>"Izzy helped me slow down, focus on quality over quantity, and be proactive in reaching out to hiring managers."</td>
+</tr>
+<tr>
+<td>Raunika Lamge</td>
+<td>Director role at a large Canadian payments company</td>
+<td>"He helped me refine my target roles, and build confidence."</td>
+</tr>
+<tr>
+<td>Daniela Dyer Melhado</td>
+<td>Legal Analyst at the World Bank</td>
+<td>"I was over-the-moon that World Bank offered me the job."</td>
+</tr>
+<tr>
+<td>Andrew Cameron</td>
+<td>Employer responses in the first week after expensive courses failed</td>
+<td>"Izzy's system really changed my methods of job-searching from sending hundreds of resumes online with little to no responses - to immediate communication channels opening up within the first week."</td>
+</tr>
+<tr>
+<td>Leanne Saldanha</td>
+<td>One email, opened 4 times, forwarded to the hiring manager</td>
+<td>"I've sent ONE reach out email... The guy I sent it to opened it 4 times and then forwarded it to a colleague."</td>
+</tr>
+<tr>
+<td>Adam Kastor</td>
+<td>Career kickstart in one session</td>
+<td>"Izzy gave me exactly what I needed: a kickstart! In just our first talk he helped me identify action items I could do right away."</td>
+</tr>
+<tr>
+<td>Kevin Truong</td>
+<td>Career pathway clarity for a founder</td>
+<td>"He helped me identify key elements of my experience, craft a stronger intro story and create an impact profile."</td>
+</tr>
+<tr>
+<td>Kay Woods</td>
+<td>Product Manager</td>
+<td>"Izzy is no hype. This man is a real life wizard of 'work'... He is worth every penny."</td>
+</tr>
+</tbody>
+</table>
+<p>Do not use the $90K to $260K story on marketing pages.</p>
+<p><strong>Offers and prices (CAD)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Offer</th>
+<th>Price</th>
+<th>Page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$9 products: Salary Number Generator, Career Prompt Vault, Cold Outreach Script Pack</td>
+<td>$9 each; order bump: Job Search Script Vault $19 (list $29)</td>
+<td><code>go/salary.html</code>, <code>go/prompts.html</code>, <code>go/outreach.html</code></td>
+</tr>
+<tr>
+<td>ClearCareer Community</td>
+<td>$29/mo or $249/yr, 30-day refund</td>
+<td><code>community.html</code></td>
+</tr>
+<tr>
+<td>Career Clarity Intensive</td>
+<td>$497, credit toward the Accelerator within 30 days</td>
+<td><code>clarity.html</code></td>
+</tr>
+<tr>
+<td>Job Search Accelerator (group of 10, 8 weeks, starts first Monday monthly)</td>
+<td>$2,497 or 3 x $899</td>
+<td><code>accelerator.html</code></td>
+</tr>
+<tr>
+<td>Private Accelerator (1:1, 3 spots a month)</td>
+<td>$4,997 or 3 x $1,749</td>
+<td><code>accelerator.html#private</code></td>
+</tr>
+<tr>
+<td>Salary Negotiation Sprint</td>
+<td>$2,497: $497 deposit, $2,000 when the improved offer is accepted; $5,000 added or you pay nothing</td>
+<td><code>salary-negotiation.html</code></td>
+</tr>
+<tr>
+<td>Profile Overhaul</td>
+<td>$1,997, call-only, not listed</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accelerator deliverables (20+ assets, 4 pillars)</strong></p>
+<ul>
+<li>Foundation (weeks 1 to 2): professionally written resume with 15 to 20 quantified CAR achievements, professional summary, LinkedIn headline in 3 versions, LinkedIn About section, custom LinkedIn banner, AI-enhanced headshot.</li>
+<li>Target Strategy (weeks 3 to 4): 50+ target companies, 5 to 8 alternative job titles, salary ranges by role and city, job search tracking system, Boolean search strings, Google Alerts.</li>
+<li>Outreach System (weeks 5 to 6): cover letter template, 3 cold email templates, LinkedIn connection scripts, decision-maker search strings, full email and DM template set.</li>
+<li>Interview Toolkit (weeks 7 to 8): STAR story bank of 10 to 12 stories, 15 to 20 custom interview questions with answer strategy, the "silver bullet" thank-you email, salary negotiation framework and scripts.</li>
+<li>Support: 3 private sessions (60-min kickoff week 1, 45-min review week 4, 60-min closing week 8), Monday 30-min priorities call, Wednesday group call, WhatsApp support on weekdays, private community, weekly voice notes, 30+ prompt library, LinkedIn Content System (1 to 2 posts a week written for you).</li>
+<li>Guarantee: finish the 8 weeks without landing interviews and Izzy keeps coaching you at no cost until you do.</li>
+</ul>
+<h2 id="5-external-links-and-placeholders">5. External links and placeholders</h2>
+<p>Replace every <code>REPLACE_</code> URL before launch. The README lists them again.</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>URL to use in pages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strategy Session booking</td>
+<td><code>https://calendly.com/clearcareer/strategy-session</code></td>
+</tr>
+<tr>
+<td>Accelerator payment (exists today, $2,497)</td>
+<td><code>https://buy.stripe.com/8x25kD1RH3cp8KO1ZTbfO1i</code></td>
+</tr>
+<tr>
+<td>Salary Number Generator $9</td>
+<td><code>https://buy.stripe.com/REPLACE_salary-generator</code></td>
+</tr>
+<tr>
+<td>Career Prompt Vault $9</td>
+<td><code>https://buy.stripe.com/REPLACE_prompt-vault</code></td>
+</tr>
+<tr>
+<td>Cold Outreach Script Pack $9</td>
+<td><code>https://buy.stripe.com/REPLACE_outreach-pack</code></td>
+</tr>
+<tr>
+<td>Clarity Intensive $497</td>
+<td><code>https://buy.stripe.com/REPLACE_clarity</code></td>
+</tr>
+<tr>
+<td>Sprint deposit $497</td>
+<td><code>https://buy.stripe.com/REPLACE_sprint-deposit</code></td>
+</tr>
+<tr>
+<td>Community join</td>
+<td><code>https://www.skool.com/clearcareer/about</code></td>
+</tr>
+<tr>
+<td>Existing free tools (live today)</td>
+<td><code>https://joinclearcareer.com/free-tools/&lt;slug&gt;</code> and <code>https://joinclearcareer.com/resources/&lt;slug&gt;</code></td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td><code>https://www.linkedin.com/in/izzydoesizzy/</code></td>
+</tr>
+<tr>
+<td>YouTube</td>
+<td><code>https://www.youtube.com/@joinclearcareer</code></td>
+</tr>
+<tr>
+<td>Instagram (confirm handle)</td>
+<td><code>https://www.instagram.com/joinclearcareer/</code></td>
+</tr>
+<tr>
+<td>Email</td>
+<td><code>izzy@joinclearcareer.com</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-page-checklist">6. Page checklist</h2>
+<p>Before a page is done:</p>
+<ul>
+<li class="task-list-item"><input type="checkbox" disabled> Opens from <code>file://</code> with styles loaded (relative paths right)</li>
+<li class="task-list-item"><input type="checkbox" disabled> One <code>h1</code>, headings in order</li>
+<li class="task-list-item"><input type="checkbox" disabled> Header <code>aria-current="page"</code> set on the right link</li>
+<li class="task-list-item"><input type="checkbox" disabled> Every image has <code>alt</code></li>
+<li class="task-list-item"><input type="checkbox" disabled> <code>grep -nP "\x{2014}|\x{2013}"</code> returns nothing</li>
+<li class="task-list-item"><input type="checkbox" disabled> Banned-word scan returns nothing outside client quotes</li>
+<li class="task-list-item"><input type="checkbox" disabled> Every internal link resolves to a file in the repo</li>
+<li class="task-list-item"><input type="checkbox" disabled> One primary CTA, visible above the fold on mobile</li>
+</ul>
+</article>
+</div></main>
+<footer class="site-footer" style="padding:2rem 0"><div class="container footer__bottom" style="margin-top:0;padding-top:0;border:0">
+  <span>ClearCareer 2026 plan. Internal working documents. © <span data-year>2026</span> Izzy Piyale-Sheard.</span>
+  <span><a href="../index.html">Artifact hub</a> · <a href="https://github.com/izzydoesizzy/clearcareer-website-2026">Repository</a></span>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>
