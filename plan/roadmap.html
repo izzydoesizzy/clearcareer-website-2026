@@ -1,0 +1,1870 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roadmap and Next Steps | ClearCareer 2026</title>
+<meta name="description" content="Every next step for the site, the marketing plan, and the project: 17 workstreams with owners, effort, dependencies, a timeline, decisions, and what to build next.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css"><link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+  <a class="nav__logo" href="../index.html"><img src="../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer <span class="small muted" style="font-family:var(--font-sans);font-size:.8rem;margin-left:.25rem">2026</span></a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  <ul class="nav__links" id="nav-links"><li><a href="../index.html">Hub</a></li><li><a href="marketing-plan.html">Plan</a></li><li><a href="funnel.html">Funnel</a></li><li><a href="../emails/index.html">Emails</a></li><li><a href="../ads/index.html">Ads</a></li><li><a href="../site/index.html">Site</a></li></ul>
+</div></header>
+<main id="main"><div class="container docs-shell">
+<aside class="docs-side">
+  <h4>Documents</h4><ul><li><a href="roadmap.html" aria-current="page">Roadmap and Next Steps</a></li><li><a href="marketing-plan.html">Marketing Plan</a></li><li><a href="funnel.html">Funnel Map</a></li><li><a href="offers.html">Offers and Pricing</a></li><li><a href="tools-and-costs.html">Tools and Costs</a></li><li><a href="strategy-session.html">Strategy Session Playbook</a></li><li><a href="manychat-flows.html">ManyChat Flows</a></li><li><a href="content-calendar.html">Content Calendar</a></li><li><a href="kpis.html">KPIs and Tracking</a></li><li><a href="launch-checklist.html">Launch Checklist</a></li><li><a href="site-build-guide.html">Site Build Guide</a></li><li><a href="../ads/index.html">Ads Plan</a></li><li><a href="../emails/index.html">Email Sequences</a></li></ul>
+  <div class="toc"><h4>On this page</h4><ul><li><a href="#0-this-week">0. This week</a></li><li><a href="#1-status-of-everything-in-the-repository">1. Status of everything in the repository</a></li><li><a href="#2-workstreams">2. Workstreams</a></li><li><a href="#21-go-live" class="lvl-3">2.1 Go live</a></li><li><a href="#22-website-content-and-design" class="lvl-3">2.2 Website content and design</a></li><li><a href="#23-migrating-from-the-old-site" class="lvl-3">2.3 Migrating from the old site</a></li><li><a href="#24-offers-and-money" class="lvl-3">2.4 Offers and money</a></li><li><a href="#25-funnel-plumbing" class="lvl-3">2.5 Funnel plumbing</a></li><li><a href="#26-email-program" class="lvl-3">2.6 Email program</a></li><li><a href="#27-content-engine" class="lvl-3">2.7 Content engine</a></li><li><a href="#28-ads" class="lvl-3">2.8 Ads</a></li><li><a href="#29-strategy-session-operations" class="lvl-3">2.9 Strategy Session operations</a></li><li><a href="#210-delivery-operations-and-capacity" class="lvl-3">2.10 Delivery operations and capacity</a></li><li><a href="#211-proof-and-testimonials" class="lvl-3">2.11 Proof and testimonials</a></li><li><a href="#212-partnerships-and-referrals" class="lvl-3">2.12 Partnerships and referrals</a></li><li><a href="#213-seo-and-the-blog" class="lvl-3">2.13 SEO and the blog</a></li><li><a href="#214-legal-privacy-and-compliance" class="lvl-3">2.14 Legal, privacy, and compliance</a></li><li><a href="#215-repository-and-tooling" class="lvl-3">2.15 Repository and tooling</a></li><li><a href="#216-measurement-and-review-rituals" class="lvl-3">2.16 Measurement and review rituals</a></li><li><a href="#217-risks-and-mitigations" class="lvl-3">2.17 Risks and mitigations</a></li><li><a href="#3-timeline">3. Timeline</a></li><li><a href="#weeks-1-to-2-plumbing-phase-0" class="lvl-3">Weeks 1 to 2: Plumbing (Phase 0)</a></li><li><a href="#weeks-3-to-6-launch-phase-1" class="lvl-3">Weeks 3 to 6: Launch (Phase 1)</a></li><li><a href="#weeks-7-to-12-cut-over-and-widen-phase-2" class="lvl-3">Weeks 7 to 12: Cut over and widen (Phase 2)</a></li><li><a href="#months-4-to-6" class="lvl-3">Months 4 to 6</a></li><li><a href="#months-6-to-12" class="lvl-3">Months 6 to 12</a></li><li><a href="#4-decisions-only-izzy-can-make">4. Decisions only Izzy can make</a></li><li><a href="#5-what-claude-can-build-next-in-this-repository">5. What Claude can build next in this repository</a></li><li><a href="#6-definition-of-launched">6. Definition of &quot;launched&quot;</a></li></ul></div>
+</aside>
+<article class="doc">
+  <div class="doc-header">
+    <div class="crumbs"><a href="../index.html">Hub</a> / Plan</div>
+    <h1>Roadmap and Next Steps</h1>
+    <div class="meta"><span>Every next step for the site, the marketing plan, and the project: 17 workstreams with owners, effort, dependencies, a timeline, decisions, and what to build next.</span><span>Source: <code>docs/ROADMAP.md</code></span></div>
+  </div>
+  <p>Everything that can be done next for the website, the marketing plan, and the project, in one place. It picks up where the repository is today (built, pushed, not yet live) and runs out about twelve months.</p>
+<p>How to read it:</p>
+<ul>
+<li><strong>Section 0</strong> is this week.</li>
+<li><strong>Section 1</strong> is the status of every artifact in the repository and what each still needs.</li>
+<li><strong>Section 2</strong> is the work, split into seventeen workstreams. Every step has an owner, an effort estimate, what it depends on, and what "done" means.</li>
+<li><strong>Section 3</strong> is the timeline.</li>
+<li><strong>Section 4</strong> is the list of decisions only Izzy can make, each with a recommendation and a deadline.</li>
+<li><strong>Section 5</strong> is a menu of things Claude can build next in this repository without waiting on anyone.</li>
+<li><strong>Section 6</strong> is the definition of "launched".</li>
+</ul>
+<p>Owners: <strong>Izzy</strong> (needs his accounts, his face, his voice, or his decision), <strong>Claude</strong> (can be built in this repo in a session), <strong>Lawyer</strong>, <strong>VA</strong> (once hired). Effort is hands-on time for the owner. "Depends on" names the step or decision that has to come first.</p>
+<hr />
+<h2 id="0-this-week">0. This week</h2>
+<p>Five things, in order. Nothing else matters until these are done.</p>
+<ol>
+<li><strong>Turn on GitHub Pages.</strong> Settings, Pages, Source: GitHub Actions. Then re-run the failed deploy. The hub goes live at <code>https://izzydoesizzy.github.io/clearcareer-website-2026/</code>. (Izzy, 2 minutes.)</li>
+<li><strong>Read the site on your phone.</strong> Every page, start to finish, from the hub. Write down anything that reads wrong, looks wrong, or is not true. Reply with the list. (Izzy, 45 minutes.)</li>
+<li><strong>Make the four week-1 decisions</strong> in section 4: Accelerator start cadence, Skool timing, Community payments, currency. (Izzy, 20 minutes.)</li>
+<li><strong>Confirm three facts</strong> the pages assume: the Instagram handle, the Skool URL, and the Calendly event name for the Strategy Session. (Izzy, 5 minutes.)</li>
+<li><strong>Book the Phase 0 block.</strong> Fourteen hours over two weeks, in the calendar, per <code>LAUNCH-CHECKLIST.md</code>. (Izzy, 5 minutes.)</li>
+</ol>
+<hr />
+<h2 id="1-status-of-everything-in-the-repository">1. Status of everything in the repository</h2>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Status</th>
+<th>Still needs</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site/</code> 23 pages</td>
+<td>Built, reviewed on desktop and at 390px, passes the gate</td>
+<td>Izzy's read-through; real Stripe, Calendly, Skool, Brevo links; Instagram handle; OG images; analytics snippet</td>
+<td>Izzy, Claude</td>
+</tr>
+<tr>
+<td><code>site/results.html</code></td>
+<td>Built from all 80 testimonials and the 2024 survey</td>
+<td>Permission check on every named testimonial; a refresh cadence</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>site/privacy.html</code>, <code>terms.html</code>, <code>refunds.html</code></td>
+<td>Drafted as templates</td>
+<td>Lawyer review; CASL and PIPEDA language confirmed</td>
+<td>Lawyer</td>
+</tr>
+<tr>
+<td><code>site/go/*</code> and <code>site/thanks/*</code></td>
+<td>Built</td>
+<td>Stripe Payment Links with optional items; access links; test purchases</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>site/strategy-session.html</code></td>
+<td>Built with the Calendly embed</td>
+<td>The Calendly event with 7 questions; the 3-minute video</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>emails/emails.md</code> (45 messages)</td>
+<td>Written in full</td>
+<td>Pasting into Brevo; the <code>REPLACE_</code> links; conditional blocks configured</td>
+<td>Izzy (or VA)</td>
+</tr>
+<tr>
+<td><code>docs/PLAN.md</code></td>
+<td>Complete</td>
+<td>Revisit after the first 90 days</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>docs/FUNNEL.md</code>, <code>plan/funnel-map.html</code></td>
+<td>Complete</td>
+<td>Short-link redirects at the host</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>docs/OFFERS.md</code></td>
+<td>Complete</td>
+<td>The four decisions; Stripe objects created</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>docs/TOOLS-AND-COSTS.md</code></td>
+<td>Complete</td>
+<td>Cancel GroupFuel and Linktree; confirm Vercel plan</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>docs/ADS.md</code></td>
+<td>Complete</td>
+<td>Meta Business setup; the six creatives shot; Phase A go/no-go</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>docs/STRATEGY-SESSION.md</code></td>
+<td>Complete</td>
+<td>The video recorded; the Sessions sheet created</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>docs/MANYCHAT-FLOWS.md</code></td>
+<td>Complete</td>
+<td>Built in ManyChat; tested from a second account</td>
+<td>Izzy (or VA)</td>
+</tr>
+<tr>
+<td><code>docs/CONTENT-CALENDAR.md</code></td>
+<td>Complete, 12 weeks, 48 hooks</td>
+<td>Week 1 reels shot; carousel templates in Canva</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>docs/KPIS.md</code></td>
+<td>Complete</td>
+<td>The Google Sheet created</td>
+<td>Izzy (10 minutes) or Claude (a CSV template)</td>
+</tr>
+<tr>
+<td><code>docs/LAUNCH-CHECKLIST.md</code></td>
+<td>Complete</td>
+<td>Being worked through</td>
+<td>Izzy</td>
+</tr>
+<tr>
+<td><code>docs/SITE-BUILD-GUIDE.md</code></td>
+<td>Complete</td>
+<td>Update when components are added</td>
+<td>Claude</td>
+</tr>
+<tr>
+<td><code>scripts/build.py</code>, <code>scripts/check.py</code></td>
+<td>Working</td>
+<td>A header/footer sync script; a sitemap generator; an OG image generator</td>
+<td>Claude</td>
+</tr>
+<tr>
+<td><code>.github/workflows/pages.yml</code></td>
+<td>Working once Pages is enabled</td>
+<td>A validation step (HTML check, link check) before deploy</td>
+<td>Claude</td>
+</tr>
+<tr>
+<td>Old repository <code>clearcareer-website</code></td>
+<td>Untouched, still serving the live site</td>
+<td>The subdomain plan; Tier 1 blog posts published; eventual sunset</td>
+<td>Izzy, Claude</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-workstreams">2. Workstreams</h2>
+<h3 id="21-go-live">2.1 Go live</h3>
+<p>Goal: the new site is reachable, measurable, and findable, first at the GitHub address for review, then on the domain.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Enable Pages, re-run the deploy</td>
+<td>Izzy</td>
+<td>2 min</td>
+<td></td>
+<td>Hub loads at the github.io address</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Phone read-through of all 23 pages; log every issue</td>
+<td>Izzy</td>
+<td>45 min</td>
+<td>1</td>
+<td>A list exists; Claude fixes it in one commit</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Add a validation job to the workflow: run <code>scripts/check.py</code> and an HTML validator before deploy</td>
+<td>Claude</td>
+<td>1 h</td>
+<td></td>
+<td>A broken link or em dash blocks the deploy</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Generate <code>sitemap.xml</code> and <code>robots.txt</code> for the production domain (site pages only; plan, emails, ads stay <code>noindex</code>)</td>
+<td>Claude</td>
+<td>1 h</td>
+<td>Domain decision</td>
+<td>Sitemap lists the 20 public pages with the final domain</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Open Graph and Twitter meta on every page, with one generated OG image per page in the brand style</td>
+<td>Claude</td>
+<td>3 h</td>
+<td></td>
+<td>Sharing any page on LinkedIn shows a branded card</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Port the structured data the old site had: Organization, Person (Izzy), FAQPage on pages with FAQs, Product on offer pages, Review on results</td>
+<td>Claude</td>
+<td>2 h</td>
+<td></td>
+<td>Google's rich results test passes on home, services, accelerator, results</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Analytics: GA4 snippet in the shared head; Meta Pixel added when ads start, not before</td>
+<td>Claude (snippet), Izzy (IDs)</td>
+<td>30 min</td>
+<td>GA4 property</td>
+<td>Page views appear in GA4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Consent: a minimal cookie notice that only appears when the Pixel is on (PIPEDA and Quebec Law 25 expectations)</td>
+<td>Claude</td>
+<td>1 h</td>
+<td>7</td>
+<td>Notice shows once, respects the choice</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Move DNS to Cloudflare; add <code>app.joinclearcareer.com</code> for the old Vercel app; confirm free tools, product access, and <code>/api/*</code> work there</td>
+<td>Izzy</td>
+<td>1 h plus propagation</td>
+<td>Decision on cutover timing</td>
+<td>Every old tool opens at the app subdomain</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Custom domain on GitHub Pages; decide clean URLs (move <code>site/</code> to the root with the hub at <code>/plan/</code>, or keep <code>site/</code> and redirect <code>/</code> to it)</td>
+<td>Izzy, Claude</td>
+<td>1 h</td>
+<td>9</td>
+<td><code>joinclearcareer.com</code> opens the new home page</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Add the <code>/go/*</code> redirects and the old-URL redirects in Cloudflare</td>
+<td>Izzy</td>
+<td>30 min</td>
+<td>10</td>
+<td>Every short link in the emails resolves</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Performance: self-host Inter and DM Serif Display (no Google Fonts dependency), convert the eight PNG headshots to WebP, add <code>loading="lazy"</code> below the fold, check Lighthouse on home, accelerator, and go/salary</td>
+<td>Claude</td>
+<td>2 h</td>
+<td></td>
+<td>Lighthouse performance 90+ on mobile for those three pages</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Accessibility pass: keyboard-only walkthrough, focus states, contrast on navy sections, alt text audit, heading order</td>
+<td>Claude</td>
+<td>2 h</td>
+<td></td>
+<td>Zero issues in axe on the three key pages; manual keyboard pass clean</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Update the Instagram bio, LinkedIn featured section, YouTube descriptions, and email signature to the new links</td>
+<td>Izzy</td>
+<td>20 min</td>
+<td>11</td>
+<td>All point at <code>/go/links</code> and <code>/go/call</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-website-content-and-design">2.2 Website content and design</h3>
+<p>Goal: the pages carry real media and nothing is a placeholder.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Replace <code>REPLACE_</code> links (full list in the README and the launch checklist)</td>
+<td>Izzy</td>
+<td>as each tool is set up</td>
+<td>2.4, 2.5</td>
+<td><code>grep -r REPLACE_ site emails</code> returns nothing</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Photos: a new hero portrait in the brand palette (the current coaching photo has a yellow background that fights the navy hero), two candid coaching shots, one Wednesday call screenshot with permission</td>
+<td>Izzy</td>
+<td>half a day with a photographer, or a phone and a window</td>
+<td></td>
+<td>Hero, About, Accelerator, Community each have a photo that was shot for them</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Add the before/after resume screenshots from the old repository (eblen, julia, nathaniel, rubina, henrique) to the Accelerator and Results pages, with permission confirmed</td>
+<td>Izzy (permission), Claude (page)</td>
+<td>1 h</td>
+<td>Permissions</td>
+<td>A before/after strip on both pages</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Headshots for more testimonial names (currently eight have photos; the rest are initials)</td>
+<td>Izzy</td>
+<td>ask in the testimonial follow-up email</td>
+<td></td>
+<td>At least 20 photos on the wall</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Embed the 3-minute pre-call video on the Strategy Session page and the 8-minute case study on Results</td>
+<td>Izzy (record), Claude (embed)</td>
+<td>2 h</td>
+<td>2.7</td>
+<td>Both pages play video</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Descriptions for the four Wrapped tools on the Free page (the page lists names only)</td>
+<td>Claude</td>
+<td>30 min</td>
+<td></td>
+<td>Each tool has one line and a screenshot</td>
+</tr>
+<tr>
+<td>7</td>
+<td>A header and footer sync script: one partial, written into all 23 pages, so a nav change is one edit</td>
+<td>Claude</td>
+<td>1 h</td>
+<td></td>
+<td><code>python3 scripts/sync-chrome.py</code> updates every page</td>
+</tr>
+<tr>
+<td>8</td>
+<td>New pages when the funnel widens: <code>go/adhd.html</code>, <code>go/layoff.html</code> (phase 2 keywords), a <code>referrals.html</code> page for the alumni $200 thank-you, a <code>speaking.html</code> page for university and employer workshops</td>
+<td>Claude</td>
+<td>4 h</td>
+<td>Phase 2</td>
+<td>Each page passes the gate and is linked from the right place</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Product pages for the 14 products that currently link to the old app, in the funnel-page pattern</td>
+<td>Claude</td>
+<td>6 h</td>
+<td>Decision on migrating products</td>
+<td>Shop links stay on the new domain</td>
+</tr>
+<tr>
+<td>10</td>
+<td>A "Start here" quiz: the Job Search Scorecard as an interactive page that routes to one offer (plain JavaScript, no backend)</td>
+<td>Claude</td>
+<td>4 h</td>
+<td></td>
+<td>Quiz result links to Sprint, Accelerator, Clarity, or Community</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Design polish after real content lands: hero crops, card heights, the compare table on small screens, a dark navy variant for the Sprint page tested in a browser</td>
+<td>Claude</td>
+<td>2 h</td>
+<td>1 to 5</td>
+<td>Izzy signs off on a phone</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-migrating-from-the-old-site">2.3 Migrating from the old site</h3>
+<p>Goal: nothing the old site does is lost, and the old app can be retired piece by piece.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Inventory what the old app does that the new site does not: 12 free tools (React), token-based product access, the Brevo subscribe API with lead-magnet emails, the Wrapped AI tools, the blog (35 MDX drafts), the email preview tooling</td>
+<td>Claude</td>
+<td>done (this list)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Keep the old app alive on <code>app.joinclearcareer.com</code> for all of the above until each is replaced. Check the Vercel plan; Hobby is for non-commercial use</td>
+<td>Izzy</td>
+<td>30 min</td>
+<td>2.1.9</td>
+<td>Old app serves from the subdomain</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Publish the Tier 1 blog posts in the old repository (7 posts, <code>draft: false</code>) so the SEO work earns something now</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td></td>
+<td>Seven posts live on the old app</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Blog port: a script that converts the 35 MDX posts to static HTML pages in this repository (<code>blog/</code>), with the design system, RSS, and sitemap entries. The posts use custom MDX components (coach bubbles, prompt blocks); the script maps each to plain HTML</td>
+<td>Claude</td>
+<td>1 day</td>
+<td>Decision to move the blog</td>
+<td>All 35 posts render on the new domain; old URLs redirect</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Calculators port: rebuild the six public free tools as single-file plain-JavaScript pages (severance, runway, salary impact, planner, bullet scorer, parental leave). The parental leave calculator is the largest</td>
+<td>Claude</td>
+<td>2 to 3 days total</td>
+<td>Decision</td>
+<td>Each tool works at <code>/free/&lt;tool&gt;</code> with no React</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Product delivery: replace token-based access pages with Stripe Payment Links, a private access page per product, and the Brevo access email</td>
+<td>Izzy, Claude</td>
+<td>1 day</td>
+<td>2.4</td>
+<td>A purchase on the new site delivers without the old app</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Lead magnets: move the 12 downloads to the new Free page with Brevo forms (hidden fields for GUIDE_NAME, GUIDE_URL, TOPIC)</td>
+<td>Claude (pages), Izzy (forms)</td>
+<td>3 h</td>
+<td>Brevo forms</td>
+<td>Opt-ins land with the right attributes</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Wrapped tools: keep on the old app (they call the Anthropic API server-side); add the Prompt Vault CTA to their result pages when the old repo is next touched, or leave as is</td>
+<td>Izzy</td>
+<td>decision</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Sunset: when 3 to 8 are done, retire the Vercel app, keep the repository archived</td>
+<td>Izzy</td>
+<td>30 min</td>
+<td>3 to 8</td>
+<td>Vercel bill is $0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-offers-and-money">2.4 Offers and money</h3>
+<p>Goal: every offer can be bought, every guarantee has an operating procedure, and the money is accounted for.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The four decisions in section 4 (cadence, Skool, payments, currency)</td>
+<td>Izzy</td>
+<td>20 min</td>
+<td></td>
+<td>Written in <code>OFFERS.md</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Create the Stripe products, prices, and Payment Links from <code>OFFERS.md</code> section 4; optional item on the three $9 links; after-payment redirects; abandoned-checkout recovery on</td>
+<td>Izzy</td>
+<td>1.5 h</td>
+<td>1</td>
+<td>Test purchases succeed with and without the bump</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Stripe Tax: decide whether to collect GST/HST on digital products for Canadian buyers (the threshold and registration are an accountant question)</td>
+<td>Izzy, accountant</td>
+<td>1 h</td>
+<td></td>
+<td>Decision recorded; Stripe Tax on or off deliberately</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The one-pager: the Services page exported as a one-page PDF for the pre-call email and the "talk to my partner" follow-up</td>
+<td>Claude</td>
+<td>1 h</td>
+<td>1</td>
+<td>PDF in <code>assets/</code> and linked from <code>precall-01</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Skool: open the community when 4 members are committed; pinned Start Here post; the weekly calendar; the template vault as a course; the Zapier trigger to Brevo</td>
+<td>Izzy</td>
+<td>3 h</td>
+<td>1</td>
+<td>A new member sees the rhythm and the vault within a minute of joining</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Founding members pre-sell: a WhatsApp or email list of 10 people offered $29/mo before Skool opens; a Stripe subscription link if Skool is not yet open</td>
+<td>Izzy</td>
+<td>2 h</td>
+<td>1</td>
+<td>4 paying members, Skool opens</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Guarantee procedures written down: how the Sprint $5K is measured and documented, how the Accelerator "coaching until interviews" is tracked, how a Community refund is issued</td>
+<td>Claude (draft), Izzy (approve)</td>
+<td>2 h</td>
+<td></td>
+<td>A one-page SOP per guarantee in <code>docs/</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Clarity Intensive intake flow: the AI Intake link, the 90-minute booking link, the report delivery step, the credit coupon in Stripe</td>
+<td>Izzy</td>
+<td>2 h</td>
+<td>2</td>
+<td>A test client goes buy, intake, report, booking without Izzy touching anything</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Profile Overhaul call-only SOP: when to prescribe it, the price, the deliverable list, the payment link</td>
+<td>Claude (draft)</td>
+<td>1 h</td>
+<td></td>
+<td>In <code>OFFERS.md</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Bookkeeping: a monthly P&amp;L from Stripe, Skool, and the tools list, in the KPIs sheet</td>
+<td>Izzy</td>
+<td>30 min a month</td>
+<td></td>
+<td>Month 1 P&amp;L exists</td>
+</tr>
+<tr>
+<td>11</td>
+<td>USD pricing review at day 60 based on where buyers are</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td>60 days of data</td>
+<td>Decision recorded</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25-funnel-plumbing">2.5 Funnel plumbing</h3>
+<p>Goal: a stranger can go from a comment to a purchase to a booked call with no human in the loop, and every event lands in Brevo.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Brevo attributes (<code>FUNNEL.md</code> section 4)</td>
+<td>Izzy or VA</td>
+<td>15 min</td>
+<td></td>
+<td>All attributes exist</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Brevo automations (<code>FUNNEL.md</code> section 5) built from <code>ALL-EMAILS.txt</code>, with the conditional blocks and exit conditions; No-Close step 1 held for personalisation</td>
+<td>Izzy or VA</td>
+<td>3 h</td>
+<td>1, <code>REPLACE_</code> links</td>
+<td>Each automation has a test contact that received every step</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Saturday campaign exclusion and click tracking</td>
+<td>Izzy</td>
+<td>15 min</td>
+<td>2</td>
+<td>A contact inside Buyer Welcome does not get Saturday's email</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Make scenarios (<code>FUNNEL.md</code> section 6): Stripe to Brevo, Calendly to Brevo and Sheet, Calendly cancel</td>
+<td>Izzy or Claude (with credentials)</td>
+<td>1 h</td>
+<td>Stripe, Calendly</td>
+<td>Test events create and update the right contact</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Calendly event with the 7 questions and the confirmation text</td>
+<td>Izzy</td>
+<td>30 min</td>
+<td></td>
+<td>A test booking triggers Pre-Call step 1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Tally forms (prep, testimonial) connected to Sheets</td>
+<td>Izzy</td>
+<td>30 min</td>
+<td></td>
+<td>Submissions land in the sheet</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ManyChat flows (<code>MANYCHAT-FLOWS.md</code>) built and tested from a second account</td>
+<td>Izzy or VA</td>
+<td>2.5 h</td>
+<td><code>/go/*</code> links</td>
+<td>The testing checklist passes for all three keywords</td>
+</tr>
+<tr>
+<td>8</td>
+<td>End-to-end test: comment, DM, click, buy with bump, thank-you, access email, Buyer Welcome day 1, book a call, Pre-Call emails</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td>1 to 7</td>
+<td>Every step observed once, in order</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Monday check SOP: Make dashboard, Brevo automation errors, ManyChat hot tag, Sessions sheet</td>
+<td>Claude (write), Izzy (run)</td>
+<td>30 min</td>
+<td></td>
+<td>In <code>KPIS.md</code>; done every Monday</td>
+</tr>
+</tbody>
+</table>
+<h3 id="26-email-program">2.6 Email program</h3>
+<p>Goal: emails reach the inbox, comply with Canadian law, and the list grows and stays clean.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Deliverability: SPF, DKIM, and DMARC records for <code>joinclearcareer.com</code> set up for Brevo; a dedicated sending subdomain if volume grows</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td>Cloudflare DNS</td>
+<td>Brevo shows the domain authenticated; a test to Gmail lands in Primary</td>
+</tr>
+<tr>
+<td>2</td>
+<td>CASL compliance: express consent captured at every form and checkout (a checkbox or clear statement), sender identification and a working unsubscribe in every email (already in the template), consent records kept in Brevo</td>
+<td>Izzy, Lawyer</td>
+<td>1 h</td>
+<td></td>
+<td>A lawyer has seen the consent language</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Migrate and clean the existing Brevo lists into the one-list, attribute-based model; suppress contacts with no opens in 180 days after one re-permission email</td>
+<td>Izzy or VA</td>
+<td>2 h</td>
+<td>2.5.1</td>
+<td>One list, attributes set, bounce rate under 2%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A Brevo email template that matches the site (logo, blue button, navy footer) built once and reused by every automation</td>
+<td>Claude (HTML), Izzy (upload)</td>
+<td>2 h</td>
+<td></td>
+<td>Every automation uses the template</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Three more Saturday issues written in full to bank a month: farming vs hunting, quicksand, the one email opened four times</td>
+<td>Claude</td>
+<td>3 h</td>
+<td></td>
+<td>Issues 2 to 4 in <code>emails/emails.md</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Subject line A/B tests on the Saturday send once the list passes 1,000 (Brevo Business)</td>
+<td>Izzy</td>
+<td>ongoing</td>
+<td>List size</td>
+<td>A monthly note on what won</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Reply handling: every reply to a sequence email gets a human answer within one business day; a shared label in Gmail</td>
+<td>Izzy</td>
+<td>daily, 15 min</td>
+<td></td>
+<td>Zero replies older than 48 hours</td>
+</tr>
+</tbody>
+</table>
+<h3 id="27-content-engine">2.7 Content engine</h3>
+<p>Goal: three reels a week and one Saturday email, every week, without heroics.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Record the 3-minute pre-call video from the script in <code>STRATEGY-SESSION.md</code></td>
+<td>Izzy</td>
+<td>30 min</td>
+<td></td>
+<td>Unlisted on YouTube; link in <code>precall-01</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pick or record the 8-minute case study (Blake or Tamara)</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td></td>
+<td>Link in <code>precall-02</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Shoot weeks 1 and 2 of reels (six) from the calendar, before publishing any</td>
+<td>Izzy</td>
+<td>3 h</td>
+<td></td>
+<td>Six files cut with captions</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Canva carousel templates: result card, five-scripts list, before/after</td>
+<td>Izzy or Claude (copy)</td>
+<td>2 h</td>
+<td></td>
+<td>Three templates saved</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The batch-day SOP: setup, three reels, captions, LinkedIn text, carousel, schedule, in three hours</td>
+<td>Claude (write)</td>
+<td>30 min</td>
+<td></td>
+<td>In <code>CONTENT-CALENDAR.md</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cross-post set-up: LinkedIn (native video plus full text), YouTube Shorts (title, description, link), optional TikTok</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td></td>
+<td>Week 1 reels appear on all three</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Stories rhythm: the six rotating prompts in <code>CONTENT-CALENDAR.md</code>; the "reply SALARY" story once a week</td>
+<td>Izzy</td>
+<td>10 min a day</td>
+<td>ManyChat story trigger</td>
+<td>Story replies route to flows</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Hook performance review at week 6: keep the top three per keyword; reshoot the bottom with a different tactic</td>
+<td>Izzy, Claude (analysis from the Content tab)</td>
+<td>1 h</td>
+<td>6 weeks of data</td>
+<td>Phase B creatives chosen</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Publish the matching blog post each week (Tier 1 first)</td>
+<td>Izzy</td>
+<td>20 min a week</td>
+<td>2.3.3</td>
+<td>Post live the same week as the Saturday email on that topic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="28-ads">2.8 Ads</h3>
+<p>Goal: spend only when organic has found the hooks, and never beyond the caps in <code>ADS.md</code>.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Meta Business Suite: ad account, payment method, the Instagram account linked, two-factor on</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td></td>
+<td>Account can run an ad</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pixel on the new site (shared head) and Conversions API from Skool before Phase C</td>
+<td>Claude (snippet), Izzy (IDs)</td>
+<td>1 h</td>
+<td>2.1.7</td>
+<td>Events show in Events Manager</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ManyChat ads integration so comment-to-DM ads attribute</td>
+<td>Izzy</td>
+<td>30 min</td>
+<td>2.5.7</td>
+<td>Test ad comment triggers the flow</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Phase A go/no-go at week 4: two reels with 50+ keyword comments, flows tested, products test-purchased</td>
+<td>Izzy</td>
+<td>30 min</td>
+<td>4 weeks organic</td>
+<td>Decision recorded in the Ads tab</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Phase B: boost the top three reels, $10 a day, engagement objective, the audiences in <code>ADS.md</code> section 5</td>
+<td>Izzy</td>
+<td>1 h setup, 15 min a week</td>
+<td>4</td>
+<td>Cost per keyword comment under $1.50 after $100</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Shoot the three Phase C creatives (C1 dollar a day, C2 hot seat, C3 contrast)</td>
+<td>Izzy</td>
+<td>2 h</td>
+<td>Phase B results</td>
+<td>Three videos cut</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Phase C: sales campaign to the Community page with the 7-day trial on, using the Complete Registration objective</td>
+<td>Izzy</td>
+<td>1 h setup</td>
+<td>5, 6, Skool trial on</td>
+<td>Cost per trial under $15 after $300</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Weekly ads row in the KPIs sheet; kill rules applied the same day</td>
+<td>Izzy</td>
+<td>15 min a week</td>
+<td></td>
+<td>No ad set over $100 spend with zero results</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Phase D scaling review monthly: +20% a week only while cost per member stays under $58</td>
+<td>Izzy</td>
+<td>30 min a month</td>
+<td>Phase C</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="29-strategy-session-operations">2.9 Strategy Session operations</h3>
+<p>Goal: 8 to 12 calls a month, 70% show, 90% offer-made, 30 to 40% close, every call logged.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The Sessions sheet with the columns in <code>STRATEGY-SESSION.md</code> section 9</td>
+<td>Izzy or Claude (CSV)</td>
+<td>15 min</td>
+<td></td>
+<td>Sheet exists, Make writes to it</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Call recording consent line in the Calendly confirmation and at minute 0 (Fathom records)</td>
+<td>Izzy</td>
+<td>10 min</td>
+<td></td>
+<td>Line present</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Run the first five calls with the timer and the script; note every deviation</td>
+<td>Izzy</td>
+<td>5 calls</td>
+<td>2.5.5</td>
+<td>Five rows in the sheet with outcomes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Objection log review after ten calls; fix the booking page or the video for anything heard three times</td>
+<td>Izzy, Claude</td>
+<td>1 h</td>
+<td>10 calls</td>
+<td>A change shipped, or "nothing to change" recorded</td>
+</tr>
+<tr>
+<td>5</td>
+<td>"Not right now" handling: the short personal email within a day, slot released</td>
+<td>Izzy</td>
+<td>2 min each</td>
+<td></td>
+<td>No unqualified call held</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Same-week slots for offer-in-hand bookers; check the hot tag daily</td>
+<td>Izzy</td>
+<td>5 min a day</td>
+<td></td>
+<td>No hot lead waits more than 48 hours</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Payment on the call: Stripe links ready in a text expander; kickoff booking link ready</td>
+<td>Izzy</td>
+<td>20 min</td>
+<td>2.4.2</td>
+<td>A yes becomes a payment before the call ends</td>
+</tr>
+</tbody>
+</table>
+<h3 id="210-delivery-operations-and-capacity">2.10 Delivery operations and capacity</h3>
+<p>Goal: every offer has a repeatable delivery, and Izzy's week fits in a week.</p>
+<p><strong>The capacity model.</strong> Hours per week for Izzy at full capacity, with monthly Accelerator starts and no changes:</p>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Assumption</th>
+<th>Hours a week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accelerator, two overlapping groups of 10</td>
+<td>Monday 0.5, Wednesday 1, three private sessions per person (2.75 h each), WhatsApp 3, asset review 0.5 per person per week</td>
+<td>about 24</td>
+</tr>
+<tr>
+<td>Private Accelerator, 3 clients</td>
+<td>1 h session, 0.5 h prep, 1 h assets and WhatsApp each</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>Clarity Intensive, 6 a month</td>
+<td>1.5 h session, 0.5 h report review each</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Salary Sprint, 2 a month</td>
+<td>1 h call, 2 h drafting and WhatsApp each</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>Community</td>
+<td>Monday 0.5, Wednesday 1, workshop amortised 0.25, engagement 1</td>
+<td>2.75</td>
+</tr>
+<tr>
+<td>Strategy Sessions, 12 a month</td>
+<td>0.75 h each with prep and follow-up</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>Batch day 3, Saturday email 0.75, stories and DMs 2</td>
+<td>5.75</td>
+</tr>
+<tr>
+<td>Admin and ops</td>
+<td>Monday review, Make and Brevo checks, bookkeeping</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>about 50</strong></td>
+</tr>
+</tbody>
+</table>
+<p>That does not fit. Three changes bring it to about 36:</p>
+<ol>
+<li><strong>Cap each monthly start at 5</strong> (10 concurrent Accelerator clients, not 20). Revenue per month at capacity is still $12,485 from the Accelerator alone. Saves about 11 hours.</li>
+<li><strong>One Wednesday hot seat for everyone</strong>: Accelerator clients and Community members in the same room. Stronger room, one call. Saves about 1 hour and improves the Community.</li>
+<li><strong>A VA at month 4</strong> for ManyChat monitoring, Brevo paste-ups, video captions, and the Monday checks. $400 to $800 a month. Saves about 4 hours.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Decide the cadence and cap (section 4, decision 1)</td>
+<td>Izzy</td>
+<td>10 min</td>
+<td></td>
+<td>Recorded</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Delivery SOP per offer: Accelerator (8 weekly call agendas, the asset sign-off checklist, the week 4 and week 8 session agendas), Private (weekly agenda), Clarity (the 90-minute agenda and the 30-day plan template), Sprint (the call agenda, the counteroffer template set), Community (Monday and Wednesday run-sheets, the monthly workshop list for 12 months)</td>
+<td>Claude (draft), Izzy (edit)</td>
+<td>1 day</td>
+<td></td>
+<td>SOPs in <code>docs/delivery/</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>The AI Intake tool: reliability check (what happens when it fails mid-interview), a fallback (a typed form), the report delivery step automated to the client and to Izzy</td>
+<td>Izzy</td>
+<td>2 h</td>
+<td></td>
+<td>Ten intakes run without a manual step</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Client-facing templates: the welcome WhatsApp message, the Skool intro prompt, the weekly voice note script outline</td>
+<td>Claude</td>
+<td>1 h</td>
+<td></td>
+<td>In <code>docs/delivery/</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Hire the VA when monthly revenue passes $5,000 or when the weekly hours pass 40 for two weeks, whichever is first</td>
+<td>Izzy</td>
+<td>1 week to hire</td>
+<td></td>
+<td>VA runs the Monday checks</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A second coach for Wednesday calls when there are more than 15 concurrent Accelerator clients</td>
+<td>Izzy</td>
+<td>later</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="211-proof-and-testimonials">2.11 Proof and testimonials</h3>
+<p>Goal: more proof, with permission, refreshed on a schedule.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Permission audit: every named testimonial on <code>results.html</code> has written consent to be shown with name and (where used) photo</td>
+<td>Izzy</td>
+<td>2 h</td>
+<td></td>
+<td>A sheet with name, consent date, source</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Testimonial consent form text (Tally) and a disclosure line on Results ("individual results vary", which the methodology paragraph already covers)</td>
+<td>Claude (text), Lawyer (check)</td>
+<td>30 min</td>
+<td></td>
+<td>Form live; line present</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ten video testimonials in 90 days: ask in <code>win-01-testimonial</code>, 60-second phone video, horizontal</td>
+<td>Izzy</td>
+<td>10 asks</td>
+<td>Wins</td>
+<td>Ten files; three embedded on Results and Accelerator</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Survey refresh: re-run the outcomes survey every December; update <code>results.html</code> and the stats on every page from one place</td>
+<td>Izzy (survey), Claude (pages)</td>
+<td>1 day a year</td>
+<td></td>
+<td>2026 survey published January 2027</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Reviews elsewhere: Google Business Profile for ClearCareer, LinkedIn recommendations, a Trustpilot or similar only if clients already use it</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td></td>
+<td>Google profile with 10 reviews</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Case study posts: Blake, Tamara, Kristin, Jorge, Kira as long-form blog posts (some exist as drafts) with numbers, the one thing that changed, and the quote</td>
+<td>Claude (draft from the data), Izzy (approve)</td>
+<td>3 h</td>
+<td>Blog port or old app</td>
+<td>Five posts live</td>
+</tr>
+</tbody>
+</table>
+<h3 id="212-partnerships-and-referrals">2.12 Partnerships and referrals</h3>
+<p>Goal: warm traffic that costs nothing per lead.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alumni referral: the $200 thank-you in <code>win-02-referral</code>, a <code>referrals.html</code> page explaining it, a referral code field on the Calendly form</td>
+<td>Claude (page), Izzy (payouts)</td>
+<td>2 h</td>
+<td></td>
+<td>First referral paid</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Workshop partners as lead gen: FlexJobs, UofT, TMU, Humber, Lighthouse Labs, the UN Association. One workshop a month, the keyword CTA at the end, a partner-specific <code>/go/</code> link</td>
+<td>Izzy</td>
+<td>2 h a month</td>
+<td></td>
+<td>One workshop a month booked for the next quarter</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Soft Landing outreach: 20 HR and People leaders on LinkedIn, 10 messages a week, the Soft Landing page as the link, the zero-cost retainer as the ask</td>
+<td>Izzy</td>
+<td>1 h a week</td>
+<td><code>site/soft-landing.html</code> live</td>
+<td>Two discovery calls booked</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Affiliate tools page: port the old <code>/tools</code> recommendations (TealHQ, Glassdoor, Uli AI and others) to a footer page with disclosure</td>
+<td>Claude</td>
+<td>2 h</td>
+<td></td>
+<td>Page live; affiliate links tracked</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Podcast guesting: the 10 targets from <code>SEO-STRATEGY.md</code> section 8.2, one pitch a week, the Strategy Session as the CTA</td>
+<td>Izzy</td>
+<td>30 min a week</td>
+<td></td>
+<td>Two appearances a quarter</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Monetize Your Magic stays separate; a single line in the About page footer at most, if ever</td>
+<td>Izzy</td>
+<td>decision</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="213-seo-and-the-blog">2.13 SEO and the blog</h3>
+<p>Goal: the 35 written posts earn traffic, and the new site is the canonical home.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Publish Tier 1 (7 posts) on the old app now</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td></td>
+<td>Live</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Decide where the blog lives long term: port to this repository (recommended, section 2.3.4) or stay on the app subdomain with canonical tags</td>
+<td>Izzy</td>
+<td>10 min</td>
+<td></td>
+<td>Decision</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Blog port script and all 35 posts rendered with the design system, categories, RSS, per-post OG images</td>
+<td>Claude</td>
+<td>1 day</td>
+<td>2</td>
+<td>All posts at <code>/blog/&lt;slug&gt;</code> on the new domain, old URLs redirected</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Apply the GEO and AEO checklist from <code>SEO-STRATEGY.md</code> (definitive answer paragraphs, question headings, FAQ schema) to the five highest-volume posts first</td>
+<td>Claude</td>
+<td>3 h</td>
+<td>3</td>
+<td>Five posts updated</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Internal linking: every blog post links to one offer page and one free tool; every offer page links to two posts</td>
+<td>Claude</td>
+<td>2 h</td>
+<td>3</td>
+<td>Hub-and-spoke map in <code>SEO-STRATEGY.md</code> is true</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Google Search Console on the new domain; submit the sitemap; watch the top 20 queries monthly</td>
+<td>Izzy</td>
+<td>30 min, then 15 min a month</td>
+<td>2.1.10</td>
+<td>Console verified</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Backlinks: one guest post or partner page a month from the workshop partners and podcast appearances</td>
+<td>Izzy</td>
+<td>2 h a month</td>
+<td>2.12</td>
+<td>12 referring domains in 12 months</td>
+</tr>
+</tbody>
+</table>
+<h3 id="214-legal-privacy-and-compliance">2.14 Legal, privacy, and compliance</h3>
+<p>Goal: nothing on the site or in the emails creates a problem later.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Lawyer review of <code>privacy.html</code>, <code>terms.html</code>, <code>refunds.html</code>; Ontario governing law; PIPEDA and Quebec Law 25 where applicable</td>
+<td>Lawyer</td>
+<td>2 h</td>
+<td></td>
+<td>Signed-off versions committed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>CASL: consent language at every capture point, records kept, unsubscribe honoured within 10 days (Brevo does this instantly)</td>
+<td>Lawyer, Izzy</td>
+<td>1 h</td>
+<td></td>
+<td>Checklist complete</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Testimonial and endorsement rules (Competition Bureau): results shown are real, typical results disclosed, no edited quotes that change meaning</td>
+<td>Izzy</td>
+<td>1 h</td>
+<td>2.11.1</td>
+<td>Results page methodology reviewed</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Call recording consent (Fathom) in the booking confirmation</td>
+<td>Izzy</td>
+<td>10 min</td>
+<td></td>
+<td>Line present</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Guarantee wording consistent across site, Stripe descriptions, Skool, and emails</td>
+<td>Claude (grep), Izzy</td>
+<td>30 min</td>
+<td></td>
+<td>One wording everywhere</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Stripe and Skool terms accepted; refund windows in Stripe match <code>refunds.html</code></td>
+<td>Izzy</td>
+<td>30 min</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Business registration, HST, insurance (professional liability for coaching) reviewed with an accountant</td>
+<td>Izzy, accountant</td>
+<td>1 h</td>
+<td></td>
+<td>Decision recorded</td>
+</tr>
+</tbody>
+</table>
+<h3 id="215-repository-and-tooling">2.15 Repository and tooling</h3>
+<p>Goal: the repository stays easy to change for a year.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Owner</th>
+<th>Effort</th>
+<th>Depends on</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>CLAUDE.md</code> at the root: conventions, the voice gate, the build and check commands, the placeholder rule, what not to touch</td>
+<td>Claude</td>
+<td>30 min</td>
+<td></td>
+<td>Future sessions start with it</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Turn this roadmap into GitHub issues with labels per workstream and a project board</td>
+<td>Claude (with the GitHub tools)</td>
+<td>1 h</td>
+<td>Izzy's okay</td>
+<td>Issues exist; the board shows this week</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Branch protection on <code>main</code>: the validation job must pass; no force pushes</td>
+<td>Izzy</td>
+<td>5 min</td>
+<td>2.1.3</td>
+<td>Protection on</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Header and footer sync script (2.2.7); sitemap generator (2.1.4); OG image generator (2.1.5); all run by <code>build.py</code></td>
+<td>Claude</td>
+<td>4 h</td>
+<td></td>
+<td>One command rebuilds everything</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Screenshot job: the headless Chrome pass used during the build, run on every push, uploading desktop and 390px captures of five key pages as workflow artifacts</td>
+<td>Claude</td>
+<td>1 h</td>
+<td></td>
+<td>Artifacts attached to each run</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A <code>docs/CHANGELOG.md</code> with one line per meaningful change</td>
+<td>Claude</td>
+<td>ongoing</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>A quarterly "what is stale" review of every doc in <code>docs/</code></td>
+<td>Izzy, Claude</td>
+<td>1 h a quarter</td>
+<td></td>
+<td>Dates updated</td>
+</tr>
+</tbody>
+</table>
+<h3 id="216-measurement-and-review-rituals">2.16 Measurement and review rituals</h3>
+<p>Goal: decisions are made from the sheet, on a schedule.</p>
+<table>
+<thead>
+<tr>
+<th>Ritual</th>
+<th>When</th>
+<th>Who</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monday scorecard</td>
+<td>Every Monday, 20 min</td>
+<td>Izzy (VA later)</td>
+<td>The 15 rows in <code>KPIS.md</code>; the three numbers said out loud; hot leads messaged</td>
+</tr>
+<tr>
+<td>Weekly content review</td>
+<td>Monday, 10 min</td>
+<td>Izzy</td>
+<td>Comments per 1,000 views per reel; keep or reshoot</td>
+</tr>
+<tr>
+<td>Monthly P&amp;L and ad cap</td>
+<td>First Monday, 30 min</td>
+<td>Izzy</td>
+<td>Revenue, fixed costs, next month's ad cap</td>
+</tr>
+<tr>
+<td>Objection review</td>
+<td>Every 10 calls</td>
+<td>Izzy, Claude</td>
+<td>Fix the page or video, not the call</td>
+</tr>
+<tr>
+<td>90-day decision point</td>
+<td>Week 12</td>
+<td>Izzy, Claude</td>
+<td>Keep or kill each keyword; pricing; Skool; whether to start Phase C; whether to port the blog and calculators</td>
+</tr>
+<tr>
+<td>Annual survey</td>
+<td>December</td>
+<td>Izzy</td>
+<td>Refresh Results and every stat on the site</td>
+</tr>
+</tbody>
+</table>
+<h3 id="217-risks-and-mitigations">2.17 Risks and mitigations</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Likelihood</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instagram or ManyChat policy change breaks comment-to-DM</td>
+<td>Medium</td>
+<td>High for the top of funnel</td>
+<td>Keep LinkedIn and the Saturday email as parallel channels; the free tools and blog as the SEO door; never rely on one platform for more than half of bookings</td>
+</tr>
+<tr>
+<td>Deliverability: emails land in spam</td>
+<td>Medium</td>
+<td>High</td>
+<td>SPF, DKIM, DMARC on day one; list cleaning; the 90-day re-permission trigger</td>
+</tr>
+<tr>
+<td>Skool fee on an empty room</td>
+<td>High if opened early</td>
+<td>Low</td>
+<td>Open at 4 committed members; pre-sell 10</td>
+</tr>
+<tr>
+<td>Guarantee exposure on the Sprint</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Qualify on the call: $100K+ roles only, written offer in hand; document the gain; the deposit structure limits the loss to Izzy's time</td>
+</tr>
+<tr>
+<td>Izzy is the single point of failure</td>
+<td>Certain</td>
+<td>High</td>
+<td>The capacity model; the VA at month 4; SOPs in <code>docs/delivery/</code>; the shared Wednesday call</td>
+</tr>
+<tr>
+<td>Ad account restriction (Meta)</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Two-factor, no claims about guaranteed outcomes in ads, the organic engine keeps running</td>
+</tr>
+<tr>
+<td>Old app on Vercel Hobby flagged as commercial</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Confirm the plan; move the tools to Cloudflare Pages when ported</td>
+</tr>
+<tr>
+<td>Placeholder links shipped by accident</td>
+<td>Medium</td>
+<td>High</td>
+<td><code>check.py</code> can be extended to fail on <code>REPLACE_</code> once launch is near; the Phase 0 go/no-go includes the grep</td>
+</tr>
+<tr>
+<td>Testimonial shown without consent</td>
+<td>Low</td>
+<td>High</td>
+<td>The permission audit before the domain cutover</td>
+</tr>
+<tr>
+<td>Burnout from three reels a week</td>
+<td>Medium</td>
+<td>High</td>
+<td>Batch day; the hook bank; the VA takes captions; drop to two reels before dropping the Saturday email</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-timeline">3. Timeline</h2>
+<h3 id="weeks-1-to-2-plumbing-phase-0">Weeks 1 to 2: Plumbing (Phase 0)</h3>
+<p>Pages on. Site read-through and fixes. The four decisions. Stripe, Brevo, Make, Calendly, Tally, ManyChat built and tested end to end. Pre-call video recorded. Week 1 and 2 reels shot. Tier 1 blog posts published on the old app. GroupFuel and Linktree cancelled. SPF, DKIM, DMARC set. Lawyer has the legal pages.</p>
+<h3 id="weeks-3-to-6-launch-phase-1">Weeks 3 to 6: Launch (Phase 1)</h3>
+<p>Reels live Tuesday, Thursday, Saturday. SALARY first, then OUTREACH, then PROMPTS. First Saturday email. Strategy Sessions held with the timer. First Accelerator start on the first Monday of month 2. Founding Community members pre-sold; Skool opens at 4. Week 6: hook review, Phase A go/no-go.</p>
+<h3 id="weeks-7-to-12-cut-over-and-widen-phase-2">Weeks 7 to 12: Cut over and widen (Phase 2)</h3>
+<p>DNS to Cloudflare, app subdomain, custom domain, redirects, analytics, OG images, sitemap. ADHD and LAYOFF keywords. Phase B ads if week 6 passed. Blog port decision. Permission audit and consent form. Week 12: the 90-day decision point.</p>
+<h3 id="months-4-to-6">Months 4 to 6</h3>
+<p>VA hired. Phase C ads to the Community with the trial. Blog and calculators ported if decided. Three more Saturday issues banked. Soft Landing outreach running weekly. First five video testimonials. Delivery SOPs in use for a second cohort. Branch protection and the validation job on.</p>
+<h3 id="months-6-to-12">Months 6 to 12</h3>
+<p>Phase D ads scaling under the rules. Second coach for Wednesday calls if concurrent clients pass 15. The old Vercel app retired. USD pricing decision from the data. A self-paced version of the Accelerator ($297 to $497) for the people who never book a call, built from the delivery SOPs. The 2026 outcomes survey in December. Twelve referring domains. Quarterly doc review.</p>
+<hr />
+<h2 id="4-decisions-only-izzy-can-make">4. Decisions only Izzy can make</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Decision</th>
+<th>Recommendation</th>
+<th>Deadline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Accelerator start cadence and cap</td>
+<td>Monthly starts, cap 5 per start, one shared Wednesday call for Accelerator and Community</td>
+<td>Week 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>When Skool opens</td>
+<td>Pre-sell 10 founding members at $29; open when 4 have paid</td>
+<td>Week 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Community payments</td>
+<td>Through Skool (access and billing in one place)</td>
+<td>Week 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Currency</td>
+<td>CAD everywhere; review USD at day 60</td>
+<td>Week 1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Instagram handle, Skool URL, Calendly event name</td>
+<td>Confirm the three strings in every footer and link</td>
+<td>Day 1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The 8-minute case study</td>
+<td>Record Blake's story to camera if no existing video fits</td>
+<td>Week 2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Lawyer for the legal pages</td>
+<td>A one-hour review of three templates</td>
+<td>Week 2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Cutover timing</td>
+<td>After Phase 1 is stable, around week 8</td>
+<td>Week 6</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Blog and calculators: port or keep on the app subdomain</td>
+<td>Port the blog in month 4; port the calculators in month 5</td>
+<td>Week 12</td>
+</tr>
+<tr>
+<td>10</td>
+<td>VA hire trigger</td>
+<td>$5,000 monthly revenue or 40-hour weeks for two weeks</td>
+<td>Month 3</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Phase B and Phase C ad starts</td>
+<td>Only on the go/no-go criteria in <code>ADS.md</code></td>
+<td>Weeks 4 and 8</td>
+</tr>
+<tr>
+<td>12</td>
+<td>GST/HST on digital products</td>
+<td>Ask the accountant; set Stripe Tax deliberately</td>
+<td>Week 2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-what-claude-can-build-next-in-this-repository">5. What Claude can build next in this repository</h2>
+<p>Each item is a session's work or less and needs nothing from Izzy except the okay. Ordered by how much they unblock.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Build</th>
+<th>Effort</th>
+<th>Why now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>CLAUDE.md</code> with the conventions and commands</td>
+<td>30 min</td>
+<td>Every future session starts faster</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The header and footer sync script, the sitemap generator, OG meta plus generated OG images, all wired into <code>build.py</code></td>
+<td>4 h</td>
+<td>Go-live needs them</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The validation job in the Pages workflow (check.py, HTML validation, 390px and desktop screenshots as artifacts)</td>
+<td>1 h</td>
+<td>Nothing broken ever deploys</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GitHub issues and a project board from this roadmap</td>
+<td>1 h</td>
+<td>Izzy works from a board, not a document</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Delivery SOPs in <code>docs/delivery/</code>: eight Accelerator call agendas, the Clarity 90-minute agenda, the Sprint call agenda, the Community run-sheets, the 12-month workshop list, the guarantee SOPs</td>
+<td>1 day</td>
+<td>The second cohort should not depend on memory</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Three more Saturday newsletter issues in full</td>
+<td>3 h</td>
+<td>A month banked before launch</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The Services one-pager as a PDF</td>
+<td>1 h</td>
+<td>The pre-call email links to it</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The Brevo email template (HTML) matching the site</td>
+<td>2 h</td>
+<td>Every automation looks like the brand</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>go/adhd.html</code>, <code>go/layoff.html</code>, <code>referrals.html</code>, <code>speaking.html</code></td>
+<td>4 h</td>
+<td>Phase 2 keywords and the referral program</td>
+</tr>
+<tr>
+<td>10</td>
+<td>The "Start here" scorecard quiz page</td>
+<td>4 h</td>
+<td>A self-serve path to the right offer</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Product pages for the other 14 products in the funnel pattern</td>
+<td>6 h</td>
+<td>Shop links stay on the new domain</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Blog port script and the 35 posts rendered</td>
+<td>1 day</td>
+<td>The SEO work earns on the new domain</td>
+</tr>
+<tr>
+<td>13</td>
+<td>The six calculators as plain-JavaScript pages</td>
+<td>2 to 3 days</td>
+<td>Retires the Vercel app</td>
+</tr>
+<tr>
+<td>14</td>
+<td>A CSV template for the KPIs sheet (four tabs)</td>
+<td>30 min</td>
+<td>Import, done</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Five case study blog posts drafted from the testimonial data</td>
+<td>3 h</td>
+<td>Proof that ranks</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Ad creative scripts expanded to three variants each (18 scripts)</td>
+<td>2 h</td>
+<td>Phase B and C need volume</td>
+</tr>
+<tr>
+<td>17</td>
+<td>The affiliate tools page ported from the old <code>/tools</code></td>
+<td>2 h</td>
+<td>Footer page with disclosure</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Testimonial consent form text and the permission audit sheet template</td>
+<td>30 min</td>
+<td>Before cutover</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>check.py</code> extended to fail on <code>REPLACE_</code> when a <code>--launch</code> flag is passed</td>
+<td>20 min</td>
+<td>The go/no-go in one command</td>
+</tr>
+<tr>
+<td>20</td>
+<td>A Skool "Start Here" post, the welcome WhatsApp message, and the weekly voice note outline</td>
+<td>1 h</td>
+<td>Onboarding without typing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-definition-of-launched">6. Definition of "launched"</h2>
+<p>The project is launched when all of these are true:</p>
+<ul>
+<li class="task-list-item"><input type="checkbox" disabled> The site is live on <code>joinclearcareer.com</code>, every old URL redirects, the old app serves from <code>app.joinclearcareer.com</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled> <code>grep -r REPLACE_ site emails</code> returns nothing.</li>
+<li class="task-list-item"><input type="checkbox" disabled> A real purchase of each $9 product, with and without the bump, from a phone, from a DM link, delivers the access email within a minute and creates the Brevo contact with the right attributes.</li>
+<li class="task-list-item"><input type="checkbox" disabled> A real booking produces the confirmation with the video, a Sessions row, and the 24-hour email.</li>
+<li class="task-list-item"><input type="checkbox" disabled> SPF, DKIM, and DMARC pass; a test email lands in Gmail Primary.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The legal pages carry a lawyer's sign-off and the consent language is in every capture point.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Three reels have gone out in each of two consecutive weeks, and the Saturday email has gone out twice.</li>
+<li class="task-list-item"><input type="checkbox" disabled> At least one Strategy Session has been held with the timer and logged.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The Monday scorecard has been filled in twice.</li>
+<li class="task-list-item"><input type="checkbox" disabled> The permission audit for the Results page is complete.</li>
+</ul>
+<p>Everything after that is growth, and the growth plan is <code>ADS.md</code>, <code>CONTENT-CALENDAR.md</code>, and section 3 above.</p>
+</article>
+</div></main>
+<footer class="site-footer" style="padding:2rem 0"><div class="container footer__bottom" style="margin-top:0;padding-top:0;border:0">
+  <span>ClearCareer 2026 plan. Internal working documents. © <span data-year>2026</span> Izzy Piyale-Sheard.</span>
+  <span><a href="../index.html">Artifact hub</a> · <a href="https://github.com/izzydoesizzy/clearcareer-website-2026">Repository</a></span>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>

@@ -36,6 +36,8 @@ FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="p
 # Documents: (source, output, title, section, blurb)
 # ---------------------------------------------------------------------------
 DOCS = [
+    ("docs/ROADMAP.md", "plan/roadmap.html", "Roadmap and Next Steps", "Plan",
+     "Every next step for the site, the marketing plan, and the project: 17 workstreams with owners, effort, dependencies, a timeline, decisions, and what to build next."),
     ("docs/PLAN.md", "plan/marketing-plan.html", "Marketing Plan", "Plan",
      "The master plan: positioning, offer ladder, funnel, nurture, Strategy Session, content, site, rollout."),
     ("docs/FUNNEL.md", "plan/funnel.html", "Funnel Map", "Plan",
@@ -354,7 +356,7 @@ def build_hub():
   <h1 style="max-width:18ch">Everything for the relaunch, in one place.</h1>
   <p class="hero__sub">The redesigned website, the marketing plan, the funnel map, every email written in full, the ads plan, and the launch checklist. Plain HTML, hosted on GitHub Pages, nothing to install.</p>
   <div class="btn-row"><a class="btn btn--primary btn--lg" href="site/index.html">Open the new site</a><a class="btn btn--secondary btn--lg" href="plan/marketing-plan.html">Read the plan</a><a class="btn btn--secondary btn--lg" href="emails/index.html">See the emails</a></div>
-  <p class="trust-line">Start with <a href="plan/launch-checklist.html">the launch checklist</a> if you want to know what to do first.</p>
+  <p class="trust-line">Start with <a href="plan/roadmap.html">the roadmap</a> for everything that comes next, or <a href="plan/launch-checklist.html">the launch checklist</a> for this fortnight.</p>
 </div></section>
 <section class="section section--tight"><div class="container">
   <div class="section-head section-head--left"><p class="eyebrow">The plan</p><h2>Strategy documents</h2></div>

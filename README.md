@@ -8,6 +8,7 @@ The complete relaunch kit for ClearCareer: the marketing plan, the funnel, every
 
 | What | Open | Source |
 |---|---|---|
+| **The roadmap: every next step, with owners and a timeline** | `plan/roadmap.html` | `docs/ROADMAP.md` |
 | The redesigned website | `site/index.html` | `site/*.html` |
 | The marketing plan | `plan/marketing-plan.html` | `docs/PLAN.md` |
 | The funnel, visual and table | `plan/funnel-map.html`, `plan/funnel.html` | `docs/FUNNEL.md` |
@@ -236,7 +237,11 @@ The step-by-step with time estimates is in `docs/LAUNCH-CHECKLIST.md`, Phase 2.
 
 ---
 
-## 10. Before launch: the placeholders
+## 10. What comes next
+
+`docs/ROADMAP.md` is the full next-steps plan: this week's five actions, the status of every artifact, seventeen workstreams (go-live, website content, migrating from the old site, offers and money, funnel plumbing, email deliverability and CASL, the content engine, ads, Strategy Session operations, delivery capacity, proof, partnerships, SEO and the blog, legal, repository tooling, review rituals, risks), a twelve-month timeline, the twelve decisions only Izzy can make, a menu of twenty things Claude can build next, and the definition of "launched".
+
+## 11. Before launch: the placeholders
 
 Every external link that does not exist yet is a `REPLACE_` placeholder. `grep -r REPLACE_ site emails/emails.md` lists them. They come from:
 
@@ -253,7 +258,7 @@ Also confirm: the Calendly event `calendly.com/clearcareer/strategy-session`, th
 
 ---
 
-## 11. Decisions and assumptions
+## 12. Decisions and assumptions
 
 Made so the plan is complete. Overrule any of them in `docs/PLAN.md` section 9.
 
@@ -273,12 +278,12 @@ Open questions for Izzy: which week the Accelerator should start if not the firs
 
 ---
 
-## 12. Voice
+## 13. Voice
 
 Every piece of copy in this repository was written against Izzy's voice guide: warm, direct, short sentences, "we" and "let's", specific numbers and names, no em dashes, no five-dollar words, no "In today's", no "At the end of the day". Client quotes are verbatim and are the only place those words appear. `scripts/check.py` enforces the dashes and flags the words.
 
 ---
 
-## 13. Sources
+## 14. Sources
 
 Built from: the existing `clearcareer-website` repository (80 testimonials, the outcomes survey of 58 members, 17 products, 12 free tools, 12 lead magnets, the JSIS program page, the brand guide), the Notion "2026 Packages" and community sales pages, the November 2025 call notes about the community and the funnel, and public material on Evelyn Weiss's membership and ads approach (linked in `docs/ADS.md`).
