@@ -6,24 +6,18 @@
   <title>Results and Testimonials | ClearCareer</title>
   <meta name="description" content="Self-reported outcomes from 58 ClearCareer members surveyed in December 2024, plus 80 written testimonials. NPS 84, $21,742 average raise, 64% landed during the program.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
   <style>
-    .bars { display: grid; gap: .55rem; }
-    .bar { display: grid; grid-template-columns: minmax(110px, 38%) 1fr 2.8rem; align-items: center; gap: .75rem; font-size: .9rem; }
-    .bar__track { height: 10px; border-radius: 999px; background: var(--blue-bg); overflow: hidden; }
-    .bar__fill { height: 100%; border-radius: 999px; background: var(--blue); }
-    .bar__val { text-align: right; font-weight: 600; color: var(--blue); }
     .shift { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem 2.5rem; }
-    .shift__num { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 4.5rem); line-height: 1; color: var(--muted); }
+    .shift__num { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 4.5rem); line-height: 1; color: var(--faint); letter-spacing: -0.02em; }
     .shift__num--after { color: var(--blue); }
-    .shift__label { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-    .big-num { font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1; color: var(--blue); }
-    .big-num--success { color: var(--success); }
-    .big-num--warning { color: var(--warning); }
+    .shift__label { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
     .wall-list li { margin-bottom: .6rem; }
+    .reviews img { border-radius: var(--r); border: 1px solid var(--line); background: #fff; }
   </style>
 </head>
 <body>
@@ -35,6 +29,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html">Work With Me</a></li>
+      <li><a href="results.html" aria-current="page">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -46,13 +41,13 @@
 <main id="main">
 
   <!-- Hero -->
-  <section class="hero hero--pattern hero--center">
+  <section class="hero hero--paper hero--center">
     <div class="container container--narrow">
-      <p class="eyebrow">Results</p>
-      <h1>The numbers behind the transformation</h1>
+      <p class="eyebrow">Results · outcomes report</p>
+      <h1>The numbers behind <em>the transformation.</em></h1>
       <p class="hero__sub">Self-reported data from 58 program members surveyed in December 2024, plus 80 written testimonials. No spin.</p>
       <div class="btn-row">
-        <a class="btn btn--primary btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+        <a class="btn btn--primary btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
         <a class="btn btn--secondary btn--lg" href="#wall">Read the 80 testimonials</a>
       </div>
     </div>
@@ -71,9 +66,9 @@
   </section>
 
   <!-- 01 Where they started -->
-  <section class="section section--alt">
+  <section class="section section--paper">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">01 Where they started</p>
         <h2>People came in stuck, depleted, and doubting themselves.</h2>
         <p>Most members had been searching for months, sending applications into the void, and wondering if something was wrong with them. Nothing was. Their system was.</p>
@@ -121,12 +116,12 @@
   <!-- 02 The confidence shift -->
   <section class="section">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">02 The confidence shift</p>
         <h2>The single biggest transformation is invisible on a resume.</h2>
         <p>Before strategy. Before assets. Before interviews. The first thing that changes is how people see themselves.</p>
       </div>
-      <div class="card card--blue center" data-animate>
+      <div class="card card--tint center" data-animate>
         <p class="shift__label">Self-reported job search confidence (1 to 5)</p>
         <div class="shift mt-2">
           <div><div class="shift__num">2.45</div><div class="shift__label">Before</div></div>
@@ -138,17 +133,17 @@
       </div>
       <div class="grid grid--3 mt-3">
         <div class="card" data-animate>
-          <div class="big-num big-num--success">83%</div>
+          <div class="big-num big-num--green">83%</div>
           <h3 class="mt-2">Reported significant confidence gains</h3>
           <p>48 of 58 rated the confidence outcome a 4 or 5.</p>
         </div>
         <div class="card" data-animate data-delay="80">
-          <div class="big-num big-num--success">79%</div>
+          <div class="big-num big-num--green">79%</div>
           <h3 class="mt-2">Gained significant clarity</h3>
           <p>46 of 58 rated "More clarity" a 4 or 5. People stopped spinning and started moving with purpose.</p>
         </div>
         <div class="card" data-animate data-delay="160">
-          <div class="big-num big-num--success">74%</div>
+          <div class="big-num big-num--green">74%</div>
           <h3 class="mt-2">Overcame their number one challenge</h3>
           <p>43 of 58 rated challenge resolution a perfect 5 out of 5. Average: 4.67.</p>
         </div>
@@ -169,32 +164,32 @@
   </section>
 
   <!-- 03 The financial impact -->
-  <section class="section section--alt">
+  <section class="section section--paper">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">03 The financial impact</p>
         <h2>The program pays for itself. Then it keeps paying.</h2>
         <p>Of the 37 members who landed roles, 84% increased their compensation. The average raise was $21,742.</p>
       </div>
       <div class="grid grid--2">
         <div class="card center" data-animate>
-          <div class="big-num big-num--success" style="font-size:clamp(2.6rem,4.5vw,3.6rem)">$1.2M+</div>
+          <div class="big-num big-num--green" style="font-size:clamp(2.6rem,4.5vw,3.6rem)">$1.2M+</div>
           <p class="mt-2 mb-0">Total collective salary increases across program members*</p>
         </div>
         <div class="card center" data-animate data-delay="80">
-          <div class="big-num big-num--success" style="font-size:clamp(2.6rem,4.5vw,3.6rem)">$21.7K</div>
+          <div class="big-num big-num--green" style="font-size:clamp(2.6rem,4.5vw,3.6rem)">$21.7K</div>
           <p class="mt-2">Average raise for members who negotiated higher pay</p>
           <p class="card__meta">55% of workers never negotiate at all (Pew Research, 2023)</p>
         </div>
       </div>
       <div class="grid grid--3 mt-3">
         <div class="card" data-animate>
-          <div class="big-num big-num--success">84%</div>
+          <div class="big-num big-num--green">84%</div>
           <h3 class="mt-2">Increased their salary</h3>
           <p>31 of 37 members who landed roles negotiated higher compensation.</p>
         </div>
         <div class="card" data-animate data-delay="80">
-          <div class="big-num big-num--warning">42%</div>
+          <div class="big-num big-num--amber">42%</div>
           <h3 class="mt-2">Negotiated $20K+ raises</h3>
           <p>14 members added $20K or more. Two exceeded $50K. One passed $100K.</p>
         </div>
@@ -244,7 +239,7 @@
   <!-- 04 Speed to results -->
   <section class="section">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">04 Speed to results</p>
         <h2>Months of spinning. Then weeks to momentum.</h2>
         <p>Of the 37 members who landed, 68% did it within 2 months. 46% within a single month.</p>
@@ -276,9 +271,9 @@
   </section>
 
   <!-- 05 What people used -->
-  <section class="section section--alt">
+  <section class="section section--paper">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">05 What people actually used</p>
         <h2>Every resource rated. Every skill measured.</h2>
         <p>The top-rated resources: resume support, email templates, motivation, and accountability. The things that get built with you, and the people who keep you moving.</p>
@@ -324,7 +319,7 @@
   <!-- 06 AI fluency -->
   <section class="section">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">06 AI fluency</p>
         <h2>From "I've never used AI" to fluent and confident.</h2>
         <p>43% had rarely or never used AI before joining. Of those who compared, 98% say our prompts beat anything else they tried.</p>
@@ -373,15 +368,15 @@
   </section>
 
   <!-- 07 The verdict -->
-  <section class="section section--alt">
+  <section class="section section--paper">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">07 The verdict</p>
         <h2>The kind of numbers that don't need spin.</h2>
         <p>NPS of 84. Average rating 4.84 out of 5. 98% rate ClearCareer better than any other program they've tried.</p>
       </div>
       <div class="card center" data-animate>
-        <div class="big-num big-num--warning" style="font-size:clamp(3.5rem,8vw,5.5rem)">84</div>
+        <div class="big-num big-num--amber" style="font-size:clamp(3.5rem,8vw,5.5rem)">84</div>
         <p class="shift__label mt-2">Net Promoter Score</p>
         <p class="small muted mb-0" style="max-width:34rem;margin-left:auto;margin-right:auto">For context: an NPS above 50 is excellent. Above 70 is world-class. Apple is 72. Netflix is 68. ClearCareer is 84.</p>
       </div>
@@ -417,27 +412,27 @@
   <!-- 08 In their words -->
   <section class="section">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">08 In their words</p>
         <h2>You don't have to take our word for it.</h2>
         <p>Unedited answers to one survey question: "Did you experience any other major transformations?"</p>
       </div>
       <div class="grid grid--3">
-        <div class="card card--flat" data-animate><p>"I got a job in 2 weeks after two years of looking and wrote my own job description. It's pretty wild."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="80"><p>"Since the program, I've gotten married, purchased a home, and climbed up to a VP role. No other program has come close."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="160"><p>"I saw an 83% salary increase. As a disabled person, the program accepted me exactly as I am."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate><p>"ClearCareer helped me realize my values and not accept lower rates."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="80"><p>"The emotional support of a community with a good leader is priceless."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="160"><p>"This program really goes above and beyond. It teaches you to work smarter."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate><p>"I was promoted within 3 months."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="80"><p>"Cold outreach emails are so much better, with almost 100% response rate."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="160"><p>"I've grown more confident in my personal life as well."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate><p>"The level of support at this price point was unmatched."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="80"><p>"I feel like my career is finally on track and I'm being fairly compensated for the first time."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="160"><p>"I feel supported on my journey and my anxiety has gone down significantly. Izzy is the wizard."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate><p>"ClearCareer helped me understand WHAT I wanted to pursue. I was floating for years."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="80"><p>"I switched careers a year later. Drawing on what I learned made it so much easier."</p><p class="card__meta">ClearCareer member</p></div>
-        <div class="card card--flat" data-animate data-delay="160"><p>"Working with Izzy transformed my career and my life."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate><p>"I got a job in 2 weeks after two years of looking and wrote my own job description. It's pretty wild."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="80"><p>"Since the program, I've gotten married, purchased a home, and climbed up to a VP role. No other program has come close."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="160"><p>"I saw an 83% salary increase. As a disabled person, the program accepted me exactly as I am."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate><p>"ClearCareer helped me realize my values and not accept lower rates."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="80"><p>"The emotional support of a community with a good leader is priceless."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="160"><p>"This program really goes above and beyond. It teaches you to work smarter."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate><p>"I was promoted within 3 months."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="80"><p>"Cold outreach emails are so much better, with almost 100% response rate."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="160"><p>"I've grown more confident in my personal life as well."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate><p>"The level of support at this price point was unmatched."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="80"><p>"I feel like my career is finally on track and I'm being fairly compensated for the first time."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="160"><p>"I feel supported on my journey and my anxiety has gone down significantly. Izzy is the wizard."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate><p>"ClearCareer helped me understand WHAT I wanted to pursue. I was floating for years."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="80"><p>"I switched careers a year later. Drawing on what I learned made it so much easier."</p><p class="card__meta">ClearCareer member</p></div>
+        <div class="card card--paper" data-animate data-delay="160"><p>"Working with Izzy transformed my career and my life."</p><p class="card__meta">ClearCareer member</p></div>
       </div>
       <div class="notice notice--info mt-4" data-animate>
         <p class="small mb-2"><strong>Methodology.</strong> Data from 58 ClearCareer program participants surveyed in December 2024. All figures are self-reported. Individual results vary with effort, market conditions, and role level. *The collective salary figure of $1.2M+ includes additional verified sources beyond this survey.</p>
@@ -447,272 +442,288 @@
   </section>
 
   <!-- The wall -->
-  <section class="section section--soft" id="wall">
+  <section class="section" id="wall">
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">The wall</p>
         <h2>43 client testimonials. Every one we have.</h2>
         <p>Pull quotes where we have them. Otherwise the client's own words, trimmed to a sentence or two. Real names. Nothing invented.</p>
       </div>
-      <div class="grid grid--3">
-        <figure class="quote" data-animate>
+      <div class="wall">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">From freelancer to $127K + 30 PTO days negotiated</blockquote>
-          <figcaption class="quote__who"><img class="avatar" src="../assets/img/testimonials/kira-howe.png" alt=""><div><div class="quote__name">Kira Howe</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$127K plus 30 PTO days</span>
+          <figcaption class="quote__who"><div class="avatar avatar--initials">KH</div><div><div class="quote__name">Kira Howe</div><div class="quote__role">ClearCareer client</div></div></figcaption>
+          <span class="badge badge--green quote__outcome">$127K plus 30 PTO days</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Stuck in a job search black hole. 2 offers in weeks.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">AB</div><div><div class="quote__name">Annie Bell</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">2 offers, 200% raise</span>
+          <span class="badge badge--green quote__outcome">2 offers, 200% raise</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">500+ apps, 0 offers. Then: 3 interviews in 2 weeks.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">VP</div><div><div class="quote__name">Victor Perez</div><div class="quote__role">Senior Project Manager</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">3 interviews in 2 weeks</span>
+          <span class="badge badge--green quote__outcome">3 interviews in 2 weeks</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">1 year unemployed. Employed in 3 weeks.</blockquote>
-          <figcaption class="quote__who"><img class="avatar" src="../assets/img/testimonials/kristin-davis.png" alt=""><div><div class="quote__name">Kristin Davis</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Hired in 3 weeks</span>
+          <figcaption class="quote__who"><div class="avatar avatar--initials">KD</div><div><div class="quote__name">Kristin Davis</div><div class="quote__role">ClearCareer client</div></div></figcaption>
+          <span class="badge badge--green quote__outcome">Hired in 3 weeks</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">1+ year searching. Hired in 30 days.</blockquote>
-          <figcaption class="quote__who"><img class="avatar" src="../assets/img/testimonials/sparsh-kalia.png" alt=""><div><div class="quote__name">Sparsh Kalia</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Hired in 30 days</span>
+          <figcaption class="quote__who"><div class="avatar avatar--initials">SK</div><div><div class="quote__name">Sparsh Kalia</div><div class="quote__role">ClearCareer client</div></div></figcaption>
+          <span class="badge badge--green quote__outcome">Hired in 30 days</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">200+ failed apps. 27 targeted emails. 13 replies. 1 offer.</blockquote>
-          <figcaption class="quote__who"><img class="avatar" src="../assets/img/testimonials/blake-mcdermott.png" alt=""><div><div class="quote__name">Blake McDermott</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">27 emails, 13 replies, 1 offer</span>
+          <figcaption class="quote__who"><div class="avatar avatar--initials">BM</div><div><div class="quote__name">Blake McDermott</div><div class="quote__role">ClearCareer client</div></div></figcaption>
+          <span class="badge badge--green quote__outcome">27 emails, 13 replies, 1 offer</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">$20K+ raise and a bonus. After getting zero interviews.</blockquote>
-          <figcaption class="quote__who"><img class="avatar" src="../assets/img/testimonials/tamara-gordon.png" alt=""><div><div class="quote__name">Tamara Gordon</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$20K+ raise plus bonus</span>
+          <figcaption class="quote__who"><div class="avatar avatar--initials">TG</div><div><div class="quote__name">Tamara Gordon</div><div class="quote__role">ClearCareer client</div></div></figcaption>
+          <span class="badge badge--green quote__outcome">$20K+ raise plus bonus</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">$25K raise. Associate Director. One program.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">CC</div><div><div class="quote__name">Chris Chipman</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$25K raise, Associate Director</span>
+          <span class="badge badge--green quote__outcome">$25K raise, Associate Director</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">2 job offers in 1 week. 30% salary increase.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">HP</div><div><div class="quote__name">Henrique Perez</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">2 offers in 1 week, 30% raise</span>
+          <span class="badge badge--green quote__outcome">2 offers in 1 week, 30% raise</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">$22K more per year. The dream role. 30% salary jump.</blockquote>
-          <figcaption class="quote__who"><img class="avatar" src="../assets/img/testimonials/laura-salamanca.png" alt=""><div><div class="quote__name">Laura Salamanca</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$22K raise, dream role</span>
+          <figcaption class="quote__who"><div class="avatar avatar--initials">LS</div><div><div class="quote__name">Laura Salamanca</div><div class="quote__role">ClearCareer client</div></div></figcaption>
+          <span class="badge badge--green quote__outcome">$22K raise, dream role</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">$20K raise and a full industry switch.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">JP</div><div><div class="quote__name">Julian Pedraza</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$20K raise, new industry</span>
+          <span class="badge badge--green quote__outcome">$20K raise, new industry</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">600+ applications, 3 interviews. Then everything changed.</blockquote>
-          <figcaption class="quote__who"><img class="avatar" src="../assets/img/testimonials/darin-mellor.png" alt=""><div><div class="quote__name">Darin Mellor</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Signed offer after 600+ applications</span>
+          <figcaption class="quote__who"><div class="avatar avatar--initials">DM</div><div><div class="quote__name">Darin Mellor</div><div class="quote__role">ClearCareer client</div></div></figcaption>
+          <span class="badge badge--green quote__outcome">Signed offer after 600+ applications</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Doubted herself. Landed a Director role.</blockquote>
-          <figcaption class="quote__who"><img class="avatar" src="../assets/img/testimonials/raunika-lamge.png" alt=""><div><div class="quote__name">Raunika Lamge</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Director role</span>
+          <figcaption class="quote__who"><div class="avatar avatar--initials">RL</div><div><div class="quote__name">Raunika Lamge</div><div class="quote__role">ClearCareer client</div></div></figcaption>
+          <span class="badge badge--green quote__outcome">Director role</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">$10K above the offer. Impostor syndrome, gone.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">SA</div><div><div class="quote__name">Septembre Anderson</div><div class="quote__role">Front-End Web Developer</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$10K above the offer</span>
+          <span class="badge badge--green quote__outcome">$10K above the offer</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">$10K negotiated. Dream tech role.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">MD</div><div><div class="quote__name">Marsha Druker</div><div class="quote__role">Senior Field Marketing Manager</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$10K above the offer</span>
+          <span class="badge badge--green quote__outcome">$10K above the offer</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">12 months, 0 offers. Then $6K negotiated above "final."</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">JG</div><div><div class="quote__name">Jorge Garboza</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Offer plus $6K after 12 months</span>
+          <span class="badge badge--green quote__outcome">Offer plus $6K after 12 months</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">3 job offers. $10K raise. After unemployment.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">WG</div><div><div class="quote__name">Wil Gerard</div><div class="quote__role">Software Engineer</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">3 offers, $10K raise</span>
+          <span class="badge badge--green quote__outcome">3 offers, $10K raise</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Nervous about a World Bank interview. Got the offer.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">DM</div><div><div class="quote__name">Daniela Dyer Melhado</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">World Bank Legal Analyst</span>
+          <span class="badge badge--green quote__outcome">World Bank Legal Analyst</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Top of salary range, extra vacation, and a role that matters.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">AG</div><div><div class="quote__name">Alison Gibbins</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Top of range + 5 vacation days</span>
+          <span class="badge badge--green quote__outcome">Top of range + 5 vacation days</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">One outreach email. Opened 4 times. Interview scheduled.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">LS</div><div><div class="quote__name">Leanne Saldanha</div><div class="quote__role">Non-Profit Coordinator</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Interview from one email</span>
+          <span class="badge badge--green quote__outcome">Interview from one email</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Izzy's system completely transformed my job search from hundreds of applications with no results to receiving responses within the first week.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">AC</div><div><div class="quote__name">Andrew Cameron</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Replies in week one</span>
+          <span class="badge badge--green quote__outcome">Replies in week one</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">I only had a high school diploma and had a difficult time getting past the gatekeepers. Much of my career success can be attributed to the core principles Izzy taught me.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">HL</div><div><div class="quote__name">Haddie Lengyuen</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Jobs landed through outreach</span>
+          <span class="badge badge--green quote__outcome">Jobs landed through outreach</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">After just one session, I felt much better about my prospects. Implementing Izzy's suggestions helped me successfully transition into a field I'd been interested in for a long time.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">MM</div><div><div class="quote__name">Marsha Malcolm</div><div class="quote__role">Communications Writer</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Switched fields</span>
+          <span class="badge badge--green quote__outcome">Switched fields</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Izzy's program gave me the tools, confidence, and community I needed to navigate the job market.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">SU</div><div><div class="quote__name">Susanne</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">Operations Manager, new industry</span>
+          <span class="badge badge--green quote__outcome">Operations Manager, new industry</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Izzy gave me exactly what I needed: a kickstart! In just our first talk he helped me identify action items I could do right away.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">AK</div><div><div class="quote__name">Adam Kastor</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">Kickstart in one session</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">His guidance on leveraging ChatGPT for professional summaries, quantifying achievements, and optimizing LinkedIn transformed my job search strategy.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">AH</div><div><div class="quote__name">Athena Hernandez</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">AI job search strategy</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Izzy is the most caring, supportive, and dedicated career coach I've ever worked with. 10/10 would recommend!</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">CB</div><div><div class="quote__name">Courtenay Badran</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">Confidence and resume</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Izzy guided me in thinking differently about my achievements, which helped me understand the true impact of my work.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">DS</div><div><div class="quote__name">Danica Stark</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">Resume overhaul</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">He taught me really good tricks for getting your resume noticed. I would highly recommend Izzy to anyone looking for career advice.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">EM</div><div><div class="quote__name">Erin Marini</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">Resume and cover letter</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">He showed me points I had never realized before about the interviewing process. You must work with him if you want to invest in your career.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">GA</div><div><div class="quote__name">Gamze Aluc</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">Resume and interview insight</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">I had a great time with Izzy and I would like to start doing what he has recommended more. Here's to me landing a job.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">HM</div><div><div class="quote__name">Hamsharan Mahalingam</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">Career guidance</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Honestly it all sounds so much more achievable with Izzy's confidence in what I have to do! I already feel so much better about my prospects it's crazy.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">JE</div><div><div class="quote__name">Jeska Edens</div><div class="quote__role">Founder of Taurus Terrazzo</div></div></figcaption>
           <span class="badge quote__outcome">Renewed confidence</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">He took the time to get to know me, my personality, and my brand to ensure that the design effectively reflected who I am.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">JL</div><div><div class="quote__name">Jessica Leung</div><div class="quote__role">Music Educator</div></div></figcaption>
           <span class="badge quote__outcome">Website and personal brand</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">He is worth every penny. He's leveraging technology in ways most coaches don't even know HOW TO use yet.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">KW</div><div><div class="quote__name">Kay Woods</div><div class="quote__role">Product Manager</div></div></figcaption>
           <span class="badge quote__outcome">Coaching value</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">My resume came across more mature to recruiters and people in my network. Highly recommend Izzy.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">KN</div><div><div class="quote__name">Kedar Nadkarny</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">Canadian-format resume</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">I struggled with narrowing my career pathway. Izzy helped me identify key elements, craft a stronger intro story and create an impact profile.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">KT</div><div><div class="quote__name">Kevin Truong</div><div class="quote__role">Cofounder of Hedgehog Umbrella</div></div></figcaption>
           <span class="badge quote__outcome">Career clarity for a founder</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">He made really astute observations about my situation, reading between the lines in ways I never thought of.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">MC</div><div><div class="quote__name">Maria Chami</div><div class="quote__role">Communications Specialist</div></div></figcaption>
           <span class="badge quote__outcome">Career tips</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">He will absolutely bring out the best in you. Take the leap, you won't regret it.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">MS</div><div><div class="quote__name">Mazia Syed</div><div class="quote__role">Software Engineer</div></div></figcaption>
           <span class="badge quote__outcome">Renewed energy</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">He extended our initial 25min call to a 75min brainstorm, transforming my storytelling from vague narratives to hooks that grab attention.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">NA</div><div><div class="quote__name">Nabeel K Adeni</div><div class="quote__role">ClearCareer client</div></div></figcaption>
           <span class="badge quote__outcome">Interview positioning</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Just got off a call with a person I had an informational interview with. She was admiring the professionalism of my email.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">SS</div><div><div class="quote__name">Sarvesh Syal</div><div class="quote__role">IT Specialist</div></div></figcaption>
           <span class="badge quote__outcome">Outreach email praised</span>
         </figure>
-        <figure class="quote" data-animate data-delay="80">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">I would 100% recommend Izzy to anyone currently looking to land their dream job.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">VA</div><div><div class="quote__name">Veronica Amarante</div><div class="quote__role">Digital Marketer</div></div></figcaption>
           <span class="badge quote__outcome">Reframed job search</span>
         </figure>
-        <figure class="quote" data-animate data-delay="160">
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">I can now see a side of my professional career I was not able to before. Izzy is an awesome career coach.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">VR</div><div><div class="quote__name">Victor Rivas</div><div class="quote__role">Senior Software Engineer</div></div></figcaption>
           <span class="badge quote__outcome">Profile and confidence</span>
         </figure>
-        <figure class="quote" data-animate>
+        <figure class="quote quote--paper">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">He even built tools using automation and AI to help candidates find jobs in a smarter way. I highly recommend Izzy as a career coach!</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">WW</div><div><div class="quote__name">Win Shi Wong</div><div class="quote__role">Digital Marketing Manager</div></div></figcaption>
           <span class="badge quote__outcome">Resume review</span>
         </figure>
+      </div>
+      
+      <div class="section-head mt-5" data-animate>
+        <p class="eyebrow">Straight from LinkedIn</p>
+        <h2>Eight five-star reviews, as posted</h2>
+        <p>Screenshots from Izzy's LinkedIn services page. Unedited.</p>
+      </div>
+      <div class="grid grid--2 reviews" data-animate>
+        <img src="../assets/img/testimonials/kira-howe.png" alt="LinkedIn review from Kira Howe" loading="lazy" width="1536" height="726">
+        <img src="../assets/img/testimonials/kristin-davis.png" alt="LinkedIn review from Kristin Davis" loading="lazy" width="1548" height="772">
+        <img src="../assets/img/testimonials/tamara-gordon.png" alt="LinkedIn review from Tamara Gordon" loading="lazy" width="1548" height="726">
+        <img src="../assets/img/testimonials/blake-mcdermott.png" alt="LinkedIn review from Blake McDermott" loading="lazy" width="1546" height="724">
+        <img src="../assets/img/testimonials/laura-salamanca.png" alt="LinkedIn review from Laura Salamanca" loading="lazy" width="1550" height="776">
+        <img src="../assets/img/testimonials/darin-mellor.png" alt="LinkedIn review from Darin Mellor" loading="lazy" width="1530" height="732">
+        <img src="../assets/img/testimonials/sparsh-kalia.png" alt="LinkedIn review from Sparsh Kalia" loading="lazy" width="1542" height="678">
+        <img src="../assets/img/testimonials/raunika-lamge.png" alt="LinkedIn review from Raunika Lamge" loading="lazy" width="1536" height="744">
       </div>
       <p class="center small muted mt-4" data-animate>Seven more notes come from colleagues and fellow coaches rather than clients. They're kind, and they're not outcomes, so they stay off the wall.</p>
       <div class="faq mt-3" data-animate>
@@ -756,13 +767,13 @@
   </section>
 
   <!-- CTA -->
-  <section class="section section--tight">
+  <section class="section--tight">
     <div class="container">
       <div class="cta-band cta-band--blue" data-animate>
         <h2>Want numbers like these with your name on them?</h2>
         <p>Book a 25-minute Strategy Session. We find what's broken, I tell you what I'd build, and you decide. Fortune favours the bold.</p>
         <div class="btn-row">
-          <a class="btn btn--white btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+          <a class="btn btn--white btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
           <a class="btn btn--outline-white btn--lg" href="services.html">See the five ways to work together</a>
         </div>
       </div>
@@ -773,6 +784,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -815,6 +830,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>

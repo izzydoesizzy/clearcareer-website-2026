@@ -6,10 +6,11 @@
   <title>Page Not Found | ClearCareer</title>
   <meta name="description" content="That page moved. Head back to the ClearCareer home page, the services, the free tools, or the shop.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -30,16 +32,19 @@
 
 <main id="main">
 
-  <section class="hero hero--pattern hero--center">
+  <section class="hero hero--paper hero--center">
     <div class="container container--narrow">
       <p class="eyebrow">404</p>
-      <h1>That page moved.</h1>
+      <h1>That page <em>moved.</em></h1>
       <p class="hero__sub">Or it never existed. Either way, the thing you came for is one click away. Pick a door.</p>
       <div class="btn-row">
-        <a class="btn btn--primary btn--lg" href="index.html">Home</a>
-        <a class="btn btn--secondary btn--lg" href="services.html">Work With Me</a>
-        <a class="btn btn--secondary btn--lg" href="free.html">Free tools</a>
-        <a class="btn btn--secondary btn--lg" href="shop.html">Shop</a>
+        <a class="btn btn--primary btn--lg btn--arrow" href="index.html">Home</a>
+      </div>
+      <div class="pill-row pill-row--center mt-3">
+        <a class="pill" href="services.html">Work With Me</a>
+        <a class="pill" href="free.html">Free tools</a>
+        <a class="pill" href="shop.html">Shop</a>
+        <a class="pill" href="strategy-session.html">Book a Strategy Session</a>
       </div>
       <p class="trust-line">Still lost? <a href="mailto:izzy@joinclearcareer.com">Email me</a> and tell me what you were looking for.</p>
     </div>
@@ -49,6 +54,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -91,6 +100,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>
