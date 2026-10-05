@@ -1,0 +1,127 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import PricingCard from "@components/PricingCard.astro";
+import CTASection from "@components/CTASection.astro";
+---
+
+<PageLayout
+  title="ClearCareer Community | Weekly Coaching & Support"
+  description="Join the ClearCareer Community. Weekly group coaching calls, job search templates, tools, and a supportive network of professionals. $49/month or $249 lifetime."
+  noindex={true}
+>
+  <!-- Hero -->
+  <Hero
+    variant="page"
+    eyebrow="ClearCareer Community"
+    headline="Your Job Search Doesn't Have to Be a Solo Mission"
+    subheadline="Weekly coaching calls, proven templates, and a community of professionals who get it. For $49/month or $249 lifetime."
+    primaryCTA={{ text: "Join the Community", href: "#pricing" }}
+    secondaryCTA={{ text: "Book a Free Call", href: "https://calendly.com/clearcareer/discovery-call" }}
+  />
+
+  <!-- What's Included -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">Membership</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">What's Included</h2>
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-xl border border-border bg-white p-6">
+          <div class="mb-4 text-3xl">📞</div>
+          <h3 class="text-lg font-semibold text-navy">Weekly Group Coaching Calls</h3>
+          <p class="mt-2 text-[1.0625rem] leading-[1.75] text-text-muted">
+            Live calls with Izzy every week. Bring your questions, get real answers, and stay accountable.
+          </p>
+        </div>
+        <div class="rounded-xl border border-border bg-white p-6">
+          <div class="mb-4 text-3xl">📄</div>
+          <h3 class="text-lg font-semibold text-navy">Job Search Templates</h3>
+          <p class="mt-2 text-[1.0625rem] leading-[1.75] text-text-muted">
+            Resume templates, outreach scripts, follow-up emails, and negotiation frameworks ready to use.
+          </p>
+        </div>
+        <div class="rounded-xl border border-border bg-white p-6">
+          <div class="mb-4 text-3xl">👥</div>
+          <h3 class="text-lg font-semibold text-navy">Private Community</h3>
+          <p class="mt-2 text-[1.0625rem] leading-[1.75] text-text-muted">
+            Connect with professionals navigating the same challenges. Share wins, get feedback, stay motivated.
+          </p>
+        </div>
+        <div class="rounded-xl border border-border bg-white p-6">
+          <div class="mb-4 text-3xl">🎓</div>
+          <h3 class="text-lg font-semibold text-navy">Monthly Workshops</h3>
+          <p class="mt-2 text-[1.0625rem] leading-[1.75] text-text-muted">
+            Deep-dive sessions on topics like LinkedIn optimization, interview prep, and salary negotiation.
+          </p>
+        </div>
+        <div class="rounded-xl border border-border bg-white p-6">
+          <div class="mb-4 text-3xl">📚</div>
+          <h3 class="text-lg font-semibold text-navy">Resource Library</h3>
+          <p class="mt-2 text-[1.0625rem] leading-[1.75] text-text-muted">
+            Access to guides, tools, and frameworks from the ClearCareer toolkit.
+          </p>
+        </div>
+        <div class="rounded-xl border border-border bg-white p-6">
+          <div class="mb-4 text-3xl">🤖</div>
+          <h3 class="text-lg font-semibold text-navy">AI Prompt Library</h3>
+          <p class="mt-2 text-[1.0625rem] leading-[1.75] text-text-muted">
+            30+ tested prompts for resume writing, company research, interview prep, and more.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">Pricing</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">Choose Your Plan</h2>
+      </div>
+      <div class="mx-auto mt-12 grid max-w-[720px] grid-cols-1 gap-8 md:grid-cols-2">
+        <PricingCard
+          tier="Monthly"
+          price="$49/mo"
+          features={[
+            "Weekly group coaching calls",
+            "Job search templates & tools",
+            "Private community access",
+            "Monthly workshops",
+            "Resource library",
+            "AI prompt library",
+          ]}
+          ctaText="Start Monthly"
+          ctaHref="#"
+          featured={false}
+        />
+        <PricingCard
+          tier="Lifetime Access"
+          price="$249"
+          originalPrice="$588"
+          features={[
+            "Everything in Monthly",
+            "One-time payment, access forever",
+            "All future templates & tools",
+            "Priority access to new features",
+            "Save 58% vs monthly",
+          ]}
+          ctaText="Get Lifetime Access"
+          ctaHref="#"
+          featured={true}
+          paymentPlan="One-time payment"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    heading="Not Sure Which Program Is Right?"
+    body="Book a free 20-minute call. Izzy will help you figure out the best path forward."
+    primaryCTA={{ text: "Book a Free Call", href: "https://calendly.com/clearcareer/discovery-call" }}
+    variant="blue"
+  />
+</PageLayout>

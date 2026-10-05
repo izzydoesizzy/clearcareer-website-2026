@@ -1,0 +1,39 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import WorthResult from "@components/wrapped/WorthResult";
+import { getResult } from "../../../lib/wrapped/storage";
+import type { WorthResult as WorthData } from "../../../lib/wrapped/types";
+
+export const prerender = false;
+
+const { id } = Astro.params;
+if (!id) return Astro.redirect("/wrapped/worth");
+
+const analysis = await getResult(id);
+if (!analysis || analysis.tool !== "worth") return Astro.redirect("/wrapped/worth");
+
+const result = analysis.result as WorthData;
+const referer = Astro.request.headers.get("referer") || "";
+const isOwner = referer.includes("/wrapped/api/") || referer.includes("/wrapped/worth");
+const ogImageUrl = `/wrapped/og/worth/${id}`;
+---
+
+<PageLayout
+  title={`Worth ${new Intl.NumberFormat("en-US", { style: "currency", currency: result.currency, maximumFractionDigits: 0 }).format(result.anchorValue)} | ClearCareer`}
+  description={`${result.titleGap.summary}. Find out what you're actually worth at ClearCareer.`}
+  image={ogImageUrl}
+>
+  <section class="bg-navy py-16 md:py-24">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <a href="/wrapped" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width={2}>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Career Wrapped
+        </a>
+      </div>
+      <WorthResult client:load result={result} resultId={id} isOwner={isOwner} />
+    </div>
+  </section>
+</PageLayout>

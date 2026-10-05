@@ -1,0 +1,1942 @@
+[
+  {
+    "name": "Accenture Canada",
+    "industry": "Consulting - IT & Management",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.accenture.com/ca-en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/accenture/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "BCG (Boston Consulting Group) Canada",
+    "industry": "Consulting - Strategy",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (client-site + office)",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://careers.bcg.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/boston-consulting-group/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "BDO Canada",
+    "industry": "Consulting - Accounting & Advisory",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.bdo.ca/en-ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/bdo-canada/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "CGI Group",
+    "industry": "Consulting - IT Services",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.cgi.com/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/cgi/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "Clio",
+    "industry": "Legal Tech SaaS",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.clio.com/about/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/clio---cloud-based-legal-technology",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "Deloitte Canada",
+    "industry": "Consulting - Big Four / Management",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (team-based co-location model)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www2.deloitte.com/ca/en/careers/students.html",
+    "linkedinUrl": "https://www.linkedin.com/company/deloitte/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "EY Canada",
+    "industry": "Consulting - Big Four / Assurance & Tax",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (flexible)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.ey.com/en_ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/ernstandyoung/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "FTI Consulting Canada",
+    "industry": "Consulting - Financial Advisory",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.fticonsulting.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/fti-consulting/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "FreshBooks",
+    "industry": "Accounting SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.freshbooks.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/freshbooks",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "Grant Thornton Canada",
+    "industry": "Consulting - Accounting & Advisory",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.grantthornton.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/grant-thornton-canada/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "Hatch",
+    "industry": "Consulting - Engineering & Project Management",
+    "hq": "Mississauga ON",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.hatch.com/Careers",
+    "linkedinUrl": "https://www.linkedin.com/company/hatch/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "KPMG Canada",
+    "industry": "Consulting - Big Four / Audit & Advisory",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (avg 3 days in-person)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://kpmg.com/ca/en/home/careers.html",
+    "linkedinUrl": "https://www.linkedin.com/company/kpmg-canada/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "MNP LLP",
+    "industry": "Consulting - Accounting & Advisory",
+    "hq": "Calgary",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.mnp.ca/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/mnp/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "McKinsey & Company (Canada)",
+    "industry": "Consulting - Strategy",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (client-site + office)",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.mckinsey.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/mckinsey/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "PwC Canada",
+    "industry": "Consulting - Big Four / Assurance & Advisory",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (50% in-person on average)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.pwc.com/ca/en/careers.html",
+    "linkedinUrl": "https://www.linkedin.com/company/pwc/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "Stantec",
+    "industry": "Consulting - Engineering & Environmental",
+    "hq": "Edmonton",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.stantec.com/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/stantec/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "WSP Global",
+    "industry": "Consulting - Engineering & Environmental",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.wsp.com/en-ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/wsp/",
+    "category": "Consulting & Professional Services"
+  },
+  {
+    "name": "Absorb Software",
+    "industry": "Learning Management System (LMS) SaaS",
+    "hq": "Calgary AB",
+    "remotePolicy": "Fully Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.absorblms.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/absorb-software",
+    "category": "Education & EdTech"
+  },
+  {
+    "name": "ApplyBoard",
+    "industry": "EdTech / International Student Recruitment",
+    "hq": "Kitchener ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.applyboard.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/applyboard",
+    "category": "Education & EdTech"
+  },
+  {
+    "name": "D2L (Desire2Learn)",
+    "industry": "EdTech / Learning Platform SaaS",
+    "hq": "Kitchener ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.d2l.com/careers/jobs/",
+    "linkedinUrl": "https://www.linkedin.com/company/d2l",
+    "category": "Education & EdTech"
+  },
+  {
+    "name": "Docebo",
+    "industry": "Learning Management SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.docebo.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/docebo",
+    "category": "Education & EdTech"
+  },
+  {
+    "name": "Kritik",
+    "industry": "Education & EdTech (Peer Learning Platform)",
+    "hq": "Toronto",
+    "remotePolicy": "Fully Remote",
+    "size": "Startup (<50)",
+    "careersUrl": "https://www.kritik.io/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/kritik/",
+    "category": "Education & EdTech"
+  },
+  {
+    "name": "Paper Education",
+    "industry": "Education & EdTech (AI Tutoring)",
+    "hq": "Montreal",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://paper.co/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/paper-education/",
+    "category": "Education & EdTech"
+  },
+  {
+    "name": "Top Hat",
+    "industry": "EdTech / Interactive Learning Platform",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://tophat.com/company/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/top-hat",
+    "category": "Education & EdTech"
+  },
+  {
+    "name": "Wizeprep",
+    "industry": "Education & EdTech (Exam Prep Platform)",
+    "hq": "Vancouver",
+    "remotePolicy": "Fully Remote",
+    "size": "Startup (<50)",
+    "careersUrl": "https://www.wizeprep.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/wizeprep/",
+    "category": "Education & EdTech"
+  },
+  {
+    "name": "Agnico Eagle",
+    "industry": "Mining & Resources (Gold Mining)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.agnicoeagle.com/English/careers/overview/default.aspx",
+    "linkedinUrl": "https://www.linkedin.com/company/agnico-eagle-mines/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Barrick Gold",
+    "industry": "Mining & Resources (Gold Mining)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.barrick.com/English/careers/default.aspx",
+    "linkedinUrl": "https://www.linkedin.com/company/barrick-gold-corporation/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "BrainBox AI",
+    "industry": "Energy & Cleantech (Building Energy AI)",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://brainboxai.com/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/brainboxai/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Bullfrog Power",
+    "industry": "Energy & Cleantech (Green Energy Provider)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://bullfrogpower.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/bullfrog-power/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Cameco",
+    "industry": "Mining & Resources (Uranium Mining)",
+    "hq": "Saskatoon",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.cameco.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/cameco/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "CarbonCure Technologies",
+    "industry": "Energy & Cleantech (Carbon Capture)",
+    "hq": "Halifax",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.carboncure.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/carboncure-technologies/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "IAMGOLD",
+    "industry": "Mining & Resources (Gold Mining)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.iamgold.com/English/careers/default.aspx",
+    "linkedinUrl": "https://www.linkedin.com/company/iamgold-corporation/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Kinross Gold",
+    "industry": "Mining & Resources (Gold Mining)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.kinross.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/kinross-gold/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Lundin Mining",
+    "industry": "Mining & Resources (Base Metals Mining)",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.lundinmining.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/lundin-mining/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Moment Energy",
+    "industry": "Energy & Cleantech (Battery Storage)",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Startup (<50)",
+    "careersUrl": "https://www.momentenergy.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/moment-energy/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Nutrien",
+    "industry": "Mining & Resources (Agricultural Inputs)",
+    "hq": "Saskatoon",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.nutrien.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/nutrien/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Peak Power",
+    "industry": "Energy & Cleantech (Energy Management)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://peakpowerenergy.com/cleantech-jobs/",
+    "linkedinUrl": "https://www.linkedin.com/company/peakpowerenergy/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Svante",
+    "industry": "Energy & Cleantech (Carbon Capture)",
+    "hq": "Burnaby",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://svanteinc.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/svante-inc/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Teck Resources",
+    "industry": "Mining & Resources (Diversified Mining)",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://jobs.teck.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/teck-resources/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Terramera",
+    "industry": "Energy & Cleantech (AgTech / Cleantech)",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.terramera.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/terramera-inc-/",
+    "category": "Energy, Mining & Cleantech"
+  },
+  {
+    "name": "Bank of Montreal (BMO)",
+    "industry": "Banking - Big Five",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid (4 days in-office as of Sept 2025)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://jobs.bmo.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/bmo/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Borrowell",
+    "industry": "Fintech / Credit Score Monitoring",
+    "hq": "Toronto ON",
+    "remotePolicy": "Fully Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://borrowell.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/borrowell",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "CIBC",
+    "industry": "Banking - Big Five",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (3-4 days in-office)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.cibc.com/en/about-cibc/careers.html",
+    "linkedinUrl": "https://www.linkedin.com/company/cibc/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Coconut Software",
+    "industry": "Appointment Scheduling SaaS (Banking)",
+    "hq": "Saskatoon SK",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.coconutsoftware.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/coconut-software",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Dapper Labs",
+    "industry": "Blockchain / Web3 / NFT",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.dapperlabs.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/dapper-labs",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Desjardins Group",
+    "industry": "Banking / Credit Union",
+    "hq": "Levis QC",
+    "remotePolicy": "Hybrid (3 days in-office)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.desjardins.com/ca/about-us/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/desjardins/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Figment",
+    "industry": "Blockchain / Crypto Staking Infrastructure",
+    "hq": "Toronto ON",
+    "remotePolicy": "Fully Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://figment.io/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/figment-io",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Float Financial",
+    "industry": "Fintech - Corporate Finance",
+    "hq": "Toronto",
+    "remotePolicy": "Fully Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://floatfinancial.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/floatcard/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Helcim",
+    "industry": "Fintech / Payment Processing",
+    "hq": "Calgary AB",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.helcim.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/helcim",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "KOHO",
+    "industry": "Fintech - Digital Banking",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.koho.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/kohofinancial/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Mogo",
+    "industry": "Fintech - Digital Finance",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.mogo.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/maboroshi-goggle/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "NDAX",
+    "industry": "Crypto Exchange / Fintech",
+    "hq": "Calgary AB",
+    "remotePolicy": "Hybrid",
+    "size": "Startup (<50)",
+    "careersUrl": "https://ndax.io/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/ndax",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "National Bank of Canada",
+    "industry": "Banking",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid (3 days in-office)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.nbc.ca/careers.html",
+    "linkedinUrl": "https://www.linkedin.com/company/national-bank-of-canada/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Neo Financial",
+    "industry": "Fintech / Digital Banking",
+    "hq": "Calgary AB",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.neofinancial.com/company/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/neo-financial",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Nesto",
+    "industry": "Fintech - Mortgages",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.nesto.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/nestocanada/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Nuvei",
+    "industry": "Fintech / Payment Processing",
+    "hq": "Montreal QC",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.nuvei.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/nuvei",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Payfare",
+    "industry": "Fintech - Earned Wage Access",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://payfare.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/payfare/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Questrade",
+    "industry": "Fintech - Online Brokerage",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (flexible office/remote/mix)",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.questrade.com/about-us/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/questrade/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Relay Financial",
+    "industry": "Fintech - Business Banking",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://relayfi.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/relayfinancial/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Royal Bank of Canada (RBC)",
+    "industry": "Banking - Big Five",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (4 days in-office as of Sept 2025)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://jobs.rbc.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/rbc/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Scotiabank",
+    "industry": "Banking - Big Five",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (4 days in-office as of Sept 2025)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.scotiabank.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/scotiabank/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "TD Bank Group",
+    "industry": "Banking - Big Five",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (4 days in-office as of Sept 2025)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://jobs.td.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/td/",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "Wealthsimple",
+    "industry": "Fintech / Digital Investing",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.wealthsimple.com/en-ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/wealthsimple",
+    "category": "Finance & Fintech"
+  },
+  {
+    "name": "BC Hydro",
+    "industry": "Provincial Crown Corp - Utilities",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.bchydro.com/careers.html",
+    "linkedinUrl": "https://www.linkedin.com/company/bc-hydro/",
+    "category": "Government & Crown Corporations"
+  },
+  {
+    "name": "Business Development Bank of Canada (BDC)",
+    "industry": "Crown Corp - SME Financing",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.bdc.ca/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/bdc/",
+    "category": "Government & Crown Corporations"
+  },
+  {
+    "name": "CPP Investments (CPPIB)",
+    "industry": "Crown Corp - Pension Investment",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.cppinvestments.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/cpp-investments/",
+    "category": "Government & Crown Corporations"
+  },
+  {
+    "name": "Canada Infrastructure Bank (CIB)",
+    "industry": "Crown Corp - Infrastructure Investment",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://cib-bic.ca/en/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/canada-infrastructure-bank/",
+    "category": "Government & Crown Corporations"
+  },
+  {
+    "name": "Canada Mortgage and Housing Corp (CMHC)",
+    "industry": "Crown Corp - Housing",
+    "hq": "Ottawa",
+    "remotePolicy": "Hybrid (3 days in-office federal policy)",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.cmhc-schl.gc.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/canada-mortgage-and-housing-corporation/",
+    "category": "Government & Crown Corporations"
+  },
+  {
+    "name": "Export Development Canada (EDC)",
+    "industry": "Crown Corp - Export Credit",
+    "hq": "Ottawa",
+    "remotePolicy": "Hybrid (flexible hours + work-from-anywhere 4 weeks/yr)",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.edc.ca/en/about-us/careers.html",
+    "linkedinUrl": "https://www.linkedin.com/company/export-development-canada/",
+    "category": "Government & Crown Corporations"
+  },
+  {
+    "name": "Hydro-Quebec",
+    "industry": "Provincial Crown Corp - Utilities",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.hydroquebec.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/hydro-quebec/",
+    "category": "Government & Crown Corporations"
+  },
+  {
+    "name": "PSP Investments",
+    "industry": "Crown Corp - Pension Investment",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.investpsp.com/en/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/psp-investments/",
+    "category": "Government & Crown Corporations"
+  },
+  {
+    "name": "AbCellera Biologics",
+    "industry": "Biotech - Antibody Therapeutics",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.abcellera.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/abcellera/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "AlayaCare",
+    "industry": "Home Healthcare SaaS",
+    "hq": "Montreal QC",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://alayacare.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/alayacare",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Apotex",
+    "industry": "Pharma - Generic Drugs",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.apotex.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/apotex-inc./",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "AstraZeneca Canada",
+    "industry": "Pharma - Global",
+    "hq": "Mississauga ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://careers.astrazeneca.com/search-jobs?location=Canada",
+    "linkedinUrl": "https://www.linkedin.com/company/astrazeneca/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Bausch Health / Bausch + Lomb",
+    "industry": "Pharma - Eye Health & Dermatology",
+    "hq": "Laval QC",
+    "remotePolicy": "Hybrid (some remote roles)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.bauschhealth.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/bausch-health-companies/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "BenchSci",
+    "industry": "AI Drug Discovery / Life Sciences SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://careers.benchsci.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/benchsci",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Canada Health Infoway",
+    "industry": "Independent Agency - Digital Health",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid / Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.infoway-inforoute.ca/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/canada-health-infoway/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Canadian Institute for Health Information (CIHI)",
+    "industry": "Independent Agency - Health Data",
+    "hq": "Ottawa",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.cihi.ca/en/about-cihi/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/canadian-institute-for-health-information/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Canadian Mental Health Association",
+    "industry": "Non-Profit & Social Impact (Mental Health)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://cmha.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/canadian-mental-health-association/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Dialogue",
+    "industry": "Virtual Healthcare / Health Tech SaaS",
+    "hq": "Montreal QC",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.dialogue.co/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/dialogue-md",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Dialogue Health Technologies",
+    "industry": "Health Tech - Virtual Care",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid / Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.dialogue.co/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/dialogue-technologies/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "GSK Canada",
+    "industry": "Pharma - Global",
+    "hq": "Mississauga ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.gsk.com/en-gb/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/glaxosmithkline/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Health Canada / PHAC",
+    "industry": "Federal Agency - Health Regulation",
+    "hq": "Ottawa",
+    "remotePolicy": "Hybrid (3 days in-office federal policy)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.canada.ca/en/health-canada/campaigns/jobs-health-canada-public-health-agency-canada.html",
+    "linkedinUrl": "https://www.linkedin.com/company/health-canada/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "League",
+    "industry": "Health Benefits Platform SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://league.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/league-inc",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Maple (now part of TELUS Health)",
+    "industry": "Health Tech - Telemedicine",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid / Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.getmaple.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/getmaple/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "MedMe Health",
+    "industry": "Pharmacy Management SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Startup (<50)",
+    "careersUrl": "https://www.medmehealth.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/medme-health",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Novartis Canada",
+    "industry": "Pharma - Global",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.novartis.com/ca-en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/novartis/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Pfizer Canada",
+    "industry": "Pharma - Global",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.pfizer.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/pfizer/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "PointClickCare",
+    "industry": "Healthcare IT / EHR SaaS",
+    "hq": "Mississauga ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://careers.pointclickcare.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/pointclickcare",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Roche Canada",
+    "industry": "Pharma - Global",
+    "hq": "Mississauga ON",
+    "remotePolicy": "Hybrid (flexible work initiatives)",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://careers.roche.com/global/en/canada",
+    "linkedinUrl": "https://www.linkedin.com/company/roche/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Stemcell Technologies",
+    "industry": "Biotech - Cell Culture & Reagents",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.stemcell.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/stemcell-technologies/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "TELUS Health",
+    "industry": "Health Tech - Virtual Care & Digital Health",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid / Remote (many remote roles esp. clinical)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.telus.com/en/about/careers/health",
+    "linkedinUrl": "https://www.linkedin.com/company/telus-health/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Teva Canada",
+    "industry": "Pharma - Generic Drugs",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.tevapharm.com/our-company/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/teva-pharmaceutical-industries/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Think Research",
+    "industry": "Health Tech - Clinical Software",
+    "hq": "Toronto",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.thinkresearch.com/ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/think-research/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Well.ca",
+    "industry": "Retail & E-commerce (Online Health & Wellness)",
+    "hq": "Guelph",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://well.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/well.ca/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Xenon Pharmaceuticals",
+    "industry": "Biotech - Neuroscience",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.xenon-pharma.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/xenon-pharmaceuticals/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Zymeworks",
+    "industry": "Biotech - Protein Therapeutics / Oncology",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid (some remote)",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.zymeworks.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/zymeworks/",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "name": "Aviva Canada",
+    "industry": "Insurance - P&C",
+    "hq": "Markham ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.aviva.ca/en/about-us/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/aviva-canada/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Co-operators Group",
+    "industry": "Insurance - P&C & Life",
+    "hq": "Guelph",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.cooperators.ca/en/About-Us/careers.aspx",
+    "linkedinUrl": "https://www.linkedin.com/company/the-co-operators/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Definity Financial",
+    "industry": "Insurance - P&C",
+    "hq": "Waterloo ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.definityfinancial.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/definityfinancial/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Empire Life",
+    "industry": "Insurance - Life",
+    "hq": "Kingston ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.empire.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/empire-life/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Fairfax Financial Holdings",
+    "industry": "Insurance - Holding / P&C",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.fairfax.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/fairfax-financial-holdings-limited/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Gore Mutual Insurance",
+    "industry": "Insurance - P&C",
+    "hq": "Cambridge ON",
+    "remotePolicy": "Hybrid (3 days onsite 2 remote)",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.goremutual.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/gore-mutual-insurance/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Great-West Lifeco / Canada Life",
+    "industry": "Insurance - Life & Health",
+    "hq": "Winnipeg",
+    "remotePolicy": "Hybrid (3 days in-office)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.canadalife.com/about-us/careers.html",
+    "linkedinUrl": "https://www.linkedin.com/company/canada-life/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Intact Financial Corporation",
+    "industry": "Insurance - P&C",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (with some remote roles)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://careers.intactfc.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/intact/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Manulife Financial",
+    "industry": "Insurance - Life & Health",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (minimum 3 days in-office)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://careers.manulife.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/manulife/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Sun Life Financial",
+    "industry": "Insurance - Life & Health",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid (2-3 days in-office)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.sunlife.com/en/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/sun-life/",
+    "category": "Insurance"
+  },
+  {
+    "name": "Wawanesa Insurance",
+    "industry": "Insurance - P&C",
+    "hq": "Winnipeg",
+    "remotePolicy": "Hybrid (office/home/mix options)",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://jobs.wawanesa.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/wawanesa-insurance/",
+    "category": "Insurance"
+  },
+  {
+    "name": "ATS Automation",
+    "industry": "Manufacturing (Industrial Automation)",
+    "hq": "Cambridge",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.atsautomation.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/ats-automation/",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Bombardier",
+    "industry": "Manufacturing (Aerospace)",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://bombardier.com/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/bombardier/",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Celestica",
+    "industry": "Manufacturing (Electronics Manufacturing)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.celestica.com/about-us/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/celestica/",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Linamar",
+    "industry": "Manufacturing (Automotive & Industrial)",
+    "hq": "Guelph",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.linamar.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/linamar-corporation/",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Loopio",
+    "industry": "RFP Response Automation SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://loopio.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/loopio",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Magna International",
+    "industry": "Manufacturing (Automotive Parts)",
+    "hq": "Aurora",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.magna.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/magna-international/",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Maple Leaf Foods",
+    "industry": "Manufacturing (Food Processing)",
+    "hq": "Mississauga",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.mapleleaffoods.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/maple-leaf-foods/",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Samsara",
+    "industry": "IoT / Fleet Management / Industrial SaaS",
+    "hq": "Toronto ON (Canada office)",
+    "remotePolicy": "Fully Remote",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.samsara.com/ca/company/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/samsara",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Tulip",
+    "industry": "Manufacturing Platform SaaS",
+    "hq": "Somerville MA / Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.tulip.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/tulipio",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "name": "Behaviour Interactive",
+    "industry": "Gaming & Entertainment (Game Development)",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.bhvr.com/jobs/",
+    "linkedinUrl": "https://www.linkedin.com/company/behaviour-interactive/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Blackbird Interactive",
+    "industry": "Gaming & Entertainment (Game Development)",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://blackbirdinteractive.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/blackbird-interactive/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "BluCactus",
+    "industry": "Marketing & Advertising (Digital Agency)",
+    "hq": "Toronto",
+    "remotePolicy": "Fully Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.blucactus.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/blucactus/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Corus Entertainment",
+    "industry": "Gaming & Entertainment (Media & Broadcasting)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.corusent.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/corus-entertainment/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Cossette",
+    "industry": "Marketing & Advertising (Full-Service Agency)",
+    "hq": "Quebec City",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.corusent.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/cossette/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Dentsu Canada",
+    "industry": "Marketing & Advertising (Media & Creative)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.dentsu.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/dentsu/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Eidos Montreal",
+    "industry": "Gaming & Entertainment (AAA Game Development)",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.eidosmontreal.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/eidos-montreal/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Gameloft Montreal",
+    "industry": "Gaming & Entertainment (Mobile Game Development)",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.gameloft.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/gameloft/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Hootsuite",
+    "industry": "Social Media Management SaaS",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.hootsuite.com/about/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/hootsuite",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Juniper Park\\TBWA",
+    "industry": "Marketing & Advertising (Creative Agency)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.tbwa.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/juniper-park-tbwa/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Ludia",
+    "industry": "Gaming & Entertainment (Mobile Game Development)",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.ludia.com/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/ludia/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Phoenix Labs",
+    "industry": "Gaming & Entertainment (Game Development)",
+    "hq": "Vancouver",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://phxlabs.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/phoenix-labs/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Rethink Communications",
+    "industry": "Marketing & Advertising (Creative Agency)",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.rethinkideas.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/rethink/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Sid Lee",
+    "industry": "Marketing & Advertising (Creative Agency)",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://sidlee.com/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/sid-lee/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "StackAdapt",
+    "industry": "Programmatic Advertising / AdTech",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.stackadapt.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/stackadapt",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Vidyard",
+    "industry": "Video Marketing / Sales SaaS",
+    "hq": "Kitchener ON",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.vidyard.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/vidyard",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "WildBrain",
+    "industry": "Gaming & Entertainment (Animation & Content)",
+    "hq": "Halifax",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.wildbrain.com/careers-and-culture/",
+    "linkedinUrl": "https://www.linkedin.com/company/wildbrain/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Zulu Alpha Kilo",
+    "industry": "Marketing & Advertising (Creative Agency)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://zfrfruits.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/zulu-alpha-kilo/",
+    "category": "Marketing, Media & Entertainment"
+  },
+  {
+    "name": "Benevity",
+    "industry": "CSR / Social Impact SaaS",
+    "hq": "Calgary AB",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://benevity.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/benevity",
+    "category": "Non-Profit & Social Impact"
+  },
+  {
+    "name": "Covenant House Toronto",
+    "industry": "Non-Profit & Social Impact (Youth Homelessness)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.covenanthouse.org/about-us/jobs",
+    "linkedinUrl": "https://www.linkedin.com/company/covenant-house-toronto/",
+    "category": "Non-Profit & Social Impact"
+  },
+  {
+    "name": "Plan International Canada",
+    "industry": "Non-Profit & Social Impact (International Development)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://plancanada.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/plan-international-canada/",
+    "category": "Non-Profit & Social Impact"
+  },
+  {
+    "name": "Plenty of Fish",
+    "industry": "Online Dating / Social",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.pof.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/plentyoffish",
+    "category": "Non-Profit & Social Impact"
+  },
+  {
+    "name": "Right To Play",
+    "industry": "Non-Profit & Social Impact (Children & Youth)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.righttoplay.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/right-to-play/",
+    "category": "Non-Profit & Social Impact"
+  },
+  {
+    "name": "United Way Greater Toronto",
+    "industry": "Non-Profit & Social Impact (Community Services)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.unitedwaygt.org/about-us/join-our-team/career-opportunities/",
+    "linkedinUrl": "https://www.linkedin.com/company/united-way-greater-toronto/",
+    "category": "Non-Profit & Social Impact"
+  },
+  {
+    "name": "World Vision Canada",
+    "industry": "Non-Profit & Social Impact (International Development)",
+    "hq": "Mississauga",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.worldvision.ca/en/learn/about/careers-and-volunteers",
+    "linkedinUrl": "https://www.linkedin.com/company/world-vision-canada/",
+    "category": "Non-Profit & Social Impact"
+  },
+  {
+    "name": "Avesdo",
+    "industry": "Real Estate & PropTech (Transaction Management)",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.avesdo.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/avesdo/",
+    "category": "Real Estate & PropTech"
+  },
+  {
+    "name": "Dream",
+    "industry": "Real Estate & PropTech (Asset Management)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://dream.ca/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/dream-unlimited/",
+    "category": "Real Estate & PropTech"
+  },
+  {
+    "name": "HouseSigma",
+    "industry": "Real Estate & PropTech (Real Estate Data Platform)",
+    "hq": "Toronto",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://team.housesigma.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/housesigma/",
+    "category": "Real Estate & PropTech"
+  },
+  {
+    "name": "Properly",
+    "industry": "Real Estate & PropTech (Home Buying/Selling Platform)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.properly.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/properlyhomes/",
+    "category": "Real Estate & PropTech"
+  },
+  {
+    "name": "Zoocasa",
+    "industry": "Real Estate & PropTech (Data-Driven Brokerage)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.zoocasa.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/zoocasa/",
+    "category": "Real Estate & PropTech"
+  },
+  {
+    "name": "Aritzia",
+    "industry": "Retail & E-commerce (Fashion Retail)",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.aritzia.com/en/aritzia/corporate-hub/careers/careers-landing-page",
+    "linkedinUrl": "https://www.linkedin.com/company/aritzia/",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "Bold Commerce",
+    "industry": "Retail & E-commerce (E-commerce SaaS)",
+    "hq": "Winnipeg",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://boldcommerce.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/bold-commerce/",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "Clearco",
+    "industry": "E-commerce Revenue Financing",
+    "hq": "Toronto ON",
+    "remotePolicy": "Fully Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.clear.co/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/clearco",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "Faire",
+    "industry": "Wholesale Marketplace / E-commerce",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.faire.com/en-ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/fairewholesale",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "Knix",
+    "industry": "Retail & E-commerce (DTC Apparel)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://knix.ca/pages/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/knixwear/",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "Lightspeed Commerce",
+    "industry": "Commerce Platform / POS SaaS",
+    "hq": "Montreal QC",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.lightspeedhq.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/lightspeedcommerce",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "Mejuri",
+    "industry": "Retail & E-commerce (DTC Jewelry)",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://mejuri.com/company/our-careers",
+    "linkedinUrl": "https://www.linkedin.com/company/mejuri/",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "SSENSE",
+    "industry": "Retail & E-commerce (Luxury Fashion Platform)",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://people.ssense.com/en/job-openings",
+    "linkedinUrl": "https://www.linkedin.com/company/ssense/",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "Shopify",
+    "industry": "E-commerce Platform",
+    "hq": "Ottawa ON",
+    "remotePolicy": "Remote-First",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.shopify.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/shopify",
+    "category": "Retail & E-commerce"
+  },
+  {
+    "name": "1Password",
+    "industry": "Cybersecurity / Password Management",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://1password.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/1password",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "7shifts",
+    "industry": "Restaurant Workforce Management SaaS",
+    "hq": "Saskatoon SK",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.7shifts.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/7shifts",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Ada",
+    "industry": "Conversational AI / Customer Service",
+    "hq": "Toronto ON",
+    "remotePolicy": "Fully Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.ada.cx/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/ada-cx",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Assent",
+    "industry": "Supply Chain Sustainability SaaS",
+    "hq": "Ottawa ON",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.assent.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/assent-compliance",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Axonify",
+    "industry": "Frontline Employee Training SaaS",
+    "hq": "Waterloo ON",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://axonify.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/axonify",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Canada Revenue Agency (CRA)",
+    "industry": "Federal Agency - Taxation",
+    "hq": "Ottawa",
+    "remotePolicy": "Hybrid (3+ days in-office moving to 4 in July 2026)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.canada.ca/en/revenue-agency/corporate/careers-cra.html",
+    "linkedinUrl": "https://www.linkedin.com/company/cra-arc/",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Certn",
+    "industry": "Background Check / Identity Verification SaaS",
+    "hq": "Victoria BC",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://certn.co/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/certn",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Cohere",
+    "industry": "Generative AI / Enterprise AI",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://cohere.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/cohere-ai",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Coveo",
+    "industry": "AI-Powered Search / Enterprise SaaS",
+    "hq": "Quebec City QC",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.coveo.com/en/company/careers/open-positions",
+    "linkedinUrl": "https://www.linkedin.com/company/coveo",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Dayforce (Ceridian)",
+    "industry": "HCM / HR Tech SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.dayforce.com/who-we-are/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/ceridian",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Forma.ai",
+    "industry": "Sales Compensation / RevOps SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Startup (<50)",
+    "careersUrl": "https://www.forma.ai/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/formaai",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "GHGSat",
+    "industry": "Environmental / Satellite Emissions Monitoring",
+    "hq": "Montreal QC",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.ghgsat.com/en/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/ghgsat",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Hopper",
+    "industry": "Travel Tech / AI Fare Prediction",
+    "hq": "Montreal QC",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.hopper.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/hopper",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Humi",
+    "industry": "HR / Payroll SaaS",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.humi.ca/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/humi-hr",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Jobber",
+    "industry": "Field Service Management SaaS",
+    "hq": "Edmonton AB",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.getjobber.com/about/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/jobber-software",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Kepler Communications",
+    "industry": "Space Tech / Satellite IoT",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.keplercommunications.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/kepler-communications",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Kinaxis",
+    "industry": "Supply Chain SaaS",
+    "hq": "Ottawa ON",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.kinaxis.com/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/kinaxis",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Klue",
+    "industry": "Competitive Intelligence SaaS",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://klue.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/klue",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Moonvalley",
+    "industry": "AI Video Generation",
+    "hq": "Toronto ON",
+    "remotePolicy": "Remote-First",
+    "size": "Startup (<50)",
+    "careersUrl": "https://www.moonvalley.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/moonvalley-ai",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "National Research Council Canada (NRC)",
+    "industry": "Federal Agency - Research",
+    "hq": "Ottawa",
+    "remotePolicy": "Hybrid (3 days in-office federal policy)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://nrc.canada.ca/en/corporate/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/national-research-council/",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "OpenText",
+    "industry": "Enterprise Information Management",
+    "hq": "Waterloo ON",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://careers.opentext.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/opentext",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Procurify",
+    "industry": "Procurement / Spend Management SaaS",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.procurify.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/procurify",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Pythian",
+    "industry": "Cloud / Data Engineering Services",
+    "hq": "Ottawa ON",
+    "remotePolicy": "Fully Remote",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://pythian.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/pythian",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Statistics Canada",
+    "industry": "Federal Agency - Data & Statistics",
+    "hq": "Ottawa",
+    "remotePolicy": "Hybrid (3 days in-office)",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.statcan.gc.ca/en/employment",
+    "linkedinUrl": "https://www.linkedin.com/company/statistics-canada/",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "TELUS Digital",
+    "industry": "Digital CX / AI Data Solutions",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.telusdigital.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/telus-international",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Tenstorrent",
+    "industry": "AI Hardware / Semiconductors",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://tenstorrent.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/tenstorrent-inc.",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Thinkific",
+    "industry": "Online Course Platform SaaS",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.thinkific.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/thinkific",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Trulioo",
+    "industry": "Identity Verification / RegTech",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.trulioo.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/trulioo",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Unbounce",
+    "industry": "Landing Page / Conversion SaaS",
+    "hq": "Vancouver BC",
+    "remotePolicy": "Remote-First",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://unbounce.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/unbounce",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Valsoft",
+    "industry": "Software Acquisition / Vertical SaaS",
+    "hq": "Montreal QC",
+    "remotePolicy": "Hybrid",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.valsoftcorp.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/valsoft-corporation",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Vena Solutions",
+    "industry": "Financial Planning SaaS (FP&A)",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.venasolutions.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/vena-solutions",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Xanadu",
+    "industry": "Quantum Computing",
+    "hq": "Toronto ON",
+    "remotePolicy": "Hybrid",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.xanadu.ai/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/xanaduai",
+    "category": "Tech & SaaS"
+  },
+  {
+    "name": "Bell Canada",
+    "industry": "Telecommunications",
+    "hq": "Montreal",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://jobs.bell.ca/",
+    "linkedinUrl": "https://www.linkedin.com/company/bell/",
+    "category": "Telecommunications"
+  },
+  {
+    "name": "Opensignal",
+    "industry": "Telecommunications (Network Analytics)",
+    "hq": "London (UK) / Remote Canada",
+    "remotePolicy": "Fully Remote",
+    "size": "Growth (50-500)",
+    "careersUrl": "https://www.opensignal.com/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/opensignal/",
+    "category": "Telecommunications"
+  },
+  {
+    "name": "Rogers Communications",
+    "industry": "Telecommunications",
+    "hq": "Toronto",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://jobs.rogers.com/",
+    "linkedinUrl": "https://www.linkedin.com/company/rogers-communications/",
+    "category": "Telecommunications"
+  },
+  {
+    "name": "TELUS",
+    "industry": "Telecommunications",
+    "hq": "Vancouver",
+    "remotePolicy": "Hybrid",
+    "size": "Enterprise (5000+)",
+    "careersUrl": "https://www.telus.com/en/careers",
+    "linkedinUrl": "https://www.linkedin.com/company/telus/",
+    "category": "Telecommunications"
+  },
+  {
+    "name": "Tucows",
+    "industry": "Telecommunications (Internet Services)",
+    "hq": "Toronto",
+    "remotePolicy": "Remote-First",
+    "size": "Mid-Market (500-5000)",
+    "careersUrl": "https://www.tucows.com/careers/",
+    "linkedinUrl": "https://www.linkedin.com/company/tucows/",
+    "category": "Telecommunications"
+  }
+]

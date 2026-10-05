@@ -1,0 +1,68 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import SeveranceStory from "@components/tools/SeveranceStory";
+import { generateWebApplicationSchema, generateBreadcrumbSchema, generateFAQSchema } from "@utils/seo";
+
+const title = "Canadian Severance Calculator";
+const description = "Estimate your severance under Canadian employment law. ESA statutory minimums and common-law Bardal factor estimates for all provinces. Free educational tool.";
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "https://joinclearcareer.com";
+const toolUrl = `${siteUrl}/free-tools/severance-calculator`;
+
+const faqItems = [
+  { question: "Is this legal advice?", answer: "No. This calculator provides educational estimates based on general Canadian employment law precedent. Every situation is different. A valid termination clause in your contract may limit your severance. Consult an employment lawyer in your province before making any decisions." },
+  { question: "What are the Bardal factors?", answer: "The Bardal factors are the criteria Canadian courts use to determine common-law (reasonable notice) severance: age, length of service, character of employment (seniority), and availability of similar employment. Older workers, longer-tenured employees, and senior professionals typically receive more." },
+  { question: "What's the difference between ESA and common-law severance?", answer: "ESA (Employment Standards Act) severance is the statutory minimum your employer must pay. Common-law severance is what courts have awarded in similar cases and is almost always higher, especially for professionals earning $100K+. Your contract may contain a termination clause that limits you to the ESA amount." },
+  { question: "Does this work for all provinces?", answer: "Yes. The calculator covers Ontario, BC, Alberta, Quebec, and federal jurisdiction. Provincial statutory rules differ, but the common-law Bardal factor analysis applies across Canada." },
+  { question: "Should I negotiate my severance?", answer: "If your offer is below the common-law estimate, it's worth consulting an employment lawyer. Many offer free initial consultations. For professionals earning $100K+, the gap between the statutory minimum and common-law entitlement can be tens of thousands of dollars." },
+];
+---
+
+<PageLayout title={`${title} | ClearCareer`} description={description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(generateWebApplicationSchema({ name: title, description, url: toolUrl, category: "FinanceApplication", featureList: ["ESA statutory minimum calculation", "Common-law Bardal factor estimates", "Province-specific rules for all Canadian provinces", "Age, tenure, and role-level weighting"] }))} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(generateBreadcrumbSchema([{ name: "Home", url: siteUrl }, { name: "Free Tools", url: `${siteUrl}/free-tools` }, { name: title, url: toolUrl }]))} />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(generateFAQSchema(faqItems))} />
+
+  <!-- Story Arc Calculator -->
+  <SeveranceStory client:load />
+
+  <!-- FAQ -->
+  <section class="border-t border-border py-12 md:py-16">
+    <div class="mx-auto max-w-[640px] px-4 sm:px-6">
+      <h2 class="font-display text-[clamp(1.5rem,3vw,2rem)] leading-[1.15] text-navy">
+        Frequently Asked Questions
+      </h2>
+      <div class="mt-8 space-y-4">
+        {faqItems.map((item) => (
+          <details class="group rounded-xl border border-border bg-white p-5 transition-shadow hover:shadow-sm">
+            <summary class="cursor-pointer list-none text-base font-semibold text-navy [&::-webkit-details-marker]:hidden">
+              <div class="flex items-center justify-between gap-4">
+                <span>{item.question}</span>
+                <svg class="h-5 w-5 flex-shrink-0 text-blue transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </summary>
+            <p class="mt-4 text-[0.9375rem] leading-[1.75] text-text-muted">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Tools -->
+  <section class="bg-blue-bg py-12 md:py-16">
+    <div class="mx-auto max-w-[640px] px-4 sm:px-6">
+      <h2 class="text-lg font-bold text-navy">Related Tools</h2>
+      <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <a href="/free-tools/financial-runway-calculator" class="group flex items-center gap-4 rounded-xl border border-border bg-white p-5 transition-all hover:border-blue/30 hover:shadow-md">
+          <span class="text-2xl">💰</span>
+          <span class="text-sm font-semibold text-navy group-hover:text-blue transition-colors">Financial Runway Calculator</span>
+        </a>
+        <a href="/free-tools/salary-negotiation-calculator" class="group flex items-center gap-4 rounded-xl border border-border bg-white p-5 transition-all hover:border-blue/30 hover:shadow-md">
+          <span class="text-2xl">📈</span>
+          <span class="text-sm font-semibold text-navy group-hover:text-blue transition-colors">Salary Negotiation Calculator</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

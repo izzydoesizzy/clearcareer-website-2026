@@ -1,0 +1,323 @@
+---
+import LeadMagnetLayout from "@layouts/LeadMagnetLayout.astro";
+import companies from "@data/canadian-remote-companies.json";
+
+const categories = [...new Set(companies.map((c) => c.category))];
+const isRemote = (p: string) => p.toLowerCase().includes("remote-first") || p.toLowerCase().includes("fully remote") || p.toLowerCase().includes("digital by default");
+const grouped = categories.map((cat) => {
+  const cos = companies.filter((c) => c.category === cat);
+  return {
+    name: cat,
+    companies: cos,
+    remoteCount: cos.filter((c) => isRemote(c.remotePolicy)).length,
+    hybridCount: cos.filter((c) => !isRemote(c.remotePolicy)).length,
+  };
+});
+
+// Stats
+const total = companies.length;
+const remoteFirst = companies.filter((c) =>
+  c.remotePolicy.toLowerCase().includes("remote-first") ||
+  c.remotePolicy.toLowerCase().includes("fully remote") ||
+  c.remotePolicy.toLowerCase().includes("digital by default")
+).length;
+const hybridCount = total - remoteFirst;
+const sectorCount = categories.length;
+
+// Preview: first 6 companies (Tech & SaaS)
+const previewCompanies = companies.filter((c) => c.category === "Tech & SaaS").slice(0, 6);
+---
+
+<LeadMagnetLayout
+  title={`${total}+ Companies in Canada Hiring Remote & Hybrid Roles | ClearCareer`}
+  description={`${total} verified Canadian companies with remote and hybrid work policies across ${sectorCount} industries. Direct links to careers pages and LinkedIn profiles.`}
+  headline={`${total}+ Companies in Canada<br />Hiring Remote & Hybrid Roles`}
+  subheadline={`You don't have to go back to the office 5 days a week. Here are ${total} verified companies across ${sectorCount} industries that still offer remote and hybrid work.`}
+  bullets={[
+    `${total} companies across ${sectorCount} industries (Tech, Finance, Healthcare, Government, and more)`,
+    `${remoteFirst} companies are Remote-First or Fully Remote`,
+    "Direct links to every company's careers page and LinkedIn profile",
+    "Remote policy details verified as of April 2026",
+  ]}
+  source="canadian-remote-companies"
+  storageKey="remote_companies_unlocked"
+  ctaText="Get the Full List"
+>
+  <!-- Preview Slot -->
+  <Fragment slot="preview">
+    <!-- Stats Cards -->
+    <div class="mb-8 grid grid-cols-3 gap-4">
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-2xl font-bold text-navy">{total}</p>
+        <p class="mt-1 text-xs text-text-muted">Companies</p>
+      </div>
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-2xl font-bold text-navy">{remoteFirst}</p>
+        <p class="mt-1 text-xs text-text-muted">Remote-First</p>
+      </div>
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-2xl font-bold text-navy">{sectorCount}</p>
+        <p class="mt-1 text-xs text-text-muted">Industries</p>
+      </div>
+    </div>
+
+    <!-- Preview Table -->
+    <div class="overflow-x-auto rounded-xl border border-border">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-navy text-white">
+            <th class="px-4 py-3 text-left font-semibold">Company</th>
+            <th class="px-4 py-3 text-left font-semibold hidden sm:table-cell">Specialty</th>
+            <th class="px-4 py-3 text-left font-semibold">Remote Policy</th>
+            <th class="px-4 py-3 text-center font-semibold">Links</th>
+          </tr>
+        </thead>
+        <tbody>
+          {previewCompanies.map((c, i) => (
+            <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-blue-bg/30"]}>
+              <td class="px-4 py-3 font-medium text-navy">{c.name}</td>
+              <td class="px-4 py-3 text-xs text-text-muted hidden sm:table-cell">{c.industry}</td>
+              <td class="px-4 py-3">
+                <span class:list={[
+                  "inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold",
+                  c.remotePolicy.toLowerCase().includes("remote-first") || c.remotePolicy.toLowerCase().includes("fully remote")
+                    ? "bg-emerald-100 text-emerald-700"
+                    : "bg-blue-bg text-blue",
+                ]}>{c.remotePolicy.split("(")[0].trim()}</span>
+              </td>
+              <td class="px-4 py-3 text-center text-blue text-xs font-semibold">View</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Blurred rows -->
+    <div class="relative -mt-1 overflow-hidden" style="max-height: 180px;">
+      <div class="pointer-events-none select-none blur-[6px] opacity-50" aria-hidden="true">
+        <table class="w-full text-sm border-x border-border">
+          <tbody>
+            {companies.slice(6, 18).map((c, i) => (
+              <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-blue-bg/30"]}>
+                <td class="px-4 py-3 font-medium text-navy">{c.name}</td>
+                <td class="px-4 py-3 text-xs text-text-muted">{c.industry}</td>
+                <td class="px-4 py-3 text-xs">{c.remotePolicy.split("(")[0].trim()}</td>
+                <td class="px-4 py-3 text-center text-blue text-xs">View</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white"></div>
+    </div>
+
+    <p class="mt-6 text-center text-sm font-medium text-text-muted">
+      + {total - 6} more companies hiding behind that blur...
+    </p>
+  </Fragment>
+
+  <!-- Full Content Slot (gated) -->
+  <Fragment slot="full">
+    <!-- Intro -->
+    <div class="mb-8">
+      <p class="text-base leading-relaxed text-text">You don't have to go back to the office 5 days a week. While some companies are pulling people back, hundreds of others are staying flexible. We researched every company individually to verify their current remote policy. Use the filters below to find the ones that fit.</p>
+    </div>
+
+    <!-- Key Trends -->
+    <div class="mb-6 rounded-xl bg-blue-bg p-6">
+      <h2 class="text-lg font-bold text-navy">Remote Work in Canada: Key Trends (2026)</h2>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-red-600">Going Back to Office</p>
+          <ul class="mt-2 space-y-1 text-sm text-text-muted">
+            <li>Big 5 Banks: 4 days in-office (Sept 2025)</li>
+            <li>Federal Government: 3 days, moving to 4 (July 2026)</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-emerald-600">Staying Flexible</p>
+          <ul class="mt-2 space-y-1 text-sm text-text-muted">
+            <li>Fintech: Most remote-friendly sector</li>
+            <li>Big 4 Consulting: Hybrid (~50/50)</li>
+            <li>Crown Corps: More flexible than core gov</li>
+            <li>Health tech & SaaS: Strong remote options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search + Filters -->
+    <div class="mb-4">
+      <input type="text" id="remote-search" placeholder="Search companies..." class="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-text shadow-sm placeholder:text-text-muted focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20" />
+    </div>
+    <div class="mb-8 flex flex-wrap items-center gap-3">
+      <select id="remote-sector" class="rounded-lg border border-border bg-white px-4 py-2 text-sm text-text">
+        <option value="all">All Industries ({total})</option>
+        {grouped.map((g) => (
+          <option value={g.name}>{g.name} ({g.companies.length})</option>
+        ))}
+      </select>
+      <label class="flex items-center gap-2 text-sm text-text-muted cursor-pointer">
+        <input type="checkbox" id="remote-only-toggle" class="h-4 w-4 rounded border-border text-emerald-600 focus:ring-emerald-500" />
+        Remote-First only
+      </label>
+      <span id="remote-count" class="ml-auto text-xs text-text-muted">{total} companies</span>
+    </div>
+
+    <!-- Full Tables by Category -->
+    {grouped.map((group) => (
+      <div class="mb-10 remote-sector" data-sector={group.name}>
+        <h2 class="mb-1 text-xl font-bold text-navy">{group.name}</h2>
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="text-sm text-text-muted">{group.companies.length} companies</span>
+          {group.remoteCount > 0 && (
+            <span class="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">{group.remoteCount} remote-first</span>
+          )}
+          {group.hybridCount > 0 && (
+            <span class="rounded-full bg-blue-bg px-2 py-0.5 text-[10px] font-semibold text-blue">{group.hybridCount} hybrid</span>
+          )}
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-border">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-navy text-white">
+                <th class="px-4 py-3 text-left font-semibold">Company</th>
+                <th class="px-4 py-3 text-left font-semibold hidden sm:table-cell">Specialty</th>
+                <th class="px-4 py-3 text-center font-semibold hidden md:table-cell">HQ</th>
+                <th class="px-4 py-3 text-left font-semibold">Policy</th>
+                <th class="px-4 py-3 text-center font-semibold hidden md:table-cell">Size</th>
+                <th class="px-4 py-3 text-center font-semibold">Links</th>
+              </tr>
+            </thead>
+            <tbody>
+              {group.companies.map((c, i) => {
+                const isRemoteFirst = c.remotePolicy.toLowerCase().includes("remote-first") || c.remotePolicy.toLowerCase().includes("fully remote");
+                return (
+                  <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-blue-bg/30", "hover:bg-blue-bg/50 transition-colors remote-row"]} data-name={c.name.toLowerCase()} data-policy={isRemoteFirst ? "remote-first" : "hybrid"}>
+                    <td class="px-4 py-3 font-medium text-navy">{c.name}</td>
+                    <td class="px-4 py-3 text-xs text-text-muted hidden sm:table-cell">{c.industry}</td>
+                    <td class="px-4 py-3 text-center text-xs text-text-muted hidden md:table-cell">{c.hq}</td>
+                    <td class="px-4 py-3">
+                      <span class:list={["inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold", isRemoteFirst ? "bg-emerald-100 text-emerald-700" : "bg-blue-bg text-blue"]}>{c.remotePolicy.split("(")[0].trim()}</span>
+                    </td>
+                    <td class="px-4 py-3 text-center text-xs text-text-muted hidden md:table-cell">{c.size}</td>
+                    <td class="px-4 py-3 text-center">
+                      <a href={c.careersUrl} target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">Careers</a>
+                      {c.linkedinUrl && <span>{" "}<a href={c.linkedinUrl} target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">LI</a></span>}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ))}
+
+    <!-- How to Use This List -->
+    <div class="mt-12 rounded-xl border-2 border-blue/20 bg-blue-bg/30 p-8">
+      <h2 class="text-xl font-bold text-navy">How to Use This List</h2>
+      <ol class="mt-6 space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">1</span>
+          <div>
+            <p class="font-semibold text-navy">Filter by your industry and remote preference</p>
+            <p class="text-sm text-text-muted">Use the dropdown and toggle above. Green badges = remote-first, blue = hybrid.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">2</span>
+          <div>
+            <p class="font-semibold text-navy">Follow your targets on LinkedIn</p>
+            <p class="text-sm text-text-muted">Click "LI" to visit the company page. Follow them so their job postings appear in your feed.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">3</span>
+          <div>
+            <p class="font-semibold text-navy">Set up job alerts on their careers pages</p>
+            <p class="text-sm text-text-muted">Click "Careers" to go directly to job listings. Most have email notification options.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Sources -->
+    <div class="mt-12 border-t border-border pt-6">
+      <button id="sources-toggle" class="flex items-center gap-2 text-sm font-semibold text-text-muted hover:text-navy">
+        <svg id="sources-chevron" class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        Sources & References
+      </button>
+      <div id="sources-list" style="display: none;" class="mt-4 text-sm text-text-muted">
+        <p class="mb-2">Company data verified through:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><a href="https://www.flexjobs.com/company-guide/canada" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">FlexJobs Canada Company Guide</a></li>
+          <li><a href="https://builtintoronto.com/companies/hiring/remote" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Built In Toronto</a> — Remote companies hiring</li>
+          <li><a href="https://builtinvancouver.org/companies/location/hiring/remote" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Built In Vancouver</a> — Remote companies hiring</li>
+          <li><a href="https://remote.co/blog/companies-with-remote-jobs-in-canada" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Remote.co</a> — Companies with remote jobs in Canada</li>
+          <li><a href="https://nodesk.co/remote-companies/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">NoDesk</a> — Remote companies directory</li>
+          <li><a href="https://saasnorth.com/company-list-2025/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">SAAS North 2025 Company List</a></li>
+          <li><a href="https://www.deloitte.com/ca/en/Industries/technology/research/fast50-winners.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Deloitte Technology Fast 50</a></li>
+          <li><a href="https://www.marsdd.com/our-story/canadian-companies-hiring-now/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">MaRS Discovery District</a></li>
+          <li>Individual company careers pages and LinkedIn profiles (verified April 2026)</li>
+        </ul>
+      </div>
+    </div>
+  </Fragment>
+</LeadMagnetLayout>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  var searchInput = document.getElementById('remote-search');
+  var sectorSelect = document.getElementById('remote-sector');
+  var remoteToggle = document.getElementById('remote-only-toggle');
+  var countDisplay = document.getElementById('remote-count');
+  var sectors = document.querySelectorAll('.remote-sector');
+
+  function applyFilters() {
+    var query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    var sector = sectorSelect ? sectorSelect.value : 'all';
+    var remoteOnly = remoteToggle ? remoteToggle.checked : false;
+    var visibleCount = 0;
+
+    sectors.forEach(function(sec) {
+      var secName = sec.getAttribute('data-sector');
+      var sectorMatch = sector === 'all' || secName === sector;
+      var sectorVisible = false;
+
+      sec.querySelectorAll('.remote-row').forEach(function(row) {
+        var name = row.getAttribute('data-name');
+        var policy = row.getAttribute('data-policy');
+        var nameMatch = !query || name.indexOf(query) !== -1;
+        var policyMatch = !remoteOnly || policy === 'remote-first';
+        if (sectorMatch && nameMatch && policyMatch) {
+          row.style.display = '';
+          sectorVisible = true;
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+      sec.style.display = sectorVisible ? '' : 'none';
+    });
+    if (countDisplay) countDisplay.textContent = visibleCount + ' companies';
+  }
+
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
+  if (sectorSelect) sectorSelect.addEventListener('change', applyFilters);
+  if (remoteToggle) remoteToggle.addEventListener('change', applyFilters);
+
+  // Sources toggle
+  var sourcesToggle = document.getElementById('sources-toggle');
+  var sourcesList = document.getElementById('sources-list');
+  var sourcesChevron = document.getElementById('sources-chevron');
+  if (sourcesToggle) {
+    sourcesToggle.addEventListener('click', function() {
+      var isHidden = sourcesList.style.display === 'none';
+      sourcesList.style.display = isHidden ? '' : 'none';
+      sourcesChevron.style.transform = isHidden ? 'rotate(90deg)' : '';
+    });
+  }
+});
+</script>

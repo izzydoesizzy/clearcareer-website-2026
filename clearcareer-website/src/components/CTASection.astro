@@ -1,0 +1,98 @@
+---
+interface CTA {
+  text: string;
+  href: string;
+}
+
+interface Props {
+  heading: string;
+  body?: string;
+  primaryCTA?: CTA;
+  secondaryCTA?: CTA;
+  variant?: "blue" | "white" | "gradient";
+}
+
+const {
+  heading,
+  body,
+  primaryCTA,
+  secondaryCTA,
+  variant = "blue",
+} = Astro.props;
+
+const isBlue = variant === "blue";
+const isGradient = variant === "gradient";
+const isDark = isBlue || isGradient;
+---
+
+<section
+  class:list={[
+    "relative overflow-hidden py-16 md:py-24",
+    isGradient ? "" : isBlue ? "bg-blue" : "bg-white",
+  ]}
+  style={isGradient ? "background: linear-gradient(135deg, #0161EF 0%, #0450c8 50%, #030620 100%)" : undefined}
+>
+  {/* Decorative elements for gradient variant */}
+  {isGradient && (
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-white/5 blur-[80px]"></div>
+      <div class="absolute -bottom-20 -left-20 h-[250px] w-[250px] rounded-full bg-blue-light/10 blur-[60px]"></div>
+    </div>
+  )}
+
+  <div class="relative mx-auto max-w-[720px] px-4 text-center sm:px-6 lg:px-8" data-animate="fade-up">
+    <h2
+      class:list={[
+        "font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15]",
+        isDark ? "text-white" : "text-navy",
+      ]}
+      set:html={heading}
+    />
+
+    {
+      body && (
+        <p
+          class:list={[
+            "mx-auto mt-4 max-w-xl text-lg leading-relaxed",
+            isDark ? "text-blue-100" : "text-text-muted",
+          ]}
+        >
+          {body}
+        </p>
+      )
+    }
+
+    {
+      (primaryCTA || secondaryCTA) && (
+        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          {primaryCTA && (
+            <a
+              href={primaryCTA.href}
+              class:list={[
+                "inline-flex items-center justify-center rounded-lg px-8 py-3.5 text-base font-semibold transition-all",
+                isDark
+                  ? "bg-white text-blue hover:bg-gray-100 hover:shadow-lg"
+                  : "bg-blue text-white hover:bg-blue-dark hover:shadow-lg hover:shadow-blue/25",
+              ]}
+            >
+              {primaryCTA.text}
+            </a>
+          )}
+          {secondaryCTA && (
+            <a
+              href={secondaryCTA.href}
+              class:list={[
+                "inline-flex items-center justify-center rounded-lg border-2 px-8 py-3.5 text-base font-semibold transition-colors",
+                isDark
+                  ? "border-white/30 text-white hover:bg-white/10"
+                  : "border-blue text-blue hover:bg-blue-bg",
+              ]}
+            >
+              {secondaryCTA.text}
+            </a>
+          )}
+        </div>
+      )
+    }
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import EmailCaptureForm from "@components/products/EmailCaptureForm";
+---
+
+<BaseLayout
+  title="ADHD Job Search Survival Cheat Sheet | ClearCareer"
+  description="5 immediate hacks for job searching with ADHD. Free guide built by someone who gets it."
+>
+  <div class="min-h-screen bg-white">
+    <header class="border-b border-border">
+      <div class="mx-auto max-w-[720px] px-4 py-4 text-center">
+        <a href="/" class="text-lg font-bold text-blue">ClearCareer</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-blue-bg/50 to-white py-12 md:py-16">
+      <div class="mx-auto max-w-[640px] px-4 text-center">
+        <span class="inline-block rounded-full bg-blue-bg px-3 py-1 text-xs font-semibold text-blue">
+          Free Guide
+        </span>
+        <h1 class="mt-4 font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.1] text-navy">
+          Job searching with ADHD is a different game.<br />
+          <span class="text-blue">Here's the cheat code.</span>
+        </h1>
+        <p class="mx-auto mt-4 max-w-lg text-lg text-gray-600">
+          5 hacks that work today. No fluff. No "just try harder." Built by someone with ADHD, for people with ADHD.
+        </p>
+      </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="py-10">
+      <div class="mx-auto max-w-[640px] px-4">
+        <h2 class="mb-6 text-center text-xl font-bold text-navy">What's inside</h2>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-gray-700">
+            <span class="mt-0.5 text-success">✓</span>
+            <span>The "ADHD tax" in job searching and why standard advice makes it worse</span>
+          </li>
+          <li class="flex items-start gap-3 text-gray-700">
+            <span class="mt-0.5 text-success">✓</span>
+            <span>Body doubling strategy for getting applications done</span>
+          </li>
+          <li class="flex items-start gap-3 text-gray-700">
+            <span class="mt-0.5 text-success">✓</span>
+            <span>The 15-minute sprint technique</span>
+          </li>
+          <li class="flex items-start gap-3 text-gray-700">
+            <span class="mt-0.5 text-success">✓</span>
+            <span>Dopamine-friendly tracking that your brain will actually use</span>
+          </li>
+          <li class="flex items-start gap-3 text-gray-700">
+            <span class="mt-0.5 text-success">✓</span>
+            <span>Interview day time-boxing protocol</span>
+          </li>
+        </ul>
+
+        <div class="mt-8 rounded-xl border border-blue-200 bg-blue-bg/30 p-6">
+          <p class="mb-4 text-center text-sm font-medium text-gray-700">
+            Enter your email to get instant access
+          </p>
+          <EmailCaptureForm
+            client:load
+            productSlug="adhd-cheat-sheet"
+            productName="ADHD Job Search Survival Cheat Sheet"
+            ctaText="Send Me the Cheat Sheet"
+          />
+        </div>
+
+        <p class="mt-6 text-center text-xs text-gray-400">
+          30-40% of neurodiverse job seekers are unemployed. This guide exists because that number is unacceptable.
+        </p>
+      </div>
+    </section>
+
+    <footer class="border-t border-border py-6 text-center">
+      <p class="text-xs text-gray-400">&copy; {new Date().getFullYear()} ClearCareer. All rights reserved.</p>
+    </footer>
+  </div>
+</BaseLayout>

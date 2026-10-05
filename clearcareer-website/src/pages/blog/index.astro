@@ -1,0 +1,212 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import CTASection from "@components/CTASection.astro";
+import BlogCardThumbnail from "@components/BlogCardThumbnail.astro";
+import { getCollection } from "astro:content";
+
+const now = new Date();
+const allPosts = await getCollection("blog", ({ data }) => {
+  if (data.draft) return false;
+  return new Date(data.publishDate) <= now;
+});
+const posts = allPosts.sort(
+  (a, b) =>
+    new Date(b.data.publishDate).getTime() -
+    new Date(a.data.publishDate).getTime()
+);
+
+// Collect all unique tags for navigation
+const allTags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "https://joinclearcareer.com";
+---
+
+<PageLayout
+  title="Career Blog | ClearCareer"
+  description="Career advice, job search strategies, resume tips, and salary negotiation guides from ClearCareer."
+>
+  <!-- CollectionPage Schema -->
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "ClearCareer Career Blog",
+      description: "Career advice, job search strategies, resume tips, and salary negotiation guides.",
+      url: `${siteUrl}/blog`,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: posts.length,
+        itemListElement: posts.slice(0, 10).map((post, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${siteUrl}/blog/${post.id}`,
+          name: post.data.title,
+        })),
+      },
+    })}
+  />
+
+  <Hero
+    variant="page"
+    eyebrow="Career Blog"
+    headline="Strategies That Actually Work"
+    subheadline="Practical career advice from the trenches. No fluff, no filler."
+  />
+
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      {/* Playbooks Banner */}
+      <a
+        href="/playbooks"
+        class="mb-8 flex items-center justify-between rounded-xl border border-blue/20 bg-blue-bg/50 p-4 transition-all hover:border-blue/40 hover:shadow-sm group"
+      >
+        <div class="flex items-center gap-3">
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-blue/10">
+            <svg class="h-5 w-5 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </span>
+          <div>
+            <p class="text-sm font-semibold text-navy">Looking for step-by-step guides?</p>
+            <p class="text-xs text-text-muted">Browse all 21 playbooks organized by topic</p>
+          </div>
+        </div>
+        <svg class="h-5 w-5 text-blue transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+
+      {/* Tag Navigation */}
+      {allTags.length > 0 && (
+        <div id="tag-nav" class="mb-10 flex flex-wrap gap-2">
+          <button
+            data-tag="all"
+            class="tag-btn active rounded-full bg-blue px-4 py-1.5 text-xs font-medium text-white transition-colors"
+          >
+            All Posts
+          </button>
+          {allTags.map((tag) => (
+            <button
+              data-tag={tag}
+              class="tag-btn rounded-full border border-border bg-white px-4 py-1.5 text-xs font-medium text-text-muted transition-colors hover:border-blue hover:text-blue"
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {
+        posts.length > 0 ? (
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <a
+                href={`/blog/${post.id}`}
+                data-tags={JSON.stringify(post.data.tags)}
+                class="blog-card group flex flex-col overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-shadow hover:shadow-md"
+              >
+                {post.data.image ? (
+                  <div class="aspect-video overflow-hidden">
+                    <img
+                      src={post.data.image}
+                      alt={post.data.title}
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <BlogCardThumbnail title={post.data.title} category={post.data.category} />
+                )}
+
+                <div class="flex flex-col p-6 flex-1">
+                  <div class="mb-3 flex flex-wrap gap-2 min-h-[28px]">
+                    {post.data.type === "playbook" && (
+                      <span class="inline-flex items-center gap-1 rounded-full bg-blue px-2.5 py-0.5 text-[0.6875rem] font-semibold text-white">
+                        <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        Playbook
+                      </span>
+                    )}
+                    {post.data.tags.map((tag) => (
+                      <span class="rounded-full bg-blue-bg px-3 py-1 text-xs font-medium text-blue">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h3 class="text-lg font-semibold text-navy group-hover:text-blue transition-colors">
+                    {post.data.title}
+                  </h3>
+
+                  <p class="mt-2 text-sm text-text-muted line-clamp-2">
+                    {post.data.description}
+                  </p>
+
+                  <p class="mt-auto pt-4 text-xs text-text-muted">
+                    {new Date(post.data.publishDate).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}{" "}
+                    &middot; {post.data.author}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div class="rounded-2xl bg-blue-bg p-12 text-center">
+            <h2 class="text-xl font-semibold text-navy">
+              Blog posts coming soon
+            </h2>
+            <p class="mx-auto mt-3 max-w-md text-text-muted">
+              We're working on practical career guides, job search strategies,
+              and interview tips. Check back soon.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <CTASection
+    heading="Want Personalized Career Advice?"
+    primaryCTA={{
+      text: "Book a Free Audit",
+      href: "https://calendly.com/clearcareer/discovery-call",
+    }}
+    variant="blue"
+  />
+
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-btn');
+    const cards = document.querySelectorAll<HTMLAnchorElement>('.blog-card');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tag = btn.dataset.tag;
+
+        // Update active button styles
+        buttons.forEach((b) => {
+          b.classList.remove('active', 'bg-blue', 'text-white');
+          b.classList.add('border', 'border-border', 'bg-white', 'text-text-muted');
+        });
+        btn.classList.add('active', 'bg-blue', 'text-white');
+        btn.classList.remove('border-border', 'bg-white', 'text-text-muted');
+
+        // Filter cards
+        cards.forEach((card) => {
+          if (tag === 'all') {
+            card.style.display = '';
+            return;
+          }
+          const cardTags: string[] = JSON.parse(card.dataset.tags || '[]');
+          card.style.display = cardTags.includes(tag!) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</PageLayout>

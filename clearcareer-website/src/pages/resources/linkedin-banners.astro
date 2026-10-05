@@ -1,0 +1,190 @@
+---
+import LeadMagnetLayout from "@layouts/LeadMagnetLayout.astro";
+
+const DRIVE_FOLDER_URL = "https://drive.google.com/drive/folders/1HMUO5dul8231G7AvwMeWWLw7BKxWESUJ";
+---
+
+<LeadMagnetLayout
+  title="33 Free LinkedIn Banners to Complete Your Profile | ClearCareer"
+  description="Pick a professional LinkedIn banner and upload it in 60 seconds. Solids, gradients, and patterns that work for any industry. No design skills needed."
+  headline="33 Free LinkedIn Banners<br />to Complete Your Profile in 60 Seconds"
+  subheadline="No design skills needed. Pick a banner, upload it, done. Solids, gradients, and patterns that work for any industry."
+  bullets={[
+    "33 professional banners in 3 styles: solid colors, gradients, and patterns",
+    "Pre-sized to LinkedIn's exact 1584 x 396 pixel spec — no cropping needed",
+    "Works for any industry or role: clean, professional, not branded",
+    "Complete profiles get up to 40x more opportunities on LinkedIn",
+    "Download the whole pack and swap banners anytime",
+  ]}
+  source="linkedin-banners"
+  storageKey="linkedin_banners_unlocked"
+  ctaText="Get the Banner Pack"
+>
+  <!-- Banner Preview GIF -->
+  <Fragment slot="hero-image">
+    <section class="pb-4">
+      <div class="mx-auto max-w-[720px] px-4">
+        <div class="overflow-hidden rounded-xl border border-border shadow-lg">
+          <img
+            src="/images/lead-magnets/1770044386295.gif"
+            alt="Preview of 33 LinkedIn banner designs scrolling through solids, gradients, and patterns"
+            class="w-full"
+            loading="eager"
+            onerror="this.parentElement.innerHTML='<div style=&quot;padding:60px;text-align:center;background:#f8fafc;color:#64748b&quot;><p style=&quot;font-size:48px;margin:0&quot;>🎨</p><p style=&quot;margin-top:12px;font-weight:600&quot;>33 LinkedIn Banners</p><p>Solids · Gradients · Patterns</p></div>'"
+          />
+        </div>
+      </div>
+    </section>
+  </Fragment>
+
+  <!-- Preview: stats + categories + CSS banner samples -->
+  <Fragment slot="preview">
+    <!-- Why your banner matters -->
+    <h2 class="mb-6 text-center text-lg font-bold text-navy">Why Your LinkedIn Banner Matters</h2>
+
+    <div class="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-3xl font-bold text-blue">14x</p>
+        <p class="mt-1 text-sm text-text-muted">more profile views with a professional photo</p>
+      </div>
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-3xl font-bold text-blue">40x</p>
+        <p class="mt-1 text-sm text-text-muted">more opportunities with a complete profile</p>
+      </div>
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-3xl font-bold text-blue">50.5%</p>
+        <p class="mt-1 text-sm text-text-muted">of users don't even have a complete profile</p>
+      </div>
+    </div>
+
+    <p class="mb-8 text-center text-sm text-text-muted">
+      Your banner is the largest visual element on your LinkedIn profile. A blank banner tells recruiters you didn't bother finishing. A clean, professional one signals you take your career seriously.
+    </p>
+
+    <!-- 3 Category Cards -->
+    <h3 class="mb-4 text-center text-base font-bold text-navy">What's in the Pack</h3>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div class="overflow-hidden rounded-xl border border-border bg-white">
+        <div class="grid h-16 w-full grid-cols-4">
+          <div style="background: #0984e3;"></div>
+          <div style="background: #00b894;"></div>
+          <div style="background: #e17055;"></div>
+          <div style="background: #fdcb6e;"></div>
+        </div>
+        <div class="p-4 text-center">
+          <p class="font-semibold text-navy">Solids</p>
+          <p class="text-sm text-text-muted">12 bold, clean colors</p>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-xl border border-border bg-white">
+        <div class="h-16 w-full" style="background: linear-gradient(to right, #6c5ce7, #fd79a8);"></div>
+        <div class="p-4 text-center">
+          <p class="font-semibold text-navy">Gradients</p>
+          <p class="text-sm text-text-muted">14 smooth color blends</p>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-xl border border-border bg-white">
+        <div class="h-16 w-full" style="background: #2d3436; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);"></div>
+        <div class="p-4 text-center">
+          <p class="font-semibold text-navy">Patterns</p>
+          <p class="text-sm text-text-muted">7 textured designs</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample banners rendered in CSS -->
+    <h3 class="mb-4 mt-8 text-center text-base font-bold text-navy">Sample Banners</h3>
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+      <!-- Solids -->
+      <div class="overflow-hidden rounded-lg border border-border">
+        <div class="h-12 w-full" style="background: #0984e3;"></div>
+        <p class="bg-white px-2 py-1.5 text-center text-[10px] font-medium text-text-muted">Electron Blue</p>
+      </div>
+      <div class="overflow-hidden rounded-lg border border-border">
+        <div class="h-12 w-full" style="background: #00b894;"></div>
+        <p class="bg-white px-2 py-1.5 text-center text-[10px] font-medium text-text-muted">Mint Leaf</p>
+      </div>
+      <!-- Gradients -->
+      <div class="overflow-hidden rounded-lg border border-border">
+        <div class="h-12 w-full" style="background: linear-gradient(to right, #0984e3, #a855f7, #ec4899);"></div>
+        <p class="bg-white px-2 py-1.5 text-center text-[10px] font-medium text-text-muted">Purple Haze</p>
+      </div>
+      <div class="overflow-hidden rounded-lg border border-border">
+        <div class="h-12 w-full" style="background: linear-gradient(to bottom, #ef4444, #f97316);"></div>
+        <p class="bg-white px-2 py-1.5 text-center text-[10px] font-medium text-text-muted">Tequila Sunrise</p>
+      </div>
+      <!-- Patterns -->
+      <div class="overflow-hidden rounded-lg border border-border">
+        <div class="h-12 w-full" style="background: #2d3436; background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(108,92,231,0.3) 8px, rgba(108,92,231,0.3) 9px);"></div>
+        <p class="bg-white px-2 py-1.5 text-center text-[10px] font-medium text-text-muted">Purple Tron</p>
+      </div>
+      <div class="overflow-hidden rounded-lg border border-border">
+        <div class="h-12 w-full" style="background: linear-gradient(135deg, #2d3436 25%, #636e72 25%, #636e72 50%, #2d3436 50%, #2d3436 75%, #636e72 75%); background-size: 20px 20px;"></div>
+        <p class="bg-white px-2 py-1.5 text-center text-[10px] font-medium text-text-muted">Charcoal Prism</p>
+      </div>
+    </div>
+
+    <p class="mt-6 text-center text-sm text-text-muted">
+      Plus 27 more. All pre-sized to 1584 x 396px. Download and upload in under a minute.
+    </p>
+  </Fragment>
+
+  <!-- Full content after gate -->
+  <Fragment slot="full">
+    <!-- Google Drive CTA -->
+    <div class="mb-10 rounded-xl bg-blue-bg p-8 text-center">
+      <h2 class="text-xl font-bold text-navy">Your Banner Pack is Ready</h2>
+      <p class="mx-auto mt-2 max-w-md text-sm text-text-muted">Click below to open the Google Drive folder. Browse the banners, download the one you want, and upload it to your LinkedIn profile.</p>
+      <a
+        href={DRIVE_FOLDER_URL}
+        target="_blank"
+        rel="noopener"
+        class="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-blue px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+      >
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Open Banner Pack in Google Drive
+      </a>
+    </div>
+
+    <!-- How to upload -->
+    <div class="rounded-xl border-2 border-blue/20 bg-blue-bg/30 p-8">
+      <h2 class="text-xl font-bold text-navy">How to Upload Your Banner</h2>
+
+      <ol class="mt-6 space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">1</span>
+          <div>
+            <p class="font-semibold text-navy">Pick a banner from the folder</p>
+            <p class="text-sm text-text-muted">Browse the solids, gradients, and patterns. Download the one that fits your style. Right-click the image and select "Download."</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">2</span>
+          <div>
+            <p class="font-semibold text-navy">Go to your LinkedIn profile</p>
+            <p class="text-sm text-text-muted">Click "Me" in the top navigation, then "View Profile." You'll see your banner area at the top of the page.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">3</span>
+          <div>
+            <p class="font-semibold text-navy">Click the camera icon and upload</p>
+            <p class="text-sm text-text-muted">Click the pencil or camera icon on your banner area, select "Change photo," and upload your new banner. It's already sized to 1584 x 396px, so no cropping needed.</p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="mt-6 text-sm text-text-muted">That's it. Three steps, under 60 seconds. Your profile just got a lot more polished.</p>
+    </div>
+
+    <!-- Cross-link to LinkedIn optimization -->
+    <div class="mt-10 text-center">
+      <p class="text-sm text-text-muted">A banner is step one. Want to optimize your entire LinkedIn profile?</p>
+      <a href="/blog/linkedin-profile-optimization-the-full-audit" class="mt-2 inline-block text-sm font-semibold text-blue hover:text-blue-dark">
+        Read the LinkedIn Optimization Playbook &rarr;
+      </a>
+    </div>
+  </Fragment>
+</LeadMagnetLayout>

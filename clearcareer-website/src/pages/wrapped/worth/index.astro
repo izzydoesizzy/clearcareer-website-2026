@@ -1,0 +1,68 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import WrappedPrivacyFooter from "@components/wrapped/WrappedPrivacyFooter.astro";
+import ResumeUploader from "@components/wrapped/ResumeUploader";
+---
+
+<PageLayout
+  title="What You're Actually Worth | ClearCareer"
+  description="Find out your real market value, whether you're underpaid, and which companies pay top dollar for your skills."
+>
+  <section class="bg-navy py-16 md:py-24">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <a href="/wrapped" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors mb-6">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width={2}>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        All Wrapped Tools
+      </a>
+      <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-[#059669] mb-4">
+        💰 What You're Actually Worth
+      </div>
+      <h1 class="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1] text-white mb-3">
+        Are You Leaving Money on the Table?
+      </h1>
+      <p class="text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
+        Upload your resume and find out your market value, whether your title matches
+        your work, and which companies would pay you the most.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 -mt-8">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+      <ResumeUploader client:load tool="worth" toolLabel="Worth Report" />
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-[720px] mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.2] text-navy text-center mb-8">
+        What You'll Discover
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="rounded-xl bg-emerald-50 p-5">
+          <span class="text-2xl mb-2 block">📊</span>
+          <h3 class="font-semibold text-navy mb-1">Salary Range</h3>
+          <p class="text-sm text-text-muted">Your low, anchor, and stretch market value.</p>
+        </div>
+        <div class="rounded-xl bg-emerald-50 p-5">
+          <span class="text-2xl mb-2 block">🏷️</span>
+          <h3 class="font-semibold text-navy mb-1">Title Check</h3>
+          <p class="text-sm text-text-muted">Is your title inflated, accurate, or underselling you?</p>
+        </div>
+        <div class="rounded-xl bg-emerald-50 p-5">
+          <span class="text-2xl mb-2 block">📉</span>
+          <h3 class="font-semibold text-navy mb-1">The Gap</h3>
+          <p class="text-sm text-text-muted">Are you underpaid, fairly paid, or well above market?</p>
+        </div>
+        <div class="rounded-xl bg-emerald-50 p-5">
+          <span class="text-2xl mb-2 block">🏢</span>
+          <h3 class="font-semibold text-navy mb-1">Top Companies</h3>
+          <p class="text-sm text-text-muted">3 companies that pay top dollar for your exact profile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <WrappedPrivacyFooter />
+</PageLayout>

@@ -1,0 +1,268 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import ToolInput from "@components/ToolInput.astro";
+import CopyButton from "@components/CopyButton.astro";
+---
+
+<ToolLayout
+  title="Networking Message Builder"
+  headline="Networking Message Builder"
+  description="Pick a message type, fill in the details, and get a ready-to-send LinkedIn message. Cold outreach, informational interviews, follow-ups, and thank yous."
+  category="Interview & Resume"
+  icon="💬"
+  relatedTags={["networking", "job search strategy"]}
+  slug="networking-message-builder"
+  lastUpdated="March 2026"
+  featureList={["4 message templates", "Character count with LinkedIn limit", "Personalization prompts", "Copy-to-clipboard output"]}
+  faqItems={[
+    { question: "What makes a LinkedIn connection request get accepted?", answer: "Three things: personalization (mention something specific about them), credibility (briefly establish who you are), and a small ask or shared interest. Generic requests ('I'd love to connect') get accepted at 10-15%. Personalized ones: 40-60%." },
+    { question: "Should I send a connection request or a direct message?", answer: "Connection request first, always. You can include a note with your request (300 characters). Once they accept, follow up with a longer message if needed. Cold DMs to non-connections often go to LinkedIn's 'Other' inbox and never get seen." },
+    { question: "How many networking messages should I send per week?", answer: "15-25 connection requests per week is a sustainable pace. Of those, expect 5-10 acceptances and 2-4 conversations. Quality beats quantity. One good conversation is worth more than 50 ignored messages." },
+    { question: "What if someone doesn't respond?", answer: "Wait 5-7 days, then send one follow-up. Keep it short: 'Hi [Name], just bumping this up. Would love to connect if you have a few minutes.' If no response after that, move on. Never send more than 2 messages without a reply." },
+    { question: "Should I mention that I'm job searching?", answer: "Not in the first message. Lead with curiosity: 'I'd love to learn about your team' or 'I'm interested in how [Company] approaches [topic].' Once you've had a real conversation, you can mention your search naturally." },
+    { question: "How do I follow up without being annoying?", answer: "Time it right: 5-7 days after a connection request, 1-2 days after a conversation. Add value: share an article, reference something they mentioned, congratulate them on a post. The key is giving before asking. If you've added value, a follow-up never feels pushy." },
+  ]}
+  relatedTools={[
+    { name: "LinkedIn Recruiter Finder", slug: "linkedin-recruiter-finder", icon: "🔍" },
+    { name: "STAR Story Builder", slug: "star-story-builder", icon: "⭐" },
+  ]}
+>
+  <!-- Intro -->
+  <div slot="intro">
+    <h2 class="text-xl font-bold text-navy">Why This Matters</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>90% of LinkedIn messages get ignored because they're generic or ask too much too soon. The messages that get replies do 3 things: show you did research, make a specific connection, and make a small ask.</p>
+      <p>This tool gives you 4 templates (cold outreach, informational interviews, follow-ups, and thank yous) with a 300-character limit check for connection requests. Fill in the details, copy, and send.</p>
+    </div>
+  </div>
+  <form id="message-form" class="space-y-6" novalidate>
+    <!-- Message type (select, not ToolInput) -->
+    <div>
+      <label for="message-type" class="block text-sm font-medium text-navy">
+        Message type
+        <span class="text-warning">*</span>
+      </label>
+      <select id="message-type" class="mt-1.5 w-full rounded-lg border border-border bg-white px-4 py-3 text-text focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20 transition-colors" required>
+        <option value="">Choose a message type...</option>
+        <option value="cold">Cold Outreach</option>
+        <option value="informational">Informational Interview Request</option>
+        <option value="followup">Follow-Up After Meeting</option>
+        <option value="thankyou">Thank You After Interview</option>
+      </select>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <ToolInput
+        id="your-name"
+        label="Your first name"
+        type="text"
+        required={true}
+        placeholder="Izzy"
+      />
+      <ToolInput
+        id="recipient-name"
+        label="Recipient's first name"
+        type="text"
+        required={true}
+        placeholder="Sarah"
+      />
+    </div>
+
+    <ToolInput
+      id="role-company"
+      label="Recipient's role and company"
+      type="text"
+      required={true}
+      placeholder="VP of Marketing at Shopify"
+    />
+
+    <ToolInput
+      id="how-found"
+      label="How you found them"
+      type="text"
+      placeholder="your recent post about remote team culture"
+      tooltip="A LinkedIn post, mutual connection, event, article they wrote, etc."
+    />
+
+    <ToolInput
+      id="admiration"
+      label="Something specific you admire"
+      type="text"
+      placeholder="how you grew the team from 5 to 20 while maintaining culture"
+      tooltip="Be specific. Reference something real about their work."
+    />
+
+    <ToolInput
+      id="interest"
+      label="What you're interested in"
+      type="text"
+      placeholder="learning about marketing leadership at Shopify"
+      tooltip="Used for cold outreach and informational interview requests."
+    />
+
+    <button
+      type="submit"
+      class="w-full rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+    >
+      Build Your Message
+    </button>
+  </form>
+
+  <!-- Results (hidden until built) -->
+  <div id="results" class="mt-10 hidden" aria-live="polite">
+    <div class="rounded-xl border border-border bg-white p-8">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-semibold text-navy">Your Message</h3>
+        <span id="char-count-badge" class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-blue-bg text-blue"></span>
+      </div>
+      <p id="char-limit-note" class="mb-3 text-xs text-warning hidden">
+        LinkedIn connection requests have a 300-character limit. This works best as a direct message.
+      </p>
+      <div id="message-output" class="bg-blue-bg p-6 rounded-lg whitespace-pre-line text-text leading-relaxed"></div>
+      <div class="mt-4">
+        <CopyButton targetId="message-output" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div slot="methodology">
+    <h2 class="text-xl font-bold text-navy">The 4 Message Types</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p><strong class="text-navy">Cold Outreach:</strong> First contact. Keep it to 2 sentences. Mention something specific about them. Goal: get the connection accepted. <strong class="text-navy">Informational Interview:</strong> Ask for 15-20 minutes after they've accepted your connection. Be specific about what you want to learn.</p>
+      <p><strong class="text-navy">Follow-Up:</strong> Send within 24-48 hours of a conversation or event. Reinforce the connection and offer value back. <strong class="text-navy">Thank You:</strong> Send the same day. Mention one specific thing you learned. Keep the door open.</p>
+    </div>
+  </div>
+
+  <!-- Example -->
+  <div slot="example">
+    <h2 class="text-xl font-bold text-navy">Example: Cold Outreach</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>"Hi Sarah, I noticed your team just shipped the new API platform. I've been building distributed systems for 8 years and am exploring what's next. Would you have 15 minutes to chat about what your team is working on?"</p>
+      <p>47 words, 267 characters. Under LinkedIn's 300-character limit. Messages like this get a 25-35% reply rate, compared to 5% for generic requests. That's a 5-7x improvement from 30 seconds of personalization.</p>
+    </div>
+  </div>
+
+  <!-- Tips section -->
+  <div slot="tips">
+    <h2 class="font-display text-2xl text-navy">Networking Messages That Work</h2>
+    <div class="mt-6 space-y-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+      <p>
+        <strong class="text-navy">Give before you ask.</strong> Mention a post they wrote, a talk they gave, or something real about their work. That's what separates you from the hundreds of generic messages they get.
+      </p>
+      <p>
+        Related reading:
+        <a href="/blog/linkedin-outreach-messages-that-actually-get-replies" class="text-blue hover:underline">LinkedIn outreach messages that actually get replies</a> and
+        <a href="/blog/stop-pitch-slapping-on-linkedin" class="text-blue hover:underline">Stop pitch-slapping on LinkedIn</a>.
+      </p>
+      <p>
+        <strong class="text-navy">Save what works.</strong> When a message gets a reply, copy the structure and reuse it.
+      </p>
+      <p>
+        <strong class="text-navy">Read it out loud before sending.</strong> If it sounds like a robot wrote it, rewrite it in your own voice.
+      </p>
+    </div>
+  </div>
+</ToolLayout>
+
+<script>
+  const form = document.getElementById('message-form') as HTMLFormElement;
+  const results = document.getElementById('results') as HTMLDivElement;
+
+  interface Templates {
+    [key: string]: string;
+  }
+
+  const templates: Templates = {
+    cold: `Hi {recipientName},
+
+I came across your profile through {howFound} and was impressed by {admiration}.
+
+I'm currently exploring opportunities in {interest} and would love to learn from your experience. Would you be open to a quick 15-minute chat? Happy to work around your schedule.
+
+Thanks for considering it,
+{yourName}`,
+
+    informational: `Hi {recipientName},
+
+I've been following your work at {company} and {admiration} really stood out to me.
+
+I'm exploring {interest} and your perspective would be incredibly valuable. Would you have 15-20 minutes for a virtual coffee? I have a few specific questions and promise to be respectful of your time.
+
+Thanks,
+{yourName}`,
+
+    followup: `Hi {recipientName},
+
+Great connecting with you at {howFound}. Our conversation about {interest} gave me a lot to think about.
+
+I wanted to follow up on what you mentioned about {admiration}. If any roles come to mind that might be a fit, I'd appreciate you keeping me in the loop.
+
+Thanks again for your time,
+{yourName}`,
+
+    thankyou: `Hi {recipientName},
+
+Thank you for taking the time to speak with me about the {interest} role. I enjoyed learning more about {admiration} and how the team operates.
+
+Our conversation reinforced my excitement about contributing to {company}. I'm confident my experience in {howFound} would be a strong fit for what you're building.
+
+Looking forward to next steps,
+{yourName}`
+  };
+
+  function parseCompany(roleCompany: string): string {
+    const parts = roleCompany.split(' at ');
+    if (parts.length >= 2) {
+      return parts.slice(1).join(' at ').trim();
+    }
+    return roleCompany.trim();
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const messageType = (document.getElementById('message-type') as HTMLSelectElement).value;
+    const yourName = (document.getElementById('your-name') as HTMLInputElement).value.trim();
+    const recipientName = (document.getElementById('recipient-name') as HTMLInputElement).value.trim();
+    const roleCompany = (document.getElementById('role-company') as HTMLInputElement).value.trim();
+    const howFound = (document.getElementById('how-found') as HTMLInputElement).value.trim();
+    const admiration = (document.getElementById('admiration') as HTMLInputElement).value.trim();
+    const interest = (document.getElementById('interest') as HTMLInputElement).value.trim();
+
+    if (!messageType || !yourName || !recipientName || !roleCompany) {
+      return;
+    }
+
+    const company = parseCompany(roleCompany);
+    const template = templates[messageType];
+    if (!template) return;
+
+    const message = template
+      .replace(/\{recipientName\}/g, recipientName)
+      .replace(/\{yourName\}/g, yourName)
+      .replace(/\{company\}/g, company)
+      .replace(/\{howFound\}/g, howFound || '[how you found them]')
+      .replace(/\{admiration\}/g, admiration || '[something you admire about their work]')
+      .replace(/\{interest\}/g, interest || '[your area of interest]');
+
+    // Update output
+    const output = document.getElementById('message-output')!;
+    output.textContent = message;
+
+    // Update character count
+    const charCount = message.length;
+    const badge = document.getElementById('char-count-badge')!;
+    badge.textContent = `${charCount} characters`;
+
+    const limitNote = document.getElementById('char-limit-note')!;
+    if (charCount > 300) {
+      limitNote.classList.remove('hidden');
+    } else {
+      limitNote.classList.add('hidden');
+    }
+
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>

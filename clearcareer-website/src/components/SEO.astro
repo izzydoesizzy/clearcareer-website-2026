@@ -1,0 +1,154 @@
+---
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: "website" | "article";
+  publishDate?: string;
+  author?: string;
+  noindex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image = "/open-graph/default.png",
+  type = "website",
+  publishDate,
+  author,
+  noindex = false,
+  breadcrumbs,
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "https://joinclearcareer.com";
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
+
+const jsonLd =
+  type === "article"
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: title,
+        description,
+        image: ogImageUrl,
+        author: {
+          "@type": "Person",
+          name: author ?? "Izzy Piyale-Sheard",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "ClearCareer",
+          url: siteUrl,
+        },
+        datePublished: publishDate,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": canonicalUrl,
+        },
+      }
+    : {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "ClearCareer",
+        url: siteUrl,
+        description,
+      };
+
+// Organization schema (included on every page)
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  name: "ClearCareer",
+  url: siteUrl,
+  logo: `${siteUrl}/images/logo/clearcareer-logo.png`,
+  description: "Career coaching that gets results. 200+ professionals coached. $1.2M+ in collective raises.",
+  founder: {
+    "@type": "Person",
+    name: "Izzy Piyale-Sheard",
+    jobTitle: "Career Coach",
+    url: siteUrl,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Toronto",
+    addressRegion: "ON",
+    addressCountry: "CA",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Canada",
+  },
+  priceRange: "$$",
+  sameAs: [
+    "https://www.linkedin.com/in/izzydoesizzy",
+    "https://www.youtube.com/@joinclearcareer",
+    "https://twitter.com/joinclearcareer",
+  ],
+};
+
+// Breadcrumb schema
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: breadcrumbs.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: item.url.startsWith("http") ? item.url : `${siteUrl}${item.url}`,
+  })),
+} : null;
+---
+
+<!-- Primary Meta -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={title} />
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content="ClearCareer" />
+<meta property="og:locale" content="en_CA" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@joinclearcareer" />
+<meta name="twitter:creator" content="@joinclearcareer" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- GEO -->
+<meta name="geo.region" content="CA-ON" />
+<meta name="geo.placename" content="Toronto" />
+
+<!-- Article-specific -->
+{publishDate && <meta property="article:published_time" content={publishDate} />}
+{author && <meta property="article:author" content={author} />}
+
+<!-- JSON-LD: Page schema -->
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<!-- JSON-LD: Organization schema -->
+<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+<!-- JSON-LD: Breadcrumb schema -->
+{breadcrumbSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}

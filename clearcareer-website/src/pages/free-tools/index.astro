@@ -1,0 +1,102 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import CTASection from "@components/CTASection.astro";
+import ToolCard from "@components/ToolCard.astro";
+
+import allToolsData from "@data/free-tools.json";
+
+const toolsData = allToolsData.filter((t) => !t.hidden);
+const categories = ["Financial Planning", "Job Search", "Interview & Resume"];
+const toolsByCategory = categories
+  .map((cat) => ({
+    name: cat,
+    tools: toolsData.filter((t) => t.category === cat),
+  }))
+  .filter((cat) => cat.tools.length > 0);
+
+const categoryDescriptions: Record<string, string> = {
+  "Financial Planning":
+    "Know your numbers before you make any decisions. These calculators turn gut feelings into actual data.",
+  "Job Search":
+    "Search smarter, not harder. These tools help you find the right people and the right roles faster.",
+  "Interview & Resume":
+    "Prep like a professional. Build stories, score your resume bullets, and write messages that get replies.",
+};
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "https://joinclearcareer.com";
+---
+
+<PageLayout
+  title="Free Career Tools | ClearCareer"
+  description="Free calculators, search builders, and career tools to power your job search. Financial runway, salary negotiation, LinkedIn search, resume scoring, and more."
+  image="/open-graph/free-tools.png"
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Free Tools", url: "/free-tools" },
+  ]}
+>
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Free Career Tools",
+      description:
+        "Free calculators, search builders, and career tools to power your job search.",
+      url: `${siteUrl}/free-tools`,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: toolsData.length,
+        itemListElement: toolsData.map((tool, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${siteUrl}/free-tools/${tool.slug}`,
+          name: tool.name,
+        })),
+      },
+    })}
+  />
+
+  <Hero
+    variant="page"
+    eyebrow="Free Tools"
+    headline="Career Tools That Do the Math for You"
+    subheadline="Calculators, search builders, and prep tools. No signup required. No email gate. Just open and use."
+  />
+
+  {toolsByCategory.map((category, i) => (
+    <section class={`py-16 md:py-20 ${i % 2 === 0 ? "" : "bg-blue-bg"}`}>
+      <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          {category.name}
+        </h2>
+        <p class="mt-3 max-w-[720px] text-[1.0625rem] leading-[1.75] text-text-muted">
+          {categoryDescriptions[category.name]}
+        </p>
+
+        <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {category.tools.map((tool) => (
+            <ToolCard
+              name={tool.name}
+              slug={tool.slug}
+              description={tool.description}
+              category={tool.category}
+              icon={tool.icon}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <CTASection
+    heading="Want Personalized Help With Your Job Search?"
+    primaryCTA={{
+      text: "Book a Free Audit",
+      href: "https://calendly.com/clearcareer/discovery-call",
+    }}
+    variant="blue"
+  />
+</PageLayout>

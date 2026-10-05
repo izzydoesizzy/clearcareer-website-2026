@@ -1,0 +1,227 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  headline: string;
+  subheadline?: string;
+  bullets?: string[];
+  source: string;
+  storageKey: string;
+  ctaText?: string;
+  deliveryType?: "pdf" | "sheet" | "link";
+  deliveryLabel?: string;
+}
+
+const {
+  title,
+  description,
+  headline,
+  subheadline,
+  bullets = [],
+  source,
+  storageKey,
+  ctaText = "Get Free Access",
+  deliveryType = "pdf",
+  deliveryLabel,
+} = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<BaseLayout title={title} description={description} type="website">
+  <div class="min-h-screen bg-white">
+    <!-- Minimal Header: Logo Only -->
+    <header class="border-b border-border/50 bg-white">
+      <div class="mx-auto max-w-[720px] px-4 py-4 text-center">
+        <a href="/" class="text-lg font-bold text-blue">ClearCareer</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-blue-bg/50 to-white py-12 md:py-16">
+      <div class="mx-auto max-w-[640px] px-4 text-center">
+        <h1 class="font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.1] text-navy">
+          <Fragment set:html={headline} />
+        </h1>
+        {subheadline && (
+          <p class="mx-auto mt-4 max-w-lg text-lg leading-relaxed text-text-muted">
+            {subheadline}
+          </p>
+        )}
+
+        {bullets.length > 0 && (
+          <ul class="mx-auto mt-6 max-w-md space-y-3 text-left">
+            {bullets.map((bullet) => (
+              <li class="flex items-start gap-3 text-[1.0625rem] text-text">
+                <svg class="mt-1 h-5 w-5 flex-shrink-0 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <!-- Email Form (Top) -->
+        <form id="lead-magnet-form-top" class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
+          <label for="lm-email-top" class="sr-only">Email address</label>
+          <input
+            id="lm-email-top"
+            type="email"
+            placeholder="your@email.com"
+            required
+            class="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-text shadow-sm placeholder:text-text-muted focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20"
+          />
+          <button
+            type="submit"
+            id="lm-btn-top"
+            class="rounded-lg bg-blue px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-blue-dark"
+          >
+            {ctaText}
+          </button>
+        </form>
+        <p class="mt-2 text-xs text-text-muted">Plus weekly career tips from ClearCareer. Unsubscribe anytime.</p>
+
+        <!-- Social Proof -->
+        <p class="mt-6 text-sm font-medium text-text-muted">
+          200+ professionals coached · $1.2M+ in collective raises · 98% satisfaction
+        </p>
+      </div>
+    </section>
+
+    <!-- Hero Image (optional, e.g. spreadsheet screenshot) -->
+    <slot name="hero-image" />
+
+    <!-- Preview Content (visible before gate, hidden after unlock) -->
+    <section class="py-8 md:py-12" id="lead-magnet-preview">
+      <div class="mx-auto max-w-[720px] px-4">
+        <slot name="preview" />
+      </div>
+    </section>
+
+    <!-- Repeat CTA After Preview -->
+    <section class="bg-blue-bg py-10" id="lead-magnet-gate">
+      <div class="mx-auto max-w-[480px] px-4 text-center">
+        <h2 class="text-xl font-bold text-navy">Want the full list?</h2>
+        <p class="mt-2 text-text-muted">Enter your email and it's yours. Instantly.</p>
+        <form id="lead-magnet-form-bottom" class="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row">
+          <label for="lm-email-bottom" class="sr-only">Email address</label>
+          <input
+            id="lm-email-bottom"
+            type="email"
+            placeholder="your@email.com"
+            required
+            class="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-text shadow-sm placeholder:text-text-muted focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20"
+          />
+          <button
+            type="submit"
+            id="lm-btn-bottom"
+            class="rounded-lg bg-blue px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-blue-dark"
+          >
+            {ctaText}
+          </button>
+        </form>
+        <p class="mt-2 text-xs text-text-muted">Plus weekly career tips from ClearCareer. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+    <!-- Full Content (hidden until email entered) -->
+    <section class="gated-content py-8 md:py-12" style="display: none;">
+      <div class="mx-auto max-w-[720px] px-4">
+        <slot name="full" />
+      </div>
+    </section>
+
+    <!-- JSIS CTA -->
+    <section class="gated-content bg-navy py-12 text-center" style="display: none;">
+      <div class="mx-auto max-w-[540px] px-4">
+        <h2 class="text-xl font-bold text-white">Want personalized help with your job search?</h2>
+        <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-gray-400">
+          200+ professionals coached. $1.2M+ in collective raises. Book a free 20-minute strategy call.
+        </p>
+        <a
+          href="https://calendly.com/clearcareer/discovery-call"
+          class="mt-6 inline-flex items-center justify-center rounded-lg bg-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
+        >
+          Book a Free Strategy Call
+        </a>
+      </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="border-t border-border/50 py-6 text-center">
+      <p class="text-xs text-text-muted">&copy; {currentYear} ClearCareer. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Gate Logic -->
+  <script is:inline define:vars={{ source, storageKey }}>
+    document.addEventListener('DOMContentLoaded', function() {
+      var gate = document.getElementById('lead-magnet-gate');
+      var preview = document.getElementById('lead-magnet-preview');
+      var formTop = document.getElementById('lead-magnet-form-top');
+      var formBottom = document.getElementById('lead-magnet-form-bottom');
+      var btnTop = document.getElementById('lm-btn-top');
+      var btnBottom = document.getElementById('lm-btn-bottom');
+      var inputTop = document.getElementById('lm-email-top');
+      var inputBottom = document.getElementById('lm-email-bottom');
+      var gatedSections = document.querySelectorAll('.gated-content');
+
+      function unlock() {
+        if (gate) gate.style.display = 'none';
+        if (preview) preview.style.display = 'none';
+        gatedSections.forEach(function(el) { el.style.display = ''; });
+      }
+
+      // Check on load
+      if (localStorage.getItem(storageKey) === 'true') {
+        unlock();
+      }
+
+      function handleSubmit(email, btn) {
+        if (!email || !btn) return;
+        btn.textContent = 'Sending...';
+        btn.setAttribute('disabled', 'true');
+
+        fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, source: source }),
+        })
+        .then(function(res) {
+          if (res.ok) {
+            localStorage.setItem(storageKey, 'true');
+            btn.textContent = 'Unlocked!';
+            // Also update the other button
+            if (btnTop) btnTop.textContent = 'Unlocked!';
+            if (btnBottom) btnBottom.textContent = 'Unlocked!';
+            setTimeout(unlock, 500);
+          } else {
+            btn.textContent = 'Try Again';
+            btn.removeAttribute('disabled');
+          }
+        })
+        .catch(function() {
+          btn.textContent = 'Try Again';
+          btn.removeAttribute('disabled');
+        });
+      }
+
+      if (formTop) {
+        formTop.addEventListener('submit', function(e) {
+          e.preventDefault();
+          handleSubmit(inputTop ? inputTop.value : '', btnTop);
+        });
+      }
+
+      if (formBottom) {
+        formBottom.addEventListener('submit', function(e) {
+          e.preventDefault();
+          handleSubmit(inputBottom ? inputBottom.value : '', btnBottom);
+        });
+      }
+    });
+  </script>
+</BaseLayout>

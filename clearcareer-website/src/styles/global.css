@@ -1,0 +1,301 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource/dm-serif-display";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* ClearCareer Brand Colors */
+  --color-blue: #0161EF;
+  --color-blue-dark: #0450c8;
+  --color-blue-bg: #EFF5FF;
+  --color-blue-light: #3b82f6;
+  --color-navy: #030620;
+  --color-text: #0f0f0f;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-success: #059669;
+  --color-warning: #D97706;
+  --color-teal: #06b6d4;
+  --color-teal-bg: #ecfeff;
+  --color-amber-bg: #fffbeb;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px -4px rgba(1, 97, 239, 0.10);
+  --shadow-card-hover: 0 8px 40px -4px rgba(1, 97, 239, 0.18);
+  --shadow-glow: 0 0 40px rgba(1, 97, 239, 0.25);
+
+  /* Typography */
+  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+}
+
+/* ── Blog Prose Overrides ── */
+
+.prose {
+  --tw-prose-body: #0f0f0f;
+  --tw-prose-headings: #030620;
+  --tw-prose-links: #0161EF;
+  --tw-prose-bold: #030620;
+  --tw-prose-counters: #6b7280;
+  --tw-prose-bullets: #0161EF;
+  --tw-prose-quotes: #030620;
+  --tw-prose-quote-borders: #0161EF;
+  --tw-prose-hr: #e5e7eb;
+}
+
+.prose h2 {
+  font-family: var(--font-display);
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+}
+
+.prose h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.prose a:hover {
+  color: #0450c8;
+}
+
+.prose blockquote {
+  border-left-color: #0161EF;
+  background: #EFF5FF;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose ol > li::marker,
+.prose ul > li::marker {
+  color: #0161EF;
+}
+
+/* ── Coaching Conversation Bubbles ── */
+
+.coach-bubble {
+  background: #EFF5FF;
+  border-left: 3px solid #0161EF;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+}
+
+.client-bubble {
+  background: #f9fafb;
+  border-left: 3px solid #d1d5db;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+}
+
+/* ── iMessage-Style Coaching Bubbles ── */
+
+.imsg-coach + .imsg-coach,
+.imsg-client + .imsg-client {
+  margin-top: 0.125rem;
+}
+
+.imsg-coach + .imsg-client,
+.imsg-client + .imsg-coach {
+  margin-top: 0.75rem;
+}
+
+/* ── AI Prompt Block ── */
+
+.prompt-block {
+  background: linear-gradient(to bottom right, #EFF5FF, #f8faff);
+  border-left: 4px solid #0161EF;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.prompt-block-content p {
+  margin: 0.5em 0;
+}
+
+.prompt-block-content p:first-child {
+  margin-top: 0;
+}
+
+.prompt-block-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Masonry Grid ── */
+
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .masonry-grid { column-count: 2; }
+}
+
+@media (min-width: 64rem) {
+  .masonry-grid { column-count: 3; }
+}
+
+.masonry-grid--2col {
+  column-count: 1;
+}
+
+@media (min-width: 48rem) {
+  .masonry-grid--2col { column-count: 2; }
+}
+
+.masonry-grid > * {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Scroll Animations ── */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate="fade-up"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate="fade-in"] {
+  transform: none;
+}
+
+[data-animate="fade-in"].is-visible {
+  opacity: 1;
+}
+
+[data-animate="slide-left"] {
+  transform: translateX(-32px);
+}
+
+[data-animate="slide-left"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-animate="slide-right"] {
+  transform: translateX(32px);
+}
+
+[data-animate="slide-right"].is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-animate="scale-up"] {
+  transform: scale(0.95);
+}
+
+[data-animate="scale-up"].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger children */
+[data-animate-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate-stagger].is-visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+[data-animate-stagger].is-visible > *:nth-child(2) { transition-delay: 80ms; opacity: 1; transform: translateY(0); }
+[data-animate-stagger].is-visible > *:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: translateY(0); }
+[data-animate-stagger].is-visible > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+[data-animate-stagger].is-visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
+[data-animate-stagger].is-visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Fade-Up Animation (for React components) ── */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Wrapped Tools ── */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ── Scrollbar Hide (for horizontal tab bars) ── */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Print Styles ── */
+
+@media print {
+  header, footer, nav, .print\:hidden { display: none !important; }
+  .print\:block { display: block !important; }
+  body { background: white !important; }
+  @page { margin: 1.5cm; size: letter; }
+}

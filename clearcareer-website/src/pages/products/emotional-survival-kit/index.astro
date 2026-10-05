@@ -1,0 +1,109 @@
+---
+import ProductLayout from "@layouts/ProductLayout.astro";
+---
+
+<ProductLayout
+  title="Job Search Emotional Survival Kit | ClearCareer"
+  description="CBT and ACT-based tools for the psychological toll of job searching. 8 evidence-based guides."
+  headline="The job search is breaking you.<br />Not because you're weak."
+  subheadline="66% of job seekers experience burnout. 56% report clinical-level anxiety or depression. 53% say they've 'lost a piece of themselves.' This kit addresses what nobody else will: the emotional reality of looking for work."
+  bullets={[
+    "8 evidence-based guides covering grief, rejection, identity, anxiety, burnout, relationships, and confidence",
+    "CBT-based cognitive restructuring for processing rejection as data, not personal failure",
+    "ACT values work for rebuilding identity after layoff",
+    "Pre-interview anxiety protocol and post-rejection recovery routine",
+    "LinkedIn mental health boundaries (research shows it makes depression worse)",
+    "Scripts for talking to your partner about money stress (41% report family conflict)",
+    "30-day confidence rebuilding plan with daily micro-wins",
+  ]}
+  price="$24 CAD"
+  ctaHref="#checkout"
+  ctaText="Get Instant Access"
+  guaranteeText="30-day money-back guarantee. No questions asked."
+  faq={[
+    {
+      q: "Is this a replacement for therapy?",
+      a: "No. This kit uses evidence-based frameworks (CBT, ACT) adapted for job search, but it's educational, not clinical. If you're experiencing persistent depression or anxiety, please work with a licensed therapist. This kit complements professional support.",
+    },
+    {
+      q: "I'm not depressed, I'm just frustrated. Is this for me?",
+      a: "Yes. You don't need to be in crisis for these tools to help. The kit covers the full spectrum from mild frustration to serious burnout. Most guides have sections you can skip if they don't apply.",
+    },
+    {
+      q: "How is this different from generic self-help?",
+      a: "Every exercise is specifically designed for the job search context. The thought records address job-search-specific distortions. The anxiety tools target interview and rejection scenarios. The relationship scripts deal with unemployment-specific tensions. Nothing here is recycled from a general wellness book.",
+    },
+    {
+      q: "What's the CBT/ACT stuff?",
+      a: "Cognitive Behavioral Therapy (CBT) helps you identify and challenge unhelpful thought patterns. Acceptance and Commitment Therapy (ACT) helps you reconnect with your values when your identity feels lost. Both have strong research backing for unemployment-related mental health.",
+    },
+    {
+      q: "Do I need to go through all 8 guides in order?",
+      a: "No. Start with whatever feels most relevant. If rejection is your biggest pain point, start with Guide 2 (Rewiring Rejection). If it's burnout, start with Guide 6 (The Burnout Circuit Breaker). Each guide is self-contained.",
+    },
+  ]}
+>
+  <Fragment slot="preview">
+    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
+      <p class="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-400">8 guides inside</p>
+      <div class="space-y-3">
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>💔</span>
+          <div>
+            <p class="text-sm font-medium text-gray-700">The Grief Nobody Talks About</p>
+            <p class="text-xs text-gray-500">Career grief is real. Here's how to process it.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🔄</span>
+          <div>
+            <p class="text-sm font-medium text-gray-700">Rewiring Rejection</p>
+            <p class="text-xs text-gray-500">CBT thought records and 10 common distortions with reframes.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🪞</span>
+          <div>
+            <p class="text-sm font-medium text-gray-700">Identity After Layoff</p>
+            <p class="text-xs text-gray-500">"Who am I without my job title?" exercises.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🧘</span>
+          <div>
+            <p class="text-sm font-medium text-gray-700">The Anxiety Toolkit</p>
+            <p class="text-xs text-gray-500">Grounding, breathing, and pre-interview protocols.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>📱</span>
+          <div>
+            <p class="text-sm font-medium text-gray-700">LinkedIn Without Losing Your Mind</p>
+            <p class="text-xs text-gray-500">Strategic usage without the comparison spiral.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🔋</span>
+          <div>
+            <p class="text-sm font-medium text-gray-700">The Burnout Circuit Breaker</p>
+            <p class="text-xs text-gray-500">Minimum viable job search for zero-energy days.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>👥</span>
+          <div>
+            <p class="text-sm font-medium text-gray-700">Relationships Under Pressure</p>
+            <p class="text-xs text-gray-500">Scripts for money stress conversations with your partner.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>💪</span>
+          <div>
+            <p class="text-sm font-medium text-gray-700">Rebuilding Confidence</p>
+            <p class="text-xs text-gray-500">30-day plan with daily micro-wins tracking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Fragment>
+</ProductLayout>

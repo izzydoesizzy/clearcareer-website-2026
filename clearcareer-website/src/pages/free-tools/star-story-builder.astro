@@ -1,0 +1,213 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import ToolInput from "@components/ToolInput.astro";
+import CopyButton from "@components/CopyButton.astro";
+---
+
+<ToolLayout
+  title="STAR Story Builder"
+  headline="STAR Story Builder"
+  description="Walk through each piece of the STAR format with guided prompts. Get a polished interview answer you can copy and practice."
+  category="Interview & Resume"
+  icon="⭐"
+  relatedTags={["interviews"]}
+  slug="star-story-builder"
+  lastUpdated="March 2026"
+  featureList={["Guided STAR format prompts", "Word count tracking", "Complete story assembly", "Copy-to-clipboard output"]}
+  faqItems={[
+    { question: "What is the STAR method?", answer: "STAR stands for Situation, Task, Action, Result. It's a framework for answering behavioral interview questions ('Tell me about a time when...'). It keeps your answer structured, concise, and focused on what the interviewer actually wants to hear." },
+    { question: "How many STAR stories should I prepare?", answer: "4 core stories that cover: (1) a leadership moment, (2) a conflict or disagreement, (3) a failure or mistake you learned from, and (4) your biggest professional win. These 4 can be adapted to answer 90% of behavioral questions." },
+    { question: "How long should a STAR answer be?", answer: "90 seconds to 2 minutes. That's roughly 150-250 words. Shorter than most people think. Practice with a timer. If you're going past 2 minutes, you're including too much detail." },
+    { question: "What if I don't have impressive results to share?", answer: "Scale the story to your experience. Early career: 'improved process efficiency by 15%' or 'reduced onboarding time from 3 weeks to 10 days.' The numbers don't need to be huge. They need to be specific." },
+    { question: "Can I use the same story for different questions?", answer: "Yes, with adjustments. A story about leading a difficult project can answer 'tell me about leadership,' 'tell me about a challenge,' or 'tell me about a deadline.' Shift the emphasis to match the question." },
+    { question: "How do I practice STAR stories?", answer: "Out loud, not in your head. Record yourself on your phone. Time it. Practice with a friend or coach. The first time you say a story out loud should not be in the actual interview. Aim for 5-7 practice runs per story." },
+  ]}
+  relatedTools={[
+    { name: "Resume Bullet Point Scorer", slug: "resume-bullet-scorer", icon: "✅" },
+    { name: "Networking Message Builder", slug: "networking-message-builder", icon: "💬" },
+  ]}
+>
+  <!-- Intro -->
+  <div slot="intro">
+    <h2 class="text-xl font-bold text-navy">Why This Matters</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>"Tell me about a time when..." questions make up 60-80% of most interviews. Most people wing their answers, ramble, and skip the result.</p>
+      <p>The STAR format (Situation, Task, Action, Result) fixes that. You need 4 great stories covering leadership, conflict, failure, and a big win. Those 4 can answer 90% of behavioral questions.</p>
+    </div>
+  </div>
+  <form id="star-form" class="space-y-6" novalidate>
+    <!-- Situation -->
+    <div>
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-white font-bold text-sm">S</span>
+        <h3 class="text-lg font-semibold text-navy">Situation</h3>
+      </div>
+      <ToolInput
+        id="situation"
+        label="Set the scene"
+        type="textarea"
+        rows={3}
+        required={true}
+        placeholder="Set the scene. What was happening? Where were you working? What was the challenge or context?"
+      />
+    </div>
+
+    <!-- Task -->
+    <div>
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-white font-bold text-sm">T</span>
+        <h3 class="text-lg font-semibold text-navy">Task</h3>
+      </div>
+      <ToolInput
+        id="task"
+        label="Your responsibility"
+        type="textarea"
+        rows={3}
+        required={true}
+        placeholder="What was YOUR specific responsibility? What goal were you trying to achieve?"
+      />
+    </div>
+
+    <!-- Action -->
+    <div>
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-white font-bold text-sm">A</span>
+        <h3 class="text-lg font-semibold text-navy">Action</h3>
+      </div>
+      <ToolInput
+        id="action"
+        label="What you did"
+        type="textarea"
+        rows={4}
+        required={true}
+        placeholder="What steps did YOU take? Be specific about your actions, not the team's. What decisions did you make?"
+      />
+    </div>
+
+    <!-- Result -->
+    <div>
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-white font-bold text-sm">R</span>
+        <h3 class="text-lg font-semibold text-navy">Result</h3>
+      </div>
+      <ToolInput
+        id="result"
+        label="The outcome"
+        type="textarea"
+        rows={3}
+        required={true}
+        placeholder="What happened? Use numbers: revenue, percentage, team size, timeline. What did you learn?"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="w-full rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+    >
+      Build Your STAR Story
+    </button>
+  </form>
+
+  <!-- Results (hidden until built) -->
+  <div id="results" class="mt-10 hidden" aria-live="polite">
+    <div class="rounded-xl border border-border bg-white p-8">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-semibold text-navy">Your STAR Story</h3>
+        <span id="word-count-badge" class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium"></span>
+      </div>
+      <div id="story-output" class="bg-blue-bg p-6 rounded-lg text-text leading-relaxed"></div>
+      <div class="mt-4">
+        <CopyButton targetId="story-output" />
+      </div>
+      <p class="mt-4 text-sm text-text-muted">
+        Practice saying this out loud 3 times. The best interview answers sound natural, not rehearsed.
+      </p>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div slot="methodology">
+    <h2 class="text-xl font-bold text-navy">The STAR Framework</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p><strong class="text-navy">Situation (20%):</strong> Set the scene in 2-3 sentences. Just enough context to follow the rest. <strong class="text-navy">Task (10%):</strong> One sentence on your specific responsibility. The shortest section.</p>
+      <p><strong class="text-navy">Action (50%):</strong> What did YOU do? Not your team. Be specific: "I built a dashboard," "I scheduled 3 meetings with stakeholders." List 3-5 concrete steps. <strong class="text-navy">Result (20%):</strong> Always end with numbers. Revenue, time saved, percentage improved. No exact figures? Estimate: "roughly 30%" or "about 2 weeks faster."</p>
+    </div>
+  </div>
+
+  <!-- Example -->
+  <div slot="example">
+    <h2 class="text-xl font-bold text-navy">Example: Tight Deadline Project</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p><strong class="text-navy">S:</strong> "We lost our biggest client (35% of revenue) and needed a new feature in 6 weeks to retain 3 at-risk accounts." <strong class="text-navy">T:</strong> "As product lead, I owned scoping, building, and shipping on half our normal timeline." <strong class="text-navy">A:</strong> "I pulled 4 engineers, ran a 2-day design sprint, cut 40% of the spec, set up daily 15-minute standups, and ran weekly client demos." <strong class="text-navy">R:</strong> "Shipped in 5 weeks. All 3 accounts renewed ($840K/year). Feature became our second most-used capability within 6 months."</p>
+      <p>~150 words. About 90 seconds to deliver. That's the sweet spot.</p>
+    </div>
+  </div>
+
+  <!-- Tips section -->
+  <div slot="tips">
+    <h2 class="font-display text-2xl text-navy">Tips for Strong STAR Stories</h2>
+    <div class="mt-6 space-y-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+      <p>
+        <strong class="text-navy">Build your library.</strong> You need at least 4 stories ready. Read about
+        <a href="/blog/four-stories-you-need-for-any-interview" class="text-blue hover:underline">the 4 story types every job seeker needs</a>.
+      </p>
+      <p>
+        <strong class="text-navy">Keep it under 2 minutes.</strong> Time yourself out loud. If it runs long, trim the Situation and expand the Action.
+      </p>
+      <p>
+        <strong class="text-navy">Numbers make the Result stick.</strong> "Increased revenue" is forgettable. "Increased revenue by 34% in 6 months" lands.
+      </p>
+      <p>
+        <strong class="text-navy">Record yourself and play it back.</strong> You'll catch filler words and missing details you'd never notice otherwise.
+      </p>
+    </div>
+  </div>
+</ToolLayout>
+
+<script>
+  const form = document.getElementById('star-form') as HTMLFormElement;
+  const results = document.getElementById('results') as HTMLDivElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const situation = (document.getElementById('situation') as HTMLTextAreaElement).value;
+    const task = (document.getElementById('task') as HTMLTextAreaElement).value;
+    const action = (document.getElementById('action') as HTMLTextAreaElement).value;
+    const result = (document.getElementById('result') as HTMLTextAreaElement).value;
+
+    if (!situation.trim() || !task.trim() || !action.trim() || !result.trim()) {
+      return;
+    }
+
+    // Combine the four parts into a flowing response
+    const story = `${situation.trim()} ${task.trim()} ${action.trim()} ${result.trim()}`;
+    const wordCount = story.split(/\s+/).filter(w => w).length;
+
+    // Update story output
+    const storyOutput = document.getElementById('story-output')!;
+    storyOutput.textContent = story;
+
+    // Update word count badge
+    const badge = document.getElementById('word-count-badge')!;
+    let guidance: string;
+    let badgeColor: string;
+
+    if (wordCount < 120) {
+      guidance = 'concise';
+      badgeColor = 'bg-green-50 text-success';
+    } else if (wordCount <= 180) {
+      guidance = 'good length';
+      badgeColor = 'bg-blue-bg text-blue';
+    } else {
+      guidance = 'consider trimming';
+      badgeColor = 'bg-orange-50 text-warning';
+    }
+
+    badge.textContent = `${wordCount} words · ${guidance}`;
+    badge.className = `inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${badgeColor}`;
+
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>

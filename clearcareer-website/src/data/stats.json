@@ -1,0 +1,32 @@
+{
+  "coached": "200+",
+  "collectiveRaises": "$1.2M+",
+  "landedWithinMonth": "46%",
+  "clientSatisfaction": "98%",
+  "fiveStarRating": "84%",
+  "communityMembers": "900+",
+  "eventAttendees": "3,500+",
+  "linkedInFollowers": "4,013+",
+  "linkedInRating": "5.0/5.0",
+  "linkedInReviews": 8,
+  "topSalaryGain": "$30K",
+  "averageSalaryGain": "$10K",
+  "testimonialCount": 79,
+  "workshopPartners": [
+    "University of Toronto",
+    "Toronto Metropolitan University",
+    "Humber College",
+    "CivicAction YouthConnect",
+    "Lighthouse Labs",
+    "United Nations Association in Canada",
+    "FlexJobs"
+  ],
+  "mediaAppearances": [
+    { "name": "CBC Radio", "show": "For What It's Worth" },
+    { "name": "Global News", "show": "" },
+    { "name": "Newsweek", "show": "" },
+    { "name": "Inc. Magazine", "show": "" },
+    { "name": "Notable Life", "show": "" },
+    { "name": "CreateCommunity", "show": "" }
+  ]
+}

@@ -1,0 +1,311 @@
+---
+import LeadMagnetLayout from "@layouts/LeadMagnetLayout.astro";
+
+const categories = [
+  { name: "AI & Tech-Adjacent", emoji: "🤖", count: 5, range: "$100K-$180K", roles: [
+    { num: 1, title: "AI Governance Specialist", desc: "Makes sure a company's AI systems are fair, transparent, and legal. Writes the internal rules for how AI gets built and used.", hires: "RBC, TD, BMO, Manulife, Sun Life, Rogers, Telus, Deloitte, PwC, federal government", salary: "$110,000 - $180,000", skills: ["AI/ML literacy (understanding models, not building them)", "Regulatory knowledge (Canada's AI and Data Act, EU AI Act)", "Risk assessment and bias auditing", "Policy writing and stakeholder communication"], hot: "Canada's Artificial Intelligence and Data Act is driving mandatory compliance. Forrester predicts 60% of Fortune 100 companies will have a head of AI governance by end of 2026.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=AI%20governance&location=Canada", indeed: "https://ca.indeed.com/jobs?q=AI+governance" },
+    { num: 2, title: "Prompt Engineer", desc: "Designs, tests, and optimizes the instructions given to AI models so they produce reliable, high-quality outputs for business use.", hires: "Cohere (Toronto), Shopify, Scale AI, consulting firms, banks deploying internal AI tools", salary: "$100,000 - $150,000", skills: ["Deep understanding of large language model behavior", "Technical writing and structured thinking", "Python scripting for testing", "Domain expertise in at least one vertical (legal, finance, healthcare)"], hot: "Every company deploying AI needs someone who knows how to make it work reliably. Most engineers don't have this skill set.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=prompt%20engineer&location=Canada", indeed: "https://ca.indeed.com/jobs?q=prompt+engineer" },
+    { num: 3, title: "Trust & Safety Manager", desc: "Protects a platform's users from fraud, harassment, harmful content, and abuse. Builds policies and systems that keep online communities safe.", hires: "Google, Meta, Shopify, Roblox, Amazon, fintech platforms, gaming companies", salary: "$105,000 - $160,000", skills: ["Content policy development and enforcement", "Fraud detection and investigation", "Data analysis for pattern recognition", "Regulatory compliance (Canada's Online Harms Act)"], hot: "Canada's Online Harms Act and global platform regulation are forcing every digital company to build dedicated trust and safety teams.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=trust%20safety&location=Canada", indeed: "https://ca.indeed.com/jobs?q=trust+and+safety" },
+    { num: 4, title: "Technical Account Manager", desc: "The technical bridge between a software company and its biggest clients. Part relationship manager, part troubleshooter, part product advisor.", hires: "Salesforce, AWS, Google Cloud, Datadog, any SaaS company with enterprise clients", salary: "$105,000 - $180,000", skills: ["Deep product and technical knowledge", "Client relationship management at executive level", "Troubleshooting and technical problem-solving", "Cross-team coordination (engineering, product, support)"], hot: "As SaaS companies fight churn, keeping enterprise clients happy through technical excellence is directly tied to revenue retention.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=technical%20account%20manager&location=Canada", indeed: "https://ca.indeed.com/jobs?q=technical+account+manager" },
+    { num: 5, title: "Digital Accessibility Lead", desc: "Ensures websites, apps, and digital products can be used by people with disabilities. Audits, remediates, and sets standards.", hires: "All Big 5 banks, government agencies, Canadian Tire, Loblaw, tech companies, universities", salary: "$105,000 - $150,000", skills: ["WCAG 2.1/2.2 standards expertise", "AODA and Accessible Canada Act compliance", "Screen reader and assistive technology testing", "Front-end development knowledge (HTML, ARIA, CSS)"], hot: "Canada expanded Accessible Canada Regulations in December 2025. Ontario's next AODA compliance deadline is December 31, 2026.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=accessibility%20lead&location=Canada", indeed: "https://ca.indeed.com/jobs?q=digital+accessibility" },
+  ]},
+  { name: "Revenue & Growth", emoji: "📈", count: 5, range: "$100K-$230K", roles: [
+    { num: 6, title: "Solutions Engineer", desc: "The technical brain behind a sales deal. Demos the product, designs custom solutions, and proves the software solves the prospect's problem.", hires: "Shopify, Hootsuite, Clio, Lightspeed, AWS, Google Cloud, cybersecurity vendors", salary: "$113,000 - $158,000 (base) | $170K-$183K OTE", skills: ["Technical product expertise and live demo skills", "Consultative selling and needs analysis", "API and integration knowledge", "Presentation and storytelling to mixed audiences"], hot: "Complex B2B software needs someone who can bridge what sales promises and what engineering delivers. Those people are rare.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=solutions%20engineer&location=Canada", indeed: "https://ca.indeed.com/jobs?q=solutions+engineer" },
+    { num: 7, title: "Revenue Enablement Manager", desc: "Builds the training programs, playbooks, and tools that help sales teams close deals faster.", hires: "Mid-to-large SaaS companies, tech companies scaling from 50 to 500+ reps", salary: "$101,000 - $170,000 (base) | Up to $229K OTE", skills: ["Sales methodology design (MEDDIC, Challenger)", "Playbook and battle card creation", "Enablement platform management (Highspot, Seismic)", "Data analysis to measure rep performance"], hot: "Revenue enablement pros earn 45% more than those with 'sales enablement' in their title. The rebrand reflects a shift to full-funnel revenue thinking.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=revenue%20enablement&location=Canada", indeed: "https://ca.indeed.com/jobs?q=revenue+enablement" },
+    { num: 8, title: "Implementation Manager", desc: "Owns getting a new enterprise customer from 'signed contract' to 'actually using the product.' Project-manages onboarding, data migration, and launch.", hires: "Workday, SAP, Ceridian/Dayforce (Toronto), ERP vendors, health tech, fintech", salary: "$110,000 - $168,000", skills: ["Project management (PMP or equivalent)", "Technical configuration and data migration planning", "Client stakeholder management", "Change management and user adoption"], hot: "Poor onboarding is the #1 driver of enterprise churn. Companies are investing heavily in dedicated implementation teams.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=implementation%20manager&location=Canada", indeed: "https://ca.indeed.com/jobs?q=implementation+manager" },
+    { num: 9, title: "Pricing Manager", desc: "Figures out what a company should charge. Builds pricing models, runs experiments, and optimizes for revenue and market position.", hires: "SaaS companies, insurance firms, Air Canada, WestJet, Loblaw, Canadian Tire, Bell, Rogers, Telus", salary: "$114,000 - $156,000", skills: ["Financial modeling and quantitative analysis", "A/B testing and experimentation design", "Competitive intelligence and market research", "Pricing psychology and behavioral economics"], hot: "With inflation pressures and SaaS commoditization, pricing is one of the highest-leverage growth levers. Most companies have never had a dedicated pricing person.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=pricing%20manager&location=Canada", indeed: "https://ca.indeed.com/jobs?q=pricing+manager" },
+    { num: 10, title: "Deal Desk Manager", desc: "Sits between sales, finance, and legal to structure, approve, and speed up complex deals.", hires: "B2B SaaS companies with enterprise sales, Salesforce, Shopify, Atlassian, financial services", salary: "$100,000 - $140,000", skills: ["Contract and pricing structure design", "CRM and CPQ tool expertise (Salesforce CPQ, DealHub)", "Financial analysis and margin optimization", "Process automation and workflow design"], hot: "As B2B deals get more complex (usage-based pricing, multi-year commitments, custom terms), someone needs to prevent chaos from slowing down revenue.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=deal%20desk&location=Canada", indeed: "https://ca.indeed.com/jobs?q=deal+desk" },
+  ]},
+  { name: "Data & Analytics", emoji: "📊", count: 5, range: "$105K-$170K", roles: [
+    { num: 11, title: "Analytics Engineer", desc: "Builds the clean, reliable data models that analysts and business teams use. Between data engineers who move data and analysts who ask questions.", hires: "Shopify, Wealthsimple, Top Hat, banks, e-commerce, media companies", salary: "$110,000 - $160,000", skills: ["SQL mastery and dbt (data build tool)", "Data modeling and warehouse design (Snowflake, BigQuery, Redshift)", "Version control for data (Git)", "Business acumen to translate needs into data models"], hot: "The 'modern data stack' movement created this career path in the last 3-4 years. Demand outstrips supply because most data people trained as either engineers or analysts, not both.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=analytics%20engineer&location=Canada", indeed: "https://ca.indeed.com/jobs?q=analytics+engineer" },
+    { num: 12, title: "Decision Scientist", desc: "Uses data, behavioral science, and experimentation to help executives make better choices. Not 'here's what happened' but 'here's what you should do.'", hires: "Google, Meta, Shopify (all use this title), consulting firms, Loblaw, Canadian Tire, financial institutions", salary: "$115,000 - $170,000", skills: ["Causal inference and experimental design (A/B testing)", "Statistical modeling (R or Python)", "Behavioral economics and decision theory", "Executive-level communication and storytelling"], hot: "Companies are drowning in dashboards but starving for decisions. This role bridges the gap between 'data team' and 'actually making better choices.'", linkedin: "https://www.linkedin.com/jobs/search/?keywords=decision%20scientist&location=Canada", indeed: "https://ca.indeed.com/jobs?q=decision+scientist" },
+    { num: 13, title: "Data Product Manager", desc: "Treats data like a product. Owns the roadmap for internal data platforms, data quality tools, or data-powered features.", hires: "Tech companies with large data teams, RBC, TD, retailers, telecom, health tech", salary: "$120,000 - $165,000", skills: ["Product management fundamentals (roadmapping, prioritization)", "Data literacy (SQL, understanding data pipelines)", "Stakeholder management across engineering and business", "Data governance and privacy knowledge"], hot: "Every company has a 'data platform' but few treat it with the same product discipline as customer-facing products. That's changing fast.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=data%20product%20manager&location=Canada", indeed: "https://ca.indeed.com/jobs?q=data+product+manager" },
+    { num: 14, title: "Quantitative UX Researcher", desc: "Uses surveys, experiments, and behavioral data to understand how people use products at scale. The numbers side of user research.", hires: "Google, Shopify, Meta, Wealthsimple, banks with digital products, e-commerce", salary: "$105,000 - $150,000", skills: ["Survey design and psychometrics", "Statistical analysis (R, Python, SPSS)", "Log data analysis and behavioral analytics", "Experimental design (A/B testing)"], hot: "Qualitative research alone can't scale. Companies need someone who can validate UX decisions with statistical rigor across millions of users.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=quantitative%20UX%20researcher&location=Canada", indeed: "https://ca.indeed.com/jobs?q=quantitative+UX+researcher" },
+    { num: 15, title: "Information Architect", desc: "Designs how content and data are organized, labeled, and connected across digital products.", hires: "Banks, government, large retailers, SaaS companies, content-heavy platforms", salary: "$110,000 - $165,000", skills: ["Taxonomy and ontology design", "Content modeling and metadata strategy", "User research and card sorting", "Knowledge graph and semantic web concepts"], hot: "AI search and RAG systems need well-structured information. Companies are realizing their messy content is the bottleneck.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=information%20architect&location=Canada", indeed: "https://ca.indeed.com/jobs?q=information+architect" },
+  ]},
+  { name: "People & Culture", emoji: "👥", count: 5, range: "$100K-$182K", roles: [
+    { num: 16, title: "People Analytics Manager", desc: "Uses data to answer HR's hardest questions: Why are people quitting? Which teams are at risk of burnout? Does our diversity program work?", hires: "Banks, telcos, mining companies (Kinross Gold), tech companies, consulting firms", salary: "$110,000 - $160,000", skills: ["HR data systems (Workday, SuccessFactors, BambooHR)", "Statistical analysis and visualization (Python, R, Tableau)", "Organizational psychology fundamentals", "Privacy and ethical data use in employee contexts"], hot: "HR teams are under pressure to justify every program with data, and AI tools are generating new workforce data faster than anyone can analyze it.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=people%20analytics&location=Canada", indeed: "https://ca.indeed.com/jobs?q=people+analytics" },
+    { num: 17, title: "Total Rewards Manager", desc: "Designs the entire package that makes people want to work somewhere and stay: salary bands, bonuses, equity, benefits, perks, wellness.", hires: "Banks (Big 5), Shopify, Clio, mining companies, mid-to-large companies across all industries", salary: "$105,000 - $150,000", skills: ["Compensation benchmarking and market analysis", "Benefits plan design and vendor management", "Executive compensation and equity programs", "HRIS and compensation platforms (Workday, PayScale, Mercer)"], hot: "Pay transparency laws are spreading across provinces. Companies need someone who can defend their compensation numbers with data.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=total%20rewards&location=Canada", indeed: "https://ca.indeed.com/jobs?q=total+rewards+manager" },
+    { num: 18, title: "Workforce Planning Manager", desc: "Forecasts what talent a company will need 1-3 years from now and builds the plan to get there.", hires: "Banks, telcos, government, fast-scaling tech companies, Deloitte, McKinsey", salary: "$100,000 - $124,000", skills: ["Workforce analytics and scenario modeling", "Business strategy translation to talent needs", "Organizational design and restructuring", "Workforce planning tools (Visier, Anaplan)"], hot: "AI is reshaping which roles companies need and which become obsolete. Someone has to figure out the transition plan.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=workforce%20planning&location=Canada", indeed: "https://ca.indeed.com/jobs?q=workforce+planning+manager" },
+    { num: 19, title: "Employee Experience Designer", desc: "Applies design thinking to the employee journey: onboarding, daily tools, office/remote setup, internal comms, offboarding.", hires: "Large tech companies, TD, RBC, professional services firms, companies with high attrition", salary: "$100,000 - $140,000", skills: ["Service design and journey mapping", "Internal communications and change management", "Survey design and employee feedback analysis", "HR tech stack (Slack, Notion, HRIS tools)"], hot: "Remote and hybrid work blew up the old employee experience. Companies need someone to intentionally redesign it.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=employee%20experience&location=Canada", indeed: "https://ca.indeed.com/jobs?q=employee+experience+designer" },
+    { num: 20, title: "Organizational Development Consultant", desc: "Helps companies change how they work: restructuring teams, improving leadership pipelines, redesigning performance systems.", hires: "Deloitte, Korn Ferry, Mercer, banks, telcos, government, health systems", salary: "$105,000 - $155,000", skills: ["Change management frameworks (Prosci, ADKAR)", "Leadership assessment and development", "Organizational design and operating models", "Executive coaching and facilitation"], hot: "Every company is restructuring around AI. The ones doing it well have OD specialists guiding the change.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=organizational%20development&location=Canada", indeed: "https://ca.indeed.com/jobs?q=organizational+development" },
+  ]},
+  { name: "Sustainability & ESG", emoji: "🌱", count: 5, range: "$100K-$175K", roles: [
+    { num: 21, title: "Climate Risk Analyst", desc: "Quantifies how climate change will affect a company's financials, assets, and strategy.", hires: "All Big 5 banks, Intact, Manulife, CPPIB, OMERS, CDPQ, energy companies, consulting firms", salary: "$105,000 - $145,000", skills: ["Financial modeling and scenario analysis", "Climate science literacy (IPCC, TCFD/ISSB)", "OSFI climate risk guidelines and CSSB standards", "GIS and geospatial data analysis"], hot: "Canada's banking regulator (OSFI) now requires climate risk reporting from federally regulated financial institutions.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=climate%20risk&location=Canada", indeed: "https://ca.indeed.com/jobs?q=climate+risk+analyst" },
+    { num: 22, title: "Carbon Accounting Specialist", desc: "Measures, tracks, and reports a company's greenhouse gas emissions. The 'finance person' of the sustainability world.", hires: "Suncor, TC Energy, Enbridge, Teck, Barrick, banks, manufacturers, consulting firms", salary: "$100,000 - $140,000", skills: ["GHG Protocol (Scope 1, 2, 3 emissions)", "Carbon accounting platforms (Persefoni, Watershed)", "Regulatory reporting (ECCC, CSSB)", "Audit and verification processes"], hot: "Canada's federal GHG reporting requirements are expanding. New CSSB standards make carbon data as auditable as financial data.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=carbon%20accounting&location=Canada", indeed: "https://ca.indeed.com/jobs?q=carbon+accounting" },
+    { num: 23, title: "ESG Reporting Manager", desc: "Produces a company's environmental, social, and governance disclosures. Collects data from every department and manages external assurance.", hires: "Every TSX-listed company, large private companies, pension funds, banks", salary: "$100,000 - $145,000", skills: ["ESG frameworks (GRI, SASB, ISSB, TCFD, CSRD)", "Data management and cross-departmental coordination", "Materiality assessments", "Investor relations and stakeholder communication"], hot: "Mandatory climate-related disclosure is crystallizing in Canada. Companies need audit-grade reporting.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=ESG%20reporting&location=Canada", indeed: "https://ca.indeed.com/jobs?q=ESG+reporting" },
+    { num: 24, title: "Circular Economy Consultant", desc: "Helps companies redesign products, packaging, and supply chains to eliminate waste.", hires: "Unilever, P&G, IKEA, Canadian Tire, packaging manufacturers, Accenture, EY", salary: "$100,000 - $145,000", skills: ["Life cycle assessment (LCA) methodologies", "Extended producer responsibility (EPR) regulations", "Supply chain redesign and material science", "Business case development for circular models"], hot: "Provincial EPR laws are expanding (Ontario, BC, Quebec), and large retailers are demanding circularity from suppliers.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=circular%20economy&location=Canada", indeed: "https://ca.indeed.com/jobs?q=circular+economy" },
+    { num: 25, title: "Sustainability Reporting Assurance Specialist", desc: "Audits and verifies companies' sustainability claims. The ESG equivalent of a financial auditor.", hires: "Deloitte, PwC, EY, KPMG (all building ESG assurance practices), mid-tier accounting firms", salary: "$105,000 - $155,000", skills: ["Audit and assurance methodology", "GHG verification standards (ISO 14064, ISAE 3000)", "ESG frameworks (GRI, ISSB, CSRD)", "CPA designation (major advantage)"], hot: "Mandatory ESG assurance is coming. The Big 4 are all building these teams.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=ESG%20assurance&location=Canada", indeed: "https://ca.indeed.com/jobs?q=ESG+assurance" },
+  ]},
+  { name: "Operations & Strategy", emoji: "⚙️", count: 5, range: "$105K-$180K", roles: [
+    { num: 26, title: "Chief of Staff", desc: "The CEO's right hand. Runs special projects, manages priorities, keeps cross-functional initiatives on track.", hires: "Scale-ups (Series B through IPO), private equity portfolio companies, non-profits, government", salary: "$105,000 - $165,000", skills: ["Executive communication and judgment", "Project management across ambiguous mandates", "Financial analysis and board reporting", "Discretion and political navigation"], hot: "As companies grow past 100 people, founders hit a complexity wall. Chief of Staff has become the fastest path to an operating executive role.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=chief%20of%20staff&location=Canada", indeed: "https://ca.indeed.com/jobs?q=chief+of+staff" },
+    { num: 27, title: "Strategic Partnerships Manager", desc: "Identifies, negotiates, and manages partnerships with other companies: co-selling, integrations, distribution deals, co-marketing.", hires: "Shopify, HubSpot, Atlassian, fintech, media companies, telecom", salary: "$105,000 - $163,000", skills: ["Business development and relationship building", "Contract negotiation and deal structuring", "Revenue modeling and business case development", "Ecosystem and platform strategy"], hot: "'Platform play' is the dominant growth strategy in SaaS. Building and managing the partner ecosystem is its own discipline now.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=strategic%20partnerships&location=Canada", indeed: "https://ca.indeed.com/jobs?q=strategic+partnerships+manager" },
+    { num: 28, title: "Category Manager (Procurement)", desc: "Owns the strategy for a specific spend category. Negotiates contracts, manages suppliers, and finds savings.", hires: "Loblaw, Metro, Walmart Canada, manufacturers, government, banks", salary: "$110,000 - $175,000", skills: ["Strategic sourcing and supplier negotiation", "Total cost of ownership analysis", "Market intelligence and category strategy", "Stakeholder management across business units"], hot: "Supply chain disruptions forced companies to get strategic about procurement. The person who saves $5M in vendor spend is very popular with the CFO.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=category%20manager%20procurement&location=Canada", indeed: "https://ca.indeed.com/jobs?q=category+manager+procurement" },
+    { num: 29, title: "Business Operations Manager (Tech)", desc: "Designs and improves internal processes that keep a growing company from falling apart: planning cycles, OKR tracking, cross-team coordination.", hires: "Scale-up tech companies (Series B through IPO), SaaS companies, fintech", salary: "$105,000 - $150,000", skills: ["Process design and optimization", "OKR/KPI frameworks and operating rhythms", "Data analysis and reporting (SQL, Looker, Tableau)", "Systems thinking and automation (Zapier, Notion, Asana)"], hot: "What works at 50 people breaks at 200. This role exists to rebuild the operating system as the company scales.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=business%20operations%20manager&location=Canada", indeed: "https://ca.indeed.com/jobs?q=business+operations+manager" },
+    { num: 30, title: "GTM Strategy Manager", desc: "Plans and coordinates product launches, market entry, and expansion across sales, marketing, product, and customer success.", hires: "B2B tech companies, SaaS companies launching new products, private equity portfolio companies", salary: "$120,000 - $180,000", skills: ["Market analysis and competitive positioning", "Launch planning and cross-functional coordination", "Revenue modeling and financial analysis", "Product-market fit assessment"], hot: "'GTM' has exploded from a buzzword to an actual discipline. Companies realized building a great product means nothing if the go-to-market motion is broken.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=go%20to%20market%20strategy&location=Canada", indeed: "https://ca.indeed.com/jobs?q=GTM+strategy" },
+  ]},
+  { name: "Healthcare & Regulated", emoji: "🏥", count: 5, range: "$100K-$165K", roles: [
+    { num: 31, title: "Medical Science Liaison", desc: "A PhD-level scientist who represents a pharma company to doctors and researchers. Not a sales rep.", hires: "AbbVie, Roche, Pfizer, Bayer, GSK, Novartis (all with Canadian offices)", salary: "$103,000 - $155,000", skills: ["PhD or PharmD (often required)", "Deep therapeutic area expertise", "Scientific communication and presentation", "Clinical trial knowledge and data interpretation"], hot: "New drug launches are accelerating. Pharma companies need credible scientific voices in front of prescribers.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=medical%20science%20liaison&location=Canada", indeed: "https://ca.indeed.com/jobs?q=medical+science+liaison" },
+    { num: 32, title: "Market Access Manager (Pharma)", desc: "Figures out how to get a drug covered by public and private insurance plans. Builds the economic case for reimbursement.", hires: "AbbVie, argenx, GSK (all hiring in Canada), biotech, medical device companies", salary: "$115,000 - $165,000", skills: ["Canadian payer landscape (CADTH, INESSS, provincial formularies)", "Health economics and outcomes research (HEOR)", "Budget impact models and cost-effectiveness analysis", "Reimbursement strategy and pricing"], hot: "Canada's national pharmacare conversation and evolving drug pricing regulations mean companies need Canadian reimbursement experts.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=market%20access%20pharma&location=Canada", indeed: "https://ca.indeed.com/jobs?q=market+access+pharma" },
+    { num: 33, title: "Pharmacovigilance Manager", desc: "Monitors the safety of drugs after they hit the market. Collects adverse event reports and analyzes safety signals.", hires: "Roche, Bayer, GSK, IQVIA, Parexel, biotech companies, Health Canada", salary: "$105,000 - $150,000", skills: ["Adverse event reporting and case processing", "Safety signal detection and risk management", "Health Canada regulatory requirements", "MedDRA coding and safety databases (Argus, Veeva)"], hot: "New drug approvals are at record levels, and each one needs ongoing safety monitoring. The regulatory bar keeps rising.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=pharmacovigilance&location=Canada", indeed: "https://ca.indeed.com/jobs?q=pharmacovigilance" },
+    { num: 34, title: "Health Economist", desc: "Builds economic models that prove a drug, device, or health program is worth the money.", hires: "Pharma companies, CADTH, CIHI, academic health centers, ICON, Evidera, provincial health ministries", salary: "$110,000 - $160,000", skills: ["Health economic modeling (Markov, decision trees)", "Biostatistics and epidemiology", "Canadian HTA submission process (CADTH, INESSS)", "Scientific writing and publication"], hot: "Every new drug or health technology needs an economic argument to get funded. Provincial health budgets are tightening.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=health%20economist&location=Canada", indeed: "https://ca.indeed.com/jobs?q=health+economist" },
+    { num: 35, title: "Clinical Informatics Specialist", desc: "Bridges healthcare and technology. Configures EHR systems, designs clinical workflows, and makes sure tech helps clinicians.", hires: "UHN, SickKids, Alberta Health Services, Ontario Health, Epic, Cerner/Oracle Health", salary: "$100,000 - $145,000", skills: ["EHR system configuration (Epic, Cerner, Meditech)", "Clinical workflow design and optimization", "Health data standards (HL7, FHIR, SNOMED CT)", "Clinical background or nursing credential (strong advantage)"], hot: "Every province is digitizing health records. Someone who speaks both 'clinical' and 'technical' is gold.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=clinical%20informatics&location=Canada", indeed: "https://ca.indeed.com/jobs?q=clinical+informatics" },
+  ]},
+  { name: "Creative & Content", emoji: "✏️", count: 5, range: "$100K-$160K", roles: [
+    { num: 36, title: "Content Designer", desc: "Writes the words inside digital products: buttons, error messages, onboarding flows, tooltips. Not marketing copy.", hires: "Shopify, Google, Interac, TD, RBC, Canadian Digital Service (government), SaaS companies", salary: "$100,000 - $145,000", skills: ["UX writing and microcopy", "User research and usability testing", "Information architecture", "Design tool fluency (Figma)"], hot: "Confusing product language costs millions in support tickets and churn. One good content designer can eliminate thousands of customer complaints.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=content%20designer&location=Canada", indeed: "https://ca.indeed.com/jobs?q=content+designer" },
+    { num: 37, title: "Conversion Copywriter", desc: "Writes the words that make people buy. Landing pages, email sequences, product pages, checkout flows. Every word tested for revenue.", hires: "SaaS companies, e-commerce brands, DTC companies, marketing agencies, fintech", salary: "$100,000 - $130,000", skills: ["Direct response copywriting frameworks", "A/B testing and conversion rate optimization", "Landing page and email sequence strategy", "Customer research and voice-of-customer mining"], hot: "Customer acquisition costs have risen 50%+ in 3 years. Improving conversion rates on existing traffic is the cheapest growth lever.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=conversion%20copywriter&location=Canada", indeed: "https://ca.indeed.com/jobs?q=conversion+copywriter" },
+    { num: 38, title: "Design Systems Lead", desc: "Builds and maintains a company's shared design language: reusable components, patterns, tokens, and documentation.", hires: "Shopify (Polaris), Atlassian, banks (RBC, TD), SaaS companies, government digital services", salary: "$110,000 - $160,000", skills: ["Component library design and development (React, Figma)", "Design tokens and theming architecture", "Documentation and developer advocacy", "Front-end development (HTML, CSS, JavaScript)"], hot: "Inconsistent design becomes a tax on every feature as companies scale. A design system saves hundreds of engineering hours per quarter.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=design%20systems&location=Canada", indeed: "https://ca.indeed.com/jobs?q=design+systems+lead" },
+    { num: 39, title: "Localization Program Manager", desc: "Manages adapting products and content for different languages and markets. Not just translation.", hires: "Shopify, Google, Microsoft, Ubisoft Montreal, EA, e-commerce platforms, SaaS companies expanding internationally", salary: "$100,000 - $135,000 (director: up to $206K)", skills: ["Translation management systems (memoQ, Smartling, Phrase)", "Internationalization (i18n) technical concepts", "Vendor management and quality assurance", "Project management across time zones and languages"], hot: "Canadian companies expanding globally and global companies operating in bilingual Canada both need this. Managing 10+ languages is genuinely hard.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=localization%20manager&location=Canada", indeed: "https://ca.indeed.com/jobs?q=localization+program+manager" },
+    { num: 40, title: "Conversation Designer", desc: "Designs how chatbots, voice assistants, and AI agents talk to people. Writes dialogue flows, personality, error handling.", hires: "All Big 5 banks, Bell, Rogers, Telus, tech companies building AI products, contact center tech", salary: "$100,000 - $140,000", skills: ["Dialogue design and conversational UX", "NLU/NLP platforms (Dialogflow, Amazon Lex, Rasa)", "Prompt engineering for LLM-powered conversations", "Error handling and escalation flow design"], hot: "Every company is deploying AI chat and voice assistants, but most sound terrible. The person who makes AI pleasant to talk to is in high demand.", linkedin: "https://www.linkedin.com/jobs/search/?keywords=conversation%20designer&location=Canada", indeed: "https://ca.indeed.com/jobs?q=conversation+designer" },
+  ]},
+];
+
+// Preview: show first 3 roles from first category
+const previewRoles = categories[0].roles.slice(0, 3);
+---
+
+<LeadMagnetLayout
+  title="40 Job Titles You've Never Heard Of That Pay $100K+ | ClearCareer"
+  description="40 non-obvious, lesser-known job titles in Canada that pay $100K+ at the senior level. Real roles being hired for right now, with salary data and search links."
+  headline="40 Job Titles You've Never<br />Heard Of That Pay $100K+"
+  subheadline="You're not stuck. You just don't know these roles exist. Every one of them is actively being hired for in Canada right now."
+  bullets={[
+    "40 verified roles across 8 categories (AI, Revenue, Data, People, ESG, Ops, Healthcare, Creative)",
+    "Plain-English descriptions of what each role actually does",
+    "Real Canadian companies hiring for each role right now",
+    "Direct LinkedIn and Indeed search links for every title",
+  ]}
+  source="hidden-job-titles"
+  storageKey="hidden_titles_unlocked"
+  ctaText="See All 40 Roles"
+>
+  <!-- Preview Slot -->
+  <Fragment slot="preview">
+    <!-- Category Cards -->
+    <div class="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {categories.map((cat) => (
+        <div class="rounded-xl border border-border bg-white p-4 text-center">
+          <p class="text-2xl">{cat.emoji}</p>
+          <p class="mt-1 text-sm font-bold text-navy">{cat.name}</p>
+          <p class="text-xs text-text-muted">{cat.count} roles</p>
+          <p class="text-xs font-semibold text-blue">{cat.range}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Preview: 3 sample roles -->
+    <div class="space-y-4">
+      {previewRoles.map((role) => (
+        <div class="rounded-xl border border-border bg-white p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-bold text-navy">{role.title}</h3>
+              <p class="mt-1 text-sm text-text-muted">{role.desc}</p>
+            </div>
+            <span class="shrink-0 rounded-lg bg-blue-bg px-3 py-1 text-sm font-bold text-blue">{role.salary.split(" - ")[1] || role.salary}</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            {role.skills.slice(0, 3).map((skill) => (
+              <span class="rounded-full bg-blue-bg/50 px-3 py-1 text-xs text-text-muted">{skill}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Blurred roles -->
+    <div class="relative mt-2 overflow-hidden" style="max-height: 160px;">
+      <div class="pointer-events-none select-none blur-[6px] opacity-50 space-y-4" aria-hidden="true">
+        {categories[0].roles.slice(3, 5).map((role) => (
+          <div class="rounded-xl border border-border bg-white p-5">
+            <h3 class="font-bold text-navy">{role.title}</h3>
+            <p class="mt-1 text-sm text-text-muted">{role.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white"></div>
+    </div>
+
+    <p class="mt-6 text-center text-sm font-medium text-text-muted">
+      + 37 more roles hiding behind that blur...
+    </p>
+  </Fragment>
+
+  <!-- Full Content Slot (gated) -->
+  <Fragment slot="full">
+    <!-- Intro -->
+    <div class="mb-8">
+      <p class="text-base leading-relaxed text-text">Most job seekers target the same 10 titles everyone else is chasing. Meanwhile, companies are hiring for roles that didn't exist five years ago, and they're paying $100K or more. Every role below is real, verified, and being hired for in Canada right now.</p>
+    </div>
+
+    <!-- Search + Category Filter -->
+    <div class="mb-4">
+      <input type="text" id="titles-search" placeholder="Search job titles..." class="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-text shadow-sm placeholder:text-text-muted focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20" />
+    </div>
+    <div class="mb-8 flex flex-wrap gap-2" id="titles-filters">
+      <button data-filter="all" class="rounded-full bg-navy px-4 py-1.5 text-xs font-semibold text-white transition-colors">All</button>
+      {categories.map((cat) => (
+        <button data-filter={cat.name} class="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-text-muted transition-colors hover:border-blue hover:text-blue">{cat.emoji} {cat.name}</button>
+      ))}
+    </div>
+
+    <p id="titles-no-results" class="mb-8 hidden text-center text-sm text-text-muted">No roles match your search.</p>
+
+    {categories.map((cat) => (
+      <div class="mb-12 titles-category" data-category={cat.name}>
+        <h2 class="mb-1 flex items-center gap-2 text-xl font-bold text-navy">
+          <span>{cat.emoji}</span> {cat.name}
+        </h2>
+        <p class="mb-6 text-sm text-text-muted">{cat.count} roles | Senior salary range: {cat.range}</p>
+
+        <div class="space-y-6">
+          {cat.roles.map((role) => (
+            <div class="rounded-xl border border-border bg-white p-6 titles-role" data-title={role.title.toLowerCase()} data-category={cat.name}>
+              <div class="flex items-start justify-between gap-4">
+                <h3 class="text-lg font-bold text-navy">{role.num}. {role.title}</h3>
+                <span class="shrink-0 rounded-lg bg-blue-bg px-3 py-1.5 text-sm font-bold text-blue">{role.salary}</span>
+              </div>
+
+              <p class="mt-2 text-sm text-text-muted">{role.desc}</p>
+
+              <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-navy">Who hires</p>
+                  <p class="mt-1 text-sm text-text-muted">{role.hires}</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-navy">Key skills</p>
+                  <ul class="mt-1 space-y-1">
+                    {role.skills.map((skill) => (
+                      <li class="flex items-start gap-2 text-sm text-text-muted">
+                        <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-blue"></span>
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <p class="mt-4 text-sm text-text-muted"><strong class="text-navy">Why it's hot:</strong> {role.hot}</p>
+
+              <div class="mt-4 flex gap-3">
+                <a href={role.linkedin} target="_blank" rel="noopener" class="rounded-lg bg-blue px-4 py-2 text-xs font-semibold text-white hover:bg-blue-dark">Search LinkedIn</a>
+                <a href={role.indeed} target="_blank" rel="noopener" class="rounded-lg border border-border px-4 py-2 text-xs font-semibold text-navy hover:bg-blue-bg/30">Search Indeed</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <!-- How to Use -->
+    <div class="mt-12 rounded-xl border-2 border-blue/20 bg-blue-bg/30 p-8">
+      <h2 class="text-xl font-bold text-navy">See a Role That Fits?</h2>
+      <ol class="mt-6 space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">1</span>
+          <div>
+            <p class="font-semibold text-navy">Click the search links to see what's posted right now</p>
+            <p class="text-sm text-text-muted">LinkedIn and Indeed links are pre-filtered for Canada.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">2</span>
+          <div>
+            <p class="font-semibold text-navy">Update your resume to highlight the matching skills</p>
+            <p class="text-sm text-text-muted">Focus on the key skills listed for the role you're targeting.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">3</span>
+          <div>
+            <p class="font-semibold text-navy">Research the companies listed in "Who hires"</p>
+            <p class="text-sm text-text-muted">Go directly to their careers pages. Many roles aren't posted on job boards.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Sources -->
+    <div class="mt-12 border-t border-border pt-6">
+      <button id="sources-toggle" class="flex items-center gap-2 text-sm font-semibold text-text-muted hover:text-navy">
+        <svg id="sources-chevron" class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        Sources & References
+      </button>
+      <div id="sources-list" style="display: none;" class="mt-4 text-sm text-text-muted">
+        <p class="mb-2">Salary data and job availability verified through:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><a href="https://www.glassdoor.ca/Salaries" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Glassdoor Canada</a>, <a href="https://www.payscale.com/research/CA" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">PayScale Canada</a>, <a href="https://ca.indeed.com/career" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Indeed Canada</a></li>
+          <li><a href="https://www.salaryexpert.com" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">ERI SalaryExpert</a>, <a href="https://www.ziprecruiter.com/Salaries" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">ZipRecruiter</a>, <a href="https://www.salary.com/research/salary" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Salary.com</a></li>
+          <li><a href="https://www.roberthalf.com/ca/en/insights/salary-guide" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Robert Half 2026</a>, <a href="https://salaryguide-americas.hays.com/canada/en/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Hays 2026</a>, <a href="https://www.randstad.ca/employers/salary-guide/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Randstad 2026</a> salary guides</li>
+          <li><a href="https://eco.ca/environmental-employers/salary-guide-2025/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">ECO Canada Environmental Salary Guide</a></li>
+          <li><a href="https://www.levels.fyi" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Levels.fyi</a>, <a href="https://www.morganmckinley.com/ca/salary-guide" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Morgan McKinley 2026</a></li>
+          <li><a href="https://www.adp.com/spark/articles/2026/01/key-employee-experience-trends-for-2026-and-how-to-prioritize.aspx" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">ADP Employee Experience Trends 2026</a></li>
+          <li>Job availability confirmed via <a href="https://www.linkedin.com/jobs" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">LinkedIn Canada</a> and <a href="https://ca.indeed.com" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Indeed Canada</a></li>
+        </ul>
+        <p class="mt-3 text-xs">All salary ranges reflect senior-level base salary in CAD. Data compiled April 2026.</p>
+      </div>
+    </div>
+  </Fragment>
+</LeadMagnetLayout>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  var searchInput = document.getElementById('titles-search');
+  var filterBtns = document.querySelectorAll('#titles-filters button');
+  var catSections = document.querySelectorAll('.titles-category');
+  var noResults = document.getElementById('titles-no-results');
+  var activeFilter = 'all';
+
+  function applyFilters() {
+    var query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    var visibleCount = 0;
+    catSections.forEach(function(sec) {
+      var cat = sec.getAttribute('data-category');
+      var catMatch = activeFilter === 'all' || cat === activeFilter;
+      var catHasVisible = false;
+      sec.querySelectorAll('.titles-role').forEach(function(role) {
+        var title = role.getAttribute('data-title');
+        var titleMatch = !query || title.indexOf(query) !== -1;
+        if (catMatch && titleMatch) {
+          role.style.display = '';
+          catHasVisible = true;
+          visibleCount++;
+        } else {
+          role.style.display = 'none';
+        }
+      });
+      sec.style.display = catHasVisible ? '' : 'none';
+    });
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? '' : 'none';
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    }
+  }
+
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      activeFilter = btn.getAttribute('data-filter');
+      filterBtns.forEach(function(b) {
+        b.className = 'rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-text-muted transition-colors hover:border-blue hover:text-blue';
+      });
+      btn.className = 'rounded-full bg-navy px-4 py-1.5 text-xs font-semibold text-white transition-colors';
+      applyFilters();
+    });
+  });
+
+  // Sources toggle
+  var sourcesToggle = document.getElementById('sources-toggle');
+  var sourcesList = document.getElementById('sources-list');
+  var sourcesChevron = document.getElementById('sources-chevron');
+  if (sourcesToggle) {
+    sourcesToggle.addEventListener('click', function() {
+      var isHidden = sourcesList.style.display === 'none';
+      sourcesList.style.display = isHidden ? '' : 'none';
+      sourcesChevron.style.transform = isHidden ? 'rotate(90deg)' : '';
+    });
+  }
+});
+</script>

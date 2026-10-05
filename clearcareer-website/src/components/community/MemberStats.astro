@@ -1,0 +1,41 @@
+---
+// Honest framing: the community figure is cumulative across multiple communities
+// over time ("have been part of"), not a live member count.
+const stats = [
+  { to: 1000, prefix: "", suffix: "+", label: "Professionals coached across our communities" },
+  { to: 3500, prefix: "", suffix: "+", label: "Event &amp; workshop attendees" },
+  { to: 1.2, prefix: "$", suffix: "M+", decimals: 1, label: "In collective raises won" },
+  { to: 200, prefix: "", suffix: "+", label: "Coached one-on-one" },
+];
+---
+
+<section class="relative overflow-hidden bg-navy py-20 md:py-28">
+  <div class="absolute inset-0 opacity-60" aria-hidden="true"
+    style="background: radial-gradient(50% 50% at 50% 0%, rgba(1,97,239,0.25) 0%, transparent 70%);">
+  </div>
+  <div class="relative mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-8">
+    <p data-cc-fade class="text-center text-sm font-semibold uppercase tracking-[0.2em] text-blue-light">
+      Proof this actually works
+    </p>
+    <h2 data-cc-fade class="mx-auto mt-4 max-w-[20ch] text-center font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight text-white">
+      You are not the first to feel stuck. You won't be the first to break through.
+    </h2>
+
+    <div data-cc-stagger class="mt-14 grid grid-cols-2 gap-8 lg:grid-cols-4">
+      {stats.map((s) => (
+        <div class="text-center">
+          <div class="font-display text-[clamp(2.5rem,6vw,4rem)] leading-none text-white">
+            <span
+              data-cc-count
+              data-cc-to={s.to}
+              data-cc-prefix={s.prefix}
+              data-cc-suffix={s.suffix}
+              data-cc-decimals={(s as any).decimals ?? 0}
+            >{s.prefix}0{s.suffix}</span>
+          </div>
+          <p class="mx-auto mt-3 max-w-[22ch] text-sm leading-relaxed text-white/55" set:html={s.label} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

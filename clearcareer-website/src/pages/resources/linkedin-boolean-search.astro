@@ -1,0 +1,255 @@
+---
+import LeadMagnetLayout from "@layouts/LeadMagnetLayout.astro";
+
+const searches = [
+  { category: "Tech & Engineering", items: [
+    { num: 1, title: "Software Engineers", query: '"software engineer" OR "software developer" OR "backend engineer" OR "frontend engineer"', url: "https://www.linkedin.com/search/results/people/?keywords=%22software%20engineer%22%20OR%20%22software%20developer%22%20OR%20%22backend%20engineer%22%20OR%20%22frontend%20engineer%22" },
+    { num: 2, title: "DevOps & Platform Engineers", query: '"devops engineer" OR "platform engineer" OR "infrastructure engineer" OR "SRE" OR "site reliability"', url: "https://www.linkedin.com/search/results/people/?keywords=%22devops%20engineer%22%20OR%20%22platform%20engineer%22%20OR%20%22infrastructure%20engineer%22%20OR%20%22SRE%22%20OR%20%22site%20reliability%22" },
+    { num: 3, title: "Data Scientists & ML Engineers", query: '"data scientist" OR "machine learning engineer" OR "ML engineer" OR "AI engineer" OR "applied scientist"', url: "https://www.linkedin.com/search/results/people/?keywords=%22data%20scientist%22%20OR%20%22machine%20learning%20engineer%22%20OR%20%22ML%20engineer%22%20OR%20%22AI%20engineer%22%20OR%20%22applied%20scientist%22" },
+    { num: 4, title: "Cybersecurity Professionals", query: '"cybersecurity" OR "information security" OR "security analyst" OR "security engineer" OR "CISO"', url: "https://www.linkedin.com/search/results/people/?keywords=%22cybersecurity%22%20OR%20%22information%20security%22%20OR%20%22security%20analyst%22%20OR%20%22security%20engineer%22%20OR%20%22CISO%22" },
+    { num: 5, title: "Cloud & Infrastructure Architects", query: '"cloud architect" OR "solutions architect" OR "enterprise architect" OR "cloud engineer"', url: "https://www.linkedin.com/search/results/people/?keywords=%22cloud%20architect%22%20OR%20%22solutions%20architect%22%20OR%20%22enterprise%20architect%22%20OR%20%22cloud%20engineer%22" },
+  ]},
+  { category: "Finance & Business", items: [
+    { num: 6, title: "Financial Analysts & FP&A", query: '"financial analyst" OR "FP&A" OR "financial planning" OR "senior financial analyst" OR "finance manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22financial%20analyst%22%20OR%20%22FP%26A%22%20OR%20%22financial%20planning%22%20OR%20%22senior%20financial%20analyst%22" },
+    { num: 7, title: "Management Consultants", query: '"management consultant" OR "strategy consultant" OR "senior consultant" OR "principal consultant" OR "engagement manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22management%20consultant%22%20OR%20%22strategy%20consultant%22%20OR%20%22senior%20consultant%22%20OR%20%22principal%20consultant%22" },
+    { num: 8, title: "Compliance & Risk Professionals", query: '"compliance officer" OR "compliance manager" OR "risk analyst" OR "risk manager" OR "regulatory affairs" OR "AML"', url: "https://www.linkedin.com/search/results/people/?keywords=%22compliance%20officer%22%20OR%20%22compliance%20manager%22%20OR%20%22risk%20analyst%22%20OR%20%22risk%20manager%22%20OR%20%22AML%22" },
+    { num: 9, title: "Investment & Corporate Development", query: '"corporate development" OR "M&A" OR "investment analyst" OR "private equity" OR "venture capital" OR "portfolio manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22corporate%20development%22%20OR%20%22M%26A%22%20OR%20%22investment%20analyst%22%20OR%20%22private%20equity%22%20OR%20%22venture%20capital%22" },
+    { num: 10, title: "Accounting & Audit Professionals", query: '"CPA" OR "chartered accountant" OR "audit manager" OR "controller" OR "accounting manager" OR "tax manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22CPA%22%20OR%20%22chartered%20accountant%22%20OR%20%22audit%20manager%22%20OR%20%22controller%22%20OR%20%22accounting%20manager%22" },
+  ]},
+  { category: "Marketing & Creative", items: [
+    { num: 11, title: "Growth & Digital Marketing", query: '"growth marketing" OR "digital marketing manager" OR "demand generation" OR "performance marketing" OR "acquisition marketing"', url: "https://www.linkedin.com/search/results/people/?keywords=%22growth%20marketing%22%20OR%20%22digital%20marketing%20manager%22%20OR%20%22demand%20generation%22%20OR%20%22performance%20marketing%22" },
+    { num: 12, title: "Product Marketing Managers", query: '"product marketing manager" OR "product marketing" OR "PMM" OR "go-to-market" OR "GTM manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22product%20marketing%20manager%22%20OR%20%22product%20marketing%22%20OR%20%22PMM%22%20OR%20%22go-to-market%22" },
+    { num: 13, title: "Content & SEO Professionals", query: '"content strategist" OR "content marketing manager" OR "SEO manager" OR "SEO specialist" OR "editorial director"', url: "https://www.linkedin.com/search/results/people/?keywords=%22content%20strategist%22%20OR%20%22content%20marketing%20manager%22%20OR%20%22SEO%20manager%22%20OR%20%22SEO%20specialist%22" },
+    { num: 14, title: "UX/UI & Product Designers", query: '"UX designer" OR "UI designer" OR "product designer" OR "design lead" OR "UX researcher" OR "interaction designer"', url: "https://www.linkedin.com/search/results/people/?keywords=%22UX%20designer%22%20OR%20%22UI%20designer%22%20OR%20%22product%20designer%22%20OR%20%22design%20lead%22%20OR%20%22UX%20researcher%22" },
+    { num: 15, title: "Brand & Communications", query: '"brand manager" OR "communications manager" OR "PR manager" OR "corporate communications" OR "brand strategist"', url: "https://www.linkedin.com/search/results/people/?keywords=%22brand%20manager%22%20OR%20%22communications%20manager%22%20OR%20%22PR%20manager%22%20OR%20%22corporate%20communications%22" },
+  ]},
+  { category: "HR & People", items: [
+    { num: 16, title: "HR Business Partners & People Leaders", query: '"HR business partner" OR "HRBP" OR "people partner" OR "VP people" OR "chief people officer" OR "head of HR"', url: "https://www.linkedin.com/search/results/people/?keywords=%22HR%20business%20partner%22%20OR%20%22HRBP%22%20OR%20%22people%20partner%22%20OR%20%22VP%20people%22%20OR%20%22chief%20people%20officer%22" },
+    { num: 17, title: "Talent Acquisition & Recruiting", query: '"talent acquisition" OR "recruiter" OR "recruiting manager" OR "TA lead" OR "head of talent" OR "sourcer"', url: "https://www.linkedin.com/search/results/people/?keywords=%22talent%20acquisition%22%20OR%20%22recruiter%22%20OR%20%22recruiting%20manager%22%20OR%20%22TA%20lead%22%20OR%20%22head%20of%20talent%22" },
+    { num: 18, title: "Learning & Organizational Development", query: '"learning and development" OR "L&D manager" OR "organizational development" OR "talent development" OR "training manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22learning%20and%20development%22%20OR%20%22L%26D%20manager%22%20OR%20%22organizational%20development%22%20OR%20%22talent%20development%22" },
+  ]},
+  { category: "Operations & Strategy", items: [
+    { num: 19, title: "Operations & Supply Chain Leaders", query: '"operations manager" OR "VP operations" OR "supply chain manager" OR "director of operations" OR "COO"', url: "https://www.linkedin.com/search/results/people/?keywords=%22operations%20manager%22%20OR%20%22VP%20operations%22%20OR%20%22supply%20chain%20manager%22%20OR%20%22director%20of%20operations%22" },
+    { num: 20, title: "Project & Program Managers", query: '"project manager" OR "program manager" OR "PMO" OR "PMP" OR "scrum master" OR "agile coach"', url: "https://www.linkedin.com/search/results/people/?keywords=%22project%20manager%22%20OR%20%22program%20manager%22%20OR%20%22PMO%22%20OR%20%22PMP%22%20OR%20%22scrum%20master%22" },
+    { num: 21, title: "Strategy & Business Development", query: '"strategy manager" OR "business development" OR "strategic partnerships" OR "chief of staff" OR "corporate strategy"', url: "https://www.linkedin.com/search/results/people/?keywords=%22strategy%20manager%22%20OR%20%22business%20development%22%20OR%20%22strategic%20partnerships%22%20OR%20%22chief%20of%20staff%22" },
+    { num: 22, title: "Revenue Operations & Sales Ops", query: '"revenue operations" OR "RevOps" OR "sales operations" OR "sales ops manager" OR "GTM operations"', url: "https://www.linkedin.com/search/results/people/?keywords=%22revenue%20operations%22%20OR%20%22RevOps%22%20OR%20%22sales%20operations%22%20OR%20%22sales%20ops%20manager%22" },
+  ]},
+  { category: "Sales & Customer Success", items: [
+    { num: 23, title: "Enterprise Sales Leaders", query: '"account executive" OR "enterprise sales" OR "sales director" OR "VP sales" OR "regional sales manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22account%20executive%22%20OR%20%22enterprise%20sales%22%20OR%20%22sales%20director%22%20OR%20%22VP%20sales%22%20OR%20%22regional%20sales%20manager%22" },
+    { num: 24, title: "Customer Success & Account Management", query: '"customer success manager" OR "CSM" OR "account manager" OR "client success" OR "customer experience manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22customer%20success%20manager%22%20OR%20%22CSM%22%20OR%20%22account%20manager%22%20OR%20%22client%20success%22" },
+  ]},
+  { category: "Healthcare & Life Sciences", items: [
+    { num: 25, title: "Clinical Research Professionals", query: '"clinical research" OR "CRA" OR "clinical trial" OR "clinical operations" OR "medical monitor" OR "clinical project manager"', url: "https://www.linkedin.com/search/results/people/?keywords=%22clinical%20research%22%20OR%20%22CRA%22%20OR%20%22clinical%20trial%22%20OR%20%22clinical%20operations%22%20OR%20%22medical%20monitor%22" },
+    { num: 26, title: "Medical Science Liaisons & Medical Affairs", query: '"medical science liaison" OR "MSL" OR "medical affairs" OR "medical director" OR "medical advisor"', url: "https://www.linkedin.com/search/results/people/?keywords=%22medical%20science%20liaison%22%20OR%20%22MSL%22%20OR%20%22medical%20affairs%22%20OR%20%22medical%20director%22" },
+    { num: 27, title: "Health Economics & Market Access", query: '"health economics" OR "HEOR" OR "market access" OR "health economist" OR "pharmacovigilance" OR "drug safety"', url: "https://www.linkedin.com/search/results/people/?keywords=%22health%20economics%22%20OR%20%22HEOR%22%20OR%20%22market%20access%22%20OR%20%22health%20economist%22%20OR%20%22pharmacovigilance%22" },
+  ]},
+  { category: "Sustainability & ESG", items: [
+    { num: 28, title: "ESG & Sustainability Leaders", query: '"ESG" OR "sustainability manager" OR "sustainability analyst" OR "climate risk" OR "carbon accounting" OR "ESG reporting"', url: "https://www.linkedin.com/search/results/people/?keywords=%22ESG%22%20OR%20%22sustainability%20manager%22%20OR%20%22sustainability%20analyst%22%20OR%20%22climate%20risk%22%20OR%20%22carbon%20accounting%22" },
+  ]},
+  { category: "Decision-Maker Searches (For Outreach)", items: [
+    { num: 29, title: "Hiring Managers by Department", query: '"VP marketing" OR "director of marketing" OR "head of marketing" OR "marketing leader"', url: "https://www.linkedin.com/search/results/people/?keywords=%22VP%20marketing%22%20OR%20%22director%20of%20marketing%22%20OR%20%22head%20of%20marketing%22%20OR%20%22marketing%20leader%22", note: "Swap 'marketing' for any department: engineering, finance, operations, product, HR" },
+    { num: 30, title: "C-Suite & Executive Leaders", query: '"CEO" OR "CTO" OR "CFO" OR "COO" OR "VP" OR "SVP" OR "general manager" OR "managing director"', url: "https://www.linkedin.com/search/results/people/?keywords=%22CEO%22%20OR%20%22CTO%22%20OR%20%22CFO%22%20OR%20%22COO%22%20OR%20%22VP%22%20OR%20%22SVP%22%20OR%20%22general%20manager%22", note: "Combine with LinkedIn's 'Current company' filter to target specific companies" },
+  ]},
+];
+
+const allItems = searches.flatMap((s) => s.items);
+const previewItems = allItems.slice(0, 3);
+---
+
+<LeadMagnetLayout
+  title="LinkedIn Boolean Search Cheat Sheet: 30 Strings by Role | ClearCareer"
+  description="30 pre-built LinkedIn search strings organized by role. Copy-paste or click to run. Find the right people at your target companies in seconds."
+  headline="The LinkedIn Recruiter Cheat Sheet:<br />30 Boolean Search Strings"
+  subheadline="Stop scrolling through irrelevant results. These 30 pre-built search strings help you find the right people on LinkedIn in seconds."
+  bullets={[
+    "30 ready-to-use search strings across 9 categories (Tech, Finance, Marketing, HR, Ops, Sales, Healthcare, ESG, Executives)",
+    "Click any link to run the search directly on LinkedIn",
+    "Copy-paste versions for manual use",
+    "2 decision-maker searches for cold outreach (#29 and #30)",
+  ]}
+  source="linkedin-boolean"
+  storageKey="linkedin_boolean_unlocked"
+  ctaText="Get All 30 Strings"
+>
+  <!-- Preview Slot -->
+  <Fragment slot="preview">
+    <!-- Preview: 3 search strings -->
+    <div class="space-y-4">
+      {previewItems.map((item) => (
+        <div class="rounded-xl border border-border bg-white p-5">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-bold text-navy">#{item.num} {item.title}</h3>
+            <a href={item.url} target="_blank" rel="noopener" class="shrink-0 rounded-lg bg-blue px-4 py-2 text-xs font-semibold text-white hover:bg-blue-dark">Run on LinkedIn</a>
+          </div>
+          <div class="mt-3 rounded-lg bg-navy/5 p-3">
+            <code class="text-xs text-text break-all">{item.query}</code>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Blurred -->
+    <div class="relative mt-2 overflow-hidden" style="max-height: 160px;">
+      <div class="pointer-events-none select-none blur-[6px] opacity-50 space-y-4" aria-hidden="true">
+        {allItems.slice(3, 7).map((item) => (
+          <div class="rounded-xl border border-border bg-white p-5">
+            <h3 class="font-bold text-navy">#{item.num} {item.title}</h3>
+            <div class="mt-3 rounded-lg bg-navy/5 p-3">
+              <code class="text-xs text-text">{item.query}</code>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white"></div>
+    </div>
+
+    <p class="mt-6 text-center text-sm font-medium text-text-muted">
+      + 27 more search strings hiding behind that blur...
+    </p>
+  </Fragment>
+
+  <!-- Full Content Slot (gated) -->
+  <Fragment slot="full">
+    <!-- Intro -->
+    <div class="mb-8">
+      <p class="text-base leading-relaxed text-text">The difference between scrolling for 20 minutes and finding the right person in 20 seconds is knowing what to search for. These strings use LinkedIn's Boolean operators (AND, OR, quotes) to cut through the noise and surface exactly who you're looking for.</p>
+    </div>
+
+    <!-- Instructions -->
+    <div class="mb-6 rounded-xl bg-blue-bg p-6">
+      <h2 class="text-lg font-bold text-navy">How to Use These Strings</h2>
+      <ol class="mt-3 space-y-2 text-sm text-text-muted">
+        <li><strong>1. Click "Run on LinkedIn"</strong> to execute the search directly (you must be logged in)</li>
+        <li><strong>2. Click "Copy"</strong> to copy the search string to your clipboard</li>
+        <li><strong>3. Use LinkedIn's sidebar filters</strong> to narrow by location, company, or industry</li>
+        <li><strong>4. Save the search</strong> on LinkedIn to get notified when new people match</li>
+      </ol>
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="mb-8 flex flex-wrap gap-2" id="bool-filters">
+      <button data-filter="all" class="rounded-full bg-navy px-4 py-1.5 text-xs font-semibold text-white transition-colors">All</button>
+      {searches.map((section) => (
+        <button data-filter={section.category} class="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-text-muted transition-colors hover:border-blue hover:text-blue">{section.category}</button>
+      ))}
+    </div>
+
+    <!-- All Search Strings -->
+    {searches.map((section) => (
+      <div class="mb-10 bool-section" data-category={section.category}>
+        <h2 class="mb-4 text-xl font-bold text-navy">{section.category}</h2>
+        <div class="space-y-4">
+          {section.items.map((item) => (
+            <div class="rounded-xl border border-border bg-white p-5 bool-card" data-category={section.category}>
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="font-bold text-navy">#{item.num} {item.title}</h3>
+                <a href={item.url} target="_blank" rel="noopener" class="shrink-0 rounded-lg bg-blue px-4 py-2 text-xs font-semibold text-white hover:bg-blue-dark">Run on LinkedIn</a>
+              </div>
+              <div class="mt-3 flex items-start gap-2">
+                <div class="min-w-0 flex-1 rounded-lg bg-navy/5 p-3">
+                  <code class="bool-query text-xs text-text break-all">{item.query}</code>
+                </div>
+                <button class="copy-btn shrink-0 rounded-lg border border-border bg-white px-3 py-2 text-xs font-semibold text-text-muted transition-colors hover:border-blue hover:text-blue" data-query={item.query}>Copy</button>
+              </div>
+              {item.note && (
+                <p class="mt-2 text-xs text-text-muted"><strong>Tip:</strong> {item.note}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <!-- Power Moves -->
+    <div class="mt-12 rounded-xl border-2 border-blue/20 bg-blue-bg/30 p-8">
+      <h2 class="text-xl font-bold text-navy">Power Moves: Advanced Techniques</h2>
+      <div class="mt-6 space-y-4">
+        <div>
+          <p class="font-semibold text-navy">Stack role + seniority in one search</p>
+          <div class="mt-2 flex items-start gap-2">
+            <div class="min-w-0 flex-1 rounded-lg bg-navy/5 p-3">
+              <code class="text-xs text-text">("VP" OR "director" OR "head of") AND ("data" OR "analytics" OR "data science")</code>
+            </div>
+            <button class="copy-btn shrink-0 rounded-lg border border-border bg-white px-3 py-2 text-xs font-semibold text-text-muted transition-colors hover:border-blue hover:text-blue" data-query='("VP" OR "director" OR "head of") AND ("data" OR "analytics" OR "data science")'>Copy</button>
+          </div>
+          <p class="mt-1 text-xs text-text-muted">Finds senior data leaders specifically.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-navy">Find recent job changers</p>
+          <p class="text-sm text-text-muted">After running a search, look for the "Changed jobs" filter. People who just started a new role are often hiring for their team and are more responsive to outreach.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-navy">Location shortcuts</p>
+          <p class="text-sm text-text-muted">Use LinkedIn's location filter with: Greater Toronto Area, Greater Vancouver Area, Greater Montreal Area, Ottawa-Gatineau, or Calgary Metropolitan Area.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="mt-12 border-t border-border pt-6">
+      <button id="sources-toggle" class="flex items-center gap-2 text-sm font-semibold text-text-muted hover:text-navy">
+        <svg id="sources-chevron" class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        Sources & References
+      </button>
+      <div id="sources-list" style="display: none;" class="mt-4 text-sm text-text-muted">
+        <ul class="list-disc pl-5 space-y-1">
+          <li><a href="https://www.linkedin.com/help/linkedin/answer/a524335" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">LinkedIn Help Center</a> — Boolean search operators and syntax</li>
+          <li>All search URLs use LinkedIn's public people search with URL-encoded keywords</li>
+        </ul>
+      </div>
+    </div>
+  </Fragment>
+</LeadMagnetLayout>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  // Copy buttons
+  document.querySelectorAll('.copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var query = btn.getAttribute('data-query');
+      navigator.clipboard.writeText(query).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('border-emerald-500', 'text-emerald-600');
+        setTimeout(function() {
+          btn.textContent = 'Copy';
+          btn.classList.remove('border-emerald-500', 'text-emerald-600');
+        }, 2000);
+      });
+    });
+  });
+
+  // Category filter pills
+  var filterBtns = document.querySelectorAll('#bool-filters button');
+  var sections = document.querySelectorAll('.bool-section');
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = btn.getAttribute('data-filter');
+      // Update pill styles
+      filterBtns.forEach(function(b) {
+        b.className = 'rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-text-muted transition-colors hover:border-blue hover:text-blue';
+      });
+      btn.className = 'rounded-full bg-navy px-4 py-1.5 text-xs font-semibold text-white transition-colors';
+      // Show/hide sections
+      sections.forEach(function(sec) {
+        if (filter === 'all' || sec.getAttribute('data-category') === filter) {
+          sec.style.display = '';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Sources toggle
+  var sourcesToggle = document.getElementById('sources-toggle');
+  var sourcesList = document.getElementById('sources-list');
+  var sourcesChevron = document.getElementById('sources-chevron');
+  if (sourcesToggle) {
+    sourcesToggle.addEventListener('click', function() {
+      var isHidden = sourcesList.style.display === 'none';
+      sourcesList.style.display = isHidden ? '' : 'none';
+      sourcesChevron.style.transform = isHidden ? 'rotate(90deg)' : '';
+    });
+  }
+});
+</script>

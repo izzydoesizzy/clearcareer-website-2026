@@ -1,0 +1,46 @@
+---
+import FAQAccordion from "@components/FAQAccordion.astro";
+
+const items = [
+  {
+    question: "Is $29/mo really the price, or does it jump later?",
+    answer:
+      "$29/mo is the founding-member rate and it locks in for as long as you stay a member. When we reopen the doors to everyone, the price returns to $49/mo. Founding members are never charged the higher rate.",
+  },
+  {
+    question: "I've tried communities before and they were ghost towns. How is this different?",
+    answer:
+      "This community is anchored by live weekly coaching calls with Izzy, not just a chat feed. There is a real reason to show up every week, a coach who knows your situation, and members actively working their searches alongside you.",
+  },
+  {
+    question: "What if I'm not actively job searching right now?",
+    answer:
+      "Plenty of members join to get ahead while still employed: sharpening their resume, building their network, and preparing to negotiate. The templates, workshops, and prompt vault are just as useful before you need them.",
+  },
+  {
+    question: "How much time does it take each week?",
+    answer:
+      "As little or as much as you want. Show up live for the weekly call when you can, catch the recording when you can't, and dip into the resources as needed. Even one focused hour a week compounds fast with the right system.",
+  },
+  {
+    question: "Can I cancel whenever I want?",
+    answer:
+      "Yes. There are no contracts and no lock-in. Cancel anytime in a couple of clicks. We'd rather you stay because the community is working for you.",
+  },
+  {
+    question: "How is this different from the 1:1 coaching programs?",
+    answer:
+      "The 1:1 programs are intensive, done-with-you engagements at a premium price. The Community gives you the same system, templates, and coaching energy in a group setting you can actually afford to be in every week.",
+  },
+];
+---
+
+<section id="faq" class="bg-white">
+  <div class="mx-auto max-w-[720px] px-4 pt-20 text-center sm:px-6 lg:px-8">
+    <p data-cc-fade class="text-sm font-semibold uppercase tracking-[0.2em] text-blue">Questions</p>
+    <h2 data-cc-fade class="mt-4 font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight text-navy">
+      Everything you might be wondering
+    </h2>
+  </div>
+  <FAQAccordion items={items} />
+</section>

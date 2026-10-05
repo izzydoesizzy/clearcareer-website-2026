@@ -1,0 +1,31 @@
+---
+interface Props {
+  number: string;
+  label: string;
+  detail?: string;
+  source: string;
+  color?: "blue" | "warning" | "success";
+}
+
+const { number, label, detail, source, color = "blue" } = Astro.props;
+
+const colorClasses = {
+  blue: "text-blue",
+  warning: "text-warning",
+  success: "text-success",
+};
+---
+
+<div class="rounded-xl border border-border bg-white p-6 text-center shadow-sm">
+  <p class:list={[
+    "text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-none",
+    colorClasses[color],
+  ]}>
+    {number}
+  </p>
+  <p class="mt-3 text-sm font-semibold text-navy">{label}</p>
+  {detail && (
+    <p class="mt-2 text-sm leading-relaxed text-text-muted">{detail}</p>
+  )}
+  <p class="mt-3 text-[0.65rem] uppercase tracking-wider text-text-muted/70">{source}</p>
+</div>

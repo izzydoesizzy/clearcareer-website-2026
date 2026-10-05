@@ -1,0 +1,77 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Footer from "@components/Footer.astro";
+import CommunityNav from "@components/community/CommunityNav.astro";
+import CommunityHero from "@components/community/CommunityHero.astro";
+import TrustMarquee from "@components/community/TrustMarquee.astro";
+import MemberStats from "@components/community/MemberStats.astro";
+import WhatsInside from "@components/community/WhatsInside.astro";
+import MemberJourney from "@components/community/MemberJourney.astro";
+import MemberWins from "@components/community/MemberWins.astro";
+import FounderNote from "@components/community/FounderNote.astro";
+import FoundingOffer from "@components/community/FoundingOffer.astro";
+import CommunityFAQ from "@components/community/CommunityFAQ.astro";
+import ImmersiveCTA from "@components/community/ImmersiveCTA.astro";
+
+// All "Join" buttons funnel to the pricing section for now.
+const COMMUNITY_JOIN_URL = "#pricing";
+// TODO: swap for the live community checkout (Skool / Circle / Stripe link) once it exists.
+const COMMUNITY_CHECKOUT_URL = "#pricing";
+---
+
+<BaseLayout
+  title="ClearCareer Community | Stop Job Searching Alone — $29/mo Founding Rate"
+  description="Join the ClearCareer Community. Weekly group coaching, done-for-you templates, monthly workshops, and a room of professionals who land offers together. Founding-member rate $29/mo (normally $49)."
+>
+  <script is:inline>
+    document.documentElement.classList.add("cc-js");
+  </script>
+
+  <CommunityNav joinUrl={COMMUNITY_JOIN_URL} />
+
+  <main id="main-content" class="cc-page overflow-clip">
+    <CommunityHero joinUrl={COMMUNITY_JOIN_URL} />
+    <TrustMarquee />
+    <MemberStats />
+    <WhatsInside joinUrl={COMMUNITY_JOIN_URL} />
+    <MemberJourney />
+    <MemberWins />
+    <FounderNote />
+    <FoundingOffer joinUrl={COMMUNITY_CHECKOUT_URL} />
+    <CommunityFAQ />
+    <ImmersiveCTA joinUrl={COMMUNITY_CHECKOUT_URL} />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style is:global>
+  /* Prevent flash of pre-animation state only when JS is active and motion is allowed. */
+  html.cc-js [data-cc-reveal],
+  html.cc-js [data-cc-fade],
+  html.cc-js [data-cc-stagger] > * {
+    opacity: 0;
+    will-change: opacity, transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html.cc-js [data-cc-reveal],
+    html.cc-js [data-cc-fade],
+    html.cc-js [data-cc-stagger] > * {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+  /* Lenis recommended baseline */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+</style>
+
+<script>
+  import { initCommunityMotion } from "@/scripts/community/motion";
+  initCommunityMotion();
+</script>

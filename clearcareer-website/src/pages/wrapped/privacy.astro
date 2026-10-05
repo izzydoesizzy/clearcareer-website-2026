@@ -1,0 +1,84 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+---
+
+<PageLayout
+  title="Privacy Policy | Career Wrapped | ClearCareer"
+  description="How ClearCareer Career Wrapped tools handle your data."
+>
+  <section class="py-16 md:py-24">
+    <div class="max-w-[720px] mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="/wrapped" class="inline-flex items-center gap-1 text-sm text-blue hover:text-blue-dark transition-colors mb-8">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width={2}>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Wrapped Tools
+      </a>
+
+      <h1 class="font-display text-[clamp(2rem,4vw,2.5rem)] leading-[1.1] text-navy mb-8">
+        Privacy Policy for Career Wrapped Tools
+      </h1>
+      <p class="text-text-muted mb-8">Last updated: April 2, 2026</p>
+
+      <div class="prose prose-lg max-w-none">
+        <p>
+          ClearCareer's Career Wrapped tools (Career DNA, Roast My Resume, What You're Actually Worth, and Your Career in 5 Cards) are free tools that analyze your resume using AI and generate personalized career insights. We built these tools with privacy as a core design principle.
+        </p>
+
+        <h2>Your Resume Data</h2>
+        <ul>
+          <li><strong>We never store your resume.</strong> Your resume text is sent directly to the AI for analysis. Once the analysis is complete, the resume text is immediately discarded. It is not saved to any database, file system, log, or backup.</li>
+          <li><strong>We cannot retrieve your resume.</strong> After analysis, there is no way for ClearCareer or any third party to access, reconstruct, or recover your resume text from our systems.</li>
+          <li><strong>Server-side processing only.</strong> Your resume is processed in memory on our server for the duration of the API call (typically 5-15 seconds), then discarded.</li>
+          <li><strong>No training on your data.</strong> Your resume is not used to train, fine-tune, or improve any AI models.</li>
+        </ul>
+
+        <h2>AI Processing</h2>
+        <ul>
+          <li>Resume analysis is performed by Anthropic's Claude API. Your resume text is sent to Anthropic as part of a single API request.</li>
+          <li>Anthropic's data retention and privacy policies apply to this API call. As of this writing, Anthropic does not use API inputs to train models. See <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic's Privacy Policy</a> for current details.</li>
+          <li>We send only the text of your resume (not your name, email, or any other personal information) to the AI for analysis.</li>
+        </ul>
+
+        <h2>Your Email Address</h2>
+        <ul>
+          <li>We collect your email address before showing your results. This is used solely to deliver a link to your results.</li>
+          <li>Your email is not added to any marketing list, newsletter, or drip campaign unless you explicitly opt in separately.</li>
+          <li>We do not sell, rent, or share your email address with third parties.</li>
+        </ul>
+
+        <h2>Your Results</h2>
+        <ul>
+          <li>Generated results (your Career DNA, roast, worth report, or cards) are stored temporarily on our server so that your shareable link works.</li>
+          <li>Results do not contain your resume text. They contain only the AI-generated insights (archetype name, salary estimates, roast text, etc.).</li>
+          <li>Shareable links are public. Anyone with the link can view your results. Do not share the link if you want your results to remain private.</li>
+        </ul>
+
+        <h2>Cookies and Tracking</h2>
+        <ul>
+          <li>Career Wrapped pages do not use tracking cookies, analytics pixels, or third-party trackers.</li>
+          <li>We do not use Google Analytics, Facebook Pixel, or any similar service on these pages.</li>
+          <li>We may use Cloudflare Turnstile (a privacy-focused CAPTCHA alternative) to prevent bot abuse. Turnstile does not track users across sites.</li>
+        </ul>
+
+        <h2>Data Retention</h2>
+        <ul>
+          <li><strong>Resume text:</strong> Not retained. Discarded immediately after analysis.</li>
+          <li><strong>Email address:</strong> Retained until you request deletion.</li>
+          <li><strong>Results:</strong> Retained as long as the shareable link is active.</li>
+        </ul>
+
+        <h2>Your Rights</h2>
+        <p>You can request deletion of your email address and/or results at any time by contacting <a href="mailto:izzy@joinclearcareer.com">izzy@joinclearcareer.com</a>.</p>
+
+        <h2>Contact</h2>
+        <p>
+          For questions about this privacy policy or your data, contact:<br />
+          Izzy Piyale-Sheard<br />
+          ClearCareer<br />
+          <a href="mailto:izzy@joinclearcareer.com">izzy@joinclearcareer.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</PageLayout>

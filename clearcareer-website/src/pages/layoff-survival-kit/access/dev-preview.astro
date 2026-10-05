@@ -1,0 +1,22 @@
+---
+// DEV ONLY — Remove before deploying to production
+// Renders the AccessHub without Stripe validation for local testing
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { AccessHub } from "@components/layoff-kit/AccessHub";
+
+export const prerender = false;
+
+// Only allow in dev
+if (import.meta.env.PROD) {
+  return Astro.redirect("/layoff-survival-kit");
+}
+---
+
+<BaseLayout
+  title="Layoff Survival Kit — Dev Preview"
+  description="Dev preview of the Layoff Survival Kit access hub."
+  type="website"
+  noindex={true}
+>
+  <AccessHub buyerName="Test User" buyerEmail="test@example.com" client:load />
+</BaseLayout>

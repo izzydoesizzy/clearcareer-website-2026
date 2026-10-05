@@ -1,0 +1,306 @@
+---
+import LeadMagnetLayout from "@layouts/LeadMagnetLayout.astro";
+import salaryData from "@data/salary-guide-2026.json";
+
+// Get unique roles (one row per role at Senior level for preview)
+const roles = salaryData.filter((r) => r.level.startsWith("Senior"));
+const categories = [...new Set(salaryData.map((r) => r.category))];
+const grouped = categories.map((cat) => ({
+  name: cat,
+  roles: [...new Set(salaryData.filter((r) => r.category === cat).map((r) => r.number))].map((num) => {
+    const entries = salaryData.filter((r) => r.category === cat && r.number === num);
+    return { number: num, role: entries[0].role, entries, topFactors: entries[0].topFactors, sources: entries[0].sources };
+  }),
+}));
+
+const categoryNarrative: Record<string, string> = {
+  "Tech & Data": "Tech and data roles command the highest premiums in Canada right now, especially in Vancouver and Toronto. AI/ML skills add 15-25% to any role, and cloud certifications remain the single biggest salary accelerator.",
+  "Finance & Business": "Bay Street drives Toronto premiums. Calgary pays above-average for energy-adjacent finance roles. The MBB vs Big 4 gap in consulting is massive. CFA and CPA designations still move the needle more than almost any other credential.",
+  "Marketing & Creative": "Marketing salaries are climbing as companies compete for growth talent. The biggest jumps are in product marketing and growth marketing, where SaaS experience commands a real premium. Design roles are catching up to engineering in top-tier companies.",
+  "HR & People": "People analytics and total rewards are the highest-growth areas in HR. Pay transparency legislation is creating demand for compensation specialists who can defend salary bands with data.",
+  "Operations & Supply Chain": "Supply chain disruptions elevated operations roles from back-office to boardroom. Vancouver's port hub means operations managers there earn as much as Toronto. Six Sigma certification still commands a premium.",
+  "Healthcare & Life Sciences": "Pharma and biotech roles are booming as new drug approvals hit record levels. Clinical research, biostatistics, and regulatory affairs all pay well and have strong job security.",
+  "Emerging & High-Growth": "These roles didn't exist five years ago. AI ethics, privacy, sustainability assurance, conversation design. If you're looking for where the market is heading, this is it.",
+};
+
+// Preview: 6 interesting roles at senior level
+const previewRoles = roles.filter((r) =>
+  ["Software Engineer", "Machine Learning Engineer", "Cloud Architect", "FP&A Manager", "Growth Marketing Manager", "Data Scientist"].includes(r.role)
+);
+---
+
+<LeadMagnetLayout
+  title="2026 Salary Guide: 50 In-Demand Roles in Canada | ClearCareer"
+  description="Real salary ranges for 50 in-demand roles across Toronto, Vancouver, Calgary, Montreal, and Ottawa. Cross-referenced from 10+ sources."
+  headline="The 2026 Salary Guide:<br />50 In-Demand Roles in Canada"
+  subheadline="Stop guessing what you're worth. Real salary ranges for 50 roles across 5 cities, cross-referenced from Glassdoor, Robert Half, Hays, Indeed, and more."
+  bullets={[
+    "50 roles across Tech, Finance, Marketing, HR, Operations, Healthcare, and Emerging fields",
+    "Salary ranges for Toronto, Vancouver, Calgary, Montreal, and Ottawa",
+    "Entry, mid, and senior tiers for every role",
+    "\"What Gets You to the Top\" — the skills that push you to the high end of the range",
+  ]}
+  source="salary-guide-2026"
+  storageKey="salary_guide_unlocked"
+  ctaText="Get the Full Guide"
+>
+  <!-- Preview Slot -->
+  <Fragment slot="preview">
+    <!-- Stats Cards -->
+    <div class="mb-8 grid grid-cols-3 gap-4">
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-2xl font-bold text-navy">50</p>
+        <p class="mt-1 text-xs text-text-muted">In-Demand Roles</p>
+      </div>
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-2xl font-bold text-navy">5</p>
+        <p class="mt-1 text-xs text-text-muted">Canadian Cities</p>
+      </div>
+      <div class="rounded-xl border border-border bg-blue-bg/30 p-5 text-center">
+        <p class="text-2xl font-bold text-navy">10+</p>
+        <p class="mt-1 text-xs text-text-muted">Salary Sources</p>
+      </div>
+    </div>
+
+    <!-- Preview Table -->
+    <div class="overflow-x-auto rounded-xl border border-border">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-navy text-white">
+            <th class="px-4 py-3 text-left font-semibold">Role</th>
+            <th class="px-4 py-3 text-left font-semibold">Toronto (Senior)</th>
+            <th class="px-4 py-3 text-left font-semibold hidden sm:table-cell">What Gets You to the Top</th>
+          </tr>
+        </thead>
+        <tbody>
+          {previewRoles.map((r, i) => (
+            <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-blue-bg/30"]}>
+              <td class="px-4 py-3 font-medium text-navy">{r.role}</td>
+              <td class="px-4 py-3 text-text font-semibold">{r.toronto}</td>
+              <td class="px-4 py-3 text-xs text-text-muted hidden sm:table-cell">{r.topFactors.slice(0, 60)}...</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Blurred rows -->
+    <div class="relative -mt-1 overflow-hidden" style="max-height: 180px;">
+      <div class="pointer-events-none select-none blur-[6px] opacity-50" aria-hidden="true">
+        <table class="w-full text-sm border-x border-border">
+          <tbody>
+            {roles.filter((r) => !previewRoles.includes(r)).slice(0, 12).map((r, i) => (
+              <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-blue-bg/30"]}>
+                <td class="px-4 py-3 font-medium text-navy">{r.role}</td>
+                <td class="px-4 py-3 text-text font-semibold">{r.toronto}</td>
+                <td class="px-4 py-3 text-xs text-text-muted">{r.topFactors.slice(0, 60)}...</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white"></div>
+    </div>
+
+    <p class="mt-6 text-center text-sm font-medium text-text-muted">
+      + {roles.length - 6} more roles hiding behind that blur...
+    </p>
+  </Fragment>
+
+  <!-- Full Content Slot (gated) -->
+  <Fragment slot="full">
+    <!-- Intro Narrative -->
+    <div class="mb-8">
+      <p class="text-base leading-relaxed text-text">Whether you're negotiating a raise, evaluating an offer, or just curious where you stand, this guide gives you the numbers. We cross-referenced 10+ salary databases so you don't have to guess.</p>
+    </div>
+
+    <!-- Key Insight -->
+    <div class="mb-8 rounded-xl border-l-4 border-blue bg-blue-bg/30 p-5">
+      <p class="text-sm font-semibold text-navy">City-by-City Quick Guide</p>
+      <p class="mt-1 text-sm text-text-muted"><strong>Toronto</strong> pays highest for finance (Bay Street). <strong>Vancouver</strong> matches or beats for tech. <strong>Calgary</strong> has energy-sector premiums. <strong>Montreal</strong> runs 10-20% lower but bilingual candidates earn more. <strong>Ottawa</strong> is competitive for government-adjacent roles.</p>
+    </div>
+
+    <!-- Methodology Note -->
+    <div class="mb-6 rounded-xl bg-blue-bg p-6">
+      <h2 class="text-lg font-bold text-navy">How to Read This Guide</h2>
+      <ul class="mt-3 space-y-2 text-sm text-text-muted">
+        <li><strong>Ranges show 25th to 75th percentile</strong> — where most people land, not outliers</li>
+        <li><strong>All figures are base salary in CAD</strong>, excluding bonuses, equity, and benefits</li>
+        <li><strong>Entry = 0-3 years</strong>, Mid = 3-7 years, Senior = 7+ years</li>
+      </ul>
+    </div>
+
+    <!-- Search + Category Filter -->
+    <div class="mb-4">
+      <input type="text" id="salary-search" placeholder="Search roles..." class="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-text shadow-sm placeholder:text-text-muted focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20" />
+    </div>
+    <div class="mb-8 flex flex-wrap gap-2" id="salary-filters">
+      <button data-filter="all" class="rounded-full bg-navy px-4 py-1.5 text-xs font-semibold text-white transition-colors">All</button>
+      {categories.map((cat) => (
+        <button data-filter={cat} class="rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-text-muted transition-colors hover:border-blue hover:text-blue">{cat}</button>
+      ))}
+    </div>
+
+    <!-- No results message -->
+    <p id="salary-no-results" class="mb-8 hidden text-center text-sm text-text-muted">No roles match your search.</p>
+
+    <!-- Full Tables by Category -->
+    {grouped.map((group) => (
+      <div class="mb-10 salary-category" data-category={group.name}>
+        <h2 class="mb-1 text-xl font-bold text-navy">{group.name}</h2>
+        <p class="mb-4 text-sm text-text-muted">{group.roles.length} roles</p>
+        {categoryNarrative[group.name] && (
+          <div class="mb-6 rounded-lg border-l-4 border-blue bg-blue-bg/30 p-4">
+            <p class="text-sm text-text">{categoryNarrative[group.name]}</p>
+          </div>
+        )}
+
+        {group.roles.map((role) => (
+          <div class="mb-6 salary-role" data-role={role.role.toLowerCase()}>
+            <h3 class="mb-2 text-base font-bold text-navy">{role.number}. {role.role}</h3>
+            <div class="overflow-x-auto rounded-lg border border-border">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-navy/5">
+                    <th class="px-3 py-2 text-left text-xs font-semibold text-navy">Level</th>
+                    <th class="px-3 py-2 text-left text-xs font-semibold text-navy">Toronto</th>
+                    <th class="px-3 py-2 text-left text-xs font-semibold text-navy">Vancouver</th>
+                    <th class="px-3 py-2 text-left text-xs font-semibold text-navy hidden md:table-cell">Calgary</th>
+                    <th class="px-3 py-2 text-left text-xs font-semibold text-navy hidden md:table-cell">Montreal</th>
+                    <th class="px-3 py-2 text-left text-xs font-semibold text-navy hidden lg:table-cell">Ottawa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {role.entries.map((e, i) => (
+                    <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-blue-bg/20"]}>
+                      <td class="px-3 py-2 text-xs font-medium text-text-muted">{e.level}</td>
+                      <td class="px-3 py-2 text-xs font-semibold text-text">{e.toronto}</td>
+                      <td class="px-3 py-2 text-xs text-text">{e.vancouver}</td>
+                      <td class="px-3 py-2 text-xs text-text hidden md:table-cell">{e.calgary}</td>
+                      <td class="px-3 py-2 text-xs text-text hidden md:table-cell">{e.montreal}</td>
+                      <td class="px-3 py-2 text-xs text-text hidden lg:table-cell">{e.ottawa}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-2 text-xs text-text-muted"><strong class="text-navy">What gets you to the top:</strong> {role.topFactors}</p>
+          </div>
+        ))}
+      </div>
+    ))}
+
+    <!-- How to Use -->
+    <div class="mt-12 rounded-xl border-2 border-blue/20 bg-blue-bg/30 p-8">
+      <h2 class="text-xl font-bold text-navy">How to Use This Guide</h2>
+      <ol class="mt-6 space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">1</span>
+          <div>
+            <p class="font-semibold text-navy">Find your role and city</p>
+            <p class="text-sm text-text-muted">Check where your current salary falls in the range. Below the 25th percentile? You're likely underpaid.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">2</span>
+          <div>
+            <p class="font-semibold text-navy">Check the "What Gets You to the Top" column</p>
+            <p class="text-sm text-text-muted">These are the specific skills, certifications, and experiences that push you from mid-range to top-of-range.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">3</span>
+          <div>
+            <p class="font-semibold text-navy">Use these numbers in your next negotiation</p>
+            <p class="text-sm text-text-muted">When a recruiter asks for your salary expectations, anchor at the 75th percentile and justify it with your experience.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Sources -->
+    <div class="mt-12 border-t border-border pt-6">
+      <button id="sources-toggle" class="flex items-center gap-2 text-sm font-semibold text-text-muted hover:text-navy">
+        <svg id="sources-chevron" class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        Sources & References
+      </button>
+      <div id="sources-list" style="display: none;" class="mt-4 text-sm text-text-muted">
+        <p class="mb-2">Salary data cross-referenced from:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><a href="https://www.roberthalf.com/ca/en/insights/salary-guide" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Robert Half 2026 Canada Salary Guide</a> — 360+ roles, interactive calculator</li>
+          <li><a href="https://salaryguide-americas.hays.com/canada/en/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Hays Canada 2026 Salary Guide</a> — 13 sectors, 6,500 respondents</li>
+          <li><a href="https://www.randstad.ca/employers/salary-guide/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Randstad Canada 2026 Salary Guide</a> — 600+ roles, 50 cities</li>
+          <li><a href="https://www.morganmckinley.com/ca/salary-guide" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Morgan McKinley 2026 Salary Guide</a> — Toronto-focused, finance & tech</li>
+          <li><a href="https://www.glassdoor.ca/Salaries" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Glassdoor Canada</a> — Crowd-sourced, filterable by city & experience</li>
+          <li><a href="https://ca.indeed.com/career" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Indeed Canada Salaries</a> — Large sample sizes, city breakdowns</li>
+          <li><a href="https://www.payscale.com/research/CA" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">PayScale Canada</a> — Experience-level breakdowns</li>
+          <li><a href="https://ca.talent.com/salary" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Talent.com</a> — National averages with good sample sizes</li>
+          <li><a href="https://www.levels.fyi" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Levels.fyi</a> — Best for tech company-specific data</li>
+          <li><a href="https://www.jobbank.gc.ca/wagereport" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Job Bank Canada</a> — Official government wage data by region</li>
+          <li><a href="https://www.salaryexpert.com" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">ERI SalaryExpert</a> — Detailed city and experience breakdowns</li>
+        </ul>
+        <p class="mt-3 text-xs">All ranges represent 25th to 75th percentile. Data compiled April 2026.</p>
+      </div>
+    </div>
+  </Fragment>
+</LeadMagnetLayout>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  var searchInput = document.getElementById('salary-search');
+  var filterBtns = document.querySelectorAll('#salary-filters button');
+  var catSections = document.querySelectorAll('.salary-category');
+  var roleBlocks = document.querySelectorAll('.salary-role');
+  var noResults = document.getElementById('salary-no-results');
+  var activeFilter = 'all';
+
+  function applyFilters() {
+    var query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    var visibleCount = 0;
+    catSections.forEach(function(sec) {
+      var cat = sec.getAttribute('data-category');
+      var catMatch = activeFilter === 'all' || cat === activeFilter;
+      var catHasVisible = false;
+      sec.querySelectorAll('.salary-role').forEach(function(role) {
+        var roleName = role.getAttribute('data-role');
+        var roleMatch = !query || roleName.indexOf(query) !== -1;
+        if (catMatch && roleMatch) {
+          role.style.display = '';
+          catHasVisible = true;
+          visibleCount++;
+        } else {
+          role.style.display = 'none';
+        }
+      });
+      sec.style.display = catHasVisible ? '' : 'none';
+    });
+    if (noResults) noResults.style.display = visibleCount === 0 ? '' : 'none';
+    if (noResults) noResults.classList.toggle('hidden', visibleCount > 0);
+  }
+
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      activeFilter = btn.getAttribute('data-filter');
+      filterBtns.forEach(function(b) {
+        b.className = 'rounded-full border border-border bg-white px-4 py-1.5 text-xs font-semibold text-text-muted transition-colors hover:border-blue hover:text-blue';
+      });
+      btn.className = 'rounded-full bg-navy px-4 py-1.5 text-xs font-semibold text-white transition-colors';
+      applyFilters();
+    });
+  });
+
+  // Sources toggle
+  var sourcesToggle = document.getElementById('sources-toggle');
+  var sourcesList = document.getElementById('sources-list');
+  var sourcesChevron = document.getElementById('sources-chevron');
+  if (sourcesToggle) {
+    sourcesToggle.addEventListener('click', function() {
+      var isHidden = sourcesList.style.display === 'none';
+      sourcesList.style.display = isHidden ? '' : 'none';
+      sourcesChevron.style.transform = isHidden ? 'rotate(90deg)' : '';
+    });
+  }
+});
+</script>

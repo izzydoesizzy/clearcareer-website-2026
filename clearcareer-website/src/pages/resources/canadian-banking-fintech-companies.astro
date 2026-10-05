@@ -1,0 +1,231 @@
+---
+import LeadMagnetLayout from "@layouts/LeadMagnetLayout.astro";
+import companies from "@data/canadian-finance-companies.json";
+
+// Group by subcategory, exclude shut-down from preview
+const activeCompanies = companies.filter((c) => c.status !== "Shut Down");
+const subcategories = [...new Set(companies.map((c) => c.subcategory))];
+const grouped = subcategories.map((sub) => ({
+  name: sub,
+  companies: companies.filter((c) => c.subcategory === sub),
+  activeCount: companies.filter((c) => c.subcategory === sub && c.status !== "Shut Down").length,
+}));
+
+// Preview: first 10 active companies (Traditional Banks)
+const previewCompanies = activeCompanies.filter((c) => c.subcategory === "Traditional Banks").slice(0, 10);
+
+const SHEET_COPY_URL = "https://docs.google.com/spreadsheets/d/1GNyVSBTVlmkMEBDRp7f3D4XzNVsjX1gpNL3XsLhGBAY/copy";
+// Note: hero-image copy button uses hardcoded URL with gated-content class
+const totalActive = activeCompanies.length;
+---
+
+<LeadMagnetLayout
+  title="86 Companies Hiring in Canadian Banking & Fintech | ClearCareer"
+  description="Stop limiting your job search to the Big 5. Here are 86 banks, fintechs, neobanks, and financial services companies hiring in Canada, with direct LinkedIn links."
+  headline="86 Companies Hiring in Canadian Banking & Fintech"
+  subheadline="Most people stop at RBC, TD, and BMO. Here are 86 companies you should actually be looking at, with direct links to their LinkedIn pages and recent job posts."
+  bullets={[
+    "86 companies across 12 categories (banks, fintech, neobanks, payments, crypto, regtech, and more)",
+    "Direct links to every company's LinkedIn page and recent job posts",
+    "HQ location and operational status for each company",
+    "Google Sheet you can copy to your Drive and customize for your job search",
+  ]}
+  source="canadian-finance-companies"
+  storageKey="canadian_finance_unlocked"
+  ctaText="Get the Full List"
+>
+  <!-- Spreadsheet Preview Image + Sheet CTA -->
+  <Fragment slot="hero-image">
+    <section class="pb-4">
+      <div class="mx-auto max-w-[720px] px-4">
+        <!-- Preview Image -->
+        <div class="overflow-hidden rounded-xl border border-border shadow-lg">
+          <img
+            src="/images/lead-magnets/canadian-finance-spreadsheet.jpg"
+            alt="Preview of the 86 Canadian Banking & Fintech companies spreadsheet"
+            class="w-full"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Sheet Copy CTA (only visible after gate unlocked) -->
+        <div class="mt-4 text-center gated-content" style="display: none;">
+          <a
+            href="https://docs.google.com/spreadsheets/d/1GNyVSBTVlmkMEBDRp7f3D4XzNVsjX1gpNL3XsLhGBAY/copy"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+            </svg>
+            Copy to Google Sheets
+          </a>
+          <p class="mt-2 text-xs text-text-muted">Opens in Google Sheets. Make a copy to your Drive.</p>
+        </div>
+      </div>
+    </section>
+  </Fragment>
+
+  <!-- Preview Slot -->
+  <Fragment slot="preview">
+    <div class="overflow-x-auto rounded-xl border border-border">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-navy text-white">
+            <th class="px-4 py-3 text-left font-semibold">Company</th>
+            <th class="px-4 py-3 text-left font-semibold hidden sm:table-cell">Category</th>
+            <th class="px-4 py-3 text-left font-semibold hidden md:table-cell">Description</th>
+            <th class="px-4 py-3 text-center font-semibold">LinkedIn</th>
+          </tr>
+        </thead>
+        <tbody>
+          {activeCompanies.slice(0, 6).map((c, i) => (
+            <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-blue-bg/30"]}>
+              <td class="px-4 py-3 font-medium text-navy">{c.name}</td>
+              <td class="px-4 py-3 text-xs text-text-muted hidden sm:table-cell">{c.subcategory}</td>
+              <td class="px-4 py-3 text-text-muted text-xs hidden md:table-cell">{c.description.slice(0, 60)}...</td>
+              <td class="px-4 py-3 text-center text-blue text-xs font-semibold">View</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Blurred rows -->
+    <div class="relative -mt-1 overflow-hidden" style="max-height: 180px;">
+      <div class="pointer-events-none select-none blur-[6px] opacity-50" aria-hidden="true">
+        <table class="w-full text-sm border-x border-border">
+          <tbody>
+            {activeCompanies.slice(6, 18).map((c, i) => (
+              <tr class:list={[i % 2 === 0 ? "bg-white" : "bg-blue-bg/30"]}>
+                <td class="px-4 py-3 font-medium text-navy">{c.name}</td>
+                <td class="px-4 py-3 text-xs text-text-muted">{c.subcategory}</td>
+                <td class="px-4 py-3 text-text-muted text-xs">{c.description.slice(0, 60)}...</td>
+                <td class="px-4 py-3 text-center text-blue text-xs">View</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white"></div>
+    </div>
+
+    <p class="mt-6 text-center text-sm font-medium text-text-muted">
+      + {companies.length - 6} more companies hiding behind that blur...
+    </p>
+  </Fragment>
+
+  <!-- Full Content Slot (gated) -->
+  <Fragment slot="full">
+    <!-- Google Sheet CTA -->
+    <div class="mb-10 rounded-xl bg-blue-bg p-6 text-center">
+      <h2 class="text-lg font-bold text-navy">Get the Spreadsheet</h2>
+      <p class="mt-2 text-sm text-text-muted">Click below to copy this list to your Google Drive. Add your own notes, track your outreach, and customize it for your search.</p>
+      <a
+        href={SHEET_COPY_URL}
+        target="_blank"
+        rel="noopener"
+        class="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
+      >
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+        </svg>
+        Copy to My Google Drive
+      </a>
+    </div>
+
+    <!-- Full Company List by Subcategory -->
+    {grouped.map((group) => (
+      <div class="mb-10">
+        <h2 class="mb-1 text-xl font-bold text-navy">{group.name}</h2>
+        <p class="mb-4 text-sm text-text-muted">{group.companies.length} companies · {group.activeCount} active</p>
+
+        <div class="overflow-x-auto rounded-xl border border-border">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-navy text-white">
+                <th class="px-4 py-3 text-left font-semibold">Company</th>
+                <th class="px-4 py-3 text-left font-semibold hidden sm:table-cell">Description</th>
+                <th class="px-4 py-3 text-center font-semibold hidden md:table-cell">HQ</th>
+                <th class="px-4 py-3 text-center font-semibold">LinkedIn</th>
+                <th class="px-4 py-3 text-center font-semibold hidden md:table-cell">Posts</th>
+              </tr>
+            </thead>
+            <tbody>
+              {group.companies.map((c, i) => (
+                <tr class:list={[
+                  i % 2 === 0 ? "bg-white" : "bg-blue-bg/30",
+                  "hover:bg-blue-bg/50 transition-colors",
+                  c.status === "Shut Down" ? "opacity-50" : "",
+                ]}>
+                  <td class="px-4 py-3">
+                    <a href={c.website} target="_blank" rel="noopener" class="font-medium text-navy hover:text-blue">{c.name}</a>
+                    {c.status === "Shut Down" && (
+                      <span class="ml-2 inline-block rounded bg-red-100 px-2 py-0.5 text-[10px] font-semibold text-red-600">Shut Down</span>
+                    )}
+                    {c.notes && c.notes.includes("NEW") && (
+                      <span class="ml-2 inline-block rounded bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">New</span>
+                    )}
+                  </td>
+                  <td class="px-4 py-3 text-text-muted hidden sm:table-cell">{c.description.slice(0, 100)}{c.description.length > 100 ? '...' : ''}</td>
+                  <td class="px-4 py-3 text-center text-text-muted text-xs hidden md:table-cell">{c.hq}</td>
+                  <td class="px-4 py-3 text-center">
+                    <a href={c.linkedin} target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">Profile</a>
+                  </td>
+                  <td class="px-4 py-3 text-center hidden md:table-cell">
+                    <a href={c.linkedinPosts} target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">Recent</a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ))}
+
+    <!-- How to Use This List -->
+    <div class="mt-12 rounded-xl border-2 border-blue/20 bg-blue-bg/30 p-8">
+      <h2 class="text-xl font-bold text-navy">How to Use This List</h2>
+      <p class="mt-2 text-text-muted">Don't just bookmark it. Work it. Here's your 5-step plan:</p>
+
+      <ol class="mt-6 space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">1</span>
+          <div>
+            <p class="font-semibold text-navy">Pick 10-15 companies that match your skills</p>
+            <p class="text-sm text-text-muted">Don't try to target all {totalActive}. Focus on the sectors where your experience fits best.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">2</span>
+          <div>
+            <p class="font-semibold text-navy">Follow each one on LinkedIn</p>
+            <p class="text-sm text-text-muted">Click the "Recent Posts" link for each company. Follow them so their updates appear in your feed.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">3</span>
+          <div>
+            <p class="font-semibold text-navy">Find 2-3 people at each company to connect with</p>
+            <p class="text-sm text-text-muted">Search "[Company name] + [your target role]" on LinkedIn. Look for hiring managers, team leads, and recruiters.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">4</span>
+          <div>
+            <p class="font-semibold text-navy">Start commenting on their posts</p>
+            <p class="text-sm text-text-muted">Not "great post." Add your perspective, share a related experience, or ask a smart question. Do this for 2-3 weeks.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">5</span>
+          <div>
+            <p class="font-semibold text-navy">Send a personalized connection request</p>
+            <p class="text-sm text-text-muted">After they've seen your name a few times, your message won't be cold anymore. That's the whole game.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </Fragment>
+</LeadMagnetLayout>

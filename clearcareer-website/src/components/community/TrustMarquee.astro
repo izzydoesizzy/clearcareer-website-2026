@@ -1,0 +1,62 @@
+---
+const items = [
+  "University of Toronto",
+  "Toronto Metropolitan University",
+  "Humber College",
+  "FlexJobs",
+  "CBC Radio",
+  "Global News",
+  "Newsweek",
+  "Inc. Magazine",
+  "Lighthouse Labs",
+  "United Nations Association in Canada",
+];
+// duplicate for a seamless loop
+const loop = [...items, ...items];
+---
+
+<section class="border-y border-white/5 bg-navy py-8">
+  <p class="mb-6 text-center text-xs font-semibold uppercase tracking-[0.22em] text-white/40">
+    As featured in, and trusted by teams at
+  </p>
+  <div class="cc-marquee relative overflow-hidden" aria-hidden="true">
+    <div class="cc-marquee-track flex w-max items-center gap-12 px-6">
+      {loop.map((item) => (
+        <span class="whitespace-nowrap text-base font-medium text-white/45">{item}</span>
+      ))}
+    </div>
+  </div>
+  <ul class="sr-only">
+    {items.map((item) => <li>{item}</li>)}
+  </ul>
+</section>
+
+<style>
+  .cc-marquee::before,
+  .cc-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .cc-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, #030620, transparent);
+  }
+  .cc-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, #030620, transparent);
+  }
+  .cc-marquee-track {
+    animation: cc-marquee 38s linear infinite;
+  }
+  @keyframes cc-marquee {
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cc-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; }
+  }
+</style>

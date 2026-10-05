@@ -1,0 +1,63 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { AccessHub } from "@components/layoff-kit/AccessHub";
+import Stripe from "stripe";
+
+export const prerender = false;
+
+const { token } = Astro.params;
+
+// Verify payment by looking up the Stripe checkout session
+let buyerEmail = "";
+let buyerName = "";
+let isValid = false;
+
+const stripeKey = import.meta.env.STRIPE_SECRET_KEY;
+if (stripeKey && token) {
+  try {
+    const stripe = new Stripe(stripeKey);
+    const session = await stripe.checkout.sessions.retrieve(token);
+
+    if (
+      session.payment_status === "paid" &&
+      session.metadata?.product === "layoff-survival-kit"
+    ) {
+      isValid = true;
+      buyerEmail = session.customer_details?.email || "";
+      buyerName = session.customer_details?.name || "";
+    }
+  } catch {
+    // Invalid session ID — will show error page
+  }
+}
+---
+
+<BaseLayout
+  title={isValid ? "Layoff Survival Kit — Your Access" : "Access Not Found"}
+  description="Your private Layoff Survival Kit access page."
+  type="website"
+  noindex={true}
+>
+  {isValid ? (
+    <AccessHub buyerName={buyerName} buyerEmail={buyerEmail} client:load />
+  ) : (
+    <div class="min-h-screen bg-white flex items-center justify-center">
+      <div class="max-w-md mx-auto px-4 text-center">
+        <h1 class="font-display text-2xl font-bold text-navy mb-4">Access not found</h1>
+        <p class="text-text-muted mb-6">
+          This access link is invalid or the payment hasn't been confirmed yet.
+          If you recently purchased the Layoff Survival Kit, check your email
+          for the correct access link. It may take a few minutes to arrive.
+        </p>
+        <div class="space-y-3">
+          <a href="/layoff-survival-kit" class="inline-block bg-blue text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-blue-dark transition-colors text-sm">
+            View the Layoff Survival Kit
+          </a>
+          <p class="text-xs text-text-muted">
+            Need help? <a href="mailto:izzy@joinclearcareer.com" class="text-blue underline">izzy@joinclearcareer.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  )}
+</BaseLayout>

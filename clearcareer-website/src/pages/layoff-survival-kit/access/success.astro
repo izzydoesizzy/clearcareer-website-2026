@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export const prerender = false;
+
+// After Stripe checkout, user lands here with ?session_id=...
+// Redirect them to the access page using the session ID as the token.
+const sessionId = Astro.url.searchParams.get("session_id");
+
+if (sessionId) {
+  return Astro.redirect(`/layoff-survival-kit/access/${sessionId}`);
+}
+---
+
+<BaseLayout title="Payment Received — ClearCareer" description="Your Layoff Survival Kit access is being set up." type="website">
+  <div class="min-h-screen bg-white flex items-center justify-center">
+    <div class="max-w-md mx-auto px-4 text-center">
+      <h1 class="font-display text-2xl font-bold text-navy mb-4">Payment received!</h1>
+      <p class="text-text-muted mb-6">
+        Your access is being set up. You'll receive an email with your private access link in the next few minutes. Check your inbox (and spam folder).
+      </p>
+      <a href="/layoff-survival-kit" class="text-blue text-sm underline">Back to Layoff Survival Kit</a>
+    </div>
+  </div>
+</BaseLayout>

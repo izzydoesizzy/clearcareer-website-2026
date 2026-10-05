@@ -1,0 +1,105 @@
+---
+interface StatItem {
+  number: string;
+  label: string;
+}
+
+interface Props {
+  stats?: StatItem[];
+  variant?: "light" | "dark";
+}
+
+const { stats = [
+  { number: "200+", label: "Professionals Coached" },
+  { number: "$1.2M+", label: "Collective Raises" },
+  { number: "46%", label: "Landed Within 1 Month" },
+  { number: "98%", label: "Client Satisfaction" },
+], variant = "dark" } = Astro.props;
+
+const isDark = variant === "dark";
+---
+
+<section class:list={[
+  "py-12",
+  isDark
+    ? "bg-gradient-to-r from-navy via-[#0a1a4a] to-navy border-y border-blue/10"
+    : "bg-white border-y border-border",
+]}>
+  <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4" data-animate-stagger>
+      {
+        stats.map((stat) => (
+          <div class="text-center">
+            <p
+              class:list={[
+                "text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-none",
+                isDark
+                  ? "bg-gradient-to-r from-blue to-blue-light bg-clip-text text-transparent"
+                  : "text-blue",
+              ]}
+              data-counter={stat.number}
+            >
+              {stat.number}
+            </p>
+            <p class:list={[
+              "mt-2 text-sm font-medium",
+              isDark ? "text-gray-400" : "text-text-muted",
+            ]}>
+              {stat.label}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function parseStatValue(str: string) {
+    const prefix = str.match(/^(\$?)/)?.[1] || '';
+    const numberMatch = str.match(/[\d.]+/);
+    const value = numberMatch ? parseFloat(numberMatch[0]) : 0;
+    const suffix = str.replace(/^\$?[\d.]+/, '');
+    const isDecimal = String(value).includes('.');
+    return { prefix, value, suffix, isDecimal };
+  }
+
+  function animateCounter(el: HTMLElement, target: string, duration = 1600) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = target;
+      return;
+    }
+
+    const { prefix, value, suffix, isDecimal } = parseStatValue(target);
+    let start: number | null = null;
+
+    function step(timestamp: number) {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = isDecimal
+        ? (value * eased).toFixed(1)
+        : Math.floor(value * eased);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    el.textContent = prefix + '0' + suffix;
+    requestAnimationFrame(step);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const target = el.dataset.counter;
+        if (target) animateCounter(el, target);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('[data-counter]').forEach(el => {
+    counterObserver.observe(el);
+  });
+</script>

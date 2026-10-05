@@ -1,0 +1,335 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import StatsBar from "@components/StatsBar.astro";
+import TestimonialCard from "@components/TestimonialCard.astro";
+import TestimonialModal from "@components/TestimonialModal.astro";
+import TestimonialMasonry from "@components/TestimonialMasonry.astro";
+import CTASection from "@components/CTASection.astro";
+
+import testimonials from "@data/testimonials.json";
+import { formatName } from "@utils/format-name";
+
+// Sort by sortPriority (lowest first), entries without it go to the end
+const sorted = [...testimonials].sort((a: any, b: any) => {
+  const pa = a.sortPriority ?? Infinity;
+  const pb = b.sortPriority ?? Infinity;
+  return pa - pb;
+});
+
+// Category definitions with counts
+const categoryCounts = sorted.reduce((acc: Record<string, number>, t) => {
+  acc[t.category] = (acc[t.category] || 0) + 1;
+  return acc;
+}, {});
+
+const categories = [
+  { label: "All", value: "all", count: sorted.length },
+  { label: "Career Outcomes", value: "career-outcome", count: categoryCounts["career-outcome"] || 0 },
+  { label: "Coaching Quality", value: "coaching-quality", count: categoryCounts["coaching-quality"] || 0 },
+  { label: "Workshop Feedback", value: "workshop", count: categoryCounts["workshop"] || 0 },
+  { label: "LinkedIn Reviews", value: "linkedin-review", count: categoryCounts["linkedin-review"] || 0 },
+  { label: "Peer Endorsements", value: "peer-endorsement", count: categoryCounts["peer-endorsement"] || 0 },
+];
+
+const youtubeVideoId = "xyDUx1ji3io";
+---
+
+<PageLayout
+  title="Testimonials | ClearCareer Client Results"
+  description="80+ testimonials from ClearCareer clients. Real professionals, real results: salary increases, faster job placements, and career transformations."
+>
+  {/* Hero */}
+  <Hero
+    variant="page"
+    eyebrow="Client Results"
+    headline="Real People. Real <span class='bg-gradient-to-r from-blue to-blue-light bg-clip-text text-transparent'>Numbers.</span>"
+    subheadline="80 professionals coached. $1.2M+ in collective raises. See what changed for them."
+  />
+
+  {/* Stats Bar */}
+  <StatsBar />
+
+  {/* YouTube Video Section */}
+  <section class="bg-blue-bg/30 py-16 md:py-20">
+    <div class="mx-auto max-w-[800px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-blue">Watch</p>
+        <h2 class="mb-8 font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          Hear It Directly From Clients
+        </h2>
+      </div>
+      <div class="relative aspect-video overflow-hidden rounded-2xl shadow-xl" data-animate="scale-up">
+        <div
+          id="yt-facade"
+          class="absolute inset-0 flex cursor-pointer items-center justify-center bg-navy"
+          data-videoid={youtubeVideoId}
+        >
+          <img
+            src={`https://img.youtube.com/vi/${youtubeVideoId}/maxresdefault.jpg`}
+            alt="ClearCareer client video testimonials"
+            class="h-full w-full object-cover opacity-80"
+            loading="lazy"
+          />
+          <div class="absolute flex h-16 w-16 items-center justify-center rounded-full bg-blue/90 shadow-lg shadow-blue/30 transition-transform hover:scale-110">
+            <svg class="ml-1 h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Outcomes Teaser */}
+  <section class="py-8">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center gap-6 rounded-2xl bg-gradient-to-r from-blue-bg to-white p-6 text-center sm:flex-row sm:text-left" data-animate="fade-up">
+        <div class="flex-1">
+          <p class="text-sm font-semibold uppercase tracking-widest text-blue">By the Numbers</p>
+          <p class="mt-1 text-xl font-bold text-navy">46% of clients land within 1 month. 98% satisfaction.</p>
+          <p class="mt-2 text-text-muted">Backed by survey data from 58 program members, collected 2020-2025.</p>
+        </div>
+        <a
+          href="/outcomes"
+          class="inline-flex shrink-0 items-center gap-2 rounded-lg bg-blue px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-dark hover:shadow-lg hover:shadow-blue/25"
+        >
+          See the Full Report
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Before/After LinkedIn Section */}
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-blue">Transformations</p>
+        <h2 class="mb-8 font-display text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.15] text-navy">
+          Before and After: LinkedIn Profiles Transformed
+        </h2>
+      </div>
+      <div class="relative overflow-hidden" id="before-after-carousel">
+        <div class="flex transition-transform duration-500 ease-out" id="carousel-track">
+          {[
+            { name: "Henrique", before: "/images/before-after/henrique-before.jpg", after: "/images/before-after/henrique-after.jpg" },
+            { name: "Julia", before: "/images/before-after/julia-before.png", after: "/images/before-after/julia-after.png" },
+            { name: "Eblen", before: "/images/before-after/eblen-before.png", after: "/images/before-after/eblen-after.png" },
+            { name: "Nathaniel", before: "/images/before-after/nathaniel-before.png", after: "/images/before-after/nathaniel-after.jpg" },
+            { name: "Rubina", before: "/images/before-after/rubina-before.jpg", after: "/images/before-after/rubina-after.png" },
+          ].map((pair) => (
+            <div class="w-full shrink-0 px-2">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <p class="mb-2 text-center text-xs font-semibold uppercase tracking-wider text-text-muted">Before</p>
+                  <img src={pair.before} alt={`${pair.name} LinkedIn before`} class="w-full rounded-lg shadow-md" loading="lazy" width="820" height="540" />
+                </div>
+                <div>
+                  <p class="mb-2 text-center text-xs font-semibold uppercase tracking-wider text-success">After</p>
+                  <img src={pair.after} alt={`${pair.name} LinkedIn after`} class="w-full rounded-lg shadow-md" loading="lazy" width="820" height="540" />
+                </div>
+              </div>
+              <p class="mt-3 text-center text-sm font-medium text-text-muted">{pair.name}'s transformation</p>
+            </div>
+          ))}
+        </div>
+        <div class="mt-6 flex items-center justify-center gap-4">
+          <button id="carousel-prev" class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-text-muted shadow-sm transition-all hover:border-blue hover:text-blue hover:shadow-md" aria-label="Previous">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div id="carousel-dots" class="flex gap-2">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <button class:list={["h-2.5 w-2.5 rounded-full transition-colors", i === 0 ? "bg-blue" : "bg-border"]} data-dot={i} aria-label={`Go to slide ${i + 1}`}></button>
+            ))}
+          </div>
+          <button id="carousel-next" class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-text-muted shadow-sm transition-all hover:border-blue hover:text-blue hover:shadow-md" aria-label="Next">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Sticky Filter Bar */}
+  <section class="sticky z-30 border-b border-border bg-white/95 py-4 backdrop-blur-sm" id="filter-bar" style="top: 0;">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        {categories.map((cat, i) => (
+          <button
+            data-filter={cat.value}
+            class:list={[
+              "rounded-full border px-3 py-1.5 text-sm font-medium transition-all sm:px-4 sm:py-2",
+              i === 0 ? "border-blue bg-blue text-white shadow-sm" : "border-border bg-white text-text hover:border-blue/30 hover:bg-blue-bg/50",
+            ]}
+          >
+            {cat.label}
+            <span class:list={[
+              "ml-1 text-xs",
+              i === 0 ? "text-blue-100" : "text-text-muted",
+            ]}>({cat.count})</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Testimonial Grid */}
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <TestimonialMasonry id="testimonial-grid">
+        {sorted.map((t: any, i: number) => {
+          const initials = t.name.split(" ").map((n: string) => n[0]).join("").toUpperCase().slice(0, 2);
+          return (
+            <div data-category={t.category} class="testimonial-item">
+              <TestimonialCard
+                name={t.name}
+                role={t.role}
+                quote={t.quote}
+                pullQuote={t.pullQuote || t.tagline || t.quote.slice(0, 150)}
+                outcome={t.outcome}
+                image={t.imagePath}
+                index={i}
+              />
+              {/* Hidden data for modal */}
+              <div
+                class="hidden"
+                data-testimonial-full={i}
+                data-quote={t.quote}
+                data-name={formatName(t.name)}
+                data-role={t.role}
+                data-outcome={t.outcome || ''}
+                data-image={t.imagePath || ''}
+                data-initials={initials}
+              ></div>
+            </div>
+          );
+        })}
+      </TestimonialMasonry>
+    </div>
+  </section>
+
+  {/* Modal */}
+  <TestimonialModal />
+
+  {/* CTA */}
+  <CTASection
+    heading="Ready to Write Your Own <span class='bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent'>Success Story?</span>"
+    primaryCTA={{ text: "Book a Free Audit", href: "https://calendly.com/clearcareer/discovery-call" }}
+    variant="gradient"
+  />
+</PageLayout>
+
+<script>
+  // Set filter bar sticky offset to account for header height
+  function setFilterBarOffset() {
+    const header = document.getElementById('site-header');
+    const filterBar = document.getElementById('filter-bar');
+    if (header && filterBar) {
+      filterBar.style.top = header.offsetHeight + 'px';
+    }
+  }
+  setFilterBarOffset();
+  window.addEventListener('resize', setFilterBarOffset);
+
+  // YouTube facade click handler
+  document.getElementById('yt-facade')?.addEventListener('click', function() {
+    const videoId = (this as HTMLElement).dataset.videoid;
+    if (!videoId || !this.parentElement) return;
+    this.parentElement.innerHTML = `<iframe class="absolute inset-0 h-full w-full" src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  });
+
+  // Filter logic
+  const filterBtns = document.querySelectorAll('[data-filter]');
+  const items = document.querySelectorAll('.testimonial-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update button states
+      filterBtns.forEach(b => {
+        b.classList.remove('border-blue', 'bg-blue', 'text-white', 'shadow-sm');
+        b.classList.add('border-border', 'bg-white', 'text-text');
+        const countSpan = b.querySelector('span');
+        if (countSpan) {
+          countSpan.classList.remove('text-blue-100');
+          countSpan.classList.add('text-text-muted');
+        }
+      });
+      btn.classList.add('border-blue', 'bg-blue', 'text-white', 'shadow-sm');
+      btn.classList.remove('border-border', 'bg-white', 'text-text');
+      const countSpan = btn.querySelector('span');
+      if (countSpan) {
+        countSpan.classList.add('text-blue-100');
+        countSpan.classList.remove('text-text-muted');
+      }
+
+      const filter = (btn as HTMLElement).dataset.filter;
+
+      // Show/hide with animation
+      items.forEach(item => {
+        const el = item as HTMLElement;
+        const matches = filter === 'all' || el.dataset.category === filter;
+
+        if (matches) {
+          el.style.display = '';
+          el.style.opacity = '0';
+          el.style.transform = 'scale(0.96)';
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+              el.style.opacity = '1';
+              el.style.transform = 'scale(1)';
+            });
+          });
+        } else {
+          el.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+          el.style.opacity = '0';
+          el.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            el.style.display = 'none';
+          }, 200);
+        }
+      });
+
+      // Scroll to filter bar so user sees filtered results (prevents layout-collapse jump)
+      const filterBar = document.getElementById('filter-bar');
+      if (filterBar) {
+        setTimeout(() => {
+          filterBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      }
+    });
+  });
+
+  // Before/After Carousel
+  let currentSlide = 0;
+  const totalSlides = 5;
+  const track = document.getElementById('carousel-track');
+  const dots = document.querySelectorAll('[data-dot]');
+
+  function goToSlide(index: number) {
+    currentSlide = Math.max(0, Math.min(index, totalSlides - 1));
+    if (track) {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-blue', i === currentSlide);
+      dot.classList.toggle('bg-border', i !== currentSlide);
+    });
+  }
+
+  document.getElementById('carousel-prev')?.addEventListener('click', () => goToSlide(currentSlide - 1));
+  document.getElementById('carousel-next')?.addEventListener('click', () => goToSlide(currentSlide + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const index = parseInt((dot as HTMLElement).dataset.dot || '0');
+      goToSlide(index);
+    });
+  });
+</script>

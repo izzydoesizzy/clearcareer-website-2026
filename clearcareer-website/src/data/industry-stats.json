@@ -1,0 +1,194 @@
+{
+  "stats": [
+    {
+      "id": "bls-unemployment-duration",
+      "value": "23.7 weeks",
+      "displayValue": "5.5 months",
+      "description": "Average unemployment duration in the US",
+      "source": "U.S. Bureau of Labor Statistics",
+      "year": 2025,
+      "url": "https://www.bls.gov/news.release/empsit.nr0.htm",
+      "category": "job-search-duration"
+    },
+    {
+      "id": "bls-long-term-unemployed",
+      "value": "22.4%",
+      "displayValue": "1 in 5",
+      "description": "Unemployed for 27+ weeks (long-term unemployed)",
+      "source": "U.S. Bureau of Labor Statistics",
+      "year": 2025,
+      "url": "https://www.bls.gov/news.release/empsit.nr0.htm",
+      "category": "job-search-duration"
+    },
+    {
+      "id": "linkedin-senior-search",
+      "value": "6-9 months",
+      "displayValue": "6-9 months",
+      "description": "Average job search duration for senior-level roles",
+      "source": "LinkedIn Economic Graph",
+      "year": 2024,
+      "url": "https://economicgraph.linkedin.com/",
+      "category": "job-search-duration"
+    },
+    {
+      "id": "statscan-unemployment-duration",
+      "value": "21.2 weeks",
+      "displayValue": "~5 months",
+      "description": "Average unemployment duration in Canada",
+      "source": "Statistics Canada",
+      "year": 2024,
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028703",
+      "category": "job-search-duration"
+    },
+    {
+      "id": "glassdoor-applications",
+      "value": "100-200",
+      "displayValue": "100-200+",
+      "description": "Average number of applications per job seeker before landing",
+      "source": "Glassdoor",
+      "year": 2023,
+      "url": "https://www.glassdoor.com/research/",
+      "category": "applications"
+    },
+    {
+      "id": "indeed-callback-rate",
+      "value": "8.5%",
+      "displayValue": "~8.5%",
+      "description": "Average callback rate from job applications",
+      "source": "Indeed Hiring Lab",
+      "year": 2024,
+      "url": "https://www.hiringlab.org/",
+      "category": "applications"
+    },
+    {
+      "id": "recruiter-resume-scan",
+      "value": "7.4 seconds",
+      "displayValue": "7-11 seconds",
+      "description": "Time recruiters spend on initial resume scan",
+      "source": "Ladders Eye-Tracking Study",
+      "year": 2023,
+      "url": "https://www.theladders.com/career-advice/you-only-get-6-seconds-of-fame-make-it-count",
+      "category": "applications"
+    },
+    {
+      "id": "linkedin-networking",
+      "value": "85%",
+      "displayValue": "Up to 85%",
+      "description": "Jobs filled through networking",
+      "source": "LinkedIn",
+      "year": 2024,
+      "url": "https://www.linkedin.com/pulse/new-survey-reveals-85-all-jobs-are-filled-via-networking-lou-adler/",
+      "category": "networking"
+    },
+    {
+      "id": "jobvite-referral-rate",
+      "value": "28.5% vs 2.7%",
+      "displayValue": "10x",
+      "description": "Referral candidates have a 10x higher hire rate than non-referral applicants",
+      "source": "Jobvite Recruiter Nation Report",
+      "year": 2024,
+      "url": "https://www.jobvite.com/lp/recruiter-nation/",
+      "category": "networking"
+    },
+    {
+      "id": "linkedin-hidden-market",
+      "value": "70%",
+      "displayValue": "~70%",
+      "description": "Positions never publicly posted",
+      "source": "LinkedIn",
+      "year": 2024,
+      "url": "https://www.linkedin.com/",
+      "category": "hidden-market"
+    },
+    {
+      "id": "ghost-jobs",
+      "value": "27-40%",
+      "displayValue": "Up to 40%",
+      "description": "Job listings that may be ghost jobs or fake postings",
+      "source": "Resume Builder / Clarify Capital",
+      "year": 2024,
+      "url": "https://www.resumebuilder.com/3-in-10-companies-currently-have-fake-job-postings/",
+      "category": "hidden-market"
+    },
+    {
+      "id": "pew-negotiation",
+      "value": "55%",
+      "displayValue": "55%",
+      "description": "Workers who did NOT negotiate salary when hired",
+      "source": "Pew Research Center",
+      "year": 2023,
+      "url": "https://www.pewresearch.org/social-trends/2023/03/30/gun-violence-gender-pay-gap-immigration-student-debt/",
+      "category": "salary-negotiation"
+    },
+    {
+      "id": "fidelity-employers-negotiate",
+      "value": "73%",
+      "displayValue": "73%",
+      "description": "Employers willing to negotiate first salary offers",
+      "source": "Fidelity Investments",
+      "year": 2024,
+      "url": "https://www.fidelity.com/learning-center/smart-money/salary-negotiation-tips",
+      "category": "salary-negotiation"
+    },
+    {
+      "id": "hbr-negotiation-cost",
+      "value": "$750K-$1.5M",
+      "displayValue": "$750K+",
+      "description": "Lifetime earnings lost by not negotiating salary",
+      "source": "Harvard Business Review",
+      "year": 2023,
+      "url": "https://hbr.org/2014/06/why-women-dont-negotiate-their-job-offers",
+      "category": "salary-negotiation"
+    },
+    {
+      "id": "glassdoor-negotiation-premium",
+      "value": "7-10%",
+      "displayValue": "7-10%",
+      "description": "Higher salary earned by workers who negotiate vs. those who don't",
+      "source": "Glassdoor",
+      "year": 2024,
+      "url": "https://www.glassdoor.com/blog/guide/how-to-negotiate-salary/",
+      "category": "salary-negotiation"
+    },
+    {
+      "id": "icf-coaching-confidence",
+      "value": "80%",
+      "displayValue": "80%",
+      "description": "Coaching clients who report improved self-confidence",
+      "source": "International Coaching Federation (ICF)",
+      "year": 2023,
+      "url": "https://coachingfederation.org/research/global-coaching-study",
+      "category": "coaching-roi"
+    },
+    {
+      "id": "icf-coaching-roi",
+      "value": "7x",
+      "displayValue": "7x",
+      "description": "Median ROI of coaching investment",
+      "source": "International Coaching Federation (ICF)",
+      "year": 2023,
+      "url": "https://coachingfederation.org/research/global-coaching-study",
+      "category": "coaching-roi"
+    },
+    {
+      "id": "statscan-immigrant-unemployment",
+      "value": "11.1% vs 5.6%",
+      "displayValue": "2x",
+      "description": "Immigrant unemployment rate vs Canadian-born",
+      "source": "Statistics Canada",
+      "year": 2024,
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410008301",
+      "category": "canadian"
+    },
+    {
+      "id": "census-immigrant-overqualified",
+      "value": "44%",
+      "displayValue": "Only 44%",
+      "description": "Immigrants with degrees working in education-matched jobs",
+      "source": "Statistics Canada, 2021 Census",
+      "year": 2021,
+      "url": "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/index-eng.cfm",
+      "category": "canadian"
+    }
+  ]
+}

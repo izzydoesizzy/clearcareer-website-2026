@@ -1,0 +1,183 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import WorthResult from "@components/wrapped/WorthResult";
+
+const result = {
+  anchorValue: 155000,
+  currency: "CAD",
+  userLocation: "Toronto, Canada",
+  localSalary: [
+    {
+      title: "Career Coach",
+      low: 55000, median: 75000, high: 100000,
+      isCurrent: true, isRecommended: false,
+      source: "Payscale",
+      sourceUrl: "https://www.payscale.com/research/CA/Job=Career_Coach/Salary"
+    },
+    {
+      title: "Community Manager",
+      low: 70000, median: 95000, high: 120000,
+      isCurrent: false, isRecommended: false,
+      source: "Glassdoor",
+      sourceUrl: "https://www.glassdoor.com/Salaries/toronto-community-manager-salary-SRCH_KO0,17.htm"
+    },
+    {
+      title: "Sr. Implementation Strategist",
+      low: 95000, median: 120000, high: 145000,
+      isCurrent: false, isRecommended: false,
+      source: "LinkedIn Salary",
+      sourceUrl: "https://www.linkedin.com/salary/senior-implementation-strategist-salaries-in-toronto"
+    },
+    {
+      title: "Director, Client Success",
+      low: 120000, median: 155000, high: 195000,
+      isCurrent: false, isRecommended: true,
+      source: "Glassdoor",
+      sourceUrl: "https://www.glassdoor.com/Salaries/toronto-director-client-success-salary-SRCH_KO0,30.htm"
+    },
+    {
+      title: "Head of Community & Programs",
+      low: 135000, median: 170000, high: 210000,
+      isCurrent: false, isRecommended: false,
+      source: "Levels.fyi",
+      sourceUrl: "https://www.levels.fyi/t/head-of-community?country=254"
+    }
+  ],
+  titleGap: {
+    currentTitle: "Founder & Career Coach",
+    recommendedTitle: "Director of Client Success & Community",
+    levelDifference: 2,
+    summary: "Your title undersells your work by 1-2 levels"
+  },
+  salaryByLocation: [
+    {
+      location: "Vancouver, BC",
+      low: 115000, median: 150000, high: 190000,
+      source: "Glassdoor",
+      sourceUrl: "https://www.glassdoor.com/Salaries/vancouver-director-of-client-success-salary-SRCH_KO0,35.htm",
+      isHighest: true
+    },
+    {
+      location: "Montreal, QC",
+      low: 95000, median: 125000, high: 160000,
+      source: "Indeed",
+      sourceUrl: "https://ca.indeed.com/career/director-of-client-success/salaries/Montreal",
+      isHighest: false
+    },
+    {
+      location: "Calgary, AB",
+      low: 100000, median: 135000, high: 175000,
+      source: "Payscale",
+      sourceUrl: "https://www.payscale.com/research/CA/Job=Director_of_Client_Success/Salary/Calgary",
+      isHighest: false
+    },
+    {
+      location: "Ottawa, ON",
+      low: 100000, median: 130000, high: 165000,
+      source: "LinkedIn Salary",
+      sourceUrl: "https://www.linkedin.com/salary/director-of-client-success-salaries-in-ottawa",
+      isHighest: false
+    }
+  ],
+  salaryByTitle: [
+    {
+      title: "Career Coach",
+      median: 75000, range: "$55K-$100K",
+      isCurrent: true, isRecommended: false,
+      source: "Payscale",
+      sourceUrl: "https://www.payscale.com/research/CA/Job=Career_Coach/Salary"
+    },
+    {
+      title: "Community Manager",
+      median: 95000, range: "$70K-$120K",
+      isCurrent: false, isRecommended: false,
+      source: "Glassdoor",
+      sourceUrl: "https://www.glassdoor.com/Salaries/toronto-community-manager-salary-SRCH_KO0,17.htm"
+    },
+    {
+      title: "Sr. Implementation Strategist",
+      median: 120000, range: "$95K-$145K",
+      isCurrent: false, isRecommended: false,
+      source: "LinkedIn Salary",
+      sourceUrl: "https://www.linkedin.com/salary/senior-implementation-strategist-salaries-in-toronto"
+    },
+    {
+      title: "Director, Client Success",
+      median: 155000, range: "$120K-$195K",
+      isCurrent: false, isRecommended: true,
+      source: "Glassdoor",
+      sourceUrl: "https://www.glassdoor.com/Salaries/toronto-director-client-success-salary-SRCH_KO0,30.htm"
+    },
+    {
+      title: "Head of Community & Programs",
+      median: 170000, range: "$135K-$210K",
+      isCurrent: false, isRecommended: false,
+      source: "Levels.fyi",
+      sourceUrl: "https://www.levels.fyi/t/head-of-community?country=254"
+    }
+  ],
+  alternativeTitles: [
+    {
+      title: "Director of Community",
+      fitReason: "Lighthouse Labs + Skool scaling across 6 cities",
+      medianSalary: 145000,
+      linkedinSearchUrl: "https://www.linkedin.com/jobs/search-results?skipRedirect=true&keywords=%22Director+of+Community%22+OR+%22Head+of+Community%22+AND+%22tech%22+OR+%22SaaS%22&origin=SEMANTIC_SEARCH_HISTORY&f_TPR=r604800&distance=0.0&geoId=101174742",
+      booleanQuery: "\"Director of Community\" OR \"Head of Community\" AND \"tech\" OR \"SaaS\""
+    },
+    {
+      title: "Customer Success Director",
+      fitReason: "60 implementations at Dutchie + 200 coaching clients",
+      medianSalary: 160000,
+      linkedinSearchUrl: "https://www.linkedin.com/jobs/search-results?skipRedirect=true&keywords=%22Customer+Success+Director%22+OR+%22Director+of+Customer+Success%22+AND+%22SaaS%22&origin=SEMANTIC_SEARCH_HISTORY&f_TPR=r604800&distance=0.0&geoId=101174742",
+      booleanQuery: "\"Customer Success Director\" OR \"Director of Customer Success\" AND \"SaaS\""
+    },
+    {
+      title: "Head of Enablement",
+      fitReason: "Program design + AI tooling + curriculum creation",
+      medianSalary: 170000,
+      linkedinSearchUrl: "https://www.linkedin.com/jobs/search-results?skipRedirect=true&keywords=%22Head+of+Enablement%22+OR+%22Director+of+Enablement%22+AND+%22AI%22+OR+%22coaching%22&origin=SEMANTIC_SEARCH_HISTORY&f_TPR=r604800&distance=0.0&geoId=101174742",
+      booleanQuery: "\"Head of Enablement\" OR \"Director of Enablement\" AND \"AI\" OR \"coaching\""
+    },
+    {
+      title: "Developer Relations Lead",
+      fitReason: "freeCodeConf + 30 tech partnerships + community events",
+      medianSalary: 155000,
+      linkedinSearchUrl: "https://www.linkedin.com/jobs/search-results?skipRedirect=true&keywords=%22Developer+Relations%22+OR+%22DevRel+Lead%22+OR+%22Developer+Advocate%22+AND+%22community%22&origin=SEMANTIC_SEARCH_HISTORY&f_TPR=r604800&distance=0.0&geoId=101174742",
+      booleanQuery: "\"Developer Relations\" OR \"DevRel Lead\" OR \"Developer Advocate\" AND \"community\""
+    },
+    {
+      title: "AI Programs Manager",
+      fitReason: "Custom GPTs + Claude Code agent + AI client tools",
+      medianSalary: 150000,
+      linkedinSearchUrl: "https://www.linkedin.com/jobs/search-results?skipRedirect=true&keywords=%22AI+Programs+Manager%22+OR+%22AI+Program+Lead%22+AND+%22coaching%22+OR+%22enablement%22&origin=SEMANTIC_SEARCH_HISTORY&f_TPR=r604800&distance=0.0&geoId=101174742",
+      booleanQuery: "\"AI Programs Manager\" OR \"AI Program Lead\" AND \"coaching\" OR \"enablement\""
+    }
+  ],
+  topCompanies: [
+    { name: "Shopify", whyTheyPay: "Merchant success teams pay Toronto-market premiums for community + tech hybrids" },
+    { name: "HubSpot", whyTheyPay: "Implementation + community hybrid roles compensated well at director level" },
+    { name: "LinkedIn", whyTheyPay: "US-level compensation for Canadian remote roles in Learning & Career verticals" }
+  ],
+  sources: [
+    { name: "Glassdoor", url: "https://www.glassdoor.com", note: "Toronto and NYC salary data" },
+    { name: "Levels.fyi", url: "https://www.levels.fyi", note: "Tech compensation benchmarks" },
+    { name: "Payscale", url: "https://www.payscale.com", note: "Canadian and US salary research" },
+    { name: "Indeed", url: "https://indeed.com", note: "UK market salary data" },
+    { name: "LinkedIn Salary", url: "https://www.linkedin.com/salary", note: "Role-specific benchmarks" }
+  ],
+  methodology: "Based on 14+ years spanning SaaS implementation, community scaling, and program design. Benchmarked against Director-level Client Success roles in the Toronto tech market with AI tooling as an accelerator."
+};
+---
+
+<PageLayout title="Worth Report Demo | ClearCareer" description="Demo of the Worth Report.">
+  <section class="py-12 md:py-16">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="inline-flex items-center gap-2 rounded-full bg-amber-100 px-4 py-1.5 text-sm font-medium text-amber-700">
+          Demo Preview
+        </span>
+      </div>
+      <WorthResult client:load result={result} resultId="demo" isOwner={false} />
+    </div>
+  </section>
+</PageLayout>

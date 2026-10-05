@@ -1,0 +1,55 @@
+---
+const steps = [
+  {
+    step: "Week 1",
+    title: "Land in the room",
+    body: "Introduce yourself, grab the templates, and book your first weekly call. You go from isolated to supported in a single afternoon.",
+  },
+  {
+    step: "Weeks 2–4",
+    title: "Build unstoppable momentum",
+    body: "Rework your resume and outreach with live feedback. Send targeted messages instead of shouting into the void. Replies start coming back.",
+  },
+  {
+    step: "Weeks 4–8",
+    title: "Interview like a consultant",
+    body: "Rehearse answers in workshops, refine your story, and walk into interviews calm and prepared with a crew that has your back.",
+  },
+  {
+    step: "The offer",
+    title: "Negotiate what you're worth",
+    body: "Use the frameworks members have used to land $10K–$30K bumps. Then stay and help the next person do the same.",
+  },
+];
+---
+
+<section data-cc-progress-section class="relative overflow-hidden bg-blue-bg/40 py-20 md:py-28">
+  <div class="mx-auto max-w-[760px] px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <p data-cc-fade class="text-sm font-semibold uppercase tracking-[0.2em] text-blue">How it works</p>
+      <h2 data-cc-fade class="mx-auto mt-4 max-w-[18ch] font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight text-navy">
+        From stuck and solo to hired, with a team beside you
+      </h2>
+    </div>
+
+    <div class="relative mt-16 pl-12 md:pl-16">
+      <!-- track -->
+      <div class="absolute left-[18px] top-2 bottom-2 w-0.5 bg-blue/15 md:left-[26px]" aria-hidden="true">
+        <div data-cc-progress class="h-full w-full origin-top bg-gradient-to-b from-blue to-teal" style="transform: scaleY(0);"></div>
+      </div>
+
+      <div class="space-y-12">
+        {steps.map((s, i) => (
+          <div data-cc-fade class="relative">
+            <div class="absolute -left-12 top-0 flex h-9 w-9 items-center justify-center rounded-full border-2 border-blue bg-white font-display text-sm text-blue md:-left-16 md:h-12 md:w-12 md:text-base">
+              {i + 1}
+            </div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-blue">{s.step}</p>
+            <h3 class="mt-2 text-xl font-semibold text-navy md:text-2xl">{s.title}</h3>
+            <p class="mt-3 text-[1.0625rem] leading-[1.7] text-text-muted">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

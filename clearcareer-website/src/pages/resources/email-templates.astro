@@ -1,0 +1,823 @@
+---
+import LeadMagnetLayout from "@layouts/LeadMagnetLayout.astro";
+
+const templates = [
+  {
+    id: "informational-interview",
+    icon: "☕",
+    title: "Informational Interview Request",
+    useCase: "Requesting a chat with someone in your target industry, company, or role.",
+    template: `Hi [FIRST NAME],
+
+I hope you're having a nice start to your week! My name is [YOUR NAME] and I came across your profile through your [BLOG/LINKEDIN/PODCAST/VIDEO] and really loved what you said about [SOMETHING SPECIFIC].
+
+I'm currently trying to find a role as a [ROLE TITLE] and given your extensive experience in the field, I would really value your advice on how to break into the industry.
+
+A bit about me:
+- [Relevant accomplishment]
+- [Relevant accomplishment]
+- [Relevant accomplishment]
+
+I'd love to ask you about your insights on [INDUSTRY, JOB, COMPANY]. Would you be available for a short 20 minute chat on [SPECIFIC DATE/TIME]? It would be immensely valuable for me.
+
+Looking forward to hearing from you!
+
+All the best,
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]`,
+    example: `Hi Kai,
+
+I hope you're having a good week so far! My name is Imani and I came across your profile a while ago as a result of searching for the top digital marketing agencies in Toronto. I've got to say, after taking a look at your personal website your experience speaks for itself!
+
+I'm a relative newcomer to Toronto, and have been on the hunt for digital marketing roles. Seeing as you're someone with a lot of experience in this field, I wanted to get in touch.
+
+A bit about me:
+
+- A few months ago, I launched a google campaign that saw an 8x increase in conversion rates, which led to the company having its best months in online sales back to back.
+- This year, I wrote and designed over 20 email campaigns that increased open rates by 10% (avg) and increased the CTR by 11% (avg)
+- In the last 6 months, I've redesigned over 20 webpages to improve their SEO and/or optimize them for conversions.
+
+I'd love the opportunity to hop on a short call and learn a bit more about the marketing landscape here in Toronto and any insights you might be willing to share.
+
+Would you be available for a short 20 minute chat on Monday, December 9, at 11am? If not I'm happy to work around your schedule.
+
+Looking forward to hearing from you!
+
+All the best,
+Imani Diaz
+Marketing Manager
+linkedin.com/in/imanimarketing`,
+    exampleName: "Imani",
+    exampleRole: "Marketing Manager",
+    aiPrompt: `Help me write an informational interview request email using the template below. Replace all [BRACKETED] placeholders with my information.
+
+My details:
+- My name: [YOUR NAME]
+- My target role: [ROLE TITLE]
+- Person I'm reaching out to: [THEIR NAME]
+- How I found them: [BLOG/LINKEDIN/PODCAST/VIDEO]
+- What specifically impressed me: [SOMETHING SPECIFIC]
+- My 3 relevant accomplishments:
+  1. [ACCOMPLISHMENT WITH NUMBERS]
+  2. [ACCOMPLISHMENT WITH NUMBERS]
+  3. [ACCOMPLISHMENT WITH NUMBERS]
+- Industry/company I want to learn about: [INDUSTRY, JOB, COMPANY]
+- Proposed meeting time: [SPECIFIC DATE/TIME]
+
+Here is the template to follow:
+
+---
+Hi [FIRST NAME],
+
+I hope you're having a nice start to your week! My name is [YOUR NAME] and I came across your profile through your [BLOG/LINKEDIN/PODCAST/VIDEO] and really loved what you said about [SOMETHING SPECIFIC].
+
+I'm currently trying to find a role as a [ROLE TITLE] and given your extensive experience in the field, I would really value your advice on how to break into the industry.
+
+A bit about me:
+- [Relevant accomplishment]
+- [Relevant accomplishment]
+- [Relevant accomplishment]
+
+I'd love to ask you about your insights on [INDUSTRY, JOB, COMPANY]. Would you be available for a short 20 minute chat on [SPECIFIC DATE/TIME]? It would be immensely valuable for me.
+
+Looking forward to hearing from you!
+
+All the best,
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]
+---
+
+Write the email using a warm, professional tone. Keep the same structure as the template but make it feel natural, not robotic.`,
+  },
+  {
+    id: "event-volunteer",
+    icon: "🎪",
+    title: "Become an Event Volunteer",
+    useCase: "Getting into expensive industry conferences for free by offering to volunteer.",
+    template: `Hi [ORGANIZER NAME],
+
+I hope you're having a nice week! I wanted to reach out because I just came across the upcoming [EVENT NAME] event in [CITY] on [DATE].
+
+I'm a [PROFESSION] looking to learn from the industry leaders in [INDUSTRY/FIELD].
+
+I'm currently between jobs, which makes the admission price a barrier for me to attend. Knowing that, I would still love to be involved. Are there any opportunities to volunteer with the event?
+
+Thanks for your time! I'm excited to find ways to bring value to this incredible event!
+
+I look forward to hearing from you!
+
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]`,
+    example: `Hi Diego,
+
+I hope you're having a nice week! I wanted to reach out because I just came across the upcoming Content Marketing World event in San Diego on November 14-16, 2024.
+
+I'm a Content Writer looking to learn from the industry leaders in content marketing. I'm currently between jobs, which makes the admission price a barrier for me to attend. Knowing that, I would still love to be involved.
+
+Are there any opportunities to volunteer with the event? In addition to event logistics, registration and other standard volunteer roles, some areas I'd be happy to add value are through event photography, live-blogging, and A/V or technical support.
+
+Thanks for your time! I'm excited to find ways to bring value to this incredible event! I look forward to hearing from you!
+
+Hiroshi Nakamura
+Content Marketer
+linkedin.com/in/hironaka`,
+    exampleName: "Hiroshi",
+    exampleRole: "Content Marketer",
+    aiPrompt: `Help me write an email to volunteer at an industry event using the template below. Replace all [BRACKETED] placeholders with my information.
+
+My details:
+- Event organizer's name: [ORGANIZER NAME]
+- Event name: [EVENT NAME]
+- City and date: [CITY] on [DATE]
+- My profession: [PROFESSION]
+- Industry/field: [INDUSTRY/FIELD]
+- Special skills I can offer (e.g., photography, live-blogging, A/V): [SKILLS]
+
+Here is the template to follow:
+
+---
+Hi [ORGANIZER NAME],
+
+I hope you're having a nice week! I wanted to reach out because I just came across the upcoming [EVENT NAME] event in [CITY] on [DATE].
+
+I'm a [PROFESSION] looking to learn from the industry leaders in [INDUSTRY/FIELD].
+
+I'm currently between jobs, which makes the admission price a barrier for me to attend. Knowing that, I would still love to be involved. Are there any opportunities to volunteer with the event?
+
+Thanks for your time! I'm excited to find ways to bring value to this incredible event!
+
+I look forward to hearing from you!
+
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]
+---
+
+Write the email using an enthusiastic but professional tone. Mention specific ways I can add value beyond standard volunteer roles.`,
+  },
+  {
+    id: "hiring-manager",
+    icon: "📨",
+    title: "Email to a Hiring Manager",
+    useCase: "Introducing yourself directly to a hiring manager after applying for a job.",
+    template: `Hi [FIRST NAME],
+
+I hope you're having a nice start to your week! My name is [YOUR NAME] and I recently came across the opening for [ROLE] and would love to learn more about it.
+
+I've already submitted my application on [WEBSITE/LINKEDIN/INDEED] and wanted to reach out directly and introduce myself as well.
+
+A bit about me:
+1. [PROFESSIONAL SUMMARY]
+2. [NOTEWORTHY PAST CLIENTS/COMPANIES]
+3. [IMPRESSIVE ACHIEVEMENT RELATED TO COMPANY GOALS/PRIORITIES]
+
+I'd love the opportunity to meet to learn more about the role and discuss what I can bring to the team at [COMPANY]. [Bonus, add something specific you can help with].
+
+Thank you for your consideration!
+
+I look forward to hearing from you!
+
+All the best,
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]`,
+    example: `Hi Leila,
+
+I hope you're having a nice start to your week! My name is Alex Chen and I recently came across the opening for Product Manager at Innovatech Solutions and would love to learn more about it.
+
+I've already submitted my application on LinkedIn and wanted to reach out directly and introduce myself as well.
+
+A bit about me:
+
+1. I'm a Senior Product Manager with 10+ years of experience in leading digital innovation, strategic partnerships, and product development in the fintech industry.
+
+2. I've implemented solutions that revolutionized user engagement for clients like Visa, Mastercard, and PayPal, managing portfolios worth $400 million+.
+
+3. I onboarded over 300K small business accounts onto PayPal within 12 months by designing a simplified digital registration process and providing dedicated support teams.
+
+I'd love the opportunity to meet to learn more about the role and discuss what I can bring to the team at Innovatech Solutions, especially in terms of utilizing agile methodologies to accelerate product development cycles.
+
+Thank you for your consideration!
+
+I look forward to hearing from you!
+
+All the best,
+Alex Chen
+Product Manager
+linkedin.com/in/alexchenpm`,
+    exampleName: "Alex",
+    exampleRole: "Product Manager",
+    aiPrompt: `Help me write an email to a hiring manager using the template below. Replace all [BRACKETED] placeholders with my information.
+
+My details:
+- Hiring manager's first name: [FIRST NAME]
+- Role I applied for: [ROLE]
+- Company: [COMPANY]
+- Where I applied: [WEBSITE/LINKEDIN/INDEED]
+- About me:
+  1. Professional summary: [YEARS OF EXPERIENCE, SPECIALTY]
+  2. Notable companies/clients: [COMPANIES]
+  3. Impressive achievement: [ACHIEVEMENT WITH NUMBERS]
+- Something specific I can help with: [VALUE I CAN BRING]
+
+Here is the template to follow:
+
+---
+Hi [FIRST NAME],
+
+I hope you're having a nice start to your week! My name is [YOUR NAME] and I recently came across the opening for [ROLE] and would love to learn more about it.
+
+I've already submitted my application on [WEBSITE/LINKEDIN/INDEED] and wanted to reach out directly and introduce myself as well.
+
+A bit about me:
+1. [PROFESSIONAL SUMMARY]
+2. [NOTEWORTHY PAST CLIENTS/COMPANIES]
+3. [IMPRESSIVE ACHIEVEMENT RELATED TO COMPANY GOALS/PRIORITIES]
+
+I'd love the opportunity to meet to learn more about the role and discuss what I can bring to the team at [COMPANY]. [Bonus, add something specific you can help with].
+
+Thank you for your consideration!
+
+I look forward to hearing from you!
+
+All the best,
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]
+---
+
+Write the email in a warm, professional tone. Make the achievements concrete with numbers.`,
+  },
+  {
+    id: "thank-you",
+    icon: "✨",
+    title: "Thank-You Email (The SHINE Framework)",
+    useCase: "Crafting an unforgettable thank-you email that highlights the value you bring based on their top priorities.",
+    template: `Hi [FIRST NAME],
+
+Thank you so much for taking the time to speak with me today. It was such a pleasure meeting you all and learning about the company and the team. [Memorable moment from the interview / something you learned and liked/appreciated].
+
+Based on our conversation, it sounds like the team at [COMPANY NAME] is looking for someone who can [PRIORITY 1], [PRIORITY 2], [PRIORITY 3].
+
+Based on that, here are a few additional things I'm confident will make me the ideal fit for the role:
+
+1. [PRIORITY 1]
+[RELEVANT ACHIEVEMENT DEMONSTRATING IMPACT]
+
+2. [PRIORITY 2]
+[RELEVANT ACHIEVEMENT DEMONSTRATING IMPACT]
+
+3. [PRIORITY 3]
+[RELEVANT ACHIEVEMENT DEMONSTRATING IMPACT]
+
+[Optional section: Address a concern, or a mistake you made]
+
+I'm excited about the opportunity to work with the team at [COMPANY NAME] because of [Challenge/Opportunity/Value]. [Restate your fit, and value proposition].
+
+Thanks again for the opportunity, and I look forward to hearing from you.
+
+All the best,
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]`,
+    example: `Hi Priya,
+
+Thank you so much for taking the time to speak with me today. It was such a pleasure meeting you and learning about TechCrunch's dedication to spotlighting innovative technologies like AI, CleanTech, and Blockchain. Your focus on these important industry trends and your commitment to making a positive impact through journalism are truly inspiring.
+
+Based on our conversation, it sounds like the team at TechCrunch is looking for someone who can stay knowledgeable about industry trends like AI, CleanTech, and Blockchain, write high-impact, relatable articles that attract readers, and manage complex priorities while delivering results on time.
+
+Here are a few relevant achievements I'm confident will demonstrate the value I am excited to bring to the team:
+
+1. Knowledgeable on Industry Trends:
+I've secured interviews with 15 renowned AI, CleanTech, and Blockchain experts, which resulted in engaging articles that attracted a combined total of 1 million unique readers and significant audience engagement over social media.
+
+2. High-Impact, Relatable Articles:
+I've produced 5 viral articles on ChatGPT with over 100,000 shares each, contributing to a 35% growth in overall readership in the AI category of the blog, demonstrating my ability to write pieces that resonate with a broad audience.
+
+3. Delivering Results on Time:
+During Apple's WWDC conference, I successfully delivered 15 high-quality articles within 24 hours of major announcements. These sparked vibrant conversation over social media and received commendation for their timely and insightful coverage.
+
+Your focus on covering impactful tech and shaping conversations that matter in the world of technology resonates with my own passion and experience. I'm excited about the opportunity to bring my skills and enthusiasm to TechCrunch, further expanding its readership with compelling and timely content.
+
+Thank you again for considering me for this opportunity, and I look forward to hearing from you soon.
+
+All the best,
+Anushka Sharma
+Tech Content Writer
+linkedin.com/in/anushkasharmatech`,
+    exampleName: "Anushka",
+    exampleRole: "Tech Content Writer",
+    aiPrompt: `Help me write a post-interview thank-you email using the SHINE framework and the template below. Replace all [BRACKETED] placeholders with my information.
+
+The SHINE Framework:
+S - Share something memorable from the interview
+H - Highlight their top 3 priorities
+I - Illustrate with achievements that match each priority
+N - Neutralize their top concern about you
+E - Envision the value you'll bring
+
+My details:
+- Interviewer's name: [FIRST NAME]
+- Company: [COMPANY NAME]
+- Memorable moment from interview: [SOMETHING SPECIFIC]
+- Their 3 priorities: [PRIORITY 1], [PRIORITY 2], [PRIORITY 3]
+- My achievement for priority 1: [ACHIEVEMENT WITH NUMBERS]
+- My achievement for priority 2: [ACHIEVEMENT WITH NUMBERS]
+- My achievement for priority 3: [ACHIEVEMENT WITH NUMBERS]
+- Their biggest concern about me: [CONCERN]
+- Why it shouldn't be a concern: [YOUR RESPONSE]
+- What excites me about the company: [CHALLENGE/OPPORTUNITY]
+
+Here is the template to follow:
+
+---
+Hi [FIRST NAME],
+
+Thank you so much for taking the time to speak with me today. It was such a pleasure meeting you all and learning about the company and the team. [Memorable moment from the interview / something you learned and liked/appreciated].
+
+Based on our conversation, it sounds like the team at [COMPANY NAME] is looking for someone who can [PRIORITY 1], [PRIORITY 2], [PRIORITY 3].
+
+Based on that, here are a few additional things I'm confident will make me the ideal fit for the role:
+
+1. [PRIORITY 1]
+[RELEVANT ACHIEVEMENT DEMONSTRATING IMPACT]
+
+2. [PRIORITY 2]
+[RELEVANT ACHIEVEMENT DEMONSTRATING IMPACT]
+
+3. [PRIORITY 3]
+[RELEVANT ACHIEVEMENT DEMONSTRATING IMPACT]
+
+[Optional section: Address a concern, or a mistake you made]
+
+I'm excited about the opportunity to work with the team at [COMPANY NAME] because of [Challenge/Opportunity/Value]. [Restate your fit, and value proposition].
+
+Thanks again for the opportunity, and I look forward to hearing from you.
+
+All the best,
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]
+---
+
+Write in a warm, confident tone. Make achievements specific with numbers.`,
+  },
+  {
+    id: "follow-up",
+    icon: "📅",
+    title: "1-Week Post-Interview Follow Up",
+    useCase: "Showing continued interest and re-engaging with the employer one week after your interview.",
+    template: `Subject: Follow-Up on [Position Title] Interview
+
+Hi [Director/Recruiter's Name],
+
+I hope you had a great [long weekend/holiday/week]. I'm reaching out to express my continued enthusiasm for the [Position Title] role at [Company Name] after our discussion last [week/day].
+
+I was reading some of the team's latest LinkedIn posts and really enjoyed learning about [specific project or initiative], which [describe the initiative briefly and why it stood out]. Reading this, along with [mention another relevant project or initiative], truly shows the team's culture of [relevant company values or culture aspects], which aligns perfectly with my passion for [related professional interest or value].
+
+Could you please also share any updates on the timeline for the next steps?
+
+I'm excited about the possibility of joining a team that embodies such a [positive description of the company culture].
+
+Thank you for your time and consideration.
+
+Best regards,
+[Your Name]`,
+    example: `Hi Allan,
+
+I hope you enjoyed your weekend. I wanted to follow up on our conversation last week regarding the Park Operations Coordinator role at Jurassic Park. I'm more excited than ever about the opportunity to contribute to such an iconic and groundbreaking destination.
+
+I recently revisited some of Jurassic Park's latest initiatives and was particularly impressed by your focus on integrating sustainable practices into the park's daily operations. The collaboration with BioSyn to develop eco-friendly containment systems for the dinosaurs demonstrates Jurassic Park's commitment to innovation and environmental stewardship, values that are extremely important to me.
+
+Could you provide any updates on the timeline for the next steps in the hiring process?
+
+I'm eager to join a team that's not only at the forefront of entertainment and science but also deeply committed to sustainability and safety.
+
+Thank you for your time and consideration.
+
+Best regards,
+Izzy Piyale-Sheard
+Operations Coordinator
+linkedin.com/in/izzydoesizzy`,
+    exampleName: "Izzy",
+    exampleRole: "Operations Coordinator",
+    aiPrompt: `Help me write a 1-week post-interview follow-up email using the template below. Replace all [BRACKETED] placeholders with my information.
+
+My details:
+- Interviewer's name: [NAME]
+- Position: [POSITION TITLE]
+- Company: [COMPANY NAME]
+- When we spoke: last [WEEK/DAY]
+- Recent LinkedIn post/initiative I noticed: [SPECIFIC PROJECT OR INITIATIVE]
+- Why it stood out to me: [REASON]
+- Another relevant project: [ANOTHER INITIATIVE]
+- Company value this shows: [CULTURE/VALUE]
+- My related passion: [PROFESSIONAL INTEREST]
+
+Here is the template to follow:
+
+---
+Subject: Follow-Up on [Position Title] Interview
+
+Hi [Director/Recruiter's Name],
+
+I hope you had a great [long weekend/holiday/week]. I'm reaching out to express my continued enthusiasm for the [Position Title] role at [Company Name] after our discussion last [week/day].
+
+I was reading some of the team's latest LinkedIn posts and really enjoyed learning about [specific project or initiative], which [describe the initiative briefly and why it stood out]. Reading this, along with [mention another relevant project or initiative], truly shows the team's culture of [relevant company values or culture aspects], which aligns perfectly with my passion for [related professional interest or value].
+
+Could you please also share any updates on the timeline for the next steps?
+
+I'm excited about the possibility of joining a team that embodies such a [positive description of the company culture].
+
+Thank you for your time and consideration.
+
+Best regards,
+[Your Name]
+---
+
+Keep it concise and professional. Show genuine interest without being pushy.`,
+  },
+  {
+    id: "post-rejection",
+    icon: "🔄",
+    title: "Post-Rejection Follow-Up",
+    useCase: "Leaving a positive impression after a rejection and keeping the door open for future roles.",
+    template: `Subject: Appreciation and Continued Interest: [Your Name] - [Position] Application
+
+Dear [Interviewer's Name],
+
+I hope this message finds you well. I wanted to express my sincere gratitude for considering my application for the [Position] role at [Company Name]. Our discussion about [specific topic discussed in interview] was truly enlightening.
+
+While I'm disappointed not to have been selected, my enthusiasm for [Company Name]'s mission to [company's main goal or mission] remains strong. I'm particularly excited about the company's work in [specific project or initiative mentioned during interview].
+
+I would appreciate any feedback you could provide on my application or interview, especially regarding [specific task or presentation you did during the interview process]. Your insights would be invaluable for my professional development.
+
+I would love to stay connected and be considered for future opportunities where my [your key skills] could contribute to [Company Name]'s goals. I look forward to following [Company Name]'s progress, especially [upcoming project or launch mentioned in interview].
+
+Thank you again for your time and consideration. I wish you and the [Company Name] team continued success.
+
+Warm regards,
+[Your Name]`,
+    example: `Subject: Thank You: Alex Morgan - Dinosaur Behavioral Specialist Application
+
+Dear Dr. Sattler,
+
+Thank you for considering my application for the Dinosaur Behavioral Specialist role at Jurassic Park. I truly enjoyed our discussion about Velociraptor pack dynamics.
+
+While disappointed, I remain enthusiastic about Jurassic Park's mission. The upcoming Cretaceous Canyon expansion sounds exciting, and I look forward to seeing its impact on behavioral studies.
+
+I would appreciate any feedback on my interview, particularly regarding my presentation on minimizing herbivore enclosure stress. Your insights would be valuable for my professional growth.
+
+I'm keen to stay connected and be considered for future roles where my animal psychology expertise could contribute to Jurassic Park. I'll be following your progress, especially the Pteranodon Aviary project.
+
+Thank you again for the opportunity to visit the park. I wish you and the team continued success and safe operations.
+
+Best regards,
+Alex Morgan`,
+    exampleName: "Alex",
+    exampleRole: "Behavioral Specialist",
+    aiPrompt: `Help me write a post-rejection follow-up email using the template below. Replace all [BRACKETED] placeholders with my information.
+
+My details:
+- Interviewer's name: [INTERVIEWER'S NAME]
+- Position: [POSITION]
+- Company: [COMPANY NAME]
+- Topic we discussed in the interview: [SPECIFIC TOPIC]
+- Project/initiative they mentioned: [PROJECT OR INITIATIVE]
+- Part of my interview I want feedback on: [SPECIFIC TASK OR PRESENTATION]
+- My key skills: [YOUR KEY SKILLS]
+- Upcoming project at the company I'm following: [UPCOMING PROJECT]
+
+Here is the template to follow:
+
+---
+Subject: Appreciation and Continued Interest: [Your Name] - [Position] Application
+
+Dear [Interviewer's Name],
+
+I hope this message finds you well. I wanted to express my sincere gratitude for considering my application for the [Position] role at [Company Name]. Our discussion about [specific topic discussed in interview] was truly enlightening.
+
+While I'm disappointed not to have been selected, my enthusiasm for [Company Name]'s mission to [company's main goal or mission] remains strong. I'm particularly excited about the company's work in [specific project or initiative mentioned during interview].
+
+I would appreciate any feedback you could provide on my application or interview, especially regarding [specific task or presentation you did during the interview process]. Your insights would be invaluable for my professional development.
+
+I would love to stay connected and be considered for future opportunities where my [your key skills] could contribute to [Company Name]'s goals. I look forward to following [Company Name]'s progress, especially [upcoming project or launch mentioned in interview].
+
+Thank you again for your time and consideration. I wish you and the [Company Name] team continued success.
+
+Warm regards,
+[Your Name]
+---
+
+Keep the tone positive and gracious. No bitterness. Leave the door open for future roles.`,
+  },
+  {
+    id: "salary-negotiation",
+    icon: "💰",
+    title: "Salary Negotiation Email",
+    useCase: "Conveying gratitude and maintaining collaboration when negotiating your compensation package.",
+    template: `Hi [Recipient's Name],
+
+Thank you for offering me the position of [Position Title] at [Company/Organization Name]. I am excited about the opportunity to contribute to [Company/Organization's Objective/Goal] and collaborate with the team.
+
+I am grateful for the proposed salary, which acknowledges my background and experience. I am eager to bring my expertise in [Key Skills/Experience Areas] to further [Company/Organization's Name]'s mission.
+
+In the spirit of developing a long-lasting partnership, I'd like to review a few key aspects of the offer to ensure we're completely aligned and lay a strong foundation to this working relationship.
+
+1. [Ask 1]: [Details/Context]
+2. [Ask 2]: [Details/Context]
+3. [Ask 3]: [Details/Context]
+
+I appreciate your consideration regarding these. Please let me know when we can connect to discuss these together.
+
+Thank you once again for this exciting opportunity. I am committed to making significant contributions to the [Specific Area/Team/Project] and enhancing the [Beneficial Impact on Stakeholders/Projects].
+
+Warm regards,
+
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]`,
+    example: `Hi Amina,
+
+I'm truly honored to be offered the role of Digital Marketing Specialist at Google. The chance to play a part in enhancing Google's global digital presence alongside such a talented team is incredibly exciting.
+
+I appreciate the thoughtful consideration given to the salary package, reflecting my experience and skills. I'm keen to apply my expertise in SEO, content strategy, and data analytics to further Google's mission of organizing the world's information and making it universally accessible and useful.
+
+In the spirit of developing a long-lasting partnership, I'd like to review a few key aspects of the offer to ensure we're completely aligned and lay a strong foundation to this working relationship.
+
+1. Paid Vacation Days: In reviewing the offer, I noticed it includes 15 vacation days. In previous roles, I've had up to 25 days, which have been instrumental in maintaining a healthy work-life balance and ensuring my optimal productivity. I would like to explore the possibility of matching or closely approaching the 25-day standard.
+
+2. Base Salary: Considering the measurable impact I've delivered at companies like Microsoft and Amazon, such as leading the redesign of the e-commerce product pages that resulted in a 7% increase in conversion rate (generating an additional $3 million in revenue annually), a base salary of $153,000 would align more closely with the value I bring, and the market value I'm seeing for roles at similar-sized companies.
+
+3. Professional Development Budget: The digital marketing landscape demands continuous learning for success. To ensure cutting-edge strategies that maximize ROI, I'd like to propose a dedicated annual budget to attend key industry conferences (e.g., MarTech Summit, DigiMarCon, Content Marketing World) to represent Google.
+
+I appreciate your consideration regarding these. Please let me know when we can connect to discuss these together.
+
+Thank you once again for this incredible opportunity. I am eager to contribute to Google's marketing initiatives and help drive innovative strategies that enhance user engagement and brand visibility.
+
+Warm regards,
+Maya Rodriguez
+Digital Marketing Specialist
+linkedin.com/in/mayamarketing`,
+    exampleName: "Maya",
+    exampleRole: "Digital Marketing Specialist",
+    aiPrompt: `Help me write a salary negotiation email using the template below. Replace all [BRACKETED] placeholders with my information.
+
+My details:
+- Hiring manager's name: [RECIPIENT'S NAME]
+- Position: [POSITION TITLE]
+- Company: [COMPANY NAME]
+- Company objective I'm excited about: [OBJECTIVE/GOAL]
+- My key skills: [KEY SKILLS/EXPERIENCE AREAS]
+- Ask 1: [TOPIC, e.g., base salary] — [DETAILS AND JUSTIFICATION WITH NUMBERS]
+- Ask 2: [TOPIC, e.g., vacation days] — [DETAILS AND JUSTIFICATION]
+- Ask 3: [TOPIC, e.g., professional development] — [DETAILS AND JUSTIFICATION]
+- Team/project I'll contribute to: [SPECIFIC AREA]
+
+Here is the template to follow:
+
+---
+Hi [Recipient's Name],
+
+Thank you for offering me the position of [Position Title] at [Company/Organization Name]. I am excited about the opportunity to contribute to [Company/Organization's Objective/Goal] and collaborate with the team.
+
+I am grateful for the proposed salary, which acknowledges my background and experience. I am eager to bring my expertise in [Key Skills/Experience Areas] to further [Company/Organization's Name]'s mission.
+
+In the spirit of developing a long-lasting partnership, I'd like to review a few key aspects of the offer to ensure we're completely aligned and lay a strong foundation to this working relationship.
+
+1. [Ask 1]: [Details/Context]
+2. [Ask 2]: [Details/Context]
+3. [Ask 3]: [Details/Context]
+
+I appreciate your consideration regarding these. Please let me know when we can connect to discuss these together.
+
+Thank you once again for this exciting opportunity. I am committed to making significant contributions to the [Specific Area/Team/Project] and enhancing the [Beneficial Impact on Stakeholders/Projects].
+
+Warm regards,
+
+[YOUR NAME]
+[JOB TITLE]
+[LINKEDIN URL]
+---
+
+Keep the tone grateful and collaborative, not adversarial. Frame each ask with evidence of value I bring.`,
+  },
+];
+---
+
+<LeadMagnetLayout
+  title="7 Email Templates Every Job Seeker Needs | ClearCareer"
+  description="Copy-paste email templates for informational interviews, hiring managers, thank-you emails, follow-ups, rejections, and salary negotiations. With real examples."
+  headline="7 Email Templates<br />Every Job Seeker Needs"
+  subheadline="Stop staring at a blank screen. Grab the template, swap in your details, and hit send. Each one comes with a real filled-in example."
+  bullets={[
+    "7 proven templates covering every stage of the job search",
+    "Real filled-in examples so you can see exactly how it's done",
+    "The SHINE framework for writing thank-you emails that get you hired",
+    "Salary negotiation email with a 3-ask structure that keeps things collaborative",
+    "Copy, paste, customize, send. No fluff, no theory.",
+  ]}
+  source="email-templates"
+  storageKey="email_templates_unlocked"
+  ctaText="Get the Templates"
+>
+  <!-- No hero image for this one — the template list IS the visual -->
+
+  <!-- Preview: template list + one teaser -->
+  <Fragment slot="preview">
+    <h2 class="mb-6 text-center text-lg font-bold text-navy">What's Inside</h2>
+
+    <div class="space-y-3">
+      {templates.map((t, i) => (
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-white px-4 py-3">
+          <span class="text-xl">{t.icon}</span>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-navy">{t.title}</p>
+            <p class="text-xs text-text-muted">{t.useCase}</p>
+          </div>
+          <span class="shrink-0 rounded-full bg-blue-bg px-2 py-0.5 text-[10px] font-semibold text-blue">
+            Template + Example
+          </span>
+        </div>
+      ))}
+    </div>
+
+    <!-- SHINE framework teaser -->
+    <div class="mt-8 rounded-xl border-2 border-blue/15 bg-blue-bg/30 p-6">
+      <h3 class="text-center text-base font-bold text-navy">Featured: The SHINE Framework</h3>
+      <p class="mt-2 text-center text-sm text-text-muted">
+        A 5-step method for writing thank-you emails that actually get you hired.
+      </p>
+      <div class="mt-4 flex flex-wrap justify-center gap-2">
+        {["Share", "Highlight", "Illustrate", "Neutralize", "Envision"].map((step) => (
+          <span class="rounded-full border border-blue/20 bg-white px-3 py-1 text-xs font-semibold text-blue">
+            {step}
+          </span>
+        ))}
+      </div>
+      <p class="mt-3 text-center text-xs text-text-muted">
+        Full breakdown + template + example included inside.
+      </p>
+    </div>
+
+    <!-- AI Draft feature callout -->
+    <div class="mt-8 rounded-xl bg-gradient-to-br from-navy to-[#1a1a2e] p-6 text-center">
+      <p class="text-xs font-semibold uppercase tracking-widest text-blue-300">Included with every template</p>
+      <h3 class="mt-2 text-lg font-bold text-white">Draft Any Email Instantly with AI</h3>
+      <p class="mx-auto mt-2 max-w-md text-sm leading-relaxed text-gray-400">
+        Each template comes with a one-click link to ChatGPT or Claude. Fill in your details, click the button, and get a polished draft in seconds. The full template framework is built into the prompt.
+      </p>
+      <div class="mt-4 flex justify-center gap-3">
+        <div class="inline-flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white">
+          <svg class="h-4 w-4 text-[#10a37f]" viewBox="0 0 24 24" fill="currentColor"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" /></svg>
+          ChatGPT
+        </div>
+        <div class="inline-flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-sm font-medium text-white">
+          <svg class="h-4 w-4 text-[#d97706]" viewBox="0 0 24 24" fill="currentColor"><path d="M4.709 15.955l4.397-10.985a1.27 1.27 0 0 1 2.373.006l4.405 10.98a7.092 7.092 0 0 0 2.126 2.994.27.27 0 0 1-.163.486h-2.665a.254.254 0 0 1-.234-.155l-1.14-2.76a.255.255 0 0 0-.235-.156H8.401a.255.255 0 0 0-.236.158l-1.103 2.755a.254.254 0 0 1-.236.158H4.043a.27.27 0 0 1-.16-.487 7.092 7.092 0 0 0 2.826-2.994zm7.063-2.572L9.786 8.387a.127.127 0 0 0-.238.003l-1.949 4.996a.127.127 0 0 0 .118.174h3.937a.127.127 0 0 0 .118-.177z" /></svg>
+          Claude
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-6 text-center text-sm text-text-muted">
+      Each template includes the fill-in-the-blank version, a real example, and one-click AI draft links.
+    </p>
+  </Fragment>
+
+  <!-- Full content: all 7 templates -->
+  <Fragment slot="full">
+    <div class="space-y-12">
+      {templates.map((t, i) => (
+        <div id={t.id}>
+          <!-- Template header -->
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-sm font-bold text-white">{i + 1}</span>
+            <div>
+              <h2 class="text-lg font-bold text-navy">{t.title}</h2>
+              <p class="text-sm text-text-muted">{t.useCase}</p>
+            </div>
+          </div>
+
+          {/* SHINE framework callout for thank-you template */}
+          {t.id === "thank-you" && (
+            <div class="mb-4 rounded-lg border border-blue/20 bg-blue-bg/30 p-4">
+              <p class="text-sm font-semibold text-navy">The SHINE Framework</p>
+              <ol class="mt-2 space-y-1 text-sm text-text-muted">
+                <li><strong class="text-navy">S</strong>hare something memorable from the interview to create a personal connection.</li>
+                <li><strong class="text-navy">H</strong>ighlight your understanding of their top 3 priorities from the interview and job description.</li>
+                <li><strong class="text-navy">I</strong>llustrate with tangible achievements that directly respond to each priority.</li>
+                <li><strong class="text-navy">N</strong>eutralize their top concern by reinforcing relevant experience.</li>
+                <li><strong class="text-navy">E</strong>nvision the value you'll bring to the team and company.</li>
+              </ol>
+            </div>
+          )}
+
+          <!-- Template -->
+          <div class="mb-3">
+            <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-text-muted">Template</p>
+            <div class="group/copy relative">
+              <button
+                data-copy-btn
+                data-copy-target={`template-${t.id}`}
+                class="absolute right-2 top-2 flex items-center gap-1 rounded-md border border-border bg-white px-2 py-1 text-[11px] font-medium text-text-muted shadow-sm transition-all hover:border-blue hover:text-blue opacity-0 group-hover/copy:opacity-100 focus:opacity-100"
+              >
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                <span>Copy</span>
+              </button>
+              <pre id={`template-${t.id}`} class="overflow-x-auto rounded-lg border border-border bg-gray-50 p-4 pr-20 text-sm leading-relaxed text-text whitespace-pre-wrap font-sans">{t.template}</pre>
+            </div>
+          </div>
+
+          <!-- Example -->
+          <div class="mb-3">
+            <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-text-muted">
+              Example ({t.exampleName}, {t.exampleRole})
+            </p>
+            <div class="group/copy relative">
+              <button
+                data-copy-btn
+                data-copy-target={`example-${t.id}`}
+                class="absolute right-2 top-2 flex items-center gap-1 rounded-md border border-border bg-white px-2 py-1 text-[11px] font-medium text-text-muted shadow-sm transition-all hover:border-blue hover:text-blue opacity-0 group-hover/copy:opacity-100 focus:opacity-100"
+              >
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                <span>Copy</span>
+              </button>
+              <pre id={`example-${t.id}`} class="overflow-x-auto rounded-lg border border-green-200 bg-green-50/50 p-4 pr-20 text-sm leading-relaxed text-text whitespace-pre-wrap font-sans">{t.example}</pre>
+            </div>
+          </div>
+
+          <!-- AI links -->
+          <div class="flex flex-wrap gap-2">
+            <a
+              href={`https://chatgpt.com/?q=${encodeURIComponent(t.aiPrompt)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-3 py-1.5 text-xs font-medium text-text-muted transition-colors hover:border-[#10a37f] hover:text-[#10a37f]"
+            >
+              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" /></svg>
+              Draft with ChatGPT
+            </a>
+            <a
+              href={`https://claude.ai/new?q=${encodeURIComponent(t.aiPrompt)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-3 py-1.5 text-xs font-medium text-text-muted transition-colors hover:border-[#d97706] hover:text-[#d97706]"
+            >
+              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M4.709 15.955l4.397-10.985a1.27 1.27 0 0 1 2.373.006l4.405 10.98a7.092 7.092 0 0 0 2.126 2.994.27.27 0 0 1-.163.486h-2.665a.254.254 0 0 1-.234-.155l-1.14-2.76a.255.255 0 0 0-.235-.156H8.401a.255.255 0 0 0-.236.158l-1.103 2.755a.254.254 0 0 1-.236.158H4.043a.27.27 0 0 1-.16-.487 7.092 7.092 0 0 0 2.826-2.994zm7.063-2.572L9.786 8.387a.127.127 0 0 0-.238.003l-1.949 4.996a.127.127 0 0 0 .118.174h3.937a.127.127 0 0 0 .118-.177z" /></svg>
+              Draft with Claude
+            </a>
+          </div>
+
+          {i < templates.length - 1 && <hr class="mt-12 border-border" />}
+        </div>
+      ))}
+    </div>
+
+    <!-- Quick nav -->
+    <div class="mt-12 rounded-xl bg-blue-bg p-6">
+      <h3 class="text-center text-base font-bold text-navy">Jump to a Template</h3>
+      <div class="mt-3 flex flex-wrap justify-center gap-2">
+        {templates.map((t) => (
+          <a href={`#${t.id}`} class="rounded-full border border-blue/20 bg-white px-3 py-1.5 text-xs font-semibold text-blue hover:bg-blue hover:text-white transition-colors">
+            {t.icon} {t.title.split(" (")[0]}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Cross-link -->
+    <div class="mt-10 text-center">
+      <p class="text-sm text-text-muted">Need help writing the achievements for your emails?</p>
+      <a href="/resources/quantified-achievements" class="mt-2 inline-block text-sm font-semibold text-blue hover:text-blue-dark">
+        Get 1,600+ quantified achievement bullets &rarr;
+      </a>
+    </div>
+  </Fragment>
+</LeadMagnetLayout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('[data-copy-btn]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var targetId = btn.getAttribute('data-copy-target');
+        var el = document.getElementById(targetId);
+        if (!el) return;
+        var text = el.textContent || '';
+        navigator.clipboard.writeText(text).then(function() {
+          var span = btn.querySelector('span');
+          if (span) {
+            span.textContent = 'Copied!';
+            btn.style.opacity = '1';
+            setTimeout(function() {
+              span.textContent = 'Copy';
+              btn.style.opacity = '';
+            }, 2000);
+          }
+        });
+      });
+    });
+  });
+</script>

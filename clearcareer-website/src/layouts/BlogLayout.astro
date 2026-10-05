@@ -1,0 +1,243 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  author?: string;
+  image?: string;
+  tags?: string[];
+  type?: "playbook" | "article";
+  headings?: Heading[];
+}
+
+const {
+  title,
+  description,
+  publishDate,
+  author = "Izzy Piyale-Sheard",
+  image,
+  tags = [],
+  type = "article",
+  headings = [],
+} = Astro.props;
+
+const isPlaybook = type === "playbook";
+const tocHeadings = headings.filter((h) => h.depth === 2);
+
+const formattedDate = new Date(publishDate).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+// Estimate reading time (roughly 200 words per minute)
+const content = await Astro.slots.render("default");
+const wordCount = content.split(/\s+/).length;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "https://joinclearcareer.com";
+const articleUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImage = image?.startsWith("http") ? image : image ? `${siteUrl}${image}` : undefined;
+
+// Get related posts (same tags, exclude current)
+const now = new Date();
+const allPosts = await getCollection("blog", ({ data }) => {
+  if (data.draft) return false;
+  return new Date(data.publishDate) <= now;
+});
+
+const currentSlug = Astro.url.pathname.replace(/^\/blog\//, "").replace(/\/$/, "");
+const relatedPosts = allPosts
+  .filter((post) => {
+    if (post.id === currentSlug) return false;
+    return post.data.tags.some((tag: string) => tags.includes(tag));
+  })
+  .sort((a, b) => {
+    const aMatches = a.data.tags.filter((tag: string) => tags.includes(tag)).length;
+    const bMatches = b.data.tags.filter((tag: string) => tags.includes(tag)).length;
+    return bMatches - aMatches;
+  })
+  .slice(0, 3);
+---
+
+<PageLayout title={title} description={description} image={image}>
+  <!-- Article Schema.org JSON-LD (enhanced) -->
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: title,
+      description,
+      image: ogImage,
+      wordCount,
+      author: {
+        "@type": "Person",
+        name: author,
+        url: siteUrl,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "ClearCareer",
+        url: siteUrl,
+      },
+      datePublished: publishDate,
+      dateModified: publishDate,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": articleUrl,
+      },
+    })}
+  />
+
+  <!-- Breadcrumb Schema -->
+  <script
+    type="application/ld+json"
+    slot="head"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: isPlaybook ? "Playbooks" : "Blog",
+          item: `${siteUrl}${isPlaybook ? "/playbooks" : "/blog"}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: title,
+          item: articleUrl,
+        },
+      ],
+    })}
+  />
+
+  <article class="mx-auto max-w-[720px] px-4 py-12 sm:px-6 md:py-16">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm text-text-muted">
+      <ol class="flex items-center gap-2">
+        <li><a href="/" class="hover:text-blue">Home</a></li>
+        <li aria-hidden="true">/</li>
+        {isPlaybook ? (
+          <li><a href="/playbooks" class="hover:text-blue">Playbooks</a></li>
+        ) : (
+          <li><a href="/blog" class="hover:text-blue">Blog</a></li>
+        )}
+        <li aria-hidden="true">/</li>
+        <li class="truncate text-text" aria-current="page">{title}</li>
+      </ol>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="mb-10">
+      <div class="mb-4 flex flex-wrap items-center gap-2">
+        {isPlaybook && (
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-blue px-3 py-1 text-xs font-semibold text-white">
+            <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            Playbook
+          </span>
+        )}
+        {tags.map((tag) => (
+          <span class="rounded-full bg-blue-bg px-3 py-1 text-xs font-medium text-blue">
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <h1 class="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.05] text-navy">
+        {title}
+      </h1>
+
+      <div class="mt-4 flex items-center gap-4 text-sm text-text-muted">
+        <span>{author}</span>
+        <span aria-hidden="true">&middot;</span>
+        <time datetime={publishDate}>{formattedDate}</time>
+        <span aria-hidden="true">&middot;</span>
+        <span>{readingTime} min read</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents (Playbooks only) -->
+    {isPlaybook && tocHeadings.length > 0 && (
+      <nav class="mb-10 rounded-xl border border-blue/20 bg-blue-bg/50 p-5 sm:p-6" aria-label="Table of contents">
+        <h2 class="mb-3 text-sm font-bold uppercase tracking-wider text-blue">In This Playbook</h2>
+        <ol class="space-y-2">
+          {tocHeadings.map((heading, i) => (
+            <li>
+              <a
+                href={`#${heading.slug}`}
+                class="group flex items-start gap-3 text-[0.9375rem] text-navy transition-colors hover:text-blue"
+              >
+                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue/10 text-xs font-semibold text-blue group-hover:bg-blue group-hover:text-white transition-colors">
+                  {i + 1}
+                </span>
+                <span>{heading.text}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+
+    <!-- Article Content -->
+    <div class="prose prose-lg max-w-none">
+      <slot />
+    </div>
+
+    <!-- CTA Block -->
+    <div class="mt-12 rounded-xl bg-blue-bg p-8 text-center">
+      <h3 class="text-xl font-bold text-navy">Want personalized help with your job search?</h3>
+      <p class="mx-auto mt-2 max-w-md text-[1.0625rem] text-text-muted">
+        Book a free 20-minute audit with Izzy. We'll diagnose what's not working and map out your next steps.
+      </p>
+      <a
+        href="https://calendly.com/clearcareer/discovery-call"
+        class="mt-4 inline-flex items-center justify-center rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+      >
+        Book a Free Audit
+      </a>
+    </div>
+
+    <!-- Related Posts -->
+    {relatedPosts.length > 0 && (
+      <div class="mt-12 border-t border-border pt-10">
+        <h3 class="text-xl font-bold text-navy">Keep Reading</h3>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {relatedPosts.map((post) => (
+            <a
+              href={`/blog/${post.id}`}
+              class="group rounded-lg border border-border p-4 transition-shadow hover:shadow-md"
+            >
+              <h4 class="text-sm font-semibold text-navy group-hover:text-blue transition-colors line-clamp-2">
+                {post.data.title}
+              </h4>
+              <p class="mt-2 text-xs text-text-muted line-clamp-2">
+                {post.data.description}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+</PageLayout>

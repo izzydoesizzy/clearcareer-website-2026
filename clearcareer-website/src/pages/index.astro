@@ -1,0 +1,448 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import StatsBar from "@components/StatsBar.astro";
+import TrustBar from "@components/TrustBar.astro";
+import DeliverableGrid from "@components/DeliverableGrid.astro";
+import TestimonialCard from "@components/TestimonialCard.astro";
+import TestimonialOutcomeCard from "@components/TestimonialOutcomeCard.astro";
+import TestimonialCarousel from "@components/TestimonialCarousel.astro";
+import TestimonialModal from "@components/TestimonialModal.astro";
+import PricingCard from "@components/PricingCard.astro";
+import CTASection from "@components/CTASection.astro";
+import { getCollection } from "astro:content";
+
+import IndustryStatCard from "@components/IndustryStatCard.astro";
+import { formatName } from "@utils/format-name";
+import SourceCitations from "@components/SourceCitations.astro";
+import deliverableData from "@data/deliverables.json";
+import allTestimonials from "@data/testimonials.json";
+
+// Sort by sortPriority to get top transformations first (ones with taglines for outcome cards)
+const careerTestimonials = [...allTestimonials]
+  .filter((t: any) => t.category === "career-outcome" && t.tagline)
+  .sort((a: any, b: any) => (a.sortPriority ?? Infinity) - (b.sortPriority ?? Infinity))
+  .slice(0, 9);
+
+// Get latest blog posts for homepage
+const now = new Date();
+const latestPosts = (await getCollection("blog", ({ data }) => {
+  if (data.draft) return false;
+  return new Date(data.publishDate) <= now;
+}))
+  .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime())
+  .slice(0, 3);
+---
+
+<PageLayout
+  title="ClearCareer | Career Coaching That Gets Results"
+  description="200+ professionals coached. $1.2M+ in collective raises. 8-week done-with-you job search accelerator with 20+ career assets. Book a free strategy call."
+>
+  {/* ── 1. Hero ── */}
+  <Hero
+    variant="split"
+    photoSrc="/images/izzy-profile.webp"
+    photoAlt="Izzy Piyale-Sheard, career coach"
+    eyebrow="Career Coaching That Actually Works"
+    headline="Stop Grinding Alone. Start Getting <span class='bg-gradient-to-r from-blue to-blue-light bg-clip-text text-transparent'>Results.</span>"
+    subheadline="200+ professionals coached. $1.2M+ in collective raises. An 8-week system that turns stuck job seekers into confident candidates with 20+ done-for-you assets."
+    primaryCTA={{ text: "Book a Free Strategy Call", href: "https://calendly.com/clearcareer/discovery-call" }}
+    secondaryCTA={{ text: "See the Program", href: "/programs/jsis" }}
+    trustText="Free 20-minute call · No commitment · No pressure"
+  />
+
+  {/* ── 2. Stats Bar ── */}
+  <StatsBar />
+
+  {/* ── 3. Trust Bar ── */}
+  <TrustBar />
+
+  {/* ── 4. Problem Section ── */}
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">The Problem</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          You've Done Everything Right. So Why Isn't It Working?
+        </h2>
+      </div>
+
+      <div class="mx-auto mt-6 max-w-[720px] text-center">
+        <p class="text-lg leading-relaxed text-text-muted">
+          You've tailored every resume. Optimized your LinkedIn. Applied to hundreds of roles. And still: silence. You're not alone. The average job search now takes over 5 months, and only ~8.5% of applications get callbacks. The system is broken. You need a different approach, built by someone who's helped 200+ professionals break through the same wall you're hitting right now.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3" data-animate-stagger>
+        {/* Pain Point 1 */}
+        <div class="rounded-xl bg-blue-bg p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue/10">
+            <svg class="h-6 w-6 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-navy">5.5 Months on Average</h3>
+          <p class="mt-2 text-sm leading-relaxed text-text-muted">
+            The average job search takes 5.5 months (BLS, 2025). For senior roles, it stretches to 6-9 months (LinkedIn, 2024). Every month at $100K+ costs ~$8,300 in lost income.
+          </p>
+        </div>
+
+        {/* Pain Point 2 */}
+        <div class="rounded-xl bg-blue-bg p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue/10">
+            <svg class="h-6 w-6 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-navy">100-200+ Applications</h3>
+          <p class="mt-2 text-sm leading-relaxed text-text-muted">
+            The typical job seeker sends 100-200+ applications before landing. Only ~8.5% get callbacks (Indeed, 2024). Up to 40% of listings may be ghost jobs that were never real (Resume Builder, 2024).
+          </p>
+        </div>
+
+        {/* Pain Point 3 */}
+        <div class="rounded-xl bg-blue-bg p-6 text-center">
+          <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue/10">
+            <svg class="h-6 w-6 text-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-navy">85% Through Networking</h3>
+          <p class="mt-2 text-sm leading-relaxed text-text-muted">
+            Up to 85% of jobs are filled through networking (LinkedIn, 2024). Referral candidates are hired at 10x the rate of applicants (Jobvite, 2024). Yet most job seekers spend their time applying, not connecting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── 4b. Industry Data Section ── */}
+  <section class="bg-gradient-to-br from-slate-50 to-blue-bg/50 py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">The Data</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          The Numbers Behind the Struggle
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-text-muted">
+          These aren't our numbers. This is what the research says about job searching in 2025.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" data-animate-stagger>
+        <IndustryStatCard
+          number="5.5 months"
+          label="Average job search"
+          detail="1 in 5 are unemployed for 27+ weeks"
+          source="BLS, 2025"
+          color="warning"
+        />
+        <IndustryStatCard
+          number="~8.5%"
+          label="Application callback rate"
+          detail="Most resumes never reach a human"
+          source="Indeed, 2024"
+          color="warning"
+        />
+        <IndustryStatCard
+          number="85%"
+          label="Jobs filled through networking"
+          detail="Referrals are hired at 10x the rate"
+          source="LinkedIn + Jobvite, 2024"
+          color="blue"
+        />
+        <IndustryStatCard
+          number="$750K+"
+          label="Cost of not negotiating"
+          detail="55% of workers never negotiate salary"
+          source="HBR + Pew Research"
+          color="warning"
+        />
+      </div>
+
+      <SourceCitations
+        variant="section"
+        sources={[
+          { source: "U.S. Bureau of Labor Statistics", year: 2025, url: "https://www.bls.gov/news.release/empsit.nr0.htm" },
+          { source: "Indeed Hiring Lab", year: 2024, url: "https://www.hiringlab.org/" },
+          { source: "LinkedIn Economic Graph", year: 2024, url: "https://economicgraph.linkedin.com/" },
+          { source: "Jobvite Recruiter Nation Report", year: 2024, url: "https://www.jobvite.com/lp/recruiter-nation/" },
+          { source: "Pew Research Center", year: 2023, url: "https://www.pewresearch.org/social-trends/2023/03/30/" },
+          { source: "Harvard Business Review", year: 2023, url: "https://hbr.org/2014/06/why-women-dont-negotiate-their-job-offers" },
+        ]}
+      />
+    </div>
+  </section>
+
+  {/* ── 5. How It Works ── */}
+  <section class="bg-gradient-to-br from-slate-50 to-blue-bg/50 py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">How It Works</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          From Stuck to Hired in 4 Steps
+        </h2>
+      </div>
+
+      <div class="relative mt-12">
+        {/* Connector line (desktop only) */}
+        <div class="absolute left-0 right-0 top-5 hidden h-0.5 border-t-2 border-dashed border-blue/20 md:block" style="margin-left: calc(12.5% + 20px); margin-right: calc(12.5% + 20px);"></div>
+
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-6" data-animate-stagger>
+          {/* Step 1 */}
+          <div class="relative text-center">
+            <div class="relative z-10 mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue text-sm font-bold text-white">
+              1
+            </div>
+            <h3 class="mt-4 text-base font-bold text-navy">Book a Free Audit</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted">
+              20-minute call with Izzy. We'll diagnose what's broken in your current approach.
+            </p>
+          </div>
+
+          {/* Step 2 */}
+          <div class="relative text-center">
+            <div class="relative z-10 mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue text-sm font-bold text-white">
+              2
+            </div>
+            <h3 class="mt-4 text-base font-bold text-navy">Get Your Custom Plan</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted">
+              AI-powered intake interview builds your personalized job search toolkit.
+            </p>
+          </div>
+
+          {/* Step 3 */}
+          <div class="relative text-center">
+            <div class="relative z-10 mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue text-sm font-bold text-white">
+              3
+            </div>
+            <h3 class="mt-4 text-base font-bold text-navy">Build With Your Cohort</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted">
+              8 weeks of group calls, WhatsApp support, and 1:1 sessions with Izzy.
+            </p>
+          </div>
+
+          {/* Step 4 */}
+          <div class="relative text-center">
+            <div class="relative z-10 mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue text-sm font-bold text-white">
+              4
+            </div>
+            <h3 class="mt-4 text-base font-bold text-navy">Land Your Next Role</h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted">
+              Walk away with 20+ done-for-you assets and a strategy that works.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── 6. Deliverables Preview ── */}
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">What's Included</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          20+ Assets Built For You, Not Assigned as Homework
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-text-muted">
+          Every asset below is built with you, not assigned as homework. That's what sets ClearCareer apart.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <DeliverableGrid pillars={deliverableData.pillars} />
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="/programs/jsis"
+          class="inline-flex items-center justify-center rounded-lg bg-blue px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+        >
+          See the Full Program
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ── 7. Featured Testimonials ── */}
+  <section class="bg-blue-bg/30 py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">Client Results</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          Real People, Real Results
+        </h2>
+      </div>
+
+      <div class="mt-12">
+        <TestimonialCarousel id="homepage-testimonials" visibleCount={3}>
+          {careerTestimonials.map((t: any, i: number) => {
+            const initials = t.name.split(" ").map((n: string) => n[0]).join("").toUpperCase().slice(0, 2);
+            return (
+              <div>
+                <TestimonialOutcomeCard
+                  name={t.name}
+                  role={t.role}
+                  quote={t.quote}
+                  tagline={t.tagline}
+                  outcome={t.outcome}
+                  image={t.imagePath}
+                  index={i}
+                  showReadMore={t.quote.length > 150}
+                />
+                <div
+                  class="hidden"
+                  data-testimonial-full={i}
+                  data-quote={t.quote}
+                  data-name={formatName(t.name)}
+                  data-role={t.role}
+                  data-outcome={t.outcome || ''}
+                  data-image={t.imagePath || ''}
+                  data-initials={initials}
+                ></div>
+              </div>
+            );
+          })}
+        </TestimonialCarousel>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="/testimonials"
+          class="inline-flex items-center gap-2 text-base font-semibold text-blue transition-colors hover:text-blue-dark"
+        >
+          Read all 80+ testimonials
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ── 8. Latest from the Blog ── */}
+  {latestPosts.length > 0 && (
+    <section class="py-16 md:py-24">
+      <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+        <div class="text-center" data-animate="fade-up">
+          <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">From the Blog</p>
+          <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+            Career Strategies That Work
+          </h2>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {latestPosts.map((post) => (
+            <a
+              href={`/blog/${post.id}`}
+              class="group overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-shadow hover:shadow-md"
+            >
+              <div class="aspect-video bg-blue-bg" />
+              <div class="p-6">
+                {post.data.tags.length > 0 && (
+                  <div class="mb-3 flex flex-wrap gap-2">
+                    {post.data.tags.slice(0, 2).map((tag) => (
+                      <span class="rounded-full bg-blue-bg px-3 py-1 text-xs font-medium text-blue">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <h3 class="text-lg font-semibold text-navy group-hover:text-blue transition-colors line-clamp-2">
+                  {post.data.title}
+                </h3>
+                <p class="mt-2 text-sm text-text-muted line-clamp-2">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-10 text-center">
+          <a
+            href="/blog"
+            class="inline-flex items-center gap-2 text-base font-semibold text-blue transition-colors hover:text-blue-dark"
+          >
+            Read all articles
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ── 9. Programs Overview ── */}
+  <section class="bg-gradient-to-br from-slate-50 to-blue-bg/50 py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">Programs</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          Choose Your Path
+        </h2>
+      </div>
+
+      <div class="mx-auto mt-12 grid max-w-[1080px] grid-cols-1 gap-8 md:grid-cols-3">
+        <PricingCard
+          tier="Profile Overhaul"
+          price="$1,997"
+          features={[
+            "Setup call with Izzy",
+            "Resume rewrite (15-20 CAR achievements)",
+            "Full LinkedIn rebuild",
+            "AI-enhanced professional headshot",
+          ]}
+          ctaText="Learn More"
+          ctaHref="/programs/jsis#pricing"
+        />
+        <PricingCard
+          tier="Group Coaching &middot; 8 Weeks"
+          price="$2,497"
+          features={[
+            "Everything in Profile Overhaul",
+            "50+ target companies + salary research",
+            "Full outreach + interview toolkit",
+            "8 weeks of group calls + community",
+            "WhatsApp async support",
+          ]}
+          ctaText="Learn More"
+          ctaHref="/programs/jsis#pricing"
+          featured={true}
+          paymentPlan="Or 3 payments of $899/mo"
+        />
+        <PricingCard
+          tier="VIP 1:1"
+          price="$4,997"
+          features={[
+            "Everything in Group Coaching",
+            "3 private 1:1 sessions with Izzy",
+            "Priority WhatsApp support",
+            "Interview coaching + negotiation scripts",
+            "LinkedIn posts written for you",
+          ]}
+          ctaText="Learn More"
+          ctaHref="/programs/jsis#pricing"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ── 9. Final CTA ── */}
+  <CTASection
+    heading="Ready to Stop Grinding <span class='bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent'>Alone?</span>"
+    body="Book a free 20-minute Job Search Audit. We'll diagnose what's broken and show you exactly what we'd build together."
+    primaryCTA={{ text: "Book My Free Audit", href: "https://calendly.com/clearcareer/discovery-call" }}
+    secondaryCTA={{ text: "See the Program", href: "/programs/jsis" }}
+    variant="gradient"
+  />
+
+  <TestimonialModal />
+</PageLayout>

@@ -1,0 +1,246 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import CTASection from "@components/CTASection.astro";
+import { generatePersonSchema } from "@utils/seo";
+
+import stats from "@data/stats.json";
+---
+
+<PageLayout
+  title="About Izzy | ClearCareer"
+  description="Meet Izzy Piyale-Sheard: career coach, community builder, and the person behind ClearCareer. 200+ professionals coached, $1.2M+ in collective raises, featured on CBC, Global News, and Newsweek."
+  image="/open-graph/about.png"
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "About", url: "/about" },
+  ]}
+>
+  <!-- Person Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(generatePersonSchema())} />
+
+  <!-- Hero -->
+  <Hero
+    variant="page"
+    eyebrow="About ClearCareer"
+    headline="Built by a Career Zig-Zagger<br /><span class='bg-gradient-to-r from-blue to-blue-light bg-clip-text text-transparent'>Who Gets It</span>"
+    subheadline="I've been stuck, confused, and unmotivated in my job search. That's exactly why I built ClearCareer."
+  />
+
+  <!-- My Story: Block 1 -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+        <div class="relative aspect-square max-w-[480px] overflow-hidden rounded-2xl shadow-xl" data-animate="slide-left">
+          <img
+            src="/images/izzy.webp"
+            alt="Izzy Piyale-Sheard"
+            class="h-full w-full object-cover object-top"
+            loading="eager"
+          />
+        </div>
+        <div data-animate="fade-up">
+          <h3 class="text-2xl font-bold text-navy">Hi, I'm Izzy</h3>
+          <p class="mt-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+            As a career zig-zagger and jack-of-all-trades, I've always struggled to create a coherent career story and showcase my value. I've been tormented by long periods of unemployment, feeling unclear, confused, and unmotivated, stuck in negative cycles that were hard to break.
+          </p>
+          <p class="mt-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+            When I transitioned into tech, I devoured every resource about the industry. Anytime I attended events, people were mesmerized by my energy, resourcefulness, and genuine desire to connect and add value.
+          </p>
+          <p class="mt-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+            Then it clicked: my unique intersection of skills was my value. Partnerships, community, events, mentorship, rapid execution, and problem-solving. That's when job opportunities started to bubble up.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Story: Block 2 -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+        <div>
+          <p class="text-[1.0625rem] leading-[1.75] text-text-muted">
+            Since 2016, I've been on a mission to create the support network and community I wished I had when I was struggling in silence.
+          </p>
+          <ul class="mt-6 space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 h-5 w-5 flex-shrink-0 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <span class="font-semibold text-text">Empowering Job Seekers:</span>
+                <span class="text-text-muted"> Taken clients from over a year of unemployment to job offers within weeks, helped them increase their salaries by $30K</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 h-5 w-5 flex-shrink-0 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <span class="font-semibold text-text">Building Community:</span>
+                <span class="text-text-muted"> Founded a 900+ member peer-mentorship community for job-seekers</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 h-5 w-5 flex-shrink-0 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <span class="font-semibold text-text">Media Features:</span>
+                <span class="text-text-muted"> Featured on CBC's For What It's Worth, Global News, Newsweek, Inc. Magazine, Notable Life</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 h-5 w-5 flex-shrink-0 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <div>
+                <span class="font-semibold text-text">Workshops:</span>
+                <span class="text-text-muted"> Delivered workshops for University of Toronto, TMU, Humber College, CivicAction YouthConnect, Lighthouse Labs, United Nations Association in Canada</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="relative aspect-square max-w-[480px] overflow-hidden rounded-2xl shadow-xl" data-animate="slide-right">
+          <img
+            src="/images/izzy-more.webp"
+            alt="Izzy speaking at an event"
+            class="h-full w-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="bg-navy py-16 md:py-24 overflow-hidden">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">Life Outside the Office</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-white">Work Hard, Travel Harder</h2>
+        <p class="mt-3 text-gray-400 max-w-lg mx-auto">Before building ClearCareer, I spent years working remotely from 20+ countries. That journey shaped how I think about career design.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div class="col-span-2 overflow-hidden rounded-xl">
+          <img src="/images/remote-work/cloudcomputing.jpg" alt="Coding above the clouds" class="w-full object-contain hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/barcelona.jpg" alt="Barcelona" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/taiwangif.gif" alt="On a Taiwanese gameshow" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/phonebooth.jpg" alt="Working from a phone booth" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/boat.jpg" alt="On a boat" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/matz.jpg" alt="Meeting Matz, creator of Ruby" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/tram.jpg" alt="Working from a phone booth in Japan" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/monserrat.jpg" alt="Working from Montserrat, Spain" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/porto.jpg" alt="Porto" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/vietnam2.jpg" alt="Working remotely in Vietnam" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/japan.jpg" alt="Japan" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/nikko.jpg" alt="Nikko, Japan" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/thailand.jpg" alt="Thailand" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/vietnam3.jpg" alt="Group photo in Vietnam" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="col-span-2 overflow-hidden rounded-xl">
+          <img src="/images/remote-work/mountaintop.jpg" alt="Mountaintop" class="w-full object-contain hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+        <div class="overflow-hidden rounded-xl">
+          <img src="/images/remote-work/takaosan.jpg" alt="Mount Takao, Japan" class="h-full w-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- By the Numbers -->
+  <section class="bg-gradient-to-br from-slate-50 to-blue-bg/50 py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">By the Numbers</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">Results That Speak for Themselves</h2>
+      </div>
+      <div class="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4" data-animate-stagger>
+        <div class="rounded-xl bg-blue-bg p-6 text-center">
+          <p class="text-3xl font-bold text-blue">{stats.coached}</p>
+          <p class="mt-2 text-sm text-text-muted">Professionals Coached</p>
+        </div>
+        <div class="rounded-xl bg-blue-bg p-6 text-center">
+          <p class="text-3xl font-bold text-blue">{stats.collectiveRaises}</p>
+          <p class="mt-2 text-sm text-text-muted">Collective Raises</p>
+        </div>
+        <div class="rounded-xl bg-blue-bg p-6 text-center">
+          <p class="text-3xl font-bold text-blue">{stats.communityMembers}</p>
+          <p class="mt-2 text-sm text-text-muted">Community Members</p>
+        </div>
+        <div class="rounded-xl bg-blue-bg p-6 text-center">
+          <p class="text-3xl font-bold text-blue">{stats.eventAttendees}</p>
+          <p class="mt-2 text-sm text-text-muted">Event Attendees</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media & Press -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate="fade-up">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">Media & Press</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">Featured In</h2>
+      </div>
+      <div class="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6" data-animate-stagger>
+        {stats.mediaAppearances.map((media: { name: string; show: string }) => (
+          <div class="rounded-xl border border-border bg-white p-6 text-center">
+            <p class="font-semibold text-text">{media.name}</p>
+            {media.show && <p class="mt-1 text-sm text-text-muted">{media.show}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop Partners -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-blue">Workshop Partners</p>
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">Trusted By</h2>
+      </div>
+      <div class="mt-12 flex flex-wrap items-center justify-center gap-8">
+        {stats.workshopPartners.map((partner: string) => (
+          <span class="text-lg font-semibold text-text-muted/40">{partner}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    heading="Ready to Work Together?"
+    body="Book a free 20-minute Job Search Audit. Let's see if ClearCareer is right for you."
+    primaryCTA={{ text: "Book a Free Audit", href: "https://calendly.com/clearcareer/discovery-call" }}
+    variant="blue"
+  />
+</PageLayout>

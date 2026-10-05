@@ -1,0 +1,35 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductAccessHub from "@components/products/ProductAccessHub";
+import { PRODUCTS } from "../../../data/product-config";
+
+export const prerender = false;
+
+// Dev-only preview route — bypasses Stripe validation
+if (import.meta.env.PROD) {
+  return Astro.redirect("/404");
+}
+
+const { slug } = Astro.params;
+
+if (!slug || !PRODUCTS[slug]) {
+  return Astro.redirect("/404");
+}
+
+const product = PRODUCTS[slug];
+---
+
+<BaseLayout
+  title={`[Preview] ${product.name} | ClearCareer`}
+  description={product.description}
+  noindex={true}
+>
+  <ProductAccessHub
+    client:load
+    productName={product.name}
+    productSlug={product.slug}
+    buyerName="Preview User"
+    buyerEmail="preview@dev.local"
+    guides={product.guides}
+  />
+</BaseLayout>

@@ -1,0 +1,186 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import ToolInput from "@components/ToolInput.astro";
+import CopyButton from "@components/CopyButton.astro";
+---
+
+<ToolLayout
+  title="LinkedIn Recruiter X-Ray Search"
+  headline="LinkedIn Recruiter X-Ray Search"
+  description="Build a Google boolean search string to find recruiters in your industry on LinkedIn. Copy it, paste it into Google, start connecting."
+  category="Job Search"
+  icon="🔍"
+  relatedTags={["job search strategy", "networking"]}
+  slug="linkedin-xray-search"
+  lastUpdated="March 2026"
+  featureList={["Google X-Ray search string builder", "Boolean operator support", "Industry and location targeting", "One-click copy and open in Google"]}
+  faqItems={[
+    { question: "What is LinkedIn X-Ray search?", answer: "X-Ray search uses Google's search engine to find LinkedIn profiles that you can't find through LinkedIn's built-in search. It bypasses LinkedIn's search limits by searching Google's index of public LinkedIn profiles directly." },
+    { question: "Is X-Ray searching LinkedIn legal?", answer: "Yes. You're using Google to search publicly available information. LinkedIn profiles indexed by Google are public web pages. This is the same as any other Google search." },
+    { question: "Why not just use LinkedIn's built-in search?", answer: "LinkedIn's free search limits your results, hides profiles outside your network, and pushes you toward Premium. X-Ray search through Google shows all publicly indexed profiles with no limits, no paywall, and more powerful filtering." },
+    { question: "What should I say when connecting with people I find?", answer: "Personalize every request. Mention something specific: a shared connection, their company, a post they wrote. Keep it under 300 characters. Ask for advice, not a job. Use our Networking Message Builder tool for templates." },
+    { question: "How many connection requests should I send per week?", answer: "15-25 per week is a sustainable pace. LinkedIn may restrict your account if you send too many. Focus on quality over quantity. 5 personalized connections beat 50 generic ones." },
+    { question: "Does this work for finding hiring managers, not just recruiters?", answer: "Absolutely. Change the role field to 'hiring manager' OR 'director' OR 'VP' and the industry field to your target function. Finding hiring managers directly often gets faster results than going through recruiters." },
+  ]}
+  relatedTools={[
+    { name: "LinkedIn Job Search URL Builder", slug: "linkedin-job-search-builder", icon: "🔗" },
+    { name: "Networking Message Builder", slug: "networking-message-builder", icon: "💬" },
+  ]}
+>
+  <div slot="intro">
+    <h2 class="text-xl font-bold text-navy">Why This Matters</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        70-80% of jobs are filled through networking, not applications. The recruiters and hiring managers you need are on LinkedIn, but LinkedIn's free search caps results and hides profiles. X-Ray search uses Google to find them directly, with no limits and no paywall.
+      </p>
+    </div>
+  </div>
+  <form id="xray-form" class="space-y-6">
+    <ToolInput
+      id="industry"
+      label="Industry or field"
+      type="text"
+      placeholder="software engineering"
+      required={true}
+    />
+
+    <ToolInput
+      id="jobTitle"
+      label="Job title keywords"
+      type="text"
+      placeholder="product manager"
+      tooltip="Optional. If you want to find recruiters who specialize in hiring for specific roles."
+    />
+
+    <ToolInput
+      id="location"
+      label="Location"
+      type="text"
+      placeholder="Toronto, Canada"
+      required={true}
+    />
+
+    <ToolInput
+      id="company"
+      label="Company"
+      type="text"
+      placeholder="Google"
+      tooltip="Optional. Leave blank to search across all companies."
+    />
+
+    <button
+      type="submit"
+      class="w-full rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+    >
+      Generate Search String
+    </button>
+  </form>
+
+  <div id="results" class="mt-10 hidden" aria-live="polite">
+    <h2 class="text-lg font-bold text-navy">Your search string:</h2>
+
+    <div class="mt-4 rounded-lg bg-navy p-4">
+      <p id="search-string" class="font-mono text-sm text-white break-all"></p>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-3">
+      <CopyButton targetId="search-string" label="Copy Search String" />
+      <a
+        id="google-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-blue bg-white px-5 py-2.5 text-sm font-semibold text-blue transition-colors hover:bg-blue-bg"
+      >
+        Open in Google
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+
+    <p class="mt-4 text-sm text-text-muted">
+      Paste this into Google to find LinkedIn profiles of recruiters in your space.
+    </p>
+  </div>
+
+  <div slot="methodology">
+    <h2 class="text-xl font-bold text-navy">How X-Ray Search Works</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        The <code class="rounded bg-white px-1.5 py-0.5 text-sm text-navy">site:linkedin.com/in</code> operator tells Google to only return LinkedIn profile pages. No company pages, no articles. Just people.
+      </p>
+      <p>
+        Boolean operators refine from there. Quotation marks match exact phrases. OR broadens results ("recruiter" OR "talent acquisition"). Minus signs exclude terms. Location and company fields narrow results to specific cities and employers. A typical search for "recruiter" + "fintech" + "Toronto" returns 200-500 profiles you can't find through LinkedIn's free search.
+      </p>
+    </div>
+  </div>
+
+  <div slot="example">
+    <h2 class="text-xl font-bold text-navy">Example: Finding Recruiters at Shopify</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        Software engineer in Toronto targeting Shopify. Enter your details and the tool generates: <code class="rounded bg-blue-bg px-1.5 py-0.5 text-sm text-navy">site:linkedin.com/in "recruiter" OR "talent acquisition" "software engineering" "Toronto" "Shopify"</code>. Paste into Google, find recruiters who hire engineers at Shopify, and connect with 3-5 of them with a personalized note.
+      </p>
+    </div>
+  </div>
+
+  <div slot="tips">
+    <h2 class="text-xl font-bold text-navy">How to Use This</h2>
+    <div class="mt-6 space-y-6 text-[1.0625rem] leading-[1.75] text-text-muted">
+      <div>
+        <h3 class="font-semibold text-navy">Personalize every connection request</h3>
+        <p class="mt-2">
+          Don't just connect and disappear. Mention their industry, a specific role you're targeting, or something from their profile. Keep it to 2-3 sentences.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-navy">Try different role variations</h3>
+        <p class="mt-2">
+          Not all recruiters call themselves "recruiter." Try "talent acquisition partner," "sourcer," "hiring manager," or "people operations." Each variation surfaces different profiles.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-navy">Most jobs aren't posted online</h3>
+        <p class="mt-2">
+          Reaching out directly gets you in front of roles that never hit job boards.
+          <a href="/blog/hidden-job-market-how-to-find-jobs-that-are-never-posted" class="text-blue hover:underline">Read: How to Find Jobs That Are Never Posted</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</ToolLayout>
+
+<script>
+  const form = document.getElementById('xray-form') as HTMLFormElement;
+  const results = document.getElementById('results')!;
+  const searchStringEl = document.getElementById('search-string')!;
+  const googleLink = document.getElementById('google-link') as HTMLAnchorElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const industry = (document.getElementById('industry') as HTMLInputElement).value.trim();
+    const jobTitle = (document.getElementById('jobTitle') as HTMLInputElement).value.trim();
+    const location = (document.getElementById('location') as HTMLInputElement).value.trim();
+    const company = (document.getElementById('company') as HTMLInputElement).value.trim();
+
+    if (!industry || !location) return;
+
+    let query = `site:linkedin.com/in`;
+    query += ` ("recruiter" OR "talent acquisition" OR "sourcer" OR "talent partner" OR "hiring manager")`;
+    query += ` "${industry}"`;
+    if (jobTitle) query += ` "${jobTitle}"`;
+    query += ` "${location}"`;
+    if (company) query += ` "${company}"`;
+
+    const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+
+    searchStringEl.textContent = query;
+    googleLink.href = googleUrl;
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>

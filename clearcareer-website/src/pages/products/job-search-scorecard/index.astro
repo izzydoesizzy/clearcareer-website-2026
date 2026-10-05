@@ -1,0 +1,77 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import EmailCaptureForm from "@components/products/EmailCaptureForm";
+---
+
+<BaseLayout
+  title="Job Search Self-Diagnostic Scorecard | ClearCareer"
+  description="Find out exactly where your job search is breaking down. 10 questions across 5 dimensions."
+>
+  <div class="min-h-screen bg-white">
+    <header class="border-b border-border">
+      <div class="mx-auto max-w-[720px] px-4 py-4 text-center">
+        <a href="/" class="text-lg font-bold text-blue">ClearCareer</a>
+      </div>
+    </header>
+
+    <section class="bg-gradient-to-b from-blue-bg/50 to-white py-12 md:py-16">
+      <div class="mx-auto max-w-[640px] px-4 text-center">
+        <span class="inline-block rounded-full bg-blue-bg px-3 py-1 text-xs font-semibold text-blue">
+          Free Assessment
+        </span>
+        <h1 class="mt-4 font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.1] text-navy">
+          Find out exactly where<br />
+          <span class="text-blue">your job search is breaking down.</span>
+        </h1>
+        <p class="mx-auto mt-4 max-w-lg text-lg text-gray-600">
+          10 questions. 5 dimensions. A clear picture of what's working and what needs fixing.
+          Your job search isn't broken. It's just missing pieces.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-10">
+      <div class="mx-auto max-w-[640px] px-4">
+        <h2 class="mb-6 text-center text-xl font-bold text-navy">Scores you across 5 areas</h2>
+        <div class="grid grid-cols-2 gap-3 text-sm md:grid-cols-3">
+          <div class="rounded-lg bg-blue-bg/30 p-4 text-center">
+            <p class="font-semibold text-navy">Strategy</p>
+            <p class="mt-1 text-xs text-gray-500">Are you targeting the right roles?</p>
+          </div>
+          <div class="rounded-lg bg-blue-bg/30 p-4 text-center">
+            <p class="font-semibold text-navy">Materials</p>
+            <p class="mt-1 text-xs text-gray-500">Resume, LinkedIn, portfolio</p>
+          </div>
+          <div class="rounded-lg bg-blue-bg/30 p-4 text-center">
+            <p class="font-semibold text-navy">Outreach</p>
+            <p class="mt-1 text-xs text-gray-500">Networking and applications</p>
+          </div>
+          <div class="rounded-lg bg-blue-bg/30 p-4 text-center">
+            <p class="font-semibold text-navy">Interview</p>
+            <p class="mt-1 text-xs text-gray-500">Prep and performance</p>
+          </div>
+          <div class="rounded-lg bg-blue-bg/30 p-4 text-center">
+            <p class="font-semibold text-navy">Mindset</p>
+            <p class="mt-1 text-xs text-gray-500">Energy and resilience</p>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-xl border border-blue-200 bg-blue-bg/30 p-6">
+          <p class="mb-4 text-center text-sm font-medium text-gray-700">
+            Get your free scorecard
+          </p>
+          <EmailCaptureForm
+            client:load
+            productSlug="job-search-scorecard"
+            productName="Job Search Self-Diagnostic Scorecard"
+            ctaText="Get My Scorecard"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-border py-6 text-center">
+      <p class="text-xs text-gray-400">&copy; {new Date().getFullYear()} ClearCareer. All rights reserved.</p>
+    </footer>
+  </div>
+</BaseLayout>

@@ -1,0 +1,63 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import EmailCaptureForm from "@components/products/EmailCaptureForm";
+---
+
+<BaseLayout
+  title="50 Ghost Job Red Flags Checklist | ClearCareer"
+  description="Stop wasting time on jobs that don't exist. 50 red flags to spot ghost job postings before you apply."
+>
+  <div class="min-h-screen bg-white">
+    <header class="border-b border-border">
+      <div class="mx-auto max-w-[720px] px-4 py-4 text-center">
+        <a href="/" class="text-lg font-bold text-blue">ClearCareer</a>
+      </div>
+    </header>
+
+    <section class="bg-gradient-to-b from-blue-bg/50 to-white py-12 md:py-16">
+      <div class="mx-auto max-w-[640px] px-4 text-center">
+        <span class="inline-block rounded-full bg-blue-bg px-3 py-1 text-xs font-semibold text-blue">
+          Free Checklist
+        </span>
+        <h1 class="mt-4 font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.1] text-navy">
+          Stop wasting time on jobs<br />
+          <span class="text-blue">that don't exist.</span>
+        </h1>
+        <p class="mx-auto mt-4 max-w-lg text-lg text-gray-600">
+          18-22% of job postings are ghost jobs. 81% of recruiters admit to posting them.
+          This checklist helps you spot them before you spend 2 hours on an application.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-10">
+      <div class="mx-auto max-w-[640px] px-4">
+        <h2 class="mb-6 text-center text-xl font-bold text-navy">50 red flags across 5 categories</h2>
+        <div class="grid grid-cols-2 gap-3 text-sm md:grid-cols-3">
+          <div class="rounded-lg bg-gray-50 p-3 text-center font-medium text-gray-700">Job Posting Red Flags</div>
+          <div class="rounded-lg bg-gray-50 p-3 text-center font-medium text-gray-700">Company Behavior</div>
+          <div class="rounded-lg bg-gray-50 p-3 text-center font-medium text-gray-700">Interview Process</div>
+          <div class="rounded-lg bg-gray-50 p-3 text-center font-medium text-gray-700">Recruiter Red Flags</div>
+          <div class="rounded-lg bg-gray-50 p-3 text-center font-medium text-gray-700">Online Research</div>
+          <div class="rounded-lg bg-gray-50 p-3 text-center font-medium text-gray-700">Scoring System</div>
+        </div>
+
+        <div class="mt-8 rounded-xl border border-blue-200 bg-blue-bg/30 p-6">
+          <p class="mb-4 text-center text-sm font-medium text-gray-700">
+            Get the full checklist free
+          </p>
+          <EmailCaptureForm
+            client:load
+            productSlug="ghost-job-checklist"
+            productName="50 Ghost Job Red Flags Checklist"
+            ctaText="Send Me the Checklist"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-border py-6 text-center">
+      <p class="text-xs text-gray-400">&copy; {new Date().getFullYear()} ClearCareer. All rights reserved.</p>
+    </footer>
+  </div>
+</BaseLayout>

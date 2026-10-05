@@ -1,0 +1,284 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import CTASection from "@components/CTASection.astro";
+import FAQ from "@components/FAQ.astro";
+
+import toolsData from "@data/tools.json";
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "https://joinclearcareer.com";
+
+// Group tools by category
+const categories = [...new Set(toolsData.map((t) => t.category))];
+const toolsByCategory = categories.map((cat) => ({
+  name: cat,
+  tools: toolsData.filter((t) => t.category === cat),
+}));
+
+const pricingColors: Record<string, string> = {
+  Free: "bg-success/10 text-success",
+  Freemium: "bg-blue-bg text-blue",
+  Paid: "bg-warning/10 text-warning",
+};
+
+const categoryDescriptions: Record<string, string> = {
+  "Job Search Tools": "These are the tools that save you hours every week, keep your search organized, and give you an edge over other candidates. I recommend every client start with at least two of these.",
+  "Salary Research": "Before you negotiate, you need data. These tools give you real salary numbers so you walk into the conversation knowing exactly what you're worth. No guessing.",
+  "Video Calls": "Most interviews and networking calls happen on video. These tools make sure you show up prepared, record what matters, and never forget a follow-up.",
+  "Scheduling": "Eliminate the back-and-forth. When you're juggling interviews and networking calls, a scheduling tool keeps everything running smoothly.",
+  "Community": "Job searching alone is brutal. Community changes everything. These are spaces where you'll find accountability, feedback, and people who get it.",
+};
+
+const categoryBlogLinks: Record<string, { text: string; href: string }[]> = {
+  "Job Search Tools": [
+    { text: "AI Tools for Job Seekers: The 2026 Guide", href: "/blog/ai-tools-for-job-seekers-2026-guide" },
+    { text: "Stop Mass-Applying: How to Target Your Job Search", href: "/blog/stop-mass-applying-target-your-job-search" },
+  ],
+  "Salary Research": [
+    { text: "Salary Research Tools: How to Know Your Worth", href: "/blog/salary-research-tools-and-how-to-use-them" },
+    { text: "Always Negotiate: The First Offer Is Never Final", href: "/blog/always-negotiate-the-first-offer-is-never-the-final-offer" },
+  ],
+  "Video Calls": [
+    { text: "The 4 Stories You Need for Any Interview", href: "/blog/four-stories-you-need-for-any-interview" },
+  ],
+  "Scheduling": [
+    { text: "LinkedIn Outreach Messages That Get Replies", href: "/blog/linkedin-outreach-messages-that-actually-get-replies" },
+  ],
+  "Community": [
+    { text: "The Hidden Job Market: Finding Jobs Never Posted", href: "/blog/hidden-job-market-how-to-find-jobs-that-are-never-posted" },
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Are these affiliate links? Do you get paid if I sign up?",
+    answer: "Yes, some links on this page are affiliate links. If you sign up through them, ClearCareer may earn a small commission at no extra cost to you. But here's the thing: I only recommend tools I personally use with my clients. If a tool doesn't deliver, it doesn't make this list. Period.",
+  },
+  {
+    question: "Which tool should I start with if I'm on a tight budget?",
+    answer: "Start with TealHQ (free tier for job tracking), Uli AI (completely free mock interviews), and Glassdoor (free salary research). These three cover the essentials: organization, interview prep, and salary intelligence. You can do a lot with just these three and zero dollars.",
+  },
+  {
+    question: "Do I really need AI tools for my job search?",
+    answer: "You don't need them. But they save you time. A lot of time. The candidates who use AI tools strategically spend less time on repetitive tasks (formatting, application filling, research) and more time on the things that actually get you hired: networking, interview prep, and targeted outreach.",
+  },
+  {
+    question: "How do you decide which tools to recommend?",
+    answer: "Every tool on this page has been tested with real clients in real job searches. I don't recommend tools based on who pays the highest commission. I recommend tools based on what actually helps people land jobs faster. If a tool stops delivering, it comes off the list.",
+  },
+];
+---
+
+<PageLayout
+  title="Recommended Career Tools & Reviews | ClearCareer"
+  description="Detailed reviews of the best career tools for job seekers. Personally tested by a career coach who's helped 200+ professionals land roles."
+>
+  <!-- Review Schema for each tool -->
+  {toolsData.filter(t => t.recommended).map((tool) => (
+    <script
+      type="application/ld+json"
+      slot="head"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Review",
+        itemReviewed: {
+          "@type": "SoftwareApplication",
+          name: tool.name,
+          applicationCategory: "BusinessApplication",
+          url: tool.url,
+          offers: {
+            "@type": "Offer",
+            price: tool.pricing === "Free" ? "0" : undefined,
+            priceCurrency: "USD",
+          },
+        },
+        author: {
+          "@type": "Person",
+          name: "Izzy Piyale-Sheard",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "ClearCareer",
+          url: siteUrl,
+        },
+        reviewBody: tool.review,
+      })}
+    />
+  ))}
+
+  <!-- Hero -->
+  <Hero
+    variant="page"
+    eyebrow="Tool Reviews"
+    headline="The Tools I Actually Use With Clients"
+    subheadline="Honest reviews from 200+ coaching sessions. No fluff. No sponsored placements. Just tools that work."
+  />
+
+  <!-- Affiliate Disclosure Banner -->
+  <section class="bg-blue-bg py-4">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <p class="text-sm text-text-muted">
+        <strong class="text-navy">Transparency note:</strong> Some links on this page are affiliate links. If you sign up through them, ClearCareer earns a small commission at no extra cost to you. I only list tools I personally use and recommend to clients. A quick directory without the reviews is available on the <a href="/tools" class="text-blue hover:text-blue-dark underline">tools page</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-[720px] px-4 sm:px-6 lg:px-8">
+      <div class="text-[1.0625rem] leading-[1.75] text-text">
+        <p>
+          Over the last 200+ coaching sessions, I've tested dozens of career tools with clients at every stage of their job search. Some tools saved them hours every week. Others were a waste of time.
+        </p>
+        <p class="mt-4">
+          This page is the result of all that testing. Every tool listed here has earned its spot by helping real people land real jobs. If something stops working, it comes off the list.
+        </p>
+        <p class="mt-4">
+          I've organized them by use case so you can find exactly what you need. Let's dig in.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool Categories with Detailed Reviews -->
+  {toolsByCategory.map((category, categoryIndex) => (
+    <section class={`py-16 md:py-24 ${categoryIndex % 2 === 0 ? "bg-blue-bg" : ""}`}>
+      <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+          {category.name}
+        </h2>
+        <p class="mt-4 max-w-[720px] text-[1.0625rem] leading-[1.75] text-text-muted">
+          {categoryDescriptions[category.name] || ""}
+        </p>
+
+        <div class="mt-10 space-y-8">
+          {category.tools.map((tool) => (
+            <div class="rounded-xl border border-border bg-white p-8 shadow-sm">
+              <div class="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-xl font-semibold text-navy">{tool.name}</h3>
+                  <div class="mt-2 flex flex-wrap gap-2">
+                    <span class={`inline-block rounded-full px-3 py-1 text-xs font-medium ${pricingColors[tool.pricing] || "bg-blue-bg text-blue"}`}>
+                      {tool.pricing}
+                    </span>
+                    {tool.recommended && (
+                      <span class="rounded-full bg-success/10 px-3 py-1 text-xs font-medium text-success">
+                        Recommended
+                      </span>
+                    )}
+                    <span class="rounded-full bg-blue-bg px-3 py-1 text-xs font-medium text-blue">
+                      {tool.linkType === "affiliate" ? "Affiliate" : "Referral"}
+                    </span>
+                  </div>
+                </div>
+
+                {tool.url && (
+                  <a
+                    href={tool.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+                  >
+                    Try {tool.name} &rarr;
+                  </a>
+                )}
+              </div>
+
+              <p class="mt-4 text-[1.0625rem] leading-[1.75] text-text">
+                {tool.description}
+              </p>
+
+              {tool.review && (
+                <div class="mt-4 rounded-lg bg-blue-bg p-5">
+                  <p class="text-sm font-semibold text-navy">Izzy's take:</p>
+                  <p class="mt-1 text-[1.0625rem] leading-[1.75] text-text">
+                    {tool.review}
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Related blog posts */}
+        {categoryBlogLinks[category.name] && categoryBlogLinks[category.name].length > 0 && (
+          <div class="mt-8 rounded-lg border border-border bg-white p-6">
+            <p class="text-sm font-semibold text-navy">Related articles:</p>
+            <ul class="mt-2 space-y-1">
+              {categoryBlogLinks[category.name].map((link) => (
+                <li>
+                  <a href={link.href} class="text-sm text-blue hover:text-blue-dark underline">
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <!-- Quick Comparison Table -->
+  <section class="py-16 md:py-24">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] leading-[1.15] text-navy">
+        Quick Comparison: Which Tools Do You Need?
+      </h2>
+      <p class="mt-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+        Not sure where to start? Here's what I recommend based on where you are in your job search.
+      </p>
+
+      <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="rounded-xl border border-border bg-white p-6">
+          <h3 class="text-lg font-semibold text-navy">Just Starting Out</h3>
+          <p class="mt-2 text-sm text-text-muted">Free tools to get organized and build confidence.</p>
+          <ul class="mt-4 space-y-2 text-[1.0625rem] text-text">
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> TealHQ (free tier)</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Uli AI (free)</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Glassdoor (free)</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Indeed (free)</li>
+          </ul>
+          <p class="mt-4 text-sm font-semibold text-success">Cost: $0/month</p>
+        </div>
+
+        <div class="rounded-xl border-2 border-blue bg-white p-6 shadow-md">
+          <h3 class="text-lg font-semibold text-navy">Active Job Search</h3>
+          <p class="mt-2 text-sm text-text-muted">The full toolkit for serious job seekers.</p>
+          <ul class="mt-4 space-y-2 text-[1.0625rem] text-text">
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> TealHQ (Pro)</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Simplify.jobs</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Yoodli</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Hunter.io</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Levels.fyi or Payscale</li>
+          </ul>
+          <p class="mt-4 text-sm font-semibold text-blue">Best value for results</p>
+        </div>
+
+        <div class="rounded-xl border border-border bg-white p-6">
+          <h3 class="text-lg font-semibold text-navy">Negotiation Phase</h3>
+          <p class="mt-2 text-sm text-text-muted">Data tools for salary and offer evaluation.</p>
+          <ul class="mt-4 space-y-2 text-[1.0625rem] text-text">
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Glassdoor</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Levels.fyi</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Payscale</li>
+            <li class="flex items-center gap-2"><span class="text-success">✓</span> Crunchbase</li>
+          </ul>
+          <p class="mt-4 text-sm font-semibold text-success">Cost: $0/month (all free)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <div class="mx-auto max-w-[1080px] px-4 pb-8 sm:px-6 lg:px-8">
+    <FAQ items={faqItems} />
+  </div>
+
+  <!-- CTA -->
+  <CTASection
+    heading="Want a Personalized Tool Stack for Your Job Search?"
+    primaryCTA={{ text: "Book a Free Audit", href: "https://calendly.com/clearcareer/discovery-call" }}
+    variant="blue"
+  />
+</PageLayout>

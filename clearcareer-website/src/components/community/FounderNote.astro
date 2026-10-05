@@ -1,0 +1,48 @@
+---
+const media = ["CBC Radio", "Global News", "Newsweek", "Inc. Magazine"];
+---
+
+<section class="relative overflow-hidden bg-navy py-20 md:py-28">
+  <div class="absolute inset-0 opacity-50" aria-hidden="true"
+    style="background: radial-gradient(45% 60% at 85% 20%, rgba(6,182,212,0.22) 0%, transparent 60%), radial-gradient(45% 55% at 10% 90%, rgba(1,97,239,0.28) 0%, transparent 60%);">
+  </div>
+
+  <div class="relative mx-auto grid max-w-[1080px] items-center gap-12 px-4 sm:px-6 md:grid-cols-[0.8fr_1fr] lg:px-8">
+    <div data-cc-fade class="relative mx-auto w-full max-w-[340px]">
+      <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-blue/40 to-teal/30 blur-2xl" aria-hidden="true"></div>
+      <img
+        src="/images/izzy-profile.webp"
+        alt="Izzy Piyale-Sheard, founder of ClearCareer"
+        width="340"
+        height="425"
+        loading="lazy"
+        class="relative w-full rounded-[1.75rem] object-cover shadow-2xl"
+      />
+    </div>
+
+    <div>
+      <p data-cc-fade class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-light">Your coach in the room</p>
+      <h2 data-cc-fade class="mt-4 font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-tight text-white">
+        Hi, I'm Izzy. I built the room I wish I'd had.
+      </h2>
+      <div data-cc-fade class="mt-6 space-y-4 text-[1.0625rem] leading-[1.75] text-white/70">
+        <p>
+          I've coached 200+ professionals one-on-one and spoken to thousands more at the University of Toronto,
+          FlexJobs, and on CBC. The pattern never changes: talented people grinding alone, convinced the silence
+          is their fault. It isn't. The system is broken, and it was never meant to be done solo.
+        </p>
+        <p>
+          The Community is everything that works from my paid programs, run as a living room you can actually
+          afford to be in, every single week. You bring the effort. I bring the system and the people.
+        </p>
+      </div>
+
+      <div data-cc-fade class="mt-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/40">As featured in</p>
+        <div class="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+          {media.map((m) => <span class="text-base font-medium text-white/60">{m}</span>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

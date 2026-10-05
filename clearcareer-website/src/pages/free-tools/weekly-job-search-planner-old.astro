@@ -1,0 +1,326 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import ToolInput from "@components/ToolInput.astro";
+---
+
+<ToolLayout
+  title="Weekly Job Search Planner"
+  headline="Weekly Job Search Planner"
+  description="Tell us how many hours you have. We'll build you a weekly schedule that covers networking, applications, interview prep, and more."
+  category="Job Search"
+  icon="📅"
+  relatedTags={["job search strategy"]}
+  slug="weekly-job-search-planner"
+  lastUpdated="March 2026"
+  featureList={["Custom weekly hour allocation", "5 activity category breakdown", "Daily schedule with time blocks", "Activity suggestions per category"]}
+  faqItems={[
+    { question: "How many hours per week should I spend on my job search?", answer: "If you're searching full-time: 25-35 hours. If you're searching while employed: 10-15 hours. The key is consistency, not marathon sessions. 2-3 focused hours per day beats 10 scattered hours on Saturday." },
+    { question: "Why does networking get the most time?", answer: "Because it works. 70-80% of jobs are filled through networking, not applications. One good coffee chat can lead to a referral that skips the application pile entirely. Applications are necessary, but networking is how most people actually land." },
+    { question: "What if I'm currently employed and searching?", answer: "Reduce to 10-15 hours/week. Focus on networking (evenings and weekends) and applications (lunch breaks and after work). Prep for interviews the night before. Every hour counts more when you have fewer of them." },
+    { question: "Should I adjust when interviews start coming in?", answer: "Yes. When you have active interviews, shift 50-60% of your time to interview prep and company research. But keep networking and applying. Most searches involve multiple rounds at multiple companies. Never put all your eggs in one basket." },
+    { question: "How long does a typical job search take?", answer: "3-6 months for mid-career professionals in 2025-2026. Senior and executive roles: 6-9 months. These timelines shrink with a structured, networking-heavy approach. Job seekers who follow a plan like this typically land 4-8 weeks faster than those who wing it." },
+  ]}
+  relatedTools={[
+    { name: "Financial Runway Calculator", slug: "financial-runway-calculator", icon: "💰" },
+    { name: "Resume Bullet Point Scorer", slug: "resume-bullet-scorer", icon: "✅" },
+  ]}
+>
+  <div slot="intro">
+    <h2 class="text-xl font-bold text-navy">Why This Matters</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        Structure beats motivation. Most job seekers over-index on applications (the lowest-ROI activity) and ignore networking (the highest). This planner distributes your hours across the 5 activities that actually move a search forward, based on what the data says works best.
+      </p>
+    </div>
+  </div>
+  <div class="space-y-8">
+    <div>
+      <ToolInput
+        id="hours"
+        label="Hours available per week"
+        type="number"
+        required
+        min={5}
+        max={40}
+        placeholder="20"
+        tooltip="How many hours can you realistically dedicate to your job search each week?"
+      />
+    </div>
+
+    <div>
+      <p class="text-sm font-medium text-navy">What do you want to focus on?</p>
+      <p class="mt-1 text-xs text-text-muted">Select at least 2 activities. We'll distribute your hours based on what matters most.</p>
+      <div class="mt-3 space-y-3">
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input type="checkbox" id="check-networking" value="networking" checked class="h-4 w-4 rounded border-border text-blue focus:ring-blue/20" />
+          <span class="text-sm text-text"><strong class="text-navy">Networking</strong> (coffee chats, LinkedIn outreach, events)</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input type="checkbox" id="check-applications" value="applications" checked class="h-4 w-4 rounded border-border text-blue focus:ring-blue/20" />
+          <span class="text-sm text-text"><strong class="text-navy">Applications</strong> (targeting, customizing, applying)</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input type="checkbox" id="check-interview-prep" value="interview-prep" checked class="h-4 w-4 rounded border-border text-blue focus:ring-blue/20" />
+          <span class="text-sm text-text"><strong class="text-navy">Interview Prep</strong> (STAR stories, company research, mock practice)</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input type="checkbox" id="check-research" value="research" class="h-4 w-4 rounded border-border text-blue focus:ring-blue/20" />
+          <span class="text-sm text-text"><strong class="text-navy">Company Research</strong> (target list building, Glassdoor, LinkedIn deep dives)</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input type="checkbox" id="check-linkedin" value="linkedin" class="h-4 w-4 rounded border-border text-blue focus:ring-blue/20" />
+          <span class="text-sm text-text"><strong class="text-navy">LinkedIn Content</strong> (posting, commenting, building visibility)</span>
+        </label>
+      </div>
+    </div>
+
+    <button
+      id="build-plan"
+      type="button"
+      class="w-full rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+    >
+      Build My Weekly Plan
+    </button>
+
+    <!-- Results -->
+    <div id="results" class="hidden space-y-8" aria-live="polite">
+      <h2 class="text-xl font-bold text-navy">Your Weekly Job Search Plan</h2>
+
+      <!-- Hours breakdown -->
+      <div id="hours-breakdown" class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+
+      <!-- Daily schedule -->
+      <div>
+        <h3 class="text-lg font-semibold text-navy">Daily Breakdown (Monday to Friday)</h3>
+        <p class="mt-1 text-sm text-text-muted">Suggested activities for each day. Adjust based on what works for you.</p>
+        <div id="daily-schedule" class="mt-4 space-y-3"></div>
+      </div>
+
+      <!-- Activity suggestions -->
+      <div id="activity-suggestions" class="rounded-xl border border-border bg-blue-bg p-6">
+        <h3 class="text-lg font-semibold text-navy">What to Actually Do</h3>
+        <div class="mt-4 space-y-4" id="suggestions-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div slot="methodology">
+    <h2 class="text-xl font-bold text-navy">How We Allocate Your Hours</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        The default split comes from coaching 200+ job seekers: 30% networking, 25% applications, 20% interview prep, 15% company research, 10% LinkedIn content. Networking leads because 70-80% of jobs come through connections and referrals.
+      </p>
+      <p>
+        When you select fewer categories, the tool redistributes proportionally. Pick only networking and applications, and they shift to 55% and 45%.
+      </p>
+    </div>
+  </div>
+
+  <div slot="example">
+    <h2 class="text-xl font-bold text-navy">Example: A 20-Hour Week</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        20 hours, all 5 categories selected: <strong class="text-navy">Networking 6 hrs (30%)</strong> for outreach and coffee chats. <strong class="text-navy">Applications 5 hrs (25%)</strong> for 3-4 targeted, customized submissions. <strong class="text-navy">Interview Prep 4 hrs (20%)</strong> for STAR stories and company research. <strong class="text-navy">Company Research 3 hrs (15%)</strong> for target list building. <strong class="text-navy">LinkedIn Content 2 hrs (10%)</strong> for one post and 10 comments.
+      </p>
+    </div>
+  </div>
+
+  <div slot="tips">
+    <h2 class="text-xl font-bold text-navy">Tips for Sticking to Your Plan</h2>
+    <div class="mt-6 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        <strong class="text-navy">Treat it like a job.</strong> Block time on your calendar. Show up at the same time every day.
+      </p>
+      <p>
+        <strong class="text-navy">Networking comes first.</strong> If you only do one thing today, make it a networking touchpoint. It's the highest-ROI activity in any search.
+      </p>
+      <p>
+        <strong class="text-navy">Don't skip the pipeline.</strong> Even with interviews lined up, keep searching.
+        <a href="/blog/should-you-stop-applying-when-you-have-interviews" class="text-blue hover:text-blue-dark underline">Read: Should You Stop Applying When You Have Interviews?</a>
+      </p>
+      <p>
+        <strong class="text-navy">Batch similar tasks.</strong> All applications in one block, all outreach in another. Context switching kills momentum.
+      </p>
+    </div>
+  </div>
+</ToolLayout>
+
+<script>
+  const activities = {
+    networking: {
+      label: 'Networking',
+      color: 'bg-blue',
+      weight: 0.30,
+      suggestions: [
+        'Send 3-5 personalized LinkedIn connection requests',
+        'Schedule 2 coffee chats or informational interviews',
+        'Follow up with 2-3 contacts from last week',
+        'Comment thoughtfully on 5 posts from people in your target industry',
+        'Attend 1 virtual or in-person networking event',
+      ],
+    },
+    applications: {
+      label: 'Applications',
+      color: 'bg-success',
+      weight: 0.25,
+      suggestions: [
+        'Research 3-5 target companies before applying',
+        'Customize your resume for each application (mirror the job posting)',
+        'Write a tailored opening paragraph for each cover letter',
+        'Submit 2-3 high-quality, targeted applications',
+        'Track every application in your spreadsheet with follow-up dates',
+      ],
+    },
+    'interview-prep': {
+      label: 'Interview Prep',
+      color: 'bg-warning',
+      weight: 0.20,
+      suggestions: [
+        'Practice your 4 core STAR stories out loud',
+        'Research the company, team, and interviewer for upcoming interviews',
+        'Prepare 5 specific questions to ask the interviewer',
+        'Do a mock interview with a friend or coach',
+        'Review common behavioral questions for your target role',
+      ],
+    },
+    research: {
+      label: 'Company Research',
+      color: 'bg-[#8b5cf6]',
+      weight: 0.15,
+      suggestions: [
+        'Update your target company list (aim for 30-50 companies)',
+        'Research 3 companies: Glassdoor reviews, LinkedIn team pages, recent news',
+        'Identify hiring managers and decision-makers at your top companies',
+        'Look up former employees (2-4 years gone) for honest intel',
+        'Check Crunchbase for funding, growth, and leadership changes',
+      ],
+    },
+    linkedin: {
+      label: 'LinkedIn Content',
+      color: 'bg-[#06b6d4]',
+      weight: 0.10,
+      suggestions: [
+        'Write and publish 1 LinkedIn post (share a lesson, insight, or story)',
+        'Comment on 10 posts from people in your target space',
+        'Update your headline and About section with target keywords',
+        'Share an article with your perspective added',
+        'Engage with content from hiring managers at your target companies',
+      ],
+    },
+  };
+
+  type ActivityKey = keyof typeof activities;
+
+  const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+  document.getElementById('build-plan')?.addEventListener('click', () => {
+    const hoursInput = document.getElementById('hours') as HTMLInputElement;
+    const hours = parseFloat(hoursInput?.value || '0');
+
+    if (!hours || hours < 5) {
+      hoursInput?.focus();
+      return;
+    }
+
+    // Get selected activities
+    const selected: ActivityKey[] = [];
+    (Object.keys(activities) as ActivityKey[]).forEach((key) => {
+      const checkbox = document.getElementById(`check-${key}`) as HTMLInputElement;
+      if (checkbox?.checked) selected.push(key);
+    });
+
+    if (selected.length < 2) {
+      alert('Please select at least 2 activities.');
+      return;
+    }
+
+    // Calculate hours per activity
+    const totalWeight = selected.reduce((sum, key) => sum + activities[key].weight, 0);
+    const allocation: Record<string, number> = {};
+    selected.forEach((key) => {
+      allocation[key] = Math.round((activities[key].weight / totalWeight) * hours * 10) / 10;
+    });
+
+    // Render hours breakdown cards
+    const breakdownEl = document.getElementById('hours-breakdown')!;
+    breakdownEl.innerHTML = selected
+      .map(
+        (key) => `
+      <div class="rounded-lg border border-border bg-white p-4">
+        <div class="flex items-center gap-2">
+          <span class="h-3 w-3 rounded-full ${activities[key].color}"></span>
+          <span class="text-sm font-medium text-navy">${activities[key].label}</span>
+        </div>
+        <p class="mt-1 font-display text-2xl text-navy">${allocation[key]} hrs</p>
+        <p class="text-xs text-text-muted">${Math.round((allocation[key] / hours) * 100)}% of your time</p>
+      </div>
+    `
+      )
+      .join('');
+
+    // Build daily schedule
+    const dailyHours = hours / 5;
+    const scheduleEl = document.getElementById('daily-schedule')!;
+    scheduleEl.innerHTML = dayNames
+      .map((day, i) => {
+        // Rotate focus areas across days
+        const primaryIdx = i % selected.length;
+        const secondaryIdx = (i + 1) % selected.length;
+        const primary = selected[primaryIdx];
+        const secondary = selected[secondaryIdx];
+        const primaryHours = Math.round(dailyHours * 0.6 * 10) / 10;
+        const secondaryHours = Math.round(dailyHours * 0.4 * 10) / 10;
+
+        return `
+        <div class="rounded-lg border border-border bg-white p-4">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-navy">${day}</span>
+            <span class="text-xs text-text-muted">${dailyHours.toFixed(1)} hrs</span>
+          </div>
+          <div class="mt-2 flex gap-2">
+            <div class="flex-1 rounded bg-blue-bg p-2">
+              <div class="flex items-center gap-1.5">
+                <span class="h-2 w-2 rounded-full ${activities[primary].color}"></span>
+                <span class="text-xs font-medium text-navy">${activities[primary].label}</span>
+              </div>
+              <span class="text-xs text-text-muted">${primaryHours} hrs</span>
+            </div>
+            <div class="flex-1 rounded bg-blue-bg p-2">
+              <div class="flex items-center gap-1.5">
+                <span class="h-2 w-2 rounded-full ${activities[secondary].color}"></span>
+                <span class="text-xs font-medium text-navy">${activities[secondary].label}</span>
+              </div>
+              <span class="text-xs text-text-muted">${secondaryHours} hrs</span>
+            </div>
+          </div>
+        </div>
+      `;
+      })
+      .join('');
+
+    // Activity suggestions
+    const suggestionsEl = document.getElementById('suggestions-list')!;
+    suggestionsEl.innerHTML = selected
+      .map(
+        (key) => `
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="h-3 w-3 rounded-full ${activities[key].color}"></span>
+          <h4 class="text-sm font-semibold text-navy">${activities[key].label} (${allocation[key]} hrs/week)</h4>
+        </div>
+        <ul class="space-y-1 pl-5">
+          ${activities[key].suggestions
+            .slice(0, 3)
+            .map((s: string) => `<li class="text-sm text-text list-disc">${s}</li>`)
+            .join('')}
+        </ul>
+      </div>
+    `
+      )
+      .join('');
+
+    // Show results
+    document.getElementById('results')?.classList.remove('hidden');
+    document.getElementById('results')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>

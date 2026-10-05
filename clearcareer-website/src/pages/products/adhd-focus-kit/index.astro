@@ -1,0 +1,66 @@
+---
+import ProductLayout from "@layouts/ProductLayout.astro";
+---
+
+<ProductLayout
+  title="ADHD Job Seeker's Focus Kit | ClearCareer"
+  description="Energy management, dopamine-friendly tracking, and RSD tools built for ADHD job seekers."
+  headline="Built by someone with ADHD,<br />for people with ADHD."
+  subheadline="5 guides covering energy management, dopamine-friendly tracking, rejection sensitivity, and external scaffolding systems. Because generic job search advice doesn't work for ADHD brains."
+  bullets={[
+    "Why job search is an executive function nightmare (and what to do about it)",
+    "Energy management framework: stop managing time, start managing energy",
+    "The dopamine-friendly job search: gamify without cheesy apps",
+    "Rejection Sensitivity Dysphoria toolkit for when ghosting hits hard",
+    "Systems, not willpower: external scaffolding for every stage",
+  ]}
+  price="$9 CAD"
+  ctaHref="#checkout"
+  ctaText="Get Instant Access"
+  guaranteeText="30-day money-back guarantee. No questions asked."
+  faq={[
+    {
+      q: "I don't have a formal ADHD diagnosis. Is this still for me?",
+      a: "Yes. If you struggle with executive function, time blindness, or rejection sensitivity during your job search, these tools will help regardless of a formal diagnosis.",
+    },
+    {
+      q: "How is this different from the free ADHD Cheat Sheet?",
+      a: "The cheat sheet gives you 5 quick hacks. The Focus Kit goes much deeper with complete frameworks, worksheets, and systems for each challenge area.",
+    },
+    {
+      q: "Do I get lifetime access?",
+      a: "Yes. Buy once, access forever. No subscription.",
+    },
+  ]}
+>
+  <Fragment slot="preview">
+    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
+      <p class="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-400">What's inside</p>
+      <div class="space-y-3">
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🧠</span>
+          <span class="text-sm font-medium text-gray-700">Why Job Search Is an ADHD Nightmare</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>⚡</span>
+          <span class="text-sm font-medium text-gray-700">Energy Management Framework</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🎮</span>
+          <span class="text-sm font-medium text-gray-700">The Dopamine-Friendly Job Search</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>💙</span>
+          <span class="text-sm font-medium text-gray-700">Rejection Sensitivity Toolkit</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>⚙️</span>
+          <span class="text-sm font-medium text-gray-700">Systems, Not Willpower</span>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-center text-sm text-gray-500">
+      30-40% of neurodiverse job seekers are unemployed. These tools exist to change that.
+    </p>
+  </Fragment>
+</ProductLayout>

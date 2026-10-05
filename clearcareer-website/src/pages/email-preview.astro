@@ -1,0 +1,169 @@
+---
+import { templates } from '../lib/email/index.js';
+import { sampleLeadMagnet, samplePaidProduct, sampleSpreadsheet } from '../lib/email/sample-data.js';
+import type { TemplateDirection } from '../lib/email/types.js';
+
+export const prerender = true;
+
+const directions: TemplateDirection[] = ['premium-minimal', 'warm-branded', 'bold-conversion'];
+const directionLabels: Record<TemplateDirection, string> = {
+  'premium-minimal': 'A: Premium Minimal',
+  'warm-branded': 'B: Warm & Branded',
+  'bold-conversion': 'C: Bold & Conversion',
+};
+
+const samples = {
+  'lead-magnet': { label: 'Lead Magnet (PDF)', data: sampleLeadMagnet },
+  'paid-product': { label: 'Paid Product (Layoff Kit)', data: samplePaidProduct },
+  'spreadsheet': { label: 'Spreadsheet Lead Magnet', data: sampleSpreadsheet },
+};
+
+// Pre-render all combinations
+const allPreviews: Record<string, Record<TemplateDirection, string>> = {};
+for (const [sampleKey, sample] of Object.entries(samples)) {
+  allPreviews[sampleKey] = {} as Record<TemplateDirection, string>;
+  for (const dir of directions) {
+    allPreviews[sampleKey][dir] = templates[dir](sample.data);
+  }
+}
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Email Template Preview | ClearCareer Internal</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #e2e8f0; }
+    .header { padding: 24px 32px; border-bottom: 1px solid #2d2d44; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .header h1 { font-size: 20px; font-weight: 700; }
+    .header p { font-size: 13px; color: #94a3b8; }
+    .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .controls label { font-size: 13px; color: #94a3b8; }
+    .controls select { background: #1a1a2e; color: #e2e8f0; border: 1px solid #3d3d5c; border-radius: 6px; padding: 8px 12px; font-size: 14px; }
+    .controls button { background: #0161EF; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .controls button:hover { background: #0450c8; }
+    .controls button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 24px 32px; }
+    @media (max-width: 1200px) { .grid { grid-template-columns: 1fr; } }
+    .preview-card { background: #1a1a2e; border-radius: 12px; overflow: hidden; border: 1px solid #2d2d44; }
+    .preview-card.selected { border-color: #0161EF; box-shadow: 0 0 20px rgba(1,97,239,0.3); }
+    .preview-label { padding: 12px 16px; font-size: 14px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2d2d44; }
+    .preview-label .badge { font-size: 11px; padding: 3px 8px; border-radius: 4px; background: #2d2d44; color: #94a3b8; }
+    .preview-label .badge.a { background: rgba(1,97,239,0.15); color: #0161EF; }
+    .preview-label .badge.b { background: rgba(5,150,105,0.15); color: #059669; }
+    .preview-label .badge.c { background: rgba(217,119,6,0.15); color: #D97706; }
+    .preview-frame { width: 100%; height: 900px; border: none; background: white; }
+    .test-form { padding: 16px 32px 32px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .test-form input { background: #1a1a2e; color: #e2e8f0; border: 1px solid #3d3d5c; border-radius: 6px; padding: 8px 12px; font-size: 14px; width: 280px; }
+    .test-form .status { font-size: 13px; color: #94a3b8; }
+    .test-form .status.success { color: #059669; }
+    .test-form .status.error { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>Email Template Preview</h1>
+      <p>Compare 3 design directions side-by-side. Pick a sample type to preview different email scenarios.</p>
+    </div>
+    <div class="controls">
+      <label for="sample-select">Sample:</label>
+      <select id="sample-select">
+        {Object.entries(samples).map(([key, { label }]) => (
+          <option value={key}>{label}</option>
+        ))}
+      </select>
+    </div>
+  </div>
+
+  <div class="grid" id="preview-grid">
+    {directions.map((dir, i) => (
+      <div class="preview-card" data-direction={dir}>
+        <div class="preview-label">
+          <span>{directionLabels[dir]}</span>
+          <span class={`badge ${['a', 'b', 'c'][i]}`}>{['Stripe/Linear', 'Notion/Superhuman', 'ConvertKit'][i]}</span>
+        </div>
+        {Object.entries(allPreviews).map(([sampleKey, dirPreviews]) => (
+          <iframe
+            class="preview-frame"
+            data-sample={sampleKey}
+            data-direction={dir}
+            srcdoc={dirPreviews[dir]}
+            style={sampleKey === 'lead-magnet' ? '' : 'display:none;'}
+            title={`${directionLabels[dir]} - ${sampleKey}`}
+          />
+        ))}
+      </div>
+    ))}
+  </div>
+
+  <div class="test-form">
+    <label for="test-email" style="font-size:13px;color:#94a3b8;">Send test email:</label>
+    <input type="email" id="test-email" placeholder="your@email.com" />
+    <select id="test-direction">
+      {directions.map((dir) => (
+        <option value={dir}>{directionLabels[dir]}</option>
+      ))}
+    </select>
+    <button id="send-test" onclick="sendTestEmail()">Send Test</button>
+    <span class="status" id="test-status"></span>
+  </div>
+
+  <script>
+    const sampleSelect = document.getElementById('sample-select') as HTMLSelectElement;
+    const frames = document.querySelectorAll('.preview-frame') as NodeListOf<HTMLIFrameElement>;
+
+    sampleSelect.addEventListener('change', () => {
+      const selected = sampleSelect.value;
+      frames.forEach((frame) => {
+        frame.style.display = frame.dataset.sample === selected ? '' : 'none';
+      });
+    });
+
+    async function sendTestEmail() {
+      const email = (document.getElementById('test-email') as HTMLInputElement).value;
+      const direction = (document.getElementById('test-direction') as HTMLSelectElement).value;
+      const sample = sampleSelect.value;
+      const status = document.getElementById('test-status')!;
+      const btn = document.getElementById('send-test') as HTMLButtonElement;
+
+      if (!email) {
+        status.textContent = 'Enter an email address';
+        status.className = 'status error';
+        return;
+      }
+
+      btn.disabled = true;
+      status.textContent = 'Sending...';
+      status.className = 'status';
+
+      try {
+        const res = await fetch('/api/email-preview', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, direction, sample }),
+        });
+        const data = await res.json();
+        if (res.ok) {
+          status.textContent = `Sent! Check ${email}`;
+          status.className = 'status success';
+        } else {
+          status.textContent = data.error || 'Failed to send';
+          status.className = 'status error';
+        }
+      } catch {
+        status.textContent = 'Network error';
+        status.className = 'status error';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    // Expose to onclick
+    (window as any).sendTestEmail = sendTestEmail;
+  </script>
+</body>
+</html>

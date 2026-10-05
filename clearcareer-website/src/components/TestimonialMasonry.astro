@@ -1,0 +1,18 @@
+---
+interface Props {
+  columns?: number;
+  id?: string;
+}
+
+const { columns = 3, id } = Astro.props;
+---
+
+<div
+  id={id}
+  class:list={[
+    "masonry-grid",
+    columns === 2 && "masonry-grid--2col",
+  ]}
+>
+  <slot />
+</div>

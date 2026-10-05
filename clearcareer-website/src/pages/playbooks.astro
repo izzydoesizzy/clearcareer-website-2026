@@ -1,0 +1,131 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import CTASection from "@components/CTASection.astro";
+import { getCollection } from "astro:content";
+
+const now = new Date();
+const playbooks = (
+  await getCollection("blog", ({ data }) => {
+    if (data.draft) return false;
+    if (data.type !== "playbook") return false;
+    return new Date(data.publishDate) <= now;
+  })
+).sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Estimate reading time per post
+function estimateReadingTime(description: string): number {
+  // Rough estimate based on playbook length averages
+  return Math.max(8, Math.ceil(description.length / 15));
+}
+
+// Group by category
+const sections = [
+  {
+    label: "Resume & LinkedIn",
+    description: "Build a resume that sells and a LinkedIn profile that gets found.",
+    category: "resume-linkedin",
+  },
+  {
+    label: "Job Search & Networking",
+    description: "Systems for finding opportunities and building real connections.",
+    category: "job-search-strategy",
+  },
+  {
+    label: "Interview Prep",
+    description: "Frameworks to prepare, perform, and follow up with confidence.",
+    category: "interviews",
+  },
+  {
+    label: "Salary & Negotiation",
+    description: "Never leave money on the table.",
+    category: "salary-negotiation",
+  },
+  {
+    label: "Tools & Mindset",
+    description: "AI tools, burnout recovery, and the mental game of job searching.",
+    category: "ai-tools-mindset",
+  },
+];
+---
+
+<PageLayout
+  title="Playbooks | ClearCareer Step-by-Step Guides"
+  description="21 detailed, step-by-step playbooks for every stage of your job search. Resume writing, LinkedIn optimization, interview prep, salary negotiation, and more."
+>
+  <Hero
+    variant="page"
+    eyebrow="Playbooks"
+    headline="Step-by-Step Guides for Every Stage of Your Search"
+    subheadline="21 detailed playbooks built from 200+ coaching sessions. Real frameworks, real examples, real results."
+  />
+
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      {playbooks.length === 0 ? (
+        <div class="rounded-2xl bg-blue-bg p-12 text-center">
+          <h2 class="text-xl font-semibold text-navy">Playbooks coming soon</h2>
+          <p class="mx-auto mt-3 max-w-md text-text-muted">
+            We're putting the finishing touches on step-by-step guides for every stage of your job search. Check back soon.
+          </p>
+        </div>
+      ) : null}
+      {sections.map((section) => {
+        const sectionPlaybooks = playbooks.filter(
+          (p) => p.data.category === section.category
+        );
+        if (sectionPlaybooks.length === 0) return null;
+        return (
+          <div class="mb-14 last:mb-0">
+            <div class="mb-6">
+              <h2 class="font-display text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.15] text-navy">
+                {section.label}
+              </h2>
+              <p class="mt-1 text-text-muted">{section.description}</p>
+            </div>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {sectionPlaybooks.map((post) => (
+                <a
+                  href={`/blog/${post.id}`}
+                  class="group flex flex-col rounded-xl border border-border bg-white p-5 transition-all hover:border-blue/30 hover:shadow-[0_4px_24px_-4px_rgba(1,97,239,0.12)]"
+                >
+                  <div class="mb-3 flex items-center gap-2">
+                    <span class="inline-flex items-center gap-1 rounded-full bg-blue px-2.5 py-0.5 text-[0.6875rem] font-semibold text-white">
+                      <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                      Playbook
+                    </span>
+                    {post.data.tags.slice(0, 2).map((tag) => (
+                      <span class="rounded-full bg-blue-bg px-2.5 py-0.5 text-[0.6875rem] font-medium text-blue">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 class="text-base font-semibold text-navy transition-colors group-hover:text-blue line-clamp-2">
+                    {post.data.title}
+                  </h3>
+                  <p class="mt-2 flex-1 text-sm leading-relaxed text-text-muted line-clamp-2">
+                    {post.data.description}
+                  </p>
+                  <div class="mt-3 flex items-center gap-1 text-xs font-medium text-blue opacity-0 transition-opacity group-hover:opacity-100">
+                    Read playbook
+                    <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <CTASection
+    heading="Ready to Put These Playbooks Into Action?"
+    primaryCTA={{ text: "Book a Free Audit", href: "https://calendly.com/clearcareer/discovery-call" }}
+    variant="gradient"
+  />
+</PageLayout>

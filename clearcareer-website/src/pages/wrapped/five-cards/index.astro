@@ -1,0 +1,83 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import WrappedPrivacyFooter from "@components/wrapped/WrappedPrivacyFooter.astro";
+import ResumeUploader from "@components/wrapped/ResumeUploader";
+---
+
+<PageLayout
+  title="Your Career in 5 Cards | ClearCareer"
+  description="Your career story told in 5 swipeable cards. Shareable, surprising, and designed for social media."
+>
+  <section class="bg-navy py-16 md:py-24">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <a href="/wrapped" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors mb-6">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width={2}>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        All Wrapped Tools
+      </a>
+      <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-[#06b6d4] mb-4">
+        🃏 Your Career in 5 Cards
+      </div>
+      <h1 class="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1] text-white mb-3">
+        Your Career Story, 5 Cards
+      </h1>
+      <p class="text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
+        Upload your resume and get 5 punchy, visual career insight cards.
+        Swipe through them, download your favorites, and share them everywhere.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 -mt-8">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+      <ResumeUploader client:load tool="five-cards" toolLabel="5 Cards" />
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="max-w-[720px] mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.2] text-navy text-center mb-8">
+        The 5 Cards
+      </h2>
+      <div class="space-y-3">
+        <div class="rounded-xl bg-[#EFF5FF] p-4 flex items-center gap-3">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0161EF] text-white text-sm font-bold flex-shrink-0">1</div>
+          <div>
+            <h3 class="font-semibold text-navy text-sm">Your career so far</h3>
+            <p class="text-xs text-text-muted">Total years, industries, trajectory overview</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-[#EFF5FF] p-4 flex items-center gap-3">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#030620] text-white text-sm font-bold flex-shrink-0">2</div>
+          <div>
+            <h3 class="font-semibold text-navy text-sm">Your superpower</h3>
+            <p class="text-xs text-text-muted">The single most distinctive skill or trait</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-[#EFF5FF] p-4 flex items-center gap-3">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#059669] text-white text-sm font-bold flex-shrink-0">3</div>
+          <div>
+            <h3 class="font-semibold text-navy text-sm">Your hidden advantage</h3>
+            <p class="text-xs text-text-muted">Something others might not notice about you</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-[#EFF5FF] p-4 flex items-center gap-3">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#D97706] text-white text-sm font-bold flex-shrink-0">4</div>
+          <div>
+            <h3 class="font-semibold text-navy text-sm">Your biggest risk</h3>
+            <p class="text-xs text-text-muted">The main career vulnerability right now</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-[#EFF5FF] p-4 flex items-center gap-3">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#06b6d4] text-white text-sm font-bold flex-shrink-0">5</div>
+          <div>
+            <h3 class="font-semibold text-navy text-sm">Your next move</h3>
+            <p class="text-xs text-text-muted">A bold, specific prediction or recommendation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <WrappedPrivacyFooter />
+</PageLayout>

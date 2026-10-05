@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>ClearCareer Community — Stop Job Searching Alone · $29/mo Founding Rate</title>
+<meta name="description" content="Join the ClearCareer Community. Weekly group coaching with Izzy, done-for-you templates, monthly workshops, and a private room of professionals who land offers together. Founding-member rate $29/mo (normally $49)." />
+<meta name="robots" content="noindex,follow" />
+<meta property="og:title" content="ClearCareer Community — land your next role, together" />
+<meta property="og:description" content="Weekly group coaching, the templates behind five-figure raises, and a private crew job searching alongside you. Founding rate $29/mo." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#030620" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ════════════════════════════════════════════════════════════════
+   ClearCareer Community — standalone landing experience
+   Motion architecture adapted from the Drew Dudley v10 build,
+   recolored to the ClearCareer navy / blue / teal brand.
+   ════════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#030620;
+  --bg2:#050a26;
+  --bg3:#081038;
+  --ink:#f4f7ff;
+  --ink2:#c5ceee;
+  --mut:#8b97c4;
+  --mut2:#5d6896;
+  --line:rgba(244,247,255,.09);
+  --line2:rgba(244,247,255,.16);
+  --blue:#0161ef;
+  --blue-d:#0b4fc0;
+  --blue-l:#7cb0ff;
+  --blue2:#3b82f6;
+  --teal:#06b6d4;
+  --teal-l:#67e8f9;
+  --glow:rgba(120,170,255,.55);
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --maxw:1440px;
+  --pad:clamp(1.25rem,4vw,4rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+html.js{scroll-behavior:auto;}
+html.lenis,html.lenis body{height:auto;}
+.lenis.lenis-smooth{scroll-behavior:auto!important;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+img,video{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;background:none;border:0;cursor:pointer;color:inherit;}
+h1,h2,h3,h4,p{margin:0;}
+::selection{background:var(--blue);color:#fff;}
+.serif{font-family:var(--serif);font-weight:400;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
+.section{position:relative;padding:clamp(5rem,11vh,9rem) 0;z-index:2;}
+
+/* ── Atmosphere ─────────────────────────────────────── */
+#embers{position:fixed;inset:0;z-index:1;pointer-events:none;}
+.grain{position:fixed;inset:-50%;z-index:80;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 7s steps(6) infinite;mix-blend-mode:overlay;}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(3%,-4%)}60%{transform:translate(-3%,2%)}80%{transform:translate(4%,3%)}100%{transform:translate(0,0)}}
+.scroll-prog{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:0 50%;z-index:90;
+  background:linear-gradient(90deg,var(--blue),var(--teal));box-shadow:0 0 12px var(--glow);}
+
+/* ── Custom cursor ──────────────────────────────────── */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;z-index:100;pointer-events:none;border-radius:50%;
+  mix-blend-mode:difference;will-change:transform;}
+.cursor-dot{width:6px;height:6px;background:#fff;}
+.cursor-ring{width:38px;height:38px;border:1px solid rgba(255,255,255,.6);transition:width .25s var(--ease),height .25s var(--ease),background .25s,border-color .25s;}
+.cursor-ring.is-link{width:64px;height:64px;background:rgba(124,176,255,.12);border-color:rgba(124,176,255,.7);}
+body:not(.has-cursor) .cursor-dot,body:not(.has-cursor) .cursor-ring{display:none;}
+@media (pointer:fine){.has-cursor *{cursor:none!important;}}
+
+/* ── Buttons ────────────────────────────────────────── */
+.btn{position:relative;display:inline-flex;align-items:center;gap:.6rem;border-radius:999px;
+  padding:1.05rem 2rem;font-weight:600;font-size:1rem;letter-spacing:.01em;
+  transition:background .3s,color .3s,box-shadow .3s,transform .3s;will-change:transform;}
+.btn svg{width:1rem;height:1rem;transition:transform .3s var(--ease);}
+.btn:hover svg{transform:translateX(4px);}
+.btn-primary{background:#fff;color:var(--bg);box-shadow:0 0 50px -8px var(--glow);}
+.btn-primary:hover{background:var(--blue);color:#fff;box-shadow:0 0 64px -6px var(--glow);}
+.btn-ghost{border:1px solid var(--line2);color:var(--ink);}
+.btn-ghost:hover{background:rgba(255,255,255,.07);}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 0 50px -10px var(--glow);}
+.btn-blue:hover{background:var(--blue-d);}
+
+/* ── Eyebrow label ──────────────────────────────────── */
+.label{display:inline-flex;align-items:center;gap:.7rem;font-size:.74rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.22em;color:var(--blue-l);}
+.label .idx{font-family:var(--serif);font-size:.95rem;color:var(--mut2);letter-spacing:0;}
+
+/* ── Nav ────────────────────────────────────────────── */
+#nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:transform .5s var(--ease),background .4s,backdrop-filter .4s,border-color .4s;
+  border-bottom:1px solid transparent;}
+#nav.is-solid{background:rgba(3,6,32,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line);}
+#nav.is-hidden{transform:translateY(-103%);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;
+  padding:1.05rem var(--pad);}
+.nav-logo img{height:1.5rem;width:auto;}
+.nav-mid{display:flex;align-items:center;gap:.25rem;}
+.nav-link{padding:.5rem 1rem;font-size:.9rem;font-weight:500;color:var(--ink2);border-radius:999px;transition:color .25s,background .25s;}
+.nav-link:hover{color:#fff;}
+.nav-cta{display:inline-flex;align-items:center;gap:.45rem;background:#fff;color:var(--bg);
+  padding:.6rem 1.25rem;border-radius:999px;font-size:.88rem;font-weight:600;
+  box-shadow:0 4px 24px -4px rgba(255,255,255,.35);transition:background .3s,color .3s;will-change:transform;}
+.nav-cta b{color:var(--blue);transition:color .3s;}
+.nav-cta:hover{background:var(--blue);color:#fff;}
+.nav-cta:hover b{color:#fff;}
+@media (max-width:860px){.nav-mid{display:none;}}
+
+/* ── Preloader ──────────────────────────────────────── */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:1.6rem;}
+#loader .lw{font-family:var(--serif);font-size:clamp(2rem,7vw,4rem);line-height:1;
+  background:linear-gradient(90deg,var(--blue-l),#fff,var(--teal-l));-webkit-background-clip:text;background-clip:text;color:transparent;}
+#loader .lbar-track{width:min(240px,52vw);height:2px;background:var(--line2);border-radius:2px;overflow:hidden;}
+#loader .lbar{height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--blue),var(--teal));}
+#loader .lpct{font-size:.78rem;letter-spacing:.3em;color:var(--mut);}
+html:not(.js) #loader{display:none;}
+
+/* ── Hero ───────────────────────────────────────────── */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;}
+.hero-glow{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 50% 28%,rgba(1,97,239,.42) 0%,transparent 60%),
+    radial-gradient(48% 56% at 82% 78%,rgba(6,182,212,.32) 0%,transparent 58%),
+    radial-gradient(66% 64% at 14% 76%,rgba(59,130,246,.30) 0%,transparent 60%);
+  background-size:160% 160%;animation:heropan 22s ease-in-out infinite alternate;}
+@keyframes heropan{0%{background-position:0% 0%}100%{background-position:100% 100%}}
+.hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(78% 78% at 50% 42%,transparent 30%,rgba(3,6,32,.62) 100%);}
+.hero-in{position:relative;z-index:3;width:100%;max-width:1040px;margin:0 auto;padding:8rem var(--pad) 6rem;text-align:center;}
+.badge{display:inline-flex;align-items:center;gap:.6rem;padding:.45rem 1rem;border-radius:999px;
+  border:1px solid var(--line2);background:rgba(255,255,255,.05);backdrop-filter:blur(6px);
+  font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--ink2);}
+.badge .pulse{position:relative;display:inline-flex;width:8px;height:8px;}
+.badge .pulse i{position:absolute;inset:0;border-radius:50%;background:var(--teal);}
+.badge .pulse i.ping{animation:ping 1.6s cubic-bezier(0,0,.2,1) infinite;}
+@keyframes ping{0%{transform:scale(1);opacity:.75}75%,100%{transform:scale(2.4);opacity:0}}
+.hero-title{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;line-height:.98;
+  font-size:clamp(2.7rem,7.4vw,5.4rem);margin:1.8rem auto 0;max-width:18ch;}
+.hero-title .ln{display:block;overflow:hidden;}
+.hero-title .ch{display:inline-block;will-change:transform;}
+.hero-title .grad{background:linear-gradient(100deg,var(--blue-l),#fff 45%,var(--teal-l));
+  -webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-sub{max-width:60ch;margin:1.7rem auto 0;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--ink2);}
+.hero-cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2.4rem;}
+.hero-micro{margin-top:1.4rem;font-size:.85rem;color:var(--mut);}
+.scrollcue{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);z-index:3;
+  width:24px;height:40px;border:1px solid var(--line2);border-radius:14px;display:flex;justify-content:center;padding-top:7px;}
+.scrollcue i{width:3px;height:8px;border-radius:3px;background:rgba(255,255,255,.7);animation:cue 1.8s ease-in-out infinite;}
+@keyframes cue{0%{transform:translateY(0);opacity:0}30%{opacity:1}100%{transform:translateY(13px);opacity:0}}
+
+/* ── Ticker ─────────────────────────────────────────── */
+.ticker-wrap{border-block:1px solid var(--line);background:var(--bg2);padding:2.4rem 0;position:relative;z-index:2;overflow:hidden;}
+.ticker-cap{text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--mut2);margin-bottom:1.6rem;}
+.ticker-mask{position:relative;overflow:hidden;}
+.ticker-mask::before,.ticker-mask::after{content:"";position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none;}
+.ticker-mask::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent);}
+.ticker-mask::after{right:0;background:linear-gradient(270deg,var(--bg2),transparent);}
+#ticker{display:flex;width:max-content;will-change:transform;}
+.ticker-seg{display:flex;align-items:center;gap:3rem;padding-right:3rem;}
+.ticker-seg span{white-space:nowrap;font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.6rem);color:rgba(255,255,255,.5);}
+.ticker-seg span::after{content:"·";margin-left:3rem;color:var(--blue);}
+
+/* ── Manifesto ──────────────────────────────────────── */
+#manifesto{padding:clamp(7rem,18vh,13rem) 0;}
+#creed{max-width:22ch;margin:0 auto;text-align:center;font-family:var(--serif);font-weight:400;
+  line-height:1.18;letter-spacing:-.01em;font-size:clamp(1.9rem,5.2vw,3.6rem);}
+#creed .w{opacity:.16;transition:opacity .2s;display:inline-block;}
+#creed .w.hot{color:var(--blue-l);}
+#creed em{font-style:italic;}
+
+/* ── Stats ──────────────────────────────────────────── */
+.stats-head{text-align:center;max-width:24ch;margin:0 auto clamp(3rem,7vh,4.5rem);}
+.stats-head h2{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(1.8rem,3.8vw,2.9rem);}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 1.5rem;max-width:1080px;margin:0 auto;}
+@media (min-width:880px){.stat-grid{grid-template-columns:repeat(4,1fr);}}
+.stat{text-align:center;}
+.stat-num{font-family:var(--serif);font-weight:400;line-height:1;font-size:clamp(2.6rem,6vw,4.1rem);
+  background:linear-gradient(160deg,#fff,var(--blue-l));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.stat-lab{margin:.9rem auto 0;max-width:20ch;font-size:.92rem;color:var(--mut);}
+
+/* ── What's inside (horizontal pin) ─────────────────── */
+#inside{position:relative;z-index:2;background:linear-gradient(180deg,var(--bg),var(--bg2));}
+.in-pin{min-height:100svh;display:flex;align-items:center;overflow:hidden;}
+.in-rail{display:flex;align-items:stretch;gap:1.6rem;padding:0 var(--pad);will-change:transform;}
+.in-intro{flex:0 0 auto;width:min(34vw,440px);display:flex;flex-direction:column;justify-content:center;padding-right:1.5rem;}
+.in-intro h2{font-family:var(--serif);font-weight:400;line-height:1.04;font-size:clamp(2rem,4.6vw,3.4rem);margin-top:1.2rem;}
+.in-intro p{margin-top:1.2rem;color:var(--ink2);max-width:42ch;}
+.in-scrollhint{display:none;margin-top:1.6rem;align-items:center;gap:.5rem;color:var(--blue-l);font-weight:600;font-size:.9rem;}
+.in-scrollhint svg{width:1rem;height:1rem;}
+.in-card{flex:0 0 auto;width:min(30vw,380px);min-height:60vh;display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;border:1px solid var(--line);border-radius:26px;padding:2.2rem;
+  background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.01));transition:border-color .35s,box-shadow .35s;}
+.in-card:hover{border-color:rgba(124,176,255,.35);box-shadow:0 30px 80px -40px rgba(1,97,239,.6);}
+.in-card .big{position:absolute;right:-.4rem;top:-1.6rem;font-family:var(--serif);font-size:9rem;line-height:1;color:rgba(124,176,255,.06);}
+.in-ico{width:3.4rem;height:3.4rem;display:flex;align-items:center;justify-content:center;border-radius:16px;
+  background:linear-gradient(150deg,var(--blue),var(--teal));box-shadow:0 12px 30px -12px var(--glow);}
+.in-ico svg{width:1.7rem;height:1.7rem;stroke:#fff;}
+.in-card h3{font-size:1.5rem;font-weight:600;margin-top:1.4rem;line-height:1.15;position:relative;}
+.in-card p{margin-top:.9rem;color:var(--ink2);font-size:1rem;position:relative;}
+.in-card.cta{background:linear-gradient(160deg,var(--blue),var(--blue-d));border-color:transparent;justify-content:center;}
+.in-card.cta h3{font-family:var(--serif);font-weight:400;font-size:2rem;}
+.in-card.cta p{color:rgba(255,255,255,.82);}
+.in-card.cta a{margin-top:1.8rem;align-self:flex-start;}
+.in-bar-track{position:absolute;left:var(--pad);right:var(--pad);bottom:2.2rem;height:2px;background:var(--line2);border-radius:2px;z-index:3;}
+.in-bar{height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--blue),var(--teal));}
+.in-count{position:absolute;right:var(--pad);bottom:3rem;font-family:var(--serif);font-size:.9rem;color:var(--mut);z-index:3;}
+/* fallback stack */
+html:not(.js) .in-pin{height:auto;min-height:0;padding:1rem 0;}
+html:not(.js) .in-rail{flex-wrap:wrap;justify-content:center;}
+html:not(.js) .in-intro,html:not(.js) .in-card{width:min(100%,480px);min-height:0;}
+html:not(.js) .in-bar-track,html:not(.js) .in-count{display:none;}
+
+/* ── Journey ────────────────────────────────────────── */
+#journey{background:var(--bg2);}
+.jrn-head{text-align:center;max-width:20ch;margin:0 auto clamp(3rem,7vh,4.5rem);}
+.jrn-head h2{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(1.9rem,4vw,3rem);}
+.jrn{position:relative;max-width:760px;margin:0 auto;padding-left:3.4rem;}
+.jrn-line{position:absolute;left:13px;top:.5rem;bottom:.5rem;width:2px;background:var(--line2);overflow:hidden;}
+.jrn-fill{position:absolute;inset:0;transform:scaleY(0);transform-origin:top;background:linear-gradient(180deg,var(--blue),var(--teal));}
+.jrn-step{position:relative;padding-bottom:3rem;}
+.jrn-step:last-child{padding-bottom:0;}
+.jrn-dot{position:absolute;left:-3.4rem;top:-.1rem;width:28px;height:28px;border-radius:50%;border:2px solid var(--blue);
+  background:var(--bg2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.85rem;color:var(--blue-l);}
+.jrn-step .k{font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--blue-l);}
+.jrn-step h3{font-size:1.35rem;font-weight:600;margin-top:.4rem;}
+.jrn-step p{margin-top:.6rem;color:var(--ink2);}
+
+/* ── Founder ────────────────────────────────────────── */
+.founder-grid{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center;max-width:1080px;margin:0 auto;}
+@media (min-width:820px){.founder-grid{grid-template-columns:.8fr 1fr;}}
+.founder-photo{position:relative;width:100%;max-width:360px;margin:0 auto;}
+.founder-photo .halo{position:absolute;inset:-14px;border-radius:30px;background:linear-gradient(150deg,rgba(1,97,239,.5),rgba(6,182,212,.4));filter:blur(34px);}
+.founder-photo img{position:relative;width:100%;border-radius:24px;object-fit:cover;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);}
+.founder h2{font-family:var(--serif);font-weight:400;line-height:1.08;font-size:clamp(1.9rem,3.6vw,2.8rem);margin-top:1.1rem;}
+.founder .body{margin-top:1.4rem;display:flex;flex-direction:column;gap:1rem;color:var(--ink2);font-size:1.05rem;}
+.founder .feat{margin-top:2rem;}
+.founder .feat .cap{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--mut2);}
+.founder .feat .row{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;}
+.founder .feat .row span{color:var(--mut);font-weight:500;}
+
+/* ── Praise: deck + marquee ─────────────────────────── */
+.praise-head{text-align:center;margin-bottom:clamp(2.5rem,6vh,4rem);}
+.praise-head h2{font-family:var(--serif);font-weight:400;line-height:1.04;font-size:clamp(1.9rem,4.6vw,3.4rem);margin-top:1rem;}
+.praise-head h2 em{font-style:italic;color:var(--blue-l);}
+.deck{position:relative;max-width:56rem;margin:0 auto;}
+.deck-card{position:sticky;display:flex;flex-direction:column;gap:1.4rem;
+  border:1px solid var(--line2);border-radius:26px;padding:clamp(1.8rem,3.4vw,2.8rem);
+  background:linear-gradient(165deg,rgba(13,20,54,.96),rgba(6,10,38,.96));backdrop-filter:blur(8px);
+  box-shadow:0 40px 90px -50px rgba(0,0,0,.9);}
+.deck-card .stars{color:var(--teal-l);letter-spacing:.25em;font-size:.85rem;}
+.deck-card .q{font-family:var(--serif);font-weight:400;font-style:italic;line-height:1.32;
+  font-size:clamp(1.25rem,2.4vw,1.85rem);color:var(--ink);}
+.deck-card .q b{font-style:normal;color:var(--blue-l);}
+.deck-card .by{display:flex;align-items:center;gap:.9rem;border-top:1px solid var(--line);padding-top:1.3rem;margin-top:.2rem;}
+.deck-card .by img,.deck-card .by .mono{width:46px;height:46px;border-radius:50%;flex:0 0 auto;object-fit:cover;}
+.deck-card .by .mono{display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--blue),var(--teal));font-weight:600;color:#fff;font-size:.95rem;}
+.deck-card .who b{display:block;font-weight:600;font-size:.98rem;}
+.deck-card .who span{display:block;font-size:.8rem;color:var(--mut);}
+
+.tmar{margin-top:clamp(2rem,5vh,3.5rem);display:flex;flex-direction:column;gap:1.1rem;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.tmar-row{display:flex;gap:1.1rem;width:max-content;will-change:transform;}
+.tcard{flex:0 0 auto;width:330px;border:1px solid var(--line);border-radius:18px;padding:1.3rem 1.4rem;
+  background:rgba(255,255,255,.03);}
+.tcard p{font-size:.95rem;color:var(--ink2);line-height:1.55;}
+.tcard .by{margin-top:.9rem;font-size:.8rem;color:var(--mut);}
+.tcard .by b{color:var(--ink);font-weight:600;}
+@media (max-width:560px){.tcard{width:260px;}}
+.praise-all{text-align:center;margin-top:2.6rem;}
+.praise-all a{color:var(--blue-l);font-weight:600;}
+.praise-all a:hover{text-decoration:underline;}
+
+/* ── Pricing ────────────────────────────────────────── */
+#pricing{background:linear-gradient(180deg,var(--bg2),var(--bg));}
+.price-head{text-align:center;max-width:30rem;margin:0 auto clamp(2.5rem,6vh,3.5rem);}
+.price-head .tag{display:inline-block;padding:.4rem 1rem;border-radius:999px;background:rgba(6,182,212,.14);
+  color:var(--teal-l);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;}
+.price-head h2{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(2rem,4.4vw,3.1rem);margin-top:1.1rem;}
+.price-head p{margin-top:1rem;color:var(--ink2);}
+.price-card{position:relative;max-width:560px;margin:0 auto;overflow:hidden;border-radius:30px;
+  background:#fff;color:#0c1430;padding:clamp(2rem,4vw,3rem);box-shadow:0 50px 120px -50px rgba(1,97,239,.7);}
+.price-card .blob{position:absolute;right:-4rem;top:-4rem;width:14rem;height:14rem;border-radius:50%;background:rgba(1,97,239,.12);filter:blur(10px);}
+.price-amt{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:.6rem;}
+.price-amt .big{font-family:var(--serif);font-size:clamp(3.4rem,9vw,4.6rem);line-height:.9;color:#0c1430;}
+.price-amt .per{padding-bottom:.5rem;color:#5a6488;}
+.price-amt .was{padding-bottom:.5rem;color:#9aa3c0;text-decoration:line-through;text-decoration-color:rgba(6,182,212,.7);}
+.price-day{position:relative;text-align:center;margin-top:.5rem;font-size:.9rem;font-weight:600;color:#0a8f6b;}
+.price-list{position:relative;margin:1.8rem 0 0;padding:0;list-style:none;}
+.price-list li{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;
+  padding:.8rem 0;border-bottom:1px solid rgba(12,20,48,.08);}
+.price-list li:last-child{border-bottom:0;}
+.price-list .it{display:flex;gap:.6rem;font-size:.97rem;color:#1a2547;}
+.price-list .it svg{width:1.15rem;height:1.15rem;flex:0 0 auto;stroke:#0a8f6b;margin-top:.15rem;}
+.price-list .v{white-space:nowrap;font-size:.85rem;color:#8c93b3;text-decoration:line-through;}
+.price-total{position:relative;margin-top:1.4rem;border-radius:14px;background:#eef3ff;padding:1rem;text-align:center;font-size:.95rem;color:#3a4670;}
+.price-total b{color:#0c1430;}
+.price-total .em{color:var(--blue);}
+.price-card .btn{width:100%;justify-content:center;margin-top:1.6rem;}
+.price-fine{position:relative;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.1rem;
+  text-align:center;font-size:.86rem;color:#5a6488;}
+.price-fine svg{width:1rem;height:1rem;stroke:#0a8f6b;flex:0 0 auto;}
+
+/* ── FAQ ────────────────────────────────────────────── */
+.faq-head{text-align:center;max-width:24ch;margin:0 auto clamp(2.5rem,6vh,3.5rem);}
+.faq-head h2{font-family:var(--serif);font-weight:400;line-height:1.06;font-size:clamp(1.9rem,4vw,3rem);margin-top:1rem;}
+.faq{max-width:740px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  padding:1.5rem 0;text-align:left;font-size:1.08rem;font-weight:600;color:var(--ink);}
+.faq-q .ic{flex:0 0 auto;width:1.4rem;height:1.4rem;position:relative;transition:transform .35s var(--ease);}
+.faq-q .ic::before,.faq-q .ic::after{content:"";position:absolute;background:var(--blue-l);border-radius:2px;}
+.faq-q .ic::before{top:50%;left:0;right:0;height:2px;transform:translateY(-50%);}
+.faq-q .ic::after{left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);transition:opacity .3s;}
+.faq-item.open .faq-q .ic{transform:rotate(180deg);}
+.faq-item.open .faq-q .ic::after{opacity:0;}
+.faq-a{overflow:hidden;height:0;}
+.faq-a .inner{padding:0 0 1.5rem;color:var(--ink2);max-width:62ch;}
+html:not(.js) .faq-a{height:auto;}
+
+/* ── Final CTA ──────────────────────────────────────── */
+#final{position:relative;min-height:84vh;display:flex;align-items:center;overflow:hidden;}
+.final-bg{position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(55% 50% at 25% 30%,rgba(1,97,239,.5) 0%,transparent 60%),
+    radial-gradient(50% 55% at 80% 70%,rgba(6,182,212,.42) 0%,transparent 60%),
+    radial-gradient(60% 60% at 60% 20%,rgba(59,130,246,.3) 0%,transparent 60%);
+  background-size:200% 200%;animation:heropan 18s ease-in-out infinite alternate;}
+.final-veil{position:absolute;inset:0;z-index:1;background:radial-gradient(70% 70% at 50% 50%,transparent 30%,rgba(3,6,32,.72) 100%);}
+.final-in{position:relative;z-index:2;max-width:840px;margin:0 auto;padding:6rem var(--pad);text-align:center;}
+.final-in h2{font-family:var(--serif);font-weight:400;line-height:1;font-size:clamp(2.3rem,6.4vw,4.6rem);margin-top:1.2rem;}
+.final-in p{margin:1.4rem auto 0;max-width:50ch;color:var(--ink2);font-size:1.1rem;}
+.final-in .btn{margin-top:2.4rem;}
+.final-in .fine{margin-top:1.3rem;font-size:.86rem;color:var(--mut);}
+
+/* ── Footer ─────────────────────────────────────────── */
+footer{position:relative;z-index:2;background:var(--bg);border-top:1px solid var(--line);padding-top:clamp(3.5rem,8vh,5.5rem);overflow:hidden;}
+.foot-cols{display:grid;gap:2.5rem;grid-template-columns:1.6fr 1fr 1fr;max-width:1240px;margin:0 auto;padding:0 var(--pad);}
+@media (max-width:760px){.foot-cols{grid-template-columns:1fr 1fr;}}
+@media (max-width:460px){.foot-cols{grid-template-columns:1fr;}}
+.foot-col img{height:1.5rem;margin-bottom:1rem;}
+.foot-col .blurb{color:var(--mut);font-size:.92rem;max-width:34ch;}
+.foot-col h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.16em;color:var(--mut2);margin-bottom:1rem;}
+.foot-col a{display:block;color:var(--ink2);font-size:.95rem;padding:.3rem 0;transition:color .25s;}
+.foot-col a:hover{color:#fff;}
+.foot-mark{font-family:var(--serif);font-size:clamp(3rem,17vw,12rem);line-height:.8;text-align:center;
+  margin-top:clamp(2.5rem,7vh,5rem);color:transparent;-webkit-text-stroke:1px rgba(124,176,255,.2);will-change:transform;}
+.foot-bottom{max-width:1240px;margin:2rem auto 0;padding:1.5rem var(--pad);border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;color:var(--mut2);font-size:.82rem;}
+
+/* ── Reveals (JS-driven; hidden until animated) ─────── */
+html.js [data-reveal]{opacity:0;}
+
+/* ── Reduced motion ─────────────────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important;}
+  html.js [data-reveal]{opacity:1!important;}
+  #creed .w{opacity:1!important;}
+  .in-pin{height:auto;min-height:0;}
+  .in-rail{flex-wrap:wrap;justify-content:center;}
+  .in-intro,.in-card{width:min(100%,480px);min-height:0;}
+}
+</style>
+</head>
+
+<body>
+<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
+<canvas id="embers" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- PRELOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="lw" id="loadWord">Clarity</div>
+  <div class="lbar-track"><div class="lbar" id="loadBar"></div></div>
+  <div class="lpct"><span id="loadPct">0</span>%</div>
+</div>
+
+<!-- NAV -->
+<header id="nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="/" aria-label="ClearCareer home">
+      <img src="/images/logo/clearcareer-wordmark-white.svg" alt="ClearCareer" width="150" height="24" />
+    </a>
+    <nav class="nav-mid" aria-label="Section navigation">
+      <a class="nav-link" href="#inside">What's inside</a>
+      <a class="nav-link" href="#praise">Member wins</a>
+      <a class="nav-link" href="#pricing">Pricing</a>
+      <a class="nav-link" href="#faq">FAQ</a>
+    </nav>
+    <a class="nav-cta" href="#pricing" data-checkout data-magnetic>Join <b>$29/mo</b></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="hero-in">
+      <span class="badge" data-hero="fade"><span class="pulse"><i class="ping"></i><i></i></span>Now enrolling founding members</span>
+      <h1 class="hero-title" aria-label="The career coaching community that lands your next role.">
+        <span class="ln" data-split="chars">The career coaching community</span>
+        <span class="ln grad" data-split="chars">that lands your next role.</span>
+      </h1>
+      <p class="hero-sub" data-hero="fade">Weekly group coaching with Izzy, the templates behind five-figure raises, and a private crew of professionals job searching right alongside you. Land your next role faster, together.</p>
+      <div class="hero-cta" data-hero="fade">
+        <a class="btn btn-primary" href="#pricing" data-checkout data-magnetic>Join for $29/mo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="#inside" data-magnetic>See what's inside</a>
+      </div>
+      <p class="hero-micro" data-hero="fade">Lock in $29/mo for life · Before it returns to $49 · Cancel anytime</p>
+    </div>
+    <a class="scrollcue" href="#manifesto" aria-label="Scroll down"><i></i></a>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <p class="ticker-cap">As featured in, and trusted by teams at</p>
+    <div class="ticker-mask">
+      <div id="ticker">
+        <div class="ticker-seg">
+          <span>University of Toronto</span><span>FlexJobs</span><span>CBC Radio</span><span>Global News</span>
+          <span>Newsweek</span><span>Inc. Magazine</span><span>Toronto Metropolitan University</span>
+          <span>Humber College</span><span>Lighthouse Labs</span><span>United Nations Association</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="section" id="manifesto">
+    <div class="wrap">
+      <p id="creed">Job searching alone is <em>brutal.</em> Hundreds of applications into the void. Silence that feels like your fault. <span class="hot">It isn't.</span> The system is broken — and it was never meant to be done <em>solo.</em></p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section" id="impact">
+    <div class="wrap">
+      <div class="stats-head" data-reveal>
+        <p class="label" style="justify-content:center"><span class="idx">01</span>Proof this works</p>
+        <h2>You're not the first to feel stuck. You won't be the first to break through.</h2>
+      </div>
+      <div class="stat-grid">
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span class="v" data-count="1000">0</span><span>+</span></div>
+          <p class="stat-lab">Professionals coached across our communities</p>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span class="v" data-count="3500">0</span><span>+</span></div>
+          <p class="stat-lab">Event &amp; workshop attendees</p>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span>$</span><span class="v" data-count="1.2" data-decimals="1">0</span><span>M+</span></div>
+          <p class="stat-lab">In collective raises won</p>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span class="v" data-count="200">0</span><span>+</span></div>
+          <p class="stat-lab">Coached one-on-one</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section id="inside">
+    <div class="in-pin" id="inPin">
+      <div class="in-rail" id="inRail">
+        <div class="in-intro">
+          <p class="label"><span class="idx">02</span>What's inside</p>
+          <h2>Everything your job search needs. Plus the people you've been missing.</h2>
+          <p>Six things that turn a lonely, grinding search into a system with real momentum — and people in your corner.</p>
+          <p class="in-scrollhint">Scroll to explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+        </div>
+
+        <article class="in-card">
+          <span class="big">01</span>
+          <div><span class="in-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <h3>Weekly Group Coaching</h3>
+            <p>Live calls with Izzy every week. Bring the offer, the rejection, the stuck point. Leave with a plan and people in your corner.</p></div>
+        </article>
+
+        <article class="in-card">
+          <span class="big">02</span>
+          <div><span class="in-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span>
+            <h3>Done-For-You Templates</h3>
+            <p>Resumes, outreach scripts, follow-up emails, and negotiation frameworks that have helped members add five figures to offers.</p></div>
+        </article>
+
+        <article class="in-card">
+          <span class="big">03</span>
+          <div><span class="in-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <h3>A Private Room of Peers</h3>
+            <p>Professionals navigating the exact same wall you are. Share wins, get feedback fast, and never search in silence again.</p></div>
+        </article>
+
+        <article class="in-card">
+          <span class="big">04</span>
+          <div><span class="in-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v14H2z"/><path d="M8 21h8M12 17v4"/></svg></span>
+            <h3>Monthly Deep-Dive Workshops</h3>
+            <p>LinkedIn optimization, interview rehearsal, salary negotiation. Live, recorded, and built around what members need next.</p></div>
+        </article>
+
+        <article class="in-card">
+          <span class="big">05</span>
+          <div><span class="in-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            <h3>The Full Resource Library</h3>
+            <p>Every guide, calculator, and framework from the ClearCareer toolkit, organized so you can find the right move in minutes.</p></div>
+        </article>
+
+        <article class="in-card">
+          <span class="big">06</span>
+          <div><span class="in-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>AI Prompt Vault</h3>
+            <p>30+ tested prompts for resume writing, company research, and interview prep. The unfair advantage most job seekers miss.</p></div>
+        </article>
+
+        <article class="in-card cta">
+          <h3>All of it, for less than a lunch out each week.</h3>
+          <p>One membership. Every tool, call, and template the ClearCareer system runs on.</p>
+          <a class="btn btn-primary" href="#pricing" data-checkout data-magnetic>Join for $29/mo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </article>
+      </div>
+      <div class="in-bar-track" aria-hidden="true"><div class="in-bar" id="inBar"></div></div>
+      <div class="in-count" id="inCount" aria-hidden="true">01</div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section class="section" id="journey">
+    <div class="wrap">
+      <div class="jrn-head" data-reveal>
+        <p class="label" style="justify-content:center"><span class="idx">03</span>How it works</p>
+        <h2>From stuck and solo to hired, with a team beside you</h2>
+      </div>
+      <div class="jrn" id="jrn">
+        <div class="jrn-line"><div class="jrn-fill" id="jrnFill"></div></div>
+        <div class="jrn-step" data-reveal><div class="jrn-dot">1</div>
+          <p class="k">Week 1</p><h3>Land in the room</h3>
+          <p>Introduce yourself, grab the templates, and book your first weekly call. You go from isolated to supported in a single afternoon.</p></div>
+        <div class="jrn-step" data-reveal><div class="jrn-dot">2</div>
+          <p class="k">Weeks 2–4</p><h3>Build unstoppable momentum</h3>
+          <p>Rework your resume and outreach with live feedback. Send targeted messages instead of shouting into the void. Replies start coming back.</p></div>
+        <div class="jrn-step" data-reveal><div class="jrn-dot">3</div>
+          <p class="k">Weeks 4–8</p><h3>Interview like a consultant</h3>
+          <p>Rehearse answers in workshops, refine your story, and walk into interviews calm and prepared with a crew that has your back.</p></div>
+        <div class="jrn-step" data-reveal><div class="jrn-dot">4</div>
+          <p class="k">The offer</p><h3>Negotiate what you're worth</h3>
+          <p>Use the frameworks members have used to land $10K–$30K bumps. Then stay and help the next person do the same.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="section founder" id="founder">
+    <div class="founder-grid">
+      <div class="founder-photo" data-reveal>
+        <div class="halo" aria-hidden="true"></div>
+        <img id="founderImg" src="/images/izzy-profile.webp" alt="Izzy Piyale-Sheard, founder of ClearCareer" width="360" height="450" loading="lazy" />
+      </div>
+      <div>
+        <p class="label" data-reveal><span class="idx">04</span>Your coach in the room</p>
+        <h2 data-reveal>Hi, I'm Izzy. I built the room I wish I'd had.</h2>
+        <div class="body" data-reveal>
+          <p>I've coached 200+ professionals one-on-one and spoken to thousands more at the University of Toronto, FlexJobs, and on CBC. The pattern never changes: talented people grinding alone, convinced the silence is their fault. It isn't. The system is broken, and it was never meant to be done solo.</p>
+          <p>The Community is everything that works from my paid programs, run as a living room you can actually afford to be in, every single week. You bring the effort. I bring the system and the people.</p>
+        </div>
+        <div class="feat" data-reveal>
+          <p class="cap">As featured in</p>
+          <div class="row"><span>CBC Radio</span><span>Global News</span><span>Newsweek</span><span>Inc. Magazine</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRAISE -->
+  <section class="section" id="praise">
+    <div class="wrap">
+      <div class="praise-head" data-reveal>
+        <p class="label" style="justify-content:center"><span class="idx">05</span>Member wins</p>
+        <h2>Real people. Real offers. <em>Real raises.</em></h2>
+      </div>
+
+      <div class="deck" id="deck">
+        <div class="deck-card">
+          <div class="stars">★★★★★</div>
+          <p class="q"><b>Stuck in a job search black hole. 2 offers in weeks.</b> "If you're on the fence, go for it. I pondered job search coaching after a LONG job search black hole and was blown away by the $1500+ price tags with zero promises. I joined Izzy's course at a fraction of the cost and within weeks got 2 offers. To say he knows his stuff would be the understatement of the year."</p>
+          <div class="by"><span class="mono">AB</span><span class="who"><b>Annie Bell</b><span>ClearCareer client</span></span></div>
+        </div>
+        <div class="deck-card">
+          <div class="stars">★★★★★</div>
+          <p class="q"><b>200+ failed apps. 27 targeted emails. 13 replies. 1 offer.</b> "Before the Izzy method I applied to 160–220 jobs and got around 10 interviews — none led to a job. With the Izzy method I sent 27 emails. 13 replied. I'm in interview processes for multiple roles now. I got options!"</p>
+          <div class="by"><img src="/images/testimonials/blake-mcdermott.png" alt="Blake McDermott" loading="lazy" /><span class="who"><b>Blake McDermott</b><span>ClearCareer client · LinkedIn verified</span></span></div>
+        </div>
+        <div class="deck-card">
+          <div class="stars">★★★★★</div>
+          <p class="q"><b>$20K+ raise and a bonus. After getting zero interviews.</b> "I'd done everything I could to my resume and still wasn't getting interviews. Izzy's meticulous feedback helped me completely revise it — and since January I've landed multiple interviews. I've also been in his weekly group coaching calls, and I can't stress enough how invaluable his insights have been. 10/10."</p>
+          <div class="by"><img src="/images/testimonials/tamara-gordon.png" alt="Tamara Gordon" loading="lazy" /><span class="who"><b>Tamara Gordon</b><span>ClearCareer client · LinkedIn verified</span></span></div>
+        </div>
+        <div class="deck-card">
+          <div class="stars">★★★★★</div>
+          <p class="q"><b>500+ apps, 0 offers. Then: 3 interviews in 2 weeks.</b> "11 months, 500+ applications, 10 interviews, no offers. After intense work with Izzy we cracked the code. My LinkedIn redesign and new resume simply invite attention — 2 weeks later I'd landed 3 interviews directly with employers. Izzy, when you know, you know. And you definitely know."</p>
+          <div class="by"><span class="mono">VP</span><span class="who"><b>Victor Perez</b><span>Senior Project Manager</span></span></div>
+        </div>
+        <div class="deck-card">
+          <div class="stars">★★★★★</div>
+          <p class="q"><b>From freelancer to $127K + 30 PTO days negotiated.</b> "Izzy helped me put together a real resume for the first time in my life and polish my public-facing profiles. Nothing works the way it used to, but Izzy is one of the few people who has a handle on how to navigate the new way things work. A great person to help steer your career."</p>
+          <div class="by"><img src="/images/testimonials/kira-howe.png" alt="Kira Howe" loading="lazy" /><span class="who"><b>Kira Howe</b><span>ClearCareer client · LinkedIn verified</span></span></div>
+        </div>
+      </div>
+
+      <div class="tmar" aria-hidden="true">
+        <div class="tmar-row" data-dir="1">
+          <div class="tcard"><p>"Izzy gave me exactly what I needed: a kickstart! In our first talk he helped me identify action items I could do right away."</p><p class="by"><b>Adam Kastor</b> · ClearCareer client</p></div>
+          <div class="tcard"><p>"His guidance on leveraging AI for professional summaries, quantifying achievements, and optimizing LinkedIn transformed my job search strategy."</p><p class="by"><b>Athena Hernandez</b> · ClearCareer client</p></div>
+          <div class="tcard"><p>"Worth every penny. He's leveraging technology in ways most coaches don't even know how to use yet."</p><p class="by"><b>Kay Woods</b> · Product Manager</p></div>
+          <div class="tcard"><p>"He guided me in thinking differently about my achievements, which helped me understand the true impact of my work."</p><p class="by"><b>Danica Stark</b> · ClearCareer client</p></div>
+          <div class="tcard"><p>"He showed me points I had never realized before about the interviewing process. You must work with him if you want to invest in your career."</p><p class="by"><b>Gamze Aluc</b> · ClearCareer client</p></div>
+          <div class="tcard"><p>"He taught me really good tricks for getting your resume noticed. I'd highly recommend Izzy to anyone looking for career advice."</p><p class="by"><b>Erin Marini</b> · ClearCareer client</p></div>
+          <div class="tcard"><p>"He will absolutely bring out the best in you. Take the leap, you won't regret it."</p><p class="by"><b>Mazia Syed</b> · Software Engineer</p></div>
+        </div>
+        <div class="tmar-row" data-dir="-1">
+          <div class="tcard"><p>"The most caring, supportive, and dedicated career coach I've ever worked with. 10/10 would recommend!"</p><p class="by"><b>Courtenay Badran</b> · ClearCareer client</p></div>
+          <div class="tcard"><p>"He made really astute observations about my situation, reading between the lines in ways I never thought of."</p><p class="by"><b>Maria Chami</b> · Communications</p></div>
+          <div class="tcard"><p>"My resume came across more mature to recruiters and people in my network. Highly recommend Izzy."</p><p class="by"><b>Kedar Nadkarny</b> · New-immigrant job seeker</p></div>
+          <div class="tcard"><p>"It all sounds so much more achievable with Izzy's confidence in what I have to do! I already feel so much better about my prospects."</p><p class="by"><b>Jeska Edens</b> · Founder</p></div>
+          <div class="tcard"><p>"Izzy is the best when it comes to technology to make your job search waaay easier."</p><p class="by"><b>Beckie Thain-Blonk</b> · Career Strategist</p></div>
+          <div class="tcard"><p>"He even built tools using automation and AI to help candidates find jobs in a smarter way. Highly recommend Izzy."</p><p class="by"><b>Win Shi Wong</b> · Digital Marketer</p></div>
+          <div class="tcard"><p>"I can now see a side of my professional career I was not able to before. Izzy is an awesome career coach."</p><p class="by"><b>Victor Rivas</b> · Senior Software Engineer</p></div>
+        </div>
+      </div>
+
+      <p class="praise-all" data-reveal><a href="/testimonials">Read all 79+ member stories →</a></p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="price-head" data-reveal>
+        <span class="tag">Founding member relaunch</span>
+        <h2>Lock in $29/mo before the price rises</h2>
+        <p>Founding members keep this rate for life. When the doors reopen, it goes back to $49/mo.</p>
+      </div>
+      <div class="price-card" data-reveal>
+        <div class="blob" aria-hidden="true"></div>
+        <div class="price-amt"><span class="big">$29</span><span class="per">/month</span><span class="was">$49</span></div>
+        <p class="price-day">That's about $0.97 a day.</p>
+        <ul class="price-list">
+          <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Weekly group coaching calls with Izzy</span><span class="v">$400/mo</span></li>
+          <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Done-for-you template vault</span><span class="v">$300</span></li>
+          <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Private community of peers</span><span class="v">$150/mo</span></li>
+          <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Monthly live workshops</span><span class="v">$250/mo</span></li>
+          <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>The full resource library</span><span class="v">$200</span></li>
+          <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>AI prompt vault (30+ prompts)</span><span class="v">$100</span></li>
+        </ul>
+        <div class="price-total">Over <b>$1,400/mo</b> of value. Yours for <b class="em">$29</b>.</div>
+        <a class="btn btn-blue" href="#pricing" data-checkout data-magnetic>Become a founding member
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="price-fine"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancel anytime. Stay because it works, not because you're locked in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="faq-head" data-reveal>
+        <p class="label" style="justify-content:center"><span class="idx">06</span>Questions</p>
+        <h2>Everything you might be wondering</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Is $29/mo really the price, or does it jump later?<span class="ic" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="inner">$29/mo is the founding-member rate and it locks in for as long as you stay a member. When we reopen the doors to everyone, the price returns to $49/mo. Founding members are never charged the higher rate.</div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">I've tried communities before and they were ghost towns. How is this different?<span class="ic" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="inner">This community is anchored by live weekly coaching calls with Izzy, not just a chat feed. There is a real reason to show up every week, a coach who knows your situation, and members actively working their searches alongside you.</div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">What if I'm not actively job searching right now?<span class="ic" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="inner">Plenty of members join to get ahead while still employed: sharpening their resume, building their network, and preparing to negotiate. The templates, workshops, and prompt vault are just as useful before you need them.</div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How much time does it take each week?<span class="ic" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="inner">As little or as much as you want. Show up live for the weekly call when you can, catch the recording when you can't, and dip into the resources as needed. Even one focused hour a week compounds fast with the right system.</div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I cancel whenever I want?<span class="ic" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="inner">Yes. There are no contracts and no lock-in. Cancel anytime in a couple of clicks. We'd rather you stay because the community is working for you.</div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How is this different from the 1:1 coaching programs?<span class="ic" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="inner">The 1:1 programs are intensive, done-with-you engagements at a premium price. The Community gives you the same system, templates, and coaching energy in a group setting you can actually afford to be in every week.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="final">
+    <div class="final-bg" aria-hidden="true"></div>
+    <div class="final-veil" aria-hidden="true"></div>
+    <div class="final-in">
+      <p class="label" style="justify-content:center" data-reveal><span class="idx">07</span>The doors are open</p>
+      <h2 data-reveal>Your next role starts in <em style="font-style:italic;color:var(--blue-l)">good company.</em></h2>
+      <p data-reveal>Join the founding cohort today, lock in $29/mo for life, and never run your job search alone again.</p>
+      <a class="btn btn-primary" href="#pricing" data-checkout data-magnetic data-reveal>Become a founding member
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <p class="fine" data-reveal>$29/mo · Normally $49 · Cancel anytime</p>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-cols">
+    <div class="foot-col">
+      <img src="/images/logo/clearcareer-wordmark-white.svg" alt="ClearCareer" />
+      <p class="blurb">The career coaching community that lands your next role. Weekly group coaching, done-for-you templates, and a private room of professionals who win offers together.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="#inside">What's inside</a>
+      <a href="#praise">Member wins</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="foot-col">
+      <h4>ClearCareer</h4>
+      <a href="/">Main site</a>
+      <a href="/testimonials">All testimonials</a>
+      <a href="/about">About Izzy</a>
+      <a href="#pricing" data-checkout>Join the community</a>
+    </div>
+  </div>
+  <div class="foot-mark" aria-hidden="true">ClearCareer</div>
+  <div class="foot-bottom">
+    <span>© <span id="yr"></span> ClearCareer. All rights reserved.</span>
+    <span>Land your next role, together.</span>
+  </div>
+</footer>
+
+<!-- Animation libraries (loaded at runtime in the browser) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script>
+(function(){
+'use strict';
+
+/* ───────────────────────────────────────────────────────────────
+   CHECKOUT WIRING
+   Every primary "Join / Become a founding member" button carries a
+   [data-checkout] attribute. Set the live checkout link below and it
+   is applied to all of them in one place.
+   Leave as "#pricing" to scroll buyers to the on-page pricing card.
+   ─────────────────────────────────────────────────────────────── */
+var CHECKOUT_URL = "#pricing"; // TODO: paste live Stripe / Skool / Circle link
+
+[].slice.call(document.querySelectorAll('[data-checkout]')).forEach(function(a){
+  a.setAttribute('href', CHECKOUT_URL);
+  if (CHECKOUT_URL.charAt(0) !== '#') { a.target = '_blank'; a.rel = 'noopener'; }
+});
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var finePointer = window.matchMedia('(pointer: fine)').matches;
+var hasGSAP = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+var doc = document.documentElement;
+
+/* ═══ FAQ accordion (works with or without GSAP) ═══ */
+[].slice.call(document.querySelectorAll('.faq-item')).forEach(function(item){
+  var btn = item.querySelector('.faq-q');
+  var panel = item.querySelector('.faq-a');
+  btn.addEventListener('click', function(){
+    var open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (window.gsap) {
+      gsap.to(panel, { height: open ? panel.querySelector('.inner').offsetHeight : 0,
+        duration: .5, ease: 'power3.inOut', onComplete: function(){ if(open) panel.style.height='auto'; } });
+    } else {
+      panel.style.height = open ? 'auto' : '0';
+    }
+  });
+});
+
+/* If GSAP failed or motion is reduced → keep everything static & visible. */
+if (!hasGSAP || reduced) {
+  var l = document.getElementById('loader'); if (l && l.parentNode) l.parentNode.removeChild(l);
+  [].slice.call(document.querySelectorAll('.v[data-count]')).forEach(function(el){ snapCount(el); });
+  [].slice.call(document.querySelectorAll('#creed .w, .ch')).forEach(function(w){ w.style.opacity = 1; });
+  window.addEventListener('scroll', function(){
+    document.getElementById('nav').classList.toggle('is-solid', window.scrollY > 60);
+  }, { passive: true });
+  return;
+}
+
+doc.classList.add('js');
+document.body.classList.add('js');
+gsap.registerPlugin(ScrollTrigger);
+
+function snapCount(el){
+  var t = +el.getAttribute('data-count');
+  var d = +(el.getAttribute('data-decimals') || 0);
+  el.textContent = d > 0 ? t.toFixed(d) : (t >= 1000 ? Math.round(t).toLocaleString('en-US') : Math.round(t));
+}
+
+/* ═══ Tiny char splitter (preserves spaces) ═══ */
+function splitChars(el){
+  var text = el.textContent; el.textContent = '';
+  var frag = document.createDocumentFragment();
+  for (var i = 0; i < text.length; i++){
+    if (text[i] === ' '){ frag.appendChild(document.createTextNode(' ')); continue; }
+    var s = document.createElement('span'); s.className = 'ch'; s.textContent = text[i];
+    frag.appendChild(s);
+  }
+  el.appendChild(frag);
+  return [].slice.call(el.querySelectorAll('.ch'));
+}
+
+/* ═══ Creed (manifesto) word wrap ═══ */
+function wrapCreed(){
+  var creed = document.getElementById('creed'); if (!creed) return [];
+  (function walk(node){
+    [].slice.call(node.childNodes).forEach(function(ch){
+      if (ch.nodeType === 3 && ch.textContent.trim()){
+        var hot = node.classList && node.classList.contains('hot');
+        var frag = document.createDocumentFragment();
+        ch.textContent.split(/(\s+)/).forEach(function(tok){
+          if (!tok) return;
+          if (/^\s+$/.test(tok)){ frag.appendChild(document.createTextNode(tok)); return; }
+          var s = document.createElement('span'); s.className = 'w' + (hot ? ' hot' : ''); s.textContent = tok;
+          frag.appendChild(s);
+        });
+        node.replaceChild(frag, ch);
+      } else if (ch.nodeType === 1 && ch.tagName !== 'SPAN' || (ch.nodeType===1 && ch.classList.contains('hot'))) {
+        walk(ch);
+      } else if (ch.nodeType === 1) { walk(ch); }
+    });
+  })(creed);
+  return [].slice.call(creed.querySelectorAll('.w'));
+}
+
+/* ═══ Lenis smooth scroll ═══ */
+var lenis = null;
+if (typeof Lenis !== 'undefined'){
+  lenis = new Lenis({ duration: 1.15, easing: function(t){ return Math.min(1, 1.001 - Math.pow(2, -10 * t)); } });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+  gsap.ticker.lagSmoothing(0);
+}
+function scrollToHash(hash){
+  if (hash === '#' || hash.length < 2) return;
+  var target = document.querySelector(hash); if (!target) return;
+  if (lenis) lenis.scrollTo(target, { offset: -70 });
+  else target.scrollIntoView({ behavior: 'smooth' });
+}
+[].slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function(a){
+  a.addEventListener('click', function(e){
+    var h = a.getAttribute('href');
+    if (h && h.length > 1){ e.preventDefault(); scrollToHash(h); }
+  });
+});
+
+/* ═══ Spark field · Three.js ═══ */
+(function(){
+  if (typeof THREE === 'undefined') return;
+  var canvas = document.getElementById('embers'); var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: false, powerPreference: 'low-power' }); }
+  catch(e){ canvas.style.display = 'none'; return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, .1, 60);
+  camera.position.z = 9;
+  var cv = document.createElement('canvas'); cv.width = cv.height = 64;
+  var cx = cv.getContext('2d');
+  var g = cx.createRadialGradient(32, 32, 0, 32, 32, 32);
+  g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.35, 'rgba(255,255,255,.5)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+  cx.fillStyle = g; cx.fillRect(0, 0, 64, 64);
+  var sprite = new THREE.CanvasTexture(cv);
+  var isMobile = window.innerWidth < 760;
+  var COUNT = isMobile ? 360 : 900;
+  var span = { x: 13, y: 8, z: 5 };
+  var scatter = new Float32Array(COUNT*3), sphere = new Float32Array(COUNT*3),
+      speed = new Float32Array(COUNT), phase = new Float32Array(COUNT), pos = new Float32Array(COUNT*3);
+  for (var i = 0; i < COUNT; i++){
+    scatter[i*3] = (Math.random()-.5)*span.x*2; scatter[i*3+1] = (Math.random()-.5)*span.y*2; scatter[i*3+2] = (Math.random()-.5)*span.z*2;
+    var k = i+.5, phi = Math.acos(1-2*k/COUNT), theta = Math.PI*(1+Math.sqrt(5))*k, r = 2.7+Math.random()*.25;
+    sphere[i*3] = r*Math.sin(phi)*Math.cos(theta); sphere[i*3+1] = r*Math.cos(phi); sphere[i*3+2] = r*Math.sin(phi)*Math.sin(theta);
+    speed[i] = .12+Math.random()*.5; phase[i] = Math.random()*Math.PI*2;
+    pos[i*3]=scatter[i*3]; pos[i*3+1]=scatter[i*3+1]; pos[i*3+2]=scatter[i*3+2];
+  }
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  // two-tone tint: blend blue + teal across the field
+  var colors = new Float32Array(COUNT*3);
+  var cA = new THREE.Color('#7cb0ff'), cB = new THREE.Color('#67e8f9');
+  for (var j = 0; j < COUNT; j++){ var m = Math.random(); var c = cA.clone().lerp(cB, m);
+    colors[j*3]=c.r; colors[j*3+1]=c.g; colors[j*3+2]=c.b; }
+  geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  var mat = new THREE.PointsMaterial({ size: isMobile?.085:.07, map: sprite, transparent: true, opacity: .8,
+    vertexColors: true, blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true });
+  scene.add(new THREE.Points(geo, mat));
+  var mouse = {x:0,y:0}, cam = {x:0,y:0};
+  if (finePointer) window.addEventListener('pointermove', function(e){
+    mouse.x = e.clientX/window.innerWidth-.5; mouse.y = e.clientY/window.innerHeight-.5;
+  }, { passive: true });
+  var clock = new THREE.Clock(), rotY = 0;
+  window.__sparkState = { gather: 0 };
+  function tick(){
+    var dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime;
+    var p = window.__sparkState.gather, e = p*p*(3-2*p);
+    rotY += dt*.25;
+    var arr = geo.attributes.position.array, cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+    for (var i = 0; i < COUNT; i++){
+      var sy = scatter[i*3+1] + ((t*speed[i]) % (span.y*2)); if (sy > span.y) sy -= span.y*2;
+      var sx = scatter[i*3] + Math.sin(t*.3+phase[i])*.35, sz = scatter[i*3+2];
+      var bx = sphere[i*3], bz = sphere[i*3+2];
+      var rx = bx*cosY - bz*sinY, rz = bx*sinY + bz*cosY, by = sphere[i*3+1] + Math.sin(t*1.2+phase[i])*.06;
+      arr[i*3] = sx+(rx-sx)*e; arr[i*3+1] = sy+(by-sy)*e; arr[i*3+2] = sz+(rz-sz)*e;
+    }
+    geo.attributes.position.needsUpdate = true;
+    cam.x += (mouse.x*.7 - cam.x)*.04; cam.y += (-mouse.y*.5 - cam.y)*.04;
+    camera.position.x = cam.x; camera.position.y = cam.y; camera.lookAt(0,0,0);
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  window.addEventListener('resize', function(){
+    camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+})();
+
+/* ═══ Custom cursor ═══ */
+if (finePointer){
+  document.body.classList.add('has-cursor');
+  var dot = document.querySelector('.cursor-dot'), ring = document.querySelector('.cursor-ring');
+  var cx2=-100, cy2=-100, rx2=-100, ry2=-100;
+  window.addEventListener('pointermove', function(e){ cx2=e.clientX; cy2=e.clientY; }, { passive:true });
+  gsap.ticker.add(function(){
+    rx2 += (cx2-rx2)*.16; ry2 += (cy2-ry2)*.16;
+    dot.style.transform = 'translate('+(cx2-3)+'px,'+(cy2-3)+'px)';
+    ring.style.transform = 'translate('+(rx2-ring.offsetWidth/2)+'px,'+(ry2-ring.offsetHeight/2)+'px)';
+  });
+  document.addEventListener('mouseover', function(e){
+    ring.className = e.target.closest('a,button') ? 'cursor-ring is-link' : 'cursor-ring';
+  });
+}
+
+/* ═══ Magnetic buttons ═══ */
+if (finePointer){
+  [].slice.call(document.querySelectorAll('[data-magnetic]')).forEach(function(el){
+    var xTo = gsap.quickTo(el, 'x', { duration:.5, ease:'power3' });
+    var yTo = gsap.quickTo(el, 'y', { duration:.5, ease:'power3' });
+    el.addEventListener('pointermove', function(e){
+      var b = el.getBoundingClientRect();
+      xTo((e.clientX-b.left-b.width/2)*.28); yTo((e.clientY-b.top-b.height/2)*.35);
+    });
+    el.addEventListener('pointerleave', function(){ xTo(0); yTo(0); });
+  });
+}
+
+/* ═══ Nav behavior + scroll progress ═══ */
+(function(){
+  var nav = document.getElementById('nav'), prog = document.getElementById('scrollProg'), lastY = 0;
+  ScrollTrigger.create({ start: 0, end: 'max', onUpdate: function(self){
+    var y = self.scroll();
+    nav.classList.toggle('is-solid', y > 60);
+    if (y > 560 && y > lastY + 4) nav.classList.add('is-hidden');
+    else if (y < lastY - 4 || y < 560) nav.classList.remove('is-hidden');
+    lastY = y;
+    prog.style.transform = 'scaleX(' + self.progress + ')';
+  }});
+})();
+
+/* ═══ Hero intro + preloader ═══ */
+var heroChars = [];
+[].slice.call(document.querySelectorAll('.hero-title [data-split="chars"]')).forEach(function(ln){
+  heroChars = heroChars.concat(splitChars(ln));
+});
+gsap.set(heroChars, { yPercent: 116, rotate: 4 });
+gsap.set('[data-hero="fade"]', { autoAlpha: 0, y: 28 });
+
+function heroIntro(){
+  var tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+  tl.to(heroChars, { yPercent: 0, rotate: 0, duration: 1.25, stagger: .028 }, 0)
+    .to('[data-hero="fade"]', { autoAlpha: 1, y: 0, duration: 1, stagger: .12 }, .55);
+  return tl;
+}
+(function preloader(){
+  var loader = document.getElementById('loader'), word = document.getElementById('loadWord'),
+      pct = document.getElementById('loadPct'), bar = document.getElementById('loadBar');
+  var words = ['Clarity','Momentum','Replies','Interviews','Offers','Community'], wi = 0, n = { v:0 };
+  var swap = setInterval(function(){ wi = (wi+1)%words.length; word.textContent = words[wi]; }, 300);
+  gsap.to(n, { v: 100, duration: 1.8, ease: 'power2.inOut',
+    onUpdate: function(){ pct.textContent = Math.round(n.v); bar.style.transform = 'scaleX('+n.v/100+')'; },
+    onComplete: function(){
+      clearInterval(swap);
+      gsap.timeline().to(loader, { yPercent: -100, duration:.9, ease:'expo.inOut' })
+        .add(heroIntro(), '-=.35').set(loader, { display:'none' });
+    }
+  });
+})();
+
+/* Hero parallax-out */
+gsap.to('.hero-in', { yPercent: 16, autoAlpha: .25, ease:'none',
+  scrollTrigger: { trigger:'.hero', start:'top top', end:'bottom top', scrub:true } });
+
+/* ═══ Ticker · velocity-reactive marquee ═══ */
+(function(){
+  var track = document.getElementById('ticker'), seg = track.querySelector('.ticker-seg');
+  // duplicate the segment so the wrap is seamless
+  track.appendChild(seg.cloneNode(true));
+  var segW = seg.offsetWidth, xw = gsap.utils.wrap(-segW, 0), x = 0, vel = 0;
+  gsap.ticker.add(function(_, dt){
+    var v = lenis ? lenis.velocity : 0; vel += (v - vel)*.08;
+    x -= (60 + Math.min(Math.abs(vel)*14, 340)) * dt/1000;
+    track.style.transform = 'translateX('+xw(x)+'px) skewX('+gsap.utils.clamp(-8,8,-vel*.25)+'deg)';
+  });
+  window.addEventListener('resize', function(){ segW = seg.offsetWidth; xw = gsap.utils.wrap(-segW, 0); });
+})();
+
+/* ═══ Manifesto word-fill + spark gather ═══ */
+(function(){
+  var words = wrapCreed(); if (!words.length) return;
+  gsap.set(words, { opacity: .16 });
+  gsap.to(words, { opacity: 1, stagger: .06, ease:'none',
+    scrollTrigger: { trigger:'#manifesto', start:'top 72%', end:'bottom 58%', scrub:.4 } });
+  if (window.__sparkState) ScrollTrigger.create({
+    trigger:'#manifesto', start:'top 85%', end:'bottom 30%', scrub:.6,
+    onUpdate: function(self){ window.__sparkState.gather = Math.sin(self.progress*Math.PI); },
+    onLeave: function(){ window.__sparkState.gather = 0; }, onLeaveBack: function(){ window.__sparkState.gather = 0; }
+  });
+})();
+
+/* ═══ Counters ═══ */
+[].slice.call(document.querySelectorAll('.v[data-count]')).forEach(function(el){
+  var target = +el.getAttribute('data-count'), dec = +(el.getAttribute('data-decimals')||0);
+  ScrollTrigger.create({ trigger: el, start:'top 90%', once:true, onEnter: function(){
+    var n = { v:0 };
+    gsap.to(n, { v: target, duration: 1.7, ease:'power3.out', onUpdate: function(){
+      el.textContent = dec > 0 ? n.v.toFixed(dec) : (target >= 1000 ? Math.round(n.v).toLocaleString('en-US') : Math.round(n.v));
+    }});
+  }});
+});
+
+/* ═══ What's Inside · horizontal pin (desktop) ═══ */
+gsap.matchMedia().add('(min-width: 900px)', function(){
+  var rail = document.getElementById('inRail'), pin = document.getElementById('inPin'),
+      bar = document.getElementById('inBar'), idx = document.getElementById('inCount');
+  function dist(){ return rail.scrollWidth - window.innerWidth + 80; }
+  var tween = gsap.to(rail, { x: function(){ return -dist(); }, ease:'none',
+    scrollTrigger: { trigger: pin, start:'top top', pin:true, scrub:.6,
+      end: function(){ return '+=' + dist(); }, invalidateOnRefresh:true,
+      onUpdate: function(self){
+        bar.style.transform = 'scaleX('+self.progress+')';
+        idx.textContent = '0' + Math.min(7, Math.max(1, Math.round(self.progress*6)+1));
+      }
+    }});
+  return function(){ if (tween.scrollTrigger) tween.scrollTrigger.kill(); tween.kill(); };
+});
+
+/* ═══ Journey · progress line + card reveals ═══ */
+gsap.to('#jrnFill', { scaleY: 1, ease:'none',
+  scrollTrigger: { trigger:'#jrn', start:'top 70%', end:'bottom 75%', scrub:.5 } });
+
+/* ═══ Founder portrait parallax ═══ */
+gsap.to('#founderImg', { yPercent: -9, ease:'none',
+  scrollTrigger: { trigger:'.founder-photo', start:'top bottom', end:'bottom top', scrub:true } });
+
+/* ═══ Praise · sticky deck ═══ */
+(function(){
+  var cards = [].slice.call(document.querySelectorAll('#deck .deck-card')), n = cards.length;
+  cards.forEach(function(card, i){
+    card.style.top = (12 + i*3.2) + 'vh';
+    card.style.zIndex = i + 1;
+    if (i < n-1) card.style.marginBottom = '40vh';
+    if (i < n-1) gsap.to(card, { scale: .92 - (n-2-i)*.015, autoAlpha: .4, transformOrigin:'center top', ease:'none',
+      scrollTrigger: { trigger: cards[i+1], start:'top 80%', end:'top 20%', scrub:true } });
+  });
+})();
+
+/* ═══ Praise · testimonial marquee rows ═══ */
+[].slice.call(document.querySelectorAll('.tmar-row')).forEach(function(row){
+  var dir = +row.getAttribute('data-dir') || 1;
+  row.innerHTML = row.innerHTML + row.innerHTML;
+  var half = row.scrollWidth / 2, x = dir === 1 ? 0 : -half;
+  gsap.ticker.add(function(_, dt){
+    x -= dir * 28 * dt/1000;
+    if (dir === 1 && x <= -half) x += half;
+    if (dir === -1 && x >= 0) x -= half;
+    row.style.transform = 'translateX('+x+'px)';
+  });
+});
+
+/* ═══ Generic reveals ═══ */
+[].slice.call(document.querySelectorAll('[data-reveal]')).forEach(function(el){
+  gsap.fromTo(el, { autoAlpha: 0, y: 42 }, { autoAlpha: 1, y: 0, duration: 1.05, ease:'power3.out',
+    scrollTrigger: { trigger: el, start:'top 88%', once:true } });
+});
+
+/* ═══ Footer wordmark drift ═══ */
+gsap.from('.foot-mark', { yPercent: 38, ease:'none',
+  scrollTrigger: { trigger:'footer', start:'top bottom', end:'bottom bottom', scrub:true } });
+
+window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+
+const tiers = [
+  {
+    label: "Free Resources",
+    sublabel: "Email signup for instant access",
+    products: [
+      { name: "ADHD Job Search Survival Cheat Sheet", price: "Free", description: "5 immediate hacks for job searching with ADHD. Built by someone who gets it.", href: "/products/adhd-cheat-sheet", cta: "Get Free Access", badge: "Free" },
+      { name: "Job Search Self-Diagnostic Scorecard", price: "Free", description: "Find out where your job search is breaking down. 10 questions, 5 dimensions.", href: "/products/job-search-scorecard", cta: "Get Free Access", badge: "Free" },
+      { name: "Rejection Reframe Card Deck", price: "Free", description: "10 printable cards with evidence-based CBT reframes for common rejection scenarios.", href: "/products/rejection-cards", cta: "Get Free Access", badge: "Free" },
+      { name: "50 Ghost Job Red Flags Checklist", price: "Free", description: "Stop wasting time on jobs that don't exist. 50 red flags across 5 categories.", href: "/products/ghost-job-checklist", cta: "Get Free Access", badge: "Free" },
+    ],
+  },
+  {
+    label: "$9 Quick Wins",
+    sublabel: "Solve one specific problem fast",
+    products: [
+      { name: "Career Prompt Vault", price: "$9 CAD", description: "50 AI prompt frameworks for your job search. Works with ChatGPT, Claude, Gemini, and more.", href: "/tools/career-prompt-vault", cta: "Learn More", badge: null },
+      { name: "ADHD Job Seeker's Focus Kit", price: "$9 CAD", description: "Energy management, dopamine-friendly tracking, and RSD tools for ADHD job seekers.", href: "/products/adhd-focus-kit", cta: "Learn More", badge: "New" },
+      { name: "LinkedIn Detox + Comparison Recovery", price: "$9 CAD", description: "Research-backed framework for using LinkedIn strategically without the emotional damage.", href: "/products/linkedin-detox", cta: "Learn More", badge: "New" },
+      { name: "The Salary Number Generator", price: "$9 CAD", description: "Calculate your anchor, target, and walk-away numbers with word-for-word scripts.", href: "/products/salary-generator", cta: "Learn More", badge: "New" },
+      { name: "Cold Outreach Script Pack", price: "$9 CAD", description: "30 copy-paste scripts for cold emails, LinkedIn DMs, follow-ups, and referral requests.", href: "/products/cold-outreach-pack", cta: "Learn More", badge: "New" },
+    ],
+  },
+  {
+    label: "$19\u201329 Systems",
+    sublabel: "Complete frameworks that stand alone",
+    products: [
+      { name: "Job Search Emotional Survival Kit", price: "$24 CAD", description: "CBT and ACT-based tools for the psychological toll of job searching. 8 evidence-based guides.", href: "/products/emotional-survival-kit", cta: "Learn More", badge: "New" },
+      { name: "The Job Search Script Vault", price: "$29 CAD", description: "100+ copy-paste scripts for outreach, negotiation, interviews, follow-ups, and more.", href: "/products/script-vault", cta: "Learn More", badge: "New" },
+      { name: "ADHD Career Change Workbook", price: "$24 CAD", description: "A career change system designed for how ADHD brains actually work. 6 guides.", href: "/products/adhd-career-change", cta: "Learn More", badge: "New" },
+      { name: "The Interview Confidence System", price: "$19 CAD", description: "STAR story bank, anxiety management, and answer frameworks for 20 common questions.", href: "/products/interview-confidence", cta: "Learn More", badge: "New" },
+    ],
+  },
+  {
+    label: "$47\u201367 Complete Systems",
+    sublabel: "Everything you need in one place",
+    products: [
+      { name: "Layoff Survival Kit", price: "$67 CAD", description: "Everything you need in the first 72 hours after a layoff. Severance scripts, financial planning, lawyers, action plan.", href: "/layoff-survival-kit", cta: "Learn More", badge: "Most Popular" },
+      { name: "ADHD Job Search Command Center", price: "$57 CAD", description: "The complete job search system designed for how your brain actually works. 8 modules.", href: "/products/adhd-command-center", cta: "Learn More", badge: "Flagship" },
+      { name: "Career Change Command Center", price: "$47 CAD", description: "Everything you need to change careers without burning it all down. 7 modules.", href: "/products/career-change-command-center", cta: "Learn More", badge: "New" },
+      { name: "The Over-40 Career Toolkit", price: "$47 CAD", description: "Resume, LinkedIn, interview, and strategy tools built for 20+ years of experience.", href: "/products/over-40-toolkit", cta: "Learn More", badge: "New" },
+    ],
+  },
+];
+---
+
+<PageLayout
+  title="Shop | ClearCareer"
+  description="Digital career tools to accelerate your job search. From layoff recovery kits to AI prompt frameworks."
+>
+  <section class="py-20">
+    <div class="mx-auto max-w-[1080px] px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-text sm:text-5xl">
+          Digital Career Tools
+        </h1>
+        <p class="mt-4 text-lg text-text-muted">
+          Practical resources to give your job search an edge.
+        </p>
+      </div>
+
+      {tiers.map((tier) => (
+        <div class="mt-16">
+          <div class="mb-8">
+            <h2 class="text-2xl font-bold text-text">{tier.label}</h2>
+            <p class="mt-1 text-sm text-text-muted">{tier.sublabel}</p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            {tier.products.map((product) => (
+              <a
+                href={product.href}
+                class="group relative flex flex-col rounded-2xl border border-border bg-white p-8 transition-shadow hover:shadow-lg"
+              >
+                {product.badge && (
+                  <span class={`absolute -top-3 left-6 rounded-full px-3 py-1 text-xs font-semibold text-white ${product.badge === 'Free' ? 'bg-green-500' : product.badge === 'Most Popular' ? 'bg-blue' : product.badge === 'Flagship' ? 'bg-purple-600' : 'bg-amber-500'}`}>
+                    {product.badge}
+                  </span>
+                )}
+                <h3 class="text-xl font-bold text-text group-hover:text-blue">
+                  {product.name}
+                </h3>
+                <p class="mt-1 text-xl font-semibold text-blue">
+                  {product.price}
+                </p>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-text-muted">
+                  {product.description}
+                </p>
+                <div class="mt-5">
+                  <span class="inline-flex items-center rounded-lg bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors group-hover:bg-blue-dark">
+                    {product.cta}
+                    <span class="ml-2">&rarr;</span>
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</PageLayout>

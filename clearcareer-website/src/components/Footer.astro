@@ -1,0 +1,201 @@
+---
+interface FooterLink {
+  label: string;
+  href: string;
+  seeAll?: boolean;
+}
+
+interface FooterColumn {
+  title: string;
+  links: FooterLink[];
+}
+
+const columns: FooterColumn[] = [
+  {
+    title: "Programs",
+    links: [
+      { label: "Job Search Ignition System", href: "/programs/jsis" },
+      { label: "Community", href: "/programs/community" },
+      { label: "Outcomes", href: "/outcomes" },
+      { label: "Testimonials", href: "/testimonials" },
+      { label: "Book a Free Audit", href: "https://calendly.com/clearcareer/discovery-call" },
+    ],
+  },
+  {
+    title: "Free Tools",
+    links: [
+      { label: "Severance Calculator", href: "/free-tools/severance-calculator" },
+      { label: "Salary Negotiation Calculator", href: "/free-tools/salary-negotiation-calculator" },
+      { label: "Financial Runway Calculator", href: "/free-tools/financial-runway-calculator" },
+      { label: "Resume Bullet Scorer", href: "/free-tools/resume-bullet-scorer" },
+      { label: "Parental Leave Calculator", href: "/free-tools/parental-leave-calculator" },
+      { label: "See All Tools", href: "/free-tools", seeAll: true },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "2026 Salary Guide", href: "/resources/2026-salary-guide" },
+      { label: "Layoff Checklist", href: "/resources/layoff-checklist" },
+      { label: "Hidden Job Titles", href: "/resources/hidden-job-titles" },
+      { label: "Email Templates", href: "/resources/email-templates" },
+      { label: "LinkedIn Boolean Search", href: "/resources/linkedin-boolean-search" },
+      { label: "See All Guides", href: "/resources", seeAll: true },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Izzy", href: "/about" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" },
+      { label: "Shop", href: "/shop" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+    ],
+  },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-navy text-white">
+  <div class="mx-auto max-w-[1080px] px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
+      <!-- Brand Column -->
+      <div class="lg:col-span-2">
+        <a href="/" class="inline-block text-xl font-bold text-white">
+          ClearCareer
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-gray-400">
+          Helping professionals land jobs they love, faster. Career coaching that turns your job search into a clear, actionable plan.
+        </p>
+
+        <!-- Social Links -->
+        <div class="mt-6 flex gap-4">
+          <a
+            href="https://linkedin.com/in/izzydoesizzy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-gray-400 transition-colors hover:bg-blue hover:text-white"
+            aria-label="Follow ClearCareer on LinkedIn"
+          >
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.youtube.com/@joinclearcareer"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-gray-400 transition-colors hover:bg-blue hover:text-white"
+            aria-label="Subscribe to ClearCareer on YouTube"
+          >
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav Columns -->
+      {
+        columns.map((col) => (
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-400">
+              {col.title}
+            </h3>
+            <ul class="mt-4 space-y-3">
+              {col.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class:list={[
+                      "text-sm transition-colors hover:text-white",
+                      link.seeAll ? "font-medium text-blue-400" : "text-gray-300",
+                    ]}
+                  >
+                    {link.label}{link.seeAll && <span class="ml-1">&rarr;</span>}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Newsletter -->
+    <div class="mt-12 rounded-xl border border-white/10 bg-white/5 p-6 sm:p-8">
+      <div class="sm:flex sm:items-center sm:justify-between sm:gap-8">
+        <div class="mb-4 sm:mb-0">
+          <h3 class="text-lg font-semibold text-white">Get career tips in your inbox</h3>
+          <p class="mt-1 text-sm text-gray-400">
+            Actionable job search strategies. No fluff.
+          </p>
+        </div>
+        <form class="flex w-full max-w-md gap-3" id="footer-newsletter-form">
+          <label for="footer-email" class="sr-only">Email address</label>
+          <input
+            id="footer-email"
+            type="email"
+            name="email"
+            required
+            placeholder="your@email.com"
+            class="min-w-0 flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/50"
+          />
+          <button
+            type="submit"
+            class="rounded-lg bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p class="mt-2 text-xs text-gray-500">Plus weekly career tips from ClearCareer. Unsubscribe anytime.</p>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 border-t border-white/10 pt-8 text-center">
+      <p class="text-sm text-gray-500">
+        &copy; {currentYear} ClearCareer. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Brevo newsletter integration
+  document.getElementById('footer-newsletter-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const btn = form.querySelector('button[type="submit"]');
+    const input = form.querySelector('input[type="email"]') as HTMLInputElement;
+    const email = input?.value;
+
+    if (!email || !btn) return;
+
+    btn.textContent = 'Sending...';
+    btn.setAttribute('disabled', 'true');
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'newsletter' }),
+      });
+
+      if (res.ok) {
+        btn.textContent = 'Subscribed!';
+        btn.classList.add('opacity-60', 'cursor-not-allowed');
+        input.value = '';
+      } else {
+        btn.textContent = 'Try again';
+        btn.removeAttribute('disabled');
+      }
+    } catch {
+      btn.textContent = 'Try again';
+      btn.removeAttribute('disabled');
+    }
+  });
+</script>

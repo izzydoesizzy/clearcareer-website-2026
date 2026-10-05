@@ -1,0 +1,217 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import ToolInput from "@components/ToolInput.astro";
+import CopyButton from "@components/CopyButton.astro";
+---
+
+<ToolLayout
+  title="LinkedIn Job Search URL Builder"
+  headline="LinkedIn Job Search URL Builder"
+  description="Create a filtered LinkedIn job search URL with your exact criteria. One click to see the roles that match."
+  category="Job Search"
+  icon="🔗"
+  relatedTags={["job search strategy"]}
+  slug="linkedin-job-search-builder"
+  lastUpdated="March 2026"
+  featureList={["Pre-built LinkedIn search URL", "Experience level filtering", "Remote and location targeting", "Time-posted filtering"]}
+  faqItems={[
+    { question: "Can I save the URL as a bookmark?", answer: "Yes, and you should. Copy the generated URL and add it to your browser bookmarks bar. Open it every morning as part of your search routine. It takes 2 seconds to check for new matches." },
+    { question: "Why use a URL instead of LinkedIn's manual search?", answer: "Consistency and speed. Manual search means re-entering filters every time, and you might forget a setting. A pre-built URL gives you the exact same filtered results every time, in one click." },
+    { question: "How often should I run this search?", answer: "Daily if you're actively searching. Use the 'Past 24 hours' or 'Past week' filter to see only new postings. Most serious candidates check once in the morning and once in the evening." },
+    { question: "Can I search for multiple job titles?", answer: "Yes. In the keywords field, enter titles separated by OR: 'Product Manager OR Program Manager OR Product Owner'. The URL will include all three in one search." },
+    { question: "What if LinkedIn changes their URL parameters?", answer: "LinkedIn rarely changes these parameters since thousands of third-party tools depend on them. If something breaks, we update this tool. The core parameters (keywords, location, experience level) have been stable for years." },
+  ]}
+  relatedTools={[
+    { name: "LinkedIn Recruiter X-Ray Search", slug: "linkedin-xray-search", icon: "🔍" },
+    { name: "Weekly Job Search Planner", slug: "weekly-job-search-planner", icon: "📅" },
+  ]}
+>
+  <div slot="intro">
+    <h2 class="text-xl font-bold text-navy">Why This Matters</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        LinkedIn's default search shows you thousands of irrelevant roles. A pre-built URL locks in your filters (title, location, level, remote, recency) so you see only matching jobs. Bookmark it, open it each morning, and check new postings in seconds.
+      </p>
+    </div>
+  </div>
+  <form id="search-form" class="space-y-6">
+    <ToolInput
+      id="keywords"
+      label="Job title or keywords"
+      type="text"
+      placeholder="product manager"
+      required={true}
+    />
+
+    <ToolInput
+      id="location"
+      label="Location"
+      type="text"
+      placeholder="New York, NY"
+      required={true}
+    />
+
+    <div>
+      <label for="experience" class="block text-sm font-medium text-navy">Experience level</label>
+      <select
+        id="experience"
+        class="mt-1.5 w-full rounded-lg border border-border bg-white px-4 py-3 text-text focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20 transition-colors"
+      >
+        <option value="">Any Experience Level</option>
+        <option value="1">Internship</option>
+        <option value="2">Entry Level</option>
+        <option value="3">Associate</option>
+        <option value="4">Mid-Senior Level</option>
+        <option value="5">Director</option>
+        <option value="6">Executive</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="datePosted" class="block text-sm font-medium text-navy">Date posted</label>
+      <select
+        id="datePosted"
+        class="mt-1.5 w-full rounded-lg border border-border bg-white px-4 py-3 text-text focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20 transition-colors"
+      >
+        <option value="">Any Time</option>
+        <option value="r86400">Past 24 Hours</option>
+        <option value="r604800">Past Week</option>
+        <option value="r2592000">Past Month</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="workType" class="block text-sm font-medium text-navy">Work type</label>
+      <select
+        id="workType"
+        class="mt-1.5 w-full rounded-lg border border-border bg-white px-4 py-3 text-text focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20 transition-colors"
+      >
+        <option value="">Any</option>
+        <option value="1">On-site</option>
+        <option value="2">Remote</option>
+        <option value="3">Hybrid</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+    >
+      Build Search URL
+    </button>
+  </form>
+
+  <div id="results" class="mt-10 hidden" aria-live="polite">
+    <h2 class="text-lg font-bold text-navy">Your LinkedIn search URL:</h2>
+
+    <div class="mt-4 rounded-lg bg-blue-bg p-4">
+      <p id="search-url" class="text-sm text-navy break-all"></p>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-3">
+      <CopyButton targetId="search-url" label="Copy URL" />
+      <a
+        id="linkedin-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-blue bg-white px-5 py-2.5 text-sm font-semibold text-blue transition-colors hover:bg-blue-bg"
+      >
+        Open in LinkedIn
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+
+    <p class="mt-4 text-xs text-text-muted">
+      LinkedIn may change their URL parameters. If the filters don't apply correctly, adjust them manually on LinkedIn after opening the link.
+    </p>
+  </div>
+
+  <div slot="methodology">
+    <h2 class="text-xl font-bold text-navy">How LinkedIn Job Search URLs Work</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        LinkedIn stores filter selections as URL parameters: <code class="rounded bg-white px-1.5 py-0.5 text-sm text-navy">keywords</code> (job title), <code class="rounded bg-white px-1.5 py-0.5 text-sm text-navy">location</code> (city/region), <code class="rounded bg-white px-1.5 py-0.5 text-sm text-navy">f_E</code> (experience level 1-6), <code class="rounded bg-white px-1.5 py-0.5 text-sm text-navy">f_TPR</code> (date posted), and <code class="rounded bg-white px-1.5 py-0.5 text-sm text-navy">f_WT</code> (work type). Bookmark a URL with these parameters and one click takes you straight to filtered results. No re-entering filters.
+      </p>
+    </div>
+  </div>
+
+  <div slot="example">
+    <h2 class="text-xl font-bold text-navy">Example: Daily Product Manager Search</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        Mid-Senior Product Manager, New York, remote, posted this week. The tool generates a URL with <code class="rounded bg-blue-bg px-1.5 py-0.5 text-sm text-navy">keywords=Product%20Manager</code>, <code class="rounded bg-blue-bg px-1.5 py-0.5 text-sm text-navy">location=New%20York</code>, <code class="rounded bg-blue-bg px-1.5 py-0.5 text-sm text-navy">f_E=4</code>, <code class="rounded bg-blue-bg px-1.5 py-0.5 text-sm text-navy">f_TPR=r604800</code>, <code class="rounded bg-blue-bg px-1.5 py-0.5 text-sm text-navy">f_WT=2</code>. Bookmark it. One click each morning shows only matching roles from the last 7 days.
+      </p>
+    </div>
+  </div>
+
+  <div slot="tips">
+    <h2 class="text-xl font-bold text-navy">How to Use This</h2>
+    <div class="mt-6 space-y-6 text-[1.0625rem] leading-[1.75] text-text-muted">
+      <div>
+        <h3 class="font-semibold text-navy">Set alerts for new matches</h3>
+        <p class="mt-2">
+          After opening the URL, click "Set alert" on LinkedIn's results page. You'll get notified when new jobs match your filters, so you see fresh postings before other applicants do.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-navy">Apply within 24 hours</h3>
+        <p class="mt-2">
+          Early applicants get 8x more responses than those who apply after the first week. Use the "Past 24 Hours" filter and apply the same day.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-navy">Search multiple title variations</h3>
+        <p class="mt-2">
+          Companies call the same role different things. Run this tool 3-4 times with variations ("Product Manager," "Product Owner," "Product Lead") and bookmark each URL.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-navy">Quality over quantity</h3>
+        <p class="mt-2">
+          Sending 200 identical applications gets you nowhere. Targeted search and tailored applications always win.
+          <a href="/blog/stop-mass-applying-target-your-job-search" class="text-blue hover:underline">Read: Stop Mass Applying and Target Your Job Search</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</ToolLayout>
+
+<script>
+  const form = document.getElementById('search-form') as HTMLFormElement;
+  const results = document.getElementById('results')!;
+  const searchUrlEl = document.getElementById('search-url')!;
+  const linkedinLink = document.getElementById('linkedin-link') as HTMLAnchorElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const keywords = (document.getElementById('keywords') as HTMLInputElement).value.trim();
+    const location = (document.getElementById('location') as HTMLInputElement).value.trim();
+    const experience = (document.getElementById('experience') as HTMLSelectElement).value;
+    const datePosted = (document.getElementById('datePosted') as HTMLSelectElement).value;
+    const workType = (document.getElementById('workType') as HTMLSelectElement).value;
+
+    if (!keywords || !location) return;
+
+    const baseUrl = 'https://www.linkedin.com/jobs/search/';
+    const params = new URLSearchParams();
+    params.set('keywords', keywords);
+    params.set('location', location);
+    if (experience) params.set('f_E', experience);
+    if (datePosted) params.set('f_TPR', datePosted);
+    if (workType) params.set('f_WT', workType);
+
+    const url = `${baseUrl}?${params.toString()}`;
+
+    searchUrlEl.textContent = url;
+    linkedinLink.href = url;
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>

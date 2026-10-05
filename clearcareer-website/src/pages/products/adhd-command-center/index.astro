@@ -1,0 +1,90 @@
+---
+import ProductLayout from "@layouts/ProductLayout.astro";
+---
+
+<ProductLayout
+  title="The ADHD Job Search Command Center | ClearCareer"
+  description="The complete job search system designed for how your brain actually works. 8 modules covering every stage."
+  headline="The complete job search system<br />designed for how your brain<br />actually works."
+  subheadline="Built by someone with ADHD. 8 modules covering energy management, application systems, interview prep, networking, dopamine rewards, rejection sensitivity, and weekly reviews. All designed for ADHD brains, not neurotypical advice repackaged."
+  bullets={[
+    "The ADHD Job Search Operating System: 4 pillars for sustainable searching",
+    "Energy management dashboard: match tasks to energy levels, not clock time",
+    "ADHD application system: visual tracking, batch processing, 15-minute sprints",
+    "Interview prep for ADHD brains: launch pads, time blindness management, fidget strategies",
+    "Networking without masking: authentic, low-energy, async-first strategies",
+    "Dopamine reward system: points, streaks, celebration rituals that actually motivate",
+    "RSD survival guide: evidence-based tools for rejection sensitivity",
+    "ADHD-friendly weekly review: 15 minutes max, 3 priorities, no shame",
+  ]}
+  price="$57 CAD"
+  ctaHref="#checkout"
+  ctaText="Get the Command Center"
+  guaranteeText="30-day money-back guarantee. No questions asked."
+  faq={[
+    {
+      q: "How is this different from the ADHD Focus Kit ($9)?",
+      a: "The Focus Kit gives you the core frameworks (5 guides). The Command Center is the complete system (8 modules) with detailed implementation guides, worksheets, templates, and tracking tools for every stage of the job search. It's the difference between a quick-start guide and the full operating manual.",
+    },
+    {
+      q: "I don't have a formal ADHD diagnosis. Can I still use this?",
+      a: "Yes. If executive function challenges, time blindness, rejection sensitivity, and motivation issues affect your job search, these tools will help regardless of formal diagnosis.",
+    },
+    {
+      q: "Do I have to go through all 8 modules in order?",
+      a: "No. That's actually the first thing Module 1 tells you: skip around. It's fine. Start wherever your biggest pain point is. Each module is self-contained.",
+    },
+    {
+      q: "Is this the same content as the ADHD Career Change Workbook?",
+      a: "No. The Career Change Workbook ($24) focuses specifically on career pivoting with ADHD. The Command Center covers the entire job search process (applications, interviews, networking, tracking) for any job, not just career changes. Together they cover everything.",
+    },
+    {
+      q: "Will this work if I'm also dealing with anxiety or depression?",
+      a: "Module 7 covers the emotional side (RSD, rejection processing). For deeper emotional support, pair this with the Job Search Emotional Survival Kit ($24), which covers anxiety, burnout, grief, and confidence in more depth.",
+    },
+  ]}
+>
+  <Fragment slot="preview">
+    <div class="rounded-xl border border-blue-200 bg-blue-bg/30 p-6">
+      <p class="mb-2 text-center text-xs font-semibold uppercase tracking-wider text-blue">Flagship ADHD Product</p>
+      <p class="mb-4 text-center text-sm text-gray-600">Built by someone with ADHD, for people with ADHD.</p>
+      <div class="space-y-3">
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🖥️</span>
+          <span class="text-sm font-medium text-gray-700">The ADHD Job Search Operating System</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>⚡</span>
+          <span class="text-sm font-medium text-gray-700">Energy Management Dashboard</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>📋</span>
+          <span class="text-sm font-medium text-gray-700">The ADHD Application System</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🎯</span>
+          <span class="text-sm font-medium text-gray-700">Interview Prep for ADHD Brains</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🤝</span>
+          <span class="text-sm font-medium text-gray-700">Networking Without Masking</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🎮</span>
+          <span class="text-sm font-medium text-gray-700">The Dopamine Reward System</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>💙</span>
+          <span class="text-sm font-medium text-gray-700">Rejection and RSD Survival</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>📆</span>
+          <span class="text-sm font-medium text-gray-700">Weekly Review and Reset</span>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 text-center text-sm text-gray-500">
+      30-40% of neurodiverse job seekers are unemployed. This system exists to change that.
+    </p>
+  </Fragment>
+</ProductLayout>

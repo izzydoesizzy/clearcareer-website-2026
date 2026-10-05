@@ -1,0 +1,39 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import FiveCardsResult from "@components/wrapped/FiveCardsResult";
+import { getResult } from "../../../lib/wrapped/storage";
+import type { FiveCardsResult as FiveCardsData } from "../../../lib/wrapped/types";
+
+export const prerender = false;
+
+const { id } = Astro.params;
+if (!id) return Astro.redirect("/wrapped/five-cards");
+
+const analysis = await getResult(id);
+if (!analysis || analysis.tool !== "five-cards") return Astro.redirect("/wrapped/five-cards");
+
+const result = analysis.result as FiveCardsData;
+const referer = Astro.request.headers.get("referer") || "";
+const isOwner = referer.includes("/wrapped/api/") || referer.includes("/wrapped/five-cards");
+const ogImageUrl = `/wrapped/og/five-cards/${id}`;
+---
+
+<PageLayout
+  title={`${result.cards[0]?.headline || "Your Career in 5 Cards"} | ClearCareer`}
+  description="Your career story in 5 shareable cards. Get yours at ClearCareer."
+  image={ogImageUrl}
+>
+  <section class="bg-navy py-16 md:py-24">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <a href="/wrapped" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width={2}>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Career Wrapped
+        </a>
+      </div>
+      <FiveCardsResult client:load result={result} resultId={id} isOwner={isOwner} />
+    </div>
+  </section>
+</PageLayout>

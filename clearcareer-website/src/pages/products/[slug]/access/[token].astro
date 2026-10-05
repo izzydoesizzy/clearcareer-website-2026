@@ -1,0 +1,55 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductAccessHub from "@components/products/ProductAccessHub";
+import { PRODUCTS } from "../../../../data/product-config";
+import Stripe from "stripe";
+
+export const prerender = false;
+
+const { slug, token } = Astro.params;
+
+if (!slug || !token || !PRODUCTS[slug]) {
+  return Astro.redirect("/404");
+}
+
+const product = PRODUCTS[slug];
+
+let buyerName = "Reader";
+let buyerEmail = "";
+let isValid = false;
+
+try {
+  const stripe = new Stripe(import.meta.env.STRIPE_SECRET_KEY);
+  const session = await stripe.checkout.sessions.retrieve(token);
+
+  if (
+    session.payment_status === "paid" &&
+    session.metadata?.product === slug
+  ) {
+    buyerName = session.customer_details?.name || "Reader";
+    buyerEmail = session.customer_details?.email || "";
+    isValid = true;
+  }
+} catch {
+  isValid = false;
+}
+
+if (!isValid) {
+  return Astro.redirect("/404");
+}
+---
+
+<BaseLayout
+  title={`${product.name} | ClearCareer`}
+  description={product.description}
+  noindex={true}
+>
+  <ProductAccessHub
+    client:load
+    productName={product.name}
+    productSlug={product.slug}
+    buyerName={buyerName}
+    buyerEmail={buyerEmail}
+    guides={product.guides}
+  />
+</BaseLayout>

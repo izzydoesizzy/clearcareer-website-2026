@@ -1,0 +1,320 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import ToolInput from "@components/ToolInput.astro";
+---
+
+<ToolLayout
+  title="Contract vs. Salary Calculator"
+  headline="Contract vs. Salary Calculator"
+  description="Compare a contract rate to a salaried offer with all the hidden costs included. Self-employment tax, insurance, PTO, the works."
+  category="Financial Planning"
+  icon="⚖️"
+  relatedTags={["salary negotiation"]}
+  slug="contract-vs-salary-calculator"
+  lastUpdated="March 2026"
+  featureList={["7 hidden cost categories", "Self-employment tax calculation", "Benefits gap analysis", "Equivalent hourly rate comparison"]}
+  faqItems={[
+    { question: "What hourly rate equals my current salary?", answer: "Divide your salary by 2,080 (40 hours x 52 weeks) for a rough number. But that's just the starting point. To maintain the same take-home pay, multiply that rate by 1.4-1.6x to cover taxes, insurance, and benefits you'll lose." },
+    { question: "What's the tax difference between 1099 and W-2?", answer: "The biggest difference is self-employment tax: 15.3% on the first $168,600 of income. As a W-2 employee, your employer pays 7.65% of that. As a 1099 contractor, you pay the full 15.3%. On a $150,000 income, that's an extra $11,475 in taxes." },
+    { question: "Should I include benefits in the comparison?", answer: "Always. Benefits are compensation. A $120,000 salary with health insurance, 401(k) match, and 20 days PTO is worth $140,000-160,000 in total compensation. Ignoring benefits is the most common mistake people make." },
+    { question: "What if the contract has no set end date?", answer: "No set end date doesn't mean permanent. Contracts can end with 2 weeks notice (or less). Factor in 1-2 months of unpaid gap time per year when comparing to a salaried role with job security." },
+    { question: "How do I negotiate a higher contract rate?", answer: "Show the math. Tell the hiring manager: 'Once I account for self-employment tax, insurance, and no PTO, a $75/hour rate nets me less than a $100,000 salary.' Most companies expect contractors to cost more. They've budgeted for it." },
+    { question: "When does contract work make more financial sense?", answer: "When the rate is 1.5x+ your salary equivalent, when you can deduct significant business expenses, when you want schedule flexibility, or when you're between roles and need income while searching." },
+  ]}
+  relatedTools={[
+    { name: "Salary Negotiation Impact Calculator", slug: "salary-negotiation-calculator", icon: "📈" },
+    { name: "Opportunity Cost Calculator", slug: "opportunity-cost-calculator", icon: "⏱️" },
+  ]}
+>
+  <!-- Intro -->
+  <div slot="intro">
+    <h2 class="text-xl font-bold text-navy">Why This Matters</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        A $90/hour contract sounds like $187,200/year. But after self-employment tax, health insurance, lost 401(k) match, and zero PTO, the real value drops to around $130,000. Most people compare gross numbers and get it wrong.
+      </p>
+      <p>
+        This calculator adds up all 7 hidden costs contractors pay out of pocket. Plug in both numbers and see the real comparison.
+      </p>
+    </div>
+  </div>
+  <form id="contract-form" class="space-y-8" novalidate>
+    <!-- Group 1: Your Offers -->
+    <div>
+      <h3 class="text-lg font-semibold text-navy">Your Offers</h3>
+      <div class="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <ToolInput
+          id="contract-rate"
+          label="Contract hourly rate"
+          type="number"
+          required={true}
+          prefix="$"
+          placeholder="75"
+        />
+        <ToolInput
+          id="salary"
+          label="Comparable annual salary"
+          type="number"
+          required={true}
+          prefix="$"
+          placeholder="120000"
+        />
+      </div>
+    </div>
+
+    <!-- Group 2: Hidden Costs -->
+    <div>
+      <h3 class="text-lg font-semibold text-navy">Hidden Costs</h3>
+      <p class="mt-1 text-sm text-text-muted">Adjust these defaults to match your situation.</p>
+      <div class="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <ToolInput
+          id="health-insurance"
+          label="Health insurance (monthly)"
+          type="number"
+          prefix="$"
+          value="600"
+        />
+        <ToolInput
+          id="retirement-match"
+          label="Employer retirement match"
+          type="number"
+          suffix="%"
+          value="4"
+          min={0}
+          max={20}
+        />
+        <ToolInput
+          id="pto-days"
+          label="PTO days per year"
+          type="number"
+          value="15"
+        />
+        <ToolInput
+          id="equipment"
+          label="Equipment & software (annual)"
+          type="number"
+          prefix="$"
+          value="2000"
+        />
+        <ToolInput
+          id="liability"
+          label="Liability insurance (annual)"
+          type="number"
+          prefix="$"
+          value="1200"
+        />
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+    >
+      Compare the Numbers
+    </button>
+  </form>
+
+  <!-- Results (hidden until calculated) -->
+  <div id="results" class="mt-10 hidden" aria-live="polite">
+    <!-- Hero stat -->
+    <div class="rounded-xl border border-border bg-white p-8 text-center">
+      <p id="hero-stat" class="font-display text-[clamp(1.25rem,3vw,1.75rem)] leading-[1.3] text-navy"></p>
+    </div>
+
+    <!-- Side-by-side comparison -->
+    <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div id="contract-card" class="rounded-xl border-2 p-6 text-center">
+        <p class="text-sm font-medium text-text-muted">Contract (after hidden costs)</p>
+        <p id="contract-annual" class="mt-2 font-display text-[clamp(1.5rem,4vw,2.5rem)] leading-[1.1] text-navy"></p>
+        <p class="mt-1 text-sm text-text-muted"><span id="contract-hourly-effective"></span>/hour effective</p>
+      </div>
+      <div id="salary-card" class="rounded-xl border-2 p-6 text-center">
+        <p class="text-sm font-medium text-text-muted">Salary (total compensation)</p>
+        <p id="salary-annual" class="mt-2 font-display text-[clamp(1.5rem,4vw,2.5rem)] leading-[1.1] text-navy"></p>
+        <p class="mt-1 text-sm text-text-muted"><span id="salary-hourly-effective"></span>/hour effective</p>
+      </div>
+    </div>
+
+    <!-- Cost breakdown table -->
+    <div class="mt-6 rounded-xl border border-border bg-white p-6">
+      <h3 class="text-sm font-semibold text-navy">Hidden Cost Breakdown (Contractor)</h3>
+      <div class="mt-4 space-y-3">
+        <div class="flex items-center justify-between border-b border-border pb-3">
+          <span class="text-sm text-text-muted">Self-employment tax (15.3%)</span>
+          <span id="cost-se-tax" class="text-sm font-semibold text-navy"></span>
+        </div>
+        <div class="flex items-center justify-between border-b border-border pb-3">
+          <span class="text-sm text-text-muted">Health insurance (annual)</span>
+          <span id="cost-health" class="text-sm font-semibold text-navy"></span>
+        </div>
+        <div class="flex items-center justify-between border-b border-border pb-3">
+          <span class="text-sm text-text-muted">Lost retirement match</span>
+          <span id="cost-retirement" class="text-sm font-semibold text-navy"></span>
+        </div>
+        <div class="flex items-center justify-between border-b border-border pb-3">
+          <span class="text-sm text-text-muted">PTO value (unpaid time off)</span>
+          <span id="cost-pto" class="text-sm font-semibold text-navy"></span>
+        </div>
+        <div class="flex items-center justify-between border-b border-border pb-3">
+          <span class="text-sm text-text-muted">Equipment & software</span>
+          <span id="cost-equipment" class="text-sm font-semibold text-navy"></span>
+        </div>
+        <div class="flex items-center justify-between border-b border-border pb-3">
+          <span class="text-sm text-text-muted">Liability insurance</span>
+          <span id="cost-liability" class="text-sm font-semibold text-navy"></span>
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <span class="text-sm font-bold text-navy">Total hidden costs</span>
+          <span id="cost-total" class="text-sm font-bold text-navy"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verdict -->
+    <div id="verdict" class="mt-6 rounded-xl border-2 p-6 text-center"></div>
+  </div>
+
+  <!-- Methodology -->
+  <div slot="methodology">
+    <h2 class="text-xl font-bold text-navy">The 7 Hidden Costs</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        <strong>1. Self-employment tax (15.3%)</strong> on the first $168,600. Your employer used to pay half. Now you pay all of it. <strong>2. Health insurance ($400-2,500/month)</strong> depending on individual vs. family. <strong>3. Lost retirement match (3-6% of salary).</strong> On $120,000, a 4% match = $4,800/year gone.
+      </p>
+      <p>
+        <strong>4. PTO (15-20 days/year).</strong> Every day off is zero income. <strong>5. Equipment and software ($2,000-5,000/year).</strong> <strong>6. Liability insurance ($500-2,000/year).</strong> <strong>7. Risk premium.</strong> Contracts end. Factor in gaps. The rule of thumb: multiply your salary by 1.4-1.6x for your break-even contract rate.
+      </p>
+    </div>
+  </div>
+
+  <!-- Example -->
+  <div slot="example">
+    <h2 class="text-xl font-bold text-navy">Example: $75/Hour vs. $120K Salary</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        $75/hour x 2,080 hours = $156,000 gross. Hidden costs: SE tax (-$23,868), health insurance (-$7,200), lost 401(k) match (-$6,240), PTO (-$9,000), equipment (-$3,000), liability (-$1,000). <strong>Total hidden costs: -$50,308. Real contract value: $105,692.</strong> The $120,000 salary wins by $14,308.
+      </p>
+    </div>
+  </div>
+
+  <!-- Tips section -->
+  <div slot="tips">
+    <h2 class="font-display text-2xl text-navy">The Quick Rule of Thumb</h2>
+    <div class="mt-6 space-y-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+      <p>
+        Multiply the salaried hourly rate by 1.4 to 1.6. That's your break-even contract rate. Below 1.4x, salary wins. Above 1.6x, the contract is probably better.
+      </p>
+      <p>
+        <strong class="text-navy">Example:</strong> $120,000 salary = ~$57.70/hour. Multiply by 1.5 and your contract target is ~$86/hour. Below $81/hour (1.4x), the salary almost certainly wins.
+      </p>
+    </div>
+
+    <h3 class="mt-8 text-lg font-semibold text-navy">When to Choose Contract Anyway</h3>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+      <p>
+        <strong class="text-navy">Bridge income.</strong> Between roles and need cash flow? A contract beats $0 and fills a resume gap.
+      </p>
+      <p>
+        <strong class="text-navy">Foot in the door.</strong> Some companies hire contractors first, then convert to full-time. The short-term hit might be worth the long-term play.
+      </p>
+    </div>
+
+    <div class="mt-8 rounded-lg border border-border bg-white p-6">
+      <h3 class="text-lg font-semibold text-navy">Related Reading</h3>
+      <p class="mt-2 text-[1.0625rem] leading-[1.75] text-text-muted">
+        Dive deeper into the full breakdown:
+        <a href="/blog/contract-vs-salary-the-math-nobody-does" class="font-medium text-blue underline underline-offset-2 hover:text-blue-dark">
+          Contract vs. Salary: The Math Nobody Does
+        </a>
+      </p>
+    </div>
+  </div>
+</ToolLayout>
+
+<script>
+  const form = document.getElementById('contract-form') as HTMLFormElement;
+  const results = document.getElementById('results') as HTMLDivElement;
+
+  const fmt = (n: number) =>
+    n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+  const fmtHourly = (n: number) =>
+    n.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const rate = parseFloat((document.getElementById('contract-rate') as HTMLInputElement).value) || 0;
+    const salary = parseFloat((document.getElementById('salary') as HTMLInputElement).value) || 0;
+    const healthInsurance = parseFloat((document.getElementById('health-insurance') as HTMLInputElement).value) || 0;
+    const retirementMatch = parseFloat((document.getElementById('retirement-match') as HTMLInputElement).value) || 0;
+    const ptoDays = parseFloat((document.getElementById('pto-days') as HTMLInputElement).value) || 0;
+    const equipment = parseFloat((document.getElementById('equipment') as HTMLInputElement).value) || 0;
+    const liability = parseFloat((document.getElementById('liability') as HTMLInputElement).value) || 0;
+
+    if (!rate || !salary) {
+      return;
+    }
+
+    const contractAnnual = rate * 2080;
+    const selfEmploymentTax = contractAnnual * 0.153;
+    const healthInsuranceAnnual = healthInsurance * 12;
+    const retirementLost = salary * (retirementMatch / 100);
+    const ptoValue = (salary / 260) * ptoDays;
+    const totalHiddenCosts = selfEmploymentTax + healthInsuranceAnnual + retirementLost + ptoValue + equipment + liability;
+    const trueContractIncome = contractAnnual - totalHiddenCosts;
+    const equivalentHourlyRate = (salary + retirementLost) / 2080;
+    const minimumContractRate = (salary + totalHiddenCosts) / 2080;
+
+    // Hero stat
+    document.getElementById('hero-stat')!.innerHTML =
+      `To match a <strong>${fmt(salary)}</strong> salary, you need at least <strong>${fmtHourly(minimumContractRate)}/hour</strong> as a contractor`;
+
+    // Side-by-side comparison
+    document.getElementById('contract-annual')!.textContent = fmt(trueContractIncome);
+    document.getElementById('contract-hourly-effective')!.textContent = fmtHourly(trueContractIncome / 2080);
+    document.getElementById('salary-annual')!.textContent = fmt(salary + retirementLost);
+    document.getElementById('salary-hourly-effective')!.textContent = fmtHourly(equivalentHourlyRate);
+
+    // Highlight winner
+    const contractCard = document.getElementById('contract-card')!;
+    const salaryCard = document.getElementById('salary-card')!;
+    const contractWins = trueContractIncome > (salary + retirementLost);
+
+    if (contractWins) {
+      contractCard.className = 'rounded-xl border-2 border-success bg-green-50 p-6 text-center';
+      salaryCard.className = 'rounded-xl border-2 border-border p-6 text-center';
+    } else {
+      contractCard.className = 'rounded-xl border-2 border-border p-6 text-center';
+      salaryCard.className = 'rounded-xl border-2 border-success bg-green-50 p-6 text-center';
+    }
+
+    // Cost breakdown
+    document.getElementById('cost-se-tax')!.textContent = fmt(selfEmploymentTax);
+    document.getElementById('cost-health')!.textContent = fmt(healthInsuranceAnnual);
+    document.getElementById('cost-retirement')!.textContent = fmt(retirementLost);
+    document.getElementById('cost-pto')!.textContent = fmt(ptoValue);
+    document.getElementById('cost-equipment')!.textContent = fmt(equipment);
+    document.getElementById('cost-liability')!.textContent = fmt(liability);
+    document.getElementById('cost-total')!.textContent = fmt(totalHiddenCosts);
+
+    // Verdict
+    const verdict = document.getElementById('verdict')!;
+    const diff = Math.abs(trueContractIncome - (salary + retirementLost));
+
+    if (contractWins) {
+      verdict.className = 'mt-6 rounded-xl border-2 border-success bg-green-50 p-6 text-center';
+      verdict.innerHTML =
+        `<p class="font-display text-xl text-navy">The contract wins by ${fmt(diff)}/year</p>` +
+        `<p class="mt-2 text-sm text-text-muted">At ${fmtHourly(rate)}/hour, you come out ahead even after all hidden costs.</p>`;
+    } else {
+      verdict.className = 'mt-6 rounded-xl border-2 border-warning bg-amber-50 p-6 text-center';
+      verdict.innerHTML =
+        `<p class="font-display text-xl text-navy">The salary wins by ${fmt(diff)}/year</p>` +
+        `<p class="mt-2 text-sm text-text-muted">You'd need at least ${fmtHourly(minimumContractRate)}/hour to match this salary after hidden costs.</p>`;
+    }
+
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>

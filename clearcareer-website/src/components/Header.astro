@@ -1,0 +1,273 @@
+---
+interface NavChild {
+  label: string;
+  href: string;
+  divider?: boolean;
+  featured?: boolean;
+  seeAll?: boolean;
+}
+
+interface NavItem {
+  label: string;
+  href: string;
+  children?: NavChild[];
+}
+
+const navItems: NavItem[] = [
+  {
+    label: "Programs",
+    href: "/programs",
+    children: [
+      { label: "Job Search Ignition System", href: "/programs/jsis" },
+      { label: "Community", href: "/programs/community" },
+      { label: "Outcomes", href: "/outcomes" },
+      { label: "Testimonials", href: "/testimonials" },
+      { label: "About Izzy", href: "/about" },
+    ],
+  },
+  {
+    label: "Free Tools",
+    href: "/free-tools",
+    children: [
+      { label: "Severance Calculator", href: "/free-tools/severance-calculator" },
+      { label: "Salary Negotiation Calculator", href: "/free-tools/salary-negotiation-calculator" },
+      { label: "Financial Runway Calculator", href: "/free-tools/financial-runway-calculator" },
+      { label: "Parental Leave Calculator", href: "/free-tools/parental-leave-calculator", divider: true },
+      { label: "Resume Bullet Scorer", href: "/free-tools/resume-bullet-scorer" },
+      { label: "Weekly Job Search Planner", href: "/free-tools/weekly-job-search-planner" },
+      { label: "See All Free Tools", href: "/free-tools", seeAll: true },
+    ],
+  },
+  {
+    label: "Resources",
+    href: "/resources",
+    children: [
+      { label: "2026 Salary Guide", href: "/resources/2026-salary-guide" },
+      { label: "Layoff Checklist", href: "/resources/layoff-checklist" },
+      { label: "Hidden Job Titles", href: "/resources/hidden-job-titles" },
+      { label: "Email Templates", href: "/resources/email-templates" },
+      { label: "LinkedIn Headshot Guide", href: "/resources/linkedin-headshot-guide" },
+      { label: "See All Guides", href: "/resources", seeAll: true },
+    ],
+  },
+  { label: "Blog", href: "/blog" },
+  { label: "Shop", href: "/shop" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  id="site-header"
+  class="sticky top-0 z-50 w-full border-b border-border bg-white/95 transition-shadow"
+  style="backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);"
+>
+  <div class="mx-auto flex max-w-[1080px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 text-xl font-bold text-blue">
+      ClearCareer
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+      {
+        navItems.map((item) =>
+          item.children ? (
+            <div class="group relative">
+              <button
+                class={`inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-blue-bg hover:text-blue ${
+                  currentPath.startsWith(item.href) ? "text-blue" : "text-text"
+                }`}
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                {item.label}
+                <svg
+                  class="h-4 w-4 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="invisible absolute left-0 top-full z-50 min-w-[260px] rounded-lg border border-border bg-white py-2 shadow-lg opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+                {item.children.map((child) => (
+                  <>
+                    {child.divider && <hr class="my-1 mx-3 border-border" />}
+                    <a
+                      href={child.href}
+                      class:list={[
+                        "block px-4 py-2 text-sm transition-colors hover:bg-blue-bg hover:text-blue",
+                        child.featured && "font-semibold text-blue",
+                        child.seeAll && "mt-1 border-t border-border pt-2 font-medium text-blue",
+                        !child.featured && !child.seeAll && (currentPath === child.href ? "text-blue font-medium" : "text-text"),
+                      ]}
+                    >
+                      {child.label}{child.seeAll && <span class="ml-1">&rarr;</span>}
+                    </a>
+                  </>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class={`rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-blue-bg hover:text-blue ${
+                currentPath === item.href ? "text-blue" : "text-text"
+              }`}
+            >
+              {item.label}
+            </a>
+          )
+        )
+      }
+    </nav>
+
+    <!-- Desktop CTA -->
+    <a
+      href="https://calendly.com/clearcareer"
+      class="hidden rounded-lg bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-dark lg:inline-flex"
+    >
+      Book a Call
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-toggle"
+      class="inline-flex items-center justify-center rounded-lg p-2 text-text transition-colors hover:bg-blue-bg lg:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="menu-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-border bg-white lg:hidden"
+  >
+    <nav class="mx-auto max-w-[1080px] px-4 py-4 sm:px-6" aria-label="Mobile navigation">
+      {
+        navItems.map((item) =>
+          item.children ? (
+            <div class="mobile-dropdown">
+              <button
+                class={`flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium transition-colors hover:bg-blue-bg ${
+                  currentPath.startsWith(item.href) ? "text-blue" : "text-text"
+                }`}
+                aria-expanded="false"
+              >
+                {item.label}
+                <svg
+                  class="mobile-dropdown-icon h-4 w-4 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="mobile-dropdown-content hidden pl-4">
+                {item.children.map((child) => (
+                  <>
+                    {child.divider && <hr class="my-1 mx-2 border-border" />}
+                    <a
+                      href={child.href}
+                      class:list={[
+                        "block rounded-lg px-3 py-2.5 text-sm transition-colors hover:bg-blue-bg hover:text-blue",
+                        child.featured && "font-semibold text-blue",
+                        child.seeAll && "mt-1 font-medium text-blue",
+                        !child.featured && !child.seeAll && (currentPath === child.href ? "text-blue font-medium" : "text-text-muted"),
+                      ]}
+                    >
+                      {child.label}{child.seeAll && <span class="ml-1">&rarr;</span>}
+                    </a>
+                  </>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors hover:bg-blue-bg ${
+                currentPath === item.href ? "text-blue" : "text-text"
+              }`}
+            >
+              {item.label}
+            </a>
+          )
+        )
+      }
+      <div class="mt-4 border-t border-border pt-4">
+        <a
+          href="https://calendly.com/clearcareer"
+          class="block w-full rounded-lg bg-blue px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
+        >
+          Book a Call
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("mobile-menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("menu-icon-open");
+  const iconClose = document.getElementById("menu-icon-close");
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.contains("hidden") === false;
+
+    mobileMenu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  // Mobile dropdown toggles
+  document.querySelectorAll(".mobile-dropdown > button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling as HTMLElement | null;
+      const icon = btn.querySelector(".mobile-dropdown-icon") as HTMLElement | null;
+      const isOpen = content?.classList.contains("hidden") === false;
+
+      content?.classList.toggle("hidden");
+      icon?.classList.toggle("rotate-180");
+      btn.setAttribute("aria-expanded", String(!isOpen));
+    });
+  });
+
+  // Header shadow + enhanced blur on scroll (throttled, inline styles to avoid Tailwind HMR triggers)
+  const header = document.getElementById("site-header");
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (header) {
+          if (window.scrollY > 10) {
+            header.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)';
+            header.style.backdropFilter = 'blur(12px)';
+            (header.style as any).webkitBackdropFilter = 'blur(12px)';
+          } else {
+            header.style.boxShadow = '';
+            header.style.backdropFilter = 'blur(4px)';
+            (header.style as any).webkitBackdropFilter = 'blur(4px)';
+          }
+        }
+        ticking = false;
+      });
+    }
+  });
+</script>

@@ -1,0 +1,81 @@
+---
+import ProductLayout from "@layouts/ProductLayout.astro";
+---
+
+<ProductLayout
+  title="The Complete Career Change Command Center | ClearCareer"
+  description="Everything you need to change careers without burning it all down. 7 comprehensive modules."
+  headline="Everything you need to change careers<br />without burning it all down."
+  subheadline="71% of job seekers now apply outside their industry. Most of them are winging it. This is the system: 7 modules covering exploration, skills translation, financial planning, networking, industry research, resume strategy, and a 90-day action plan."
+  bullets={[
+    "Career exploration framework with values clarification and the '10 lives' exercise",
+    "Transferable skills matrix across 8 categories with gap analysis",
+    "Financial runway calculator: burn rate, emergency fund targets, income bridge strategies",
+    "Networking CRM system from zero with 20 conversation starters",
+    "Industry research playbook: understand a new industry in 2 weeks",
+    "The pivot resume: functional-hybrid format with 3 cover letter variants",
+    "90-day transition plan with weekly actions and contingency planning",
+  ]}
+  price="$47 CAD"
+  ctaHref="#checkout"
+  ctaText="Get the Command Center"
+  guaranteeText="30-day money-back guarantee. No questions asked."
+  faq={[
+    {
+      q: "I don't know what I want to change to. Is this too early?",
+      a: "No. Module 1 is specifically designed for exploration. The values clarification exercise, '10 lives' exercise, and skills-to-career mapping help you figure out what's next before you commit to anything.",
+    },
+    {
+      q: "How is this different from career coaching?",
+      a: "A career coach charges $200-500 per session. The Command Center gives you the same frameworks and exercises a coach would use, organized into a self-guided system. It's the DIY version of what we deliver in our $2,497 coaching program.",
+    },
+    {
+      q: "I have a family and a mortgage. Can I really change careers?",
+      a: "Module 3 (Financial Runway Calculator) addresses this directly. It includes the 'parallel track' approach, where you don't quit until the new thing pays, and income bridge strategies like consulting, freelancing, and part-time work during the transition.",
+    },
+    {
+      q: "What about my resume? I don't have experience in the new field.",
+      a: "Module 6 (The Pivot Resume) covers the functional-hybrid format specifically designed for career changers. It shows you how to translate your achievements across industries and includes 3 cover letter templates for pivoting scenarios.",
+    },
+    {
+      q: "Do I get lifetime access?",
+      a: "Yes. Buy once, access forever. No subscription.",
+    },
+  ]}
+>
+  <Fragment slot="preview">
+    <div class="rounded-xl border border-gray-200 bg-gray-50 p-6">
+      <p class="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gray-400">7 modules</p>
+      <div class="space-y-3">
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🔍</span>
+          <span class="text-sm font-medium text-gray-700">Career Exploration Framework</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>📊</span>
+          <span class="text-sm font-medium text-gray-700">Transferable Skills Matrix</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>💰</span>
+          <span class="text-sm font-medium text-gray-700">Financial Runway Calculator</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>🤝</span>
+          <span class="text-sm font-medium text-gray-700">Networking CRM System</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>📚</span>
+          <span class="text-sm font-medium text-gray-700">Industry Research Playbook</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>📄</span>
+          <span class="text-sm font-medium text-gray-700">The Pivot Resume</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg bg-white p-3">
+          <span>📅</span>
+          <span class="text-sm font-medium text-gray-700">90-Day Transition Plan</span>
+        </div>
+      </div>
+    </div>
+  </Fragment>
+</ProductLayout>

@@ -1,0 +1,57 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import FiveCardsResult from "@components/wrapped/FiveCardsResult";
+
+const result = {
+  cards: [
+    {
+      number: 1,
+      headline: "14 Years. 7 Countries. 130+ Projects.",
+      body: "You've worked across SaaS, ed-tech, cannabis tech, career coaching, and digital nomad retreats. Most people pick a lane. You built a highway interchange.",
+      stat: "14 years across 5 industries",
+      color: "#0161EF"
+    },
+    {
+      number: 2,
+      headline: "You Turn Zero Into Systems",
+      body: "Every single role follows the same pattern: you walk into something that doesn't exist yet and build the playbook. LeafLogix Canada. freeCodeConf. ClearCareer's AI toolkit. You're not an operator. You're a launcher.",
+      stat: "4 companies built from scratch",
+      color: "#030620"
+    },
+    {
+      number: 3,
+      headline: "The AI Gives You a Multiplier",
+      body: "While other coaches are still using Google Docs, you built custom GPTs, a Claude Code marketing agent, an AI client manager, and an AI headshot platform. Your tech stack is your moat, and most competitors don't even know it exists.",
+      stat: "5+ custom AI tools in production",
+      color: "#059669"
+    },
+    {
+      number: 4,
+      headline: "Founder Mode Is a Ceiling",
+      body: "You've been self-employed for most of the last decade. That's freedom, but it's also a cap. No one's pushing your salary up, no one's promoting you, and your income is directly tied to your hours. The 200+ clients prove the demand. The question is whether you want to keep doing it yourself.",
+      stat: "1 employer in 10 years",
+      color: "#D97706"
+    },
+    {
+      number: 5,
+      headline: "You Should Be Running AI Programs",
+      body: "The market is screaming for people who can design AI-powered learning and enablement at scale. You've already done it for 200+ clients. The next move is doing it inside a company with 10,000 employees and a budget that matches the impact you've already proven.",
+      stat: "$170K+ top client salary gain",
+      color: "#06b6d4"
+    }
+  ]
+};
+---
+
+<PageLayout title="5 Cards Demo | ClearCareer" description="Demo of the Career in 5 Cards result page.">
+  <section class="bg-navy py-16 md:py-24">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-amber-400">
+          Demo Preview
+        </span>
+      </div>
+      <FiveCardsResult client:load result={result} resultId="demo" isOwner={false} />
+    </div>
+  </section>
+</PageLayout>

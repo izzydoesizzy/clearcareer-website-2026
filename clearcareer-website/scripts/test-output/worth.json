@@ -1,0 +1,32 @@
+{
+  "marketRange": {
+    "low": 120000,
+    "anchor": 155000,
+    "stretch": 195000,
+    "currency": "CAD"
+  },
+  "titleVerdict": {
+    "current": "Founder & Career Coach",
+    "actual": "Director of Client Success & Community / Head of Programs",
+    "inflationScore": -1
+  },
+  "gap": {
+    "direction": "underpaid",
+    "amount": "$30,000-60,000"
+  },
+  "topCompanies": [
+    {
+      "name": "Shopify",
+      "whyTheyPay": "Their merchant success and community teams value exactly this blend of technical fluency, program design, and partnership management, and they pay Toronto-market premiums."
+    },
+    {
+      "name": "HubSpot",
+      "whyTheyPay": "Their customer onboarding and implementation teams need people who can build scalable processes across enterprise accounts, and they compensate well for implementation + community hybrids."
+    },
+    {
+      "name": "LinkedIn",
+      "whyTheyPay": "Their Learning & Career verticals hire for the exact intersection of coaching methodology, AI tooling, and content strategy, with US-level compensation even for Canadian remote roles."
+    }
+  ],
+  "methodology": "Based on 14+ years of progressive experience spanning SaaS implementation (Dutchie), community scaling (Lighthouse Labs), and program design (ClearCareer), benchmarked against Director-level Client Success and Community roles in the Toronto tech market with AI tooling expertise as an accelerator."
+}

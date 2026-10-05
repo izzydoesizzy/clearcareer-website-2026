@@ -1,0 +1,97 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  type?: "text" | "number" | "textarea";
+  placeholder?: string;
+  tooltip?: string;
+  required?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
+  prefix?: string;
+  suffix?: string;
+  value?: string | number;
+  rows?: number;
+}
+
+const {
+  id,
+  label,
+  type = "text",
+  placeholder,
+  tooltip,
+  required = false,
+  min,
+  max,
+  step,
+  prefix,
+  suffix,
+  value,
+  rows = 4,
+} = Astro.props;
+
+const inputClasses = "w-full rounded-lg border border-border bg-white px-4 py-3 text-text placeholder:text-text-muted focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/20 transition-colors";
+---
+
+<div>
+  <label for={id} class="block text-sm font-medium text-navy">
+    {label}
+    {required && <span class="text-warning">*</span>}
+  </label>
+  {tooltip && (
+    <p class="mt-1 text-xs text-text-muted">{tooltip}</p>
+  )}
+  <div class="mt-1.5">
+    {type === "textarea" ? (
+      <textarea
+        id={id}
+        name={id}
+        rows={rows}
+        placeholder={placeholder}
+        required={required}
+        class={inputClasses}
+      >{value}</textarea>
+    ) : prefix || suffix ? (
+      <div class="relative">
+        {prefix && (
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm pointer-events-none">
+            {prefix}
+          </span>
+        )}
+        <input
+          id={id}
+          name={id}
+          type={type}
+          inputmode={type === "number" ? "decimal" : undefined}
+          placeholder={placeholder}
+          required={required}
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          class:list={[inputClasses, prefix && "pl-8", suffix && "pr-10"]}
+        />
+        {suffix && (
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted text-sm pointer-events-none">
+            {suffix}
+          </span>
+        )}
+      </div>
+    ) : (
+      <input
+        id={id}
+        name={id}
+        type={type}
+        inputmode={type === "number" ? "decimal" : undefined}
+        placeholder={placeholder}
+        required={required}
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        class={inputClasses}
+      />
+    )}
+  </div>
+</div>

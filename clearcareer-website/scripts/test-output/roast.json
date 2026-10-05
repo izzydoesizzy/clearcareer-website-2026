@@ -1,0 +1,32 @@
+{
+  "roasts": [
+    {
+      "text": "You opened the NASDAQ bell in a Pikachu costume and still put it on your resume. Respect the audacity, but LinkedIn recruiters are going to have questions.",
+      "severity": "mild"
+    },
+    {
+      "text": "You have more frameworks than a JavaScript developer: CHARM Framework, Job Hacking, Confident Selling System, Job Search Ignition System. At some point you're just naming things and calling it strategy.",
+      "severity": "medium"
+    },
+    {
+      "text": "Your resume lists 'Bitcoin to Tulip' -- a Chrome extension that replaces Bitcoin with tulip emojis -- right next to your McKinsey and PwC partnerships. That's range, I guess.",
+      "severity": "medium"
+    },
+    {
+      "text": "You've been a Founder of four different things, a Freelancer for 12 years, and an employee exactly once (at Dutchie, where you lasted until the weed money dried up). Your resume reads like someone who keeps breaking up with bosses.",
+      "severity": "savage"
+    },
+    {
+      "text": "Your ScrumMaster certification expired in 2021. Which tracks, because after seeing 130+ shipped projects with no sprint attached, I don't think Scrum was ever in danger of being practiced here.",
+      "severity": "mild"
+    }
+  ],
+  "grade": {
+    "letter": "A-",
+    "subtitle": "Overachiever With Commitment Issues"
+  },
+  "redemption": {
+    "strength": "You have an extraordinary ability to take something that doesn't exist yet, build it from nothing, and create documented, measurable results. Most people can do one of those. You do all three, repeatedly, across completely different industries.",
+    "encouragement": "The fact that you helped someone go from $90K to $260K, coached 200+ people with a 98% satisfaction rate, AND built the AI tools to scale that work is genuinely rare. You don't just talk about impact. You have the receipts."
+  }
+}

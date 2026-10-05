@@ -1,0 +1,166 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import ToolInput from "@components/ToolInput.astro";
+---
+
+<ToolLayout
+  title="Job Search Opportunity Cost Calculator"
+  headline="Job Search Opportunity Cost Calculator"
+  description="See exactly what your job search costs you every month, week, and day. The number that makes targeted searching non-negotiable."
+  category="Financial Planning"
+  icon="⏱️"
+  relatedTags={["job search strategy", "career advice"]}
+  slug="opportunity-cost-calculator"
+  lastUpdated="March 2026"
+  featureList={["Daily opportunity cost calculation", "Monthly and weekly cost breakdown", "Time-based search impact analysis"]}
+  faqItems={[
+    { question: "What is opportunity cost in a job search?", answer: "It's the income you lose for every day, week, and month that you're not working. If your salary is $100,000 per year, each month of searching costs you $8,333 in lost income." },
+    { question: "Should I use my last salary or my target salary?", answer: "Use your target salary. That's what you're leaving on the table. If you're aiming higher than your last role, the cost of a slow search is even greater than you think." },
+    { question: "How does knowing this number help me search better?", answer: "It shifts your mindset from 'I have time' to 'every day counts.' People who know their daily cost tend to be more focused, more strategic, and more willing to invest in tools and coaching that shorten the search." },
+    { question: "How long does the average job search take?", answer: "In 2025-2026, the average job search for a professional takes 3-6 months. Senior and executive roles often take 6-9 months. The more targeted your approach, the shorter your search." },
+    { question: "Is it worth taking a lower-paying job to reduce opportunity cost?", answer: "Sometimes. If you've been searching for 4+ months and a role pays 85-90% of your target, the math might favor taking it. A $10,000 pay cut is less expensive than 3 more months of zero income ($25,000+ in lost earnings)." },
+  ]}
+  relatedTools={[
+    { name: "Financial Runway Calculator", slug: "financial-runway-calculator", icon: "💰" },
+    { name: "Weekly Job Search Planner", slug: "weekly-job-search-planner", icon: "📅" },
+  ]}
+>
+  <!-- Intro -->
+  <div slot="intro">
+    <h2 class="text-xl font-bold text-navy">Why This Matters</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        Every day without a paycheck has a dollar value. At $120,000/year, that's $10,000/month, $2,308/week, $462/day. Real money disappearing while you scroll job boards or wait on recruiters.
+      </p>
+      <p>
+        This reframes "I'll keep looking" into hard numbers. Is today's application worth $462, or should that energy go to your top 3 target companies?
+      </p>
+    </div>
+  </div>
+  <form id="opp-cost-form" class="space-y-6" novalidate>
+    <ToolInput
+      id="salary"
+      label="Last or target annual salary"
+      type="number"
+      required={true}
+      prefix="$"
+      placeholder="120000"
+    />
+
+    <button
+      type="submit"
+      class="w-full rounded-lg bg-blue px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+    >
+      Calculate My Opportunity Cost
+    </button>
+  </form>
+
+  <!-- Results (hidden until calculated) -->
+  <div id="results" class="mt-10 hidden" aria-live="polite">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="rounded-xl border border-border bg-white p-6 text-center">
+        <p class="text-sm font-medium text-text-muted">Monthly cost</p>
+        <p id="monthly-cost" class="mt-2 font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1] text-navy"></p>
+      </div>
+      <div class="rounded-xl border border-border bg-white p-6 text-center">
+        <p class="text-sm font-medium text-text-muted">Weekly cost</p>
+        <p id="weekly-cost" class="mt-2 font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1] text-navy"></p>
+      </div>
+      <div class="rounded-xl border border-border bg-white p-6 text-center">
+        <p class="text-sm font-medium text-text-muted">Daily cost</p>
+        <p id="daily-cost" class="mt-2 font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1] text-navy"></p>
+      </div>
+      <div class="rounded-xl border border-border bg-white p-6 text-center">
+        <p class="text-sm font-medium text-text-muted">Hourly cost</p>
+        <p id="hourly-cost" class="mt-2 font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1] text-navy"></p>
+      </div>
+    </div>
+
+    <div class="mt-6 rounded-xl border-2 border-blue bg-blue-bg p-6 text-center">
+      <p id="key-message" class="text-[1.0625rem] leading-[1.75] text-navy"></p>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div slot="methodology">
+    <h2 class="text-xl font-bold text-navy">How We Calculate It</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        Simple division: <strong>Annual salary / 12 = monthly. / 52 = weekly. / 260 = daily. / 2,080 = hourly.</strong>
+      </p>
+      <p>
+        We use 260 working days (52 weeks x 5 days), not 365 calendar days, because you wouldn't earn on weekends anyway. The hourly rate (based on 2,080 hours, a standard full-time year) puts a price on every hour spent on low-value activities instead of high-impact ones.
+      </p>
+    </div>
+  </div>
+
+  <!-- Example -->
+  <div slot="example">
+    <h2 class="text-xl font-bold text-navy">Example: $130,000 Salary</h2>
+    <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.75] text-text">
+      <p>
+        $130,000/year = <strong>$10,833/month</strong>, <strong>$2,500/week</strong>, <strong>$500/day</strong>. A targeted strategy that saves 3 weeks over a scattershot approach recovers $7,500. A $500 coaching session that shaves 2 weeks off your search? 10x return.
+      </p>
+    </div>
+  </div>
+
+  <!-- Tips section -->
+  <div slot="tips">
+    <h2 class="font-display text-2xl text-navy">How to Use This Number</h2>
+    <div class="mt-6 space-y-4 text-[1.0625rem] leading-[1.75] text-text-muted">
+      <p>
+        <strong class="text-navy">Prioritize ruthlessly.</strong> If your weekly cost is $2,300, spending 5 hours on a lukewarm application is a $2,300 long shot. Put that time into your top 3 target companies.
+      </p>
+      <p>
+        <strong class="text-navy">Invest in speed.</strong> A coach, resume writer, or interview prep course that shaves two weeks off your search pays for itself many times over.
+      </p>
+      <p>
+        <strong class="text-navy">Track your time.</strong> Treat your search like a project. Know where your hours go. Cut activities that don't lead to interviews.
+      </p>
+    </div>
+
+    <div class="mt-8 rounded-lg border border-border bg-white p-6">
+      <h3 class="text-lg font-semibold text-navy">Related Reading</h3>
+      <p class="mt-2 text-[1.0625rem] leading-[1.75] text-text-muted">
+        Learn why targeted searching beats mass-applying every time:
+        <a href="/blog/stop-mass-applying-target-your-job-search" class="font-medium text-blue underline underline-offset-2 hover:text-blue-dark">
+          Stop Mass Applying: Target Your Job Search
+        </a>
+      </p>
+    </div>
+  </div>
+</ToolLayout>
+
+<script>
+  const form = document.getElementById('opp-cost-form') as HTMLFormElement;
+  const results = document.getElementById('results') as HTMLDivElement;
+
+  const fmt = (n: number) =>
+    n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const salary = parseFloat((document.getElementById('salary') as HTMLInputElement).value) || 0;
+
+    if (!salary) {
+      return;
+    }
+
+    const monthly = salary / 12;
+    const weekly = salary / 52;
+    const daily = salary / 260;
+    const hourly = salary / 2080;
+
+    document.getElementById('monthly-cost')!.textContent = fmt(monthly);
+    document.getElementById('weekly-cost')!.textContent = fmt(weekly);
+    document.getElementById('daily-cost')!.textContent = fmt(daily);
+    document.getElementById('hourly-cost')!.textContent = fmt(hourly);
+
+    document.getElementById('key-message')!.innerHTML =
+      `<strong>Every week without a job costs you ${fmt(weekly)}.</strong> A targeted search strategy cuts weeks off your timeline.`;
+
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>

@@ -1,0 +1,116 @@
+{
+  "pillars": [
+    {
+      "name": "Foundation",
+      "icon": "building",
+      "weeks": "1-2",
+      "deliverables": [
+        {
+          "name": "Professionally Written Resume",
+          "description": "15-20 quantified, CAR-formatted achievements that make your impact undeniable"
+        },
+        {
+          "name": "Professional Summary",
+          "description": "Resume-ready, punchy, and positioned for your target roles"
+        },
+        {
+          "name": "LinkedIn Headline",
+          "description": "3 tested versions so you can choose what resonates"
+        },
+        {
+          "name": "LinkedIn About Me Section",
+          "description": "Full section, written in your voice"
+        },
+        {
+          "name": "LinkedIn Banner",
+          "description": "Custom-designed for your personal brand"
+        },
+        {
+          "name": "Professional Headshot",
+          "description": "AI-enhanced or created, so you look the part"
+        }
+      ]
+    },
+    {
+      "name": "Target Strategy",
+      "icon": "target",
+      "weeks": "3-4",
+      "deliverables": [
+        {
+          "name": "50+ Target Companies",
+          "description": "Curated, researched, and matched to your goals"
+        },
+        {
+          "name": "Alternative Job Titles",
+          "description": "5-8 titles that expand your search without diluting your positioning"
+        },
+        {
+          "name": "Research-Backed Salary Ranges",
+          "description": "By role, seniority, and geography so you negotiate from knowledge"
+        },
+        {
+          "name": "Job Search Tracking System",
+          "description": "Pre-populated and ready to run from Day 1"
+        },
+        {
+          "name": "Boolean Search Strings",
+          "description": "Custom search queries for LinkedIn and job boards"
+        },
+        {
+          "name": "Google Alerts Setup",
+          "description": "Automated notifications for target companies and roles"
+        }
+      ]
+    },
+    {
+      "name": "Outreach System",
+      "icon": "send",
+      "weeks": "5-6",
+      "deliverables": [
+        {
+          "name": "Cover Letter Template",
+          "description": "Customizable template for targeted applications"
+        },
+        {
+          "name": "Cold Email Templates",
+          "description": "3 variants for different outreach scenarios"
+        },
+        {
+          "name": "LinkedIn Connection Scripts",
+          "description": "Message templates for networking and introductions"
+        },
+        {
+          "name": "Decision-Maker Search Strings",
+          "description": "Find the right people at your target companies"
+        },
+        {
+          "name": "Full Email + DM Templates",
+          "description": "Templates for every stage: intro, follow-up, thank-you"
+        }
+      ]
+    },
+    {
+      "name": "Interview Toolkit",
+      "icon": "mic",
+      "weeks": "7-8",
+      "deliverables": [
+        {
+          "name": "STAR Story Bank",
+          "description": "10-12 stories extracted from your real experience, refined and interview-ready"
+        },
+        {
+          "name": "Custom Interview Questions",
+          "description": "15-20 role and company-specific questions with answer strategy"
+        },
+        {
+          "name": "Silver Bullet Thank-You Email",
+          "description": "The follow-up email template that seals the deal"
+        },
+        {
+          "name": "Salary Negotiation Framework",
+          "description": "Scripts and strategy so you never leave money on the table"
+        }
+      ]
+    }
+  ]
+}

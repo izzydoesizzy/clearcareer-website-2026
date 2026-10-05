@@ -1,0 +1,74 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import WrappedPrivacyFooter from "@components/wrapped/WrappedPrivacyFooter.astro";
+import ResumeUploader from "@components/wrapped/ResumeUploader";
+---
+
+<PageLayout
+  title="Career DNA | ClearCareer"
+  description="Discover your career archetype, superpowers, and hidden patterns. Upload your resume and get your Career DNA in seconds."
+>
+  <!-- Hero -->
+  <section class="bg-navy py-16 md:py-24">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <a
+        href="/wrapped"
+        class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors mb-6"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width={2}>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        All Wrapped Tools
+      </a>
+      <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-blue-light mb-4">
+        🧬 Career DNA
+      </div>
+      <h1 class="font-display text-[clamp(2rem,5vw,3rem)] leading-[1.1] text-white mb-3">
+        What's Your Career DNA?
+      </h1>
+      <p class="text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
+        Upload your resume and discover your archetype, superpowers, and the hidden patterns
+        most people never notice about their own career.
+      </p>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section class="py-12 md:py-16 -mt-8">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+      <ResumeUploader client:load tool="career-dna" toolLabel="Career DNA" />
+    </div>
+  </section>
+
+  <!-- What You'll Get -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-[720px] mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-[clamp(1.25rem,2.5vw,1.75rem)] leading-[1.2] text-navy text-center mb-8">
+        What You'll Discover
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="rounded-xl bg-blue-bg p-5">
+          <span class="text-2xl mb-2 block">🎭</span>
+          <h3 class="font-semibold text-navy mb-1">Your Archetype</h3>
+          <p class="text-sm text-text-muted">A memorable name that captures your professional identity.</p>
+        </div>
+        <div class="rounded-xl bg-blue-bg p-5">
+          <span class="text-2xl mb-2 block">⚡</span>
+          <h3 class="font-semibold text-navy mb-1">Your Superpowers</h3>
+          <p class="text-sm text-text-muted">The 3 skills that show up across every role you've held.</p>
+        </div>
+        <div class="rounded-xl bg-blue-bg p-5">
+          <span class="text-2xl mb-2 block">🔍</span>
+          <h3 class="font-semibold text-navy mb-1">Hidden Pattern</h3>
+          <p class="text-sm text-text-muted">A surprising insight connecting dots you didn't see.</p>
+        </div>
+        <div class="rounded-xl bg-blue-bg p-5">
+          <span class="text-2xl mb-2 block">💎</span>
+          <h3 class="font-semibold text-navy mb-1">Rarity Score</h3>
+          <p class="text-sm text-text-muted">How unique your skill combination is compared to others.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <WrappedPrivacyFooter />
+</PageLayout>

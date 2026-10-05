@@ -1,0 +1,30 @@
+---
+interface Props {
+  name: string;
+  slug: string;
+  description: string;
+  category: string;
+  icon: string;
+}
+
+const { name, slug, description, icon } = Astro.props;
+---
+
+<a
+  href={`/free-tools/${slug}`}
+  class="group flex flex-col rounded-xl border border-border bg-white p-6 shadow-sm transition-all hover:border-blue/30 hover:shadow-md"
+>
+  <span class="text-3xl">{icon}</span>
+  <h3 class="mt-3 text-lg font-semibold text-navy group-hover:text-blue transition-colors">
+    {name}
+  </h3>
+  <p class="mt-2 flex-1 text-sm leading-relaxed text-text-muted">
+    {description}
+  </p>
+  <span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue">
+    Use tool
+    <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </span>
+</a>

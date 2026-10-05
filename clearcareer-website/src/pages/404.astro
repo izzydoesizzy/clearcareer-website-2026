@@ -1,0 +1,55 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+---
+
+<PageLayout
+  title="Page Not Found — ClearCareer"
+  description="The page you're looking for doesn't exist."
+  noindex={true}
+>
+  <section class="relative overflow-hidden bg-navy min-h-[70vh] flex items-center">
+    <!-- Mesh gradient background -->
+    <div class="absolute inset-0">
+      <div
+        class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20"
+        style="background: radial-gradient(circle, #0161EF 0%, transparent 70%); filter: blur(80px);"
+      ></div>
+      <div
+        class="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-15"
+        style="background: radial-gradient(circle, #3b82f6 0%, transparent 70%); filter: blur(60px);"
+      ></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+      <p
+        class="inline-block text-sm font-semibold text-blue tracking-wide uppercase mb-6 px-4 py-1.5 rounded-full border border-blue/30 bg-blue/10"
+      >
+        404 Error
+      </p>
+
+      <h1
+        class="font-display text-white mb-6"
+        style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05;"
+      >
+        Looks like this page got laid off too.
+      </h1>
+
+      <p
+        class="text-lg text-gray-300 max-w-xl mx-auto mb-10"
+        style="line-height: 1.75;"
+      >
+        Don't worry, it happens to the best of us. Let's get you back on track.
+      </p>
+
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 bg-blue hover:bg-blue-dark text-white font-semibold text-base px-8 py-3.5 rounded-lg transition-all duration-200 hover:shadow-glow"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Back to Homepage
+      </a>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,171 @@
+[
+  {
+    "name": "Canadian Severance Calculator",
+    "slug": "severance-calculator",
+    "description": "Estimate your severance under Canadian employment law. ESA statutory minimums and common-law Bardal factor estimates for all provinces.",
+    "category": "Financial Planning",
+    "icon": "🧮",
+    "relatedTags": ["job search strategy", "salary negotiation"],
+    "featureList": ["ESA statutory minimum calculation", "Common-law Bardal factor estimates", "Province-specific rules for all Canadian provinces", "Age, tenure, and role-level weighting"],
+    "relatedTools": [
+      { "name": "Financial Runway Calculator", "slug": "financial-runway-calculator", "icon": "💰" },
+      { "name": "Salary Negotiation Impact Calculator", "slug": "salary-negotiation-calculator", "icon": "📈" }
+    ]
+  },
+  {
+    "name": "Financial Runway Calculator",
+    "slug": "financial-runway-calculator",
+    "description": "Calculate how many months of runway you have before your savings run out. Factor in severance, unemployment, and side income.",
+    "category": "Financial Planning",
+    "icon": "\uD83D\uDCB0",
+    "relatedTags": ["job search strategy", "mindset"],
+    "featureList": ["Savings runway calculation", "Severance and unemployment offsets", "Monthly burn rate breakdown", "Start-searching date with safety buffer"],
+    "relatedTools": [
+      { "name": "Canadian Severance Calculator", "slug": "severance-calculator", "icon": "🧮" },
+      { "name": "Salary Negotiation Impact Calculator", "slug": "salary-negotiation-calculator", "icon": "\uD83D\uDCC8" }
+    ]
+  },
+  {
+    "name": "Job Search Opportunity Cost Calculator",
+    "slug": "opportunity-cost-calculator",
+    "hidden": true,
+    "description": "See exactly what your job search costs you every month, week, and day. The number that makes targeted searching non-negotiable.",
+    "category": "Financial Planning",
+    "icon": "\u23F1\uFE0F",
+    "relatedTags": ["job search strategy", "career advice"],
+    "featureList": ["Daily opportunity cost calculation", "Monthly and weekly cost breakdown", "Time-based search impact analysis"],
+    "relatedTools": [
+      { "name": "Financial Runway Calculator", "slug": "financial-runway-calculator", "icon": "\uD83D\uDCB0" },
+      { "name": "Weekly Job Search Planner", "slug": "weekly-job-search-planner", "icon": "\uD83D\uDCC5" }
+    ]
+  },
+  {
+    "name": "Contract vs. Salary Calculator",
+    "slug": "contract-vs-salary-calculator",
+    "hidden": true,
+    "description": "Compare a contract rate to a salaried offer with all the hidden costs included. Self-employment tax, insurance, PTO, the works.",
+    "category": "Financial Planning",
+    "icon": "\u2696\uFE0F",
+    "relatedTags": ["salary negotiation"],
+    "featureList": ["7 hidden cost categories", "Self-employment tax calculation", "Benefits gap analysis", "Equivalent hourly rate comparison"],
+    "relatedTools": [
+      { "name": "Salary Negotiation Impact Calculator", "slug": "salary-negotiation-calculator", "icon": "\uD83D\uDCC8" },
+      { "name": "Opportunity Cost Calculator", "slug": "opportunity-cost-calculator", "icon": "\u23F1\uFE0F" }
+    ]
+  },
+  {
+    "name": "Salary Negotiation Impact Calculator",
+    "slug": "salary-negotiation-calculator",
+    "description": "See how much one negotiation is worth over 5, 10, and 20 years. The compounding math that makes every negotiation worth it.",
+    "category": "Financial Planning",
+    "icon": "\uD83D\uDCC8",
+    "relatedTags": ["salary negotiation", "career advice"],
+    "featureList": ["Compound salary growth modeling", "5, 10, and 20 year projections", "Cumulative earnings difference", "Annual raise impact analysis"],
+    "relatedTools": [
+      { "name": "Canadian Severance Calculator", "slug": "severance-calculator", "icon": "🧮" },
+      { "name": "Financial Runway Calculator", "slug": "financial-runway-calculator", "icon": "\uD83D\uDCB0" }
+    ]
+  },
+  {
+    "name": "LinkedIn Recruiter Finder",
+    "slug": "linkedin-recruiter-finder",
+    "hidden": true,
+    "description": "Find recruiters and hiring managers on LinkedIn using Google. No Premium needed. One click to open results.",
+    "category": "Job Search",
+    "icon": "\uD83D\uDD0D",
+    "relatedTags": ["job search strategy", "networking"],
+    "featureList": ["Google X-Ray search string builder", "Boolean operator support", "Industry and location targeting", "One-click copy and open in Google"],
+    "relatedTools": [
+      { "name": "LinkedIn Job Search URL Builder", "slug": "linkedin-job-search-builder", "icon": "\uD83D\uDD17" },
+      { "name": "Networking Message Builder", "slug": "networking-message-builder", "icon": "\uD83D\uDCAC" }
+    ]
+  },
+  {
+    "name": "LinkedIn Job Search URL Builder",
+    "slug": "linkedin-job-search-builder",
+    "hidden": true,
+    "description": "Create a filtered LinkedIn job search URL with your exact criteria. One click to see the roles that match.",
+    "category": "Job Search",
+    "icon": "\uD83D\uDD17",
+    "relatedTags": ["job search strategy"],
+    "featureList": ["Pre-built LinkedIn search URL", "Experience level filtering", "Remote and location targeting", "Time-posted filtering"],
+    "relatedTools": [
+      { "name": "LinkedIn Recruiter Finder", "slug": "linkedin-recruiter-finder", "icon": "\uD83D\uDD0D" },
+      { "name": "Weekly Job Search Planner", "slug": "weekly-job-search-planner", "icon": "\uD83D\uDCC5" }
+    ]
+  },
+  {
+    "name": "Weekly Job Search Planner",
+    "slug": "weekly-job-search-planner",
+    "description": "Tell us how many hours you have. We'll build you a weekly schedule that covers networking, applications, interview prep, and more.",
+    "category": "Job Search",
+    "icon": "\uD83D\uDCC5",
+    "relatedTags": ["job search strategy"],
+    "featureList": ["Custom weekly hour allocation", "5 activity category breakdown", "Daily schedule with time blocks", "Activity suggestions per category"],
+    "relatedTools": [
+      { "name": "Financial Runway Calculator", "slug": "financial-runway-calculator", "icon": "\uD83D\uDCB0" },
+      { "name": "Resume Bullet Point Scorer", "slug": "resume-bullet-scorer", "icon": "\u2705" }
+    ]
+  },
+  {
+    "name": "STAR Story Builder",
+    "slug": "star-story-builder",
+    "hidden": true,
+    "description": "Walk through each piece of the STAR format with guided prompts. Get a polished interview answer you can copy and practice.",
+    "category": "Interview & Resume",
+    "icon": "\u2B50",
+    "relatedTags": ["interviews"],
+    "featureList": ["Guided STAR format prompts", "Word count tracking", "Complete story assembly", "Copy-to-clipboard output"],
+    "relatedTools": [
+      { "name": "Resume Bullet Point Scorer", "slug": "resume-bullet-scorer", "icon": "\u2705" },
+      { "name": "Networking Message Builder", "slug": "networking-message-builder", "icon": "\uD83D\uDCAC" }
+    ]
+  },
+  {
+    "name": "Resume Bullet Point Scorer",
+    "slug": "resume-bullet-scorer",
+    "description": "Paste a resume bullet point and get a score out of 5. Checks for action verbs, metrics, impact, length, and weak language.",
+    "category": "Interview & Resume",
+    "icon": "\u2705",
+    "relatedTags": ["resume", "career advice"],
+    "featureList": ["5-point scoring system", "Action verb detection", "Metrics and impact analysis", "Weak language flagging", "Word count optimization"],
+    "relatedTools": [
+      { "name": "Weekly Job Search Planner", "slug": "weekly-job-search-planner", "icon": "\uD83D\uDCC5" },
+      { "name": "Salary Negotiation Impact Calculator", "slug": "salary-negotiation-calculator", "icon": "\uD83D\uDCC8" }
+    ]
+  },
+  {
+    "name": "Networking Message Builder",
+    "slug": "networking-message-builder",
+    "hidden": true,
+    "description": "Pick a message type, fill in the details, and get a ready-to-send LinkedIn message. Cold outreach, informational interviews, follow-ups, and thank yous.",
+    "category": "Interview & Resume",
+    "icon": "\uD83D\uDCAC",
+    "relatedTags": ["networking", "job search strategy"],
+    "featureList": ["4 message templates", "Character count with LinkedIn limit", "Personalization prompts", "Copy-to-clipboard output"],
+    "relatedTools": [
+      { "name": "LinkedIn Recruiter Finder", "slug": "linkedin-recruiter-finder", "icon": "\uD83D\uDD0D" },
+      { "name": "STAR Story Builder", "slug": "star-story-builder", "icon": "\u2B50" }
+    ]
+  },
+  {
+    "name": "Canadian Parental Leave Calculator",
+    "slug": "parental-leave-calculator",
+    "description": "Calculate your family's EI or QPIP benefits during parental leave. Standard and extended plans, employer top-ups, sharing bonus, and week allocation.",
+    "category": "Financial Planning",
+    "icon": "\uD83D\uDC76",
+    "relatedTags": ["career advice", "financial planning"],
+    "featureList": [
+      "EI and QPIP benefit calculations for all provinces",
+      "Standard and extended leave comparison",
+      "Employer top-up configuration per parent",
+      "Sharing bonus eligibility and optimization",
+      "Visual timeline of leave phases",
+      "Personalized financial recommendations"
+    ],
+    "relatedTools": [
+      { "name": "Financial Runway Calculator", "slug": "financial-runway-calculator", "icon": "\uD83D\uDCB0" },
+      { "name": "Canadian Severance Calculator", "slug": "severance-calculator", "icon": "\uD83E\uDDEE" }
+    ]
+  }
+]

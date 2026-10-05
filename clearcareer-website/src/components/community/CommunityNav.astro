@@ -1,0 +1,67 @@
+---
+interface Props {
+  joinUrl: string;
+}
+const { joinUrl } = Astro.props;
+
+const links = [
+  { label: "What's inside", href: "#inside" },
+  { label: "Member wins", href: "#wins" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+];
+---
+
+<header class="cc-nav fixed inset-x-0 top-0 z-50 transition-all duration-300">
+  <div class="mx-auto flex max-w-[1200px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center gap-2" aria-label="ClearCareer home">
+      <img src="/images/logo/clearcareer-wordmark-white.svg" alt="ClearCareer" class="h-6 w-auto" width="150" height="24" />
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Community navigation">
+      {links.map((l) => (
+        <a href={l.href} class="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href={joinUrl}
+      data-magnetic
+      class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy shadow-[0_4px_24px_-4px_rgba(255,255,255,0.4)] transition-colors hover:bg-blue hover:text-white"
+    >
+      Join <span class="text-blue transition-colors group-hover:text-white">$29/mo</span>
+    </a>
+  </div>
+</header>
+
+<style>
+  /* glass effect activates once scrolled (toggled via .is-scrolled) */
+  .cc-nav.is-scrolled {
+    background: rgba(3, 6, 32, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+</style>
+
+<script>
+  const nav = document.querySelector(".cc-nav");
+  let ticking = false;
+  const update = () => {
+    if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 40);
+    ticking = false;
+  };
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true }
+  );
+  update();
+</script>

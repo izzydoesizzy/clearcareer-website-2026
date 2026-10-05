@@ -1,0 +1,61 @@
+---
+import ProductLayout from "@layouts/ProductLayout.astro";
+---
+
+<ProductLayout
+  title="The Job Search Script Vault | ClearCareer"
+  description="100+ copy-paste scripts for outreach, negotiation, interviews, follow-ups, rejection responses, and more."
+  headline="100+ scripts for every awkward,<br />high-stakes moment in your job search."
+  subheadline="Stop agonizing over what to say. Every script is copy-paste ready with customization brackets. Cold emails, salary negotiation, interview answers, rejection responses, and resignation letters."
+  bullets={[
+    "20 cold outreach scripts: emails, LinkedIn DMs, and warm-cold intros",
+    "15 follow-up scripts with exact timing for every scenario",
+    "15 salary negotiation scripts: countering, deflecting, and walking away",
+    "15 networking scripts: informational interviews, referrals, coffee chats",
+    "15 interview scripts: TMAY, tough questions, and thank-you emails",
+    "10 rejection response scripts that keep doors open",
+    "10 resignation and transition scripts",
+  ]}
+  price="$29 CAD"
+  ctaHref="#checkout"
+  ctaText="Get the Script Vault"
+  guaranteeText="30-day money-back guarantee. No questions asked."
+  faq={[
+    {
+      q: "Won't these sound like templates?",
+      a: "No. Each script has [BRACKET] customization fields for your name, company, role, and specifics. They're designed to sound like you wrote them. We include a 'why this works' note for each one so you understand the psychology.",
+    },
+    {
+      q: "I already bought the Cold Outreach Script Pack ($9). Is there overlap?",
+      a: "The Script Vault includes everything in the Cold Outreach Pack plus 70+ additional scripts covering salary negotiation, interviews, rejection responses, networking, and resignation. If you already have the Pack, email us and we'll credit your $9.",
+    },
+    {
+      q: "How are the scripts organized?",
+      a: "7 categories, each in its own guide: Cold Outreach, Follow-Ups, Salary Negotiation, Networking, Interviews, Rejection Responses, and Resignation/Transition. Jump to whatever you need today.",
+    },
+    {
+      q: "Can I use these scripts in Canada and the US?",
+      a: "Yes. The scripts work for any English-speaking market. Salary negotiation scripts include notes for both Canadian and US contexts where relevant.",
+    },
+    {
+      q: "What if the script doesn't match my exact situation?",
+      a: "Each script includes a 'when to use' description so you pick the right one. The customization brackets let you adapt the tone and details. For truly unusual situations, our Career Prompt Vault ($9) includes AI prompts that generate custom scripts.",
+    },
+  ]}
+>
+  <Fragment slot="preview">
+    <div class="grid gap-3 sm:grid-cols-2">
+      <div class="rounded-lg border border-gray-200 bg-white p-4">
+        <p class="text-2xl font-bold text-[#0161EF]">100+</p>
+        <p class="text-sm text-gray-600">Copy-paste scripts</p>
+      </div>
+      <div class="rounded-lg border border-gray-200 bg-white p-4">
+        <p class="text-2xl font-bold text-[#0161EF]">7</p>
+        <p class="text-sm text-gray-600">Categories covered</p>
+      </div>
+    </div>
+    <p class="mt-4 text-center text-sm text-gray-500">
+      A career coach charges $200+ per hour. One hour of coaching might give you 3-4 scripts. This vault gives you 100+ for $29.
+    </p>
+  </Fragment>
+</ProductLayout>

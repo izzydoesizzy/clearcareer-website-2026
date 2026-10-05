@@ -1,0 +1,367 @@
+---
+import LeadMagnetLayout from "@layouts/LeadMagnetLayout.astro";
+
+const phases = [
+  { name: "First 4 Hours", icon: "🔴", stepCount: 5, desc: "Get information, protect yourself" },
+  { name: "First 24 Hours", icon: "🟡", stepCount: 7, desc: "Set up safety nets, get financial clarity" },
+  { name: "First 72 Hours", icon: "🟢", stepCount: 13, desc: "Position yourself for a strong job search" },
+];
+
+const steps = [
+  // Phase 1: First 4 Hours
+  { phase: 1, num: 1, title: "Request everything in writing", content: "Before you leave the building (or end the video call), ask for written confirmation of termination, your severance offer in writing, your benefit termination date, and confirmation your ROE will be filed." },
+  { phase: 1, num: 2, title: "Do not sign the severance package", content: "Most initial severance offers are below what you're legally entitled to, especially for professionals earning $100K+. Common-law severance, based on court precedent, is almost always higher than statutory minimums. Rule of thumb: roughly 1 month per year of service for mid-level; senior professionals often get more." },
+  { phase: 1, num: 3, title: "Save your personal files and contacts", content: "Download personal files, export your contact list, screenshot your benefits summary, and note your manager's and HR's contact info. Do NOT take confidential company information." },
+  { phase: 1, num: 4, title: "Check your benefits conversion window", content: "Most group insurance policies give you 31-60 days to convert to an individual plan with guaranteed acceptance (no medical questions). Your provincial health plan (OHIP, MSP, etc.) continues regardless of employment." },
+  { phase: 1, num: 5, title: "Tell one trusted person", content: "Call your partner, a close friend, or a family member. Not to vent. To say: 'This happened. I'm okay. I'm going to handle it.'" },
+  // Phase 2: First 24 Hours
+  { phase: 2, num: 6, title: "Calculate your financial runway", content: "Add up take-home severance + savings, divide by monthly essential expenses. This number tells you how much time you have. Note: lump-sum severance over $15K is withheld at 30% (your actual tax may be higher at 43-53% for $100K+ earners)." },
+  { phase: 2, num: 7, title: "Apply for Employment Insurance (EI)", content: "Do this immediately at canada.ca/ei. Don't wait for your ROE. EI pays 55% of average insurable earnings up to $729/week. Current temporary measures (until Oct 2026): waiting period is waived and severance does NOT delay EI benefits." },
+  { phase: 2, num: 8, title: "Check if your ROE has been filed", content: "Log into My Service Canada Account. Your employer must file within 5 calendar days. If delayed, you can still apply for EI. Service Canada will follow up (employers can be penalized up to $2,000 per late ROE)." },
+  { phase: 2, num: 9, title: "Contact an employment lawyer", content: "For $100K+ professionals, this almost always pays for itself. Most offer free initial consultations. Many work on contingency. They can tell you if the offer is fair, whether you have a constructive dismissal claim, and how to negotiate." },
+  { phase: 2, num: 10, title: "Review your severance offer in detail", content: "Check: total amount vs common-law entitlement, benefits continuation, pro-rated bonus, equity/stock options, vacation payout, non-compete/non-solicit clauses (non-competes are banned in Ontario for most employees since Oct 2021), and reference language." },
+  { phase: 2, num: 11, title: "Pause non-essential spending", content: "For the next 30 days: pause unused subscriptions, shift to cooking at home, defer major purchases. Not austerity. Just buying yourself time to be strategic instead of desperate." },
+  { phase: 2, num: 12, title: "Review your tax situation", content: "If you have RRSP room, contribute your severance to reduce taxable income. Your employer can transfer directly, avoiding the 30% withholding. If laid off late in the year, ask if severance can be paid in January to split across two tax years." },
+  // Phase 3: First 72 Hours
+  { phase: 3, num: 13, title: "Update your LinkedIn (carefully)", content: "Don't post 'I've been laid off' first. Turn on 'Open to Work' (visible to recruiters only). Update your headline to reflect what you're looking for, not your old job." },
+  { phase: 3, num: 14, title: "Download your work samples", content: "Gather performance reviews, metrics, presentations, awards, and recognition emails. Your memory of specific numbers fades fast." },
+  { phase: 3, num: 15, title: "Make a list of 20 people to contact", content: "Former managers, colleagues at other companies, industry contacts, people at target companies. Warm conversations lead to referrals. Referrals lead to interviews." },
+  { phase: 3, num: 16, title: "Write down your top 10 achievements", content: "While your memory is fresh, list the 10 most impactful things you did. For each: what you did, why it mattered, and the number. These become resume bullets and interview stories." },
+  { phase: 3, num: 17, title: "Research your target salary", content: "Check Glassdoor Canada, Robert Half Salary Guide, Indeed Canada, and Hays Salary Guide before applying anywhere. Knowing your number prevents underselling out of panic." },
+  { phase: 3, num: 18, title: "Set up job alerts", content: "LinkedIn Job Alerts, Indeed Canada, Job Bank Canada. Set Google Alerts for '[company name] hiring' for your top 5 target companies. Let the jobs come to you." },
+  { phase: 3, num: 19, title: "File for available government programs", content: "Beyond EI: Canada Training Credit (check CRA My Account), provincial programs (Ontario Second Career, BC WorkBC, Alberta Training for Work), and professional association support." },
+  { phase: 3, num: 20, title: "Check your non-compete and non-solicit", content: "Non-compete clauses are banned in Ontario for most employees since Oct 2021. Non-solicits may still be enforceable if reasonable. Confidentiality agreements remain in effect." },
+  { phase: 3, num: 21, title: "Set a daily structure", content: "Morning: exercise, shower, get dressed. Mid-morning: job search activities. Lunch: break, walk outside. Afternoon: skill building or informational interviews. Evening: done for the day. 4-5 focused hours beats 10 scattered ones." },
+  { phase: 3, num: 22, title: "Tell your network (on your terms)", content: "When ready: share what happened (briefly), what you're looking for (specific), and how people can help (introductions, not job postings). Keep it short and forward-looking." },
+  { phase: 3, num: 23, title: "Assess your skills gaps", content: "Is your resume current? Is your LinkedIn optimized? Are there skills to update? Do you have a clear target (title, industry, company size)?" },
+  { phase: 3, num: 24, title: "Set a 30-day checkpoint", content: "On that date, review: conversations had, applications submitted, responses received, financial runway status. A job search without checkpoints becomes an endless drift." },
+  { phase: 3, num: 25, title: "Remember: this is temporary", content: "Average job search for a senior professional in Canada: 3-5 months. A panicked search leads to a bad fit leads to another search in 18 months. Be strategic. Be patient." },
+];
+
+const previewSteps = steps.slice(0, 3);
+---
+
+<LeadMagnetLayout
+  title="The Layoff Survival Checklist: 25 Steps For the First 72 Hours | ClearCareer"
+  description="Just got laid off? Here's exactly what to do in the first 72 hours. 25 Canada-specific steps covering severance, EI, benefits, legal rights, and job search setup."
+  headline="The Layoff Survival Checklist:<br />25 Steps For the First 72 Hours"
+  subheadline="You just got laid off. Your head is spinning. This checklist walks you through exactly what to do, in order. Every step is specific to Canada."
+  bullets={[
+    "25 actionable steps organized by urgency (First 4 Hours → 24 Hours → 72 Hours)",
+    "Canada-specific: EI rules, severance law, provincial health coverage, ROE filing",
+    "Current 2026 temporary EI measures (waived waiting period, severance doesn't delay benefits)",
+    "Severance negotiation guidance with common-law ranges by tenure",
+  ]}
+  source="layoff-checklist"
+  storageKey="layoff_checklist_unlocked"
+  ctaText="Get the Full Checklist"
+>
+  <!-- Preview Slot -->
+  <Fragment slot="preview">
+    <!-- Phase Cards -->
+    <div class="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      {phases.map((phase) => (
+        <div class="rounded-xl border border-border bg-white p-5 text-center">
+          <p class="text-3xl">{phase.icon}</p>
+          <p class="mt-2 text-base font-bold text-navy">{phase.name}</p>
+          <p class="text-sm text-text-muted">{phase.stepCount} steps</p>
+          <p class="mt-1 text-xs text-text-muted">{phase.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Important callout -->
+    <div class="mb-6 rounded-xl border-2 border-red-200 bg-red-50 p-5">
+      <p class="font-bold text-red-800">Before you start: Do not sign anything on the spot.</p>
+      <p class="mt-1 text-sm text-red-700">Signing deadlines in severance packages are negotiation tactics, not legal requirements. You have up to 2 years to pursue a wrongful dismissal claim in most provinces.</p>
+    </div>
+
+    <!-- Preview: Steps 1-3 -->
+    <div class="space-y-4">
+      {previewSteps.map((step) => (
+        <div class="rounded-xl border border-border bg-white p-5">
+          <div class="flex items-start gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue text-sm font-bold text-white">{step.num}</span>
+            <div>
+              <h3 class="font-bold text-navy">{step.title}</h3>
+              <p class="mt-1 text-sm text-text-muted">{step.content}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Blurred -->
+    <div class="relative mt-2 overflow-hidden" style="max-height: 160px;">
+      <div class="pointer-events-none select-none blur-[6px] opacity-50 space-y-4" aria-hidden="true">
+        {steps.slice(3, 7).map((step) => (
+          <div class="rounded-xl border border-border bg-white p-5">
+            <div class="flex items-start gap-3">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue text-sm font-bold text-white">{step.num}</span>
+              <div>
+                <h3 class="font-bold text-navy">{step.title}</h3>
+                <p class="mt-1 text-sm text-text-muted">{step.content}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white"></div>
+    </div>
+
+    <p class="mt-6 text-center text-sm font-medium text-text-muted">
+      + 22 more steps hiding behind that blur...
+    </p>
+  </Fragment>
+
+  <!-- Full Content Slot (gated) -->
+  <Fragment slot="full">
+    <!-- Progress Bar -->
+    <div class="mb-8 rounded-xl border border-border bg-white p-5">
+      <div class="flex items-center justify-between">
+        <p class="text-sm font-semibold text-navy">Your Progress</p>
+        <p class="text-sm text-text-muted" id="progress-text">0 of 25 completed</p>
+      </div>
+      <div class="mt-3 h-3 w-full overflow-hidden rounded-full bg-blue-bg">
+        <div id="progress-bar" class="h-full rounded-full bg-emerald-500 transition-all duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="mb-10 rounded-xl border-l-4 border-red-400 pl-4">
+      <div class="mb-4 flex items-center gap-3">
+        <span class="text-3xl">🔴</span>
+        <div>
+          <h2 class="text-xl font-bold text-navy">Phase 1: The First 4 Hours</h2>
+          <p class="text-sm text-text-muted">Get information, protect yourself</p>
+        </div>
+      </div>
+      <div class="mb-6 rounded-lg bg-red-50 p-4">
+        <p class="text-sm text-red-800">Your adrenaline is still going. Use it. Get the information you need and protect yourself before you lose access to anything. Every minute counts right now.</p>
+      </div>
+      <div class="space-y-4">
+        {steps.filter((s) => s.phase === 1).map((step) => (
+          <div class="rounded-xl border border-border bg-white p-5 layoff-step" data-step={step.num}>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 shrink-0 rounded border-border text-emerald-600 focus:ring-emerald-500 cursor-pointer" data-step={step.num} />
+              <div>
+                <h3 class="font-bold text-navy">{step.title}</h3>
+                <p class="mt-1 text-sm text-text-muted">{step.content}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="mb-10 rounded-xl border-l-4 border-amber-400 pl-4">
+      <div class="mb-4 flex items-center gap-3">
+        <span class="text-3xl">🟡</span>
+        <div>
+          <h2 class="text-xl font-bold text-navy">Phase 2: The First 24 Hours</h2>
+          <p class="text-sm text-text-muted">Set up safety nets, get financial clarity</p>
+        </div>
+      </div>
+      <div class="mb-6 rounded-lg bg-amber-50 p-4">
+        <p class="text-sm text-amber-800">The adrenaline has faded. Now it's time to get your financial picture clear, set up the safety nets, and start making moves that protect your future.</p>
+      </div>
+      <div class="space-y-4">
+        {steps.filter((s) => s.phase === 2).map((step) => (
+          <div class="rounded-xl border border-border bg-white p-5 layoff-step" data-step={step.num}>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 shrink-0 rounded border-border text-emerald-600 focus:ring-emerald-500 cursor-pointer" data-step={step.num} />
+              <div>
+                <h3 class="font-bold text-navy">{step.title}</h3>
+                <p class="mt-1 text-sm text-text-muted">{step.content}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="mb-10 rounded-xl border-l-4 border-emerald-400 pl-4">
+      <div class="mb-4 flex items-center gap-3">
+        <span class="text-3xl">🟢</span>
+        <div>
+          <h2 class="text-xl font-bold text-navy">Phase 3: The First 72 Hours</h2>
+          <p class="text-sm text-text-muted">Position yourself for a strong job search</p>
+        </div>
+      </div>
+      <div class="mb-6 rounded-lg bg-emerald-50 p-4">
+        <p class="text-sm text-emerald-800">You've handled the urgent stuff. Now it's time to set yourself up for a strong search, not a desperate one. The decisions you make this week shape the next few months.</p>
+      </div>
+      <div class="space-y-4">
+        {steps.filter((s) => s.phase === 3).map((step) => (
+          <div class="rounded-xl border border-border bg-white p-5 layoff-step" data-step={step.num}>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 shrink-0 rounded border-border text-emerald-600 focus:ring-emerald-500 cursor-pointer" data-step={step.num} />
+              <div>
+                <h3 class="font-bold text-navy">{step.title}</h3>
+                <p class="mt-1 text-sm text-text-muted">{step.content}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Quick Reference: Key Links -->
+    <div class="mb-10 overflow-x-auto rounded-xl border border-border">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-navy text-white">
+            <th class="px-4 py-3 text-left font-semibold">Resource</th>
+            <th class="px-4 py-3 text-left font-semibold">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-white"><td class="px-4 py-3 font-medium text-navy">Apply for EI</td><td class="px-4 py-3"><a href="https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit/apply.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">canada.ca/ei</a></td></tr>
+          <tr class="bg-blue-bg/30"><td class="px-4 py-3 font-medium text-navy">My Service Canada (check ROE)</td><td class="px-4 py-3"><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">My Account</a></td></tr>
+          <tr class="bg-white"><td class="px-4 py-3 font-medium text-navy">EI Temporary Measures</td><td class="px-4 py-3"><a href="https://www.canada.ca/en/services/benefits/ei/temporary-measures-for-major-economic-conditions.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">Current rules</a></td></tr>
+          <tr class="bg-blue-bg/30"><td class="px-4 py-3 font-medium text-navy">CRA My Account (RRSP room)</td><td class="px-4 py-3"><a href="https://www.canada.ca/en/revenue-agency/services/e-services/digital-services-individuals/account-individuals.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">CRA Account</a></td></tr>
+          <tr class="bg-white"><td class="px-4 py-3 font-medium text-navy">Ontario Severance Standards</td><td class="px-4 py-3"><a href="https://www.ontario.ca/document/your-guide-employment-standards-act-0/severance-pay" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">ontario.ca</a></td></tr>
+          <tr class="bg-blue-bg/30"><td class="px-4 py-3 font-medium text-navy">Law Society of Ontario Referral</td><td class="px-4 py-3"><a href="https://lso.ca/public-resources/finding-a-lawyer-or-paralegal/law-society-referral-service" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">Free 30-min consult</a></td></tr>
+          <tr class="bg-white"><td class="px-4 py-3 font-medium text-navy">Job Bank Canada</td><td class="px-4 py-3"><a href="https://www.jobbank.gc.ca/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark text-xs font-semibold">jobbank.gc.ca</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Severance by Province -->
+    <div class="mb-10 overflow-x-auto rounded-xl border border-border">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-navy text-white">
+            <th class="px-4 py-3 text-left font-semibold">Province</th>
+            <th class="px-4 py-3 text-left font-semibold">Notice/Pay in Lieu</th>
+            <th class="px-4 py-3 text-left font-semibold hidden sm:table-cell">Severance Pay</th>
+            <th class="px-4 py-3 text-left font-semibold">Max Combined</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-white"><td class="px-4 py-3 font-medium text-navy">Ontario</td><td class="px-4 py-3 text-text-muted">1-8 weeks</td><td class="px-4 py-3 text-text-muted hidden sm:table-cell">1 wk/yr up to 26 wks</td><td class="px-4 py-3 font-semibold text-navy">34 weeks</td></tr>
+          <tr class="bg-blue-bg/30"><td class="px-4 py-3 font-medium text-navy">BC</td><td class="px-4 py-3 text-text-muted">1-8 weeks</td><td class="px-4 py-3 text-text-muted hidden sm:table-cell">None (statutory)</td><td class="px-4 py-3 font-semibold text-navy">8 weeks</td></tr>
+          <tr class="bg-white"><td class="px-4 py-3 font-medium text-navy">Alberta</td><td class="px-4 py-3 text-text-muted">1-8 weeks</td><td class="px-4 py-3 text-text-muted hidden sm:table-cell">None (statutory)</td><td class="px-4 py-3 font-semibold text-navy">8 weeks</td></tr>
+          <tr class="bg-blue-bg/30"><td class="px-4 py-3 font-medium text-navy">Quebec</td><td class="px-4 py-3 text-text-muted">1-8 weeks</td><td class="px-4 py-3 text-text-muted hidden sm:table-cell">None (statutory)</td><td class="px-4 py-3 font-semibold text-navy">8 weeks</td></tr>
+          <tr class="bg-white"><td class="px-4 py-3 font-medium text-navy">Federal</td><td class="px-4 py-3 text-text-muted">2 weeks</td><td class="px-4 py-3 text-text-muted hidden sm:table-cell">2 days/yr</td><td class="px-4 py-3 font-semibold text-navy">Varies</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mb-10 text-center text-xs text-text-muted">These are statutory minimums. Common-law entitlements for $100K+ professionals are almost always significantly higher. Get legal advice.</p>
+
+    <!-- Upgrade CTA -->
+    <div class="rounded-xl border-2 border-blue bg-blue-bg p-6 md:p-8 text-center">
+      <h2 class="font-display text-xl md:text-2xl font-bold text-navy mb-3">Need more than a checklist?</h2>
+      <p class="text-text-muted text-sm max-w-lg mx-auto mb-4">
+        This checklist tells you what to do. The Layoff Survival Kit shows you exactly how to do it, with scripts, templates, and tools for every step.
+      </p>
+      <ul class="text-sm text-text space-y-2 text-left max-w-md mx-auto mb-6">
+        <li class="flex gap-2"><span class="text-success">&#10003;</span> Severance negotiation playbook with counter-offer email scripts</li>
+        <li class="flex gap-2"><span class="text-success">&#10003;</span> Interactive severance calculator (all provinces)</li>
+        <li class="flex gap-2"><span class="text-success">&#10003;</span> Curated employment lawyer directory (30+ firms)</li>
+        <li class="flex gap-2"><span class="text-success">&#10003;</span> Tax planning strategies, LinkedIn guide, and 7 more modules</li>
+      </ul>
+      <a href="/layoff-survival-kit" class="inline-block bg-blue text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-dark transition-colors">
+        See the Full Kit — $67 CAD
+      </a>
+      <p class="mt-3 text-xs text-text-muted">One payment. Lifetime access. 30-day money-back guarantee.</p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="mt-10 rounded-xl border border-border bg-blue-bg/20 p-6 text-xs text-text-muted">
+      <p><strong>Disclaimer:</strong> This guide is for informational purposes and does not constitute legal, tax, or financial advice. Consult an employment lawyer for advice specific to your situation. EI rules and temporary measures are subject to change. Check government sources for the latest.</p>
+    </div>
+
+    <!-- Sources -->
+    <div class="mt-12 border-t border-border pt-6">
+      <button id="sources-toggle" class="flex items-center gap-2 text-sm font-semibold text-text-muted hover:text-navy">
+        <svg id="sources-chevron" class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        Sources & References
+      </button>
+      <div id="sources-list" style="display: none;" class="mt-4 text-sm text-text-muted">
+        <p class="mb-2">Information verified through:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><a href="https://www.canada.ca/en/services/benefits/ei/ei-regular-benefit.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Service Canada</a> — EI regular benefits, eligibility, and amounts</li>
+          <li><a href="https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/reports/roe-guide.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Service Canada ROE Guide</a> — Record of Employment filing requirements</li>
+          <li><a href="https://www.canada.ca/en/services/benefits/ei/temporary-measures-for-major-economic-conditions.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">EI Temporary Measures</a> — Current temporary relief (extended to Oct 2026)</li>
+          <li><a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/calculating-deductions/determining-tax-treatment/retiring-allowances.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">CRA</a> — Tax treatment of severance and retiring allowances</li>
+          <li><a href="https://www.ontario.ca/document/your-guide-employment-standards-act-0/severance-pay" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Ontario Employment Standards Act</a> — Severance pay rules</li>
+          <li><a href="https://www2.gov.bc.ca/gov/content/employment-business/employment-standards-advice/employment-standards/termination" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">BC Employment Standards</a> — Termination and notice requirements</li>
+          <li><a href="https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/termination.html" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Canada Labour Code</a> — Federal termination standards</li>
+          <li><a href="https://achkarlaw.com/insights/ontario/common-law-severance-pay-explained/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Achkar Law</a> — Common-law severance and Bardal factors</li>
+          <li><a href="https://stlawyers.ca/blog-news/bardal-factors/" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Samfiru Tumarkin LLP</a> — Bardal factors and constructive dismissal</li>
+          <li><a href="https://stikeman.com/en-ca/kh/canadian-employment-labour-pension-law/federal-ei-pilot-project-extended-impact-on-severance-negotiations" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">Stikeman Elliott</a> — Impact of EI pilot project on severance negotiations</li>
+          <li><a href="https://turbotax.intuit.ca/tips/how-severance-payments-get-taxed-in-canada-127" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">TurboTax Canada</a> — How severance gets taxed</li>
+          <li><a href="https://www.taxtips.ca/personaltax/employees/defer-tax-on-severance-or-retiring-allowance.htm" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">TaxTips.ca</a> — Deferring tax on severance via RRSP</li>
+          <li><a href="https://www.policyme.com/health-insurance/when-does-health-insurance-expire-after-leaving-job" target="_blank" rel="noopener" class="text-blue hover:text-blue-dark">PolicyMe</a> — Health insurance after job loss in Canada</li>
+        </ul>
+        <p class="mt-3 text-xs">Information current as of April 2026. EI temporary measures subject to change.</p>
+      </div>
+    </div>
+  </Fragment>
+</LeadMagnetLayout>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  var STORAGE_KEY = 'layoff_checklist_progress';
+  var checkboxes = document.querySelectorAll('.step-checkbox');
+  var progressBar = document.getElementById('progress-bar');
+  var progressText = document.getElementById('progress-text');
+  var totalSteps = 25;
+
+  function getCompleted() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    } catch(e) { return []; }
+  }
+
+  function updateProgress() {
+    var completed = getCompleted();
+    var pct = Math.round((completed.length / totalSteps) * 100);
+    if (progressBar) progressBar.style.width = pct + '%';
+    if (progressText) progressText.textContent = completed.length + ' of ' + totalSteps + ' completed';
+    // Style completed steps
+    checkboxes.forEach(function(cb) {
+      var stepNum = parseInt(cb.getAttribute('data-step'));
+      var card = cb.closest('.layoff-step');
+      if (completed.indexOf(stepNum) !== -1) {
+        cb.checked = true;
+        if (card) card.style.opacity = '0.6';
+      } else {
+        cb.checked = false;
+        if (card) card.style.opacity = '1';
+      }
+    });
+  }
+
+  checkboxes.forEach(function(cb) {
+    cb.addEventListener('change', function() {
+      var stepNum = parseInt(cb.getAttribute('data-step'));
+      var completed = getCompleted();
+      if (cb.checked) {
+        if (completed.indexOf(stepNum) === -1) completed.push(stepNum);
+      } else {
+        completed = completed.filter(function(n) { return n !== stepNum; });
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(completed));
+      updateProgress();
+    });
+  });
+
+  updateProgress();
+
+  // Sources toggle
+  var sourcesToggle = document.getElementById('sources-toggle');
+  var sourcesList = document.getElementById('sources-list');
+  var sourcesChevron = document.getElementById('sources-chevron');
+  if (sourcesToggle) {
+    sourcesToggle.addEventListener('click', function() {
+      var isHidden = sourcesList.style.display === 'none';
+      sourcesList.style.display = isHidden ? '' : 'none';
+      sourcesChevron.style.transform = isHidden ? 'rotate(90deg)' : '';
+    });
+  }
+});
+</script>
