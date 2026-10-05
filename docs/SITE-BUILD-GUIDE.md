@@ -5,7 +5,7 @@ How every page in `site/` is built. Plain HTML and CSS, no framework, no build s
 ## 1. Rules
 
 1. **Relative links only.** The site is served from `https://izzydoesizzy.github.io/clearcareer-website-2026/`, a sub-path. A leading slash breaks every link. From `site/*.html` use `../assets/...` and `services.html`. From `site/go/*.html` and `site/thanks/*.html` use `../../assets/...` and `../services.html`.
-2. **One stylesheet.** `assets/css/site.css` holds every component. A page may add a `<style>` block of at most 30 lines for something truly page-specific. If a component is needed twice, it goes into `site.css`.
+2. **One stylesheet.** `assets/css/cc.css` holds every component for the website (the hub, plan, and email pages use `site.css`). A page may add a `<style>` block of at most 30 lines for something truly page-specific. If a component is needed twice, it goes into `cc.css`.
 3. **Copy passes the voice gate.** No em dashes (U+2014) or en dashes (U+2013) anywhere, including `alt` text and `title` tags. No five-dollar words (leverage, unlock, empower, optimize, comprehensive, journey, navigate, landscape, elevate, transformative, game-changing, holistic, seamless, robust). No "In today's", "It's important to note", "At the end of the day". Short sentences. "We" and "let's". Specific numbers. Client quotes are the client's words and are exempt.
 4. **One primary CTA per page.** Marketing pages: "Book a Strategy Session". Funnel pages (`go/*`): "Get it for $9". Community: "Join for $29/mo". Secondary CTAs are text links or `btn--secondary`.
 5. **Prices in CAD.** Write "$2,497" the first time with "CAD" nearby once per page, then plain.
@@ -30,7 +30,7 @@ How every page in `site/` is built. Plain HTML and CSS, no framework, no build s
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 ```
 

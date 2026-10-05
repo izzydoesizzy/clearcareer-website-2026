@@ -15,6 +15,14 @@
     });
   }
 
+  // Header gets a hairline once the page scrolls
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
   // Reveal on scroll
   var items = document.querySelectorAll('[data-animate]');
   if ('IntersectionObserver' in window && items.length) {

@@ -68,7 +68,8 @@ clearcareer-website-2026/
 │   ├── go/salary.html · go/prompts.html · go/outreach.html   $9 funnel landing pages, no navigation
 │   └── thanks/salary.html · thanks/community.html            Thank-you pages with one upsell each
 ├── assets/
-│   ├── css/site.css           The whole design system, one file
+│   ├── css/cc.css             The website design system (2026 redesign), one file
+│   ├── css/site.css           Styles for the hub, plan, email, and ad pages
 │   ├── css/docs.css           Styles for the plan, email, and funnel pages
 │   ├── js/site.js             Nav toggle, scroll reveal, UTM pass-through, copy buttons
 │   └── img/                   Logo, Izzy's photos, eight client headshots
@@ -102,7 +103,7 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000/`. Opening the HTML files directly from disk also works because every link is relative.
 
-**Edit the website.** The pages in `site/` are plain HTML. Open the file, change the words, save. The design system is `assets/css/site.css`; the component names and the rules (relative links, one primary CTA, the voice gate) are in `docs/SITE-BUILD-GUIDE.md`. Copy the header and footer from `site/index.html` when adding a page.
+**Edit the website.** The pages in `site/` are plain HTML. Open the file, change the words, save. The design system is `assets/css/cc.css` (the plan and email pages use `site.css`); the component names and the rules (relative links, one primary CTA, the voice gate) are in `docs/SITE-BUILD-GUIDE.md`. Copy the header and footer from `site/index.html` when adding a page.
 
 **Edit the plan or the emails.** Change the Markdown in `docs/` or `emails/emails.md`, then rebuild:
 

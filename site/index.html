@@ -6,10 +6,11 @@
   <title>ClearCareer | Get Hired Faster. Get Paid More.</title>
   <meta name="description" content="Career coaching for professionals targeting $100K+. 200+ coached, $1.2M+ in negotiated raises. We build your job search with you, then negotiate the offer together.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -31,21 +33,21 @@
 <main id="main">
 
   <!-- 1. Hero -->
-  <section class="hero hero--pattern">
+  <section class="hero hero--paper">
     <div class="container grid grid--split">
       <div>
         <p class="eyebrow">Career coaching for $100K+ professionals</p>
-        <h1 class="hero__title">Get hired faster.<br><span class="accent">Get paid more.</span></h1>
-        <p class="hero__sub">200+ professionals coached. $1.2M+ in negotiated raises. We build your job search with you, not for you to do later. And when the offer lands, we negotiate it together.</p>
+        <h1 class="hero__title">Get hired faster. <em>Get paid more.</em></h1>
+        <p class="hero__sub">We build your job search with you, not for you to do later. Resume, LinkedIn, target list, outreach, interview stories. And when the offer lands, we negotiate it together.</p>
         <div class="btn-row">
-          <a class="btn btn--primary btn--lg" href="strategy-session.html">Book a Strategy Session</a>
-          <a class="btn btn--secondary btn--lg" href="shop.html#quick-wins">Start with a $9 tool</a>
+          <a class="btn btn--primary btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+          <a class="btn btn--secondary btn--lg" href="services.html">See how we work</a>
         </div>
-        <p class="trust-line">25 minutes. A real diagnosis. A real offer. No surprises.</p>
+        <div class="trust-line trust-line--inline"><span>25 minutes, free</span><span>A real diagnosis</span><span>A real offer, no surprises</span></div>
       </div>
-      <div class="hero__photo-wrap" data-animate>
-        <img class="hero__photo" src="../assets/img/izzy-profile.webp" alt="Izzy Piyale-Sheard, founder of ClearCareer" width="640" height="800">
-        <div class="hero__float"><strong>$21.7K</strong>average raise for members who negotiated</div>
+      <div class="portrait" data-animate>
+        <img class="portrait__img" src="../assets/img/izzy-profile.webp" alt="Izzy Piyale-Sheard, founder of ClearCareer" width="640" height="800">
+        <div class="portrait__card"><strong>$21.7K</strong>average raise for members who negotiated</div>
       </div>
     </div>
   </section>
@@ -54,107 +56,101 @@
   <section class="section--tight">
     <div class="container">
       <div class="stats" data-animate>
-        <div class="stat"><div class="stat__num">200+</div><div class="stat__label">Professionals coached</div></div>
-        <div class="stat"><div class="stat__num">$1.2M+</div><div class="stat__label">Negotiated raises</div></div>
-        <div class="stat"><div class="stat__num">46%</div><div class="stat__label">Hired within a month</div><div class="stat__note">of members who landed</div></div>
+        <div class="stat"><div class="stat__num">200<em>+</em></div><div class="stat__label">Professionals coached</div><div class="stat__note">since 2016</div></div>
+        <div class="stat"><div class="stat__num">$1.2M<em>+</em></div><div class="stat__label">In negotiated raises</div><div class="stat__note">survey plus verified sources</div></div>
+        <div class="stat"><div class="stat__num">46<em>%</em></div><div class="stat__label">Hired within a month</div><div class="stat__note">of members who landed</div></div>
         <div class="stat"><div class="stat__num">84</div><div class="stat__label">Net Promoter Score</div><div class="stat__note">Apple is 72</div></div>
       </div>
-      <div class="logos mt-4" data-animate>
-        <span class="logos__label">Featured in and trusted by</span>
-        <span class="logos__item">CBC Radio</span><span class="logos__item">Global News</span><span class="logos__item">Newsweek</span><span class="logos__item">Inc.</span>
-        <span class="logos__item">University of Toronto</span><span class="logos__item">TMU</span><span class="logos__item">Humber College</span><span class="logos__item">UN Association in Canada</span><span class="logos__item">FlexJobs</span>
+      <div class="mt-4" data-animate>
+        <p class="logos__label">Featured in and trusted by</p>
+        <div class="marquee" aria-label="Press and partners">
+          <div class="marquee__track">
+            <span class="logos__item">CBC Radio</span><span class="logos__item">Global News</span><span class="logos__item">Newsweek</span><span class="logos__item">Inc.</span><span class="logos__item">University of Toronto</span><span class="logos__item">TMU</span><span class="logos__item">Humber College</span><span class="logos__item">UN Association in Canada</span><span class="logos__item">FlexJobs</span><span class="logos__item">Lighthouse Labs</span>
+            <span class="logos__item" aria-hidden="true">CBC Radio</span><span class="logos__item" aria-hidden="true">Global News</span><span class="logos__item" aria-hidden="true">Newsweek</span><span class="logos__item" aria-hidden="true">Inc.</span><span class="logos__item" aria-hidden="true">University of Toronto</span><span class="logos__item" aria-hidden="true">TMU</span><span class="logos__item" aria-hidden="true">Humber College</span><span class="logos__item" aria-hidden="true">UN Association in Canada</span><span class="logos__item" aria-hidden="true">FlexJobs</span><span class="logos__item" aria-hidden="true">Lighthouse Labs</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 3. Problem -->
-  <section class="section section--alt">
+  <section class="section section--line-top">
     <div class="container">
-      <div class="section-head" data-animate>
-        <p class="eyebrow">The problem</p>
-        <h2>You've done everything right. So why is nothing happening?</h2>
-        <p>You tailored every resume. Fixed your LinkedIn. Applied to hundreds of roles. And then: silence. Here's the thing. Your effort isn't the problem. Your system is.</p>
+      <div class="grid grid--split-wide">
+        <div class="section-head" data-animate>
+          <p class="eyebrow">The problem</p>
+          <h2>You did everything right. So why is nothing happening?</h2>
+          <p>You tailored every resume. Fixed your LinkedIn. Applied to hundreds of roles. Then: silence. Here's the thing. Your effort isn't the problem. Your system is.</p>
+        </div>
+        <ul class="feature-list" data-animate data-delay="80">
+          <li><span class="num">01</span><div><h3>5.5 months on average</h3><p>That's the average job search right now (BLS, 2025). Senior roles run 6 to 9 months. At $100K, every one of those months costs you about $8,300.</p></div></li>
+          <li><span class="num">02</span><div><h3>200 applications, 17 callbacks</h3><p>About 8.5% of applications get any reply at all (Indeed, 2024). Most resumes never reach a human. More volume is not the fix.</p></div></li>
+          <li><span class="num">03</span><div><h3>85% of jobs go through people</h3><p>Referred candidates get hired at 10x the rate of applicants. Most job seekers spend 95% of their time on job boards and 5% talking to humans.</p></div></li>
+        </ul>
       </div>
-      <div class="grid grid--3">
-        <div class="card" data-animate>
-          <div class="card__icon">⏱</div>
-          <h3>5.5 months on average</h3>
-          <p>That's the average job search right now (BLS, 2025). Senior roles run 6 to 9 months. At $100K, every one of those months costs you about $8,300.</p>
-        </div>
-        <div class="card" data-animate data-delay="80">
-          <div class="card__icon">📨</div>
-          <h3>200 applications, 17 callbacks</h3>
-          <p>About 8.5% of applications get any reply at all (Indeed, 2024). Most resumes never reach a human. More volume is not the fix.</p>
-        </div>
-        <div class="card" data-animate data-delay="160">
-          <div class="card__icon">🤝</div>
-          <h3>85% of jobs go through people</h3>
-          <p>Referred candidates are hired at 10x the rate of applicants. Yet most job seekers spend 95% of their time on job boards and 5% talking to humans.</p>
-        </div>
-      </div>
-      <p class="kicker center mt-4" data-animate>We flip that ratio. Then we build everything you need to make it work.</p>
+      <p class="kicker mt-5" data-animate>We flip that ratio. <em>Then we build everything you need to make it work.</em></p>
     </div>
   </section>
 
   <!-- 4. Three paths -->
-  <section class="section">
+  <section class="section section--paper">
     <div class="container">
-      <div class="section-head" data-animate>
+      <div class="section-head section-head--center" data-animate>
         <p class="eyebrow">Three paths</p>
         <h2>Where are you right now?</h2>
         <p>Pick the one that sounds like you. Not sure? That's exactly what the Strategy Session is for.</p>
       </div>
       <div class="grid grid--3">
         <a class="card offer" href="salary-negotiation.html" data-animate>
-          <span class="card__badge badge badge--success">Guaranteed</span>
+          <span class="card__badge badge badge--green">Guaranteed</span>
           <p class="offer__tier">You have an offer in hand</p>
           <h3>Salary Negotiation Sprint</h3>
-          <p>We add at least $5,000 to your offer, or you pay nothing. One strategy call, the counteroffer written for you, WhatsApp support until you sign.</p>
-          <p class="card__price mt-2">$2,497 <small class="muted">CAD</small></p>
+          <p>We add at least $5,000 to your offer, or you pay nothing. One strategy call, the counteroffer written with you, WhatsApp support until you sign.</p>
+          <p class="card__price mt-3">$2,497 <small>CAD</small></p>
           <p class="card__meta">$497 to start. The rest when you accept the better offer.</p>
-          <div class="card__footer"><span class="btn btn--ghost">See how it works</span></div>
+          <div class="card__footer"><span class="btn btn--link">See how it works</span></div>
         </a>
         <a class="card offer card--featured" href="accelerator.html" data-animate data-delay="80">
-          <span class="card__badge badge">Most popular</span>
+          <span class="card__badge badge badge--navy">Most popular</span>
           <p class="offer__tier">You've been searching 3+ months</p>
           <h3>Job Search Accelerator</h3>
           <p>Eight weeks. A group of 10. Resume, LinkedIn, target list, outreach scripts, interview stories: 20+ assets built with you, plus three private sessions with Izzy.</p>
-          <p class="card__price mt-2">$2,497 <small class="muted">CAD</small></p>
+          <p class="card__price mt-3">$2,497 <small>CAD</small></p>
           <p class="card__meta">Or 3 payments of $899. New group starts the first Monday of every month.</p>
-          <div class="card__footer"><span class="btn btn--ghost">See the program</span></div>
+          <div class="card__footer"><span class="btn btn--link">See the program</span></div>
         </a>
         <a class="card offer" href="clarity.html" data-animate data-delay="160">
-          <span class="card__badge badge badge--navy">Start here</span>
+          <span class="card__badge badge badge--white">Start here</span>
           <p class="offer__tier">You're not sure what you want yet</p>
           <h3>Career Clarity Intensive</h3>
-          <p>A 30-minute AI intake interview that writes your 20-page career report, then 90 minutes with Izzy to turn it into a 30-day plan.</p>
-          <p class="card__price mt-2">$497 <small class="muted">CAD</small></p>
+          <p>A 30-minute AI intake interview writes your 20-page career report. Then 90 minutes with Izzy turns it into a 30-day plan.</p>
+          <p class="card__price mt-3">$497 <small>CAD</small></p>
           <p class="card__meta">Credit the full $497 toward the Accelerator within 30 days.</p>
-          <div class="card__footer"><span class="btn btn--ghost">See what you get</span></div>
+          <div class="card__footer"><span class="btn btn--link">See what you get</span></div>
         </a>
       </div>
-      <p class="center mt-4" data-animate>Want Izzy in your corner every week for less than a dollar a day? <a href="community.html"><strong>Join the ClearCareer Community, $29/mo.</strong></a></p>
+      <p class="center mt-4 muted" data-animate>Want Izzy in your corner every week for less than a dollar a day? <a href="community.html"><strong>Join the ClearCareer Community, $29/mo.</strong></a></p>
     </div>
   </section>
 
   <!-- 5. How it works -->
-  <section class="section section--soft">
+  <section class="section">
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">How it works</p>
-        <h2>From stuck to hired in four steps</h2>
+        <h2>From stuck to hired, in four steps</h2>
       </div>
       <div class="steps">
-        <div class="step" data-animate><div class="step__num">1</div><h3>Book a Strategy Session</h3><p>25 minutes. We find the one stage of your search that's broken, and I tell you exactly what I'd build.</p></div>
-        <div class="step" data-animate data-delay="80"><div class="step__num">2</div><h3>Do the AI Intake Interview</h3><p>A 30-minute voice interview. It produces a 20-page report: quantified achievements, target companies, salary data.</p></div>
-        <div class="step" data-animate data-delay="160"><div class="step__num">3</div><h3>We build your assets together</h3><p>Resume, LinkedIn, target list, outreach scripts, interview stories. Built with you in weekly calls, not assigned as homework.</p></div>
-        <div class="step" data-animate data-delay="240"><div class="step__num">4</div><h3>Land it. Then negotiate it.</h3><p>When the offer comes, we don't celebrate yet. We write the counteroffer together. Average raise for members who negotiated: $21.7K.</p></div>
+        <div class="step" data-animate><div class="step__num">01</div><h3>Book a Strategy Session</h3><p>25 minutes. We find the one stage of your search that's broken, and I tell you exactly what I'd build.</p></div>
+        <div class="step" data-animate data-delay="80"><div class="step__num">02</div><h3>Do the AI Intake Interview</h3><p>A 30-minute voice interview. It produces a 20-page report: quantified achievements, target companies, salary data.</p></div>
+        <div class="step" data-animate data-delay="160"><div class="step__num">03</div><h3>We build your assets together</h3><p>Resume, LinkedIn, target list, outreach scripts, interview stories. Built with you on weekly calls, not assigned as homework.</p></div>
+        <div class="step" data-animate data-delay="240"><div class="step__num">04</div><h3>Land it. Then negotiate it.</h3><p>When the offer comes, we don't celebrate yet. We write the counteroffer together. Average raise for members who negotiated: $21.7K.</p></div>
       </div>
     </div>
   </section>
 
   <!-- 6. Results -->
-  <section class="section">
+  <section class="section section--navy">
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">Results</p>
@@ -166,70 +162,84 @@
           <div class="result-card__top"><div class="result-card__num">3 weeks</div><div class="result-card__label">to an offer, after 1 year unemployed</div></div>
           <div class="result-card__body">
             <p>"I was looking for full-time work for an entire year and even though I had a lot of experience, I was still stuck. After working with Izzy, I was employed in just three weeks."</p>
-            <div class="quote__who"><img class="avatar" src="../assets/img/testimonials/kristin-davis.png" alt=""><div><div class="quote__name">Kristin Davis</div><div class="quote__role">ClearCareer client</div></div></div>
+            <div class="quote__who"><div class="avatar avatar--initials">KD</div><div><div class="quote__name">Kristin Davis</div><div class="quote__role">ClearCareer client</div></div></div>
           </div>
         </div>
         <div class="result-card" data-animate data-delay="80">
           <div class="result-card__top"><div class="result-card__num">$20K+ raise</div><div class="result-card__label">plus a bonus, after zero interviews</div></div>
           <div class="result-card__body">
             <p>"I was skeptical about working with a career coach. I was hesitant to spend the money since I wasn't sure if he could help me." She went from zero interviews to multiple, and a 25% pay raise.</p>
-            <div class="quote__who"><img class="avatar" src="../assets/img/testimonials/tamara-gordon.png" alt=""><div><div class="quote__name">Tamara Gordon</div><div class="quote__role">ClearCareer client</div></div></div>
+            <div class="quote__who"><div class="avatar avatar--initials">TG</div><div><div class="quote__name">Tamara Gordon</div><div class="quote__role">ClearCareer client</div></div></div>
           </div>
         </div>
         <div class="result-card" data-animate data-delay="160">
           <div class="result-card__top"><div class="result-card__num">27 emails</div><div class="result-card__label">13 replies, 1 offer, after 200+ applications</div></div>
           <div class="result-card__body">
             <p>Blake writes for a living. He applied to 200+ roles and got nowhere. Then he sent 27 targeted emails. 13 people replied. One hired him, $5K above what he expected.</p>
-            <div class="quote__who"><img class="avatar" src="../assets/img/testimonials/blake-mcdermott.png" alt=""><div><div class="quote__name">Blake McDermott</div><div class="quote__role">ClearCareer client</div></div></div>
+            <div class="quote__who"><div class="avatar avatar--initials">BM</div><div><div class="quote__name">Blake McDermott</div><div class="quote__role">ClearCareer client</div></div></div>
           </div>
         </div>
       </div>
-      <div class="center mt-4" data-animate><a class="btn btn--ghost" href="results.html">Read the full outcomes report and 80 testimonials</a></div>
+      <div class="mt-4" data-animate><a class="btn btn--outline-white btn--arrow" href="results.html">Read the full outcomes report and 80 testimonials</a></div>
     </div>
   </section>
 
   <!-- 7. Meet Izzy -->
-  <section class="section section--alt">
+  <section class="section">
     <div class="container grid grid--split">
-      <div data-animate>
-        <img class="hero__photo" style="aspect-ratio:4/3" src="../assets/img/izzy.webp" alt="Izzy Piyale-Sheard speaking at an event" width="800" height="600">
+      <div class="portrait" data-animate>
+        <img class="portrait__img portrait__img--square" src="../assets/img/izzy.webp" alt="Izzy Piyale-Sheard" width="768" height="768">
+        <div class="portrait__card portrait__card--tr"><strong>Since 2016</strong>building the support I wished I'd had</div>
       </div>
       <div data-animate data-delay="80">
         <p class="eyebrow">Meet your coach</p>
         <h2>Hi, I'm Izzy.</h2>
-        <p>Career zig-zagger. Jack of all trades. ADHD brain. I spent long stretches unemployed, confused, and stuck in cycles I couldn't break. Then it clicked: the mix of skills I thought was a weakness was the value.</p>
-        <p>Since 2016 I've coached 200+ professionals, founded a 900+ member community, and been featured on CBC Radio, Global News, and Newsweek. I've taken clients from a year of unemployment to offers in weeks, and from "I'll take it" to $25K more than the first number.</p>
+        <p class="lead">Career zig-zagger. Jack of all trades. ADHD brain. I spent long stretches unemployed, confused, and stuck in cycles I couldn't break.</p>
+        <p>Then it clicked: the mix of skills I thought was a weakness was the value. Since 2016 I've coached 200+ professionals, founded a 900+ member community, and been featured on CBC Radio, Global News, and Newsweek. I've taken clients from a year of unemployment to offers in weeks, and from "I'll take it" to $25K more than the first number.</p>
         <p>I don't hand you advice and send you home. We build it together.</p>
-        <a class="btn btn--ghost" href="about.html">More about Izzy</a>
+        <a class="btn btn--link" href="about.html">More about Izzy</a>
       </div>
     </div>
   </section>
 
-  <!-- 8. FAQ -->
-  <section class="section">
+  <!-- 8. Pull quote -->
+  <section class="section--tight section--paper">
     <div class="container container--narrow">
+      <figure class="quote quote--big quote--bare center" data-animate>
+        <div class="quote__mark">“</div>
+        <blockquote class="quote__text">Working with Izzy was an absolute game changer. His guidance in narrowing my personal narrative toward tangible quantified metrics gave me a significant edge in my interview and salary negotiation.</blockquote>
+        <figcaption class="quote__who" style="justify-content:center"><div class="avatar avatar--initials">CC</div><div><div class="quote__name">Chris Chipman</div><div class="quote__role">Associate Director · $25K raise</div></div></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section class="section">
+    <div class="container grid grid--split-wide">
       <div class="section-head" data-animate>
         <p class="eyebrow">Questions</p>
         <h2>Five things people ask before they book</h2>
+        <p>Everything else is answered on the <a href="strategy-session.html">Strategy Session page</a>, including every price.</p>
       </div>
-      <div class="faq" data-animate>
-        <details class="faq__item"><summary>What actually happens on the Strategy Session?</summary><p>For about 15 minutes I ask questions and find where your search is breaking: targeting, outreach, interviews, or the offer itself. Then I tell you what I'd build with you. And then, yes, I make you an offer. If it's a fit, I'll tell you which program and what it costs ($497 to $4,997) and ask if you want to do it. You can say no. People do, and we stay friends.</p></details>
+      <div class="faq" data-animate data-delay="80">
+        <details class="faq__item"><summary>What happens on the Strategy Session?</summary><p>For about 15 minutes I ask questions and find where your search is breaking: targeting, outreach, interviews, or the offer itself. Then I tell you what I'd build with you. And then, yes, I make you an offer. If it's a fit, I'll tell you which program and what it costs ($497 to $4,997) and ask if you want to do it. You can say no. People do, and we stay friends.</p></details>
         <details class="faq__item"><summary>Is this group coaching or 1:1?</summary><p>Both. The Accelerator is a group of up to 10 with three private sessions with me. The Private Accelerator is weekly 1:1. The Salary Negotiation Sprint and the Clarity Intensive are 1:1 by nature.</p></details>
         <details class="faq__item"><summary>Do you work with people outside Canada?</summary><p>Yes. Everything is remote. Clients are in Canada, the US, and a few other time zones. Prices are in Canadian dollars.</p></details>
-        <details class="faq__item"><summary>Do I need to be actively searching?</summary><p>No. Many clients are employed and quietly exploring. If you're at least planning to search within three months, you're ready.</p></details>
+        <details class="faq__item"><summary>Do I need to be actively searching?</summary><p>No. Many clients are employed and quietly exploring. If you're planning to search within three months, you're ready.</p></details>
         <details class="faq__item"><summary>Is there a guarantee?</summary><p>Nobody honest can promise you a job. Here's what I do promise. Finish the 8-week Accelerator without landing interviews and I keep coaching you at no cost until you do. On the Salary Negotiation Sprint, we add at least $5,000 to your offer or you pay nothing. The Community has a 30-day refund.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- 9. Final CTA -->
-  <section class="section section--tight">
+  <!-- 10. Final CTA -->
+  <section class="section--tight">
     <div class="container">
-      <div class="cta-band cta-band--blue" data-animate>
+      <div class="cta-band" data-animate>
+        <p class="eyebrow">Next step</p>
         <h2>Ready to stop grinding alone?</h2>
-        <p>Book a 25-minute Strategy Session. We'll find what's broken, I'll tell you what I'd build, and you'll decide. Fortune favours the bold.</p>
+        <p>Book a 25-minute Strategy Session. We find what's broken, I tell you what I'd build, and you decide. Fortune favours the bold.</p>
         <div class="btn-row">
-          <a class="btn btn--white btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+          <a class="btn btn--white btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
           <a class="btn btn--outline-white btn--lg" href="free.html">Not ready? Grab the free tools</a>
         </div>
       </div>
@@ -240,6 +250,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -282,6 +296,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>
