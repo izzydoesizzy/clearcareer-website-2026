@@ -36,6 +36,8 @@ FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="p
 # Documents: (source, output, title, section, blurb)
 # ---------------------------------------------------------------------------
 DOCS = [
+    ("docs/SIMPLE-PLAN.md", "plan/simple-plan.html", "The Simple Plan", "Plan",
+     "The version you can run with ADHD and a full-time job: five lines, five stages, one number, built inside Brevo and Calendly. Start here."),
     ("docs/ROADMAP.md", "plan/roadmap.html", "Roadmap and Next Steps", "Plan",
      "Every next step for the site, the marketing plan, and the project: 17 workstreams with owners, effort, dependencies, a timeline, decisions, and what to build next."),
     ("docs/PLAN.md", "plan/marketing-plan.html", "Marketing Plan", "Plan",
@@ -197,6 +199,8 @@ def build_docs():
             f'<li><a href="{rel(out, o)}"{cur(o == out)}>{html.escape(t)}</a></li>'
             for _, o, t, s, _ in DOCS if s == "Plan"
         )
+        side_docs += f'<li><a href="{rel(out, "plan/funnel-stages.html")}">Funnel Flowcharts by Stage</a></li>'
+        side_docs += f'<li><a href="{rel(out, "plan/funnel-map.html")}">Funnel Map (visual)</a></li>'
         side_docs += f'<li><a href="{rel(out, "ads/index.html")}"{cur(out == "ads/index.html")}>Ads Plan</a></li>'
         side_docs += f'<li><a href="{rel(out, "emails/index.html")}">Email Sequences</a></li>'
         page = f'''{head(out, h1, blurb)}
@@ -346,6 +350,8 @@ def build_hub():
         )
 
     plan_items = [(o, t, b, s) for _, o, t, s, b in DOCS]
+    plan_items.insert(1, ("plan/funnel-stages.html", "Funnel Flowcharts by Stage", "The funnel drawn at each of the five stages: what is automated, what Izzy does, and the one test that opens the next stage.", "Plan"))
+    plan_items.insert(4, ("plan/funnel-map.html", "Funnel Map (visual)", "The full engine on one screen, six lanes, plus the call decision tree and the automation map.", "Plan"))
     email_items = [("emails/index.html", "Email sequences", "Every nurture email and SMS, rendered, with a plain-text pack.", "Emails")]
     site_items = [(p, t, d, "Site") for p, t, d in SITE_PAGES]
     page = f'''{head(out, "ClearCareer 2026", "Marketing plan, funnel, emails, ads, and the redesigned site. Everything in one place.")}
@@ -356,7 +362,7 @@ def build_hub():
   <h1 style="max-width:18ch">Everything for the relaunch, in one place.</h1>
   <p class="hero__sub">The redesigned website, the marketing plan, the funnel map, every email written in full, the ads plan, and the launch checklist. Plain HTML, hosted on GitHub Pages, nothing to install.</p>
   <div class="btn-row"><a class="btn btn--primary btn--lg" href="site/index.html">Open the new site</a><a class="btn btn--secondary btn--lg" href="plan/marketing-plan.html">Read the plan</a><a class="btn btn--secondary btn--lg" href="emails/index.html">See the emails</a></div>
-  <p class="trust-line">Start with <a href="plan/roadmap.html">the roadmap</a> for everything that comes next, or <a href="plan/launch-checklist.html">the launch checklist</a> for this fortnight.</p>
+  <p class="trust-line">If you read one thing: <a href="plan/simple-plan.html"><strong>The Simple Plan</strong></a>. Then <a href="plan/funnel-stages.html">the flowcharts by stage</a>. The full roadmap and launch checklist are for later.</p>
 </div></section>
 <section class="section section--tight"><div class="container">
   <div class="section-head section-head--left"><p class="eyebrow">The plan</p><h2>Strategy documents</h2></div>

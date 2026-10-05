@@ -1150,3 +1150,74 @@ Henrique recommended the program to three people after his two offers. Two of th
 Thank you for trusting me with your search. Go be excellent.
 
 Izzy
+
+========================================================================
+Monthly Workshop · step 1
+SEND: Immediately after registering
+TRIGGER: Brevo hosted registration form adds the contact to the "Workshop" list. Starts automation "Monthly Workshop". Also adds the contact to the main list with TOPIC=prompts if not already present.
+SUBJECT: You're in. Here's your link for Thursday.
+PREVIEW: The Meet link, what to bring, and the one thing to do before we start.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+You're registered. Here's everything you need:
+
+**When:** {{ workshop_date }}, {{ workshop_time }} Eastern
+**Where:** {{ meet_link }}
+**How long:** 60 minutes, then 15 for questions if you want to stay
+
+[[Add it to your calendar|{{ workshop_calendar_link }}]]
+
+Here's what we're doing. I'm going to show you the exact AI prompts I use with clients to turn a weak resume bullet into one with real numbers, find the 20 companies you should be talking to, and prep for an interview in 30 minutes instead of 3 hours. Live, on screen, no slides to sleep through.
+
+**One thing to do before Thursday:** have your resume open. Pick the weakest bullet on it. We're going to fix it live, and if you volunteer yours, it'll be the first one.
+
+See you Thursday.
+
+Izzy
+
+P.S. Can't make it live? Stay registered. The replay goes out Friday morning.
+
+========================================================================
+Monthly Workshop · step 2
+SEND: 1 hour before the workshop
+TRIGGER: workshop_date and workshop_time minus 1 hour
+SUBJECT: Starting in an hour (link inside)
+PREVIEW: Grab your resume. See you at {{ workshop_time }}.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+We're on in an hour.
+
+[[Join the workshop|{{ meet_link }}]]
+
+Have your resume open and one weak bullet picked out. That's it.
+
+Izzy
+
+========================================================================
+Monthly Workshop · step 3
+SEND: The morning after the workshop
+TRIGGER: workshop_date plus 1 day, 8am
+SUBJECT: The replay, the prompts, and one honest offer
+PREVIEW: Everything from Thursday, plus the 25-minute thing I mentioned at the end.
+------------------------------------------------------------------------
+Hey {{ contact.FIRSTNAME | default: "friend" }},
+
+Thanks for coming on Thursday. If you missed it, or want to run the prompts again at your own pace, here's the replay:
+
+{{ replay_link }}
+
+The three prompts we used live are in the free Make It Count playbook, with seven more: https://joinclearcareer.com/go/free-prompts
+
+And here's the one honest offer I mentioned at the end.
+
+If you watched that and thought "I want this done on MY search, not a demo," that's what the 25-minute Strategy Session is for. It's free. It's also a sales call, and I say so up front: for about 15 minutes I find the one stage of your search that's broken, then I tell you what I'd build with you, and then I make you an offer ($497 to $4,997). You can say no. People do, and we stay friends.
+
+Book it if you're targeting $100K+ and you're open to investing in your search in the next 30 days. Skip it if you're not. The Saturday email keeps coming either way.
+
+[[Book a Strategy Session|https://joinclearcareer.com/go/call]]
+
+Izzy
+
+P.S. Reply and tell me which bullet you fixed. I read every one.

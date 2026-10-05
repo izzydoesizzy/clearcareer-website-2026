@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You&#x27;re in. Here&#x27;s your link for Thursday. | ClearCareer 2026</title>
+<meta name="description" content="Monthly Workshop step 1: You&#x27;re in. Here&#x27;s your link for Thursday.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css"><link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+  <a class="nav__logo" href="../index.html"><img src="../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer <span class="small muted" style="font-family:var(--font-sans);font-size:.8rem;margin-left:.25rem">2026</span></a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+  <ul class="nav__links" id="nav-links"><li><a href="../index.html">Hub</a></li><li><a href="../plan/marketing-plan.html">Plan</a></li><li><a href="../plan/funnel.html">Funnel</a></li><li><a href="index.html" aria-current="page">Emails</a></li><li><a href="../ads/index.html">Ads</a></li><li><a href="../site/index.html">Site</a></li></ul>
+</div></header>
+<main id="main"><div class="container" style="padding:2.5rem 0 5rem">
+  <div class="doc-header" style="padding-top:0">
+    <div class="crumbs"><a href="../index.html">Hub</a> / <a href="index.html">Emails</a> / Monthly Workshop</div>
+    <h1>You&#x27;re in. Here&#x27;s your link for Thursday.</h1>
+    <div class="meta"><span class="badge">Monthly Workshop · step 1</span><span>Immediately after registering</span></div>
+  </div>
+  <div class="email-page">
+    <div>
+      <div class="email-frame"><div class="email"><div class="email__bar"><span>From: Izzy Piyale-Sheard &lt;izzy@joinclearcareer.com&gt;</span><strong>You&#x27;re in. Here&#x27;s your link for Thursday.</strong><span class="preview">The Meet link, what to bring, and the one thing to do before we start.</span></div><div class="email__body" id="email-body"><p>Hey {{ contact.FIRSTNAME | default: "friend" }},</p>
+<p>You're registered. Here's everything you need:</p>
+<p><strong>When:</strong> {{ workshop_date }}, {{ workshop_time }} Eastern
+<strong>Where:</strong> {{ meet_link }}
+<strong>How long:</strong> 60 minutes, then 15 for questions if you want to stay</p>
+<p><a class="btn btn--primary" href="{{ workshop_calendar_link }}">Add it to your calendar</a></p>
+<p>Here's what we're doing. I'm going to show you the exact AI prompts I use with clients to turn a weak resume bullet into one with real numbers, find the 20 companies you should be talking to, and prep for an interview in 30 minutes instead of 3 hours. Live, on screen, no slides to sleep through.</p>
+<p><strong>One thing to do before Thursday:</strong> have your resume open. Pick the weakest bullet on it. We're going to fix it live, and if you volunteer yours, it'll be the first one.</p>
+<p>See you Thursday.</p>
+<p>Izzy</p>
+<p>P.S. Can't make it live? Stay registered. The replay goes out Friday morning.</p></div><div class="email__footer">ClearCareer · Toronto, Canada · You're getting this because you signed up at joinclearcareer.com · Unsubscribe</div></div></div>
+      <div class="email-nav"><a class="btn btn--secondary btn--sm" href="win-02-referral.html">Previous: One person</a><a class="btn btn--secondary btn--sm" href="workshop-02.html">Next: Starting in an hour</a></div>
+    </div>
+    <aside class="email-meta"><dl><dt>Sequence</dt><dd>Monthly Workshop</dd><dt>Step</dt><dd>1</dd><dt>Send</dt><dd>Immediately after registering</dd><dt>Trigger</dt><dd>Brevo hosted registration form adds the contact to the &quot;Workshop&quot; list. Starts automation &quot;Monthly Workshop&quot;. Also adds the contact to the main list with TOPIC=prompts if not already present.</dd><dt>Goal</dt><dd>Get registrants to show up live, capture the replay audience, and make the honest Strategy Session invite the day after.</dd><dt>Primary CTA</dt><dd>Add to calendar | {{ workshop_calendar_link }}</dd><dt>Notes</dt><dd>Izzy sets workshop_date, workshop_time, meet_link, and workshop_calendar_link once a month in the automation. The same three emails run every month.</dd></dl><button class="btn btn--secondary btn--sm btn--block mt-3 copy-btn" data-copy="#email-body">Copy body text</button><p class="small muted mt-2 mb-0">Paste into Brevo's editor. Replace [[Label|URL]] buttons with Brevo buttons.</p></aside>
+  </div>
+</div></main>
+<footer class="site-footer" style="padding:2rem 0"><div class="container footer__bottom" style="margin-top:0;padding-top:0;border:0">
+  <span>ClearCareer 2026 plan. Internal working documents. © <span data-year>2026</span> Izzy Piyale-Sheard.</span>
+  <span><a href="../index.html">Artifact hub</a> · <a href="https://github.com/izzydoesizzy/clearcareer-website-2026">Repository</a></span>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>

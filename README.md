@@ -4,11 +4,15 @@ The complete relaunch kit for ClearCareer: the marketing plan, the funnel, every
 
 **Live (once GitHub Pages is enabled, see Deploy):** `https://izzydoesizzy.github.io/clearcareer-website-2026/`
 
-**Start here:** open `index.html` (the artifact hub), or jump to:
+**If you read one thing:** `plan/simple-plan.html` (source `docs/SIMPLE-PLAN.md`). It is the version of this whole project that runs with ADHD and a full-time job: five lines, five stages, one number, built inside Brevo and Calendly, zero code in the first month. The flowcharts for each stage are at `plan/funnel-stages.html`.
+
+**Everything else:** open `index.html` (the artifact hub), or jump to:
 
 | What | Open | Source |
 |---|---|---|
-| **The roadmap: every next step, with owners and a timeline** | `plan/roadmap.html` | `docs/ROADMAP.md` |
+| **The Simple Plan (start here)** | `plan/simple-plan.html` | `docs/SIMPLE-PLAN.md` |
+| Funnel flowcharts at every stage | `plan/funnel-stages.html` | hand-built |
+| The roadmap: every next step, with owners and a timeline | `plan/roadmap.html` | `docs/ROADMAP.md` |
 | The redesigned website | `site/index.html` | `site/*.html` |
 | The marketing plan | `plan/marketing-plan.html` | `docs/PLAN.md` |
 | The funnel, visual and table | `plan/funnel-map.html`, `plan/funnel.html` | `docs/FUNNEL.md` |
