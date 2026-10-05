@@ -7,31 +7,36 @@
   <meta name="description" content="Your scripts or prompts are on their way. Open them now, pick one, and send it today.">
   <meta name="robots" content="noindex">
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/cc.css">
   <style>
-    .notice--links { text-align: left; }
-    .notice--links a { font-weight: 600; }
+    .hero--funnel h1.hero__title { font-size: clamp(2rem, 4.6vw, 3.3rem); max-width: 22ch; }
+    .notice--links { text-align: left; max-width: 36rem; margin: 0 auto; }
     .notice--links p:last-child, .notice--links ul { margin-bottom: 0; }
     .notice--links ul { padding-left: 1.2em; }
-    .site-footer--min { padding: 2rem 0; }
-    .site-footer--min .footer__bottom { margin-top: 0; padding-top: 0; border-top: 0; }
+    .notice--links li { margin-bottom: .35rem; }
   </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header"><div class="container nav"><a class="nav__logo" href="../index.html"><img src="../../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer</a><span class="small muted">Secure checkout by Stripe</span></div></header>
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="../index.html"><img src="../../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer</a>
+    <span class="nav__note">Secure checkout by Stripe</span>
+  </div>
+</header>
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero hero--pattern hero--center">
+  <!-- 1. Hero -->
+  <section class="hero hero--paper hero--center hero--funnel">
     <div class="container container--narrow">
       <p class="eyebrow">Order confirmed</p>
-      <h1>You're in. Check your email.</h1>
+      <h1 class="hero__title">You're in. <em>Check your email.</em></h1>
       <p class="hero__sub">Your access link is on its way from izzy@joinclearcareer.com. Give it a minute. If it's not there, check promotions or spam once.</p>
       <div class="notice notice--success notice--links">
         <p><strong>Don't want to wait?</strong> Open it here, whichever you bought:</p>
@@ -44,32 +49,34 @@
     </div>
   </section>
 
-  <!-- Upsell -->
-  <section class="section section--tight">
+  <!-- 2. Upsell -->
+  <section class="section">
     <div class="container container--narrow">
-      <div class="card card--featured">
-        <p class="eyebrow">One more thing</p>
-        <h2>Want me to look at what you write with these?</h2>
+      <div class="card card--featured" data-animate>
+        <span class="card__badge badge badge--navy">One more thing</span>
+        <h2 class="mt-2">Want me to look at what you write with these?</h2>
         <p>Every Wednesday I run live hot seats in the ClearCareer Community. Bring the email you're about to send or the bullet you're not sure about, and we fix it together on the call. $29 a month, cancel anytime, 30-day refund.</p>
         <div class="btn-row">
-          <a class="btn btn--primary" href="../community.html">Join the Community</a>
+          <a class="btn btn--primary btn--arrow" href="../community.html">Join the Community</a>
         </div>
         <p class="small muted mt-2 mb-0">Stuck for 3+ months? <a href="../strategy-session.html">Book a free Strategy Session.</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Do this first -->
-  <section class="section section--tight section--alt">
+  <!-- 3. Do this first -->
+  <section class="section section--paper">
     <div class="container container--narrow">
-      <p class="eyebrow">Do this first</p>
-      <h2>Three steps, then close the tab</h2>
-      <ol class="num-list">
+      <div class="section-head" data-animate>
+        <p class="eyebrow">Do this first</p>
+        <h2>Three steps, then close the tab</h2>
+      </div>
+      <ol class="num-list num-list--big" data-animate data-delay="80">
         <li><strong>Open the file.</strong> Skim the map or the table of contents. Don't read the whole thing tonight.</li>
         <li><strong>Pick the one script or prompt for the thing you need to send this week.</strong> One. The follow-up you've been putting off, or the bullet that still says "responsible for".</li>
         <li><strong>Send it today.</strong> A personalised message that goes out beats a perfect one sitting in drafts.</li>
       </ol>
-      <p class="mb-0">Questions? Reply to the email. It comes to me, not a ticket system.</p>
+      <p class="mb-0" data-animate data-delay="160">Questions? Reply to the email. It comes to me, not a ticket system.</p>
     </div>
   </section>
 

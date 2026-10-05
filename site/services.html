@@ -6,10 +6,11 @@
   <title>Work With Me | ClearCareer</title>
   <meta name="description" content="Five ways to work with Izzy: the Community, the Career Clarity Intensive, the Job Search Accelerator, the Private Accelerator, and the Salary Negotiation Sprint. Find the one for you.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html" aria-current="page">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -30,25 +32,31 @@
 
 <main id="main">
 
-  <section class="hero hero--pattern hero--center">
-    <div class="container container--narrow">
+  <!-- 1. Hero -->
+  <section class="hero hero--paper">
+    <div class="container">
       <p class="eyebrow">Work with me</p>
-      <h1>Five ways to work with me. Here's which one is for you.</h1>
-      <p class="hero__sub">Every offer below answers one question about where you are right now. Find your question. If none of them fit, book the Strategy Session and we'll figure it out together in 25 minutes.</p>
+      <h1 class="hero__title">Five ways in. <em>One is yours.</em></h1>
+      <p class="hero__sub">Every offer below answers one question about where you are right now. Find your question. None of them fit? Book the Strategy Session and we'll figure it out in 25 minutes.</p>
       <div class="btn-row">
-        <a class="btn btn--primary btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+        <a class="btn btn--primary btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
         <a class="btn btn--secondary btn--lg" href="#compare">Compare everything</a>
       </div>
+      <div class="trust-line trust-line--inline"><span>Prices in CAD</span><span>Everything is remote</span><span>Two of them are guaranteed</span></div>
     </div>
   </section>
 
-  <!-- Four questions -->
+  <!-- 2. Four questions -->
   <section class="section">
     <div class="container">
+      <div class="section-head" data-animate>
+        <p class="eyebrow">Four questions</p>
+        <h2>Which one sounds like you?</h2>
+      </div>
       <div class="grid grid--2">
 
         <div class="card offer" data-animate>
-          <span class="card__badge badge badge--success">Guaranteed</span>
+          <span class="card__badge badge badge--green">Guaranteed</span>
           <p class="offer__tier">Do you have an offer in hand?</p>
           <h3>Salary Negotiation Sprint</h3>
           <p class="offer__price">$2,497 <small>CAD</small></p>
@@ -66,7 +74,7 @@
         </div>
 
         <div class="card offer card--featured" data-animate data-delay="80">
-          <span class="card__badge badge">Most popular</span>
+          <span class="card__badge badge badge--navy">Most popular</span>
           <p class="offer__tier">Have you been searching 3+ months?</p>
           <h3>Job Search Accelerator</h3>
           <p class="offer__price">$2,497 <small>CAD</small></p>
@@ -79,13 +87,13 @@
             <li>Monday priorities call, Wednesday group call, WhatsApp support</li>
             <li>Finish without interviews and I keep coaching you free until you land them</li>
           </ul>
-          <a class="btn btn--primary" href="accelerator.html">See the full program</a>
+          <a class="btn btn--primary btn--arrow" href="accelerator.html">See the full program</a>
           <p class="small muted mt-2 mb-0">Need it 1:1 and urgent? The <a href="accelerator.html#private">Private Accelerator</a> is $4,997, 3 spots a month.</p>
         </div>
 
         <div class="card offer" data-animate>
-          <span class="card__badge badge badge--navy">Start here</span>
-          <p class="offer__tier">Are you not sure what you want yet?</p>
+          <span class="card__badge badge badge--white">Start here</span>
+          <p class="offer__tier">Not sure what you want yet?</p>
           <h3>Career Clarity Intensive</h3>
           <p class="offer__price">$497 <small>CAD</small></p>
           <p class="offer__plan">One payment. Credit the full $497 toward the Accelerator within 30 days.</p>
@@ -99,7 +107,7 @@
         </div>
 
         <div class="card offer" data-animate data-delay="80">
-          <p class="offer__tier">Do you want me in your corner every week?</p>
+          <p class="offer__tier">Want me in your corner every week?</p>
           <h3>ClearCareer Community</h3>
           <p class="offer__price">$29<small>/month</small></p>
           <p class="offer__plan">Or $249 a year. Cancel anytime. 30-day refund.</p>
@@ -118,12 +126,12 @@
     </div>
   </section>
 
-  <!-- Compare -->
-  <section class="section section--alt" id="compare">
+  <!-- 3. Compare -->
+  <section class="section section--paper" id="compare">
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">Side by side</p>
-        <h2>Compare everything in one table</h2>
+        <h2>Everything in one table</h2>
         <p>Prices in Canadian dollars. Everything is remote.</p>
       </div>
       <div class="table-wrap" data-animate>
@@ -151,16 +159,16 @@
           </tbody>
         </table>
       </div>
-      <p class="center mt-3 small muted">Not sure? That's what the Strategy Session is for. <a href="strategy-session.html"><strong>Book 25 minutes.</strong></a></p>
+      <p class="center mt-3 small muted" data-animate>Not sure? That's what the Strategy Session is for. <a href="strategy-session.html"><strong>Book 25 minutes.</strong></a></p>
     </div>
   </section>
 
-  <!-- Guarantees -->
+  <!-- 4. Guarantees -->
   <section class="section">
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">Risk reversal</p>
-        <h2>Three promises I can actually keep</h2>
+        <h2>Three promises I can keep</h2>
         <p>Nobody honest can promise you a job. Here's what I can promise.</p>
       </div>
       <div class="grid grid--3">
@@ -171,8 +179,8 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="section section--soft">
+  <!-- 5. Testimonials -->
+  <section class="section section--paper">
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">In their words</p>
@@ -183,13 +191,13 @@
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">Working with Izzy was an absolute game changer. His guidance in narrowing my personal narrative toward tangible quantified metrics and accomplishments gave me a significant edge in my interview... and salary negotiation.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">CC</div><div><div class="quote__name">Chris Chipman</div><div class="quote__role">Associate Director</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$25K raise</span>
+          <span class="badge badge--green quote__outcome">$25K raise</span>
         </figure>
         <figure class="quote" data-animate data-delay="80">
           <div class="quote__mark">“</div>
           <blockquote class="quote__text">When I needed a refresher on salary negotiation after working for myself for three years, Izzy helped me evaluate two exciting opportunities, determine a realistic salary range, and prepare for negotiations.</blockquote>
           <figcaption class="quote__who"><div class="avatar avatar--initials">MD</div><div><div class="quote__name">Marsha Druker</div><div class="quote__role">Senior Field Marketing Manager</div></div></figcaption>
-          <span class="badge badge--success quote__outcome">$10K above the offer</span>
+          <span class="badge badge--green quote__outcome">$10K above the offer</span>
         </figure>
         <figure class="quote" data-animate data-delay="160">
           <div class="quote__mark">“</div>
@@ -201,14 +209,15 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- 6. FAQ -->
   <section class="section">
-    <div class="container container--narrow">
+    <div class="container grid grid--split-wide">
       <div class="section-head" data-animate>
         <p class="eyebrow">Questions</p>
         <h2>Before you pick</h2>
+        <p>Every price is on this page. Everything else about the call is on the <a href="strategy-session.html">Strategy Session page</a>.</p>
       </div>
-      <div class="faq" data-animate>
+      <div class="faq" data-animate data-delay="80">
         <details class="faq__item"><summary>Can I start with the Clarity Intensive and move up?</summary><p>Yes, and most people do. Pay $497 now. If you join the Accelerator or Private Accelerator within 30 days, the full $497 comes off the price.</p></details>
         <details class="faq__item"><summary>Why do the Accelerator and the Sprint need a call first?</summary><p>Because I'd rather turn you away than sell you the wrong thing. The 25-minute Strategy Session is where we check fit. It's also a sales call, and I say so up front.</p></details>
         <details class="faq__item"><summary>What about the Profile Overhaul I've seen mentioned?</summary><p>It still exists ($1,997: resume, LinkedIn headline in 3 versions, About section, banner, headshot). I only recommend it on a call when your strategy is solid and your paper trail isn't. It's not the right starting point for most people.</p></details>
@@ -218,12 +227,17 @@
     </div>
   </section>
 
-  <section class="section section--tight">
+  <!-- 7. Final CTA -->
+  <section class="section--tight">
     <div class="container">
       <div class="cta-band" data-animate>
+        <p class="eyebrow">Next step</p>
         <h2>Still not sure which one?</h2>
         <p>That's the whole point of the Strategy Session. 25 minutes. A real diagnosis. A real offer. No surprises.</p>
-        <div class="btn-row"><a class="btn btn--white btn--lg" href="strategy-session.html">Book a Strategy Session</a></div>
+        <div class="btn-row">
+          <a class="btn btn--white btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+          <a class="btn btn--outline-white btn--lg" href="free.html">Not ready? Grab the free tools</a>
+        </div>
       </div>
     </div>
   </section>
@@ -232,6 +246,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -274,6 +292,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>

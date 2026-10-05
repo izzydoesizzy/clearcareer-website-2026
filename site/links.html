@@ -6,20 +6,11 @@
   <title>Links | ClearCareer</title>
   <meta name="description" content="Everything Izzy mentions on Instagram in one place: the free Strategy Session, the $9 tools, the Community, free guides, the Saturday email, and this week's video.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
-  <style>
-    .bio { max-width: 480px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3.5rem); text-align: center; }
-    .bio__avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; box-shadow: var(--shadow-hover); border: 3px solid #fff; }
-    .bio__name { font-size: clamp(1.75rem, 4vw, 2.1rem); margin-bottom: .25rem; }
-    .bio__line { color: var(--muted); font-size: .95rem; margin-bottom: 1.75rem; }
-    .bio__links { display: grid; gap: .75rem; }
-    .bio__links .btn { flex-direction: column; gap: .15rem; padding: .95rem 1.25rem; text-align: center; }
-    .bio__links .btn small { font-weight: 400; font-size: .8rem; opacity: .85; }
-    .bio__foot { margin-top: 2rem; font-size: .85rem; color: var(--muted); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -30,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -40,9 +32,10 @@
 
 <main id="main">
 
-  <section class="hero hero--pattern">
+  <!-- Link-in-bio -->
+  <section class="hero hero--paper">
     <div class="container">
-      <div class="bio">
+      <div class="bio" data-animate>
         <img class="bio__avatar" src="../assets/img/izzy-profile.webp" alt="Izzy Piyale-Sheard" width="112" height="112">
         <h1 class="bio__name">Izzy Piyale-Sheard</h1>
         <p class="bio__line">Career coach. 200+ coached. $1.2M+ in negotiated raises. Toronto.</p>
@@ -65,6 +58,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -107,6 +104,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>

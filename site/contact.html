@@ -6,10 +6,11 @@
   <title>Contact | ClearCareer</title>
   <meta name="description" content="Get in touch with Izzy at ClearCareer. Book a 25-minute Strategy Session, email izzy@joinclearcareer.com, or reach out about outplacement, press, and workshops.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -30,20 +32,21 @@
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero hero--pattern hero--center">
+  <!-- 1. Hero -->
+  <section class="hero hero--paper hero--center">
     <div class="container container--narrow">
       <p class="eyebrow">Contact</p>
-      <h1>Let's talk about your job search.</h1>
+      <h1 class="hero__title">Let's talk about <em>your job search.</em></h1>
       <p class="hero__sub">The fastest way to reach me is to book a Strategy Session. 25 minutes, a real diagnosis, a real offer, no surprises.</p>
       <div class="btn-row">
-        <a class="btn btn--primary btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+        <a class="btn btn--primary btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+        <a class="btn btn--secondary btn--lg" href="mailto:izzy@joinclearcareer.com">Email me instead</a>
       </div>
-      <p class="trust-line">Free. Remote. Everything else is below.</p>
+      <div class="trust-line trust-line--inline"><span>Free</span><span>Remote</span><span>Everything else is below</span></div>
     </div>
   </section>
 
-  <!-- Ways to reach me -->
+  <!-- 2. Ways to reach me -->
   <section class="section">
     <div class="container">
       <div class="section-head" data-animate>
@@ -52,23 +55,23 @@
       </div>
       <div class="grid grid--3">
         <div class="card" data-animate>
-          <div class="card__icon">✉️</div>
+          <p class="card__num">01</p>
           <h3>Email</h3>
           <p><a href="mailto:izzy@joinclearcareer.com"><strong>izzy@joinclearcareer.com</strong></a></p>
           <p class="card__meta">I reply within 24 hours on business days.</p>
         </div>
         <div class="card" data-animate data-delay="80">
-          <div class="card__icon">👋</div>
+          <p class="card__num">02</p>
           <h3>Social</h3>
           <p>Find me where you already scroll.</p>
-          <ul class="check-list small mb-0">
+          <ul class="dot-list mb-0">
             <li><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a></li>
             <li><a href="https://www.youtube.com/@joinclearcareer">YouTube</a></li>
             <li><a href="https://www.instagram.com/joinclearcareer/">Instagram</a></li>
           </ul>
         </div>
         <div class="card" data-animate data-delay="160">
-          <div class="card__icon">📍</div>
+          <p class="card__num">03</p>
           <h3>Location</h3>
           <p>Fully remote, based in Toronto. Clients across Canada, the US, and internationally.</p>
           <p class="card__meta">Prices are in CAD.</p>
@@ -77,33 +80,38 @@
     </div>
   </section>
 
-  <!-- Employers, press, workshops -->
-  <section class="section section--alt">
+  <!-- 3. Employers, press, workshops -->
+  <section class="section section--paper">
     <div class="container">
+      <div class="section-head" data-animate>
+        <p class="eyebrow">Not a job seeker?</p>
+        <h2>Employers, press, and workshops</h2>
+      </div>
       <div class="grid grid--2">
         <div class="card" data-animate>
-          <div class="card__icon">🏢</div>
-          <h3>For employers</h3>
+          <p class="eyebrow eyebrow--plain">For employers</p>
+          <h3>Outplacement your people will use</h3>
           <p>Laying people off? Soft Landing is outplacement your people will actually use: assets built with each person within 10 business days, a private cohort per company, weekly reports, and you only pay for people who engage.</p>
-          <a class="btn btn--ghost" href="soft-landing.html">See Soft Landing for employers</a>
+          <div class="card__footer"><a class="btn btn--link" href="soft-landing.html">See Soft Landing for employers</a></div>
         </div>
         <div class="card" data-animate data-delay="80">
-          <div class="card__icon">🎙</div>
-          <h3>Press and workshops</h3>
-          <p>I've been on CBC Radio, Global News, Newsweek, and Inc., and I've run workshops for UofT, TMU, Humber, Lighthouse Labs, the UN Association in Canada, and FlexJobs. Want a quote, a guest, or a session for your team? Email me.</p>
-          <a class="btn btn--ghost" href="mailto:izzy@joinclearcareer.com">Email izzy@joinclearcareer.com</a>
+          <p class="eyebrow eyebrow--plain">Press and workshops</p>
+          <h3>A quote, a guest, or a session for your team</h3>
+          <p>I've been on CBC Radio, Global News, Newsweek, and Inc., and I've run workshops for UofT, TMU, Humber, Lighthouse Labs, the UN Association in Canada, and FlexJobs. Want one of those for your audience? Email me.</p>
+          <div class="card__footer"><a class="btn btn--link" href="mailto:izzy@joinclearcareer.com">Email izzy@joinclearcareer.com</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--tight">
+  <!-- 4. CTA -->
+  <section class="section--tight">
     <div class="container">
       <div class="cta-band" data-animate>
+        <p class="eyebrow">Next step</p>
         <h2>Not sure where to start? Start with the call.</h2>
         <p>25 minutes. I'll find the one stage of your search that's broken and tell you exactly what I'd build. You decide from there.</p>
-        <div class="btn-row"><a class="btn btn--white btn--lg" href="strategy-session.html">Book a Strategy Session</a></div>
+        <div class="btn-row"><a class="btn btn--white btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a></div>
       </div>
     </div>
   </section>
@@ -112,6 +120,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -154,6 +166,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>

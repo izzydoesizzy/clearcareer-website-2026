@@ -6,10 +6,11 @@
   <title>Book a Strategy Session | ClearCareer</title>
   <meta name="description" content="A free 25-minute Job Search Strategy Session with Izzy. About 15 minutes of diagnosis, then a real plan and a real offer. Pick a time.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html" aria-current="page">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -28,65 +30,66 @@
   </div>
 </header>
 
-<style>
-  /* Page-specific: a three-column steps row for "after you book" */
-  .steps--3 { grid-template-columns: repeat(3, 1fr); }
-  @media (max-width: 960px) { .steps--3 { grid-template-columns: 1fr; } }
-</style>
-
 <main id="main">
 
   <!-- 1. Hero -->
-  <section class="hero hero--pattern hero--center">
+  <section class="hero hero--paper hero--center">
     <div class="container container--narrow">
       <p class="eyebrow">Job Search Strategy Session · 25 minutes · free</p>
-      <h1>25 minutes. Here's exactly what happens.</h1>
+      <h1 class="hero__title">25 minutes. <em>Here's exactly what happens.</em></h1>
       <p class="hero__sub">No mystery and no "discovery call" dance. Read this page and you'll know the whole conversation before we have it.</p>
       <div class="btn-row">
-        <a class="btn btn--primary btn--lg" href="#book">Pick a time</a>
+        <a class="btn btn--primary btn--lg btn--arrow" href="#book">Pick a time</a>
         <a class="btn btn--secondary btn--lg" href="#what-happens">Read what happens first</a>
       </div>
-      <p class="trust-line">Free. On Zoom. The prep form takes 4 minutes.</p>
+      <div class="trust-line trust-line--inline"><span>Free</span><span>On Zoom</span><span>The prep form takes 4 minutes</span></div>
     </div>
   </section>
 
   <!-- 2. The conversation -->
   <section class="section" id="what-happens">
-    <div class="container container--narrow">
+    <div class="container grid grid--split-wide">
       <div class="section-head" data-animate>
         <p class="eyebrow">The whole conversation</p>
         <h2>Three parts. No surprises.</h2>
+        <p>Usually it's one of four things that's broken, and usually you already half-know which.</p>
       </div>
-      <ol class="num-list" data-animate>
-        <li><strong>About 15 minutes: the diagnosis.</strong> I ask questions and figure out where your search is breaking: targeting, outreach, interviews, or the offer itself. Usually it's one of the four, and usually you already half-know which.</li>
-        <li><strong>Then: the plan.</strong> I tell you what I'd build with you to fix it. Specific assets, in a specific order.</li>
-        <li><strong>And then, yes, the offer.</strong> If it's a fit, I'll tell you which program, what it costs ($497 to $4,997), and ask if you want to do it.</li>
-      </ol>
-      <p class="kicker center mt-3" data-animate>You can say no. People do, and we stay friends.</p>
+      <div data-animate data-delay="80">
+        <ol class="num-list num-list--big">
+          <li><strong>About 15 minutes: the diagnosis.</strong><br>I ask questions and figure out where your search is breaking: targeting, outreach, interviews, or the offer itself.</li>
+          <li><strong>Then: the plan.</strong><br>I tell you what I'd build with you to fix it. Specific assets, in a specific order.</li>
+          <li><strong>And then, yes, the offer.</strong><br>If it's a fit, I'll tell you which program, what it costs ($497 to $4,997), and ask if you want to do it.</li>
+        </ol>
+        <p class="kicker mt-3">You can say no. <em>People do, and we stay friends.</em></p>
+      </div>
     </div>
   </section>
 
   <!-- 3. Fit -->
-  <section class="section section--alt">
+  <section class="section section--paper">
     <div class="container">
-      <div class="grid grid--2">
-        <div class="card" data-animate>
+      <div class="section-head" data-animate>
+        <p class="eyebrow">Is it for you?</p>
+        <h2>Book this if. Skip this if.</h2>
+      </div>
+      <div class="fit" data-animate>
+        <div>
           <h3>Book this if</h3>
-          <ul class="check-list mb-0">
+          <ul class="check-list">
             <li>You're targeting $100K+</li>
             <li>You've been searching 3+ months, or you have an offer in hand</li>
             <li>You're open to investing in your search in the next 30 days, if the plan makes sense</li>
             <li>You're willing to do a 4-minute prep form before we talk</li>
           </ul>
         </div>
-        <div class="card" data-animate data-delay="80">
+        <div>
           <h3>Don't book this if</h3>
           <ul class="x-list">
             <li>You want free coaching. The session is free. The coaching isn't.</li>
             <li>You're not in a position to invest right now.</li>
             <li>You just want to pick my brain.</li>
           </ul>
-          <p class="mb-0">That's okay. Grab the <a href="free.html">free tools</a> and the Saturday email, and come back when the timing's right.</p>
+          <p class="mb-0 mt-3 muted">That's okay. Grab the <a href="free.html">free tools</a> and the Saturday email, and come back when the timing's right.</p>
         </div>
       </div>
       <div class="notice notice--info mt-3" data-animate><strong>Offer in hand or final interview this week?</strong> Pick the earliest slot and say so in the form. I'll make room.</div>
@@ -98,19 +101,19 @@
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">After you book</p>
-        <h2>What happens between now and the call</h2>
+        <h2>Between now and the call</h2>
         <p>You'll know every price before we talk. That's on purpose.</p>
       </div>
       <div class="steps steps--3">
-        <div class="step" data-animate><div class="step__num">1</div><h3>Right away</h3><p>A 3-minute video and a one-pager with every program and every price. No surprises on the call.</p></div>
-        <div class="step" data-animate data-delay="80"><div class="step__num">2</div><h3>24 hours before</h3><p>An 8-minute case study and a 3-question prep form. Fill it in and we skip the small talk.</p></div>
-        <div class="step" data-animate data-delay="160"><div class="step__num">3</div><h3>2 hours before</h3><p>A reminder with the Zoom link. Camera on if you can. It's a better conversation.</p></div>
+        <div class="step" data-animate><div class="step__num">01</div><h3>Right away</h3><p>A 3-minute video and a one-pager with every program and every price. No surprises on the call.</p></div>
+        <div class="step" data-animate data-delay="80"><div class="step__num">02</div><h3>24 hours before</h3><p>An 8-minute case study and a 3-question prep form. Fill it in and we skip the small talk.</p></div>
+        <div class="step" data-animate data-delay="160"><div class="step__num">03</div><h3>2 hours before</h3><p>A reminder with the Zoom link. Camera on if you can. It's a better conversation.</p></div>
       </div>
     </div>
   </section>
 
   <!-- 5. Calendar -->
-  <section class="section section--soft" id="book">
+  <section class="section section--paper" id="book">
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">Book it</p>
@@ -132,35 +135,36 @@
       </div>
       <div class="grid grid--3">
         <a class="card" href="free.html" data-animate>
-          <div class="card__icon">🎁</div>
+          <p class="card__num">01</p>
           <h3>The free tools</h3>
           <p>Guides, templates, and the Saturday email. Start here if you're early in the search.</p>
-          <div class="card__footer"><span class="btn btn--ghost">See the free tools</span></div>
+          <div class="card__footer"><span class="btn btn--link">See the free tools</span></div>
         </a>
         <a class="card" href="go/salary.html" data-animate data-delay="80">
-          <div class="card__icon">💵</div>
+          <p class="card__num">02</p>
           <h3>Salary Number Generator, $9</h3>
           <p>Know your number before anyone asks for it. The cheapest confidence you'll buy this year.</p>
-          <div class="card__footer"><span class="btn btn--ghost">Get it for $9</span></div>
+          <div class="card__footer"><span class="btn btn--link">Get it for $9</span></div>
         </a>
         <a class="card" href="community.html" data-animate data-delay="160">
-          <div class="card__icon">🤝</div>
+          <p class="card__num">03</p>
           <h3>The Community, $29/mo</h3>
           <p>Weekly coaching with me, every template, and people who get it. Less than a dollar a day.</p>
-          <div class="card__footer"><span class="btn btn--ghost">See what's inside</span></div>
+          <div class="card__footer"><span class="btn btn--link">See what's inside</span></div>
         </a>
       </div>
     </div>
   </section>
 
   <!-- 7. FAQ -->
-  <section class="section section--alt">
-    <div class="container container--narrow">
+  <section class="section section--line-top">
+    <div class="container grid grid--split-wide">
       <div class="section-head" data-animate>
         <p class="eyebrow">Questions</p>
         <h2>Five things people ask before they book</h2>
+        <p>Anything else? <a href="mailto:izzy@joinclearcareer.com">Email me</a> and I'll answer it myself.</p>
       </div>
-      <div class="faq" data-animate>
+      <div class="faq" data-animate data-delay="80">
         <details class="faq__item"><summary>Is it really free?</summary><p>Yes. No card, no catch. 25 minutes of my time, and I ask for 4 minutes of yours on the prep form.</p></details>
         <details class="faq__item"><summary>Is it a sales call?</summary><p>Yes. And I say so up front because pretending otherwise wastes both our time. You get a real diagnosis for about 15 minutes. Then you get a real offer with real prices. Then you decide. That's the honest version, and it's the only version I run.</p></details>
         <details class="faq__item"><summary>Can I bring my partner?</summary><p>Yes. Please do, if they're part of the decision. It's a better conversation when the person you'd talk to afterwards is already in the room.</p></details>
@@ -171,25 +175,25 @@
   </section>
 
   <!-- 8. Pull quote -->
-  <section class="section">
+  <section class="section--tight section--paper">
     <div class="container container--narrow">
-      <figure class="quote quote--big" data-animate>
+      <figure class="quote quote--big quote--bare center" data-animate>
         <div class="quote__mark">“</div>
         <blockquote class="quote__text">If you're on the fence, go for it.</blockquote>
-        <figcaption class="quote__who"><div class="avatar avatar--initials">AB</div><div><div class="quote__name">Annie Bell</div><div class="quote__role">ClearCareer client</div></div></figcaption>
-        <span class="badge badge--success quote__outcome">2 offers in weeks, 200% salary increase</span>
+        <figcaption class="quote__who" style="justify-content:center"><div class="avatar avatar--initials">AB</div><div><div class="quote__name">Annie Bell</div><div class="quote__role">ClearCareer client · 2 offers in weeks, 200% salary increase</div></div></figcaption>
       </figure>
     </div>
   </section>
 
   <!-- 9. Final CTA -->
-  <section class="section section--tight">
+  <section class="section--tight">
     <div class="container">
       <div class="cta-band cta-band--blue" data-animate>
+        <p class="eyebrow">Next step</p>
         <h2>Fortune favours the bold.</h2>
         <p>25 minutes. A real diagnosis. A real offer. No surprises.</p>
         <div class="btn-row">
-          <a class="btn btn--white btn--lg" href="#book">Pick a time</a>
+          <a class="btn btn--white btn--lg btn--arrow" href="#book">Pick a time</a>
         </div>
       </div>
     </div>
@@ -199,6 +203,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -241,6 +249,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>

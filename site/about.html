@@ -6,10 +6,11 @@
   <title>About Izzy | ClearCareer</title>
   <meta name="description" content="Meet Izzy Piyale-Sheard, the career zig-zagger behind ClearCareer. 200+ professionals coached, $1.2M+ in negotiated raises, a 900+ member community, featured on CBC Radio, Global News, and Newsweek.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html" aria-current="page">About</a></li>
@@ -30,29 +32,29 @@
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero hero--pattern">
+  <!-- 1. Hero -->
+  <section class="hero hero--paper">
     <div class="container grid grid--split">
       <div>
         <p class="eyebrow">About Izzy</p>
-        <h1 class="hero__title">Built by a career zig-zagger <span class="accent">who gets it</span></h1>
+        <h1 class="hero__title">Built by a career zig-zagger <em>who gets it.</em></h1>
         <p class="hero__sub">I've been stuck, confused, and unmotivated in my own search. That's exactly why ClearCareer exists.</p>
         <div class="btn-row">
-          <a class="btn btn--primary btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+          <a class="btn btn--primary btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
           <a class="btn btn--secondary btn--lg" href="results.html">See the results</a>
         </div>
-        <p class="trust-line">200+ professionals coached. $1.2M+ in negotiated raises. Since 2016.</p>
+        <div class="trust-line trust-line--inline"><span>200+ professionals coached</span><span>$1.2M+ in negotiated raises</span><span>Since 2016</span></div>
       </div>
-      <div class="hero__photo-wrap" data-animate>
-        <img class="hero__photo" src="../assets/img/izzy.webp" alt="Izzy Piyale-Sheard, founder of ClearCareer" width="640" height="800">
-        <div class="hero__float"><strong>Since 2016</strong>building the support I wished I'd had</div>
+      <div class="portrait" data-animate>
+        <img class="portrait__img portrait__img--square" src="../assets/img/izzy.webp" alt="Izzy Piyale-Sheard, founder of ClearCareer" width="768" height="768">
+        <div class="portrait__card"><strong>Since 2016</strong>building the support I wished I'd had</div>
       </div>
     </div>
   </section>
 
-  <!-- Story -->
+  <!-- 2. Story -->
   <section class="section">
-    <div class="container container--narrow" data-animate>
+    <div class="container container--prose prose" data-animate>
       <p class="eyebrow">My story</p>
       <h2>Hi, I'm Izzy.</h2>
       <p class="lead">Career zig-zagger. Jack of all trades. For years I couldn't tell a straight story about what I did, let alone why anyone should pay me for it.</p>
@@ -63,55 +65,40 @@
     </div>
   </section>
 
-  <!-- Snapshot -->
-  <section class="section section--alt">
-    <div class="container">
+  <!-- 3. Snapshot -->
+  <section class="section section--paper">
+    <div class="container grid grid--split-wide">
       <div class="section-head" data-animate>
         <p class="eyebrow">Snapshot</p>
         <h2>What the last decade looks like</h2>
+        <p>Coaching, community, media, and a lot of workshops. Here's the short version.</p>
       </div>
-      <div class="grid grid--4">
-        <div class="card" data-animate>
-          <div class="card__icon">🚀</div>
-          <h3>Helping job seekers</h3>
-          <p>Clients have gone from over a year of unemployment to offers within weeks, and raised their salaries by $30K.</p>
-        </div>
-        <div class="card" data-animate data-delay="80">
-          <div class="card__icon">🏘</div>
-          <h3>Building community</h3>
-          <p>Founded a 900+ member peer-mentorship community for job seekers. It's still going.</p>
-        </div>
-        <div class="card" data-animate data-delay="160">
-          <div class="card__icon">📻</div>
-          <h3>In the media</h3>
-          <p>CBC Radio's For What It's Worth, Global News, Newsweek, Inc., and Notable Life.</p>
-        </div>
-        <div class="card" data-animate data-delay="240">
-          <div class="card__icon">🎤</div>
-          <h3>Workshops</h3>
-          <p>University of Toronto, TMU, Humber College, CivicAction YouthConnect, Lighthouse Labs, the UN Association in Canada, and FlexJobs.</p>
-        </div>
-      </div>
+      <ul class="feature-list" data-animate data-delay="80">
+        <li><span class="num">01</span><div><h3>Helping job seekers</h3><p>Clients have gone from over a year of unemployment to offers within weeks, and raised their salaries by $30K.</p></div></li>
+        <li><span class="num">02</span><div><h3>Building community</h3><p>Founded a 900+ member peer-mentorship community for job seekers. It's still going.</p></div></li>
+        <li><span class="num">03</span><div><h3>In the media</h3><p>CBC Radio's For What It's Worth, Global News, Newsweek, Inc., and Notable Life.</p></div></li>
+        <li><span class="num">04</span><div><h3>Workshops</h3><p>University of Toronto, TMU, Humber College, CivicAction YouthConnect, Lighthouse Labs, the UN Association in Canada, and FlexJobs.</p></div></li>
+      </ul>
     </div>
   </section>
 
-  <!-- Numbers -->
+  <!-- 4. Numbers -->
   <section class="section--tight">
     <div class="container">
       <div class="stats" data-animate>
-        <div class="stat"><div class="stat__num">200+</div><div class="stat__label">Professionals coached</div></div>
-        <div class="stat"><div class="stat__num">$1.2M+</div><div class="stat__label">Negotiated raises</div></div>
-        <div class="stat"><div class="stat__num">900+</div><div class="stat__label">Community members</div></div>
-        <div class="stat"><div class="stat__num">3,500+</div><div class="stat__label">Event attendees</div></div>
+        <div class="stat"><div class="stat__num">200<em>+</em></div><div class="stat__label">Professionals coached</div></div>
+        <div class="stat"><div class="stat__num">$1.2M<em>+</em></div><div class="stat__label">Negotiated raises</div></div>
+        <div class="stat"><div class="stat__num">900<em>+</em></div><div class="stat__label">Community members</div></div>
+        <div class="stat"><div class="stat__num">3,500<em>+</em></div><div class="stat__label">Event attendees</div></div>
       </div>
     </div>
   </section>
 
-  <!-- Outside the office -->
+  <!-- 5. Outside the office -->
   <section class="section">
     <div class="container grid grid--split">
-      <div data-animate>
-        <img class="hero__photo" style="aspect-ratio:4/3" src="../assets/img/izzy-more.webp" alt="Izzy speaking at an event" width="800" height="600">
+      <div class="portrait" data-animate>
+        <img class="portrait__img portrait__img--wide" src="../assets/img/izzy-more.webp" alt="Izzy speaking at an event" width="800" height="600">
       </div>
       <div data-animate data-delay="80">
         <p class="eyebrow">Outside the office</p>
@@ -119,12 +106,13 @@
         <p>Before ClearCareer I spent years working remotely from 20+ countries. A lot of my ideas about career design come from watching how differently people work when nobody is telling them where to sit.</p>
         <p>I have an ADHD brain. That's not a footnote. It's the reason every system here looks the way it does: small doable steps, someone beside you, and no giant plan you'll abandon by Thursday. I build what I need to keep going, then I hand it to you.</p>
         <p>Home is Toronto. I'm a dad, which means I now understand negotiation at a whole new level.</p>
+        <a class="btn btn--link" href="services.html">See how we'd work together</a>
       </div>
     </div>
   </section>
 
-  <!-- Logos -->
-  <section class="section--tight section--soft">
+  <!-- 6. Logos -->
+  <section class="section--tight section--paper">
     <div class="container">
       <div class="logos" data-animate>
         <span class="logos__label">Featured in and trusted by</span>
@@ -134,17 +122,18 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--tight">
+  <!-- 7. CTA -->
+  <section class="section--tight">
     <div class="container">
-      <div class="cta-band cta-band--blue" data-animate>
+      <div class="cta-band" data-animate>
+        <p class="eyebrow">Next step</p>
         <h2>Ready to work together?</h2>
         <p>Book a 25-minute Strategy Session. We find what's broken in your search, I tell you what I'd build, and you decide.</p>
         <div class="btn-row">
-          <a class="btn btn--white btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+          <a class="btn btn--white btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
           <a class="btn btn--outline-white btn--lg" href="services.html">See the five ways to work together</a>
         </div>
-        <p class="trust-line" style="color:#c9d2f5">25 minutes. A real diagnosis. A real offer. No surprises.</p>
+        <p class="trust-line mb-0">25 minutes. A real diagnosis. A real offer. No surprises.</p>
       </div>
     </div>
   </section>
@@ -153,6 +142,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -195,6 +188,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>

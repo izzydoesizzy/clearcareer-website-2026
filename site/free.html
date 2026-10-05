@@ -6,10 +6,11 @@
   <title>Free Tools and Guides | ClearCareer</title>
   <meta name="description" content="Free job search tools from ClearCareer: severance and runway calculators, a resume bullet scorer, 12 downloadable guides, shareable 2-minute tools, and the Saturday email.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="free.html" aria-current="page">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -30,22 +32,23 @@
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero hero--pattern hero--center">
+  <!-- 1. Hero -->
+  <section class="hero hero--paper hero--center">
     <div class="container container--narrow">
       <p class="eyebrow">Free tools and guides</p>
-      <h1>Start here. Everything on this page is free.</h1>
+      <h1 class="hero__title">Start here. <em>Everything on this page is free.</em></h1>
       <p class="hero__sub">Calculators, checklists, templates, and the Saturday email. All pulled from the same system we build with clients. Grab one or grab them all. No credit card, no catch.</p>
-      <div class="btn-row">
+      <div class="pill-row pill-row--center">
         <a class="pill" href="#calculators">Calculators</a>
         <a class="pill" href="#downloads">Downloads</a>
         <a class="pill" href="#shareable">Shareable</a>
         <a class="pill" href="#saturday">The Saturday email</a>
       </div>
+      <div class="trust-line trust-line--inline mt-3"><span>6 calculators</span><span>12 downloads</span><span>One email a week</span></div>
     </div>
   </section>
 
-  <!-- Calculators -->
+  <!-- 2. Calculators -->
   <section class="section" id="calculators">
     <div class="container">
       <div class="section-head" data-animate>
@@ -112,8 +115,8 @@
     </div>
   </section>
 
-  <!-- Downloads -->
-  <section class="section section--alt" id="downloads">
+  <!-- 3. Downloads -->
+  <section class="section section--paper" id="downloads">
     <div class="container">
       <div class="section-head" data-animate>
         <p class="eyebrow">Downloads and guides</p>
@@ -121,95 +124,83 @@
         <p>Salary data, company lists, templates, and the 1,600 resume bullets people keep asking about. Two of them are personalized: DM me on LinkedIn and I'll send yours.</p>
       </div>
       <div class="grid grid--3">
-        <div class="card card--flat" data-animate>
-          <div class="card__icon">💰</div>
+        <div class="card card--paper" data-animate>
           <span class="badge">Interactive guide</span>
           <h3 class="mt-2">2026 Canadian Salary Guide</h3>
           <p>50 in-demand roles across Toronto, Vancouver, Calgary, Montreal, and Ottawa. Entry, mid, and senior ranges.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/2026-salary-guide">Open the guide</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/2026-salary-guide">Open the guide</a></div>
         </div>
-        <div class="card card--flat" data-animate data-delay="80">
-          <div class="card__icon">🔑</div>
+        <div class="card card--paper" data-animate data-delay="80">
           <span class="badge">Research guide</span>
           <h3 class="mt-2">40 Job Titles That Pay $100K+</h3>
           <p>Non-obvious roles you've never heard of, with who's hiring and direct search links.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/hidden-job-titles">See the titles</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/hidden-job-titles">See the titles</a></div>
         </div>
-        <div class="card card--flat" data-animate data-delay="160">
-          <div class="card__icon">🏠</div>
+        <div class="card card--paper" data-animate data-delay="160">
           <span class="badge">Company list</span>
           <h3 class="mt-2">194 Canadian Remote &amp; Hybrid Companies</h3>
           <p>Verified remote policies across 14 industries with direct links to careers pages.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/canadian-remote-companies">Get the list</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/canadian-remote-companies">Get the list</a></div>
         </div>
-        <div class="card card--flat" data-animate>
-          <div class="card__icon">🆘</div>
+        <div class="card card--paper" data-animate>
           <span class="badge">Checklist</span>
           <h3 class="mt-2">The Layoff Survival Checklist</h3>
           <p>25 Canada-specific steps for the first 72 hours after being let go. EI, severance, legal rights.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/layoff-checklist">Get the checklist</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/layoff-checklist">Get the checklist</a></div>
         </div>
-        <div class="card card--flat" data-animate data-delay="80">
-          <div class="card__icon">🔎</div>
+        <div class="card card--paper" data-animate data-delay="80">
           <span class="badge">Cheat sheet</span>
           <h3 class="mt-2">LinkedIn Boolean Search Cheat Sheet</h3>
           <p>30 copy-paste search strings to find the right people at your target companies.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/linkedin-boolean-search">Get the cheat sheet</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/linkedin-boolean-search">Get the cheat sheet</a></div>
         </div>
-        <div class="card card--flat" data-animate data-delay="160">
-          <div class="card__icon">📊</div>
+        <div class="card card--paper" data-animate data-delay="160">
           <span class="badge">Google Sheet</span>
           <h3 class="mt-2">1,600+ Quantified Resume Achievements</h3>
           <p>Copy-paste achievement bullets for 80+ job titles across 16 industries.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/quantified-achievements">Open the sheet</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/quantified-achievements">Open the sheet</a></div>
         </div>
-        <div class="card card--flat" data-animate>
-          <div class="card__icon">🏦</div>
+        <div class="card card--paper" data-animate>
           <span class="badge">Google Sheet</span>
           <h3 class="mt-2">86 Canadian Banking &amp; Fintech Companies</h3>
           <p>Banks, fintechs, and financial institutions hiring in Canada.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/canadian-banking-fintech-companies">Open the sheet</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/canadian-banking-fintech-companies">Open the sheet</a></div>
         </div>
-        <div class="card card--flat" data-animate data-delay="80">
-          <div class="card__icon">📧</div>
+        <div class="card card--paper" data-animate data-delay="80">
           <span class="badge">Templates</span>
           <h3 class="mt-2">7 Email Templates for Job Seekers</h3>
           <p>Informational interviews, hiring managers, thank-yous, follow-ups, and salary negotiation.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/email-templates">Get the templates</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/email-templates">Get the templates</a></div>
         </div>
-        <div class="card card--flat" data-animate data-delay="160">
-          <div class="card__icon">🎨</div>
+        <div class="card card--paper" data-animate data-delay="160">
           <span class="badge">Image pack</span>
           <h3 class="mt-2">33 Free LinkedIn Banners</h3>
           <p>Solids, gradients, and patterns. Pre-sized. Upload in 60 seconds.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/linkedin-banners">Get the banners</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/linkedin-banners">Get the banners</a></div>
         </div>
-        <div class="card card--flat" data-animate>
-          <div class="card__icon">📸</div>
+        <div class="card card--paper" data-animate>
           <span class="badge">PDF guide</span>
           <h3 class="mt-2">DIY LinkedIn Headshot Guide</h3>
           <p>Take a professional headshot at home with your phone. 7-page PDF.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/resources/linkedin-headshot-guide">Get the guide</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/resources/linkedin-headshot-guide">Get the guide</a></div>
         </div>
-        <div class="card card--flat" data-animate data-delay="80">
-          <div class="card__icon">🔍</div>
-          <span class="badge badge--success">Personalized</span>
+        <div class="card card--paper" data-animate data-delay="80">
+          <span class="badge badge--green">Personalized</span>
           <h3 class="mt-2">Free LinkedIn Audit</h3>
           <p>Send me screenshots of your profile. I'll send back a personalized PDF.</p>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/izzydoesizzy/">DM me on LinkedIn</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://www.linkedin.com/in/izzydoesizzy/">DM me on LinkedIn</a></div>
         </div>
-        <div class="card card--flat" data-animate data-delay="160">
-          <div class="card__icon">📈</div>
-          <span class="badge badge--success">Personalized</span>
+        <div class="card card--paper" data-animate data-delay="160">
+          <span class="badge badge--green">Personalized</span>
           <h3 class="mt-2">AI Salary Research Report</h3>
           <p>Your target role + city = anchor, target, and walk-away numbers.</p>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/izzydoesizzy/">DM me on LinkedIn</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://www.linkedin.com/in/izzydoesizzy/">DM me on LinkedIn</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Shareable -->
+  <!-- 4. Shareable -->
   <section class="section" id="shareable">
     <div class="container">
       <div class="section-head" data-animate>
@@ -222,57 +213,58 @@
           <div class="card__icon">🧬</div>
           <h3>Career DNA</h3>
           <p class="card__meta">2 minutes. Made to share.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/wrapped/">Try it</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/wrapped/">Try it</a></div>
         </div>
         <div class="card" data-animate data-delay="80">
           <div class="card__icon">🔥</div>
           <h3>Resume Roast</h3>
           <p class="card__meta">2 minutes. Made to share.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/wrapped/">Try it</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/wrapped/">Try it</a></div>
         </div>
         <div class="card" data-animate data-delay="160">
           <div class="card__icon">💸</div>
           <h3>What You're Worth</h3>
           <p class="card__meta">2 minutes. Made to share.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/wrapped/">Try it</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/wrapped/">Try it</a></div>
         </div>
         <div class="card" data-animate data-delay="240">
           <div class="card__icon">🃏</div>
           <h3>Five Cards</h3>
           <p class="card__meta">2 minutes. Made to share.</p>
-          <a class="btn btn--ghost" href="https://joinclearcareer.com/wrapped/">Try it</a>
+          <div class="card__footer"><a class="btn btn--link" href="https://joinclearcareer.com/wrapped/">Try it</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Saturday email -->
-  <section class="section section--alt" id="saturday">
+  <!-- 5. Saturday email -->
+  <section class="section section--paper" id="saturday">
     <div class="container container--narrow">
       <div class="section-head" data-animate>
         <p class="eyebrow">The Saturday email</p>
         <h2>One story. One tactic. One thing to do this week.</h2>
       </div>
-      <div class="card card--featured" data-animate>
-        <span class="card__badge badge">Every Saturday</span>
-        <h3>Happy Saturday friends</h3>
+      <div class="card card--featured" data-animate data-delay="80">
+        <span class="card__badge badge badge--navy">Every Saturday</span>
+        <h3 class="mt-1">Happy Saturday friends</h3>
         <p>That's how it opens, every week. Then one story from my week or a client's, one tactic you can use before Monday, and one small thing to do this week. It's short. It's free. It's the email I'd want to get.</p>
         <div class="card__footer">
-          <a class="btn btn--secondary" href="https://REPLACE_brevo-signup-form" data-track>Get the Saturday email</a>
+          <a class="btn btn--primary btn--arrow" href="https://REPLACE_brevo-signup-form" data-track>Get the Saturday email</a>
           <p class="card__meta mt-2 mb-0">Free. Unsubscribe anytime.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--tight">
+  <!-- 6. Final CTA -->
+  <section class="section--tight">
     <div class="container">
       <div class="cta-band cta-band--blue" data-animate>
+        <p class="eyebrow">Next step</p>
         <h2>Free tools get you moving. A plan gets you hired.</h2>
         <p>If you've used three of these and you're still stuck, book a 25-minute Strategy Session. We find what's broken, I tell you what I'd build, and you decide.</p>
         <div class="btn-row">
-          <a class="btn btn--white btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+          <a class="btn btn--white btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
           <a class="btn btn--outline-white btn--lg" href="shop.html#quick-wins">Or start with a $9 tool</a>
         </div>
       </div>
@@ -283,6 +275,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -325,6 +321,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>

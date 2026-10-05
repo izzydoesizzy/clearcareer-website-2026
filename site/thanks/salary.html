@@ -7,30 +7,34 @@
   <meta name="description" content="Your Salary Number Generator is on its way. Open it now, then do the walk-away number first.">
   <meta name="robots" content="noindex">
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/cc.css">
   <style>
-    .notice--links { text-align: left; }
-    .notice--links a { font-weight: 600; }
+    .hero--funnel h1.hero__title { font-size: clamp(2rem, 4.6vw, 3.3rem); max-width: 22ch; }
+    .notice--links { text-align: left; max-width: 36rem; margin: 0 auto; }
     .notice--links p:last-child { margin-bottom: 0; }
-    .site-footer--min { padding: 2rem 0; }
-    .site-footer--min .footer__bottom { margin-top: 0; padding-top: 0; border-top: 0; }
   </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header"><div class="container nav"><a class="nav__logo" href="../index.html"><img src="../../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer</a><span class="small muted">Secure checkout by Stripe</span></div></header>
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__logo" href="../index.html"><img src="../../assets/img/logo/clearcareer-icon-blue.svg" alt="" width="30" height="30">ClearCareer</a>
+    <span class="nav__note">Secure checkout by Stripe</span>
+  </div>
+</header>
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero hero--pattern hero--center">
+  <!-- 1. Hero -->
+  <section class="hero hero--paper hero--center hero--funnel">
     <div class="container container--narrow">
       <p class="eyebrow">Order confirmed</p>
-      <h1>You're in. Check your email.</h1>
+      <h1 class="hero__title">You're in. <em>Check your email.</em></h1>
       <p class="hero__sub">Your access link is on its way from izzy@joinclearcareer.com. Give it a minute. If it's not there, check promotions or spam once.</p>
       <div class="notice notice--success notice--links">
         <p><strong>Don't want to wait?</strong> <a data-track href="https://REPLACE_access-link-salary">Open the Salary Number Generator now</a>.</p>
@@ -39,32 +43,34 @@
     </div>
   </section>
 
-  <!-- Upsell -->
-  <section class="section section--tight">
+  <!-- 2. Upsell -->
+  <section class="section">
     <div class="container container--narrow">
-      <div class="card card--featured">
-        <p class="eyebrow">One more thing</p>
-        <h2>Have an offer in hand or a final interview this week?</h2>
+      <div class="card card--featured" data-animate>
+        <span class="card__badge badge badge--navy">One more thing</span>
+        <h2 class="mt-2">Have an offer in hand or a final interview this week?</h2>
         <p>Book a free 25-minute Strategy Session. In 25 minutes I'll tell you whether I can see $5K or more in your offer, and exactly how we'd get it. If I can't, I'll say so.</p>
         <div class="btn-row">
-          <a class="btn btn--primary" href="../strategy-session.html">Book a free Strategy Session</a>
+          <a class="btn btn--primary btn--arrow" href="../strategy-session.html">Book a free Strategy Session</a>
         </div>
         <p class="small muted mt-2 mb-0">Prefer weekly help instead? <a href="../community.html">The Community is $29 a month.</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Do this first -->
-  <section class="section section--tight section--alt">
+  <!-- 3. Do this first -->
+  <section class="section section--paper">
     <div class="container container--narrow">
-      <p class="eyebrow">Do this first</p>
-      <h2>Three steps, 10 minutes</h2>
-      <ol class="num-list">
+      <div class="section-head" data-animate>
+        <p class="eyebrow">Do this first</p>
+        <h2>Three steps, 10 minutes</h2>
+      </div>
+      <ol class="num-list num-list--big" data-animate data-delay="80">
         <li><strong>Open the generator.</strong> Start with the three-number worksheet, not the scripts. The scripts only work once you have the numbers.</li>
         <li><strong>Fill in your target role and city.</strong> Pull the ranges from the four sites listed and mark where three of them agree.</li>
         <li><strong>Do the walk-away number before anything else.</strong> It's the one most people skip, and it's the one that stops you from saying yes too early.</li>
       </ol>
-      <p class="mb-0">Questions? Reply to the email. It comes to me, not a ticket system.</p>
+      <p class="mb-0" data-animate data-delay="160">Questions? Reply to the email. It comes to me, not a ticket system.</p>
     </div>
   </section>
 

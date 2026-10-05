@@ -6,10 +6,11 @@
   <title>Shop | Career Tools from $9 to $67 | ClearCareer</title>
   <meta name="description" content="Small digital tools for specific job search problems, $9 to $67 CAD. Salary scripts, cold outreach scripts, AI prompts, interview prep, layoff survival, ADHD job search systems. One payment, instant access.">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/cc.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,6 +21,7 @@
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
     <ul class="nav__links" id="nav-links">
       <li><a href="services.html">Work With Me</a></li>
+      <li><a href="results.html">Results</a></li>
       <li><a href="shop.html" aria-current="page">Shop</a></li>
       <li><a href="free.html">Free Tools</a></li>
       <li><a href="about.html">About</a></li>
@@ -30,20 +32,21 @@
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero hero--pattern hero--center">
+  <!-- 1. Hero -->
+  <section class="hero hero--paper hero--center">
     <div class="container container--narrow">
       <p class="eyebrow">Shop</p>
-      <h1>Small tools for specific problems. $9 to $67.</h1>
+      <h1 class="hero__title">Small tools for specific problems. <em>$9 to $67.</em></h1>
       <p class="hero__sub">One payment each. Instant access. Built from the same frameworks behind $1.2M+ in negotiated raises.</p>
       <div class="btn-row">
-        <a class="btn btn--secondary btn--lg" href="#quick-wins">Start with the $9 quick wins</a>
+        <a class="btn btn--primary btn--lg btn--arrow" href="#quick-wins">Start with the $9 quick wins</a>
+        <a class="btn btn--secondary btn--lg" href="free.html">See the free tools first</a>
       </div>
-      <p class="trust-line">Prices in CAD. 30-day refund on everything.</p>
+      <div class="trust-line trust-line--inline"><span>Prices in CAD</span><span>30-day refund on everything</span><span>No subscriptions</span></div>
     </div>
   </section>
 
-  <!-- Quick wins -->
+  <!-- 2. Quick wins -->
   <section class="section" id="quick-wins">
     <div class="container">
       <div class="section-head" data-animate>
@@ -53,38 +56,39 @@
       </div>
       <div class="grid grid--3">
         <div class="card offer card--featured" data-animate>
-          <span class="card__badge badge">Most popular</span>
+          <span class="card__badge badge badge--navy">Most popular</span>
           <p class="offer__tier">Negotiating an offer</p>
           <h3>The Salary Number Generator</h3>
+          <p class="offer__price">$9 <small>CAD</small></p>
+          <p class="offer__plan">One payment. Instant access.</p>
           <p>Calculate your anchor, target, and walk-away numbers with word-for-word scripts.</p>
-          <p class="card__price mt-2">$9</p>
-          <a class="btn btn--secondary" href="go/salary.html">Know your three numbers</a>
+          <a class="btn btn--primary btn--arrow" href="go/salary.html">Know your three numbers</a>
         </div>
         <div class="card offer" data-animate data-delay="80">
-          <span class="card__badge badge badge--navy">$9</span>
           <p class="offer__tier">Writing with AI</p>
           <h3>Career Prompt Vault</h3>
+          <p class="offer__price">$9 <small>CAD</small></p>
+          <p class="offer__plan">One payment. Instant access.</p>
           <p>50 AI prompt frameworks for your job search. Works with ChatGPT, Claude, Gemini, and more.</p>
-          <p class="card__price mt-2">$9</p>
           <a class="btn btn--secondary" href="go/prompts.html">See the 50 prompts</a>
         </div>
         <div class="card offer" data-animate data-delay="160">
-          <span class="card__badge badge badge--navy">$9</span>
           <p class="offer__tier">Reaching out</p>
           <h3>Cold Outreach Script Pack</h3>
+          <p class="offer__price">$9 <small>CAD</small></p>
+          <p class="offer__plan">One payment. Instant access.</p>
           <p>30 copy-paste scripts for cold emails, LinkedIn DMs, follow-ups, and referral requests.</p>
-          <p class="card__price mt-2">$9</p>
           <a class="btn btn--secondary" href="go/outreach.html">See the 30 scripts</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- By problem nav -->
-  <section class="section--tight section--soft">
+  <!-- 3. By problem nav -->
+  <section class="section--tight section--paper section--line-top">
     <div class="container center">
-      <p class="eyebrow">Everything else, by problem</p>
-      <div class="btn-row btn-row--center" data-animate>
+      <p class="eyebrow eyebrow--plain">Everything else, by problem</p>
+      <div class="pill-row pill-row--center" data-animate>
         <a class="pill" href="#negotiating">Negotiating an offer</a>
         <a class="pill" href="#outreach">Reaching out</a>
         <a class="pill" href="#ai">Writing with AI</a>
@@ -98,10 +102,10 @@
     </div>
   </section>
 
-  <!-- Negotiating -->
+  <!-- 4. Negotiating -->
   <section class="section" id="negotiating">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">Negotiating an offer</p>
         <h2>You have an offer. Let's make it bigger.</h2>
         <p>55% of workers never negotiate. The ones who do average 18% more. Start with the numbers, then the words.</p>
@@ -110,24 +114,24 @@
         <div class="card" data-animate>
           <h3>The Salary Number Generator</h3>
           <p class="card__price">$9</p>
-          <p>Calculate your anchor, target, and walk-away numbers with word-for-word scripts.</p>
+          <p class="mt-2">Calculate your anchor, target, and walk-away numbers with word-for-word scripts.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="go/salary.html">Learn more</a></div>
         </div>
         <div class="card" data-animate data-delay="80">
           <h3>The Job Search Script Vault</h3>
           <p class="card__price">$29</p>
-          <p>100+ copy-paste scripts for outreach, negotiation, interviews, follow-ups, and more.</p>
+          <p class="mt-2">100+ copy-paste scripts for outreach, negotiation, interviews, follow-ups, and more.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/script-vault">Learn more</a></div>
         </div>
       </div>
-      <p class="small muted mt-3 mb-0">Offer in hand for a $100K+ role and want it handled with you? The <a href="salary-negotiation.html">Salary Negotiation Sprint</a> adds at least $5,000 or you pay nothing.</p>
+      <p class="small muted mt-3 mb-0" data-animate>Offer in hand for a $100K+ role and want it handled with you? The <a href="salary-negotiation.html">Salary Negotiation Sprint</a> adds at least $5,000 or you pay nothing.</p>
     </div>
   </section>
 
-  <!-- Reaching out -->
-  <section class="section section--alt" id="outreach">
+  <!-- 5. Reaching out -->
+  <section class="section section--paper" id="outreach">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">Reaching out</p>
         <h2>Stop applying into the void. Start emailing humans.</h2>
         <p>Blake sent 200+ applications and got nowhere. Then he sent 27 emails, 13 people replied, and one hired him. The words matter.</p>
@@ -136,23 +140,23 @@
         <div class="card" data-animate>
           <h3>Cold Outreach Script Pack</h3>
           <p class="card__price">$9</p>
-          <p>30 copy-paste scripts for cold emails, LinkedIn DMs, follow-ups, and referral requests.</p>
+          <p class="mt-2">30 copy-paste scripts for cold emails, LinkedIn DMs, follow-ups, and referral requests.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="go/outreach.html">Learn more</a></div>
         </div>
         <div class="card" data-animate data-delay="80">
           <h3>The Job Search Script Vault</h3>
           <p class="card__price">$29</p>
-          <p>100+ copy-paste scripts for outreach, negotiation, interviews, follow-ups, and more.</p>
+          <p class="mt-2">100+ copy-paste scripts for outreach, negotiation, interviews, follow-ups, and more.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/script-vault">Learn more</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Writing with AI -->
+  <!-- 6. Writing with AI -->
   <section class="section" id="ai">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">Writing with AI</p>
         <h2>Make ChatGPT sound like you, not like ChatGPT.</h2>
         <p>98% of members who compared say these prompts beat anything else they tried. 43% had barely used AI before.</p>
@@ -161,17 +165,17 @@
         <div class="card" data-animate>
           <h3>Career Prompt Vault</h3>
           <p class="card__price">$9</p>
-          <p>50 AI prompt frameworks for your job search. Works with ChatGPT, Claude, Gemini, and more.</p>
+          <p class="mt-2">50 AI prompt frameworks for your job search. Works with ChatGPT, Claude, Gemini, and more.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="go/prompts.html">Learn more</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interviews -->
-  <section class="section section--alt" id="interviews">
+  <!-- 7. Interviews -->
+  <section class="section section--paper" id="interviews">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">Getting interviews</p>
         <h2>Walk in with stories, not sweat.</h2>
         <p>A bank of stories ready to go is the difference between "umm" and "here's an example."</p>
@@ -180,17 +184,17 @@
         <div class="card" data-animate>
           <h3>The Interview Confidence System</h3>
           <p class="card__price">$19</p>
-          <p>STAR stories, anxiety management, and answer frameworks for 20 common questions.</p>
+          <p class="mt-2">STAR stories, anxiety management, and answer frameworks for 20 common questions.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/interview-confidence">Learn more</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Staying sane -->
+  <!-- 8. Staying sane -->
   <section class="section" id="sane">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">Staying sane</p>
         <h2>The job search is a head game. Here's the gear.</h2>
         <p>Nobody prepares you for how lonely it gets. These are the tools I wish someone had handed me.</p>
@@ -199,30 +203,30 @@
         <div class="card" data-animate>
           <h3>Job Search Emotional Survival Kit</h3>
           <p class="card__price">$24</p>
-          <p>CBT and ACT-based tools for the psychological toll of job searching. 8 evidence-based guides.</p>
+          <p class="mt-2">CBT and ACT-based tools for the psychological toll of job searching. 8 evidence-based guides.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/emotional-survival-kit">Learn more</a></div>
         </div>
         <div class="card" data-animate data-delay="80">
           <h3>LinkedIn Detox + Comparison Recovery Guide</h3>
           <p class="card__price">$9</p>
-          <p>Stop doom-scrolling LinkedIn. A research-backed framework for using it without losing your mind.</p>
+          <p class="mt-2">Stop doom-scrolling LinkedIn. A research-backed framework for using it without losing your mind.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/linkedin-detox">Learn more</a></div>
         </div>
         <div class="card" data-animate data-delay="160">
-          <span class="card__badge badge badge--success">Free</span>
+          <span class="card__badge badge badge--green">Free</span>
           <h3>Rejection Reframe Card Deck</h3>
           <p class="card__price">Free</p>
-          <p>10 printable cards with evidence-based reframes for when rejection hits hard.</p>
+          <p class="mt-2">10 printable cards with evidence-based reframes for when rejection hits hard.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/rejection-cards">Learn more</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Changing careers -->
-  <section class="section section--alt" id="career-change">
+  <!-- 9. Changing careers -->
+  <section class="section section--paper" id="career-change">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">Changing careers</p>
         <h2>Switch lanes without burning it all down.</h2>
         <p>Julian went from financial services to retail with a $20K raise. The skills transfer. The story needs work.</p>
@@ -231,23 +235,23 @@
         <div class="card" data-animate>
           <h3>The Complete Career Change Command Center</h3>
           <p class="card__price">$47</p>
-          <p>Everything you need to change careers without burning it all down. 7 modules.</p>
+          <p class="mt-2">Everything you need to change careers without burning it all down. 7 modules.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/career-change-command-center">Learn more</a></div>
         </div>
         <div class="card" data-animate data-delay="80">
           <h3>ADHD Career Change Workbook</h3>
           <p class="card__price">$24</p>
-          <p>A complete career change system designed for how ADHD brains actually work.</p>
+          <p class="mt-2">A complete career change system designed for how ADHD brains actually work.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/adhd-career-change">Learn more</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Over 40 -->
+  <!-- 10. Over 40 -->
   <section class="section" id="over-40">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">Over 40</p>
         <h2>20+ years of experience is the asset. Let's package it that way.</h2>
       </div>
@@ -255,44 +259,44 @@
         <div class="card" data-animate>
           <h3>The Over-40 Career Toolkit</h3>
           <p class="card__price">$47</p>
-          <p>Resume, LinkedIn, interview, and strategy tools built for 20+ years of experience.</p>
+          <p class="mt-2">Resume, LinkedIn, interview, and strategy tools built for 20+ years of experience.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/over-40-toolkit">Learn more</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Laid off -->
-  <section class="section section--alt" id="laid-off">
+  <!-- 11. Laid off -->
+  <section class="section section--paper" id="laid-off">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">Laid off</p>
         <h2>The first 72 hours matter. Here's the plan.</h2>
         <p>Severance, EI, your legal rights, your runway. Get the order of operations right before you touch a job board.</p>
       </div>
       <div class="grid grid--2">
-        <div class="card" data-animate>
-          <span class="card__badge badge">Most popular</span>
+        <div class="card card--featured" data-animate>
+          <span class="card__badge badge badge--navy">Most popular</span>
           <h3>Layoff Survival Kit</h3>
           <p class="card__price">$67</p>
-          <p>Everything you need in the first 72 hours after a layoff. Severance scripts, financial planning, lawyers, action plan.</p>
+          <p class="mt-2">Everything you need in the first 72 hours after a layoff. Severance scripts, financial planning, lawyers, action plan.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/layoff-survival-kit">Learn more</a></div>
         </div>
         <div class="card" data-animate data-delay="80">
-          <span class="card__badge badge badge--success">Free</span>
+          <span class="card__badge badge badge--green">Free</span>
           <h3>Layoff Survival Checklist</h3>
           <p class="card__price">Free</p>
-          <p>25 Canada-specific steps for the first 72 hours after being let go. EI, severance, legal rights.</p>
+          <p class="mt-2">25 Canada-specific steps for the first 72 hours after being let go. EI, severance, legal rights.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/resources/layoff-checklist">Learn more</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ADHD -->
+  <!-- 12. ADHD -->
   <section class="section" id="adhd">
     <div class="container">
-      <div class="section-head section-head--left" data-animate>
+      <div class="section-head" data-animate>
         <p class="eyebrow">ADHD</p>
         <h2>Built for how your brain actually works. Mine too.</h2>
         <p>I have an ADHD brain. Every system here is small steps, quick wins, and zero giant plans you'll abandon by Thursday.</p>
@@ -301,42 +305,43 @@
         <div class="card" data-animate>
           <h3>ADHD Job Seeker's Focus Kit</h3>
           <p class="card__price">$9</p>
-          <p>Energy management, dopamine-friendly tracking, and RSD tools for ADHD job seekers.</p>
+          <p class="mt-2">Energy management, dopamine-friendly tracking, and RSD tools for ADHD job seekers.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/adhd-focus-kit">Learn more</a></div>
         </div>
         <div class="card card--featured" data-animate data-delay="80">
-          <span class="card__badge badge">Flagship</span>
+          <span class="card__badge badge badge--navy">Flagship</span>
           <h3>The ADHD Job Search Command Center</h3>
           <p class="card__price">$57</p>
-          <p>The complete job search system designed for how your brain actually works. 8 modules.</p>
+          <p class="mt-2">The complete job search system designed for how your brain actually works. 8 modules.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/adhd-command-center">Learn more</a></div>
         </div>
         <div class="card" data-animate data-delay="160">
-          <span class="card__badge badge badge--success">Free</span>
+          <span class="card__badge badge badge--green">Free</span>
           <h3>ADHD Job Search Survival Cheat Sheet</h3>
           <p class="card__price">Free</p>
-          <p>5 immediate hacks for job searching with ADHD. Built by someone who gets it.</p>
+          <p class="mt-2">5 immediate hacks for job searching with ADHD. Built by someone who gets it.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/adhd-cheat-sheet">Learn more</a></div>
         </div>
         <div class="card" data-animate data-delay="240">
-          <span class="card__badge badge badge--success">Free</span>
+          <span class="card__badge badge badge--green">Free</span>
           <h3>Job Search Self-Diagnostic Scorecard</h3>
           <p class="card__price">Free</p>
-          <p>Find out exactly where your job search is breaking down. 10 questions, 5 dimensions.</p>
+          <p class="mt-2">Find out exactly where your job search is breaking down. 10 questions, 5 dimensions.</p>
           <div class="card__footer"><a class="btn btn--secondary btn--sm" href="https://joinclearcareer.com/products/job-search-scorecard">Learn more</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section section--alt">
-    <div class="container container--narrow">
+  <!-- 13. FAQ -->
+  <section class="section section--paper">
+    <div class="container grid grid--split-wide">
       <div class="section-head" data-animate>
         <p class="eyebrow">Questions</p>
         <h2>Three things people ask before they buy</h2>
+        <p>Every refund rule is on the <a href="refunds.html">refunds page</a>. Short version: 30 days, no fuss.</p>
       </div>
-      <div class="faq" data-animate>
+      <div class="faq" data-animate data-delay="80">
         <details class="faq__item"><summary>Are these subscriptions?</summary><p>No. One payment, instant access, keep it forever. The only subscription on this site is the <a href="community.html">Community</a>, and that's $29 a month, cancel anytime.</p></details>
         <details class="faq__item"><summary>What if it's not for me?</summary><p>You have 30 days. Email me and I'll refund it. The details are on the <a href="refunds.html">refunds page</a>.</p></details>
         <details class="faq__item"><summary>Do I need the coaching too?</summary><p>No. Every tool here stands on its own. If you'd rather talk it through, the <a href="strategy-session.html">Strategy Session</a> is free: 25 minutes, a real diagnosis, a real offer, no surprises.</p></details>
@@ -344,14 +349,15 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--tight">
+  <!-- 14. Final CTA -->
+  <section class="section--tight">
     <div class="container">
-      <div class="cta-band cta-band--blue" data-animate>
+      <div class="cta-band" data-animate>
+        <p class="eyebrow">Next step</p>
         <h2>Want it built with you instead?</h2>
         <p>The tools fix one problem. The Strategy Session finds the problem. 25 minutes, free, and you leave knowing exactly what I'd build.</p>
         <div class="btn-row">
-          <a class="btn btn--white btn--lg" href="strategy-session.html">Book a Strategy Session</a>
+          <a class="btn btn--white btn--lg btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
           <a class="btn btn--outline-white btn--lg" href="free.html">Or grab the free tools</a>
         </div>
       </div>
@@ -362,6 +368,10 @@
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer__top">
+      <p class="footer__tagline">Design the career that fits <em>your</em> life.</p>
+      <a class="btn btn--primary btn--arrow" href="strategy-session.html">Book a Strategy Session</a>
+    </div>
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="nav__logo" href="index.html"><img src="../assets/img/logo/clearcareer-icon-white.svg" alt="" width="30" height="30">ClearCareer</a>
@@ -404,6 +414,7 @@
       <span><a href="https://www.linkedin.com/in/izzydoesizzy/">LinkedIn</a> · <a href="https://www.youtube.com/@joinclearcareer">YouTube</a> · <a href="https://www.instagram.com/joinclearcareer/">Instagram</a> · <a href="mailto:izzy@joinclearcareer.com">Email</a></span>
     </div>
   </div>
+  <div class="footer__mark" aria-hidden="true">CC</div>
 </footer>
 <script src="../assets/js/site.js"></script>
 </body>
