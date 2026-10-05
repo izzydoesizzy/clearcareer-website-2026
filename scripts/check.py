@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BANNED = [r"leverag", r"\bunlock", r"empower", r"optimi[sz]", r"comprehensive", r"journey", r"navigat(e|ing|ed)\b", r"landscape",
           r"\belevate", r"transformative", r"game-changing", r"holistic", r"seamless", r"robust", r"\bdelve",
           r"in today's", r"at the end of the day", r"it's important to note", r"moving forward", r"in conclusion"]
-SKIP_DIRS = {".git", "node_modules", "scripts"}
+SKIP_DIRS = {".git", "node_modules", "scripts", "clearcareer-website"}  # clearcareer-website/ is the original Astro site, kept for reference, not gated
 # Files that quote third parties or describe the gate itself; banned words there are expected.
 WORD_EXEMPT = {"docs/SITE-BUILD-GUIDE.md", "plan/site-build-guide.html", "scripts/check.py", "README.md"}
 LINK_EXEMPT = {"plan/site-build-guide.html"}  # documentation that shows markup examples

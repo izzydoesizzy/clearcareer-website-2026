@@ -36,13 +36,20 @@ jobs:
           test -f emails/index.html
           echo "ok"
 
+      - name: Stage only the deployable folders
+        # clearcareer-website/ (the original Astro source, kept for reference) and scripts/ are not published.
+        run: |
+          mkdir -p _site
+          cp -r index.html 404.html .nojekyll assets site plan emails ads docs _site/
+          du -sh _site
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy
         id: deployment

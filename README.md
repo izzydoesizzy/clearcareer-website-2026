@@ -84,7 +84,8 @@ clearcareer-website-2026/
 │   ├── build.py               Renders docs/ and emails/ to HTML, writes the hub and the root 404
 │   ├── check.py               Quality gate: dashes, banned words, broken links, leading slashes
 │   └── results/               The generator that built site/results.html from the old repo's testimonials.json
-└── .github/workflows/pages.yml  Deploys the repository to GitHub Pages on every push to main
+├── clearcareer-website/       The original Astro site, added as a subtree with its full history. Reference only; not deployed, not gated.
+└── .github/workflows/pages.yml  Deploys the site, plan, emails, ads, and docs folders to GitHub Pages on every push to main
 ```
 
 Hand-written files: everything in `site/`, `assets/`, `docs/`, `emails/emails.md`, `plan/funnel-map.html`, `scripts/`. Generated files are committed too, so GitHub Pages serves them with no build step.
